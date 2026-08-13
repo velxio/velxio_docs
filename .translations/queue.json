@@ -2442,12 +2442,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/custom-chips/api.md",
       "targetFile": "src/content/docs/ja/custom-chips/api.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.844Z",
       "nextAttemptAt": "2026-08-13T19:08:57.844Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:22:13.310Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/api.md",
@@ -2455,12 +2456,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/custom-chips/api.md",
       "targetFile": "src/content/docs/ru/custom-chips/api.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:22:21.028Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -2468,12 +2470,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/custom-chips/getting-started.md",
       "targetFile": "src/content/docs/es/custom-chips/getting-started.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:22:27.202Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -2481,12 +2484,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/custom-chips/getting-started.md",
       "targetFile": "src/content/docs/pt-br/custom-chips/getting-started.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:22:33.418Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -2494,12 +2498,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/custom-chips/getting-started.md",
       "targetFile": "src/content/docs/it/custom-chips/getting-started.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:22:40.321Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -2507,12 +2512,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/custom-chips/getting-started.md",
       "targetFile": "src/content/docs/fr/custom-chips/getting-started.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:22:47.056Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -2520,12 +2526,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/custom-chips/getting-started.md",
       "targetFile": "src/content/docs/zh-cn/custom-chips/getting-started.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:22:52.425Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -2533,12 +2540,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/custom-chips/getting-started.md",
       "targetFile": "src/content/docs/de/custom-chips/getting-started.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:22:59.914Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -2546,12 +2554,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/custom-chips/getting-started.md",
       "targetFile": "src/content/docs/ja/custom-chips/getting-started.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:07.580Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -2559,12 +2568,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/custom-chips/getting-started.md",
       "targetFile": "src/content/docs/ru/custom-chips/getting-started.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:14.800Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -2572,12 +2582,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/custom-chips/overview.md",
       "targetFile": "src/content/docs/es/custom-chips/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:17.657Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -2585,12 +2596,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/custom-chips/overview.md",
       "targetFile": "src/content/docs/pt-br/custom-chips/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:20.157Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -2598,12 +2610,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/custom-chips/overview.md",
       "targetFile": "src/content/docs/it/custom-chips/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:22.701Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -2611,12 +2624,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/custom-chips/overview.md",
       "targetFile": "src/content/docs/fr/custom-chips/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:25.211Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -2624,12 +2638,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/custom-chips/overview.md",
       "targetFile": "src/content/docs/zh-cn/custom-chips/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:27.171Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -2637,12 +2652,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/custom-chips/overview.md",
       "targetFile": "src/content/docs/de/custom-chips/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.845Z",
       "nextAttemptAt": "2026-08-13T19:08:57.845Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:29.830Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -2650,12 +2666,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/custom-chips/overview.md",
       "targetFile": "src/content/docs/ja/custom-chips/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:32.609Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -2663,12 +2680,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/custom-chips/overview.md",
       "targetFile": "src/content/docs/ru/custom-chips/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:35.120Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/examples-gallery.md",
@@ -2676,12 +2694,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/getting-started/examples-gallery.md",
       "targetFile": "src/content/docs/es/getting-started/examples-gallery.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:38.687Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/examples-gallery.md",
@@ -2689,12 +2708,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/getting-started/examples-gallery.md",
       "targetFile": "src/content/docs/pt-br/getting-started/examples-gallery.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:42.384Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/examples-gallery.md",
@@ -2702,12 +2722,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/getting-started/examples-gallery.md",
       "targetFile": "src/content/docs/it/getting-started/examples-gallery.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:46.233Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/examples-gallery.md",
@@ -2715,12 +2736,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/getting-started/examples-gallery.md",
       "targetFile": "src/content/docs/fr/getting-started/examples-gallery.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:50.108Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/examples-gallery.md",
@@ -2728,12 +2750,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/getting-started/examples-gallery.md",
       "targetFile": "src/content/docs/zh-cn/getting-started/examples-gallery.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:53.535Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/examples-gallery.md",
@@ -2741,12 +2764,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/getting-started/examples-gallery.md",
       "targetFile": "src/content/docs/de/getting-started/examples-gallery.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:23:57.916Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/examples-gallery.md",
@@ -2754,12 +2778,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/getting-started/examples-gallery.md",
       "targetFile": "src/content/docs/ja/getting-started/examples-gallery.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:02.797Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/examples-gallery.md",
@@ -2767,12 +2792,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/getting-started/examples-gallery.md",
       "targetFile": "src/content/docs/ru/getting-started/examples-gallery.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:06.666Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/faq.md",
@@ -2780,12 +2806,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/getting-started/faq.md",
       "targetFile": "src/content/docs/es/getting-started/faq.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:11.227Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/faq.md",
@@ -2793,12 +2820,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/getting-started/faq.md",
       "targetFile": "src/content/docs/pt-br/getting-started/faq.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:15.552Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/faq.md",
@@ -2806,12 +2834,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/getting-started/faq.md",
       "targetFile": "src/content/docs/it/getting-started/faq.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:20.170Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/faq.md",
@@ -2819,12 +2848,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/getting-started/faq.md",
       "targetFile": "src/content/docs/fr/getting-started/faq.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:25.168Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/faq.md",
@@ -2832,12 +2862,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/getting-started/faq.md",
       "targetFile": "src/content/docs/zh-cn/getting-started/faq.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:29.537Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/faq.md",
@@ -2845,12 +2876,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/getting-started/faq.md",
       "targetFile": "src/content/docs/de/getting-started/faq.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:34.659Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/faq.md",
@@ -2858,12 +2890,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/getting-started/faq.md",
       "targetFile": "src/content/docs/ja/getting-started/faq.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:40.387Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/faq.md",
@@ -2871,12 +2904,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/getting-started/faq.md",
       "targetFile": "src/content/docs/ru/getting-started/faq.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:45.283Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/first-project.md",
@@ -2884,12 +2918,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/getting-started/first-project.md",
       "targetFile": "src/content/docs/es/getting-started/first-project.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:51.304Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/first-project.md",
@@ -2897,12 +2932,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/getting-started/first-project.md",
       "targetFile": "src/content/docs/pt-br/getting-started/first-project.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:24:57.771Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/first-project.md",
@@ -2910,12 +2946,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/getting-started/first-project.md",
       "targetFile": "src/content/docs/it/getting-started/first-project.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:25:04.696Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/first-project.md",
@@ -2923,12 +2960,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/getting-started/first-project.md",
       "targetFile": "src/content/docs/fr/getting-started/first-project.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:25:11.941Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/first-project.md",
@@ -2936,12 +2974,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/getting-started/first-project.md",
       "targetFile": "src/content/docs/zh-cn/getting-started/first-project.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:25:17.420Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/first-project.md",
@@ -2949,12 +2988,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/getting-started/first-project.md",
       "targetFile": "src/content/docs/de/getting-started/first-project.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:25:24.500Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/first-project.md",
@@ -2962,12 +3002,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/getting-started/first-project.md",
       "targetFile": "src/content/docs/ja/getting-started/first-project.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:25:32.368Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/first-project.md",
@@ -2975,12 +3016,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/getting-started/first-project.md",
       "targetFile": "src/content/docs/ru/getting-started/first-project.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:25:39.214Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/interface-tour.md",
@@ -2988,12 +3030,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/getting-started/interface-tour.md",
       "targetFile": "src/content/docs/es/getting-started/interface-tour.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:25:44.960Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/interface-tour.md",
@@ -3001,12 +3044,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/getting-started/interface-tour.md",
       "targetFile": "src/content/docs/pt-br/getting-started/interface-tour.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:25:51.238Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/interface-tour.md",
@@ -3014,12 +3058,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/getting-started/interface-tour.md",
       "targetFile": "src/content/docs/it/getting-started/interface-tour.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:25:57.854Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/interface-tour.md",
@@ -3027,12 +3072,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/getting-started/interface-tour.md",
       "targetFile": "src/content/docs/fr/getting-started/interface-tour.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:04.185Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/interface-tour.md",
@@ -3040,12 +3086,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/getting-started/interface-tour.md",
       "targetFile": "src/content/docs/zh-cn/getting-started/interface-tour.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:09.243Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/interface-tour.md",
@@ -3053,12 +3100,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/getting-started/interface-tour.md",
       "targetFile": "src/content/docs/de/getting-started/interface-tour.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:16.070Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/interface-tour.md",
@@ -3066,12 +3114,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/getting-started/interface-tour.md",
       "targetFile": "src/content/docs/ja/getting-started/interface-tour.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:22.939Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/interface-tour.md",
@@ -3079,12 +3128,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/getting-started/interface-tour.md",
       "targetFile": "src/content/docs/ru/getting-started/interface-tour.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:29.913Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/plans.md",
@@ -3092,12 +3142,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/getting-started/plans.md",
       "targetFile": "src/content/docs/es/getting-started/plans.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:33.891Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/plans.md",
@@ -3105,12 +3156,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/getting-started/plans.md",
       "targetFile": "src/content/docs/pt-br/getting-started/plans.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:38.206Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/plans.md",
@@ -3118,12 +3170,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/getting-started/plans.md",
       "targetFile": "src/content/docs/it/getting-started/plans.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:42.460Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/plans.md",
@@ -3131,12 +3184,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/getting-started/plans.md",
       "targetFile": "src/content/docs/fr/getting-started/plans.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:46.247Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/plans.md",
@@ -3144,12 +3198,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/getting-started/plans.md",
       "targetFile": "src/content/docs/zh-cn/getting-started/plans.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:49.676Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/plans.md",
@@ -3157,12 +3212,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/getting-started/plans.md",
       "targetFile": "src/content/docs/de/getting-started/plans.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:53.957Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/plans.md",
@@ -3170,12 +3226,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/getting-started/plans.md",
       "targetFile": "src/content/docs/ja/getting-started/plans.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:26:58.296Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/plans.md",
@@ -3183,12 +3240,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/getting-started/plans.md",
       "targetFile": "src/content/docs/ru/getting-started/plans.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:02.098Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/projects.md",
@@ -3196,12 +3254,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/getting-started/projects.md",
       "targetFile": "src/content/docs/es/getting-started/projects.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:06.025Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/projects.md",
@@ -3209,12 +3268,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/getting-started/projects.md",
       "targetFile": "src/content/docs/pt-br/getting-started/projects.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:10.057Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/projects.md",
@@ -3222,12 +3282,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/getting-started/projects.md",
       "targetFile": "src/content/docs/it/getting-started/projects.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:14.455Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/projects.md",
@@ -3235,12 +3296,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/getting-started/projects.md",
       "targetFile": "src/content/docs/fr/getting-started/projects.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:18.930Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/projects.md",
@@ -3248,12 +3310,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/getting-started/projects.md",
       "targetFile": "src/content/docs/zh-cn/getting-started/projects.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:22.186Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/projects.md",
@@ -3261,12 +3324,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/getting-started/projects.md",
       "targetFile": "src/content/docs/de/getting-started/projects.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:26.825Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/projects.md",
@@ -3274,12 +3338,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/getting-started/projects.md",
       "targetFile": "src/content/docs/ja/getting-started/projects.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:31.391Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/projects.md",
@@ -3287,12 +3352,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/getting-started/projects.md",
       "targetFile": "src/content/docs/ru/getting-started/projects.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:35.546Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/welcome.md",
@@ -3300,12 +3366,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/getting-started/welcome.md",
       "targetFile": "src/content/docs/es/getting-started/welcome.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:38.881Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/welcome.md",
@@ -3313,12 +3380,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/getting-started/welcome.md",
       "targetFile": "src/content/docs/pt-br/getting-started/welcome.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:42.414Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/welcome.md",
@@ -3326,12 +3394,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/getting-started/welcome.md",
       "targetFile": "src/content/docs/it/getting-started/welcome.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:46.506Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/welcome.md",
@@ -3339,12 +3408,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/getting-started/welcome.md",
       "targetFile": "src/content/docs/fr/getting-started/welcome.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:50.282Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/welcome.md",
@@ -3352,12 +3422,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/getting-started/welcome.md",
       "targetFile": "src/content/docs/zh-cn/getting-started/welcome.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:53.633Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/welcome.md",
@@ -3365,12 +3436,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/getting-started/welcome.md",
       "targetFile": "src/content/docs/de/getting-started/welcome.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:27:57.803Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/welcome.md",
@@ -3378,12 +3450,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/getting-started/welcome.md",
       "targetFile": "src/content/docs/ja/getting-started/welcome.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:02.263Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "getting-started/welcome.md",
@@ -3391,12 +3464,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/getting-started/welcome.md",
       "targetFile": "src/content/docs/ru/getting-started/welcome.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:06.364Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/analog-simulation.md",
@@ -3404,12 +3478,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/instruments/analog-simulation.md",
       "targetFile": "src/content/docs/es/instruments/analog-simulation.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:11.329Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/analog-simulation.md",
@@ -3417,12 +3492,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/instruments/analog-simulation.md",
       "targetFile": "src/content/docs/pt-br/instruments/analog-simulation.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:16.227Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/analog-simulation.md",
@@ -3430,12 +3506,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/instruments/analog-simulation.md",
       "targetFile": "src/content/docs/it/instruments/analog-simulation.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:21.704Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/analog-simulation.md",
@@ -3443,12 +3520,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/instruments/analog-simulation.md",
       "targetFile": "src/content/docs/fr/instruments/analog-simulation.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:27.040Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/analog-simulation.md",
@@ -3456,12 +3534,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/instruments/analog-simulation.md",
       "targetFile": "src/content/docs/zh-cn/instruments/analog-simulation.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:31.259Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/analog-simulation.md",
@@ -3469,12 +3548,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/instruments/analog-simulation.md",
       "targetFile": "src/content/docs/de/instruments/analog-simulation.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:37.072Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/analog-simulation.md",
@@ -3482,12 +3562,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/instruments/analog-simulation.md",
       "targetFile": "src/content/docs/ja/instruments/analog-simulation.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:42.642Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/analog-simulation.md",
@@ -3495,12 +3576,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/instruments/analog-simulation.md",
       "targetFile": "src/content/docs/ru/instruments/analog-simulation.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:47.768Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/oscilloscope.md",
@@ -3508,12 +3590,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/instruments/oscilloscope.md",
       "targetFile": "src/content/docs/es/instruments/oscilloscope.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:52.275Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/oscilloscope.md",
@@ -3521,12 +3604,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/instruments/oscilloscope.md",
       "targetFile": "src/content/docs/pt-br/instruments/oscilloscope.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:28:56.663Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/oscilloscope.md",
@@ -3534,12 +3618,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/instruments/oscilloscope.md",
       "targetFile": "src/content/docs/it/instruments/oscilloscope.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:01.933Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/oscilloscope.md",
@@ -3547,12 +3632,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/instruments/oscilloscope.md",
       "targetFile": "src/content/docs/fr/instruments/oscilloscope.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:06.811Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/oscilloscope.md",
@@ -3560,12 +3646,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/instruments/oscilloscope.md",
       "targetFile": "src/content/docs/zh-cn/instruments/oscilloscope.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:10.847Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/oscilloscope.md",
@@ -3573,12 +3660,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/instruments/oscilloscope.md",
       "targetFile": "src/content/docs/de/instruments/oscilloscope.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:16.102Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/oscilloscope.md",
@@ -3586,12 +3674,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/instruments/oscilloscope.md",
       "targetFile": "src/content/docs/ja/instruments/oscilloscope.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:21.519Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/oscilloscope.md",
@@ -3599,12 +3688,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/instruments/oscilloscope.md",
       "targetFile": "src/content/docs/ru/instruments/oscilloscope.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:26.460Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/overview.md",
@@ -3612,12 +3702,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/instruments/overview.md",
       "targetFile": "src/content/docs/es/instruments/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:28.898Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/overview.md",
@@ -3625,12 +3716,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/instruments/overview.md",
       "targetFile": "src/content/docs/pt-br/instruments/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:31.669Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/overview.md",
@@ -3638,12 +3730,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/instruments/overview.md",
       "targetFile": "src/content/docs/it/instruments/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:34.537Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/overview.md",
@@ -3651,12 +3744,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/instruments/overview.md",
       "targetFile": "src/content/docs/fr/instruments/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:37.009Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/overview.md",
@@ -3664,12 +3758,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/instruments/overview.md",
       "targetFile": "src/content/docs/zh-cn/instruments/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:39.084Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/overview.md",
@@ -3677,12 +3772,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/instruments/overview.md",
       "targetFile": "src/content/docs/de/instruments/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:42.154Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/overview.md",
@@ -3690,12 +3786,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/instruments/overview.md",
       "targetFile": "src/content/docs/ja/instruments/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:44.937Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "instruments/overview.md",
@@ -3703,12 +3800,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/instruments/overview.md",
       "targetFile": "src/content/docs/ru/instruments/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:47.459Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/compile-and-run.md",
@@ -3716,12 +3814,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/programming/compile-and-run.md",
       "targetFile": "src/content/docs/es/programming/compile-and-run.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:52.001Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/compile-and-run.md",
@@ -3729,12 +3828,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/programming/compile-and-run.md",
       "targetFile": "src/content/docs/pt-br/programming/compile-and-run.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:29:56.436Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/compile-and-run.md",
@@ -3742,12 +3842,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/programming/compile-and-run.md",
       "targetFile": "src/content/docs/it/programming/compile-and-run.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:01.252Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/compile-and-run.md",
@@ -3755,12 +3856,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/programming/compile-and-run.md",
       "targetFile": "src/content/docs/fr/programming/compile-and-run.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:06.247Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/compile-and-run.md",
@@ -3768,12 +3870,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/programming/compile-and-run.md",
       "targetFile": "src/content/docs/zh-cn/programming/compile-and-run.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:10.704Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/compile-and-run.md",
@@ -3781,12 +3884,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/programming/compile-and-run.md",
       "targetFile": "src/content/docs/de/programming/compile-and-run.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:15.702Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/compile-and-run.md",
@@ -3794,12 +3898,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/programming/compile-and-run.md",
       "targetFile": "src/content/docs/ja/programming/compile-and-run.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:21.186Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/compile-and-run.md",
@@ -3807,12 +3912,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/programming/compile-and-run.md",
       "targetFile": "src/content/docs/ru/programming/compile-and-run.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:26.302Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/languages.md",
@@ -3820,12 +3926,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/programming/languages.md",
       "targetFile": "src/content/docs/es/programming/languages.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:30.714Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/languages.md",
@@ -3833,12 +3940,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/programming/languages.md",
       "targetFile": "src/content/docs/pt-br/programming/languages.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:34.769Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/languages.md",
@@ -3846,12 +3954,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/programming/languages.md",
       "targetFile": "src/content/docs/it/programming/languages.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:39.225Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/languages.md",
@@ -3859,12 +3968,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/programming/languages.md",
       "targetFile": "src/content/docs/fr/programming/languages.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:43.611Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/languages.md",
@@ -3872,12 +3982,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/programming/languages.md",
       "targetFile": "src/content/docs/zh-cn/programming/languages.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:47.811Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/languages.md",
@@ -3885,12 +3996,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/programming/languages.md",
       "targetFile": "src/content/docs/de/programming/languages.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:52.501Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/languages.md",
@@ -3898,12 +4010,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/programming/languages.md",
       "targetFile": "src/content/docs/ja/programming/languages.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:30:57.446Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/languages.md",
@@ -3911,12 +4024,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/programming/languages.md",
       "targetFile": "src/content/docs/ru/programming/languages.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:01.700Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/libraries.md",
@@ -3924,12 +4038,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/programming/libraries.md",
       "targetFile": "src/content/docs/es/programming/libraries.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:05.220Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/libraries.md",
@@ -3937,12 +4052,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/programming/libraries.md",
       "targetFile": "src/content/docs/pt-br/programming/libraries.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:08.729Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/libraries.md",
@@ -3950,12 +4066,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/programming/libraries.md",
       "targetFile": "src/content/docs/it/programming/libraries.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:12.435Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/libraries.md",
@@ -3963,12 +4080,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/programming/libraries.md",
       "targetFile": "src/content/docs/fr/programming/libraries.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:16.162Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/libraries.md",
@@ -3976,12 +4094,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/programming/libraries.md",
       "targetFile": "src/content/docs/zh-cn/programming/libraries.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.847Z",
       "nextAttemptAt": "2026-08-13T19:08:57.847Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:19.832Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/libraries.md",
@@ -3989,12 +4108,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/programming/libraries.md",
       "targetFile": "src/content/docs/de/programming/libraries.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:24.263Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/libraries.md",
@@ -4002,12 +4122,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/programming/libraries.md",
       "targetFile": "src/content/docs/ja/programming/libraries.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:28.242Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/libraries.md",
@@ -4015,12 +4136,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/programming/libraries.md",
       "targetFile": "src/content/docs/ru/programming/libraries.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:32.002Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/overview.md",
@@ -4028,12 +4150,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/programming/overview.md",
       "targetFile": "src/content/docs/es/programming/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:34.308Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/overview.md",
@@ -4041,12 +4164,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/programming/overview.md",
       "targetFile": "src/content/docs/pt-br/programming/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:36.885Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/overview.md",
@@ -4054,12 +4178,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/programming/overview.md",
       "targetFile": "src/content/docs/it/programming/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:39.473Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/overview.md",
@@ -4067,12 +4192,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/programming/overview.md",
       "targetFile": "src/content/docs/fr/programming/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:42.049Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/overview.md",
@@ -4080,12 +4206,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/programming/overview.md",
       "targetFile": "src/content/docs/zh-cn/programming/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:44.295Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/overview.md",
@@ -4093,12 +4220,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/programming/overview.md",
       "targetFile": "src/content/docs/de/programming/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:46.954Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/overview.md",
@@ -4106,12 +4234,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/programming/overview.md",
       "targetFile": "src/content/docs/ja/programming/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:49.819Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/overview.md",
@@ -4119,12 +4248,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/programming/overview.md",
       "targetFile": "src/content/docs/ru/programming/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:52.325Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/serial-monitor.md",
@@ -4132,12 +4262,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/programming/serial-monitor.md",
       "targetFile": "src/content/docs/es/programming/serial-monitor.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:55.686Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/serial-monitor.md",
@@ -4145,12 +4276,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/programming/serial-monitor.md",
       "targetFile": "src/content/docs/pt-br/programming/serial-monitor.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:31:59.007Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/serial-monitor.md",
@@ -4158,12 +4290,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/programming/serial-monitor.md",
       "targetFile": "src/content/docs/it/programming/serial-monitor.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:02.756Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/serial-monitor.md",
@@ -4171,12 +4304,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/programming/serial-monitor.md",
       "targetFile": "src/content/docs/fr/programming/serial-monitor.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:06.388Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/serial-monitor.md",
@@ -4184,12 +4318,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/programming/serial-monitor.md",
       "targetFile": "src/content/docs/zh-cn/programming/serial-monitor.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:09.229Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/serial-monitor.md",
@@ -4197,12 +4332,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/programming/serial-monitor.md",
       "targetFile": "src/content/docs/de/programming/serial-monitor.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:13.635Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/serial-monitor.md",
@@ -4210,12 +4346,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/programming/serial-monitor.md",
       "targetFile": "src/content/docs/ja/programming/serial-monitor.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:17.706Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/serial-monitor.md",
@@ -4223,12 +4360,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/programming/serial-monitor.md",
       "targetFile": "src/content/docs/ru/programming/serial-monitor.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:21.672Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/simulation-control.md",
@@ -4236,12 +4374,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/programming/simulation-control.md",
       "targetFile": "src/content/docs/es/programming/simulation-control.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:26.118Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/simulation-control.md",
@@ -4249,12 +4388,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/programming/simulation-control.md",
       "targetFile": "src/content/docs/pt-br/programming/simulation-control.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:30.839Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/simulation-control.md",
@@ -4262,12 +4402,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/programming/simulation-control.md",
       "targetFile": "src/content/docs/it/programming/simulation-control.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:36.255Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/simulation-control.md",
@@ -4275,12 +4416,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/programming/simulation-control.md",
       "targetFile": "src/content/docs/fr/programming/simulation-control.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:41.082Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/simulation-control.md",
@@ -4288,12 +4430,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/programming/simulation-control.md",
       "targetFile": "src/content/docs/zh-cn/programming/simulation-control.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:44.663Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/simulation-control.md",
@@ -4301,12 +4444,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/programming/simulation-control.md",
       "targetFile": "src/content/docs/de/programming/simulation-control.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.848Z",
       "nextAttemptAt": "2026-08-13T19:08:57.848Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:50.178Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/simulation-control.md",
@@ -4314,12 +4458,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/programming/simulation-control.md",
       "targetFile": "src/content/docs/ja/programming/simulation-control.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:32:55.227Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "programming/simulation-control.md",
@@ -4327,12 +4472,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/programming/simulation-control.md",
       "targetFile": "src/content/docs/ru/programming/simulation-control.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:00.142Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -4340,12 +4486,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/wifi-iot/esp32-wifi.md",
       "targetFile": "src/content/docs/es/wifi-iot/esp32-wifi.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:03.989Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -4353,12 +4500,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/wifi-iot/esp32-wifi.md",
       "targetFile": "src/content/docs/pt-br/wifi-iot/esp32-wifi.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:08.211Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -4366,12 +4514,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/wifi-iot/esp32-wifi.md",
       "targetFile": "src/content/docs/it/wifi-iot/esp32-wifi.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:12.287Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -4379,12 +4528,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/wifi-iot/esp32-wifi.md",
       "targetFile": "src/content/docs/fr/wifi-iot/esp32-wifi.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:16.333Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -4392,12 +4542,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/wifi-iot/esp32-wifi.md",
       "targetFile": "src/content/docs/zh-cn/wifi-iot/esp32-wifi.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:19.867Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -4405,12 +4556,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/wifi-iot/esp32-wifi.md",
       "targetFile": "src/content/docs/de/wifi-iot/esp32-wifi.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:24.121Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -4418,12 +4570,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/wifi-iot/esp32-wifi.md",
       "targetFile": "src/content/docs/ja/wifi-iot/esp32-wifi.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:28.900Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -4431,12 +4584,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/wifi-iot/esp32-wifi.md",
       "targetFile": "src/content/docs/ru/wifi-iot/esp32-wifi.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:33.504Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/mqtt-http.md",
@@ -4444,12 +4598,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/wifi-iot/mqtt-http.md",
       "targetFile": "src/content/docs/es/wifi-iot/mqtt-http.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:37.827Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/mqtt-http.md",
@@ -4457,12 +4612,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/wifi-iot/mqtt-http.md",
       "targetFile": "src/content/docs/pt-br/wifi-iot/mqtt-http.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:42.121Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/mqtt-http.md",
@@ -4470,12 +4626,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/wifi-iot/mqtt-http.md",
       "targetFile": "src/content/docs/it/wifi-iot/mqtt-http.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:46.476Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/mqtt-http.md",
@@ -4483,12 +4640,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/wifi-iot/mqtt-http.md",
       "targetFile": "src/content/docs/fr/wifi-iot/mqtt-http.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:51.125Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/mqtt-http.md",
@@ -4496,12 +4654,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/wifi-iot/mqtt-http.md",
       "targetFile": "src/content/docs/zh-cn/wifi-iot/mqtt-http.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:54.806Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/mqtt-http.md",
@@ -4509,12 +4668,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/wifi-iot/mqtt-http.md",
       "targetFile": "src/content/docs/de/wifi-iot/mqtt-http.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:33:59.495Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/mqtt-http.md",
@@ -4522,12 +4682,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/wifi-iot/mqtt-http.md",
       "targetFile": "src/content/docs/ja/wifi-iot/mqtt-http.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:04.766Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/mqtt-http.md",
@@ -4535,12 +4696,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/wifi-iot/mqtt-http.md",
       "targetFile": "src/content/docs/ru/wifi-iot/mqtt-http.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:09.332Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/overview.md",
@@ -4548,12 +4710,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/wifi-iot/overview.md",
       "targetFile": "src/content/docs/es/wifi-iot/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:11.503Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/overview.md",
@@ -4561,12 +4724,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/wifi-iot/overview.md",
       "targetFile": "src/content/docs/pt-br/wifi-iot/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:13.665Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/overview.md",
@@ -4574,12 +4738,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/wifi-iot/overview.md",
       "targetFile": "src/content/docs/it/wifi-iot/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:16.233Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/overview.md",
@@ -4587,12 +4752,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/wifi-iot/overview.md",
       "targetFile": "src/content/docs/fr/wifi-iot/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:18.531Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/overview.md",
@@ -4600,12 +4766,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/wifi-iot/overview.md",
       "targetFile": "src/content/docs/zh-cn/wifi-iot/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:21.073Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/overview.md",
@@ -4613,12 +4780,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/wifi-iot/overview.md",
       "targetFile": "src/content/docs/de/wifi-iot/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:23.495Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/overview.md",
@@ -4626,12 +4794,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/wifi-iot/overview.md",
       "targetFile": "src/content/docs/ja/wifi-iot/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:26.118Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/overview.md",
@@ -4639,12 +4808,13 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/wifi-iot/overview.md",
       "targetFile": "src/content/docs/ru/wifi-iot/overview.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:28.370Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/web-flash.md",
@@ -4652,12 +4822,13 @@
       "targetLocale": "es",
       "sourceFile": "src/content/docs/wifi-iot/web-flash.md",
       "targetFile": "src/content/docs/es/wifi-iot/web-flash.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:31.700Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/web-flash.md",
@@ -4665,12 +4836,13 @@
       "targetLocale": "pt-br",
       "sourceFile": "src/content/docs/wifi-iot/web-flash.md",
       "targetFile": "src/content/docs/pt-br/wifi-iot/web-flash.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:35.534Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/web-flash.md",
@@ -4678,12 +4850,13 @@
       "targetLocale": "it",
       "sourceFile": "src/content/docs/wifi-iot/web-flash.md",
       "targetFile": "src/content/docs/it/wifi-iot/web-flash.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:38.981Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/web-flash.md",
@@ -4691,12 +4864,13 @@
       "targetLocale": "fr",
       "sourceFile": "src/content/docs/wifi-iot/web-flash.md",
       "targetFile": "src/content/docs/fr/wifi-iot/web-flash.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:42.752Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/web-flash.md",
@@ -4704,12 +4878,13 @@
       "targetLocale": "zh-cn",
       "sourceFile": "src/content/docs/wifi-iot/web-flash.md",
       "targetFile": "src/content/docs/zh-cn/wifi-iot/web-flash.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:46.305Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/web-flash.md",
@@ -4717,12 +4892,13 @@
       "targetLocale": "de",
       "sourceFile": "src/content/docs/wifi-iot/web-flash.md",
       "targetFile": "src/content/docs/de/wifi-iot/web-flash.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:50.355Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/web-flash.md",
@@ -4730,12 +4906,13 @@
       "targetLocale": "ja",
       "sourceFile": "src/content/docs/wifi-iot/web-flash.md",
       "targetFile": "src/content/docs/ja/wifi-iot/web-flash.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:54.801Z",
+      "providerUsed": "deepseek"
     },
     {
       "relPath": "wifi-iot/web-flash.md",
@@ -4743,12 +4920,125 @@
       "targetLocale": "ru",
       "sourceFile": "src/content/docs/wifi-iot/web-flash.md",
       "targetFile": "src/content/docs/ru/wifi-iot/web-flash.md",
-      "status": "pending",
-      "attempts": 0,
+      "status": "done",
+      "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.849Z",
       "nextAttemptAt": "2026-08-13T19:08:57.849Z",
-      "completedAt": null
+      "completedAt": "2026-08-13T19:34:58.741Z",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "getting-started/github-sync.md",
+      "sourceLocale": "en",
+      "targetLocale": "es",
+      "sourceFile": "src/content/docs/getting-started/github-sync.md",
+      "targetFile": "src/content/docs/es/getting-started/github-sync.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-08-13T19:35:20.388Z",
+      "nextAttemptAt": "2026-08-13T19:35:20.388Z",
+      "completedAt": "2026-08-13T19:35:29.298Z",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "getting-started/github-sync.md",
+      "sourceLocale": "en",
+      "targetLocale": "pt-br",
+      "sourceFile": "src/content/docs/getting-started/github-sync.md",
+      "targetFile": "src/content/docs/pt-br/getting-started/github-sync.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-08-13T19:35:20.388Z",
+      "nextAttemptAt": "2026-08-13T19:35:20.388Z",
+      "completedAt": "2026-08-13T19:35:37.623Z",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "getting-started/github-sync.md",
+      "sourceLocale": "en",
+      "targetLocale": "it",
+      "sourceFile": "src/content/docs/getting-started/github-sync.md",
+      "targetFile": "src/content/docs/it/getting-started/github-sync.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-08-13T19:35:20.389Z",
+      "nextAttemptAt": "2026-08-13T19:35:20.389Z",
+      "completedAt": "2026-08-13T19:35:47.088Z",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "getting-started/github-sync.md",
+      "sourceLocale": "en",
+      "targetLocale": "fr",
+      "sourceFile": "src/content/docs/getting-started/github-sync.md",
+      "targetFile": "src/content/docs/fr/getting-started/github-sync.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-08-13T19:35:20.389Z",
+      "nextAttemptAt": "2026-08-13T19:35:20.389Z",
+      "completedAt": "2026-08-13T19:35:56.333Z",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "getting-started/github-sync.md",
+      "sourceLocale": "en",
+      "targetLocale": "zh-cn",
+      "sourceFile": "src/content/docs/getting-started/github-sync.md",
+      "targetFile": "src/content/docs/zh-cn/getting-started/github-sync.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-08-13T19:35:20.389Z",
+      "nextAttemptAt": "2026-08-13T19:35:20.389Z",
+      "completedAt": "2026-08-13T19:36:03.520Z",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "getting-started/github-sync.md",
+      "sourceLocale": "en",
+      "targetLocale": "de",
+      "sourceFile": "src/content/docs/getting-started/github-sync.md",
+      "targetFile": "src/content/docs/de/getting-started/github-sync.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-08-13T19:35:20.389Z",
+      "nextAttemptAt": "2026-08-13T19:35:20.389Z",
+      "completedAt": "2026-08-13T19:36:13.157Z",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "getting-started/github-sync.md",
+      "sourceLocale": "en",
+      "targetLocale": "ja",
+      "sourceFile": "src/content/docs/getting-started/github-sync.md",
+      "targetFile": "src/content/docs/ja/getting-started/github-sync.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-08-13T19:35:20.389Z",
+      "nextAttemptAt": "2026-08-13T19:35:20.389Z",
+      "completedAt": "2026-08-13T19:36:23.808Z",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "getting-started/github-sync.md",
+      "sourceLocale": "en",
+      "targetLocale": "ru",
+      "sourceFile": "src/content/docs/getting-started/github-sync.md",
+      "targetFile": "src/content/docs/ru/getting-started/github-sync.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-08-13T19:35:20.389Z",
+      "nextAttemptAt": "2026-08-13T19:35:20.389Z",
+      "completedAt": "2026-08-13T19:36:33.613Z",
+      "providerUsed": "deepseek"
     }
   ]
 }

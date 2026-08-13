@@ -1,6 +1,6 @@
 ---
 title: Modo básico — chat
-description: Un chat de soporte que conoce tu proyecto: errores, conceptos, preguntas sobre cableado.
+description: "Un chat de soporte que conoce tu proyecto: errores, conceptos, preguntas sobre cableado."
 sidebar:
   order: 2
 ---

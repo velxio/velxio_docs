@@ -1,6 +1,6 @@
 ---
 title: Modo tutor — aprende electrónica
-description: Un profesor que trabaja sobre tu circuito en vivo: ejercicios, comprobaciones y teoría.
+description: "Un profesor que trabaja sobre tu circuito en vivo: ejercicios, comprobaciones y teoría."
 sidebar:
   order: 4
 ---

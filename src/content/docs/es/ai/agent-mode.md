@@ -1,5 +1,5 @@
 ---
-title: Modo agente: construye contigo
+title: "Modo agente: construye contigo"
 description: El asistente coloca componentes, los conecta, escribe el sketch, compila y ejecuta.
 sidebar:
   order: 3

@@ -81,6 +81,19 @@ function relocate(content, locale) {
     .replaceAll("](../../../assets/", "](../../../../assets/");
 }
 
+/** Models keep sneaking unquoted colons into translated title/description
+ *  despite the prompt rule — quote those values so the YAML stays valid. */
+function quoteFrontmatterColons(content) {
+  const lines = content.split("\n");
+  if (lines[0] !== "---") return content;
+  for (let i = 1; i < Math.min(lines.length, 15); i++) {
+    if (lines[i] === "---") break;
+    const m = /^(title|description): (?!["'])(.*:.*)$/.exec(lines[i]);
+    if (m) lines[i] = `${m[1]}: "${m[2].replaceAll('"', "'")}"`;
+  }
+  return lines.join("\n");
+}
+
 async function tryProvider(name, prompt) {
   let raw;
   if (name === "deepseek") {
@@ -146,7 +159,7 @@ async function runOne(queue, configured) {
     return true;
   }
 
-  translated = relocate(translated, job.targetLocale);
+  translated = quoteFrontmatterColons(relocate(translated, job.targetLocale));
   await mkdir(dirname(job.targetFile), { recursive: true });
   await writeFile(job.targetFile, translated, "utf8");
 
