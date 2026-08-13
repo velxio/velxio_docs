@@ -99,7 +99,7 @@ void      vx_buffer_write(vx_buffer b, uint32_t offset,
                           const void* data, uint32_t len);
 ```
 
-For chips that *are* displays: write RGBA pixels and the part renders
+For chips that _are_ displays: write RGBA pixels and the part renders
 them on the canvas.
 
 ## ROM blobs and logging

@@ -21,14 +21,14 @@ bends), the way schematics and breadboard photos read best.
 While a wire is in progress (or with a wire selected), press a key to set
 its color — the same palette convention Wokwi users know:
 
-| Key | Color | Key | Color |
-| --- | --- | --- | --- |
-| `0` | Black | `6` | Blue |
-| `1` | Brown | `7` | Violet |
-| `2` | Red | `8` | Gray |
-| `3` | Orange | `9` | White |
-| `4` | Gold | `c` / `l` / `m` / `p` / `y` | Cyan / Lime / Magenta / Purple / Yellow |
-| `5` | Green | | |
+| Key | Color  | Key                         | Color                                   |
+| --- | ------ | --------------------------- | --------------------------------------- |
+| `0` | Black  | `6`                         | Blue                                    |
+| `1` | Brown  | `7`                         | Violet                                  |
+| `2` | Red    | `8`                         | Gray                                    |
+| `3` | Orange | `9`                         | White                                   |
+| `4` | Gold   | `c` / `l` / `m` / `p` / `y` | Cyan / Lime / Magenta / Purple / Yellow |
+| `5` | Green  |                             |                                         |
 
 New wires get automatic jumper-kit coloring: neighbouring wires pick
 visibly different colors, with red and black reserved for power rails.

@@ -26,12 +26,12 @@ Here the scope watches **GPIO2** — the blinking LED pin of the
 
 ## Controls
 
-| Control | What it does |
-| --- | --- |
-| **Time/div** | Horizontal scale, from 0.1 ms to 500 ms per division. Match it to your signal: a 1 s blink reads best around 100 ms/div; a 1 kHz PWM around 0.5 ms/div. |
-| **Trigger** | **Auto** (free-running), **Normal** (only draws on trigger) or **Single** (one capture). Pick the trigger channel and edge — rising, falling or either. |
-| **Pause / Resume** | Freeze the display to inspect a waveform. |
-| **Clear** | Wipe the traces. |
+| Control            | What it does                                                                                                                                            |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Time/div**       | Horizontal scale, from 0.1 ms to 500 ms per division. Match it to your signal: a 1 s blink reads best around 100 ms/div; a 1 kHz PWM around 0.5 ms/div. |
+| **Trigger**        | **Auto** (free-running), **Normal** (only draws on trigger) or **Single** (one capture). Pick the trigger channel and edge — rising, falling or either. |
+| **Pause / Resume** | Freeze the display to inspect a waveform.                                                                                                               |
+| **Clear**          | Wipe the traces.                                                                                                                                        |
 
 ## What to try
 

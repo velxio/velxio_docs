@@ -6,7 +6,7 @@ sidebar:
 ---
 
 The fastest way to understand Velxio is to run something. In this tutorial
-you'll open the classic *blink* example, run it, watch a simulated ESP32
+you'll open the classic _blink_ example, run it, watch a simulated ESP32
 drive a real LED circuit, and then change the code.
 
 ## 1. Open the example

@@ -12,15 +12,15 @@ projects don't cost anything.
 Paid plans (**Maker** and **Pro**) unlock the features that cost real
 compute or are aimed at power users:
 
-| Feature | Free | Paid plans |
-| --- | --- | --- |
-| Circuit editor, code editor, simulation | Yes | Yes |
-| Open boards (Arduino, ESP32 family, Pico, STM32, ATtiny…) | Yes | Yes |
-| Examples gallery, public projects | Yes | Yes |
-| **Pro boards** (Raspberry Pi Linux family, M5Stack Cardputer, Badger 2350, XIAO Sense…) | No | Yes |
-| **AI assistant** (Basic / Agent / Tutor) | No | Yes, with per-plan quotas |
-| **Private projects** | No | Yes |
-| Compile priority and higher usage limits | No | Yes |
+| Feature                                                                                 | Free | Paid plans                |
+| --------------------------------------------------------------------------------------- | ---- | ------------------------- |
+| Circuit editor, code editor, simulation                                                 | Yes  | Yes                       |
+| Open boards (Arduino, ESP32 family, Pico, STM32, ATtiny…)                               | Yes  | Yes                       |
+| Examples gallery, public projects                                                       | Yes  | Yes                       |
+| **Pro boards** (Raspberry Pi Linux family, M5Stack Cardputer, Badger 2350, XIAO Sense…) | No   | Yes                       |
+| **AI assistant** (Basic / Agent / Tutor)                                                | No   | Yes, with per-plan quotas |
+| **Private projects**                                                                    | No   | Yes                       |
+| Compile priority and higher usage limits                                                | No   | Yes                       |
 
 Boards and components that need a paid plan are marked with a **PRO badge**
 in the component picker — you can always see the whole catalog.

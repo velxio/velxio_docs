@@ -13,7 +13,7 @@ the component picker:
 - **Search** by name or function: `oled`, `dht`, `resistor`, `servo`…
 - **Filter** by category with the dropdown on the right — boards, displays,
   sensors, motors, logic, analog parts, and branded modules.
-- Cards with a **PRO badge** need a paid plan to *run* — you can see the
+- Cards with a **PRO badge** need a paid plan to _run_ — you can see the
   whole catalog regardless. See [plans](/docs/getting-started/plans/).
 
 Click a card and the part lands on the canvas. From there:

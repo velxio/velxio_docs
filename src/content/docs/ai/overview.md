@@ -6,7 +6,7 @@ sidebar:
 ---
 
 Velxio has a built-in AI assistant that understands your project — the
-circuit on the canvas *and* the code in the editor. It works in three modes:
+circuit on the canvas _and_ the code in the editor. It works in three modes:
 
 - **Basic** — a chat that answers questions with your project as context:
   "why doesn't my LED turn on?", "what does this compiler error mean?"

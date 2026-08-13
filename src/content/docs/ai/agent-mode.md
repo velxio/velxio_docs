@@ -13,10 +13,10 @@ right on your canvas, while you watch:
 
 Try prompts like:
 
-- *"Build a traffic light with 3 LEDs."*
-- *"Add an OLED display to this board and show a counter on it."*
-- *"My button reads are bouncing — fix the sketch."*
-- *"Convert this project to MicroPython."*
+- _"Build a traffic light with 3 LEDs."_
+- _"Add an OLED display to this board and show a counter on it."_
+- _"My button reads are bouncing — fix the sketch."_
+- _"Convert this project to MicroPython."_
 
 ## You stay in control
 

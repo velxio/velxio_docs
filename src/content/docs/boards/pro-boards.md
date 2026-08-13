@@ -1,0 +1,51 @@
+---
+title: Pro boards
+description: The premium board catalog — M5Stack, Badger 2350, XIAO Sense, ESP32-C6, UNIHIKER.
+sidebar:
+  order: 8
+  badge: PRO
+---
+
+Pro boards are the catalog's premium tier: branded hardware with rich
+built-in peripherals, emulated deeply enough to boot their **factory
+firmware**. They need a paid plan to run — see
+[plans](/docs/getting-started/plans/).
+
+## M5Stack
+
+- **M5 Cardputer** (and **Cardputer ADV**) — the ESP32-S3 pocket computer
+  with keyboard and TFT. Boots the real M5 launcher firmware; type on the
+  on-screen keyboard, run apps, use the speaker.
+- **M5Stack Core** — the classic stackable ESP32 with 320x240 TFT and
+  three buttons.
+
+## Pimoroni Badger 2350
+
+The RP2350 e-paper badge. It boots the complete **BadgeOS factory
+firmware**: navigate the launcher with the A/B/C/UP/DOWN buttons, open
+the clock, badge and gallery apps, and watch the e-paper refresh the way
+e-paper really does.
+
+## Seeed Studio XIAO
+
+- **XIAO ESP32S3 Sense** — the S3 with the camera module, PDM microphone
+  and microSD.
+- **XIAO ESP32C6** — WiFi 6 capable RISC-V C6 in the XIAO footprint.
+- **XIAO RP2040** — the RP2040 XIAO with its NeoPixel.
+
+## Espressif ESP32-C6
+
+The **ESP32-C6 DevKit** — the RISC-V WiFi-6 chip, with the same language
+trio (Arduino / MicroPython / ESP-IDF) as the rest of the ESP32 family.
+
+## DFRobot UNIHIKER M10
+
+A Linux single-board computer with built-in touchscreen — documented with
+the [Raspberry Pi family](/docs/boards/raspberry-pi/), since it shares the
+full-Linux workflow.
+
+---
+
+Pro boards appear in the [component picker](/docs/circuit-editor/placing-components/)
+with a **PRO badge**; the [starter templates](/docs/getting-started/projects/)
+include ready-to-run projects for each.

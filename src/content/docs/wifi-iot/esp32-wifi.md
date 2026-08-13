@@ -26,7 +26,7 @@ void setup() {
 ```
 
 The serial monitor shows the familiar `wifi:connected` boot chatter and
-the DHCP lease — because it *is* the real WiFi stack running.
+the DHCP lease — because it _is_ the real WiFi stack running.
 
 ## MicroPython
 

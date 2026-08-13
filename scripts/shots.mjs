@@ -43,7 +43,9 @@ async function launch() {
       ...globSync(
         `${home}/.cache/ms-playwright/chromium_headless_shell-*/chrome-headless-shell-linux64/chrome-headless-shell`
       ),
-      ...globSync(`${home}/.cache/ms-playwright/chromium-*/chrome-linux*/chrome`),
+      ...globSync(
+        `${home}/.cache/ms-playwright/chromium-*/chrome-linux*/chrome`
+      ),
     ]
       .sort()
       .reverse();
@@ -80,7 +82,8 @@ async function login(page) {
  *  and swallows clicks. Presentational only — safe to remove. */
 async function dismissOverlays(page) {
   await page.evaluate(() => {
-    for (const el of document.querySelectorAll(".velxio-news-overlay")) el.remove();
+    for (const el of document.querySelectorAll(".velxio-news-overlay"))
+      el.remove();
   });
 }
 
@@ -96,7 +99,7 @@ async function shot(page, relPath, opts = {}) {
 async function inventory(page, name) {
   const items = await page.evaluate(() => {
     const out = [];
-    const walk = (root) => {
+    const walk = root => {
       for (const el of root.querySelectorAll(
         "button, a[href], [role=button], input, select"
       )) {
@@ -110,7 +113,12 @@ async function inventory(page, name) {
           cls: (el.className?.baseVal ?? el.className ?? "")
             .toString()
             .slice(0, 80),
-          at: [Math.round(r.x), Math.round(r.y), Math.round(r.width), Math.round(r.height)],
+          at: [
+            Math.round(r.x),
+            Math.round(r.y),
+            Math.round(r.width),
+            Math.round(r.height),
+          ],
         });
       }
       for (const el of root.querySelectorAll("*"))
@@ -127,8 +135,8 @@ async function inventory(page, name) {
 async function waitForSim(page, simLog, ms = 300_000) {
   const t0 = Date.now();
   while (Date.now() - t0 < ms) {
-    if (simLog.some((l) => l.includes("in-browser"))) return true;
-    if (simLog.some((l) => /guest crashed/i.test(l))) return false;
+    if (simLog.some(l => l.includes("in-browser"))) return true;
+    if (simLog.some(l => /guest crashed/i.test(l))) return false;
     await page.waitForTimeout(2000);
   }
   return false;
@@ -153,7 +161,7 @@ async function clickRun(page) {
 
 const SCENES = {
   /** The editor as a signed-in user first sees it. */
-  "getting-started/app-home": async (page) => {
+  "getting-started/app-home": async page => {
     await page.goto(`${BASE}/`, { waitUntil: "domcontentloaded" });
     await page.waitForTimeout(6000);
     await dismissOverlays(page);
@@ -162,10 +170,11 @@ const SCENES = {
   },
 
   /** Blink example: loaded, then running with the sim alive. */
-  "getting-started/first-project": async (page) => {
+  "getting-started/first-project": async page => {
     const simLog = [];
-    page.on("console", (m) => {
-      if (/esp32sim|guest crashed|in-browser/i.test(m.text())) simLog.push(m.text());
+    page.on("console", m => {
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text()))
+        simLog.push(m.text());
     });
     await loadExample(page, "esp32-blink-led");
     await shot(page, "getting-started/first-project-loaded");
@@ -177,7 +186,7 @@ const SCENES = {
   },
 
   /** The public examples gallery. */
-  "getting-started/examples-gallery": async (page) => {
+  "getting-started/examples-gallery": async page => {
     await page.goto(`${BASE}/examples`, { waitUntil: "domcontentloaded" });
     await page.waitForTimeout(4000);
     await dismissOverlays(page);
@@ -187,7 +196,7 @@ const SCENES = {
 
   /** Editor dialogs that need no running sim: component picker, datasheet
    *  (right-click), part properties, save-project, starter templates. */
-  "circuit-editor/dialogs": async (page) => {
+  "circuit-editor/dialogs": async page => {
     await loadExample(page, "esp32-blink-led");
 
     // Component picker ("Add" in the toolbar)
@@ -240,16 +249,19 @@ const SCENES = {
   },
 
   /** Oscilloscope over the running blink example. */
-  "instruments/oscilloscope": async (page) => {
+  "instruments/oscilloscope": async page => {
     const simLog = [];
-    page.on("console", (m) => {
-      if (/esp32sim|guest crashed|in-browser/i.test(m.text())) simLog.push(m.text());
+    page.on("console", m => {
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text()))
+        simLog.push(m.text());
     });
     await loadExample(page, "esp32-blink-led");
     await clickRun(page);
     await waitForSim(page, simLog);
     await page.waitForTimeout(4000);
-    await page.locator('button[title="Toggle Oscilloscope / Logic Analyzer"]').click();
+    await page
+      .locator('button[title="Toggle Oscilloscope / Logic Analyzer"]')
+      .click();
     await page.waitForTimeout(1500);
     // Monitor the blinking pin: add a channel on GPIO2
     await page.locator('button:has-text("Add Channel")').click();
@@ -265,10 +277,11 @@ const SCENES = {
   },
 
   /** Serial monitor close-up over the running blink example. */
-  "programming/serial-monitor": async (page) => {
+  "programming/serial-monitor": async page => {
     const simLog = [];
-    page.on("console", (m) => {
-      if (/esp32sim|guest crashed|in-browser/i.test(m.text())) simLog.push(m.text());
+    page.on("console", m => {
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text()))
+        simLog.push(m.text());
     });
     await loadExample(page, "esp32-blink-led");
     await clickRun(page);
@@ -280,7 +293,7 @@ const SCENES = {
   },
 
   /** The AI panel in each of its three modes (right-hand column clip). */
-  "ai/modes": async (page) => {
+  "ai/modes": async page => {
     await loadExample(page, "esp32-blink-led");
     const clip = { x: 900, y: 0, width: 380, height: 720 };
     for (const mode of ["Basic", "Agent", "Tutor"]) {
@@ -295,7 +308,7 @@ const WANT_INVENTORY = process.argv.includes("--inventory");
 
 // ── main ─────────────────────────────────────────────────────────────────────
 
-const requested = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+const requested = process.argv.slice(2).filter(a => !a.startsWith("--"));
 if (process.argv.includes("--list")) {
   console.log(Object.keys(SCENES).join("\n"));
   process.exit(0);

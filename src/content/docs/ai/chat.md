@@ -13,11 +13,11 @@ questions the way you'd ask a colleague at the next bench:
 
 Good Basic-mode questions:
 
-- *"Why is my LED not blinking?"*
-- *"What does this compile error mean?"* (paste it, or just ask — it can
+- _"Why is my LED not blinking?"_
+- _"What does this compile error mean?"_ (paste it, or just ask — it can
   read the output)
-- *"Which pin should I use for I2C on this board?"*
-- *"Explain what this sketch does line by line."*
+- _"Which pin should I use for I2C on this board?"_
+- _"Explain what this sketch does line by line."_
 
 ## Mechanics
 
@@ -29,5 +29,5 @@ Good Basic-mode questions:
 - The counter at the bottom shows your **cycles** quota for the day and
   the month — see [plans](/docs/getting-started/plans/).
 
-Basic mode only talks. When you want the assistant to *do* things on the
+Basic mode only talks. When you want the assistant to _do_ things on the
 canvas, switch to [Agent mode](/docs/ai/agent-mode/).

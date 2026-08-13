@@ -16,7 +16,7 @@ attributes you edit, and logic that runs inside the simulation.
   proprietary sensor protocol).
 - You want a test fixture — a pulse generator, a protocol exerciser, a
   fake sensor with scripted values.
-- You're teaching digital logic and want students to *implement* the
+- You're teaching digital logic and want students to _implement_ the
   chip, not just use it.
 
 ## The five-minute version

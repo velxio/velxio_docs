@@ -6,18 +6,18 @@ sidebar:
 ---
 
 **Tutor** mode turns the assistant into an electronics teacher that
-teaches *over your circuit* — not from a textbook in the abstract:
+teaches _over your circuit_ — not from a textbook in the abstract:
 
 ![The AI panel in Tutor mode](../../../assets/docs/ai/mode-tutor.png)
 
 What tutoring looks like:
 
-- Tell it where you are — *"I'm new, teach me how LEDs and resistors
-  work"* or *"I know Arduino, get me started with I2C"*.
+- Tell it where you are — _"I'm new, teach me how LEDs and resistors
+  work"_ or _"I know Arduino, get me started with I2C"_.
 - It proposes a **small exercise** on the canvas, you build it, and it
   **checks your actual circuit and code** — pointing at the wire you
   crossed or the pull-up you forgot.
-- The theory arrives when it explains *why* — Ohm's law when your LED is
+- The theory arrives when it explains _why_ — Ohm's law when your LED is
   dim, debouncing when your counter jumps.
 
 Because the simulator is real ([really running firmware](/docs/getting-started/faq/)),

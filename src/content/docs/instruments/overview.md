@@ -5,7 +5,7 @@ sidebar:
   order: 1
 ---
 
-Velxio ships virtual bench instruments so you can *see* what your circuit is
+Velxio ships virtual bench instruments so you can _see_ what your circuit is
 doing, not just guess:
 
 - **Oscilloscope** — connect its probes to any signal and watch it live:
