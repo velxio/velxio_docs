@@ -22,9 +22,18 @@ export default defineConfig({
       ],
       customCss: ["./src/styles/custom.css"],
       defaultLocale: "root",
+      // Same 9 locales as the blog. Untranslated pages fall back to
+      // English automatically; the translate-* scripts fill them in.
       locales: {
         root: { label: "English", lang: "en" },
         es: { label: "Español", lang: "es" },
+        "pt-br": { label: "Português do Brasil", lang: "pt-BR" },
+        it: { label: "Italiano", lang: "it" },
+        fr: { label: "Français", lang: "fr" },
+        "zh-cn": { label: "简体中文", lang: "zh-CN" },
+        de: { label: "Deutsch", lang: "de" },
+        ja: { label: "日本語", lang: "ja" },
+        ru: { label: "Русский", lang: "ru" },
       },
       editLink: { baseUrl: "https://github.com/velxio/velxio_docs/edit/main/" },
       sidebar: [

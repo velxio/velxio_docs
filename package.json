@@ -9,7 +9,12 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "translate:detect": "node scripts/translate-detect.mjs",
+    "translate:run": "node scripts/translate-run.mjs",
+    "translate": "node scripts/translate-detect.mjs && node scripts/translate-run.mjs",
+    "shots": "node scripts/shots.mjs",
+    "gen-parts": "node scripts/gen-parts.mjs"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.41.7",
@@ -17,6 +22,7 @@
     "sharp": "^0.35.3"
   },
   "devDependencies": {
+    "@google/genai": "^2.17.0",
     "playwright": "^1.62.1",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1"
