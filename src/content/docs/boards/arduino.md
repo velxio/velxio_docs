@@ -31,3 +31,12 @@ cloud round-trip — with cycle-accurate AVR emulation.
 The gallery's **Arduino Uno** filter lists dozens — binary counters,
 OLED displays, steppers with A4988 drivers, battery monitors. See the
 [examples gallery](/docs/getting-started/examples-gallery/).
+
+## Board art and pinouts
+
+Each board's canvas art and full pin map, generated from the simulator:
+
+[Arduino UNO](/docs/boards/reference/arduino-uno/) ·
+[Arduino Nano](/docs/boards/reference/arduino-nano/) ·
+[Arduino Mega 2560](/docs/boards/reference/arduino-mega/) ·
+[ATtiny85](/docs/boards/reference/attiny85/)

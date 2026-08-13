@@ -47,3 +47,12 @@ while True:
 DFRobot's education SBC (a Linux board with a built-in touchscreen) runs
 on the same infrastructure and is also a Pro board — find it in the
 picker next to the Pi family.
+
+## Board art and pinouts
+
+Each board's canvas art and full pin map, generated from the simulator:
+
+[Raspberry Pi 3 (art also for Zero/1/2)](/docs/boards/reference/raspberry-pi-3/) ·
+[Raspberry Pi 4](/docs/boards/reference/raspberry-pi-4/) ·
+[Raspberry Pi 5](/docs/boards/reference/raspberry-pi-5/) ·
+[UNIHIKER M10](/docs/boards/reference/unihiker-m10/)

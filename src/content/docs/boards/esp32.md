@@ -36,3 +36,12 @@ toolbar's [language selector](/docs/programming/languages/).
 - The built-in blink example
   ([your first project](/docs/getting-started/first-project/)) targets
   the DevKit V1.
+
+## Board art and pinouts
+
+Each board's canvas art and full pin map, generated from the simulator:
+
+[ESP32 DevKit V1](/docs/boards/reference/esp32/) ·
+[ESP32 DevKit-C V4](/docs/boards/reference/esp32-devkit-c-v4/) ·
+[ESP32-CAM](/docs/boards/reference/esp32-cam/) ·
+[Wemos Lolin32 Lite](/docs/boards/reference/wemos-lolin32-lite/)

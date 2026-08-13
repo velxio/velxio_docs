@@ -49,3 +49,17 @@ full-Linux workflow.
 Pro boards appear in the [component picker](/docs/circuit-editor/placing-components/)
 with a **PRO badge**; the [starter templates](/docs/getting-started/projects/)
 include ready-to-run projects for each.
+
+## Board art and pinouts
+
+Each board's canvas art and full pin map, generated from the simulator:
+
+[Badger 2350](/docs/boards/reference/badger-2350/) ·
+[M5 Cardputer ADV](/docs/boards/reference/cardputer-adv/) ·
+[M5Stack Core](/docs/boards/reference/m5stack-core/) ·
+[ESP32-C6 DevKit](/docs/boards/reference/esp32-c6/) ·
+[XIAO ESP32S3 Sense](/docs/boards/reference/xiao-esp32s3-sense/) ·
+[XIAO ESP32C6](/docs/boards/reference/xiao-esp32c6/) ·
+[XIAO RP2040](/docs/boards/reference/xiao-rp2040/) ·
+[Galactic Unicorn](/docs/boards/reference/galactic-unicorn/) ·
+[Pico Plus 2 W](/docs/boards/reference/pimoroni-pico-plus-2w/)

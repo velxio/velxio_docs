@@ -30,3 +30,10 @@ Cortex-M0+ emulation.
 The **Badger 2350** (Pimoroni's RP2350 e-paper badge) is a
 [Pro board](/docs/boards/pro-boards/) — it boots the complete BadgeOS
 factory firmware, e-paper and all.
+
+## Board art and pinouts
+
+Each board's canvas art and full pin map, generated from the simulator:
+
+[Raspberry Pi Pico](/docs/boards/reference/raspberry-pi-pico/) ·
+[Raspberry Pi Pico W](/docs/boards/reference/pi-pico-w/)

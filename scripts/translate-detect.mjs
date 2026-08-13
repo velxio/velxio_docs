@@ -29,6 +29,8 @@ function walk(dir, rel = "") {
   for (const e of readdirSync(dir, { withFileTypes: true })) {
     if (e.isDirectory()) {
       if (rel === "" && EXCLUDE_DIRS.has(e.name)) continue;
+      // generated board reference stays English, like parts/
+      if (join(rel, e.name) === "boards/reference") continue;
       out.push(...walk(join(dir, e.name), join(rel, e.name)));
     } else if (e.name.endsWith(".md")) {
       out.push(join(rel, e.name));

@@ -35,3 +35,14 @@ behave exactly like their hardware counterparts.
 Looking for the **ESP32-C6**, the **XIAO ESP32S3 Sense** (camera + mic +
 microSD) or the **XIAO ESP32C6**? Those are
 [Pro boards](/docs/boards/pro-boards/).
+
+## Board art and pinouts
+
+Each board's canvas art and full pin map, generated from the simulator:
+
+[ESP32-S3 DevKit](/docs/boards/reference/esp32-s3/) ·
+[XIAO ESP32-S3](/docs/boards/reference/xiao-esp32-s3/) ·
+[Arduino Nano ESP32](/docs/boards/reference/arduino-nano-esp32/) ·
+[ESP32-C3 DevKit](/docs/boards/reference/esp32-c3/) ·
+[XIAO ESP32-C3](/docs/boards/reference/xiao-esp32-c3/) ·
+[ESP32-C3 SuperMini](/docs/boards/reference/aitewinrobot-esp32c3-supermini/)

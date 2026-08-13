@@ -29,3 +29,16 @@ The classic hobbyist STM32 boards, emulated at the SoC level:
   way it would in the IDE.
 - Pick the exact variant you own — flash size and pinout differences
   between the F103C8 and F103CB, or F401 and F411, are modeled.
+
+## Board art and pinouts
+
+Each board's canvas art and full pin map, generated from the simulator:
+
+[Blue Pill F103C8](/docs/boards/reference/stm32-bluepill/) ·
+[Blue Pill F103CB](/docs/boards/reference/stm32-bluepill-f103cb/) ·
+[Black Pill F411CE](/docs/boards/reference/stm32-blackpill/) ·
+[Black Pill F401CE](/docs/boards/reference/stm32-blackpill-f401/) ·
+[F4 Discovery](/docs/boards/reference/stm32-f4-discovery/) ·
+[Olimex H405](/docs/boards/reference/stm32-olimex-h405/) ·
+[Netduino Plus 2](/docs/boards/reference/stm32-netduino-plus2/) ·
+[Netduino 2](/docs/boards/reference/stm32-netduino2/)
