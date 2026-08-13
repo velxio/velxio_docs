@@ -1,0 +1,40 @@
+---
+title: Velxio Documentation
+description: Learn how to simulate electronics in your browser with Velxio — boards, components, code, instruments and the AI assistant.
+template: splash
+hero:
+  title: Build and simulate electronics in your browser
+  tagline: Velxio lets you wire up real boards and components, write code in C++, MicroPython or ESP-IDF, and run it instantly — no hardware needed.
+  actions:
+    - text: Build your first project
+      link: /docs/getting-started/first-project/
+      icon: right-arrow
+      variant: primary
+    - text: Open Velxio
+      link: https://velxio.dev
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+
+## What do you want to do?
+
+<CardGrid stagger>
+  <Card title="Get started" icon="rocket">
+    New to Velxio? Build a blinking LED circuit in five minutes with the
+    [first project tutorial](/docs/getting-started/first-project/).
+  </Card>
+  <Card title="Explore boards" icon="cpu">
+    Arduino, ESP32, Raspberry Pi Pico, STM32, Raspberry Pi and more — see
+    [all supported boards](/docs/boards/overview/) and what each one can do.
+  </Card>
+  <Card title="Measure your circuit" icon="magnifier">
+    Hook up the [oscilloscope](/docs/instruments/overview/) and watch your
+    signals live, just like on a real bench.
+  </Card>
+  <Card title="Use the AI assistant" icon="comment-alt">
+    Let the [AI assistant](/docs/ai/overview/) build circuits with you,
+    explain errors, or tutor you through electronics fundamentals.
+  </Card>
+</CardGrid>

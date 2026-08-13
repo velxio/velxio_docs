@@ -1,0 +1,21 @@
+/* Velxio brand accent (same blue family as velxio.dev and the blog). */
+:root {
+  --sl-color-accent-low: #00325e;
+  --sl-color-accent: #0071e3;
+  --sl-color-accent-high: #a8caf6;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #cfe4fb;
+  --sl-color-accent: #0071e3;
+  --sl-color-accent-high: #003467;
+}
+
+/* Match the blog's near-black dark background. */
+:root {
+  --sl-color-bg: #0d0d0f;
+}
+
+:root[data-theme="light"] {
+  --sl-color-bg: #fdfdfd;
+}
