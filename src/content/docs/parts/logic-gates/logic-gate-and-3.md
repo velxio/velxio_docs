@@ -9,12 +9,12 @@ description: "3-input AND gate. Output Y = A · B · C."
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **B** | — |
-| **C** | — |
-| **Y** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **B** | —       |
+| **C** | —       |
+| **Y** | —       |
 
 ## Use it
 

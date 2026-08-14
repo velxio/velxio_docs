@@ -19,6 +19,8 @@ The classic hobbyist STM32 boards, emulated at the SoC level:
 
 **Language:** Arduino C++ (the STM32duino core).
 
+![STM32 Blue Pill on the Velxio canvas](../../../assets/docs/boards/stm32-bluepill.png)
+
 ## Notes
 
 - GPIO, timers, UART and the usual Arduino API surface work; the RGB

@@ -9,25 +9,25 @@ ePaper 2.9" (296×128, B/W) — Displays part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **VCC** | power |
-| **SCK** | — |
-| **SDI** | — |
-| **CS** | — |
-| **DC** | — |
-| **RST** | — |
-| **BUSY** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **GND**  | power   |
+| **VCC**  | power   |
+| **SCK**  | —       |
+| **SDI**  | —       |
+| **CS**   | —       |
+| **DC**   | —       |
+| **RST**  | —       |
+| **BUSY** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `panelKind` | `epaper-2in9-bw` |  |
-| `refreshMs` | `50` |  |
+| Attribute   | Default          | Description |
+| ----------- | ---------------- | ----------- |
+| `panelKind` | `epaper-2in9-bw` |             |
+| `refreshMs` | `50`             |             |
 
 ## Use it
 

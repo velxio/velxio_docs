@@ -21,14 +21,14 @@ ad angolo retto), nel modo in cui gli schemi e le foto delle breadboard si leggo
 Mentre un filo è in corso (o con un filo selezionato), premi un tasto per impostare
 il suo colore — la stessa convenzione di palette che gli utenti Wokwi conoscono:
 
-| Tasto | Colore | Tasto                        | Colore                                  |
-| ----- | ------ | ---------------------------- | --------------------------------------- |
-| `0`   | Nero   | `6`                          | Blu                                     |
-| `1`   | Marrone| `7`                          | Viola                                   |
-| `2`   | Rosso  | `8`                          | Grigio                                  |
-| `3`   | Arancione | `9`                       | Bianco                                  |
-| `4`   | Oro    | `c` / `l` / `m` / `p` / `y`  | Ciano / Lime / Magenta / Viola / Giallo |
-| `5`   | Verde  |                              |                                         |
+| Tasto | Colore    | Tasto                       | Colore                                  |
+| ----- | --------- | --------------------------- | --------------------------------------- |
+| `0`   | Nero      | `6`                         | Blu                                     |
+| `1`   | Marrone   | `7`                         | Viola                                   |
+| `2`   | Rosso     | `8`                         | Grigio                                  |
+| `3`   | Arancione | `9`                         | Bianco                                  |
+| `4`   | Oro       | `c` / `l` / `m` / `p` / `y` | Ciano / Lime / Magenta / Viola / Giallo |
+| `5`   | Verde     |                             |                                         |
 
 I nuovi fili ricevono una colorazione automatica da kit di jumper: i fili vicini scelgono
 colori visibilmente diversi, con rosso e nero riservati alle barre di alimentazione.

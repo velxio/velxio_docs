@@ -9,11 +9,11 @@ Quad single-supply op-amp. Same electrical spec as LM358, four channels per pack
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **IN+** | — |
-| **IN-** | — |
-| **OUT** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **IN+** | —       |
+| **IN-** | —       |
+| **OUT** | —       |
 
 ## Use it
 

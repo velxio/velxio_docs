@@ -9,11 +9,11 @@ PIR Motion Sensor — Sensors part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **VCC** | power |
-| **OUT** | — |
-| **GND** | power |
+| Pin     | Signals |
+| ------- | ------- |
+| **VCC** | power   |
+| **OUT** | —       |
+| **GND** | power   |
 
 ## Use it
 

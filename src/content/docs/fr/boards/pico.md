@@ -8,10 +8,10 @@ sidebar:
 Les cartes RP2040 fonctionnent **dans votre navigateur** avec une émulation
 fidèle double cœur Cortex-M0+.
 
-| Carte                    | Points forts                                |
-| ------------------------ | ------------------------------------------- |
-| **Raspberry Pi Pico**    | La carte RP2040 standard, 26 GPIO           |
-| **Raspberry Pi Pico W**  | La même carte avec l'empreinte du module WiFi |
+| Carte                   | Points forts                                  |
+| ----------------------- | --------------------------------------------- |
+| **Raspberry Pi Pico**   | La carte RP2040 standard, 26 GPIO             |
+| **Raspberry Pi Pico W** | La même carte avec l'empreinte du module WiFi |
 
 **Langages :** MicroPython (l'environnement natif du Pico) et Arduino C++
 (le noyau earlephilhower).

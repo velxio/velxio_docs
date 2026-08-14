@@ -18,19 +18,19 @@ visibilità dei pannelli, account e piano, e risorse di aiuto.
 
 Da sinistra a destra:
 
-| Controllo              | Cosa fa                                                                                               |
-| ---------------------- | ----------------------------------------------------------------------------------------------------- |
-| Interruttori di layout | Mostra l'editor di **Code** (codice), il canvas di **Circuit** (circuito), o **Both** (entrambi) affiancati |
+| Controllo              | Cosa fa                                                                                                        |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Interruttori di layout | Mostra l'editor di **Code** (codice), il canvas di **Circuit** (circuito), o **Both** (entrambi) affiancati    |
 | Selettore linguaggio   | **Arduino C++**, **MicroPython** o **ESP-IDF** — per scheda, vedi [Linguaggi](/docs/it/programming/languages/) |
-| **Compile** (Ctrl+B)   | Compila senza eseguire                                                                                |
-| **Run**                | Compila se necessario, quindi avvia la simulazione                                                    |
-| **Stop** / **Reset**   | Ferma la simulazione / riavvia il firmware dall'inizio                                                |
-| **Libraries**          | Cerca e installa librerie Arduino                                                                     |
-| Interruttore output    | Mostra/nascondi la console di output del compilatore                                                  |
-| Selettore scheda       | A quale scheda si applicano l'editor di codice e **Run** (i progetti possono averne diverse)          |
-| **Serial**             | Attiva/disattiva il [monitor seriale](/docs/it/programming/serial-monitor/)                              |
-| **Scope**              | Attiva/disattiva l'[oscilloscopio / analizzatore logico](/docs/it/instruments/oscilloscope/)             |
-| **Add**                | Apre il [selettore componenti](/docs/it/circuit-editor/placing-components/)                              |
+| **Compile** (Ctrl+B)   | Compila senza eseguire                                                                                         |
+| **Run**                | Compila se necessario, quindi avvia la simulazione                                                             |
+| **Stop** / **Reset**   | Ferma la simulazione / riavvia il firmware dall'inizio                                                         |
+| **Libraries**          | Cerca e installa librerie Arduino                                                                              |
+| Interruttore output    | Mostra/nascondi la console di output del compilatore                                                           |
+| Selettore scheda       | A quale scheda si applicano l'editor di codice e **Run** (i progetti possono averne diverse)                   |
+| **Serial**             | Attiva/disattiva il [monitor seriale](/docs/it/programming/serial-monitor/)                                    |
+| **Scope**              | Attiva/disattiva l'[oscilloscopio / analizzatore logico](/docs/it/instruments/oscilloscope/)                   |
+| **Add**                | Apre il [selettore componenti](/docs/it/circuit-editor/placing-components/)                                    |
 
 ## Il pannello dell'area di lavoro (a sinistra)
 
@@ -60,4 +60,7 @@ L'assistente nelle sue tre modalità — **Basic**, **Agent**, **Tutor** — con
 la tua quota giornaliera rimanente in basso. Vedi
 [Assistente AI](/docs/it/ai/overview/). Riducilo a icona con il pulsante freccia quando
 vuoi il canvas a schermo intero.
+
+```
+
 ```

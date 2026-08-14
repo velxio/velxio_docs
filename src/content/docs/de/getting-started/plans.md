@@ -12,15 +12,15 @@ und öffentliche Projekte kosten nichts.
 Kostenpflichtige Pläne (**Maker** und **Pro**) schalten Funktionen frei,
 die echte Rechenleistung erfordern oder für Power-User gedacht sind:
 
-| Funktion                                                                                | Kostenlos | Kostenpflichtige Pläne  |
-| --------------------------------------------------------------------------------------- | --------- | ----------------------- |
-| Schaltungseditor, Code-Editor, Simulation                                               | Ja        | Ja                      |
-| Offene Boards (Arduino, ESP32-Familie, Pico, STM32, ATtiny…)                            | Ja        | Ja                      |
-| Beispiele-Galerie, öffentliche Projekte                                                 | Ja        | Ja                      |
-| **Pro-Boards** (Raspberry Pi Linux-Familie, M5Stack Cardputer, Badger 2350, XIAO Sense…) | Nein      | Ja                      |
-| **KI-Assistent** (Basic / Agent / Tutor)                                                | Nein      | Ja, mit planabhängigen Kontingenten |
-| **Private Projekte**                                                                    | Nein      | Ja                      |
-| Kompilier-Priorität und höhere Nutzungslimits                                           | Nein      | Ja                      |
+| Funktion                                                                                 | Kostenlos | Kostenpflichtige Pläne              |
+| ---------------------------------------------------------------------------------------- | --------- | ----------------------------------- |
+| Schaltungseditor, Code-Editor, Simulation                                                | Ja        | Ja                                  |
+| Offene Boards (Arduino, ESP32-Familie, Pico, STM32, ATtiny…)                             | Ja        | Ja                                  |
+| Beispiele-Galerie, öffentliche Projekte                                                  | Ja        | Ja                                  |
+| **Pro-Boards** (Raspberry Pi Linux-Familie, M5Stack Cardputer, Badger 2350, XIAO Sense…) | Nein      | Ja                                  |
+| **KI-Assistent** (Basic / Agent / Tutor)                                                 | Nein      | Ja, mit planabhängigen Kontingenten |
+| **Private Projekte**                                                                     | Nein      | Ja                                  |
+| Kompilier-Priorität und höhere Nutzungslimits                                            | Nein      | Ja                                  |
 
 Boards und Komponenten, die einen kostenpflichtigen Plan erfordern, sind
 im Komponenten-Auswahlfenster mit einem **PRO-Badge** (PRO-Abzeichen)

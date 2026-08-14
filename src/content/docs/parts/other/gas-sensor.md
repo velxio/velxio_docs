@@ -9,21 +9,21 @@ Gas Sensor — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **AOUT** | — |
-| **DOUT** | — |
-| **GND** | power |
-| **VCC** | power |
+| Pin      | Signals |
+| -------- | ------- |
+| **AOUT** | —       |
+| **DOUT** | —       |
+| **GND**  | power   |
+| **VCC**  | power   |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `ledPower` | `false` |  |
-| `ledD0` | `false` |  |
+| Attribute  | Default | Description |
+| ---------- | ------- | ----------- |
+| `ledPower` | `false` |             |
+| `ledD0`    | `false` |             |
 
 ## Use it
 

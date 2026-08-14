@@ -9,12 +9,12 @@ Toggle flip-flop. On rising CLK, Q ← Q ⊕ T (toggles when T=1). Useful for fr
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **T** | — |
-| **CLK** | — |
-| **Q** | — |
-| **Qbar** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **T**    | —       |
+| **CLK**  | —       |
+| **Q**    | —       |
+| **Qbar** | —       |
 
 ## Use it
 

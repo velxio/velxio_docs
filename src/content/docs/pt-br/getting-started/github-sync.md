@@ -36,7 +36,7 @@ e qualquer outra coisa no repositório permanece intacta.
    do editor e escolha **Sync to GitHub** (Sincronizar com GitHub).
 2. Somente na primeira vez: clique em **Connect GitHub** (Conectar GitHub). O GitHub pergunta
    em quais repositórios você quer que o Velxio grave — o Velxio recebe acesso restrito à instalação
-   *apenas* nesses repositórios, sem permissão genérica de "todos os seus repositórios".
+   _apenas_ nesses repositórios, sem permissão genérica de "todos os seus repositórios".
 3. Escolha o repositório de destino no menu suspenso e clique em **Link & sync now**
    (Vincular e sincronizar agora). O Velxio envia o commit inicial e mostra o SHA + link.
 4. Pronto. Cada salvamento subsequente envia outro commit; o modal de Sincronização
@@ -65,7 +65,7 @@ GitHub entre salvamentos do Velxio são sobrescritas no próximo salvamento — 
 a fonte da verdade para os arquivos sincronizados.
 
 Quer desenvolver localmente no VS Code por um tempo? **Desvincule** o projeto
-(modal de Sincronização → *Unlink*), trabalhe no seu clone local e depois vincule novamente
+(modal de Sincronização → _Unlink_), trabalhe no seu clone local e depois vincule novamente
 quando estiver pronto para voltar a usar o Velxio. Sincronização bidirecional está no
 roadmap.
 

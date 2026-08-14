@@ -16,6 +16,8 @@ Cortex-M0+ emulation.
 **Languages:** MicroPython (the Pico's native habitat) and Arduino C++
 (the earlephilhower core).
 
+![Raspberry Pi Pico W on the Velxio canvas](../../../assets/docs/boards/pi-pico-w.png)
+
 ## What works
 
 - GPIO, PWM, ADC, I2C, SPI, UART — and **PIO**, the RP2040's signature

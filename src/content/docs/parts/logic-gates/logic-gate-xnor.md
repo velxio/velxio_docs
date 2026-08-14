@@ -9,11 +9,11 @@ description: "2-input XNOR logic gate. Output Y = NOT(A ⊕ B)."
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **B** | — |
-| **Y** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **B** | —       |
+| **Y** | —       |
 
 ## Use it
 

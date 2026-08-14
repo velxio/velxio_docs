@@ -10,12 +10,12 @@ Die Linux-Raspberry-Pi-Familie bootet ein **vollständiges Raspberry Pi OS**
 in der Cloud und übergibt dir das Terminal – das sind keine
 Mikrocontroller-Simulationen, sondern vollwertige Computer.
 
-| Board                         | CPU-Profil          |
-| ----------------------------- | ------------------- |
+| Board                         | CPU-Profil           |
+| ----------------------------- | -------------------- |
 | **Raspberry Pi Zero / 1 / 2** | ARM Cortex-A7-Klasse |
-| **Raspberry Pi 3**            | Cortex-A53          |
-| **Raspberry Pi 4**            | Cortex-A72          |
-| **Raspberry Pi 5**            | Cortex-A76          |
+| **Raspberry Pi 3**            | Cortex-A53           |
+| **Raspberry Pi 4**            | Cortex-A72           |
+| **Raspberry Pi 5**            | Cortex-A76           |
 
 Alle Pi-Boards sind **Pro** – siehe [Pläne](/docs/de/getting-started/plans/).
 
@@ -48,4 +48,7 @@ while True:
 DFRobots Bildungs-SBC (ein Linux-Board mit integriertem Touchscreen) läuft
 auf derselben Infrastruktur und ist ebenfalls ein Pro-Board – du findest
 es in der Auswahl neben der Pi-Familie.
+
+```
+
 ```

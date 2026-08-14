@@ -9,10 +9,10 @@ description: "5.1 V Zener diode, 1 W. Voltage reference / regulator / ESD clamp.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **C** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **C** | —       |
 
 ## Use it
 

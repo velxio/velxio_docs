@@ -9,10 +9,10 @@ AA alkaline cell. 1.5V, low ESR (~0.15Ω). Pair up for 3V/4.5V/6V packs.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **+** | — |
-| **−** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **+** | —       |
+| **−** | —       |
 
 ## Use it
 

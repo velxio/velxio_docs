@@ -9,11 +9,11 @@ IR Receiver — Passive part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **VCC** | power |
-| **DAT** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **GND** | power   |
+| **VCC** | power   |
+| **DAT** | —       |
 
 ## Use it
 

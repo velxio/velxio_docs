@@ -9,11 +9,11 @@ Power N-channel MOSFET. Vth ≈ 3 V (needs 10 V for full enhancement), 33 A / 10
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **D** | — |
-| **G** | — |
-| **S** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **D** | —       |
+| **G** | —       |
+| **S** | —       |
 
 ## Use it
 

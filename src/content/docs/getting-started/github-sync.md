@@ -2,7 +2,7 @@
 title: GitHub Sync
 description: Every project save commits the sketch, the canvas state and a README to a GitHub repo you control.
 sidebar:
-  order: 5
+  order: 6
   badge: PRO
 ---
 
@@ -36,7 +36,7 @@ and anything else in the repo are left alone.
    toolbar and pick **Sync to GitHub**.
 2. First time only: click **Connect GitHub**. GitHub asks which repos you
    want Velxio to write to — Velxio gets installation-scoped access to
-   *only* those repos, no blanket "all your repositories" permission.
+   _only_ those repos, no blanket "all your repositories" permission.
 3. Pick the target repo from the dropdown and hit **Link & sync now**.
    Velxio pushes the initial commit and shows the SHA + link.
 4. That's it. Every subsequent save pushes another commit; the Sync modal
@@ -65,7 +65,7 @@ GitHub between Velxio saves are overwritten on the next save — Velxio is
 the source of truth for the synced files.
 
 Want to develop locally in VS Code for a while? **Unlink** the project
-(Sync modal → *Unlink*), work in your local clone, then re-link when
+(Sync modal → _Unlink_), work in your local clone, then re-link when
 you're ready to drive from Velxio again. Bidirectional sync is on the
 roadmap.
 

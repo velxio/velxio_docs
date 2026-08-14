@@ -26,12 +26,12 @@ Aqui o osciloscópio observa o **GPIO2** — o pino do LED piscante do
 
 ## Controles
 
-| Controle          | O que faz                                                                                                                                               |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Time/div**      | Escala horizontal, de 0,1 ms a 500 ms por divisão. Ajuste-a ao seu sinal: uma piscada de 1 s é melhor lida em torno de 100 ms/div; um PWM de 1 kHz em torno de 0,5 ms/div. |
-| **Trigger**       | **Auto** (execução livre), **Normal** (só desenha no disparo) ou **Single** (uma captura). Escolha o canal de disparo e a borda — subida, descida ou ambas. |
-| **Pause / Resume**| Congele a exibição para inspecionar uma forma de onda.                                                                                                   |
-| **Clear**         | Apague os traços.                                                                                                                                       |
+| Controle           | O que faz                                                                                                                                                                  |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Time/div**       | Escala horizontal, de 0,1 ms a 500 ms por divisão. Ajuste-a ao seu sinal: uma piscada de 1 s é melhor lida em torno de 100 ms/div; um PWM de 1 kHz em torno de 0,5 ms/div. |
+| **Trigger**        | **Auto** (execução livre), **Normal** (só desenha no disparo) ou **Single** (uma captura). Escolha o canal de disparo e a borda — subida, descida ou ambas.                |
+| **Pause / Resume** | Congele a exibição para inspecionar uma forma de onda.                                                                                                                     |
+| **Clear**          | Apague os traços.                                                                                                                                                          |
 
 ## O que experimentar
 
@@ -41,4 +41,7 @@ Aqui o osciloscópio observa o **GPIO2** — o pino do LED piscante do
   pressione um botão no seu circuito.
 - **Compare dois sinais**: adicione dois canais — por exemplo, as saídas A e B
   de um encoder — e observe a relação de fase entre eles.
+
+```
+
 ```

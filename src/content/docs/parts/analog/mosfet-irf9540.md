@@ -9,11 +9,11 @@ Power P-channel MOSFET. Used for high-side load switching with logic input.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **D** | — |
-| **G** | — |
-| **S** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **D** | —       |
+| **G** | —       |
+| **S** | —       |
 
 ## Use it
 

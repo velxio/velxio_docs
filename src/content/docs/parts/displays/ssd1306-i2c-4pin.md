@@ -9,20 +9,20 @@ SSD1306 OLED (I2C, 4-pin) — Displays part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **VCC** | power |
-| **SCL** | i2c |
-| **SDA** | i2c |
+| Pin     | Signals |
+| ------- | ------- |
+| **GND** | power   |
+| **VCC** | power   |
+| **SCL** | i2c     |
+| **SDA** | i2c     |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `i2cAddress` | `0x3c` | I2C address |
+| Attribute    | Default | Description |
+| ------------ | ------- | ----------- |
+| `i2cAddress` | `0x3c`  | I2C address |
 
 ## Use it
 

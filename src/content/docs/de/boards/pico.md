@@ -8,10 +8,10 @@ sidebar:
 Die RP2040-Boards laufen **in Ihrem Browser** mit einer originalgetreuen
 Dual-Core-Cortex-M0+-Emulation.
 
-| Board                   | Highlights                                |
-| ----------------------- | ----------------------------------------- |
-| **Raspberry Pi Pico**   | Das Standard-RP2040-Board, 26 GPIO        |
-| **Raspberry Pi Pico W** | Gleiches Board mit WiFi-Modul-Footprint   |
+| Board                   | Highlights                              |
+| ----------------------- | --------------------------------------- |
+| **Raspberry Pi Pico**   | Das Standard-RP2040-Board, 26 GPIO      |
+| **Raspberry Pi Pico W** | Gleiches Board mit WiFi-Modul-Footprint |
 
 **Sprachen:** MicroPython (die natürliche Umgebung des Pico) und Arduino C++
 (der earlephilhower-Kern).

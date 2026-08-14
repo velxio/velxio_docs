@@ -18,6 +18,8 @@ The original dual-core Xtensa ESP32 — the workhorse of the catalog, with
 **Languages:** Arduino C++, MicroPython, ESP-IDF — switch with the
 toolbar's [language selector](/docs/programming/languages/).
 
+![ESP32 DevKit V1 on the Velxio canvas](../../../assets/docs/boards/esp32.png)
+
 ## What works
 
 - **WiFi**: join `Velxio-GUEST` and reach the real internet — see

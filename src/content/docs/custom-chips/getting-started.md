@@ -64,6 +64,10 @@ with its manifest:
 5. Wire `IN` to a button and `OUT` to an LED, press **Run**, and toggle
    away.
 
+The chip editor, with the C source and the manifest side by side:
+
+![The custom chip editor](../../../assets/docs/custom-chips/chip-editor.png)
+
 ## How chips execute
 
 The host calls your `chip_setup()` once per chip instance. After that the

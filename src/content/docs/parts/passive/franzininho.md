@@ -9,29 +9,29 @@ Franzininho — Passive part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND.1** | power |
-| **VCC.1** | power |
-| **PB4** | analog, pwm |
-| **PB5** | analog |
-| **PB3** | analog |
-| **PB2** | spi, i2c, analog |
-| **PB1** | spi, pwm |
-| **PB0** | spi, i2c, pwm |
-| **VIN** | power |
-| **GND.2** | power |
-| **VCC.2** | power |
+| Pin       | Signals          |
+| --------- | ---------------- |
+| **GND.1** | power            |
+| **VCC.1** | power            |
+| **PB4**   | analog, pwm      |
+| **PB5**   | analog           |
+| **PB3**   | analog           |
+| **PB2**   | spi, i2c, analog |
+| **PB1**   | spi, pwm         |
+| **PB0**   | spi, i2c, pwm    |
+| **VIN**   | power            |
+| **GND.2** | power            |
+| **VCC.2** | power            |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `led1` | `false` |  |
-| `ledPower` | `false` |  |
-| `resetPressed` | `false` |  |
+| Attribute      | Default | Description |
+| -------------- | ------- | ----------- |
+| `led1`         | `false` |             |
+| `ledPower`     | `false` |             |
+| `resetPressed` | `false` |             |
 
 ## Use it
 

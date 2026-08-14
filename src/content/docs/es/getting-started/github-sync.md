@@ -36,7 +36,7 @@ documentación, fotos y cualquier otra cosa en el repositorio se deja intacta.
    **…** en la barra de herramientas del editor y elige **Sync to GitHub**.
 2. Solo la primera vez: haz clic en **Connect GitHub**. GitHub pregunta a qué
    repositorios quieres que Velxio escriba — Velxio obtiene acceso limitado a
-   *solo* esos repositorios, sin permiso general de "todos tus repositorios".
+   _solo_ esos repositorios, sin permiso general de "todos tus repositorios".
 3. Elige el repositorio de destino en el menú desplegable y pulsa
    **Link & sync now**. Velxio envía la confirmación inicial y muestra el SHA + enlace.
 4. Eso es todo. Cada guardado posterior envía otra confirmación; el modal de
@@ -67,7 +67,7 @@ en el siguiente guardado — Velxio es la fuente de verdad para los archivos
 sincronizados.
 
 ¿Quieres desarrollar localmente en VS Code por un tiempo? **Desvincula** el
-proyecto (modal Sync → *Unlink*), trabaja en tu clon local, y luego vuelve a
+proyecto (modal Sync → _Unlink_), trabaja en tu clon local, y luego vuelve a
 vincular cuando estés listo para trabajar desde Velxio de nuevo. La
 sincronización bidireccional está en la hoja de ruta.
 
@@ -90,4 +90,7 @@ escribible, público o privado.
 **¿Puedo personalizar el README?**
 Velxio sobrescribe `README.md` en cada sincronización hoy. En la hoja de
 ruta: omitir la sobrescritura una vez que hayas tomado posesión del archivo.
+
+```
+
 ```

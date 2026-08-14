@@ -9,10 +9,10 @@ Schottky diode, 1 A / 40 V. Higher breakdown than 1N5817, same low Vf.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **C** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **C** | —       |
 
 ## Use it
 

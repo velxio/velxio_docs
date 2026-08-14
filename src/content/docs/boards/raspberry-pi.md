@@ -19,6 +19,8 @@ full computers.
 
 All Pi boards are **Pro** — see [plans](/docs/getting-started/plans/).
 
+![Raspberry Pi 5 on the Velxio canvas](../../../assets/docs/boards/raspberry-pi-5.png)
+
 ## How it works
 
 1. Place the Pi, press **Start** — the WebSocket console attaches in about

@@ -9,31 +9,31 @@ Biaxial Stepper — Motors part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A1-** | — |
-| **A1+** | — |
-| **B1+** | — |
-| **B1-** | — |
-| **A2-** | — |
-| **A2+** | — |
-| **B2+** | — |
-| **B2-** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **A1-** | —       |
+| **A1+** | —       |
+| **B1+** | —       |
+| **B1-** | —       |
+| **A2-** | —       |
+| **A2+** | —       |
+| **B2+** | —       |
+| **B2-** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `outerHandLength` | `30` |  |
-| `outerHandAngle` | `0` |  |
-| `outerHandColor` | `gold` |  |
-| `outerHandShape` | `plain` |  |
-| `innerHandLength` | `30` |  |
-| `innerHandAngle` | `0` |  |
-| `innerHandColor` | `silver` |  |
-| `innerHandShape` | `plain` |  |
+| Attribute         | Default  | Description |
+| ----------------- | -------- | ----------- |
+| `outerHandLength` | `30`     |             |
+| `outerHandAngle`  | `0`      |             |
+| `outerHandColor`  | `gold`   |             |
+| `outerHandShape`  | `plain`  |             |
+| `innerHandLength` | `30`     |             |
+| `innerHandAngle`  | `0`      |             |
+| `innerHandColor`  | `silver` |             |
+| `innerHandShape`  | `plain`  |             |
 
 ## Use it
 

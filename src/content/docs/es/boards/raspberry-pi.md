@@ -10,12 +10,12 @@ La familia Linux Raspberry Pi arranca un **Raspberry Pi OS completo** en la
 nube y te entrega la terminal — estos no son simuladores de microcontroladores, sino
 computadoras completas.
 
-| Placa                          | Perfil de CPU        |
-| ------------------------------ | -------------------- |
-| **Raspberry Pi Zero / 1 / 2**  | Clase ARM Cortex-A7  |
-| **Raspberry Pi 3**             | Cortex-A53           |
-| **Raspberry Pi 4**             | Cortex-A72           |
-| **Raspberry Pi 5**             | Cortex-A76           |
+| Placa                         | Perfil de CPU       |
+| ----------------------------- | ------------------- |
+| **Raspberry Pi Zero / 1 / 2** | Clase ARM Cortex-A7 |
+| **Raspberry Pi 3**            | Cortex-A53          |
+| **Raspberry Pi 4**            | Cortex-A72          |
+| **Raspberry Pi 5**            | Cortex-A76          |
 
 Todas las placas Pi son **Pro** — consulta los [planes](/docs/es/getting-started/plans/).
 

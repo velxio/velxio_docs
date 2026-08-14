@@ -18,14 +18,14 @@ Haz clic en un **pin** de cualquier componente: un cable comienza a seguir tu cu
 
 Mientras un cable está en progreso (o con un cable seleccionado), presiona una tecla para establecer su color: la misma convención de paleta que los usuarios de Wokwi conocen:
 
-| Tecla | Color   | Tecla                       | Color                                   |
-| ----- | ------- | --------------------------- | --------------------------------------- |
-| `0`   | Negro   | `6`                         | Azul                                    |
-| `1`   | Marrón  | `7`                         | Violeta                                 |
-| `2`   | Rojo    | `8`                         | Gris                                    |
-| `3`   | Naranja | `9`                         | Blanco                                  |
+| Tecla | Color   | Tecla                       | Color                                      |
+| ----- | ------- | --------------------------- | ------------------------------------------ |
+| `0`   | Negro   | `6`                         | Azul                                       |
+| `1`   | Marrón  | `7`                         | Violeta                                    |
+| `2`   | Rojo    | `8`                         | Gris                                       |
+| `3`   | Naranja | `9`                         | Blanco                                     |
 | `4`   | Dorado  | `c` / `l` / `m` / `p` / `y` | Cian / Lima / Magenta / Púrpura / Amarillo |
-| `5`   | Verde   |                             |                                         |
+| `5`   | Verde   |                             |                                            |
 
 Los cables nuevos reciben un color automático de kit de jumpers: los cables vecinos eligen colores visiblemente diferentes, con rojo y negro reservados para las líneas de alimentación.
 

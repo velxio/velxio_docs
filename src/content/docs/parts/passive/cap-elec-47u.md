@@ -9,19 +9,19 @@ Electrolytic 47 µF — Passive part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **+** | — |
-| **−** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **+** | —       |
+| **−** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `value` | `47u` |  |
-| `voltage` | `25` |  |
+| --------- | ------- | ----------- |
+| `value`   | `47u`   |             |
+| `voltage` | `25`    |             |
 
 ## Use it
 

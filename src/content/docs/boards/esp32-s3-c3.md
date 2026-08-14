@@ -5,6 +5,8 @@ sidebar:
   order: 4
 ---
 
+![ESP32-S3 DevKit on the Velxio canvas](../../../assets/docs/boards/esp32-s3.png)
+
 ## ESP32-S3 (Xtensa LX7, dual-core)
 
 | Board                  | Highlights                                              |

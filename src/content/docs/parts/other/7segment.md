@@ -9,33 +9,33 @@ description: "7 Segment — Other part in the Velxio catalog."
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **COM.1** | — |
-| **COM.2** | — |
-| **A** | — |
-| **B** | — |
-| **C** | — |
-| **D** | — |
-| **E** | — |
-| **F** | — |
-| **G** | — |
-| **DP** | — |
+| Pin       | Signals |
+| --------- | ------- |
+| **COM.1** | —       |
+| **COM.2** | —       |
+| **A**     | —       |
+| **B**     | —       |
+| **C**     | —       |
+| **D**     | —       |
+| **E**     | —       |
+| **F**     | —       |
+| **G**     | —       |
+| **DP**    | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `color` | `red` |  |
-| `offColor` | `#444` |  |
-| `background` | `black` |  |
-| `digits` | `1` |  |
-| `colon` | `false` |  |
-| `colonValue` | `false` |  |
-| `pins` | `top` |  |
-| `values` | `0,0,0,0,0,0,0,0` |  |
+| Attribute    | Default           | Description |
+| ------------ | ----------------- | ----------- |
+| `color`      | `red`             |             |
+| `offColor`   | `#444`            |             |
+| `background` | `black`           |             |
+| `digits`     | `1`               |             |
+| `colon`      | `false`           |             |
+| `colonValue` | `false`           |             |
+| `pins`       | `top`             |             |
+| `values`     | `0,0,0,0,0,0,0,0` |             |
 
 ## Use it
 

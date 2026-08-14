@@ -8,12 +8,12 @@ sidebar:
 O Xtensa ESP32 dual-core original — o cavalo de batalha do catálogo, com
 **WiFi e Bluetooth** disponíveis no simulador.
 
-| Placa                  | Destaques                                        |
-| ---------------------- | ------------------------------------------------- |
+| Placa                  | Destaques                                           |
+| ---------------------- | --------------------------------------------------- |
 | **ESP32 DevKit V1**    | O devkit padrão de 30 pinos; LED integrado no GPIO2 |
 | **ESP32 DevKit-C V4**  | Devkit oficial da Espressif, 38 GPIO                |
-| **ESP32-CAM**          | ESP32 + módulo de câmera de 2 MP + slot microSD         |
-| **Wemos Lolin32 Lite** | Compacto, com footprint de carregador LiPo                   |
+| **ESP32-CAM**          | ESP32 + módulo de câmera de 2 MP + slot microSD     |
+| **Wemos Lolin32 Lite** | Compacto, com footprint de carregador LiPo          |
 
 **Linguagens:** Arduino C++, MicroPython, ESP-IDF — alterne com o
 [seletor de linguagem](/docs/pt-br/programming/languages/) da barra de ferramentas.

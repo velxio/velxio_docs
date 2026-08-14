@@ -17,6 +17,8 @@ cloud round-trip — with cycle-accurate AVR emulation.
 
 **Language:** Arduino C++.
 
+![Arduino UNO on the Velxio canvas](../../../assets/docs/boards/arduino-uno.png)
+
 ## Details that behave like hardware
 
 - `analogWrite` PWM, timers, interrupts (`attachInterrupt`), EEPROM and

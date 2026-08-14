@@ -9,50 +9,50 @@ Nano RP2040 Connect — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **D12** | spi, pwm |
-| **D11** | spi, pwm |
-| **D10** | pwm |
-| **D9** | pwm |
-| **D8** | pwm |
-| **D7** | pwm |
-| **D6** | pwm |
-| **D5** | pwm |
-| **D4** | pwm |
-| **D3** | pwm |
-| **D2** | pwm |
-| **GND.1** | power |
-| **RESET** | — |
-| **RX** | usart |
-| **TX** | usart |
-| **D13** | spi |
-| **3.3V** | power |
-| **AREF** | — |
-| **A0** | analog |
-| **A1** | analog |
-| **A2** | analog |
-| **A3** | analog |
-| **A4** | analog |
-| **A5** | analog |
-| **A6** | analog |
-| **A7** | analog |
-| **5V** | power |
-| **RESET.2** | — |
-| **GND.2** | power |
-| **VIN** | power |
+| Pin         | Signals  |
+| ----------- | -------- |
+| **D12**     | spi, pwm |
+| **D11**     | spi, pwm |
+| **D10**     | pwm      |
+| **D9**      | pwm      |
+| **D8**      | pwm      |
+| **D7**      | pwm      |
+| **D6**      | pwm      |
+| **D5**      | pwm      |
+| **D4**      | pwm      |
+| **D3**      | pwm      |
+| **D2**      | pwm      |
+| **GND.1**   | power    |
+| **RESET**   | —        |
+| **RX**      | usart    |
+| **TX**      | usart    |
+| **D13**     | spi      |
+| **3.3V**    | power    |
+| **AREF**    | —        |
+| **A0**      | analog   |
+| **A1**      | analog   |
+| **A2**      | analog   |
+| **A3**      | analog   |
+| **A4**      | analog   |
+| **A5**      | analog   |
+| **A6**      | analog   |
+| **A7**      | analog   |
+| **5V**      | power    |
+| **RESET.2** | —        |
+| **GND.2**   | power    |
+| **VIN**     | power    |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `ledRed` | `0` |  |
-| `ledGreen` | `0` |  |
-| `ledBlue` | `0` |  |
-| `ledBuiltIn` | `false` |  |
-| `ledPower` | `false` |  |
+| Attribute    | Default | Description |
+| ------------ | ------- | ----------- |
+| `ledRed`     | `0`     |             |
+| `ledGreen`   | `0`     |             |
+| `ledBlue`    | `0`     |             |
+| `ledBuiltIn` | `false` |             |
+| `ledPower`   | `false` |             |
 
 ## Use it
 

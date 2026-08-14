@@ -9,11 +9,11 @@ Tilt Switch — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **VCC** | power |
-| **OUT** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **GND** | power   |
+| **VCC** | power   |
+| **OUT** | —       |
 
 ## Use it
 

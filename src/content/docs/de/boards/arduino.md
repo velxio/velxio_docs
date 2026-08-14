@@ -8,12 +8,12 @@ sidebar:
 Die AVR-Familie läuft **vollständig in Ihrem Browser** — sofortiger Start, keine
 Cloud-Round-Trip — mit zyklusgenauer AVR-Emulation.
 
-| Board                 | MCU                | Flash  | Notizen                                                  |
-| --------------------- | ------------------ | ------ | ------------------------------------------------------ |
-| **Arduino UNO**       | ATmega328P, 16 MHz | 32 KB  | Das Standard-Einsteigerboard; 14 digitale + 6 analoge Pins |
-| **Arduino Nano**      | ATmega328P, 16 MHz | 32 KB  | Gleicher Chip wie der UNO in einem breadboard-freundlichen Stick    |
-| **Arduino Mega 2560** | ATmega2560, 16 MHz | 256 KB | 54 digitale I/O, 4 UARTs — für pin-hungrige Projekte      |
-| **ATtiny85**          | ATtiny85, 8 MHz    | 8 KB   | Der nackte 8-Pin-DIP-Chip, direkt auf dem Breadboard        |
+| Board                 | MCU                | Flash  | Notizen                                                          |
+| --------------------- | ------------------ | ------ | ---------------------------------------------------------------- |
+| **Arduino UNO**       | ATmega328P, 16 MHz | 32 KB  | Das Standard-Einsteigerboard; 14 digitale + 6 analoge Pins       |
+| **Arduino Nano**      | ATmega328P, 16 MHz | 32 KB  | Gleicher Chip wie der UNO in einem breadboard-freundlichen Stick |
+| **Arduino Mega 2560** | ATmega2560, 16 MHz | 256 KB | 54 digitale I/O, 4 UARTs — für pin-hungrige Projekte             |
+| **ATtiny85**          | ATtiny85, 8 MHz    | 8 KB   | Der nackte 8-Pin-DIP-Chip, direkt auf dem Breadboard             |
 
 **Sprache:** Arduino C++.
 

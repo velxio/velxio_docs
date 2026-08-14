@@ -9,6 +9,8 @@ With [WiFi connected](/docs/wifi-iot/esp32-wifi/), your simulated ESP32
 can run real IoT workloads. The examples gallery has a whole **ESP32
 MQTT** category ready to open and run.
 
+![The MQTT example running against a real broker](../../../assets/docs/wifi-iot/mqtt-running.png)
+
 ## MQTT
 
 The classic PubSubClient flow works unchanged: join `Velxio-GUEST`,

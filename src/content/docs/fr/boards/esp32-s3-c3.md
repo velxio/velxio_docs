@@ -7,19 +7,19 @@ sidebar:
 
 ## ESP32-S3 (Xtensa LX7, double cœur)
 
-| Carte                  | Points forts                                              |
-| ---------------------- | ------------------------------------------------------- |
+| Carte                  | Points forts                                                |
+| ---------------------- | ----------------------------------------------------------- |
 | **ESP32-S3 DevKit**    | La carte S3 de référence — accélération IA, beaucoup de RAM |
-| **XIAO ESP32-S3**      | Le S3 de la taille d'un pouce de Seeed, 11 broches                         |
-| **Arduino Nano ESP32** | S3 dans le format classique Nano, LED RGB               |
+| **XIAO ESP32-S3**      | Le S3 de la taille d'un pouce de Seeed, 11 broches          |
+| **Arduino Nano ESP32** | S3 dans le format classique Nano, LED RGB                   |
 
 ## ESP32-C3 (RISC-V, monocœur)
 
-| Carte                  | Points forts                                |
-| ---------------------- | ----------------------------------------- |
+| Carte                  | Points forts                                     |
+| ---------------------- | ------------------------------------------------ |
 | **ESP32-C3 DevKit**    | Le C3 de référence — petit, bon marché, WiFi+BLE |
-| **XIAO ESP32-C3**      | Le petit C3 de Seeed                           |
-| **ESP32-C3 SuperMini** | La carte C3 populaire au format timbre-poste        |
+| **XIAO ESP32-C3**      | Le petit C3 de Seeed                             |
+| **ESP32-C3 SuperMini** | La carte C3 populaire au format timbre-poste     |
 
 **Langages** pour les deux familles : Arduino C++, MicroPython, ESP-IDF.
 

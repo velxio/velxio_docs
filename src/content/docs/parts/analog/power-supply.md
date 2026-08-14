@@ -9,21 +9,21 @@ Bench DC/AC power supply with optional current limit. DC mode for fixed rails (5
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **SIG** | — |
-| **GND** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **SIG** | —       |
+| **GND** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `mode` | `dc` | DC for fixed rails, AC for sine waveform output |
-| `voltage` | `5` | Output voltage in V (DC mode) or peak amplitude (AC mode) |
-| `frequency` | `50` | Frequency in Hz (AC mode only) |
-| `currentLimit` | `1` | Maximum sourced current in A. The verifier warns when exceeded. |
+| Attribute      | Default | Description                                                     |
+| -------------- | ------- | --------------------------------------------------------------- |
+| `mode`         | `dc`    | DC for fixed rails, AC for sine waveform output                 |
+| `voltage`      | `5`     | Output voltage in V (DC mode) or peak amplitude (AC mode)       |
+| `frequency`    | `50`    | Frequency in Hz (AC mode only)                                  |
+| `currentLimit` | `1`     | Maximum sourced current in A. The verifier warns when exceeded. |
 
 ## Use it
 

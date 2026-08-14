@@ -2,11 +2,13 @@
 title: Using libraries
 description: Search, install and pin Arduino libraries for your project.
 sidebar:
-  order: 5
+  order: 6
 ---
 
 Click **Libraries** in the toolbar to search the Arduino library registry
-and add libraries to the active board.
+and add libraries to the active board:
+
+![The library manager](../../../assets/docs/programming/libraries.png)
 
 Installed libraries are recorded in the board's **`libraries.json`** file
 (visible in the file tree), so they travel with the project: anyone who

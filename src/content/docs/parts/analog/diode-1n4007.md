@@ -9,10 +9,10 @@ description: "1 A / 1000 V silicon rectifier diode. Mains bridge rectifiers, bac
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **C** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **C** | —       |
 
 ## Use it
 

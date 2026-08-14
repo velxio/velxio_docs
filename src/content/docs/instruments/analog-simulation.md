@@ -14,6 +14,8 @@ the way mixed-mode simulators on the desktop do it.
 
 The yellow badge above the circuit reports the analog network:
 
+![The SPICE badge over a live circuit](../../../assets/docs/instruments/spice-badge.png)
+
 - **nets** — how many electrical nodes the engine is solving.
 - **solve time** — what the last analysis cost.
 

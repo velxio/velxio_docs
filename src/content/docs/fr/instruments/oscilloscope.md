@@ -26,12 +26,12 @@ Ici, l'oscilloscope surveille **GPIO2** — la broche de la LED clignotante du
 
 ## Commandes
 
-| Commande          | Fonction                                                                                                                                               |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Time/div**      | Échelle horizontale, de 0,1 ms à 500 ms par division. Adaptez-la à votre signal : un clignotement de 1 s se lit mieux autour de 100 ms/div ; un PWM de 1 kHz autour de 0,5 ms/div. |
-| **Trigger**       | **Auto** (libre), **Normal** (ne dessine que sur déclenchement) ou **Single** (une seule capture). Choisissez le canal de déclenchement et le front — montant, descendant ou les deux. |
-| **Pause / Resume**| Figez l'affichage pour inspecter une forme d'onde.                                                                                                      |
-| **Clear**         | Efface les traces.                                                                                                                                     |
+| Commande           | Fonction                                                                                                                                                                               |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Time/div**       | Échelle horizontale, de 0,1 ms à 500 ms par division. Adaptez-la à votre signal : un clignotement de 1 s se lit mieux autour de 100 ms/div ; un PWM de 1 kHz autour de 0,5 ms/div.     |
+| **Trigger**        | **Auto** (libre), **Normal** (ne dessine que sur déclenchement) ou **Single** (une seule capture). Choisissez le canal de déclenchement et le front — montant, descendant ou les deux. |
+| **Pause / Resume** | Figez l'affichage pour inspecter une forme d'onde.                                                                                                                                     |
+| **Clear**          | Efface les traces.                                                                                                                                                                     |
 
 ## Ce qu'il faut essayer
 

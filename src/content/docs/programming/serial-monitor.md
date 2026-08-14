@@ -2,7 +2,7 @@
 title: Serial monitor
 description: See your program's serial output and send data back to it.
 sidebar:
-  order: 4
+  order: 5
 ---
 
 Toggle the serial monitor with the **Serial** button in the toolbar. It

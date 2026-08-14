@@ -9,11 +9,11 @@ Idealized operational amplifier. Infinite gain, infinite input impedance, no sat
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **IN+** | — |
-| **IN-** | — |
-| **OUT** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **IN+** | —       |
+| **IN-** | —       |
+| **OUT** | —       |
 
 ## Use it
 

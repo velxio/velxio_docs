@@ -21,14 +21,14 @@ sur la broche de destination pour terminer le fil. Les fils sont acheminés orth
 Pendant qu'un fil est en cours (ou avec un fil sélectionné), appuyez sur une touche pour définir
 sa couleur — la même convention de palette que les utilisateurs de Wokwi connaissent :
 
-| Touche | Couleur | Touche                       | Couleur                                 |
-| ------ | ------- | ---------------------------- | --------------------------------------- |
-| `0`    | Noir    | `6`                          | Bleu                                    |
-| `1`    | Marron  | `7`                          | Violet                                  |
-| `2`    | Rouge   | `8`                          | Gris                                    |
-| `3`    | Orange  | `9`                          | Blanc                                   |
-| `4`    | Or      | `c` / `l` / `m` / `p` / `y`  | Cyan / Citron vert / Magenta / Violet / Jaune |
-| `5`    | Vert    |                              |                                         |
+| Touche | Couleur | Touche                      | Couleur                                       |
+| ------ | ------- | --------------------------- | --------------------------------------------- |
+| `0`    | Noir    | `6`                         | Bleu                                          |
+| `1`    | Marron  | `7`                         | Violet                                        |
+| `2`    | Rouge   | `8`                         | Gris                                          |
+| `3`    | Orange  | `9`                         | Blanc                                         |
+| `4`    | Or      | `c` / `l` / `m` / `p` / `y` | Cyan / Citron vert / Magenta / Violet / Jaune |
+| `5`    | Vert    |                             |                                               |
 
 Les nouveaux fils reçoivent automatiquement une coloration de kit de jumpers : les fils voisins
 prennent des couleurs visiblement différentes, le rouge et le noir étant réservés aux rails d'alimentation.

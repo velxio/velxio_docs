@@ -9,21 +9,21 @@ Benchtop AC/DC signal source. Sine, square, or DC output. Configurable frequency
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **SIG** | — |
-| **GND** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **SIG** | —       |
+| **GND** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `waveform` | `sine` |  |
-| `frequency` | `1000` | Frequency in Hz (ignored for DC) |
-| `amplitude` | `1` | Peak amplitude in V (ignored for DC) |
-| `offset` | `0` | DC offset in V |
+| Attribute   | Default | Description                          |
+| ----------- | ------- | ------------------------------------ |
+| `waveform`  | `sine`  |                                      |
+| `frequency` | `1000`  | Frequency in Hz (ignored for DC)     |
+| `amplitude` | `1`     | Peak amplitude in V (ignored for DC) |
+| `offset`    | `0`     | DC offset in V                       |
 
 ## Use it
 

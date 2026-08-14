@@ -8,10 +8,10 @@ sidebar:
 As placas RP2040 rodam **no seu navegador** com uma emulação fiel do
 núcleo duplo Cortex-M0+.
 
-| Placa                    | Destaques                                |
-| ------------------------ | ---------------------------------------- |
-| **Raspberry Pi Pico**    | A placa RP2040 padrão, 26 GPIO           |
-| **Raspberry Pi Pico W**  | Mesma placa com o módulo WiFi            |
+| Placa                   | Destaques                      |
+| ----------------------- | ------------------------------ |
+| **Raspberry Pi Pico**   | A placa RP2040 padrão, 26 GPIO |
+| **Raspberry Pi Pico W** | Mesma placa com o módulo WiFi  |
 
 **Linguagens:** MicroPython (o habitat nativo do Pico) e Arduino C++
 (o núcleo earlephilhower).

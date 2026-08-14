@@ -9,12 +9,12 @@ Single-channel optocoupler with IR LED + phototransistor. CTR ≈ 50%. Provides 
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **AN** | — |
-| **CAT** | — |
-| **COL** | — |
-| **EMIT** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **AN**   | —       |
+| **CAT**  | —       |
+| **COL**  | —       |
+| **EMIT** | —       |
 
 ## Use it
 

@@ -2,7 +2,7 @@
 title: Interface tour
 description: The editor at a glance — canvas, code editor, toolbar, consoles and the AI panel.
 sidebar:
-  order: 3
+  order: 4
 ---
 
 This is the Velxio editor with a project running:

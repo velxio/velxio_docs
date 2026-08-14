@@ -18,19 +18,19 @@ Panel-Sichtbarkeit, Ihr Konto und Plan sowie Hilferessourcen.
 
 Von links nach rechts:
 
-| Steuerung            | Funktion                                                                                                  |
-| -------------------- | --------------------------------------------------------------------------------------------------------- |
-| Layout-Umschalter    | Zeigt den **Code**-Editor, die **Circuit**-Leinwand oder **Both** (beide) nebeneinander                   |
+| Steuerung            | Funktion                                                                                                         |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Layout-Umschalter    | Zeigt den **Code**-Editor, die **Circuit**-Leinwand oder **Both** (beide) nebeneinander                          |
 | Sprachauswahl        | **Arduino C++**, **MicroPython** oder **ESP-IDF** — pro Board, siehe [Sprachen](/docs/de/programming/languages/) |
-| **Compile** (Strg+B) | Kompilieren ohne Ausführung                                                                               |
-| **Run**              | Bei Bedarf kompilieren, dann Simulation starten                                                           |
-| **Stop** / **Reset** | Simulation anhalten / Firmware von vorne neu starten                                                      |
-| **Libraries**        | Arduino-Bibliotheken suchen und installieren                                                              |
-| Ausgabe-Umschalter   | Compiler-Ausgabekonsole ein-/ausblenden                                                                   |
-| Board-Auswahl        | Für welches Board der Code-Editor und **Run** gelten (Projekte können mehrere haben)                      |
-| **Serial**           | [Seriellen Monitor](/docs/de/programming/serial-monitor/) umschalten                                         |
-| **Scope**            | [Oszilloskop / Logikanalysator](/docs/de/instruments/oscilloscope/) umschalten                               |
-| **Add**              | [Komponentenauswahl](/docs/de/circuit-editor/placing-components/) öffnen                                     |
+| **Compile** (Strg+B) | Kompilieren ohne Ausführung                                                                                      |
+| **Run**              | Bei Bedarf kompilieren, dann Simulation starten                                                                  |
+| **Stop** / **Reset** | Simulation anhalten / Firmware von vorne neu starten                                                             |
+| **Libraries**        | Arduino-Bibliotheken suchen und installieren                                                                     |
+| Ausgabe-Umschalter   | Compiler-Ausgabekonsole ein-/ausblenden                                                                          |
+| Board-Auswahl        | Für welches Board der Code-Editor und **Run** gelten (Projekte können mehrere haben)                             |
+| **Serial**           | [Seriellen Monitor](/docs/de/programming/serial-monitor/) umschalten                                             |
+| **Scope**            | [Oszilloskop / Logikanalysator](/docs/de/instruments/oscilloscope/) umschalten                                   |
+| **Add**              | [Komponentenauswahl](/docs/de/circuit-editor/placing-components/) öffnen                                         |
 
 ## Das Arbeitsbereich-Panel (links)
 

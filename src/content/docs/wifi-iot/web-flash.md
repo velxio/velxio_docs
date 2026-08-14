@@ -17,6 +17,8 @@ over USB, straight from the browser.
 - Close anything else using the port first (serial monitors, IDEs) — the
   browser needs exclusive access.
 
+![The flash dialog picking a USB serial port](../../../assets/docs/wifi-iot/flash-modal.png)
+
 ## Flashing
 
 1. Open the **Flash** dialog from the editor.

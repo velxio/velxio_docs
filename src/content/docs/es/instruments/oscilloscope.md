@@ -26,12 +26,12 @@ Aquí el osciloscopio observa **GPIO2** — el pin del LED parpadeante del
 
 ## Controles
 
-| Control            | Qué hace                                                                                                                                               |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Control            | Qué hace                                                                                                                                                                   |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Time/div**       | Escala horizontal, de 0.1 ms a 500 ms por división. Ajústala a tu señal: un parpadeo de 1 s se lee mejor alrededor de 100 ms/div; un PWM de 1 kHz alrededor de 0.5 ms/div. |
-| **Trigger**        | **Auto** (libre), **Normal** (solo dibuja con disparo) o **Single** (una captura). Elige el canal de disparo y el flanco: ascendente, descendente o cualquiera. |
-| **Pause / Resume** | Congela la pantalla para inspeccionar una forma de onda.                                                                                                |
-| **Clear**          | Borra las trazas.                                                                                                                                      |
+| **Trigger**        | **Auto** (libre), **Normal** (solo dibuja con disparo) o **Single** (una captura). Elige el canal de disparo y el flanco: ascendente, descendente o cualquiera.            |
+| **Pause / Resume** | Congela la pantalla para inspeccionar una forma de onda.                                                                                                                   |
+| **Clear**          | Borra las trazas.                                                                                                                                                          |
 
 ## Qué probar
 

@@ -9,18 +9,18 @@ Whether the buzzer is currently emitting a signal
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **1** | — |
-| **2** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **1** | —       |
+| **2** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `hasSignal` | `false` |  |
+| Attribute   | Default | Description |
+| ----------- | ------- | ----------- |
+| `hasSignal` | `false` |             |
 
 ## Use it
 

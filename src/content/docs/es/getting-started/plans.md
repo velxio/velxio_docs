@@ -12,14 +12,14 @@ y los proyectos públicos no cuestan nada.
 Los planes de pago (**Maker** y **Pro**) desbloquean las funciones que
 requieren recursos informáticos reales o están dirigidas a usuarios avanzados:
 
-| Función                                                                                 | Gratis | Planes de pago          |
-| --------------------------------------------------------------------------------------- | ------ | ----------------------- |
-| Editor de circuitos, editor de código, simulación                                       | Sí     | Sí                      |
-| Placas abiertas (Arduino, familia ESP32, Pico, STM32, ATtiny…)                          | Sí     | Sí                      |
-| Galería de ejemplos, proyectos públicos                                                 | Sí     | Sí                      |
+| Función                                                                                  | Gratis | Planes de pago          |
+| ---------------------------------------------------------------------------------------- | ------ | ----------------------- |
+| Editor de circuitos, editor de código, simulación                                        | Sí     | Sí                      |
+| Placas abiertas (Arduino, familia ESP32, Pico, STM32, ATtiny…)                           | Sí     | Sí                      |
+| Galería de ejemplos, proyectos públicos                                                  | Sí     | Sí                      |
 | **Placas Pro** (familia Raspberry Pi Linux, M5Stack Cardputer, Badger 2350, XIAO Sense…) | No     | Sí                      |
-| **Asistente de IA** (Básico / Agente / Tutor)                                           | No     | Sí, con cuotas por plan |
-| **Proyectos privados**                                                                  | No     | Sí                      |
+| **Asistente de IA** (Básico / Agente / Tutor)                                            | No     | Sí, con cuotas por plan |
+| **Proyectos privados**                                                                   | No     | Sí                      |
 | Prioridad de compilación y límites de uso más altos                                      | No     | Sí                      |
 
 Las placas y componentes que requieren un plan de pago están marcados con una

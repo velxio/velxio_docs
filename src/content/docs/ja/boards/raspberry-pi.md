@@ -8,7 +8,7 @@ sidebar:
 
 Linux Raspberry Piファミリーは、クラウド上で**完全なRaspberry Pi OS**を起動し、ターミナルを提供します。これらはマイクロコントローラのシミュレーションではなく、完全なコンピュータです。
 
-| ボード                         | CPUプロファイル      |
+| ボード                        | CPUプロファイル     |
 | ----------------------------- | ------------------- |
 | **Raspberry Pi Zero / 1 / 2** | ARM Cortex-A7クラス |
 | **Raspberry Pi 3**            | Cortex-A53          |

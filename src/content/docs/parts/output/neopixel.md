@@ -9,22 +9,22 @@ Neopixel — Output part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **VDD** | power |
-| **DOUT** | — |
-| **VSS** | power |
-| **DIN** | power |
+| Pin      | Signals |
+| -------- | ------- |
+| **VDD**  | power   |
+| **DOUT** | —       |
+| **VSS**  | power   |
+| **DIN**  | power   |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `r` | `0` |  |
-| `g` | `0` |  |
-| `b` | `0` |  |
+| --------- | ------- | ----------- |
+| `r`       | `0`     |             |
+| `g`       | `0`     |             |
+| `b`       | `0`     |             |
 
 ## Use it
 

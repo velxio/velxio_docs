@@ -9,6 +9,8 @@ Le moyen le plus rapide de comprendre Velxio est d'exécuter quelque chose. Dans
 vous ouvrirez l'exemple classique _blink_, vous l'exécuterez, vous regarderez un ESP32 simulé
 piloter un vrai circuit à LED, puis vous modifierez le code.
 
+![The blink example running](../../../../assets/docs/getting-started/blink.gif)
+
 ## 1. Ouvrir l'exemple
 
 Allez sur [velxio.dev/example/esp32-blink-led](https://velxio.dev/example/esp32-blink-led)

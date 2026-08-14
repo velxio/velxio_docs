@@ -12,15 +12,15 @@ progetti pubblici non costano nulla.
 I piani a pagamento (**Maker** e **Pro**) sbloccano le funzionalità che richiedono
 risorse di calcolo reali o sono pensate per utenti avanzati:
 
-| Funzionalità                                                                           | Gratuito | Piani a pagamento        |
-| -------------------------------------------------------------------------------------- | -------- | ------------------------ |
-| Editor di circuiti, editor di codice, simulazione                                      | Sì       | Sì                       |
-| Schede aperte (Arduino, famiglia ESP32, Pico, STM32, ATtiny…)                          | Sì       | Sì                       |
-| Galleria di esempi, progetti pubblici                                                  | Sì       | Sì                       |
-| **Pro boards** (famiglia Raspberry Pi Linux, M5Stack Cardputer, Badger 2350, XIAO Sense…) | No       | Sì                       |
-| **AI assistant** (Basic / Agent / Tutor)                                               | No       | Sì, con quote per piano  |
-| **Progetti privati**                                                                   | No       | Sì                       |
-| Priorità di compilazione e limiti di utilizzo più elevati                              | No       | Sì                       |
+| Funzionalità                                                                              | Gratuito | Piani a pagamento       |
+| ----------------------------------------------------------------------------------------- | -------- | ----------------------- |
+| Editor di circuiti, editor di codice, simulazione                                         | Sì       | Sì                      |
+| Schede aperte (Arduino, famiglia ESP32, Pico, STM32, ATtiny…)                             | Sì       | Sì                      |
+| Galleria di esempi, progetti pubblici                                                     | Sì       | Sì                      |
+| **Pro boards** (famiglia Raspberry Pi Linux, M5Stack Cardputer, Badger 2350, XIAO Sense…) | No       | Sì                      |
+| **AI assistant** (Basic / Agent / Tutor)                                                  | No       | Sì, con quote per piano |
+| **Progetti privati**                                                                      | No       | Sì                      |
+| Priorità di compilazione e limiti di utilizzo più elevati                                 | No       | Sì                      |
 
 Le schede e i componenti che richiedono un piano a pagamento sono contrassegnati
 con un **PRO badge** nel selettore dei componenti — puoi sempre vedere l'intero

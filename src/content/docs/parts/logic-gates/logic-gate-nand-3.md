@@ -9,12 +9,12 @@ description: "3-input NAND gate."
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **B** | — |
-| **C** | — |
-| **Y** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **B** | —       |
+| **C** | —       |
+| **Y** | —       |
 
 ## Use it
 

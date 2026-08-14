@@ -8,10 +8,10 @@ sidebar:
 Le schede RP2040 funzionano **nel tuo browser** con una fedele emulazione
 dual-core Cortex-M0+.
 
-| Scheda                   | Caratteristiche principali                |
-| ------------------------ | ----------------------------------------- |
-| **Raspberry Pi Pico**    | La scheda RP2040 standard, 26 GPIO        |
-| **Raspberry Pi Pico W**  | La stessa scheda con il modulo WiFi       |
+| Scheda                  | Caratteristiche principali          |
+| ----------------------- | ----------------------------------- |
+| **Raspberry Pi Pico**   | La scheda RP2040 standard, 26 GPIO  |
+| **Raspberry Pi Pico W** | La stessa scheda con il modulo WiFi |
 
 **Linguaggi:** MicroPython (l'habitat naturale del Pico) e Arduino C++
 (il core earlephilhower).

@@ -2,7 +2,7 @@
 title: FAQ
 description: Frequently asked questions about Velxio.
 sidebar:
-  order: 8
+  order: 9
 ---
 
 ### Do I need to install anything?

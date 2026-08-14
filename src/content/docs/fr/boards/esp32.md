@@ -8,12 +8,12 @@ sidebar:
 L'ESP32 Xtensa d'origine à double cœur — le cheval de bataille du catalogue, avec
 **WiFi et Bluetooth** disponibles dans le simulateur.
 
-| Carte                  | Points forts                                        |
-| ---------------------- | ------------------------------------------------- |
+| Carte                  | Points forts                                             |
+| ---------------------- | -------------------------------------------------------- |
 | **ESP32 DevKit V1**    | Le devkit standard à 30 broches ; LED intégrée sur GPIO2 |
-| **ESP32 DevKit-C V4**  | Devkit officiel Espressif, 38 GPIO                |
+| **ESP32 DevKit-C V4**  | Devkit officiel Espressif, 38 GPIO                       |
 | **ESP32-CAM**          | ESP32 + module caméra 2 MP + emplacement microSD         |
-| **Wemos Lolin32 Lite** | Compact, empreinte chargeur LiPo                   |
+| **Wemos Lolin32 Lite** | Compact, empreinte chargeur LiPo                         |
 
 **Langages :** Arduino C++, MicroPython, ESP-IDF — changez avec le
 [sélecteur de langage](/docs/fr/programming/languages/) de la barre d'outils.

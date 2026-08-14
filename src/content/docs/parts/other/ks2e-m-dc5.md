@@ -9,16 +9,16 @@ KS2E-M-DC5 — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **NO2** | — |
-| **NC2** | — |
-| **P2** | — |
-| **COIL2** | power |
-| **NO1** | — |
-| **NC1** | — |
-| **P1** | — |
-| **COIL1** | — |
+| Pin       | Signals |
+| --------- | ------- |
+| **NO2**   | —       |
+| **NC2**   | —       |
+| **P2**    | —       |
+| **COIL2** | power   |
+| **NO1**   | —       |
+| **NC1**   | —       |
+| **P1**    | —       |
+| **COIL1** | —       |
 
 ## Use it
 

@@ -48,4 +48,7 @@ veloci grazie alla cache.
   vedi [Monitor seriale](/docs/it/programming/serial-monitor/).
 - Interagisci con il circuito dal vivo: premi pulsanti, ruota i potenziometri,
   modifica i valori dei sensori dai loro pannelli di controllo.
+
+```
+
 ```

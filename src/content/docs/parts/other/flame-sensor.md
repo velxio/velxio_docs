@@ -9,21 +9,21 @@ Flame Sensor — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **VCC** | power |
-| **GND** | power |
-| **DOUT** | — |
-| **AOUT** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **VCC**  | power   |
+| **GND**  | power   |
+| **DOUT** | —       |
+| **AOUT** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `ledPower` | `false` |  |
-| `ledSignal` | `false` |  |
+| Attribute   | Default | Description |
+| ----------- | ------- | ----------- |
+| `ledPower`  | `false` |             |
+| `ledSignal` | `false` |             |
 
 ## Use it
 

@@ -17,19 +17,19 @@ sidebar:
 
 从左到右：
 
-| 控件              | 功能                                                                                               |
-| -------------------- | ---------------------------------------------------------------------------------------------------------- |
-| 布局切换       | 显示**Code**编辑器、**Circuit**画布，或**Both**并排显示                                 |
-| 语言选择器    | **Arduino C++**、**MicroPython**或**ESP-IDF** — 按开发板选择，参见[语言](/docs/zh-cn/programming/languages/) |
-| **Compile**（Ctrl+B） | 编译但不运行                                                                                      |
-| **Run**              | 如需则先编译，然后启动仿真                                                               |
-| **Stop** / **Reset** | 停止仿真 / 从头重启固件                                                    |
-| **Libraries**        | 搜索并安装Arduino库                                                                       |
-| 输出切换       | 显示/隐藏编译器输出控制台                                                                      |
-| 开发板选择器       | 代码编辑器和Run所应用的开发板（项目可以有多个）                                   |
-| **Serial**           | 切换[串口监视器](/docs/zh-cn/programming/serial-monitor/)                                             |
-| **Scope**            | 切换[示波器/逻辑分析仪](/docs/zh-cn/instruments/oscilloscope/)                                |
-| **Add**              | 打开[元件选择器](/docs/zh-cn/circuit-editor/placing-components/)                                      |
+| 控件                  | 功能                                                                                                         |
+| --------------------- | ------------------------------------------------------------------------------------------------------------ |
+| 布局切换              | 显示**Code**编辑器、**Circuit**画布，或**Both**并排显示                                                      |
+| 语言选择器            | **Arduino C++**、**MicroPython**或**ESP-IDF** — 按开发板选择，参见[语言](/docs/zh-cn/programming/languages/) |
+| **Compile**（Ctrl+B） | 编译但不运行                                                                                                 |
+| **Run**               | 如需则先编译，然后启动仿真                                                                                   |
+| **Stop** / **Reset**  | 停止仿真 / 从头重启固件                                                                                      |
+| **Libraries**         | 搜索并安装Arduino库                                                                                          |
+| 输出切换              | 显示/隐藏编译器输出控制台                                                                                    |
+| 开发板选择器          | 代码编辑器和Run所应用的开发板（项目可以有多个）                                                              |
+| **Serial**            | 切换[串口监视器](/docs/zh-cn/programming/serial-monitor/)                                                    |
+| **Scope**             | 切换[示波器/逻辑分析仪](/docs/zh-cn/instruments/oscilloscope/)                                               |
+| **Add**               | 打开[元件选择器](/docs/zh-cn/circuit-editor/placing-components/)                                             |
 
 ## 工作区面板（左侧）
 

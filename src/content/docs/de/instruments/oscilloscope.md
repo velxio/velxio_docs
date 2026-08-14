@@ -23,12 +23,12 @@ Hier beobachtet das Oszilloskop **GPIO2** — den Pin der blinkenden LED des [er
 
 ## Bedienelemente
 
-| Bedienelement       | Funktion                                                                                                                                               |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Time/div**        | Horizontale Skalierung, von 0,1 ms bis 500 ms pro Teilung. Passen Sie sie an Ihr Signal an: Ein 1-s-Blinken liest sich am besten bei etwa 100 ms/div; ein 1-kHz-PWM bei etwa 0,5 ms/div. |
-| **Trigger**         | **Auto** (frei laufend), **Normal** (nur bei Trigger zeichnen) oder **Single** (eine Erfassung). Wählen Sie den Triggerkanal und die Flanke — steigend, fallend oder beide. |
-| **Pause / Resume**  | Friert die Anzeige ein, um eine Wellenform zu untersuchen.                                                                                             |
-| **Clear**           | Löscht die Spuren.                                                                                                                                     |
+| Bedienelement      | Funktion                                                                                                                                                                                 |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Time/div**       | Horizontale Skalierung, von 0,1 ms bis 500 ms pro Teilung. Passen Sie sie an Ihr Signal an: Ein 1-s-Blinken liest sich am besten bei etwa 100 ms/div; ein 1-kHz-PWM bei etwa 0,5 ms/div. |
+| **Trigger**        | **Auto** (frei laufend), **Normal** (nur bei Trigger zeichnen) oder **Single** (eine Erfassung). Wählen Sie den Triggerkanal und die Flanke — steigend, fallend oder beide.              |
+| **Pause / Resume** | Friert die Anzeige ein, um eine Wellenform zu untersuchen.                                                                                                                               |
+| **Clear**          | Löscht die Spuren.                                                                                                                                                                       |
 
 ## Was Sie ausprobieren können
 

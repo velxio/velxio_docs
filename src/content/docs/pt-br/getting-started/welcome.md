@@ -31,4 +31,7 @@ emulada, acionando os componentes exatamente como o hardware real faria.
   conhecer a tela, o seletor de componentes e o editor de código.
 - Explore a [galeria de exemplos](/docs/pt-br/getting-started/examples-gallery/)
   para ver circuitos prontos que você pode abrir com um clique.
+
+```
+
 ```

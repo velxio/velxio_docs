@@ -11,6 +11,8 @@ built-in peripherals, emulated deeply enough to boot their **factory
 firmware**. They need a paid plan to run — see
 [plans](/docs/getting-started/plans/).
 
+![M5 Cardputer ADV on the Velxio canvas](../../../assets/docs/boards/cardputer-adv.png)
+
 ## M5Stack
 
 - **M5 Cardputer** (and **Cardputer ADV**) — the ESP32-S3 pocket computer

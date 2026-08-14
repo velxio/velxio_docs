@@ -9,21 +9,21 @@ Big Sound Sensor — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **AOUT** | — |
-| **GND** | power |
-| **VCC** | power |
-| **DOUT** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **AOUT** | —       |
+| **GND**  | power   |
+| **VCC**  | power   |
+| **DOUT** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `led1` | `false` |  |
-| `led2` | `false` |  |
+| --------- | ------- | ----------- |
+| `led1`    | `false` |             |
+| `led2`    | `false` |             |
 
 ## Use it
 

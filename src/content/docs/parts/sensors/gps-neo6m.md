@@ -9,23 +9,23 @@ GPS NEO-6M — Sensors part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **VCC** | power |
-| **RX** | usart |
-| **TX** | usart |
-| **GND** | power |
+| Pin     | Signals |
+| ------- | ------- |
+| **VCC** | power   |
+| **RX**  | usart   |
+| **TX**  | usart   |
+| **GND** | power   |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `lat` | `40.4168` | Latitude in decimal degrees (negative = south) |
-| `lng` | `-3.7038` | Longitude in decimal degrees (negative = west) |
-| `altitude` | `667` | Altitude above mean sea level (m) |
-| `speed` | `0` | Speed over ground (knots) |
+| Attribute  | Default   | Description                                    |
+| ---------- | --------- | ---------------------------------------------- |
+| `lat`      | `40.4168` | Latitude in decimal degrees (negative = south) |
+| `lng`      | `-3.7038` | Longitude in decimal degrees (negative = west) |
+| `altitude` | `667`     | Altitude above mean sea level (m)              |
+| `speed`    | `0`       | Speed over ground (knots)                      |
 
 ## Use it
 

@@ -9,32 +9,32 @@ DIP Switch 8 — Input part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **1a** | — |
-| **2a** | — |
-| **3a** | — |
-| **4a** | — |
-| **5a** | — |
-| **6a** | — |
-| **7a** | — |
-| **8a** | — |
-| **8b** | — |
-| **7b** | — |
-| **6b** | — |
-| **5b** | — |
-| **4b** | — |
-| **3b** | — |
-| **2b** | — |
-| **1b** | — |
+| Pin    | Signals |
+| ------ | ------- |
+| **1a** | —       |
+| **2a** | —       |
+| **3a** | —       |
+| **4a** | —       |
+| **5a** | —       |
+| **6a** | —       |
+| **7a** | —       |
+| **8a** | —       |
+| **8b** | —       |
+| **7b** | —       |
+| **6b** | —       |
+| **5b** | —       |
+| **4b** | —       |
+| **3b** | —       |
+| **2b** | —       |
+| **1b** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `values` | `0,0,0,0,0,0,0,0` |  |
+| Attribute | Default           | Description |
+| --------- | ----------------- | ----------- |
+| `values`  | `0,0,0,0,0,0,0,0` |             |
 
 ## Use it
 

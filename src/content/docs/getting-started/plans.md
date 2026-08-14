@@ -2,7 +2,7 @@
 title: Free and paid plans
 description: What you get for free, and what the Maker and Pro plans unlock.
 sidebar:
-  order: 7
+  order: 8
 ---
 
 You can build, simulate and share circuits on Velxio **for free** — the

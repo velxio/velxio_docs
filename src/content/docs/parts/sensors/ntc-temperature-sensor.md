@@ -9,11 +9,11 @@ NTC Temperature Sensor — Sensors part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **VCC** | power |
-| **OUT** | analog |
+| Pin     | Signals |
+| ------- | ------- |
+| **GND** | power   |
+| **VCC** | power   |
+| **OUT** | analog  |
 
 ## Use it
 

@@ -9,10 +9,10 @@ PP3 / 6LR61 9V alkaline battery. Modelled as 9V DC with ~1.5Ω internal resistan
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **+** | — |
-| **−** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **+** | —       |
+| **−** | —       |
 
 ## Use it
 

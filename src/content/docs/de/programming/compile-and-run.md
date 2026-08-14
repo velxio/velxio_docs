@@ -48,4 +48,7 @@ Caching viel schneller.
   siehe [Serieller Monitor](/docs/de/programming/serial-monitor/).
 - Interagieren Sie live mit der Schaltung: Drücken Sie Tasten, drehen Sie Potentiometer,
   ändern Sie Sensorwerte über deren Bedienfelder.
+
+```
+
 ```

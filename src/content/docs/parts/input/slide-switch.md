@@ -9,19 +9,19 @@ Slide Switch — Input part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **1** | — |
-| **2** | — |
-| **3** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **1** | —       |
+| **2** | —       |
+| **3** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `value` | `0` |  |
+| --------- | ------- | ----------- |
+| `value`   | `0`     |             |
 
 ## Use it
 

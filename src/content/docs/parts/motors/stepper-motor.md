@@ -9,24 +9,24 @@ Stepper Motor — Motors part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A-** | — |
-| **A+** | — |
-| **B+** | — |
-| **B-** | — |
+| Pin    | Signals |
+| ------ | ------- |
+| **A-** | —       |
+| **A+** | —       |
+| **B+** | —       |
+| **B-** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `angle` | `0` |  |
-| `arrow` | `` |  |
-| `value` | `` |  |
-| `units` | `` |  |
-| `size` | `` |  |
+| --------- | ------- | ----------- |
+| `angle`   | `0`     |             |
+| `arrow`   | ``      |             |
+| `value`   | ``      |             |
+| `units`   | ``      |             |
+| `size`    | ``      |             |
 
 ## Use it
 

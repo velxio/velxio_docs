@@ -15,11 +15,11 @@ sidebar:
 
 ## ESP32-C3 (RISC-V, un solo núcleo)
 
-| Board                  | Características destacadas                     |
-| ---------------------- | ---------------------------------------------- |
+| Board                  | Características destacadas                        |
+| ---------------------- | ------------------------------------------------- |
 | **ESP32-C3 DevKit**    | La C3 de referencia: pequeña, económica, WiFi+BLE |
-| **XIAO ESP32-C3**      | La diminuta C3 de Seeed                        |
-| **ESP32-C3 SuperMini** | La popular placa C3 del tamaño de un sello     |
+| **XIAO ESP32-C3**      | La diminuta C3 de Seeed                           |
+| **ESP32-C3 SuperMini** | La popular placa C3 del tamaño de un sello        |
 
 **Lenguajes** para ambas familias: Arduino C++, MicroPython, ESP-IDF.
 

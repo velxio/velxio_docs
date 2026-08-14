@@ -9,12 +9,12 @@ La famille AVR fonctionne **entièrement dans votre navigateur** — démarrage
 instantané, sans aller-retour vers le cloud — avec une émulation AVR
 précise au cycle près.
 
-| Carte                  | MCU                | Flash  | Notes                                                   |
-| ---------------------- | ------------------ | ------ | ------------------------------------------------------- |
-| **Arduino UNO**        | ATmega328P, 16 MHz | 32 Ko  | La carte de démarrage par défaut ; 14 broches numériques + 6 analogiques |
-| **Arduino Nano**       | ATmega328P, 16 MHz | 32 Ko  | Même puce que l'UNO dans un format adapté aux plaques d'essai |
-| **Arduino Mega 2560**  | ATmega2560, 16 MHz | 256 Ko | 54 entrées/sorties numériques, 4 UART — pour les projets gourmands en broches |
-| **ATtiny85**           | ATtiny85, 8 MHz    | 8 Ko   | La puce nue DIP à 8 broches, à brancher directement sur une plaque d'essai |
+| Carte                 | MCU                | Flash  | Notes                                                                         |
+| --------------------- | ------------------ | ------ | ----------------------------------------------------------------------------- |
+| **Arduino UNO**       | ATmega328P, 16 MHz | 32 Ko  | La carte de démarrage par défaut ; 14 broches numériques + 6 analogiques      |
+| **Arduino Nano**      | ATmega328P, 16 MHz | 32 Ko  | Même puce que l'UNO dans un format adapté aux plaques d'essai                 |
+| **Arduino Mega 2560** | ATmega2560, 16 MHz | 256 Ko | 54 entrées/sorties numériques, 4 UART — pour les projets gourmands en broches |
+| **ATtiny85**          | ATtiny85, 8 MHz    | 8 Ko   | La puce nue DIP à 8 broches, à brancher directement sur une plaque d'essai    |
 
 **Langage :** Arduino C++.
 

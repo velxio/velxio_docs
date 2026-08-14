@@ -9,6 +9,8 @@ Velxioを理解する最も速い方法は、何かを実行してみること�
 定番の _blink_ サンプルを開き、実行し、シミュレートされたESP32が実際のLED回路を
 駆動する様子を確認し、コードを変更するところまで行います。
 
+![The blink example running](../../../../assets/docs/getting-started/blink.gif)
+
 ## 1. サンプルを開く
 
 [velxio.dev/example/esp32-blink-led](https://velxio.dev/example/esp32-blink-led) にアクセスしてください
@@ -64,4 +66,5 @@ delay(100);   // was 500
 - [インターフェースツアー](/docs/ja/getting-started/interface-tour/) — すべてのパネルとボタンの説明。
 - [回路エディタ](/docs/ja/circuit-editor/overview/) — サンプルから始める代わりに、ゼロから回路を構築します。
 - [対応ボード](/docs/ja/boards/overview/) — ESP32をArduino UNO、Pi Pico、STM32などに交換します。
+
 ---

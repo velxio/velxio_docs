@@ -9,10 +9,10 @@ Lithium coin cell. 3V, high ESR (~10Ω) — limits peak current.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **+** | — |
-| **−** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **+** | —       |
+| **−** | —       |
 
 ## Use it
 

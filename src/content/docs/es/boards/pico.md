@@ -8,10 +8,10 @@ sidebar:
 Las placas RP2040 funcionan **en tu navegador** con una fiel emulación
 de doble núcleo Cortex-M0+.
 
-| Placa                    | Características destacadas                  |
-| ------------------------ | ------------------------------------------- |
-| **Raspberry Pi Pico**    | La placa RP2040 estándar, 26 GPIO           |
-| **Raspberry Pi Pico W**  | La misma placa con el módulo WiFi integrado |
+| Placa                   | Características destacadas                  |
+| ----------------------- | ------------------------------------------- |
+| **Raspberry Pi Pico**   | La placa RP2040 estándar, 26 GPIO           |
+| **Raspberry Pi Pico W** | La misma placa con el módulo WiFi integrado |
 
 **Idiomas:** MicroPython (el hábitat natural de la Pico) y Arduino C++
 (el núcleo earlephilhower).

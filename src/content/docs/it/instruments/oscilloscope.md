@@ -26,12 +26,12 @@ Qui l'oscilloscopio osserva **GPIO2** — il pin del LED lampeggiante del
 
 ## Controlli
 
-| Controllo          | Funzione                                                                                                                                               |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Time/div**       | Scala orizzontale, da 0,1 ms a 500 ms per divisione. Adattala al tuo segnale: un lampeggio da 1 s si legge meglio a circa 100 ms/div; un PWM da 1 kHz a circa 0,5 ms/div. |
+| Controllo          | Funzione                                                                                                                                                                                     |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Time/div**       | Scala orizzontale, da 0,1 ms a 500 ms per divisione. Adattala al tuo segnale: un lampeggio da 1 s si legge meglio a circa 100 ms/div; un PWM da 1 kHz a circa 0,5 ms/div.                    |
 | **Trigger**        | **Auto** (a scorrimento libero), **Normal** (disegna solo su trigger) o **Single** (una singola acquisizione). Scegli il canale di trigger e il fronte — ascendente, discendente o entrambi. |
-| **Pause / Resume** | Congela il display per ispezionare una forma d'onda.                                                                                                   |
-| **Clear**          | Cancella le tracce.                                                                                                                                    |
+| **Pause / Resume** | Congela il display per ispezionare una forma d'onda.                                                                                                                                         |
+| **Clear**          | Cancella le tracce.                                                                                                                                                                          |
 
 ## Cosa provare
 

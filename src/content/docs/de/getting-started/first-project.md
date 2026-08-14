@@ -10,6 +10,8 @@ Tutorial öffnen Sie das klassische _Blink_-Beispiel, führen es aus,
 beobachten einen simulierten ESP32, der eine echte LED-Schaltung ansteuert,
 und ändern dann den Code.
 
+![The blink example running](../../../../assets/docs/getting-started/blink.gif)
+
 ## 1. Öffnen Sie das Beispiel
 
 Gehen Sie zu [velxio.dev/example/esp32-blink-led](https://velxio.dev/example/esp32-blink-led)

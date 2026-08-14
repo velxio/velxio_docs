@@ -37,7 +37,7 @@ sont laissés intacts.
    dans la barre d'outils de l'éditeur et sélectionnez **Sync to GitHub**.
 2. Première fois uniquement : cliquez sur **Connect GitHub**. GitHub demande
    à quels dépôts vous souhaitez que Velxio écrive — Velxio obtient un accès
-   limité à l'installation *uniquement* pour ces dépôts, sans permission
+   limité à l'installation _uniquement_ pour ces dépôts, sans permission
    générale « tous vos dépôts ».
 3. Sélectionnez le dépôt cible dans la liste déroulante et cliquez sur
    **Link & sync now**. Velxio pousse le commit initial et affiche le SHA +
@@ -72,7 +72,7 @@ Velxio sont écrasées lors de la sauvegarde suivante — Velxio est la source d
 vérité pour les fichiers synchronisés.
 
 Vous souhaitez développer localement dans VS Code pendant un moment ?
-**Unlink** le projet (fenêtre Sync → *Unlink*), travaillez dans votre clone
+**Unlink** le projet (fenêtre Sync → _Unlink_), travaillez dans votre clone
 local, puis reliez-le lorsque vous êtes prêt à reprendre la main depuis
 Velxio. La synchronisation bidirectionnelle est sur la feuille de route.
 

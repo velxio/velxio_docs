@@ -9,10 +9,10 @@ Small-signal silicon diode. Fast switching, low capacitance. Go-to for logic-lev
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **C** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **C** | —       |
 
 ## Use it
 

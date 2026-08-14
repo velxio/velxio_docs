@@ -9,11 +9,11 @@ Small-signal PNP bipolar transistor. Complement of the BC547.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **C** | — |
-| **B** | — |
-| **E** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **C** | —       |
+| **B** | —       |
+| **E** | —       |
 
 ## Use it
 

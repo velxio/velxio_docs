@@ -9,15 +9,15 @@ microSD Card — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **CD** | — |
-| **DO** | spi |
-| **GND** | power |
-| **SCK** | spi |
-| **VCC** | power |
-| **DI** | spi |
-| **CS** | spi |
+| Pin     | Signals |
+| ------- | ------- |
+| **CD**  | —       |
+| **DO**  | spi     |
+| **GND** | power   |
+| **SCK** | spi     |
+| **VCC** | power   |
+| **DI**  | spi     |
+| **CS**  | spi     |
 
 ## Use it
 

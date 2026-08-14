@@ -9,11 +9,11 @@ Dual single-supply op-amp. Output swings close to both rails. Ideal for MCU-powe
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **IN+** | — |
-| **IN-** | — |
-| **OUT** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **IN+** | —       |
+| **IN-** | —       |
+| **OUT** | —       |
 
 ## Use it
 

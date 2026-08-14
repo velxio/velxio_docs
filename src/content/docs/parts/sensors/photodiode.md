@@ -9,18 +9,18 @@ Light-sensitive diode. Reverse current proportional to illumination. Property: l
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **C** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **C** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `lux` | `500` | Illumination in lux |
+| Attribute | Default | Description         |
+| --------- | ------- | ------------------- |
+| `lux`     | `500`   | Illumination in lux |
 
 ## Use it
 

@@ -9,21 +9,21 @@ Photoresistor Sensor — Sensors part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **VCC** | power |
-| **GND** | power |
-| **DO** | — |
-| **AO** | analog |
+| Pin     | Signals |
+| ------- | ------- |
+| **VCC** | power   |
+| **GND** | power   |
+| **DO**  | —       |
+| **AO**  | analog  |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `ledDO` | `false` |  |
-| `ledPower` | `false` |  |
+| Attribute  | Default | Description |
+| ---------- | ------- | ----------- |
+| `ledDO`    | `false` |             |
+| `ledPower` | `false` |             |
 
 ## Use it
 

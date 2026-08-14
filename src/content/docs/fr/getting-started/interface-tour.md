@@ -18,19 +18,19 @@ visibilité des panneaux, votre compte et votre forfait, et ressources d'aide.
 
 De gauche à droite :
 
-| Contrôle              | Ce qu'il fait                                                                                               |
-| --------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Bascules de disposition | Afficher l'éditeur **Code**, le canevas **Circuit**, ou **Both** côte à côte                              |
-| Sélecteur de langage  | **Arduino C++**, **MicroPython** ou **ESP-IDF** — selon la carte, voir [Langages](/docs/fr/programming/languages/) |
-| **Compile** (Ctrl+B)  | Compiler sans exécuter                                                                                      |
-| **Run**               | Compiler si nécessaire, puis démarrer la simulation                                                         |
-| **Stop** / **Reset**  | Arrêter la simulation / redémarrer le firmware depuis le début                                              |
-| **Libraries**         | Rechercher et installer des bibliothèques Arduino                                                           |
-| Bascule de sortie     | Afficher/masquer la console de sortie du compilateur                                                        |
-| Sélecteur de carte    | La carte à laquelle l'éditeur de code et **Run** s'appliquent (les projets peuvent en avoir plusieurs)      |
-| **Serial**            | Activer/désactiver le [moniteur série](/docs/fr/programming/serial-monitor/)                                   |
-| **Scope**             | Activer/désactiver l'[oscilloscope / analyseur logique](/docs/fr/instruments/oscilloscope/)                    |
-| **Add**               | Ouvrir le [sélecteur de composants](/docs/fr/circuit-editor/placing-components/)                               |
+| Contrôle                | Ce qu'il fait                                                                                                      |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Bascules de disposition | Afficher l'éditeur **Code**, le canevas **Circuit**, ou **Both** côte à côte                                       |
+| Sélecteur de langage    | **Arduino C++**, **MicroPython** ou **ESP-IDF** — selon la carte, voir [Langages](/docs/fr/programming/languages/) |
+| **Compile** (Ctrl+B)    | Compiler sans exécuter                                                                                             |
+| **Run**                 | Compiler si nécessaire, puis démarrer la simulation                                                                |
+| **Stop** / **Reset**    | Arrêter la simulation / redémarrer le firmware depuis le début                                                     |
+| **Libraries**           | Rechercher et installer des bibliothèques Arduino                                                                  |
+| Bascule de sortie       | Afficher/masquer la console de sortie du compilateur                                                               |
+| Sélecteur de carte      | La carte à laquelle l'éditeur de code et **Run** s'appliquent (les projets peuvent en avoir plusieurs)             |
+| **Serial**              | Activer/désactiver le [moniteur série](/docs/fr/programming/serial-monitor/)                                       |
+| **Scope**               | Activer/désactiver l'[oscilloscope / analyseur logique](/docs/fr/instruments/oscilloscope/)                        |
+| **Add**                 | Ouvrir le [sélecteur de composants](/docs/fr/circuit-editor/placing-components/)                                   |
 
 ## Le panneau d'espace de travail (à gauche)
 

@@ -9,25 +9,25 @@ ePaper 5.65" (600×448, ACeP 7-colour) — Displays part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **VCC** | power |
-| **SCK** | — |
-| **SDI** | — |
-| **CS** | — |
-| **DC** | — |
-| **RST** | — |
-| **BUSY** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **GND**  | power   |
+| **VCC**  | power   |
+| **SCK**  | —       |
+| **SDI**  | —       |
+| **CS**   | —       |
+| **DC**   | —       |
+| **RST**  | —       |
+| **BUSY** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `panelKind` | `epaper-5in65-7c` |  |
-| `refreshMs` | `150` |  |
+| Attribute   | Default           | Description |
+| ----------- | ----------------- | ----------- |
+| `panelKind` | `epaper-5in65-7c` |             |
+| `refreshMs` | `150`             |             |
 
 ## Use it
 

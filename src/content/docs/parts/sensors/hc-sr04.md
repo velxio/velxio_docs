@@ -9,12 +9,12 @@ HC-SR04 — Sensors part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **VCC** | power |
-| **TRIG** | — |
-| **ECHO** | — |
-| **GND** | power |
+| Pin      | Signals |
+| -------- | ------- |
+| **VCC**  | power   |
+| **TRIG** | —       |
+| **ECHO** | —       |
+| **GND**  | power   |
 
 ## Use it
 

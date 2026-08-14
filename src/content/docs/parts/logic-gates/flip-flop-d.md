@@ -9,12 +9,12 @@ Edge-triggered D-type flip-flop. On rising edge of CLK, Q ← D. Digital simulat
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **D** | — |
-| **CLK** | — |
-| **Q** | — |
-| **Qbar** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **D**    | —       |
+| **CLK**  | —       |
+| **Q**    | —       |
+| **Qbar** | —       |
 
 ## Use it
 

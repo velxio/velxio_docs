@@ -7,6 +7,8 @@ sidebar:
 
 理解Velxio最快的方式就是运行一些东西。在本教程中，您将打开经典的_闪烁_示例，运行它，观察模拟的ESP32驱动真实的LED电路，然后修改代码。
 
+![The blink example running](../../../../assets/docs/getting-started/blink.gif)
+
 ## 1. 打开示例
 
 前往 [velxio.dev/example/esp32-blink-led](https://velxio.dev/example/esp32-blink-led)

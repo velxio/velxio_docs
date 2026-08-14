@@ -21,14 +21,14 @@ Winkel), so wie es bei Schaltplänen und Breadboard-Fotos am besten lesbar ist.
 Während ein Draht erstellt wird (oder wenn ein Draht ausgewählt ist), drücken Sie eine Taste, um
 seine Farbe festzulegen – dieselbe Farbpaletten-Konvention, die Wokwi-Benutzer kennen:
 
-| Taste | Farbe   | Taste                       | Farbe                                    |
-| ----- | ------- | --------------------------- | ---------------------------------------- |
-| `0`   | Schwarz | `6`                         | Blau                                     |
-| `1`   | Braun   | `7`                         | Violett                                  |
-| `2`   | Rot     | `8`                         | Grau                                     |
-| `3`   | Orange  | `9`                         | Weiß                                     |
-| `4`   | Gold    | `c` / `l` / `m` / `p` / `y` | Cyan / Lime / Magenta / Lila / Gelb      |
-| `5`   | Grün    |                             |                                          |
+| Taste | Farbe   | Taste                       | Farbe                               |
+| ----- | ------- | --------------------------- | ----------------------------------- |
+| `0`   | Schwarz | `6`                         | Blau                                |
+| `1`   | Braun   | `7`                         | Violett                             |
+| `2`   | Rot     | `8`                         | Grau                                |
+| `3`   | Orange  | `9`                         | Weiß                                |
+| `4`   | Gold    | `c` / `l` / `m` / `p` / `y` | Cyan / Lime / Magenta / Lila / Gelb |
+| `5`   | Grün    |                             |                                     |
 
 Neue Drähte erhalten automatisch eine Jumper-Set-Färbung: Benachbarte Drähte erhalten
 deutlich unterscheidbare Farben, wobei Rot und Schwarz für die Stromschienen reserviert sind.

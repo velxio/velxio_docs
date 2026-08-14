@@ -9,11 +9,11 @@ Rotary Dialer — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **DIAL** | — |
-| **PULSE** | — |
+| Pin       | Signals |
+| --------- | ------- |
+| **GND**   | power   |
+| **DIAL**  | —       |
+| **PULSE** | —       |
 
 ## Use it
 

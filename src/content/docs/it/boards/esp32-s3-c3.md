@@ -7,19 +7,19 @@ sidebar:
 
 ## ESP32-S3 (Xtensa LX7, dual-core)
 
-| Scheda                   | Caratteristiche principali                              |
-| ------------------------ | ------------------------------------------------------- |
-| **ESP32-S3 DevKit**      | La scheda S3 di riferimento — accelerazione AI, molta RAM |
-| **XIAO ESP32-S3**        | La S3 delle dimensioni di un pollice di Seeed, 11 pin  |
-| **Arduino Nano ESP32**   | S3 nel classico formato Nano, LED RGB                   |
+| Scheda                 | Caratteristiche principali                                |
+| ---------------------- | --------------------------------------------------------- |
+| **ESP32-S3 DevKit**    | La scheda S3 di riferimento — accelerazione AI, molta RAM |
+| **XIAO ESP32-S3**      | La S3 delle dimensioni di un pollice di Seeed, 11 pin     |
+| **Arduino Nano ESP32** | S3 nel classico formato Nano, LED RGB                     |
 
 ## ESP32-C3 (RISC-V, single-core)
 
-| Scheda                   | Caratteristiche principali                              |
-| ------------------------ | ------------------------------------------------------- |
-| **ESP32-C3 DevKit**      | La C3 di riferimento — piccola, economica, WiFi+BLE     |
-| **XIAO ESP32-C3**        | La minuscola C3 di Seeed                                |
-| **ESP32-C3 SuperMini**   | La popolare scheda C3 formato francobollo               |
+| Scheda                 | Caratteristiche principali                          |
+| ---------------------- | --------------------------------------------------- |
+| **ESP32-C3 DevKit**    | La C3 di riferimento — piccola, economica, WiFi+BLE |
+| **XIAO ESP32-C3**      | La minuscola C3 di Seeed                            |
+| **ESP32-C3 SuperMini** | La popolare scheda C3 formato francobollo           |
 
 **Linguaggi** per entrambe le famiglie: Arduino C++, MicroPython, ESP-IDF.
 

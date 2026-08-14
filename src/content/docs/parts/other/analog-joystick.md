@@ -9,23 +9,23 @@ Analog Joystick — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **VCC** | power |
-| **VERT** | analog |
-| **HORZ** | analog |
-| **SEL** | — |
-| **GND** | power |
+| Pin      | Signals |
+| -------- | ------- |
+| **VCC**  | power   |
+| **VERT** | analog  |
+| **HORZ** | analog  |
+| **SEL**  | —       |
+| **GND**  | power   |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `xValue` | `0` |  |
-| `yValue` | `0` |  |
-| `pressed` | `false` |  |
+| --------- | ------- | ----------- |
+| `xValue`  | `0`     |             |
+| `yValue`  | `0`     |             |
+| `pressed` | `false` |             |
 
 ## Use it
 

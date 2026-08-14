@@ -9,18 +9,18 @@ Cap. ceramic (custom) — Passive part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **1** | — |
-| **2** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **1** | —       |
+| **2** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `value` | `1u` |  |
+| --------- | ------- | ----------- |
+| `value`   | `1u`    |             |
 
 ## Use it
 

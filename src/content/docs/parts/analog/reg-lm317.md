@@ -9,11 +9,11 @@ Adjustable +1.25V to +37V linear regulator. V_out = 1.25·(1 + R2/R1). Versatile
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **VIN** | — |
-| **ADJ** | — |
-| **VOUT** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **VIN**  | —       |
+| **ADJ**  | —       |
+| **VOUT** | —       |
 
 ## Use it
 

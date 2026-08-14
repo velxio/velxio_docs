@@ -23,7 +23,7 @@ Velxio berührt niemals Dateien außerhalb dieser Pfade – CI-Konfiguration, Do
 ## So aktivieren Sie es
 
 1. Öffnen Sie ein beliebiges gespeichertes Projekt. Klicken Sie auf das **…**-Überlaufmenü in der Editor-Symbolleiste und wählen Sie **Sync to GitHub** (Mit GitHub synchronisieren).
-2. Nur beim ersten Mal: Klicken Sie auf **Connect GitHub** (GitHub verbinden). GitHub fragt, in welche Repositories Velxio schreiben darf – Velxio erhält installationsbezogenen Zugriff auf *nur* diese Repositories, keine pauschale Berechtigung für „alle Ihre Repositories“.
+2. Nur beim ersten Mal: Klicken Sie auf **Connect GitHub** (GitHub verbinden). GitHub fragt, in welche Repositories Velxio schreiben darf – Velxio erhält installationsbezogenen Zugriff auf _nur_ diese Repositories, keine pauschale Berechtigung für „alle Ihre Repositories“.
 3. Wählen Sie das Ziel-Repository aus dem Dropdown-Menü und klicken Sie auf **Link & sync now** (Jetzt verknüpfen und synchronisieren). Velxio überträgt den ersten Commit und zeigt den SHA sowie einen Link an.
 4. Das war's. Jedes weitere Speichern überträgt einen weiteren Commit; das Sync-Modal zeigt die letzte Synchronisierungszeit und einen direkten Link zum Commit.
 
@@ -40,7 +40,7 @@ Velxio verwendet eine **GitHub-App**, kein persönliches OAuth-Token:
 
 Die Synchronisierung ist derzeit ein **Einweg-Push**: Velxio → GitHub. Manuelle Bearbeitungen, die zwischen Velxio-Speicherungen auf GitHub vorgenommen werden, werden beim nächsten Speichern überschrieben – Velxio ist die Quelle der Wahrheit für die synchronisierten Dateien.
 
-Möchten Sie eine Weile lokal in VS Code entwickeln? **Verknüpfen Sie** das Projekt (Sync-Modal → *Verknüpfung aufheben*), arbeiten Sie in Ihrem lokalen Klon und verknüpfen Sie es erneut, wenn Sie wieder von Velxio aus steuern möchten. Bidirektionale Synchronisierung ist auf der Roadmap.
+Möchten Sie eine Weile lokal in VS Code entwickeln? **Verknüpfen Sie** das Projekt (Sync-Modal → _Verknüpfung aufheben_), arbeiten Sie in Ihrem lokalen Klon und verknüpfen Sie es erneut, wenn Sie wieder von Velxio aus steuern möchten. Bidirektionale Synchronisierung ist auf der Roadmap.
 
 ## FAQ
 

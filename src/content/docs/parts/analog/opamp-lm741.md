@@ -9,11 +9,11 @@ Classic general-purpose op-amp. Requires ~1.5V of headroom from each supply rail
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **IN+** | — |
-| **IN-** | — |
-| **OUT** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **IN+** | —       |
+| **IN-** | —       |
+| **OUT** | —       |
 
 ## Use it
 

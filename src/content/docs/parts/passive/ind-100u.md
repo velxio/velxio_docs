@@ -9,18 +9,18 @@ Inductor 100 µH — Passive part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **1** | — |
-| **2** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **1** | —       |
+| **2** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `value` | `100u` |  |
+| --------- | ------- | ----------- |
+| `value`   | `100u`  |             |
 
 ## Use it
 

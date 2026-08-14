@@ -9,24 +9,24 @@ Dual H-bridge motor driver IC. Each channel: EN, IN1, IN2 drive OUT1/OUT2 with t
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **EN1** | — |
-| **IN1** | — |
-| **OUT1** | — |
-| **GND.1** | — |
-| **GND.2** | — |
-| **OUT2** | — |
-| **IN2** | — |
-| **VCC2** | — |
-| **EN2** | — |
-| **IN3** | — |
-| **OUT3** | — |
-| **GND.3** | — |
-| **GND.4** | — |
-| **OUT4** | — |
-| **IN4** | — |
-| **VCC1** | — |
+| Pin       | Signals |
+| --------- | ------- |
+| **EN1**   | —       |
+| **IN1**   | —       |
+| **OUT1**  | —       |
+| **GND.1** | —       |
+| **GND.2** | —       |
+| **OUT2**  | —       |
+| **IN2**   | —       |
+| **VCC2**  | —       |
+| **EN2**   | —       |
+| **IN3**   | —       |
+| **OUT3**  | —       |
+| **GND.3** | —       |
+| **GND.4** | —       |
+| **OUT4**  | —       |
+| **IN4**   | —       |
+| **VCC1**  | —       |
 
 ## Use it
 

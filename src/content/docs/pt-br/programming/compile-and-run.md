@@ -49,4 +49,4 @@ cache.
   veja [Serial monitor](/docs/pt-br/programming/serial-monitor/).
 - Interaja com o circuito ao vivo: pressione botões, gire potenciômetros,
   altere valores de sensores a partir de seus painéis de controle.
------ END PAGE -----
+  ----- END PAGE -----

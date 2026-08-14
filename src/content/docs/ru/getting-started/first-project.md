@@ -9,6 +9,8 @@ sidebar:
 вы откроете классический пример _blink_, запустите его, увидите, как симулированный ESP32
 управляет реальной светодиодной схемой, а затем измените код.
 
+![The blink example running](../../../../assets/docs/getting-started/blink.gif)
+
 ## 1. Откройте пример
 
 Перейдите на [velxio.dev/example/esp32-blink-led](https://velxio.dev/example/esp32-blink-led)

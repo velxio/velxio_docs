@@ -292,6 +292,133 @@ const SCENES = {
     });
   },
 
+  /** Libraries modal + transport buttons clip + full editor after a build. */
+  "programming/details": async page => {
+    const simLog = [];
+    page.on("console", m => {
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text()))
+        simLog.push(m.text());
+    });
+    await loadExample(page, "esp32-blink-led");
+    await page.locator('button:has-text("Libraries")').click();
+    await page.waitForTimeout(2000);
+    await shot(page, "programming/libraries");
+    await page.keyboard.press("Escape");
+    await page.waitForTimeout(500);
+    // Language selector + compile/run/stop/reset cluster
+    await shot(page, "programming/transport", {
+      clip: { x: 150, y: 45, width: 250, height: 44 },
+    });
+    await clickRun(page);
+    await waitForSim(page, simLog);
+    await page.waitForTimeout(4000);
+    await shot(page, "programming/compile-and-run");
+    // SPICE badge close-up for the analog page
+    await shot(page, "instruments/spice-badge", {
+      clip: { x: 410, y: 240, width: 490, height: 80 },
+    });
+  },
+
+  /** WiFi+MQTT example running — serial shows join, DHCP and broker I/O. */
+  "wifi-iot/mqtt": async page => {
+    const simLog = [];
+    page.on("console", m => {
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text()))
+        simLog.push(m.text());
+    });
+    await loadExample(page, "esp32-wifi-mqtt");
+    await clickRun(page);
+    await waitForSim(page, simLog);
+    await page.waitForTimeout(30000); // join + DHCP + broker connect
+    await shot(page, "wifi-iot/mqtt-running");
+    await shot(page, "wifi-iot/serial-wifi", {
+      clip: { x: 410, y: 315, width: 495, height: 205 },
+    });
+  },
+
+  /** Custom chip on the canvas and its editor dialog. */
+  "custom-chips/dialog": async page => {
+    await loadExample(page, "esp32-blink-led");
+    await page.locator('button[title="Add Component"]').click();
+    await page.waitForTimeout(1200);
+    await page.locator('input[placeholder*="Search" i]').fill("custom chip");
+    await page.waitForTimeout(800);
+    await page.locator(".component-card, [class*=card]").first().click();
+    await page.waitForTimeout(1500);
+    // the chip lands on the canvas — open its editor via right-click
+    await page.evaluate(() => {
+      const el = [...document.querySelectorAll("*")].find(e =>
+        e.tagName?.toLowerCase().includes("custom-chip")
+      );
+      const r = el.getBoundingClientRect();
+      el.dispatchEvent(
+        new MouseEvent("contextmenu", {
+          bubbles: true,
+          cancelable: true,
+          clientX: Math.min(r.x + r.width / 2, 640),
+          clientY: Math.min(r.y + r.height / 2, 380),
+        })
+      );
+    });
+    await page.waitForTimeout(1200);
+    if (WANT_INVENTORY) await inventory(page, "custom-chip-inspector");
+    const edit = page.locator(
+      'button:has-text("Edit Chip"), button:has-text("Edit chip"), button:has-text("Edit")'
+    );
+    if (await edit.count()) {
+      await edit.first().click();
+      await page.waitForTimeout(1500);
+    }
+    await shot(page, "custom-chips/chip-editor");
+  },
+
+  /** Board context menu -> Flash to real board dialog. The Flash action
+   *  is disabled until a binary exists, so compile first. */
+  "wifi-iot/flash": async page => {
+    await loadExample(page, "esp32-blink-led");
+    await page.locator('button[title^="Compile"]').click();
+    // cached builds return fast; poll the button's enablement below anyway
+    await page.waitForTimeout(45000);
+    await page.evaluate(() => {
+      const el = document.querySelector("velxio-esp32");
+      const r = el.getBoundingClientRect();
+      el.dispatchEvent(
+        new MouseEvent("contextmenu", {
+          bubbles: true,
+          cancelable: true,
+          clientX: r.x + r.width / 2,
+          clientY: r.y + 30,
+        })
+      );
+    });
+    await page.waitForTimeout(1200);
+    if (WANT_INVENTORY) await inventory(page, "board-context");
+    await page
+      .locator('text=/Flash.*(real|board)/i')
+      .first()
+      .click();
+    await page.waitForTimeout(2000);
+    await shot(page, "wifi-iot/flash-modal");
+  },
+
+  /** MicroPython: the night-light example (LDR + LED) in editor and running. */
+  "programming/micropython": async page => {
+    const simLog = [];
+    page.on("console", m => {
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text()))
+        simLog.push(m.text());
+    });
+    await loadExample(
+      page,
+      "100d-auto-night-light-using-ldr-esp32-plus-micropython"
+    );
+    await shot(page, "programming/micropython-editor");
+    await clickRun(page);
+    await waitForSim(page, simLog);
+    await page.waitForTimeout(8000);
+    await shot(page, "programming/micropython-running");
+  },
+
   /** The AI panel in each of its three modes (right-hand column clip). */
   "ai/modes": async page => {
     await loadExample(page, "esp32-blink-led");

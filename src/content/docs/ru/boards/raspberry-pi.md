@@ -10,12 +10,12 @@ sidebar:
 облаке и предоставляет вам терминал — это не симуляторы микроконтроллеров, а
 полноценные компьютеры.
 
-| Плата                         | Профиль CPU          |
-| ----------------------------- | -------------------- |
-| **Raspberry Pi Zero / 1 / 2** | класс ARM Cortex-A7  |
-| **Raspberry Pi 3**            | Cortex-A53           |
-| **Raspberry Pi 4**            | Cortex-A72           |
-| **Raspberry Pi 5**            | Cortex-A76           |
+| Плата                         | Профиль CPU         |
+| ----------------------------- | ------------------- |
+| **Raspberry Pi Zero / 1 / 2** | класс ARM Cortex-A7 |
+| **Raspberry Pi 3**            | Cortex-A53          |
+| **Raspberry Pi 4**            | Cortex-A72          |
+| **Raspberry Pi 5**            | Cortex-A76          |
 
 Все платы Pi — **Pro** — см. [тарифы](/docs/ru/getting-started/plans/).
 

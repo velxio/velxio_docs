@@ -9,11 +9,11 @@ Small-signal NPN bipolar transistor, European equivalent of 2N3904. High gain (~
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **C** | — |
-| **B** | — |
-| **E** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **C** | —       |
+| **B** | —       |
+| **E** | —       |
 
 ## Use it
 

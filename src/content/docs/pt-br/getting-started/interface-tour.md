@@ -18,19 +18,19 @@ visibilidade de painéis, sua conta e plano, e recursos de ajuda.
 
 Da esquerda para a direita:
 
-| Controle              | O que faz                                                                                               |
-| --------------------- | ------------------------------------------------------------------------------------------------------- |
-| Alternância de layout | Mostra o editor **Code**, o canvas **Circuit**, ou **Both** lado a lado                                 |
+| Controle              | O que faz                                                                                                         |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Alternância de layout | Mostra o editor **Code**, o canvas **Circuit**, ou **Both** lado a lado                                           |
 | Seletor de linguagem  | **Arduino C++**, **MicroPython** ou **ESP-IDF** — por placa, veja [Languages](/docs/pt-br/programming/languages/) |
-| **Compile** (Ctrl+B)  | Compila sem executar                                                                                    |
-| **Run**               | Compila se necessário e inicia a simulação                                                              |
-| **Stop** / **Reset**  | Interrompe a simulação / reinicia o firmware do início                                                  |
-| **Libraries**         | Pesquisa e instala bibliotecas Arduino                                                                  |
-| Alternância de saída  | Mostra/oculta o console de saída do compilador                                                          |
-| Seletor de placa      | A qual placa o editor de código e o **Run** se aplicam (projetos podem ter várias)                      |
-| **Serial**            | Alterna o [serial monitor](/docs/pt-br/programming/serial-monitor/)                                           |
-| **Scope**             | Alterna o [osciloscópio / analisador lógico](/docs/pt-br/instruments/oscilloscope/)                           |
-| **Add**               | Abre o [seletor de componentes](/docs/pt-br/circuit-editor/placing-components/)                               |
+| **Compile** (Ctrl+B)  | Compila sem executar                                                                                              |
+| **Run**               | Compila se necessário e inicia a simulação                                                                        |
+| **Stop** / **Reset**  | Interrompe a simulação / reinicia o firmware do início                                                            |
+| **Libraries**         | Pesquisa e instala bibliotecas Arduino                                                                            |
+| Alternância de saída  | Mostra/oculta o console de saída do compilador                                                                    |
+| Seletor de placa      | A qual placa o editor de código e o **Run** se aplicam (projetos podem ter várias)                                |
+| **Serial**            | Alterna o [serial monitor](/docs/pt-br/programming/serial-monitor/)                                               |
+| **Scope**             | Alterna o [osciloscópio / analisador lógico](/docs/pt-br/instruments/oscilloscope/)                               |
+| **Add**               | Abre o [seletor de componentes](/docs/pt-br/circuit-editor/placing-components/)                                   |
 
 ## O painel de espaço de trabalho (esquerda)
 

@@ -18,18 +18,18 @@ visibilidad de paneles, tu cuenta y plan, y recursos de ayuda.
 
 De izquierda a derecha:
 
-| Control              | Qué hace                                                                                               |
-| -------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Alternar diseño      | Muestra el editor de **Code**, el lienzo de **Circuit**, o **Both** lado a lado                                 |
+| Control              | Qué hace                                                                                                             |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Alternar diseño      | Muestra el editor de **Code**, el lienzo de **Circuit**, o **Both** lado a lado                                      |
 | Selector de lenguaje | **Arduino C++**, **MicroPython** o **ESP-IDF** — según la placa, consulta [Idiomas](/docs/es/programming/languages/) |
-| **Compile** (Ctrl+B) | Compilar sin ejecutar                                                                                      |
+| **Compile** (Ctrl+B) | Compilar sin ejecutar                                                                                                |
 | **Run**              | Compilar si es necesario y luego iniciar la simulación                                                               |
-| **Stop** / **Reset** | Detener la simulación / reiniciar el firmware desde el principio                                                    |
-| **Libraries**        | Buscar e instalar librerías de Arduino                                                                       |
-| Alternar salida      | Mostrar/ocultar la consola de salida del compilador                                                                      |
-| Selector de placa    | A qué placa se aplican el editor de código y **Run** (los proyectos pueden tener varias)                                   |
-| **Serial**           | Alternar el [monitor serie](/docs/es/programming/serial-monitor/)                                             |
-| **Scope**            | Alternar el [osciloscopio / analizador lógico](/docs/es/instruments/oscilloscope/)                                |
+| **Stop** / **Reset** | Detener la simulación / reiniciar el firmware desde el principio                                                     |
+| **Libraries**        | Buscar e instalar librerías de Arduino                                                                               |
+| Alternar salida      | Mostrar/ocultar la consola de salida del compilador                                                                  |
+| Selector de placa    | A qué placa se aplican el editor de código y **Run** (los proyectos pueden tener varias)                             |
+| **Serial**           | Alternar el [monitor serie](/docs/es/programming/serial-monitor/)                                                    |
+| **Scope**            | Alternar el [osciloscopio / analizador lógico](/docs/es/instruments/oscilloscope/)                                   |
 | **Add**              | Abrir el [selector de componentes](/docs/es/circuit-editor/placing-components/)                                      |
 
 ## El panel del espacio de trabajo (izquierda)

@@ -9,12 +9,12 @@ DHT22 — Sensors part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **VCC** | power |
-| **SDA** | — |
-| **NC** | — |
-| **GND** | power |
+| Pin     | Signals |
+| ------- | ------- |
+| **VCC** | power   |
+| **SDA** | —       |
+| **NC**  | —       |
+| **GND** | power   |
 
 ## Use it
 

@@ -9,11 +9,11 @@ description: "2-input XOR logic gate. Output Y = A ⊕ B."
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **B** | — |
-| **Y** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **B** | —       |
+| **Y** | —       |
 
 ## Use it
 

@@ -9,18 +9,18 @@ Resistor 47 kΩ — Passive part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **1** | — |
-| **2** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **1** | —       |
+| **2** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `value` | `47000` |  |
+| --------- | ------- | ----------- |
+| `value`   | `47000` |             |
 
 ## Use it
 

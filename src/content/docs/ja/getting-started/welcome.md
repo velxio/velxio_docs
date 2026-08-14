@@ -24,7 +24,7 @@ Velxioはオンラインのエレクトロニクスシミュレータです。�
 
 ## 次にどこへ進むか
 
-- [最初のプロジェクト](/docs/ja/getting-started/first-project/)を構築する — 
+- [最初のプロジェクト](/docs/ja/getting-started/first-project/)を構築する —
   5分でLEDを点滅させます。
 - [インターフェースツアー](/docs/ja/getting-started/interface-tour/)で、
   キャンバス、コンポーネントピッカー、コードエディタを学びます。

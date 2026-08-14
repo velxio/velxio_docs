@@ -9,23 +9,23 @@ Slide Potentiometer — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **VCC** | power |
-| **SIG** | analog |
-| **GND** | power |
+| Pin     | Signals |
+| ------- | ------- |
+| **VCC** | power   |
+| **SIG** | analog  |
+| **GND** | power   |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `travelLength` | `30` |  |
-| `value` | `0` |  |
-| `min` | `0` |  |
-| `max` | `100` |  |
-| `step` | `2` |  |
+| Attribute      | Default | Description |
+| -------------- | ------- | ----------- |
+| `travelLength` | `30`    |             |
+| `value`        | `0`     |             |
+| `min`          | `0`     |             |
+| `max`          | `100`   |             |
+| `step`         | `2`     |             |
 
 ## Use it
 

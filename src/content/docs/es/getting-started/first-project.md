@@ -9,6 +9,8 @@ La forma más rápida de entender Velxio es ejecutar algo. En este tutorial
 abrirás el clásico ejemplo de _parpadeo_, lo ejecutarás, verás un ESP32 simulado
 manejar un circuito LED real y luego cambiarás el código.
 
+![The blink example running](../../../../assets/docs/getting-started/blink.gif)
+
 ## 1. Abre el ejemplo
 
 Ve a [velxio.dev/example/esp32-blink-led](https://velxio.dev/example/esp32-blink-led)

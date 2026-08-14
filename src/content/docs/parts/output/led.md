@@ -9,23 +9,23 @@ LED — Output part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **C** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **C** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `value` | `false` |  |
-| `brightness` | `1` |  |
-| `color` | `red` |  |
-| `lightColor` | `` |  |
-| `label` | `` |  |
-| `flip` | `false` |  |
+| Attribute    | Default | Description |
+| ------------ | ------- | ----------- |
+| `value`      | `false` |             |
+| `brightness` | `1`     |             |
+| `color`      | `red`   |             |
+| `lightColor` | ``      |             |
+| `label`      | ``      |             |
+| `flip`       | `false` |             |
 
 ## Use it
 

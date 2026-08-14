@@ -9,25 +9,25 @@ ePaper 7.5" (800×480, B/W) — Displays part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **VCC** | power |
-| **SCK** | — |
-| **SDI** | — |
-| **CS** | — |
-| **DC** | — |
-| **RST** | — |
-| **BUSY** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **GND**  | power   |
+| **VCC**  | power   |
+| **SCK**  | —       |
+| **SDI**  | —       |
+| **CS**   | —       |
+| **DC**   | —       |
+| **RST**  | —       |
+| **BUSY** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `panelKind` | `epaper-7in5-bw` |  |
-| `refreshMs` | `100` |  |
+| Attribute   | Default          | Description |
+| ----------- | ---------------- | ----------- |
+| `panelKind` | `epaper-7in5-bw` |             |
+| `refreshMs` | `100`            |             |
 
 ## Use it
 

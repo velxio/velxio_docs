@@ -9,10 +9,10 @@ Generic silicon diode. Vf ≈ 0.7 V. Use for textbook rectification examples.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **C** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **C** | —       |
 
 ## Use it
 

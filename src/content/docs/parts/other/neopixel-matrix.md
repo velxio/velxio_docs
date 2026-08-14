@@ -9,25 +9,25 @@ NeoPixel Matrix — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **VCC** | power |
-| **DIN** | — |
-| **DOUT** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **GND**  | power   |
+| **VCC**  | power   |
+| **DIN**  | —       |
+| **DOUT** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `rows` | `8` |  |
-| `cols` | `8` |  |
-| `rowSpacing` | `1` |  |
-| `colSpacing` | `1` |  |
-| `blurLight` | `false` |  |
-| `animation` | `false` |  |
+| Attribute    | Default | Description |
+| ------------ | ------- | ----------- |
+| `rows`       | `8`     |             |
+| `cols`       | `8`     |             |
+| `rowSpacing` | `1`     |             |
+| `colSpacing` | `1`     |             |
+| `blurLight`  | `false` |             |
+| `animation`  | `false` |             |
 
 ## Use it
 

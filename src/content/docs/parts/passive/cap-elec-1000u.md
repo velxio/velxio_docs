@@ -9,19 +9,19 @@ Electrolytic 1000 µF — Passive part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **+** | — |
-| **−** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **+** | —       |
+| **−** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `value` | `1000u` |  |
-| `voltage` | `25` |  |
+| --------- | ------- | ----------- |
+| `value`   | `1000u` |             |
+| `voltage` | `25`    |             |
 
 ## Use it
 

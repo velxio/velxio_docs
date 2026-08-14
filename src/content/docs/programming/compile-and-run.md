@@ -2,7 +2,7 @@
 title: Compile and run
 description: What happens when you press Play — cloud compilation, real firmware, and how to read errors.
 sidebar:
-  order: 3
+  order: 4
 ---
 
 ## What Run does
@@ -17,6 +17,8 @@ instruction.
   fast.
 - **Stop** halts the simulation; **Reset** reboots the firmware from the
   start.
+
+![A successful build: output console, booted firmware, live circuit](../../../assets/docs/programming/compile-and-run.png)
 
 ## The Output console
 

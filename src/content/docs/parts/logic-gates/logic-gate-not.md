@@ -9,10 +9,10 @@ description: "1-input inverter. Output Y = NOT(A)."
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **Y** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **Y** | —       |
 
 ## Use it
 

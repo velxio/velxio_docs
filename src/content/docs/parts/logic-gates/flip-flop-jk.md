@@ -9,13 +9,13 @@ JK flip-flop. On rising CLK: J=0/K=0 hold, J=1/K=0 set, J=0/K=1 reset, J=1/K=1 t
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **J** | — |
-| **K** | — |
-| **CLK** | — |
-| **Q** | — |
-| **Qbar** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **J**    | —       |
+| **K**    | —       |
+| **CLK**  | —       |
+| **Q**    | —       |
+| **Qbar** | —       |
 
 ## Use it
 

@@ -7,10 +7,10 @@ sidebar:
 
 RP2040 开发板**在您的浏览器中**运行，提供忠实的双核 Cortex-M0+ 仿真。
 
-| 开发板                    | 亮点                                    |
-| ------------------------- | --------------------------------------- |
-| **Raspberry Pi Pico**     | 标准 RP2040 开发板，26 个 GPIO          |
-| **Raspberry Pi Pico W**   | 同款开发板，带 WiFi 模块焊盘            |
+| 开发板                  | 亮点                           |
+| ----------------------- | ------------------------------ |
+| **Raspberry Pi Pico**   | 标准 RP2040 开发板，26 个 GPIO |
+| **Raspberry Pi Pico W** | 同款开发板，带 WiFi 模块焊盘   |
 
 **支持语言：** MicroPython（Pico 的原生环境）和 Arduino C++（earlephilhower 内核）。
 

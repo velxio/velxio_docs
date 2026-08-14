@@ -2,12 +2,14 @@
 title: Controlling the simulation
 description: Run, stop, reset, and interact with a live circuit.
 sidebar:
-  order: 6
+  order: 7
 ---
 
 ## Run / Stop / Reset
 
-The three transport buttons in the toolbar:
+The three transport buttons in the toolbar, next to the language selector:
+
+![The transport cluster: compile, run, stop, reset](../../../assets/docs/programming/transport.png)
 
 - **Run** — compile if needed, boot the firmware, start the world.
 - **Stop** — halt the simulation. The circuit keeps its drawing but

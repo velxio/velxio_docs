@@ -21,14 +21,14 @@ em ângulo reto), da forma que esquemáticos e fotos de protoboard ficam melhore
 Enquanto um fio está em andamento (ou com um fio selecionado), pressione uma tecla para definir
 sua cor — a mesma convenção de paleta que os usuários do Wokwi conhecem:
 
-| Tecla | Cor     | Tecla                        | Cor                                    |
-| ----- | ------- | ---------------------------- | -------------------------------------- |
-| `0`   | Preto   | `6`                          | Azul                                   |
-| `1`   | Marrom  | `7`                          | Violeta                                |
-| `2`   | Vermelho| `8`                          | Cinza                                  |
-| `3`   | Laranja | `9`                          | Branco                                 |
-| `4`   | Dourado | `c` / `l` / `m` / `p` / `y`  | Ciano / Lima / Magenta / Roxo / Amarelo |
-| `5`   | Verde   |                              |                                        |
+| Tecla | Cor      | Tecla                       | Cor                                     |
+| ----- | -------- | --------------------------- | --------------------------------------- |
+| `0`   | Preto    | `6`                         | Azul                                    |
+| `1`   | Marrom   | `7`                         | Violeta                                 |
+| `2`   | Vermelho | `8`                         | Cinza                                   |
+| `3`   | Laranja  | `9`                         | Branco                                  |
+| `4`   | Dourado  | `c` / `l` / `m` / `p` / `y` | Ciano / Lima / Magenta / Roxo / Amarelo |
+| `5`   | Verde    |                             |                                         |
 
 Novos fios recebem coloração automática de kit de jumpers: fios vizinhos escolhem
 cores visivelmente diferentes, com vermelho e preto reservados para trilhas de alimentação.

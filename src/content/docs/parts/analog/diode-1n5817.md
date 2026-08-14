@@ -9,10 +9,10 @@ Schottky diode, 1 A / 20 V. Vf ≈ 0.32 V at 1 A. Used in low-drop rectification
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **A** | — |
-| **C** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **A** | —       |
+| **C** | —       |
 
 ## Use it
 

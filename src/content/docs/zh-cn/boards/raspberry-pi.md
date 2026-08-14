@@ -8,12 +8,12 @@ sidebar:
 
 Linux Raspberry Pi 系列在云端启动**完整的 Raspberry Pi OS**，并将终端交到您手中——这些不是微控制器仿真，而是完整的计算机。
 
-| 开发板                         | CPU 配置         |
-| ----------------------------- | ------------------- |
+| 开发板                        | CPU 配置           |
+| ----------------------------- | ------------------ |
 | **Raspberry Pi Zero / 1 / 2** | ARM Cortex-A7 级别 |
-| **Raspberry Pi 3**            | Cortex-A53          |
-| **Raspberry Pi 4**            | Cortex-A72          |
-| **Raspberry Pi 5**            | Cortex-A76          |
+| **Raspberry Pi 3**            | Cortex-A53         |
+| **Raspberry Pi 4**            | Cortex-A72         |
+| **Raspberry Pi 5**            | Cortex-A76         |
 
 所有 Pi 开发板均为 **Pro** 功能——请参阅[套餐](/docs/zh-cn/getting-started/plans/)。
 

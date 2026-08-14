@@ -9,24 +9,24 @@ Potentiometer — Input part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **SIG** | analog |
-| **VCC** | power |
+| Pin     | Signals |
+| ------- | ------- |
+| **GND** | power   |
+| **SIG** | analog  |
+| **VCC** | power   |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `min` | `0` |  |
-| `max` | `1023` |  |
-| `value` | `0` |  |
-| `step` | `1` |  |
-| `startDegree` | `-135` |  |
-| `endDegree` | `135` |  |
+| Attribute     | Default | Description |
+| ------------- | ------- | ----------- |
+| `min`         | `0`     |             |
+| `max`         | `1023`  |             |
+| `value`       | `0`     |             |
+| `step`        | `1`     |             |
+| `startDegree` | `-135`  |             |
+| `endDegree`   | `135`   |             |
 
 ## Use it
 

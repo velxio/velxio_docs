@@ -9,23 +9,23 @@ Pushbutton — Input part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **1.l** | — |
-| **2.l** | — |
-| **1.r** | — |
-| **2.r** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **1.l** | —       |
+| **2.l** | —       |
+| **1.r** | —       |
+| **2.r** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
 | Attribute | Default | Description |
-| --- | --- | --- |
-| `color` | `red` |  |
-| `pressed` | `false` |  |
-| `label` | `` |  |
-| `xray` | `false` |  |
+| --------- | ------- | ----------- |
+| `color`   | `red`   |             |
+| `pressed` | `false` |             |
+| `label`   | ``      |             |
+| `xray`    | `false` |             |
 
 ## Use it
 

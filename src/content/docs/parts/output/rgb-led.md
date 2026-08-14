@@ -9,22 +9,22 @@ RGB Led — Output part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **R** | — |
-| **COM** | — |
-| **G** | — |
-| **B** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **R**   | —       |
+| **COM** | —       |
+| **G**   | —       |
+| **B**   | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `ledRed` | `0` |  |
-| `ledGreen` | `0` |  |
-| `ledBlue` | `0` |  |
+| Attribute  | Default | Description |
+| ---------- | ------- | ----------- |
+| `ledRed`   | `0`     |             |
+| `ledGreen` | `0`     |             |
+| `ledBlue`  | `0`     |             |
 
 ## Use it
 

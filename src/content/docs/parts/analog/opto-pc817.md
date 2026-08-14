@@ -9,12 +9,12 @@ Single-channel optocoupler. CTR 80–600% (typ. 100%). Higher drive than 4N25, c
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **AN** | — |
-| **CAT** | — |
-| **COL** | — |
-| **EMIT** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **AN**   | —       |
+| **CAT**  | —       |
+| **COL**  | —       |
+| **EMIT** | —       |
 
 ## Use it
 

@@ -7,17 +7,17 @@ sidebar:
 
 ## Progetto
 
-| Scorciatoia | Azione                                   |
-| ----------- | ---------------------------------------- |
-| **Ctrl+S**  | Salva il progetto                        |
-| **Ctrl+B**  | Compila il codice della scheda attiva    |
+| Scorciatoia | Azione                                |
+| ----------- | ------------------------------------- |
+| **Ctrl+S**  | Salva il progetto                     |
+| **Ctrl+B**  | Compila il codice della scheda attiva |
 
 ## Area di disegno
 
-| Scorciatoia                | Azione                                                       |
-| -------------------------- | ------------------------------------------------------------ |
-| **Delete** / **Backspace** | Rimuovi il componente o il cavo selezionato                  |
-| **Escape**                 | Annulla il cavo in fase di disegno                           |
+| Scorciatoia                   | Azione                                                           |
+| ----------------------------- | ---------------------------------------------------------------- |
+| **Delete** / **Backspace**    | Rimuovi il componente o il cavo selezionato                      |
+| **Escape**                    | Annulla il cavo in fase di disegno                               |
 | Click destro su un componente | Apri il suo [inspector](/docs/it/circuit-editor/part-inspector/) |
 
 ## Colori dei cavi
@@ -25,14 +25,14 @@ sidebar:
 Con un cavo in corso o selezionato — consulta
 [Wiring](/docs/it/circuit-editor/wiring/) per la palette:
 
-| Scorciatoia | Colore                                                            |
-| ----------- | ----------------------------------------------------------------- |
+| Scorciatoia | Colore                                                                  |
+| ----------- | ----------------------------------------------------------------------- |
 | **0–9**     | Nero, Marrone, Rosso, Arancione, Oro, Verde, Blu, Viola, Grigio, Bianco |
-| **c**       | Ciano                                                             |
-| **l**       | Verde lime                                                       |
-| **m**       | Magenta                                                          |
-| **p**       | Viola                                                            |
-| **y**       | Giallo                                                           |
+| **c**       | Ciano                                                                   |
+| **l**       | Verde lime                                                              |
+| **m**       | Magenta                                                                 |
+| **p**       | Viola                                                                   |
+| **y**       | Giallo                                                                  |
 
 ## Editor di codice
 
@@ -41,7 +41,7 @@ attivazione/disattivazione commenti) funzionano all'interno dell'editor di codic
 
 ## Chat AI
 
-| Scorciatoia      | Azione              |
-| ---------------- | ------------------- |
-| **Enter**        | Invia il messaggio  |
-| **Shift+Enter**  | Nuova riga          |
+| Scorciatoia     | Azione             |
+| --------------- | ------------------ |
+| **Enter**       | Invia il messaggio |
+| **Shift+Enter** | Nuova riga         |

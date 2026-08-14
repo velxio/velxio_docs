@@ -9,21 +9,21 @@ The angle of the servo (0-180 degrees)
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **V+** | power |
-| **PWM** | pwm |
+| Pin     | Signals |
+| ------- | ------- |
+| **GND** | power   |
+| **V+**  | power   |
+| **PWM** | pwm     |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `angle` | `0` |  |
-| `horn` | `single` |  |
-| `hornColor` | `#ccc` |  |
+| Attribute   | Default  | Description |
+| ----------- | -------- | ----------- |
+| `angle`     | `0`      |             |
+| `horn`      | `single` |             |
+| `hornColor` | `#ccc`   |             |
 
 ## Use it
 

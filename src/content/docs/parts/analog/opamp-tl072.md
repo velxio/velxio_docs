@@ -9,11 +9,11 @@ JFET-input dual op-amp. Very high input impedance, low noise — audio and instr
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **IN+** | — |
-| **IN-** | — |
-| **OUT** | — |
+| Pin     | Signals |
+| ------- | ------- |
+| **IN+** | —       |
+| **IN-** | —       |
+| **OUT** | —       |
 
 ## Use it
 

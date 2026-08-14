@@ -9,11 +9,11 @@ Logic-level P-channel MOSFET. Suitable for 3.3V / 5V gate drive.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **D** | — |
-| **G** | — |
-| **S** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **D** | —       |
+| **G** | —       |
+| **S** | —       |
 
 ## Use it
 

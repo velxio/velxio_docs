@@ -9,11 +9,11 @@ Logic-level N-channel MOSFET. Vth ≈ 1.6 V, fully enhanced at 3.3 V — perfect
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **D** | — |
-| **G** | — |
-| **S** | — |
+| Pin   | Signals |
+| ----- | ------- |
+| **D** | —       |
+| **G** | —       |
+| **S** | —       |
 
 ## Use it
 

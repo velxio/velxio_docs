@@ -9,23 +9,23 @@ LED Ring — Other part in the Velxio catalog.
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **GND** | power |
-| **VCC** | power |
-| **DIN** | — |
-| **DOUT** | — |
+| Pin      | Signals |
+| -------- | ------- |
+| **GND**  | power   |
+| **VCC**  | power   |
+| **DIN**  | —       |
+| **DOUT** | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `pixels` | `16` |  |
-| `pixelSpacing` | `0` |  |
-| `background` | `#363` |  |
-| `animation` | `false` |  |
+| Attribute      | Default | Description |
+| -------------- | ------- | ----------- |
+| `pixels`       | `16`    |             |
+| `pixelSpacing` | `0`     |             |
+| `background`   | `#363`  |             |
+| `animation`    | `false` |             |
 
 ## Use it
 

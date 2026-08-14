@@ -2,7 +2,7 @@
 title: Examples gallery
 description: Hundreds of ready-to-run example projects, filterable by board, difficulty and topic.
 sidebar:
-  order: 6
+  order: 7
 ---
 
 Velxio ships a gallery of **400+ example projects** — every one opens in

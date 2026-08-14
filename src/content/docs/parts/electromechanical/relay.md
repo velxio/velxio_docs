@@ -9,23 +9,23 @@ description: "5-pin single-pole double-throw electromechanical relay. Coil drive
 
 ## Pins
 
-| Pin | Signals |
-| --- | --- |
-| **COIL+** | — |
-| **COIL-** | — |
-| **NO** | — |
-| **COM** | — |
-| **NC** | — |
+| Pin       | Signals |
+| --------- | ------- |
+| **COIL+** | —       |
+| **COIL-** | —       |
+| **NO**    | —       |
+| **COM**   | —       |
+| **NC**    | —       |
 
 ## Attributes
 
 Editable from the [part inspector](/docs/circuit-editor/part-inspector/):
 
-| Attribute | Default | Description |
-| --- | --- | --- |
-| `coil_voltage` | `5` | Nominal coil voltage (V) |
-| `coil_resistance` | `70` | Coil resistance (Ω) |
-| `include_flyback` | `true` | Integrated flyback diode across coil |
+| Attribute         | Default | Description                          |
+| ----------------- | ------- | ------------------------------------ |
+| `coil_voltage`    | `5`     | Nominal coil voltage (V)             |
+| `coil_resistance` | `70`    | Coil resistance (Ω)                  |
+| `include_flyback` | `true`  | Integrated flyback diode across coil |
 
 ## Use it
 

@@ -8,12 +8,12 @@ sidebar:
 La familia AVR funciona **enteramente en tu navegador** — inicio instantáneo, sin
 ida y vuelta a la nube — con emulación AVR de precisión de ciclos.
 
-| Placa                  | MCU                | Flash  | Notas                                                   |
-| ---------------------- | ------------------ | ------ | ------------------------------------------------------- |
-| **Arduino UNO**        | ATmega328P, 16 MHz | 32 KB  | La placa predeterminada para principiantes; 14 pines digitales + 6 analógicos |
-| **Arduino Nano**       | ATmega328P, 16 MHz | 32 KB  | El mismo chip que el UNO en una barra compatible con protoboard |
-| **Arduino Mega 2560**  | ATmega2560, 16 MHz | 256 KB | 54 E/S digitales, 4 UARTs — para proyectos que necesitan muchos pines |
-| **ATtiny85**           | ATtiny85, 8 MHz    | 8 KB   | El chip DIP desnudo de 8 pines, conéctalo directamente a la protoboard |
+| Placa                 | MCU                | Flash  | Notas                                                                         |
+| --------------------- | ------------------ | ------ | ----------------------------------------------------------------------------- |
+| **Arduino UNO**       | ATmega328P, 16 MHz | 32 KB  | La placa predeterminada para principiantes; 14 pines digitales + 6 analógicos |
+| **Arduino Nano**      | ATmega328P, 16 MHz | 32 KB  | El mismo chip que el UNO en una barra compatible con protoboard               |
+| **Arduino Mega 2560** | ATmega2560, 16 MHz | 256 KB | 54 E/S digitales, 4 UARTs — para proyectos que necesitan muchos pines         |
+| **ATtiny85**          | ATtiny85, 8 MHz    | 8 KB   | El chip DIP desnudo de 8 pines, conéctalo directamente a la protoboard        |
 
 **Lenguaje:** Arduino C++.
 
