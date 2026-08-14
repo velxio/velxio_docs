@@ -142,10 +142,23 @@ async function waitForSim(page, simLog, ms = 300_000) {
   return false;
 }
 
-async function loadExample(page, slug) {
+/** The AI panel takes a third of the width; screenshots that are not
+ *  about the assistant read much better without it. */
+async function minimizeAi(page) {
+  const b = page.locator(
+    'button[aria-label="Minimize chat"], button[title="Minimize"]'
+  );
+  if (await b.count()) {
+    await b.first().click();
+    await page.waitForTimeout(600);
+  }
+}
+
+async function loadExample(page, slug, { keepAi = false } = {}) {
   await page.goto(`${BASE}/example/${slug}`, { waitUntil: "domcontentloaded" });
   await page.waitForTimeout(6000); // canvas + example hydration
   await dismissOverlays(page);
+  if (!keepAi) await minimizeAi(page);
 }
 
 async function clickRun(page) {
@@ -165,6 +178,7 @@ const SCENES = {
     await page.goto(`${BASE}/`, { waitUntil: "domcontentloaded" });
     await page.waitForTimeout(6000);
     await dismissOverlays(page);
+    await minimizeAi(page);
     await shot(page, "getting-started/app-home");
     if (WANT_INVENTORY) await inventory(page, "app-home");
   },
@@ -288,7 +302,7 @@ const SCENES = {
     await waitForSim(page, simLog);
     await page.waitForTimeout(6000); // some serial output first
     await shot(page, "programming/serial-monitor", {
-      clip: { x: 0, y: 520, width: 905, height: 200 },
+      clip: { x: 0, y: 510, width: 1280, height: 210 },
     });
   },
 
@@ -332,7 +346,7 @@ const SCENES = {
     await page.waitForTimeout(30000); // join + DHCP + broker connect
     await shot(page, "wifi-iot/mqtt-running");
     await shot(page, "wifi-iot/serial-wifi", {
-      clip: { x: 410, y: 315, width: 495, height: 205 },
+      clip: { x: 410, y: 300, width: 870, height: 220 },
     });
   },
 
@@ -421,7 +435,7 @@ const SCENES = {
 
   /** The AI panel in each of its three modes (right-hand column clip). */
   "ai/modes": async page => {
-    await loadExample(page, "esp32-blink-led");
+    await loadExample(page, "esp32-blink-led", { keepAi: true });
     const clip = { x: 900, y: 0, width: 380, height: 720 };
     for (const mode of ["Basic", "Agent", "Tutor"]) {
       await page.locator(`button.mode-pill:has-text("${mode}")`).click();
