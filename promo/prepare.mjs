@@ -18,14 +18,17 @@ const events = JSON.parse(readFileSync(join(SCRIPTS, "promo-events.json"), "utf8
 const byLabel = Object.fromEntries(events.map(e => [e.label, e]));
 
 const sec = ms => ms / 1000;
+const tStart = sec(byLabel["start"].t); // modal visible, chat minimized
 const tRun = sec(byLabel["run"].t);
 const tSim = sec(byLabel["sim-started"].t);
 const tEnd = sec(byLabel["end"].t);
 
-const segA = { from: 0, to: tRun + 2.5 };
+const segA = { from: Math.max(0, tStart - 0.2), to: tRun + 2.5 };
 const segB = { from: Math.max(tSim - 0.8, segA.to), to: tEnd };
 const compTime = t =>
-  t <= segA.to ? t : segA.to - segA.from + Math.max(0, t - segB.from);
+  t <= segA.to
+    ? Math.max(0, t - segA.from)
+    : segA.to - segA.from + Math.max(0, t - segB.from);
 
 const data = {
   fps: 30,

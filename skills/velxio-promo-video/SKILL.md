@@ -51,6 +51,38 @@ ffmpeg -y -ss <ct> -i out/velxio-demo.mp4 -vframes 1 /tmp/beat.png
 Check: intro readable, each zoom shows its subject uncut, captions match
 what is on screen, cursor not covering what matters, final LED lit.
 
+## Gallery demo videos (basic mode)
+
+One short video per gallery example — open it, run it, film it working —
+with a split intro card (logo + title + board on the left, the whole
+circuit on the right), a lower third, the outro and the soundtrack.
+
+```bash
+node scripts/gallery-scan.mjs                     # refresh the 406-example index
+node scripts/gallery-record.mjs [slug ...]        # 1080p takes (skips done ones)
+node scripts/gallery-bbox.mjs [slug ...]          # measure where the circuit sits
+node scripts/gallery-render.mjs [slug ...]        # one mp4 per take
+```
+
+- The curated demo set lives in `GALLERY` at the top of
+  `gallery-record.mjs`; slugs come from `scripts/gallery-index.json`
+  (thumbnail filename = slug).
+- Stills are captured with `deviceScaleFactor: 2` and cropped to the
+  circuit bbox: sharp enough to fill half a 1080p frame. Do NOT zoom the
+  app to enlarge a small circuit — the canvas anchors zoom on its centre
+  and drifts the circuit off-screen; reset the view instead.
+- The bbox pass needs a FRESH CONTEXT per example: a second client-side
+  load of the editor leaves the canvas empty and measures nothing.
+- Board-less examples (Digital / Analog categories) never compile: Run
+  stays disabled and the SPICE engine drives them from the start.
+- Backend-QEMU boards (STM32, Raspberry Pi) emit no "in-browser" console
+  line. STM32 additionally does not run on staging at all (libqemu-arm is
+  an optional asset that is not deployed there) — compiles in 3 s, never
+  starts.
+- Raw takes (`promo/public/gallery/*.webm`, ~3 MB each) are gitignored;
+  the circuit stills and the per-take JSON are committed so a re-render
+  only needs the takes back.
+
 ## Music
 
 `promo/public/soundtrack.mp3` = Mixkit "House Vibez" by Lily J

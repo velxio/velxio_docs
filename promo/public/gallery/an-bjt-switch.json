@@ -1,0 +1,17 @@
+{
+ "slug": "an-bjt-switch",
+ "title": "BJT as a Switch",
+ "board": "Analog",
+ "description": "Base driven into saturation through Rb; collector pulled up via a load resistor. DC step input toggles Vce between ~0.2 V and Vcc.",
+ "runAt": 11046,
+ "liveAt": 11051,
+ "endAt": 25067,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 66,
+  "y": 91,
+  "w": 544,
+  "h": 264
+ }
+}

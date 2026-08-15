@@ -1,0 +1,17 @@
+{
+ "slug": "m5stack-core-piano",
+ "title": "M5Stack Core — button piano (speaker)",
+ "board": "M5Stack Core",
+ "description": "The three front buttons as a tiny instrument: BtnA/B/C each play a note on the built-in GPIO25 speaker (heard through your computer) while the LCD shows which key is down. Hold a button and the note holds; a self-contained board, no wiring.",
+ "runAt": 11252,
+ "liveAt": 51032,
+ "endAt": 65033,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 240,
+  "h": 268
+ }
+}

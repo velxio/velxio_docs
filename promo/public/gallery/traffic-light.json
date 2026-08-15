@@ -1,0 +1,17 @@
+{
+ "slug": "traffic-light",
+ "title": "Traffic Light",
+ "board": "Arduino Uno",
+ "description": "Simulate a traffic light with red, yellow, and green LEDs",
+ "runAt": 10806,
+ "liveAt": 23089,
+ "endAt": 37089,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 456,
+  "h": 306
+ }
+}

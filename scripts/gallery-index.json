@@ -1,0 +1,3250 @@
+[
+ {
+  "slug": "binary-counter-leds",
+  "title": "4-bit Binary Counter",
+  "description": "Count from 0 to 15 displayed on 4 LEDs. Each LED = one bit.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "power-supply-7805",
+  "title": "7805 Regulated Power Supply",
+  "description": "9V battery → 7805 → stable 5V for the Arduino. Classic linear regulator.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-oled-4pin-i2c",
+  "title": "Arduino Uno: SSD1306 OLED (4-pin I2C)",
+  "description": "Drive the cheap 4-pin SSD1306 OLED module (GND/VCC/SCL/SDA) over I2C from an Arduino Uno (SDA=A4, SCL=A5). Shows \"Hello Velxio!\" with a live counter.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-stepper-a4988",
+  "title": "Arduino Uno: Stepper + A4988",
+  "description": "Spin a bipolar stepper motor from an Arduino Uno through an A4988 driver. The MCU only pulses STEP and sets DIR; the A4988 drives the coils. The rotor turns continuously.",
+  "difficulty": "intermediate",
+  "category": "motors",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "battery-voltage-monitor",
+  "title": "Battery Voltage Monitor",
+  "description": "Voltage divider scales 9V battery down to 0-5V range for ADC measurement.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "blink-led",
+  "title": "Blink LED",
+  "description": "Classic Arduino blink example - toggle an LED on and off",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "button-led",
+  "title": "Button Control",
+  "description": "Control an LED with a pushbutton",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "capacitor-charge-curve",
+  "title": "Capacitor Charging Curve",
+  "description": "Charge a capacitor through a resistor, read the exponential V(t) via ADC.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "bjt-common-emitter",
+  "title": "Common-Emitter Amplifier",
+  "description": "NPN BJT amplifies a small AC signal. Gain = -Rc/Re.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "opamp-comparator",
+  "title": "Comparator with LED",
+  "description": "Op-amp compares pot voltage vs 2.5V reference. LED indicates which is higher.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "darlington-high-current",
+  "title": "Darlington Pair (High Current)",
+  "description": "Two NPN BJTs cascaded for beta-squared current gain. Drives heavy loads from MCU.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "l293d-motor-control",
+  "title": "DC Motor Control (L293D)",
+  "description": "L293D H-bridge drives a DC motor forward, reverse, and brake.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "arduino-uno.svg",
+  "title": "DFRobot ECG: a LED that beats with the heart",
+  "description": "The classic pulse monitor: a red LED on D8 flashes on every R spike the AD8232 puts out, so the heartbeat is visible on the breadboard. The serial monitor prints the running BPM alongside. Drag the BPM slider from 40 to 180 and watch the LED keep up.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "opamp-difference",
+  "title": "Difference Amplifier",
+  "description": "Vout = Gain * (V2 - V1). Useful for bridge sensors and differential signals.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "epaper-1in54-uno-hello",
+  "title": "ePaper 1.54\" Hello — Arduino Uno",
+  "description": "GxEPD2 paged-mode \"Hello, Velxio\" on a 200×200 SSD1681 e-Ink panel driven by an Arduino Uno. The smallest panel that fits in Uno's 32 KB flash + 2 KB SRAM at 16-row page height.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "fade-led",
+  "title": "Fade LED",
+  "description": "Smoothly fade an LED using PWM",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "full-adder",
+  "title": "Full Adder (1-bit)",
+  "description": "Sum = A XOR B XOR Cin, Cout = (A AND B) OR (Cin AND (A XOR B)).",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "diode-rectifier",
+  "title": "Half-Wave Rectifier",
+  "description": "Diode passes only positive half-cycles. Read rectified output on ADC.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "i2c-eeprom-rw",
+  "title": "I2C EEPROM Read/Write",
+  "description": "Writes data to a virtual I2C EEPROM (0x50) and reads it back. Tests TWI write+read transactions.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "i2c-rtc-read",
+  "title": "I2C RTC Clock (DS1307)",
+  "description": "Reads time from a virtual DS1307 RTC via I2C and prints it to Serial. Tests TWI read transactions.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "i2c-scanner",
+  "title": "I2C Scanner (TWI)",
+  "description": "Scans the I2C bus and reports all devices found. SSD1306 OLED (0x3C) is wired on canvas; virtual devices at 0x48, 0x50, 0x68 also respond.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "i8080-banner-streamer",
+  "title": "Intel 8080 Banner Streamer",
+  "description": "A clean-room Intel 8080 boots from a 328-byte embedded ROM, prints a banner, then prints \"uptime ticks: 0xNN\" every ~50 ms. Open the Serial Monitor to watch.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "opamp-inverting",
+  "title": "Inverting Amplifier (LM358)",
+  "description": "Vout = -(Rf/Rin) * Vin. Gain=-10 with Rin=1k, Rf=10k.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "ky-040-rotary-encoder",
+  "title": "KY-040 Rotary Encoder",
+  "description": "Read a KY-040 rotary encoder with an Arduino Uno. Turn the knob to move a counter (CLK/DT quadrature) and press the shaft (SW) to reset it. Open the Serial Monitor to watch the position.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "lcd-hello",
+  "title": "LCD 20x4 Display",
+  "description": "Display text on a 20x4 LCD using the LiquidCrystal library",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "multi-led-bar",
+  "title": "LED Bar Graph",
+  "description": "5 LEDs driven from digital pins with individual resistors. Bargraph display.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "led-current-limiting",
+  "title": "LED with Current-Limiting Resistor",
+  "description": "Calculate R to set LED current to 10mA. I = (Vcc-Vf)/R.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "lm317-adjustable-psu",
+  "title": "LM317 Adjustable PSU",
+  "description": "LM317 with R1/R2 divider. Vout = 1.25 * (1 + R2/R1). Set any voltage 1.25-37V.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "logic-probe",
+  "title": "Logic Probe (HIGH/LOW/FLOATING)",
+  "description": "Read any digital pin state and show on 3 LEDs: green=HIGH, red=LOW, yellow=floating.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "m5stack-chain-rgb-digits",
+  "title": "M5Stack Chain RGB Matrix — counting digits",
+  "description": "A 3x5 digit font on the 8x8 Chain RGB Matrix: the panel counts 0-9 forever, each digit in its own colour. Same NeoPixel wiring as the rainbow example (DIN to D6, row-major index = row*8 + col) - the smallest useful font you can fit on eight pixels.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "m5stack-chain-rgb-fire",
+  "title": "M5Stack Chain RGB Matrix — fire",
+  "description": "The classic fire effect on the 8x8 Chain RGB Matrix: heat rises from the bottom row, cools as it climbs, and maps through a black-red-orange-white palette. Random sparks keep it alive - 64 WS2812 LEDs doing a convincing campfire.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "m5stack-chain-rgb-rainbow",
+  "title": "M5Stack Chain RGB Matrix — Rainbow",
+  "description": "Sweep a rainbow across M5Stack's Chain RGB Matrix (8×8, 64 WS2812 LEDs) with an Arduino Uno. Wire DIN → D6, 5V and GND, and the Adafruit NeoPixel library scrolls a colour wheel over the whole panel.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "microsd-card-uno",
+  "title": "microSD Card (Arduino Uno)",
+  "description": "Read and write files on a microSD card over SPI. The card is pre-loaded with this project's own files (free auto-copy); paid users can upload their own files from the component's \"SD Card\" panel. Lists the root directory, then writes /log.txt and reads it back. Open the Serial Monitor at 9600 baud.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "mixed-and-transistor-driver",
+  "title": "Mixed: MCU + AND gate + transistor (coexistence test)",
+  "description": "Coexistence of digital and analog in ONE circuit: the Arduino drives two logic levels (one steady HIGH \"enable\", one blinking), a physical AND gate combines them, and the AND output switches an NPN transistor that drives the \"motor\" LED. The LED should blink — proving MCU -> logic gate -> transistor -> load works through the digital and analog (ngspice) motors together.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "mosfet-pwm-led",
+  "title": "MOSFET PWM LED Dimmer",
+  "description": "2N7000 N-MOSFET as low-side switch. Gate driven by PWM on pin 9 dims the LED.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "l293d-speed-pwm",
+  "title": "Motor Speed Control (PWM)",
+  "description": "Potentiometer controls motor speed via PWM on L293D enable pin.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "multi-protocol",
+  "title": "Multi-Protocol Demo",
+  "description": "Uses Serial + I2C + SPI together. Reads RTC via I2C, sends SPI data, and logs everything to Serial.",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "nand-sr-latch",
+  "title": "NAND SR Latch",
+  "description": "Two cross-coupled NAND gates form a Set-Reset latch. Memory without a clock!",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "npn-led-switch",
+  "title": "NPN Transistor LED Switch",
+  "description": "2N2222 NPN switches a high-current LED from a low-current MCU pin.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "ntc-temperature",
+  "title": "NTC Temperature Sensor",
+  "description": "NTC breakout module (built-in 10k pull-up). Calculates temperature via beta model.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "optocoupler-signal",
+  "title": "Optocoupler Signal Isolation",
+  "description": "4N25 optocoupler isolates MCU from a higher-voltage circuit.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "parallel-resistors",
+  "title": "Parallel Resistors",
+  "description": "Three resistors in parallel: R_total = 1/(1/R1+1/R2+1/R3). Measure with ADC.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "photoresistor-light",
+  "title": "Photoresistor Light Sensor",
+  "description": "LDR + pull-down resistor. Brighter light = lower LDR resistance = higher voltage.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "pnp-high-side-switch",
+  "title": "PNP High-Side Switch",
+  "description": "2N3906 PNP switches a load to Vcc when base is pulled LOW.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "pot-adc-reader",
+  "title": "Potentiometer ADC Reader",
+  "description": "Turn the potentiometer knob to vary the voltage on A0 from 0 to 5V.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "rc-low-pass-filter",
+  "title": "RC Low-Pass Filter",
+  "description": "PWM output filtered by RC gives smooth analog voltage. Classic DAC trick.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "relay-led-switch",
+  "title": "Relay-Controlled LED",
+  "description": "NPN transistor drives a relay. Relay switches an LED connected to a separate supply.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "schottky-reverse-protection",
+  "title": "Reverse Polarity Protection",
+  "description": "Schottky diode protects circuit from accidental reverse battery connection.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "rgb-led",
+  "title": "RGB LED Colors",
+  "description": "Cycle through colors with an RGB LED",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "opamp-schmitt-trigger",
+  "title": "Schmitt Trigger",
+  "description": "Op-amp with positive feedback creates hysteresis. Cleans up noisy signals.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "serial-echo",
+  "title": "Serial Echo (USART)",
+  "description": "Tests Serial communication: echoes typed characters back and prints status. Open the Serial Monitor to interact.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "serial-hello",
+  "title": "Serial Hello World",
+  "description": "Send messages through serial communication",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "serial-led-control",
+  "title": "Serial LED Control",
+  "description": "Control an LED via Serial commands: send \"1\" or \"0\". Tests USART RX + GPIO output together.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "simon-says",
+  "title": "Simon Says Game",
+  "description": "Memory game with LEDs and buttons",
+  "difficulty": "advanced",
+  "category": "games",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "spi-loopback",
+  "title": "SPI Loopback Test",
+  "description": "Tests SPI by sending bytes and reading responses. Demonstrates MOSI/MISO/SCK/SS protocol.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "tft-display",
+  "title": "TFT ILI9341 Display",
+  "description": "Color TFT display demo: fills, text, and a bouncing ball animation using the Adafruit ILI9341 library (240x320)",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "traffic-light",
+  "title": "Traffic Light",
+  "description": "Simulate a traffic light with red, yellow, and green LEDs",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-7segment",
+  "title": "Uno: 7-Segment Counter",
+  "description": "Count 0–9 on a 7-segment display driven directly from pins 2–8 on the Arduino Uno.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-dht22",
+  "title": "Uno: DHT22 Temperature & Humidity",
+  "description": "Read temperature and humidity using a DHT22 sensor on pin 7.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-hcsr04",
+  "title": "Uno: HC-SR04 Ultrasonic Distance",
+  "description": "Measure distance with an HC-SR04 ultrasonic sensor. TRIG on pin 9, ECHO on pin 10.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-ntc",
+  "title": "Uno: NTC Thermistor Temperature",
+  "description": "Calculate temperature from an NTC 10k thermistor sensor on A1 using the Steinhart–Hart equation.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-photoresistor",
+  "title": "Uno: Photoresistor Light Sensor",
+  "description": "Read analog light level from a photoresistor module on A0. An LED on pin 9 dims proportionally to compensate for darkness.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-pir",
+  "title": "Uno: PIR Motion Detector",
+  "description": "Detect movement with a PIR infrared sensor on pin 4. The built-in LED on pin 13 lights up when motion is detected.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-potentiometer",
+  "title": "Uno: Potentiometer → Serial",
+  "description": "Read an analog potentiometer on A0 and print the value to Serial Monitor.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-rgb-cycle",
+  "title": "Uno: RGB LED Cycle",
+  "description": "Cycle through 7 colors on an RGB LED connected to pins 9 (R), 10 (G), 11 (B) using PWM.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "uno-servo",
+  "title": "Uno: Servo Motor Sweep",
+  "description": "Sweep a servo motor smoothly from 0° to 180° and back using pin 9 (PWM). Uses the built-in Servo library.",
+  "difficulty": "beginner",
+  "category": "robotics",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "voltage-divider",
+  "title": "Voltage Divider",
+  "description": "R1 + R2 divide 5V into a lower voltage read by ADC. Fundamental analog circuit.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "opamp-voltage-follower",
+  "title": "Voltage Follower (Buffer)",
+  "description": "Op-amp with 100% feedback. Vout = Vin. High Z input, low Z output.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "wheatstone-bridge",
+  "title": "Wheatstone Bridge",
+  "description": "Four-resistor bridge detects tiny resistance changes. Used in strain gauges and load cells.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "xor-toggle-detector",
+  "title": "XOR Toggle Detector",
+  "description": "XOR gate detects when two switches are in different positions.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "zener-regulator",
+  "title": "Zener Voltage Regulator",
+  "description": "5.1V Zener clamps output. Even if input varies, output stays at 5.1V.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Arduino Uno"
+ },
+ {
+  "slug": "nano-sensor-station",
+  "title": "Arduino Nano Sensor Station",
+  "description": "Compact weather station: NTC + photoresistor on Nano. Reads temp and light.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Nano"
+ },
+ {
+  "slug": "nano-blink",
+  "title": "Nano: Blink LED",
+  "description": "Blink the built-in LED on pin 13 of the Arduino Nano.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Nano"
+ },
+ {
+  "slug": "nano-button-led",
+  "title": "Nano: Button + LED",
+  "description": "Press a button on pin 2 to light up an LED on pin 13 on the Arduino Nano.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Nano"
+ },
+ {
+  "slug": "nano-fade",
+  "title": "Nano: PWM Fade",
+  "description": "Fade an LED in and out using PWM on pin 9 of the Arduino Nano.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Nano"
+ },
+ {
+  "slug": "nano-serial",
+  "title": "Nano: Serial Hello",
+  "description": "Print Hello World and uptime every second from Arduino Nano via Serial.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Arduino Nano"
+ },
+ {
+  "slug": "mega-multi-led",
+  "title": "Arduino Mega 16-LED Bar",
+  "description": "Arduino Mega drives 16 LEDs from pins 22-37. Knight Rider scanner effect.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Arduino Mega"
+ },
+ {
+  "slug": "mega-led-chase",
+  "title": "Mega: 8-LED Chase",
+  "description": "Knight-Rider style LED chase across 8 LEDs on pins 2–9. Shows off the Mega's many I/O pins.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Mega"
+ },
+ {
+  "slug": "mega-blink",
+  "title": "Mega: Blink LED",
+  "description": "Blink the built-in LED on pin 13 of the Arduino Mega 2560.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Arduino Mega"
+ },
+ {
+  "slug": "mega-serial",
+  "title": "Mega: Serial Hello",
+  "description": "Hello World via Serial on Arduino Mega — tests all 4 UART ports.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Arduino Mega"
+ },
+ {
+  "slug": "mega-serial-control",
+  "title": "Mega: Serial LED Control",
+  "description": "Send '1'–'8' over Serial to toggle individual LEDs on the Arduino Mega.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Arduino Mega"
+ },
+ {
+  "slug": "dual-pico-bidirectional-handshake",
+  "title": "[2× Pico W] Bidirectional Digital Handshake",
+  "description": "Two Picos signal each other over independent digital lines. Pico A drives GP15 (data) and watches GP14 (ack); Pico B reads GP15 and pulses GP14 on every transition to acknowledge. Each board's Serial Monitor logs every event, so you can see the round-trip on both sides.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Pico"
+ },
+ {
+  "slug": "dual-pico-digital-mirror",
+  "title": "[2× Pico W] Digital GPIO Mirror",
+  "description": "Simplest possible cross-board test. Pico A toggles GP15 every 500 ms; Pico B reads GP15 as a digital input and mirrors its state to its built-in LED. Watch each Pico's Serial Monitor to confirm the wire is alive.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pico"
+ },
+ {
+  "slug": "dual-pico-serial1-passthrough",
+  "title": "[2× Pico W] Serial1 Passthrough (UART0)",
+  "description": "Two Raspberry Pi Pico W boards talking over Serial1 (UART0 on GP0/GP1). Pico A sends \"PING #N\" every second; Pico B replies \"PONG #N\". Open the Serial Monitor on each board to see the conversation.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-adc-read",
+  "title": "[Pico] ADC Read",
+  "description": "Read analog values from GPIO26-28 and internal temperature sensor",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-blink",
+  "title": "[Pico] Blink LED",
+  "description": "Classic blink example on Raspberry Pi Pico — GPIO25 built-in LED",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-i2c-eeprom-rw",
+  "title": "[Pico] I2C EEPROM R/W",
+  "description": "Write and read back data to a virtual I2C EEPROM on the Pico",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-i2c-rtc-read",
+  "title": "[Pico] I2C RTC Read",
+  "description": "Read time from a virtual DS1307 RTC over I2C on Raspberry Pi Pico",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-i2c-scanner",
+  "title": "[Pico] I2C Scanner",
+  "description": "Scan the I2C bus on the Pico for connected devices",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-multi-protocol",
+  "title": "[Pico] Multi-Protocol Demo",
+  "description": "Comprehensive test: Serial + I2C + SPI + ADC on the Raspberry Pi Pico",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-serial-echo",
+  "title": "[Pico] Serial Echo",
+  "description": "Echo serial input back with a timestamp — tests UART on RP2040",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-serial-led-control",
+  "title": "[Pico] Serial LED Control",
+  "description": "Control the Pico LED via serial commands (1=ON, 0=OFF, ?=status)",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-spi-loopback",
+  "title": "[Pico] SPI Loopback",
+  "description": "SPI loopback test on RP2040 — sends and receives bytes via SPI0",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Pico"
+ },
+ {
+  "slug": "epaper-2in13-pico-clock",
+  "title": "ePaper 2.13\" Wall Clock — Raspberry Pi Pico",
+  "description": "Counts seconds and refreshes the framebuffer once per minute on a 2.13\" 250×122 SSD1675A panel. Runs on the Pico via the Earle Philhower core; SPI0 default pins.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "Pico"
+ },
+ {
+  "slug": "epaper-4in2-pico-image",
+  "title": "ePaper 4.2\" Static Image — Raspberry Pi Pico",
+  "description": "Embeds a fixed 400×300 black-and-white pattern (concentric squares) and pushes it once. Big enough to demonstrate a real layout — title block, divider, data table.",
+  "difficulty": "advanced",
+  "category": "displays",
+  "board": "Pico"
+ },
+ {
+  "slug": "100d-joystick-direction-display-with-oled",
+  "title": "Joystick Direction Display with OLED",
+  "description": "Joystick Direction Display with OLED on Raspberry Pi Pico (MicroPython) — uses OLED. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-doom-raycaster",
+  "title": "Pico Doom — Raycaster Demo",
+  "description": "Wolfenstein / early-Doom-style first-person 3D corridor on a Pi Pico + ILI9341 TFT. DDA raycasting at 160 rays/frame, no framebuffer (columns drawn straight to the TFT via drawFastVLine). Forward/back move, two more buttons turn the player. 16×16 tile map with 5 wall palettes (slate, blood, brown, toxic green, bronze door). The full id Software Doom needs the WAD assets shoehorned into 2 MB of flash with custom compression that the emulator cannot reproduce — this is the visual demo the Pico hardware actually runs in real life.",
+  "difficulty": "advanced",
+  "category": "games",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-7segment",
+  "title": "Pico: 7-Segment Counter",
+  "description": "Count 0–9 on a 7-segment display driven from GPIO 2–8 on the Raspberry Pi Pico.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-joystick",
+  "title": "Pico: Analog Joystick",
+  "description": "Read X/Y axes and button press from an analog joystick. VERT on A0 (GP26), HORZ on A1 (GP27), SEL button on D4 (GP16).",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-button-led",
+  "title": "Pico: Button + LED",
+  "description": "Press a button on GP2 to light up an LED on GP3 on the Raspberry Pi Pico.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-dht22",
+  "title": "Pico: DHT22 Temperature & Humidity",
+  "description": "Read temperature and humidity from a DHT22 sensor on GP7 using the Raspberry Pi Pico.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-hcsr04",
+  "title": "Pico: HC-SR04 Ultrasonic Distance",
+  "description": "Measure distance with an HC-SR04 sensor on the Raspberry Pi Pico. TRIG on D5 (GP17), ECHO on D6 (GP18).",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-ntc",
+  "title": "Pico: NTC Thermistor Temperature",
+  "description": "Read temperature from an NTC 10k thermistor on the Pico ADC pin A0 (GP26) using the Steinhart–Hart equation.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-pir",
+  "title": "Pico: PIR Motion Detector",
+  "description": "Detect movement with a PIR sensor on D4 (GP16). The built-in LED (GP25) activates when motion is detected.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-rgb",
+  "title": "Pico: RGB LED Cycle",
+  "description": "Cycle through colors on an RGB LED using GPIO 6 (R), 7 (G), 8 (B) on the Raspberry Pi Pico.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-servo",
+  "title": "Pico: Servo Motor Sweep",
+  "description": "Sweep a servo motor from 0° to 180° and back on the Raspberry Pi Pico using D3 / GP15 (PWM).",
+  "difficulty": "beginner",
+  "category": "robotics",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-oled-4pin-i2c",
+  "title": "Raspberry Pi Pico: SSD1306 OLED (4-pin I2C)",
+  "description": "Drive the cheap 4-pin SSD1306 OLED module (GND/VCC/SCL/SDA) over I2C from a Raspberry Pi Pico (SDA=GP4, SCL=GP5).",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "Pico"
+ },
+ {
+  "slug": "pico-stepper-a4988",
+  "title": "Raspberry Pi Pico: Stepper + A4988",
+  "description": "Spin a bipolar stepper motor from a Raspberry Pi Pico through an A4988 driver (STEP = GP3, DIR = GP4).",
+  "difficulty": "intermediate",
+  "category": "motors",
+  "board": "Pico"
+ },
+ {
+  "slug": "100d-single-digit-seven-segment-display-with-raspberry-pi-pico-micropython",
+  "title": "Single Digit Seven Segment Display with Raspberry Pi-Pico (MicroPython)",
+  "description": "Single Digit Seven Segment Display with Raspberry Pi-Pico (MicroPython) on Raspberry Pi Pico (MicroPython). From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pico"
+ },
+ {
+  "slug": "100d-blynk-based-iot-relay-control-micropython",
+  "title": "Blynk Based IoT Relay Control (MicroPython)",
+  "description": "Blynk Based IoT Relay Control (MicroPython) on Raspberry Pi Pico W (MicroPython) — uses Blynk, Blynk Cloud, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "100d-iot-relay-control-web-server-raspberry-pi-pico-2w",
+  "title": "IoT Relay Control Web Server (Raspberry Pi Pico 2W)",
+  "description": "IoT Relay Control Web Server (Raspberry Pi Pico 2W) on Raspberry Pi Pico W (MicroPython) — uses Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "100d-ota-update-pico2w",
+  "title": "OTA Update Pico2W",
+  "description": "OTA Update Pico2W on Raspberry Pi Pico W (MicroPython) — uses OTA, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "100d-pico-2-w-dht11-http-csv-logger",
+  "title": "Pico 2 W Dht11 Http Csv Logger",
+  "description": "Pico 2 W Dht11 Http Csv Logger on Raspberry Pi Pico W (MicroPython) — uses DHT, HTTP server, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "picow-wifi-async-led",
+  "title": "Pico W — Async LED control over Wi-Fi",
+  "description": "Pico W joins Velxio-GUEST then runs an async HTTP server on :80. /on and /off toggle the on-board LED through the CYW43 chip — the same path the real driver takes.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "picow-wifi-relay-web-server",
+  "title": "Pico W — IoT relay web server",
+  "description": "Blocking HTTP server that drives a relay on GP2. Hit http://10.13.37.42/on and /off to flip it. Source: 100_Days_100_IoT_Projects/IoT_Relay_Control_Web_Server.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "picow-wifi-servo-web",
+  "title": "Pico W — Web servo controller",
+  "description": "Drives a servo on GP15 from a slider on a web page served by the Pico W. Source: 100_Days_100_IoT_Projects/Pico_W_Web_Servo_Controller.",
+  "difficulty": "intermediate",
+  "category": "robotics",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "picow-wifi-websocket-led",
+  "title": "Pico W — WebSocket-controlled LED",
+  "description": "Hand-rolled WebSocket server. Browser opens an upgrade request, then sends \"ON\"/\"OFF\" frames to toggle the LED on GP15. Source: 100_Days_100_IoT_Projects/WebSocket_LED_Control_using_Raspberry_Pi_Pico_W.",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "100d-pico-w-async-led-control-micropython",
+  "title": "Pico W Async LED Control (MicroPython)",
+  "description": "Pico W Async LED Control (MicroPython) on Raspberry Pi Pico W (MicroPython) — uses Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "100d-pico-w-web-servo-controller",
+  "title": "Pico W Web Servo Controller",
+  "description": "Pico W Web Servo Controller on Raspberry Pi Pico W (MicroPython) — uses OTA, Servo, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "robotics",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "100d-pir-motion-detector-using-raspberry-pi-pico-2w-and-micropython",
+  "title": "PIR Motion Detector using Raspberry Pi Pico 2W & MicroPython",
+  "description": "PIR Motion Detector using Raspberry Pi Pico 2W & MicroPython on Raspberry Pi Pico W (MicroPython). From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "100d-raspberry-pi-pico-2-w-thingsboard-iot",
+  "title": "Raspberry Pi Pico 2 W ThingsBoard IoT",
+  "description": "Raspberry Pi Pico 2 W ThingsBoard IoT on Raspberry Pi Pico W (MicroPython) — uses DHT, MQTT, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "100d-servo-motor-control-with-raspberry-pi-pico-2-w-micropython",
+  "title": "Servo Motor Control with Raspberry Pi Pico 2 W (MicroPython)",
+  "description": "Servo Motor Control with Raspberry Pi Pico 2 W (MicroPython) on Raspberry Pi Pico W (MicroPython) — uses Servo. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "robotics",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "100d-websocket-led-control-using-raspberry-pi-pico-w",
+  "title": "WebSocket LED Control using Raspberry Pi Pico W",
+  "description": "WebSocket LED Control using Raspberry Pi Pico W on Raspberry Pi Pico W (MicroPython) — uses WebSocket, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "Pico W (Wi-Fi)"
+ },
+ {
+  "slug": "100d-aqi-esp",
+  "title": "AQI ESP",
+  "description": "AQI ESP on ESP32 (MicroPython) — uses DHT, HTTP server, OLED, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-auto-night-light-using-ldr-esp32-plus-micropython",
+  "title": "Auto Night Light using LDR (ESP32 + MicroPython)",
+  "description": "Auto Night Light using LDR (ESP32 + MicroPython) on ESP32 (MicroPython) — uses LDR. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-battery-monitor-with-blynk-iot",
+  "title": "Battery Monitor with Blynk IoT",
+  "description": "Battery Monitor with Blynk IoT on ESP32 (MicroPython) — uses Blynk, Blynk Cloud, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-bluetooth-based-wireless-led-control-system",
+  "title": "Bluetooth Based Wireless LED Control System",
+  "description": "Bluetooth Based Wireless LED Control System on ESP32 (MicroPython) — uses BLE. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-blynk-controlled-dc-brushless-fan",
+  "title": "Blynk Controlled DC Brushless Fan",
+  "description": "Blynk Controlled DC Brushless Fan on ESP32 (MicroPython) — uses Blynk, Blynk Cloud, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-clap-toggle-switch-using-esp32-and-digital-sound-sensor-micropython",
+  "title": "Clap Toggle Switch using ESP32 & Digital Sound Sensor (MicroPython)",
+  "description": "Clap Toggle Switch using ESP32 & Digital Sound Sensor (MicroPython) on ESP32 (MicroPython). From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-dc-motor-speed-control-web-slider",
+  "title": "DC Motor Speed Control (Web Slider)",
+  "description": "DC Motor Speed Control (Web Slider) on ESP32 (MicroPython) — uses Servo, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "robotics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "robot-desktop-eyes",
+  "title": "Desktop Robot — Animated Eyes",
+  "description": "Cozmo-style desktop robot on ESP32: OLED face with random blinks/looks/expressions, DHT11 weather mode, PIR-triggered wakeup, LDR sleep when dark, sound-triggered reactions and two eyebrow servos. 34-file C++ project, real Arduino libraries (U8g2lib, DHT, ESP32Servo).",
+  "difficulty": "advanced",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-c4001-direction",
+  "title": "DFRobot C4001: approaching or leaving",
+  "description": "Radar speed is signed, and the sign is the story: positive means the target closes in, negative means it walks away. The sketch reads the speed register and narrates the motion. Set Target to 1 and move the Speed slider through negative, zero and positive.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-c4001-zones",
+  "title": "DFRobot C4001: distance zones",
+  "description": "The radar as a proximity classifier: under 1 m is NEAR, to 4 m is MID, beyond is FAR - the kind of banding a kiosk uses to wake its screen as someone approaches. Set Target to 1 and sweep the Distance slider across the zones.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-c4001-presence",
+  "title": "DFRobot C4001: mmWave presence (I2C)",
+  "description": "Gravity C4001 24GHz radar on I2C (SDA=GPIO21, SCL=GPIO22). Reads presence + distance with the DFRobot_C4001 register protocol. Move the Target slider while running.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-c4001-nightlight",
+  "title": "DFRobot C4001: presence night-light",
+  "description": "The reason this radar exists: lights that stay on while someone is in the room. The LED switches on the moment the radar reports a target and holds for five seconds after the room empties, so brief drops never blink the light. Toggle the Target slider and count the hold.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-soil-esp32",
+  "title": "DFRobot Soil Moisture: ESP32 millivolt readout",
+  "description": "The same probe on an ESP32: analogReadMilliVolts() hands back calibrated millivolts (no ADC-count arithmetic), and the sketch converts the sensor's 2900 mV dry / 1000 mV wet span into a percentage. A reminder that the capacitive probe is 3.3 V-friendly.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-dht11-web-server-using-esp32-and-micropython",
+  "title": "DHT11 Web Server using ESP32 & MicroPython",
+  "description": "DHT11 Web Server using ESP32 & MicroPython on ESP32 (MicroPython) — uses DHT, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-dimmer-led-using-potentiometer-micropython",
+  "title": "Dimmer LED using Potentiometer (MicroPython)",
+  "description": "Dimmer LED using Potentiometer (MicroPython) on ESP32 (MicroPython) — uses Servo. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "robotics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-dual-ir-entry-exit-detector-with-telegram-alerts",
+  "title": "Dual IR Entry Exit Detector with Telegram Alerts",
+  "description": "Dual IR Entry Exit Detector with Telegram Alerts on ESP32 (MicroPython) — uses Telegram, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-eeprom-simulation-using-micropython-on-esp32-wokwi",
+  "title": "EEPROM Simulation using MicroPython on ESP32 (Wokwi)",
+  "description": "EEPROM Simulation using MicroPython on ESP32 (Wokwi) on ESP32 (MicroPython). From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "epaper-2in9-bwr-esp32-alert",
+  "title": "ePaper 2.9\" Tri-Colour Alert — ESP32",
+  "description": "Tri-colour 296×128 B/W/Red panel showing a status badge. Demonstrates the SSD1680 red plane: title in black, \"ALERT\" pill in red on white. Exercises both 0x24 (BW) and 0x26 (Red) RAM commands.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "epaper-2in9-esp32-weather",
+  "title": "ePaper 2.9\" Weather — ESP32",
+  "description": "Mock weather widget on a 2.9\" 296×128 SSD1680 panel. Demonstrates ePaper rendering via the backend Ssd168xEpaperSlave — the QEMU worker decodes SPI traffic and ships the latched frame back to the browser as an `epaper_update` WebSocket event.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "epaper-5in65-7c-esp32-rainbow",
+  "title": "ePaper 5.65\" 7-colour Rainbow — ESP32",
+  "description": "Drives the GoodDisplay GDEP0565D90 / Waveshare 5.65\" ACeP 7-colour panel (UC8159c controller). Renders horizontal colour bars + a centred title to show every palette entry. Real-hardware refresh is ~12 s; the emulator pulses BUSY for 150 ms.",
+  "difficulty": "advanced",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "epaper-7in5-esp32-dashboard",
+  "title": "ePaper 7.5\" Dashboard — ESP32",
+  "description": "Full 800×480 multi-tile dashboard on the largest mono panel. ESP32 only — the framebuffer is too big for AVR/Pico flash with paged GxEPD2.",
+  "difficulty": "advanced",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-ble-advertise",
+  "title": "ESP32 BLE Advertise",
+  "description": "Initialize BLE and start advertising. Note: BLE initialization is detected but actual BLE communication is not emulated in the current simulator.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-esp32-ble-led-control",
+  "title": "ESP32 BLE LED Control",
+  "description": "ESP32 BLE LED Control on ESP32 (MicroPython) — uses BLE. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-blink-led",
+  "title": "ESP32 Blink LED",
+  "description": "Blink the built-in LED on GPIO2 and an external red LED on GPIO4. Verifies ESP32 emulation is working.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-doom",
+  "title": "ESP32 Doom — Raycaster (ILI9341)",
+  "description": "A Wolfenstein / early-Doom style first-person raycaster on an ESP32 + ILI9341 320x240 colour TFT. The whole screen is redrawn every frame over hardware SPI (VSPI) with Adafruit_ILI9341 block writes (one startWrite/endWrite burst per frame), plus distance fog and darker E/W faces for depth. Four buttons move and turn the player; an auto-demo walks the 16x16 map when idle. Built as an emulation-speed benchmark — it overlays the on-device FPS and prints frame/FPS stats over Serial.",
+  "difficulty": "advanced",
+  "category": "games",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-dual-adc",
+  "title": "ESP32 Dual ADC Reader",
+  "description": "ESP32 reads two analog channels (GPIO34, GPIO35) simultaneously at 12-bit resolution.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-esp32-hotspot-access-point-setup-micropython",
+  "title": "ESP32 Hotspot (Access Point) Setup MicroPython",
+  "description": "ESP32 Hotspot (Access Point) Setup MicroPython on ESP32 (MicroPython) — uses Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-http-server",
+  "title": "ESP32 HTTP Server",
+  "description": "Run a simple web server on the ESP32. After connecting to WiFi, the server responds with an HTML page. Access it via the IoT Gateway link.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-esp32-ir-sensor-telegram-alert-micropython",
+  "title": "ESP32 IR Sensor Telegram Alert (MicroPython)",
+  "description": "ESP32 IR Sensor Telegram Alert (MicroPython) on ESP32 (MicroPython) — uses Telegram, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-pwm-led-rgb",
+  "title": "ESP32 LEDC PWM RGB",
+  "description": "ESP32 LEDC peripheral drives RGB LED with independent PWM channels.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-esp32-oled-smart-ui-eyes-animation-time-and-weather-micropython",
+  "title": "ESP32 OLED Smart UI Eyes Animation Time & Weather (MicroPython)",
+  "description": "ESP32 OLED Smart UI Eyes Animation Time & Weather (MicroPython) on ESP32 (MicroPython) — uses OLED, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-serial-echo",
+  "title": "ESP32 Serial Echo",
+  "description": "ESP32 reads from Serial and echoes back. Demonstrates multi-UART and Serial Monitor integration.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-wifi-mqtt",
+  "title": "ESP32 WiFi + MQTT",
+  "description": "Connect an ESP32 to WiFi and a public MQTT broker. The sketch publishes to its own topic and subscribes to it, so every message round-trips through broker.hivemq.com and toggles GPIO2 — a self-contained test of WiFi and MQTT with no external setup. Open the Serial Monitor at 115200 to watch it connect and exchange messages. The emulator advertises an open AP named \"Velxio-GUEST\".",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-wifi-connect",
+  "title": "ESP32 WiFi Connect",
+  "description": "Connect to the virtual \"Velxio-GUEST\" WiFi network and print the assigned IP address. Uses channel 6 for faster connection.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-wifi-scan",
+  "title": "ESP32 WiFi Scan",
+  "description": "Scan for available WiFi networks and display them in Serial Monitor. The emulated ESP32 will find the \"Velxio-GUEST\" access point.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-7segment",
+  "title": "ESP32: 7-Segment Counter",
+  "description": "Count 0–9 on a 7-segment display driven from GPIO 12, 13, 14, 25, 26, 27, 32 on the ESP32.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-joystick",
+  "title": "ESP32: Analog Joystick",
+  "description": "Read X/Y axes and button click from an analog joystick on the ESP32. X on D35, Y on D34, button on GPIO15.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-bmp280",
+  "title": "ESP32: BMP280 Weather Station",
+  "description": "Read temperature and pressure from a BMP280 barometric sensor over I2C (SDA=D21, SCL=D22).",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-dht22",
+  "title": "ESP32: DHT22 Temperature & Humidity",
+  "description": "Read temperature and humidity from a DHT22 sensor on GPIO4 of the ESP32.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-hcsr04",
+  "title": "ESP32: HC-SR04 Ultrasonic Distance",
+  "description": "Measure distance with an HC-SR04 sensor on ESP32. TRIG on GPIO18, ECHO on GPIO19.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-mpu6050",
+  "title": "ESP32: MPU-6050 Accelerometer",
+  "description": "Read 3-axis acceleration and gyroscope data from an MPU-6050 over I2C (SDA=D21, SCL=D22).",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-pir",
+  "title": "ESP32: PIR Motion Detector",
+  "description": "Detect motion with a PIR sensor on GPIO5 of the ESP32. Logs events to Serial with timestamps.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-idf-blink",
+  "title": "ESP32: Pure ESP-IDF Blink",
+  "description": "Blink an LED from a pure ESP-IDF project — app_main(), FreeRTOS delays and the GPIO driver, no Arduino core. Pick \"ESP-IDF\" in the language selector to write more projects like this.",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-servo",
+  "title": "ESP32: Servo Motor + Potentiometer",
+  "description": "Control a servo motor angle directly with a potentiometer. The servo follows the pot position in real time.",
+  "difficulty": "beginner",
+  "category": "robotics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-oled-4pin-i2c",
+  "title": "ESP32: SSD1306 OLED (4-pin I2C)",
+  "description": "Drive the cheap 4-pin SSD1306 OLED module (GND/VCC/SCL/SDA) over I2C from an ESP32 (SDA=21, SCL=22).",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-oled",
+  "title": "ESP32: SSD1306 OLED Display",
+  "description": "Display text and graphics on a 128×64 SSD1306 OLED over I2C (SDA=D21, SCL=D22).",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32-stepper-a4988",
+  "title": "ESP32: Stepper + A4988",
+  "description": "Spin a bipolar stepper motor from an ESP32 through an A4988 driver (STEP = GPIO26, DIR = GPIO27).",
+  "difficulty": "intermediate",
+  "category": "motors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-flask-server-based-led-control-using-micropython",
+  "title": "Flask Server Based LED Control using MicroPython",
+  "description": "Flask Server Based LED Control using MicroPython on ESP32 (MicroPython) — uses HTTP server, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "grove-pag7660-gesture",
+  "title": "Grove PAG7660: read a gesture (I2C)",
+  "description": "Grove Smart IR Gesture Sensor (PAG7660) on I2C (0x68). Reads the gesture result registers the same way Seeed's Grove_Gesture library does and prints the gesture name. Open the sensor slider panel while running to pick a gesture (SDA=GPIO21, SCL=GPIO22).",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-huskylens-official-i2c",
+  "title": "HuskyLens: DFRobot's official I2C example (real library)",
+  "description": "DFRobot's own HUSKYLENS_I2C.ino, byte for byte, running the vendor's real Arduino library against the emulated device: begin() knocks, request() pulls INFO+BLOCK frames in 16-byte I2C windows, and the serial monitor prints Block:xCenter=... exactly as on hardware. The library ships as extra sketch files (it is not in the Arduino index). Move the ID/X/Y sliders and the numbers follow.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-huskylens-official-utilities",
+  "title": "HuskyLens: DFRobot's official UTILITIES example",
+  "description": "The vendor's protocol torture test, ported from SoftwareSerial to I2C in three lines: it saves a screenshot AND a photo to the TF card (right-click the HuskyLens afterwards - both PNGs are in the SD panel), forgets, learns ID 1, names it TEST_NAME, writes and replaces custom texts on the screen, asks isPro and the firmware version, then prints Done. Watch the device screen while it runs - every step is visible.",
+  "difficulty": "advanced",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-huskylens-screen",
+  "title": "HuskyLens: drive the screen — algorithms, learning, custom text",
+  "description": "The sketch runs the device, and the device's own screen shows it: it cycles through the seven algorithms (watch the header change and Line Tracking swap the box for an arrow), learns the object as ID 2, names it, and writes custom text at coordinates — everything lands on the on-board display. Try the buttons too: the function button's edges dial the same algorithm menu, and holding the learning button forgets what the sketch taught.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-huskylens-greeter",
+  "title": "HuskyLens: face-recognition door greeter",
+  "description": "Face recognition as access control: learned face ID 1 gets a greeting and the green LED; any other ID is an unknown visitor and gets logged. Move the ID slider to 1 to be recognized, to 2-5 to knock as a stranger, and to 0 for an empty doorway.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-huskylens-line",
+  "title": "HuskyLens: line-following steering signal",
+  "description": "The line-tracking half of a robot, without the chassis: the line's X offset from the frame center becomes a signed steering command, printed as an ASCII gauge a motor mixer would consume. Sweep the X slider and watch the steering swing from hard left to hard right.",
+  "difficulty": "intermediate",
+  "category": "robotics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-huskylens-servo",
+  "title": "HuskyLens: pan servo follows the object",
+  "description": "Camera-on-a-servo tracking: the object's X position (0-319) maps to the servo angle, so the pan head turns to keep the target centered. Move the X slider from edge to edge and the horn sweeps with it; the serial monitor prints the correction.",
+  "difficulty": "intermediate",
+  "category": "robotics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-huskylens-photo",
+  "title": "HuskyLens: photos and screenshots onto the TF card",
+  "description": "The HuskyLens has its own TF card slot, and the protocol can use it: REQUEST_PHOTO saves what the camera sees, SAVE_SCREENSHOT saves the whole screen (UI included). The sketch shoots three of each; when it prints DONE, right-click the HuskyLens and open the SD Card panel - photo_0..2.png and screenshot_0..2.png are there, downloadable, and they travel with the project.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-huskylens-track",
+  "title": "HuskyLens: read the detected object (I2C)",
+  "description": "HuskyLens AI camera on I2C (0x32). Sends REQUEST_BLOCKS with the HUSKYLENS protocol and prints the detected object ID + center. Move the ID/X/Y sliders while running.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "dfr-huskylens-uart",
+  "title": "HuskyLens: UART mode (TX0/RX0)",
+  "description": "The other interface: the HuskyLens wired to the ESP32's UART0 pins speaks the same protocol over serial at the port's own pace. The sketch sends REQUEST_BLOCKS as raw frames and parses the INFO+BLOCK answers from Serial. Fair warning, faithful to the hardware: the serial monitor shares this UART, so you will see the protocol's binary frames mixed with the sketch's prints - exactly what a logic analyzer on the real wires shows.",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-iot-atmospheric-monitoring-system-using-esp32-wowki-and-blynk",
+  "title": "IoT Atmospheric Monitoring System using ESP32, wowki & Blynk",
+  "description": "IoT Atmospheric Monitoring System using ESP32, wowki & Blynk on ESP32 (MicroPython) — uses Blynk, Blynk Cloud, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-iot-based-dsm-smart-metering",
+  "title": "IoT Based DSM Smart Metering",
+  "description": "IoT Based DSM Smart Metering on ESP32 (MicroPython) — uses Blynk, Blynk Cloud, OTA, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-iot-environment-monitoring-with-anomaly-detection",
+  "title": "IoT Environment Monitoring With Anomaly Detection",
+  "description": "IoT Environment Monitoring With Anomaly Detection on ESP32 (MicroPython) — uses DHT, LDR, ThingSpeak, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-iot-smart-irrigation-system",
+  "title": "IoT Smart Irrigation System",
+  "description": "IoT Smart Irrigation System on ESP32 (MicroPython) — uses Blynk, Blynk Cloud, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-joystick-controlled-servo",
+  "title": "Joystick Controlled Servo",
+  "description": "Joystick Controlled Servo on ESP32 (MicroPython) — uses Servo. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "robotics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-micropython-watch",
+  "title": "MicroPython Watch",
+  "description": "MicroPython Watch on ESP32 (MicroPython) — uses OLED, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "microsd-card-esp32",
+  "title": "microSD Card (ESP32)",
+  "description": "Read and write files on a microSD card over SPI on the ESP32 (VSPI). The card is pre-loaded with this project's own files (free auto-copy); paid users can upload their own files from the component's \"SD Card\" panel. Lists the root directory, then writes /log.txt and reads it back. Open the Serial Monitor at 115200 baud.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-mq-135-gas-sensor-with-esp32-micropython",
+  "title": "MQ 135 Gas Sensor with ESP32 (MicroPython)",
+  "description": "MQ 135 Gas Sensor with ESP32 (MicroPython) on ESP32 (MicroPython) — uses OTA. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-mq4-gas-leak-detection-system-using-esp32-and-micropython",
+  "title": "MQ4 Gas Leak Detection System using ESP32 and MicroPython",
+  "description": "MQ4 Gas Leak Detection System using ESP32 and MicroPython on ESP32 (MicroPython). From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-mq7-co-gas-detection-esp32",
+  "title": "MQ7 CO Gas Detection ESP32",
+  "description": "MQ7 CO Gas Detection ESP32 on ESP32 (MicroPython). From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-ntp-synchronized-digital-clock-using-esp32-and-max7219",
+  "title": "NTP Synchronized Digital Clock using ESP32 & MAX7219",
+  "description": "NTP Synchronized Digital Clock using ESP32 & MAX7219 on ESP32 (MicroPython) — uses MAX7219, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-password-lock-system-using-esp32",
+  "title": "Password Lock System using ESP32",
+  "description": "Password Lock System using ESP32 on ESP32 (MicroPython) — uses I²C LCD. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-potentiometer-visualizer",
+  "title": "Potentiometer Visualizer",
+  "description": "Potentiometer Visualizer on ESP32 (MicroPython). From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-pulse-monitor",
+  "title": "Pulse Monitor",
+  "description": "Pulse Monitor on ESP32 (MicroPython) — uses OLED. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-rgb-color-mixer-using-potentiometers-esp32-plus-micropython",
+  "title": "RGB Color Mixer using Potentiometers (ESP32 + MicroPython)",
+  "description": "RGB Color Mixer using Potentiometers (ESP32 + MicroPython) on ESP32 (MicroPython) — uses Servo. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "robotics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "seeed-round-display-rtc",
+  "title": "Round Display: read the PCF8563 clock (I2C)",
+  "description": "The Round Display for XIAO carries a PCF8563 RTC on I2C (0x51). This ESP32 reads the BCD time registers and prints HH:MM:SS, which advances once per second. (SDA=GPIO21, SCL=GPIO22.)",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-smart-home-automation-system",
+  "title": "Smart Home Automation System",
+  "description": "Smart Home Automation System on ESP32 (MicroPython) — uses Blynk, Blynk Cloud, DHT, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-smart-indoor-security-system",
+  "title": "Smart Indoor Security System",
+  "description": "Smart Indoor Security System on ESP32 (MicroPython) — uses Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-smart-iot-gas-monitoring-system",
+  "title": "Smart IoT Gas Monitoring System",
+  "description": "Smart IoT Gas Monitoring System on ESP32 (MicroPython) — uses DHT, HTTP server, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-stepper-motor-control-using-esp32-and-a4988-micropython",
+  "title": "Stepper Motor Control using ESP32 & A4988 (MicroPython)",
+  "description": "Stepper Motor Control using ESP32 & A4988 (MicroPython) on ESP32 (MicroPython) — uses Stepper. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "robotics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-temperature-based-led-indicator-micropython-esp32",
+  "title": "Temperature Based LED Indicator (MicroPython ESP32)",
+  "description": "Temperature Based LED Indicator (MicroPython ESP32) on ESP32 (MicroPython) — uses Servo, Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "robotics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-ultrasonic-led-distance-indicator-esp32-micropython",
+  "title": "Ultrasonic LED Distance Indicator ESP32 MicroPython",
+  "description": "Ultrasonic LED Distance Indicator ESP32 MicroPython on ESP32 (MicroPython) — uses HC-SR04. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "100d-wi-fi-controlled-4wd-robot-car",
+  "title": "Wi Fi Controlled 4WD Robot Car",
+  "description": "Wi Fi Controlled 4WD Robot Car on ESP32 (MicroPython) — uses Wi-Fi. From Kritish Mohapatra's 100 Days of IoT series: https://github.com/kritishmohapatra/100_Days_100_IoT_Projects",
+  "difficulty": "intermediate",
+  "category": "robotics",
+  "board": "ESP32 (Xtensa)"
+ },
+ {
+  "slug": "esp32cam-lcd-preview",
+  "title": "ESP32-CAM + ILI9341 Live Preview",
+  "description": "Webcam frames decoded in-place with jpg2rgb565() and rendered to a 320×240 SPI TFT (160×120 centered, 1/2 scale). Status bar shows fps, frame counter, decode-fail counter and a live pulse. Requires Adafruit GFX + Adafruit ILI9341 libraries.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32-CAM"
+ },
+ {
+  "slug": "esp32cam-webcam-demo",
+  "title": "ESP32-CAM: Webcam Demo",
+  "description": "Init the OV2640 camera, verify chip-id over SCCB, then loop on esp_camera_fb_get() and print frame metadata to Serial. The simplest \"is the emulation alive\" sketch — click Camera in the canvas header to start streaming your webcam.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32-CAM"
+ },
+ {
+  "slug": "esp32s3-blink-led",
+  "title": "ESP32-S3 Blink LED",
+  "description": "Blink an external red LED on GPIO4 of the ESP32-S3 DevKitC-1. Verifies ESP32-S3 GPIO emulation is working.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ESP32-S3 (Xtensa)"
+ },
+ {
+  "slug": "esp32s3-serial-echo",
+  "title": "ESP32-S3 Serial Echo",
+  "description": "ESP32-S3 reads from Serial and echoes back. Demonstrates UART and Serial Monitor integration on the S3.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "ESP32-S3 (Xtensa)"
+ },
+ {
+  "slug": "esp32s3-potentiometer",
+  "title": "ESP32-S3: Potentiometer (ADC)",
+  "description": "Read a potentiometer with the ESP32-S3 12-bit ADC on GPIO1 (ADC1_CH0) and print the raw value and voltage.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32-S3 (Xtensa)"
+ },
+ {
+  "slug": "esp32s3-oled-i2c",
+  "title": "ESP32-S3: SSD1306 OLED Display",
+  "description": "Display text on a 128×64 SSD1306 OLED over I2C from the ESP32-S3 (default Wire pins SDA=GPIO8, SCL=GPIO9).",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32-S3 (Xtensa)"
+ },
+ {
+  "slug": "esp32c3-ble-advertise",
+  "title": "ESP32-C3 BLE Advertise",
+  "description": "Initialize BLE 5.0 and start advertising on the ESP32-C3. Note: The ESP32-C3 only supports BLE (no Classic Bluetooth). BLE initialization is detected but actual communication is not emulated.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "esp32c3-http-server",
+  "title": "ESP32-C3 HTTP Server",
+  "description": "Run a simple web server on the ESP32-C3. After connecting to WiFi, the server responds with an HTML page. Access it via the IoT Gateway link.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "esp32c3-wifi-connect",
+  "title": "ESP32-C3 WiFi Connect",
+  "description": "Connect the ESP32-C3 to the virtual \"Velxio-GUEST\" WiFi network and print the assigned IP address. Uses channel 6 for faster connection.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "esp32c3-wifi-scan",
+  "title": "ESP32-C3 WiFi Scan",
+  "description": "Scan for available WiFi networks on the ESP32-C3 (RISC-V). The emulated ESP32-C3 will find the \"Velxio-GUEST\" access point.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-blink",
+  "title": "ESP32-C3: Blink LED",
+  "description": "Blink an LED on GPIO 8 of the ESP32-C3. Runs through the QEMU lcgamboa backend (libqemu-riscv32) at 160 MHz.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-button",
+  "title": "ESP32-C3: Button + LED",
+  "description": "Press a button on GPIO 9 to toggle an LED on GPIO 8. Tests GPIO input on the browser ESP32-C3 emulator.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-dht22",
+  "title": "ESP32-C3: DHT22 Temperature & Humidity",
+  "description": "Read temperature and humidity with a DHT22 sensor on GPIO3 of the ESP32-C3 RISC-V board.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-hcsr04",
+  "title": "ESP32-C3: HC-SR04 Ultrasonic Distance",
+  "description": "Measure distance with an HC-SR04 sensor on the ESP32-C3. TRIG on GPIO5, ECHO on GPIO6.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-ili9341",
+  "title": "ESP32-C3: ILI9341 TFT Display (SPI)",
+  "description": "Draws a filled screen, a rounded rectangle and text on a 320x240 ILI9341 TFT from an ESP32-C3 over hardware SPI (FSPI: SCK=4, MISO=5, MOSI=6, CS=7).",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-pir",
+  "title": "ESP32-C3: PIR Motion Detector",
+  "description": "Detect motion with a PIR sensor on GPIO7 of the ESP32-C3. Prints detection events and count to Serial.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-potentiometer",
+  "title": "ESP32-C3: Potentiometer (ADC)",
+  "description": "Read a potentiometer with the ESP32-C3 12-bit ADC on GPIO0 (ADC1_CH0) and print the raw value and voltage.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-rgb",
+  "title": "ESP32-C3: RGB LED",
+  "description": "Cycle through red, green, and blue on an RGB LED using GPIO 6, 7, 8 on the ESP32-C3.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-serial-echo",
+  "title": "ESP32-C3: Serial Echo",
+  "description": "Type in Serial Monitor and see it echoed back by the ESP32-C3 browser emulator.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-serial",
+  "title": "ESP32-C3: Serial Hello",
+  "description": "Print Hello World and a heartbeat every second from ESP32-C3 via Serial. Runs in the browser.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-servo",
+  "title": "ESP32-C3: Servo Motor Sweep",
+  "description": "Sweep a servo motor from 0° to 180° and back on the ESP32-C3 using GPIO10 (PWM).",
+  "difficulty": "beginner",
+  "category": "robotics",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "c3-oled-i2c",
+  "title": "ESP32-C3: SSD1306 OLED Display",
+  "description": "Display text on a 128×64 SSD1306 OLED over I2C from the ESP32-C3 (default Wire pins SDA=GPIO8, SCL=GPIO9).",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32-C3 (RISC-V)"
+ },
+ {
+  "slug": "stm32-uno-gpio-mirror",
+  "title": "[STM32 + Arduino] GPIO Mirror",
+  "description": "Cross-board demo: the STM32 Blue Pill toggles PA1 every 500 ms (wired to Arduino Uno pin 2). The Uno reads pin 2 and mirrors it to its built-in LED (pin 13). Shows heterogeneous multi-board simulation — QEMU STM32 driving an avr8js Arduino.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-uno-serial-link",
+  "title": "[STM32 + Arduino] Serial Link",
+  "description": "Cross-board UART: the STM32 Blue Pill sends a \"PING n\" message over USART1 (PA9 TX) into the Arduino Uno RX (pin 0). The Uno reads each line and blinks LED 13 + echoes \"[Uno] got: ...\" to its own Serial Monitor. Watch both monitors.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-esp32-gpio-sync",
+  "title": "[STM32 + ESP32] GPIO Sync",
+  "description": "Cross-board demo: the STM32 Blue Pill toggles PA1 (wired to ESP32 GPIO4). The ESP32 reads GPIO4 and prints its state + mirrors it onto GPIO2. Two QEMU backends (libqemu-arm + libqemu-xtensa) talking over a wire.",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-blackpill-gpio",
+  "title": "[STM32 + STM32] Blue Pill → Black Pill",
+  "description": "Two different STM32 boards talking: the Blue Pill (F103) toggles PA1, wired to the Black Pill (F411) PA0. The Black Pill reads PA0 and mirrors it to its onboard PC13 LED. Both run on separate libqemu-arm QEMU instances.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-blink",
+  "title": "STM32 Blue Pill Blink",
+  "description": "Blink the onboard PC13 LED and print to Serial on an STM32F103 Blue Pill (QEMU / libqemu-arm)",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-oled-4pin-i2c",
+  "title": "STM32 Blue Pill: SSD1306 OLED (4-pin I2C)",
+  "description": "Drive the cheap 4-pin SSD1306 OLED module (GND/VCC/SCL/SDA) over I2C1 from an STM32 Blue Pill (SDA=PB7, SCL=PB6).",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-serial-counter",
+  "title": "STM32 Serial Counter",
+  "description": "STM32 Blue Pill prints an incrementing counter and uptime to Serial every second. Open the Serial Monitor to watch it. Onboard PC13 LED blinks as a heartbeat.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-7segment",
+  "title": "STM32: 7-Segment Counter",
+  "description": "Count 0-9 on a 7-segment display driven by seven GPIO pins (PA0-PA6 = segments A-G) on the STM32 Blue Pill. Pure digital output: each digit pattern is written to the segment pins. Common-cathode (COM -> GND).",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-bmp280",
+  "title": "STM32: BMP280 Weather Sensor (I2C)",
+  "description": "Read temperature and pressure from a BMP280 over I2C1 on an STM32 Blue Pill (SCL=PB6, SDA=PB7). The sensor runs as a QEMU I2C slave; values stream to the Serial Monitor. Demonstrates the STM32 hardware I2C master peripheral end to end.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-rtc",
+  "title": "STM32: DS1307 RTC Clock (I2C)",
+  "description": "Read the current time and date from a DS1307 real-time clock over I2C1 on the STM32 Blue Pill (SCL=PB6, SDA=PB7). The QEMU DS1307 slave returns the live system clock in BCD, ticking once a second in the Serial Monitor.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-mpu6050",
+  "title": "STM32: MPU6050 IMU (I2C)",
+  "description": "Read the WHO_AM_I id and accelerometer axes from an MPU6050 6-axis IMU over I2C1 on the STM32 Blue Pill (SCL=PB6, SDA=PB7). The sensor runs as a QEMU I2C slave; raw Wire reads stream to the Serial Monitor.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-button",
+  "title": "STM32: Push Button -> LED",
+  "description": "Read a push button on PA0 (INPUT_PULLUP) and mirror it to the onboard PC13 LED on the STM32 Blue Pill. Pressing the button drives the GPIO input LOW; the firmware lights the LED while pressed. Demonstrates GPIO input injection.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-rgb",
+  "title": "STM32: RGB LED Color Cycle",
+  "description": "Cycle an RGB LED through red, green and blue using three GPIO pins (PA0=R, PA1=G, PA2=B) on the STM32 Blue Pill. Pure digital output; common-cathode (COM -> GND).",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-switch",
+  "title": "STM32: Slide Switch -> LED",
+  "description": "Read a slide switch on PA0 and reflect its position on the onboard PC13 LED of the STM32 Blue Pill. Flipping the switch drives the GPIO input HIGH/LOW. Demonstrates GPIO input injection from a latching element.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-oled",
+  "title": "STM32: SSD1306 OLED Display (I2C)",
+  "description": "Drive a 128x64 SSD1306 OLED over I2C1 from an STM32 Blue Pill (SCL=PB6, SDA=PB7). The framebuffer writes are captured by the QEMU I2C slave and rendered on the canvas. Shows \"Hello Velxio!\" with a live frame counter.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-stepper",
+  "title": "STM32: Stepper Motor",
+  "description": "Rotate a stepper motor with the four-pin full-step sequence driven by GPIO pins (PA0-PA3) on the STM32 Blue Pill. Pure digital output: the firmware energizes coils A+, B+, A-, B- in order to step the rotor.",
+  "difficulty": "intermediate",
+  "category": "motors",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-bluepill-weather-station",
+  "title": "STM32: Weather Station (BMP280 + OLED)",
+  "description": "A complete I2C dashboard on the STM32 Blue Pill: read temperature and pressure from a BMP280 and render them live on an SSD1306 OLED, both sharing the same I2C1 bus (BMP280 0x76, OLED 0x3C, SCL=PB6/SDA=PB7). Exercises I2C read and write on one bus.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "STM32 Blue Pill"
+ },
+ {
+  "slug": "stm32-blackpill-blink",
+  "title": "STM32 Black Pill Blink",
+  "description": "Blink the onboard PC13 LED and print to Serial on an STM32F411 Black Pill (Cortex-M4, QEMU / libqemu-arm).",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "STM32 Black Pill"
+ },
+ {
+  "slug": "stm32-blackpill-oled",
+  "title": "STM32 Black Pill: SSD1306 OLED (I2C)",
+  "description": "Drive a 128x64 SSD1306 OLED over I2C1 from an STM32 Black Pill (F411, Cortex-M4; SCL=PB6, SDA=PB7). Proves the I2C display path works on the F4 board too. Shows \"Black Pill\" with a live counter.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "STM32 Black Pill"
+ },
+ {
+  "slug": "attiny85-blink",
+  "title": "ATtiny85: Blink LED",
+  "description": "Blink an external LED on PB1 (Digispark pin 1) through a 220 Ohm current-limit resistor.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ATtiny85"
+ },
+ {
+  "slug": "attiny85-button-led",
+  "title": "ATtiny85: Button + LED",
+  "description": "Press the button on PB0 to light the LED on PB1. Uses internal pull-up resistor — no external resistor needed.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ATtiny85"
+ },
+ {
+  "slug": "attiny85-ntc-sensor",
+  "title": "ATtiny85: NTC Temperature Sensor",
+  "description": "Read temperature from an NTC thermistor on PB3 (ADC3). The LED on PB1 blinks faster as temperature rises.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "ATtiny85"
+ },
+ {
+  "slug": "attiny85-pwm-fade",
+  "title": "ATtiny85: PWM LED Fade",
+  "description": "Smoothly fade an LED in and out using analogWrite() on PB1 (OC0B). Shows Timer0 PWM on the ATtiny85.",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "ATtiny85"
+ },
+ {
+  "slug": "pi-to-arduino-led-control",
+  "title": "[Pi + Arduino] Serial LED Control",
+  "description": "Raspberry Pi 3B controls two LEDs on an Arduino Uno via UART serial. Pi sends commands (LED1_ON, LED2_ON…) from a Python script; Arduino parses them and drives the LEDs.",
+  "difficulty": "advanced",
+  "category": "communication",
+  "board": "Multi-Board"
+ },
+ {
+  "slug": "pi3-blink-led",
+  "title": "[Pi 3] Blink an LED",
+  "description": "Raspberry Pi 3 blinks a red LED on GPIO17 with gpiozero. Start the Pi, click Upload in the File System panel, then run: python3 /home/pi/script.py",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Multi-Board"
+ },
+ {
+  "slug": "pi3-running-lights",
+  "title": "[Pi 3] Running Lights (5 LEDs)",
+  "description": "Raspberry Pi 3 sweeps a Knight-Rider pattern across 5 LEDs on GPIO17/27/22/5/6 with gpiozero. Start the Pi, Upload, then run: python3 /home/pi/script.py",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "Multi-Board"
+ },
+ {
+  "slug": "pi4-button-led",
+  "title": "[Pi 4] Button Toggles LED",
+  "description": "Raspberry Pi 4 reads a push button on GPIO2 and toggles an LED on GPIO17 with gpiozero. Start the Pi, Upload, run python3 /home/pi/script.py, then click the button.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Multi-Board"
+ },
+ {
+  "slug": "pi4-rgb-color-cycle",
+  "title": "[Pi 4] RGB LED Color Cycle",
+  "description": "Raspberry Pi 4 cycles a common-cathode RGB LED through 7 colors using digital on/off on GPIO17/27/22 (gpiozero RGBLED, pwm=False). Start the Pi, Upload, run python3 /home/pi/script.py",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "Multi-Board"
+ },
+ {
+  "slug": "pi5-opencv-vision",
+  "title": "[Pi 5] OpenCV: shapes and text on a wired screen",
+  "description": "The Raspberry Pi 5 opens two images from the editor, finds the geometric shapes in one (contours, then a name from the corner count) and locates the text areas in the other, and draws the boxes on an ILI9341 panel wired to the SPI header. Two LEDs blink along with each detection. Runs right away — no boot to wait for. Note that OpenCV is not available in Linux mode; the panel and the GPIO pins work there just the same.",
+  "difficulty": "advanced",
+  "category": "displays",
+  "board": "Multi-Board"
+ },
+ {
+  "slug": "pi5-pir-motion-alarm",
+  "title": "[Pi 5] PIR Motion Alarm",
+  "description": "Raspberry Pi 5 lights an LED on GPIO17 whenever a PIR motion sensor on GPIO4 detects movement (gpiozero MotionSensor). Start the Pi, Upload, run python3 /home/pi/script.py, then trigger the PIR.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "Multi-Board"
+ },
+ {
+  "slug": "pi5-traffic-light",
+  "title": "[Pi 5] Traffic Light",
+  "description": "Raspberry Pi 5 runs a red/yellow/green traffic-light state machine on GPIO17/27/22 with gpiozero. Start the Pi, Upload, then run: python3 /home/pi/script.py",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "Multi-Board"
+ },
+ {
+  "slug": "esp32s3-ili9341-hello",
+  "title": "ILI9341 TFT Hello — ESP32-S3",
+  "description": "Draws a filled screen, a rounded rectangle and text on a 320x240 ILI9341 TFT from an ESP32-S3 over hardware SPI (FSPI / GPSPI2).",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "Multi-Board"
+ },
+ {
+  "slug": "an-bjt-switch",
+  "title": "BJT as a Switch",
+  "description": "Base driven into saturation through Rb; collector pulled up via a load resistor. DC step input toggles Vce between ~0.2 V and Vcc.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-bjt-common-emitter",
+  "title": "BJT Common-Emitter Amplifier",
+  "description": "Classic voltage amplifier: base biased by a divider, emitter degenerated by Re, collector resistor sets gain.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-bjt-diff-pair",
+  "title": "BJT Differential Pair",
+  "description": "Long-tailed pair: a shared emitter tail resistor steers current between Q1 and Q2 according to the differential input.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-bjt-emitter-follower",
+  "title": "BJT Emitter Follower",
+  "description": "Common-collector buffer: unity voltage gain, high input impedance, low output impedance. Great as a driver stage.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-darlington",
+  "title": "Darlington Pair",
+  "description": "Two cascaded NPNs multiply β — β_total ≈ β1·β2. Used when a single transistor can’t supply enough base current for a heavy load.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-diode-clamper",
+  "title": "Diode Clamper (DC Restorer)",
+  "description": "Series cap + parallel diode shifts the signal so its negative peak sits at 0 V. Output swings 0 → 2·Vpeak.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-diode-clipper",
+  "title": "Diode Clipper",
+  "description": "Two diodes to VCC/GND via a series resistor limit the output swing to roughly ±0.7 V — symmetric clipping.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-bridge-rectifier",
+  "title": "Full-Wave Bridge Rectifier",
+  "description": "Four diodes in a bridge rectify both halves of the AC input. Load R1 sees full-wave pulses at 2× the input frequency.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-half-wave-rectifier",
+  "title": "Half-Wave Rectifier",
+  "description": "Single diode passes only the positive half-cycle of a 50 Hz sine. Load resistor drops the rectified voltage.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-mosfet-common-source",
+  "title": "MOSFET Common-Source Amplifier",
+  "description": "2N7000 as a small-signal amp: drain resistor sets gain, source resistor stabilises bias. AC-coupled signal input.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-mosfet-switch",
+  "title": "MOSFET Low-Side Switch",
+  "description": "2N7000 NMOS with a pull-down gate resistor. Gate drive above Vth turns the device on and sinks current from the load to GND.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-current-mirror",
+  "title": "NPN Current Mirror",
+  "description": "Reference current in Q1 is mirrored through Q2’s collector — matched transistors + shared Vbe make the collector currents equal.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-opamp-comparator",
+  "title": "Op-Amp Comparator",
+  "description": "Open-loop op-amp compares V_in against a reference. Output saturates high when IN+ > IN-, low otherwise.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-opamp-integrator",
+  "title": "Op-Amp Integrator",
+  "description": "Rf replaced by a cap: V_out = −(1/RC) ∫V_in dt. Square-wave in → triangle-wave out. Classic analog-computer building block.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-opamp-inverting",
+  "title": "Op-Amp Inverting Amplifier",
+  "description": "Gain = −Rf/Rin. Rf = 10 k, Rin = 1 k → gain = −10. LM358 single-supply model clamps the output to [0, VCC−1.5].",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-opamp-non-inverting",
+  "title": "Op-Amp Non-Inverting Amplifier",
+  "description": "Gain = 1 + Rf/Rg. Rf = 10 k, Rg = 1 k → gain = +11. Output in-phase with input.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-schmitt-trigger",
+  "title": "Op-Amp Schmitt Trigger",
+  "description": "Positive feedback (R2 from OUT to IN+) adds hysteresis: two switching thresholds instead of one. Cleans up noisy signals.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-opamp-summing",
+  "title": "Op-Amp Summing Amplifier",
+  "description": "Virtual-ground summing junction: V_out = −Rf · (V1/R1 + V2/R2). Two-input mixer with unity gain per channel.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-opamp-follower",
+  "title": "Op-Amp Voltage Follower",
+  "description": "Unity-gain buffer: output tracks the non-inverting input exactly. Infinite input impedance, near-zero output impedance.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-parallel-resistors",
+  "title": "Parallel Resistors",
+  "description": "Three resistors in parallel — total resistance is the reciprocal of the reciprocal sum. Ammeter shows total current.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-mosfet-pmos-highside",
+  "title": "PMOS High-Side Switch",
+  "description": "P-channel MOSFET (IRF9540) sources current from VCC when the gate is pulled below VCC−|Vth|. Ideal for load switching.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-rc-high-pass",
+  "title": "RC High-Pass Filter",
+  "description": "Swap the R and C of a low-pass and you get a high-pass. 1 kHz sine through C — R — GND.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-rc-low-pass",
+  "title": "RC Low-Pass Filter",
+  "description": "1 kHz sine through R = 1.6 kΩ and C = 100 nF. fc ≈ 1 kHz — output attenuated by −3 dB.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-rl-low-pass",
+  "title": "RL Low-Pass Filter",
+  "description": "Inductor in series, resistor to ground. High frequencies dropped across L; low frequencies pass through.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-series-resistors",
+  "title": "Series Resistors",
+  "description": "Three resistors in series carry the same current — ammeter reads V/(R1+R2+R3).",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-rlc-series-resonance",
+  "title": "Series RLC Resonant Circuit",
+  "description": "L = 1 mH, C = 1 µF gives fr ≈ 5 kHz. Sweep the signal generator — Vc peaks at resonance (Q-dependent).",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-smoothed-rectifier",
+  "title": "Smoothed Half-Wave Rectifier",
+  "description": "Half-wave rectifier followed by a 100 µF reservoir cap. Output is near-DC with ripple inversely proportional to C.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-voltage-divider",
+  "title": "Voltage Divider",
+  "description": "Two resistors divide a 5 V DC source in half. Classic first SPICE demo — expect 2.5 V across R2.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-voltage-doubler",
+  "title": "Voltage Doubler (Villard / Greinacher)",
+  "description": "Two caps + two diodes extract roughly 2·Vpeak DC from an AC input. First stage clamps, second stage peak-detects.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "an-zener-regulator",
+  "title": "Zener Shunt Regulator",
+  "description": "Series resistor + reverse-biased zener clamps the output to Vz (5.1 V for a 1N4733) despite changing input.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Analog"
+ },
+ {
+  "slug": "digital-alu-slice-1bit",
+  "title": "1-Bit ALU Slice (AND / OR / XOR / ADD)",
+  "description": "A complete 1-bit ALU cell — AND, OR, XOR and ADD all computed in parallel, with a 4-to-1 MUX selecting which result drives Y. The carry path is wired so the slices cascade into a 32-bit ALU like in MIPS.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-comparator-magnitude-1bit",
+  "title": "1-Bit Magnitude Comparator",
+  "description": "Three outputs decode the relationship between A and B: A>B, A=B, A<B. Built from two NOTs, two ANDs and one XNOR.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-multiplier-2x2",
+  "title": "2-Bit × 2-Bit Binary Multiplier",
+  "description": "Four AND gates compute the partial products; two half adders sum the columns. The four output LEDs show the 4-bit product P3..P0 of two 2-bit numbers A1A0 × B1B0.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-comparator-equal-2bit",
+  "title": "2-Bit Equality Comparator",
+  "description": "Two XNORs compare individual bits, an AND combines them. The LED lights only when A1A0 = B1B0.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-mux-2to1",
+  "title": "2-to-1 Multiplexer",
+  "description": "Two AND gates feed an OR gate. SEL routes either D0 or D1 to Y. The textbook gate-level MUX.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-decoder-2to4",
+  "title": "2-to-4 Line Decoder",
+  "description": "Two select lines pick exactly one of four outputs. Each output is A·B for some combination of A/!A and B/!B. The backbone of address decoding inside every CPU.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-binary-to-gray-3bit",
+  "title": "3-Bit Binary → Gray Converter",
+  "description": "Two XORs convert a 3-bit binary input to its Gray-code form: G2=B2, G1=B2⊕B1, G0=B1⊕B0. Toggle the input switches and watch only one output flip per increment — the defining property of Gray code.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-gray-to-binary-3bit",
+  "title": "3-Bit Gray → Binary Converter",
+  "description": "Inverse of the binary-to-Gray converter — three input switches feed an XOR cascade running from MSB to LSB to recover the binary value.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-and3-all-on",
+  "title": "3-Input AND — All Three",
+  "description": "Three slide switches drive a 3-input AND. The LED stays dark until every switch is HIGH at the same time.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-majority-voter",
+  "title": "3-Input Majority Voter",
+  "description": "Output is HIGH when at least 2 of 3 inputs are HIGH: Y = AB + AC + BC. Fault-tolerant logic in seven gates.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-decoder-3to8",
+  "title": "3-to-8 Line Decoder",
+  "description": "Three select bits drive eight outputs — exactly one LED lights at a time. The lit LED is the binary value of A2A1A0. Eight 3-input ANDs and three inverters.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-adder-subtractor-4bit",
+  "title": "4-Bit Adder / Subtractor",
+  "description": "A single mode line selects add (M=0) or subtract (M=1, via two-complement). Each B bit is XOR-ed with M and M also feeds the FA0 carry-in, so the same ripple chain computes A+B or A−B.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-carry-lookahead-adder-4bit",
+  "title": "4-Bit Carry-Lookahead Adder",
+  "description": "Replaces the ripple chain with a parallel carry network. Generate / propagate signals + four lookahead expansions compute c1..c4 in constant gate-depth — the same O(log n) speedup pattern that scales to 64-bit CPU adders.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-comparator-4bit",
+  "title": "4-Bit Magnitude Comparator",
+  "description": "Compares two 4-bit numbers A and B. Four XNORs decide bit equality, a priority cascade of ANDs/ORs decides A>B, and a NOR derives A<B. Three LEDs decode the relationship live.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-parity-4bit",
+  "title": "4-Bit Parity Generator",
+  "description": "Three cascaded XORs compute the even-parity bit of a 4-bit nibble. The LED is HIGH when an odd number of input switches are HIGH.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-popcount-4bit",
+  "title": "4-Bit Population Count",
+  "description": "Counts how many of four input switches are HIGH and outputs the count as a 3-bit binary number on three LEDs. Built as an adder tree — the same shape SIMD popcount instructions use in silicon.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-ripple-counter-4bit",
+  "title": "4-Bit Ripple Counter (T flip-flops)",
+  "description": "Four T flip-flops chained into a ripple counter — impossible on the SPICE engine (no edge detection at DC). Each time you slide the CLOCK switch from LOW to HIGH the count advances; the four LEDs show it in binary, LSB at the top. The event-driven digital engine evaluates the flip-flops exactly. (Set ?digitalgates=off to see that ngspice cannot run this.)",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-ripple-adder-4bit",
+  "title": "4-Bit Ripple-Carry Adder",
+  "description": "Four full adders chained — A[3:0] + B[3:0] + Cin → S[3:0] + Cout. Toggle nine input switches to compute any 4-bit sum live. Twenty-six gates of pure combinational logic.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-and4-all-on",
+  "title": "4-Input AND Gate",
+  "description": "Four switches feed a single 4-input AND gate. The LED lights only when every input is HIGH at once.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-mux-4to1",
+  "title": "4-to-1 Multiplexer",
+  "description": "Two select lines route one of four data inputs to Y. Built from one 2-to-4 line decoder (the !A·!B...A·B combinations) feeding four ANDs into a 4-input OR.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-compressor-4to2",
+  "title": "4:2 Compressor (Wallace Cell)",
+  "description": "Five same-weight bits in, three out. Two cascaded full adders compress 5 bits into Sum + Carry + Cout in constant time — the building block of Wallace and Dadda tree multipliers.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-priority-encoder-8to3",
+  "title": "8-to-3 Priority Encoder",
+  "description": "Eight input switches; three output LEDs encode the highest-numbered switch that is HIGH as a 3-bit binary number. A fourth \"valid\" LED lights whenever any input is active.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-and-two-switches",
+  "title": "AND Gate — Both Switches",
+  "description": "Two slide switches feed an AND gate. The LED lights only when both switches are HIGH.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "and-gate-alarm",
+  "title": "AND Gate Alarm",
+  "description": "Two arming switches feed an AND gate — the alarm LED lights ONLY when BOTH are ON (e.g. both doors closed). They are slide switches, so they latch: slide each one ON and it stays, so you can hold both at once. Pure logic, no MCU — runs on the digital gate engine.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-aoi-gate",
+  "title": "AOI Gate (AND-OR-Invert)",
+  "description": "A composite cell common inside CMOS libraries: two ANDs feed a NOR. Output = !((A·B) + (C·D)). Faster than three discrete gates in real silicon.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-bcd-7seg-segment-a",
+  "title": "BCD → 7-Seg: Segment \"a\"",
+  "description": "Lights segment \"a\" for digits 0,2,3,5,6,7,8,9 and leaves it dark for 1 and 4. One slice of a 7447-style decoder, gate-built so the K-map minimisation a = B3 + B1 + B2·B0 + !B2·!B0 is visible end-to-end.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-bcd-validity",
+  "title": "BCD Validity Detector",
+  "description": "Lights an LED only when the 4-bit input is a valid BCD digit (0–9). The complement (10–15) is detected by B3·B2 + B3·B1 and inverted to drive the \"valid\" lamp.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-buffer-three-inverters",
+  "title": "Buffer From Three Inverters",
+  "description": "Three NOT gates in series invert three times → effectively a non-inverting buffer with three gate delays. Used for fan-out or to \"regenerate\" a weak signal.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-full-adder",
+  "title": "Full Adder (Gate Level)",
+  "description": "Three inputs — A, B and Cin — feed two XORs, two ANDs and one OR. The XORs give SUM, the OR of the ANDs gives Cout. Classic cascade-able adder cell.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "galaksija-z80-computer",
+  "title": "Galaksija — 1983 Z80 home computer",
+  "description": "A real 1983 Yugoslav home computer (Voja Antonić, public-domain ROM) built from discrete chips on the bus: a Z80 CPU runs its BASIC ROM, an inverter decodes the address map, a 64K RAM holds memory and renders the text screen from its own video RAM, and a memory-mapped keyboard feeds keystrokes. Click Resume, then click the canvas and TYPE — it boots to \"READY\" and you can enter Galaksija BASIC, just like the real machine.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-half-adder",
+  "title": "Half Adder",
+  "description": "XOR gives the SUM, AND gives the CARRY of two 1-bit numbers A and B. Two LEDs decode the result in real time.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-half-adder-nand-only",
+  "title": "Half Adder — NAND Only",
+  "description": "A half adder built entirely from six 2-input NAND gates: four for the XOR sum, two for the AND carry. Proof that NAND alone is functionally complete.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-half-subtractor",
+  "title": "Half Subtractor",
+  "description": "Computes A − B for two 1-bit numbers. DIFF = A XOR B, BORROW = !A · B. The complement of the half adder.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-hamming-encoder-74",
+  "title": "Hamming (7,4) Encoder",
+  "description": "Four data bits in, seven coded bits out. Three parity bits computed by XOR triplets implement the classic single-error-correcting code that protects ECC RAM and aerospace memory.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "i8080-button-counter",
+  "title": "Intel 8080 Button Counter",
+  "description": "A self-contained Intel 8080 chip running a 34-byte ROM. Press the INC button to count up in binary on 8 LEDs, press the RST button to clear. The CPU, RAM, and program are all inside the single chip on the canvas.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "i8080-killbits",
+  "title": "Kill the Bit (1975)",
+  "description": "Dean McDaniel's iconic 1975 Altair 8800 reflex game, running on a programmable Intel 8080 chip with NO Arduino — powered by a regulated bench supply. A single LED walks across 8 LEDs; press the matching button at the right moment to kill it. The ROM is killbits.s (the chip's editable program); click Run.",
+  "difficulty": "advanced",
+  "category": "games",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-nand-two-switches",
+  "title": "NAND Gate — Universal",
+  "description": "NAND is HIGH unless every input is HIGH. The LED stays on except when both switches are HIGH together.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-nor-idle-light",
+  "title": "NOR Gate — Idle Lamp",
+  "description": "NOR outputs HIGH only when every input is LOW. The LED stays on while both switches sit at LOW.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-not-inverter",
+  "title": "NOT Gate Inverter",
+  "description": "A slide switch drives a NOT gate. The LED is normally lit and turns off when the switch is HIGH.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-or-any-switch",
+  "title": "OR Gate — Any Switch",
+  "description": "Two slide switches into an OR gate. The LED lights as soon as either switch is HIGH.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-xnor-equality",
+  "title": "XNOR — Equality Lamp",
+  "description": "XNOR outputs HIGH only when both inputs match. A live equality detector — the LED stays lit whenever the two switches share state.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-xor-difference",
+  "title": "XOR — Difference Detector",
+  "description": "XOR fires only when its inputs differ. Flip just one switch — the LED lights. Flip both back to the same — it goes dark.",
+  "difficulty": "beginner",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "digital-xor-from-nands",
+  "title": "XOR Built From NAND Only",
+  "description": "Four 2-input NAND gates form an XOR. Proof that NAND is functionally complete — you can build every gate with just NANDs.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "z80-larson-scanner",
+  "title": "Z80 Comet Scanner",
+  "description": "A faster, TWO-LED \"comet\" sweeps across 8 LEDs on a programmable Z80 chip — a brighter twist on the single-bit Larson. Written in Z80 assembly (scanner.s), NO Arduino: the chip runs standalone on a regulated supply. Click Run.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "z80-larson-no-board",
+  "title": "Z80 Larson Scanner (no board)",
+  "description": "The programmable Z80 chip drives 8 LEDs with NO Arduino — powered by a regulated bench supply. Velxio runs custom chips as a general-purpose electronics simulator. Click Run: a single LED walks back and forth.",
+  "difficulty": "intermediate",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "z80-led-chaser-c",
+  "title": "Z80 LED Chaser in C (no board)",
+  "description": "A programmable Z80 chip walks a single LED back and forth, Larson-style — but the program is written in C (chaser.c) and compiled to the Z80 by SDCC. No Arduino: the chip runs standalone, powered by a regulated supply. Click Run. Requires sdcc on the backend.",
+  "difficulty": "advanced",
+  "category": "circuits",
+  "board": "Digital"
+ },
+ {
+  "slug": "c6-blink",
+  "title": "ESP32-C6: Blink LED",
+  "description": "Blink an external LED on GPIO8 of the ESP32-C6-DevKitC-1 (the same pin that drives the on-board WS2812 RGB LED).",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "ESP32-C6"
+ },
+ {
+  "slug": "c6-oled-i2c",
+  "title": "ESP32-C6: SSD1306 OLED Display",
+  "description": "Display text on a 128x64 SSD1306 OLED over I2C from the ESP32-C6 (default Wire pins SDA=GPIO23, SCL=GPIO22).",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "ESP32-C6"
+ },
+ {
+  "slug": "cardputer-adv-m5-button",
+  "title": "M5 Cardputer ADV - button (official example)",
+  "description": "M5Stack's own BtnA test, unmodified: the G0 button on the top rail. Press it on the emulated board and the screen says Pressed, release it and it says Released, with a short beep either way. The shortest proof that the on-board button, the display and the speaker all answer.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-m5-buzzer",
+  "title": "M5 Cardputer ADV - buzzer (official example)",
+  "description": "M5Stack's own speaker test, unmodified: alternates a 10 kHz and a 4 kHz tone once a second through the I2S speaker. Turn your volume up - the emulator plays the samples the guest actually writes.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-m5-display",
+  "title": "M5 Cardputer ADV - display (official example)",
+  "description": "M5Stack's own display test, unmodified: random coloured rectangles and text scattered across the 240x135 ST7789 panel, forever. A quick way to see the LCD path running at full tilt.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-m5-ir-nec",
+  "title": "M5 Cardputer ADV - IR NEC send (official example)",
+  "description": "M5Stack's own infrared test, unmodified: sends NEC address 0x1111 with a rising command over the IR diode on G44. Infrared is invisible, so the board flashes a violet dot with the decoded address and command each time a frame goes out.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-m5-sdcard",
+  "title": "M5 Cardputer ADV - microSD (official example)",
+  "description": "M5Stack's own microSD test, unmodified: mounts the card on CS 12, lists the root, then creates, writes, appends, reads, renames and deletes files, finishing with a read/write throughput run. The card is a real FAT image you can load your own files into from the SD Card panel.",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-m5-key-multi",
+  "title": "M5 Cardputer ADV - multi key press (official example)",
+  "description": "M5Stack's own multi-key test, unmodified: shows every key held at once, joined with +. The TCA8418 controller reports up to three at a time, exactly as the hardware does.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-m5-repl",
+  "title": "M5 Cardputer ADV - REPL guessing game (official example)",
+  "description": "M5Stack's own REPL demo, unmodified, across its three source files: a scrolling console with a prompt where you guess a number and it answers higher or lower. The richest of the official examples - keyboard, sprite rendering and a command loop together.",
+  "difficulty": "intermediate",
+  "category": "games",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-m5-key-single",
+  "title": "M5 Cardputer ADV - single key press (official example)",
+  "description": "M5Stack's own keyboard test, unmodified: watches for the 'a' key and says so on screen. Click the key on the emulated keyboard, or focus the board and press it on your own keyboard.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-m5-key-input",
+  "title": "M5 Cardputer ADV - text input (official example)",
+  "description": "M5Stack's own text-entry test, unmodified: type a line, Backspace edits it, Enter commits it to a scrolling sprite above the prompt. Exercises the keyboard, the modifier keys and an off-screen canvas in one go.",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-brick-blaster",
+  "title": "M5 Cardputer ADV — Brick Blaster (juego con sonido)",
+  "description": "A whole game on the board alone: no wiring, no microSD. The 240x135 LCD draws through an off-screen sprite so nothing tears, the 56-key keyboard steers the paddle, and the speaker carries the game — each brick row is a note of a pentatonic scale, so clearing a row walks up the scale and you can hear how you are doing without looking at the score. Where the ball lands on the paddle sets its angle, which makes it a game about aiming rather than reacting.",
+  "difficulty": "intermediate",
+  "category": "games",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-diagnostics",
+  "title": "M5 Cardputer ADV — hardware tour (display, keyboard, microSD, IMU, LED, battery, mic)",
+  "description": "A six-page diagnostic that drives every part of the board at once: a full-screen double-buffered sprite, the 56-key keyboard, the microSD card holding your project files, the BMI270 accelerometer with a live tilt bubble, the RGB LED, the battery gauge and the microphone as a live level meter. Press Tab to change page, arrows to move, Enter to act. Reach for this one when you want to see what the emulated hardware really does.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-hello",
+  "title": "M5 Cardputer ADV — LCD + keyboard echo",
+  "description": "The all-in-one M5Cardputer ADV (ESP32-S3): draw to the built-in 1.14-inch ST7789 LCD with M5GFX and echo whatever you type on the 56-key keyboard. Self-contained board, no wiring — press keys on the emulated keyboard and they appear on screen.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "cardputer-adv-terminal",
+  "title": "M5 Cardputer ADV — text terminal (official M5Stack example)",
+  "description": "M5Stack's own inputText example, unmodified: type a line, press Enter, and it scrolls up into the log above. Exercises far more of the board than a plain print — an off-screen M5Canvas sprite, a vector font, scrolling text, and the Enter/Backspace keys — so it is the example to reach for when checking that the LCD and the 56-key keyboard both work end to end.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "M5 Cardputer ADV"
+ },
+ {
+  "slug": "m5stack-core-m5-button",
+  "title": "M5Stack Core - Button (official example)",
+  "description": "Press A, B or C and the letter prints on screen; holding B for 700 ms clears it. The three front buttons, exactly as the vendor demos them. Ported from the official M5Stack example to M5Unified - the classic M5Stack library needs arduino-esp32 2.x and no longer compiles on the 3.x core, in the Arduino IDE too.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "M5Stack Core"
+ },
+ {
+  "slug": "m5stack-core-m5-display",
+  "title": "M5Stack Core - Display (official example)",
+  "description": "Background colour sweep, text, rectangles, circles and triangles, then random triangles forever - the vendor's own tour of the LCD. Ported from the official M5Stack example to M5Unified - the classic M5Stack library needs arduino-esp32 2.x and no longer compiles on the 3.x core, in the Arduino IDE too.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "M5Stack Core"
+ },
+ {
+  "slug": "m5stack-core-m5-helloworld",
+  "title": "M5Stack Core - HelloWorld (official example)",
+  "description": "The canonical first sketch: Hello World on the 320x240 ILI9342C panel. Ported from the official M5Stack example to M5Unified - the classic M5Stack library needs arduino-esp32 2.x and no longer compiles on the 3.x core, in the Arduino IDE too.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "M5Stack Core"
+ },
+ {
+  "slug": "m5stack-core-m5-speaker",
+  "title": "M5Stack Core - Speaker (official example)",
+  "description": "A beeps at 661 Hz for 200 ms, B holds a 112 Hz tone, C stops it. Speaker notes play through your computer at the sketch's real pitch. Ported from the official M5Stack example to M5Unified - the classic M5Stack library needs arduino-esp32 2.x and no longer compiles on the 3.x core, in the Arduino IDE too.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "M5Stack Core"
+ },
+ {
+  "slug": "m5stack-core-m5-tfcard",
+  "title": "M5Stack Core - TFCard (official example)",
+  "description": "Mounts the TF card on CS 4, checks for hello.txt, writes it, reads it back onto the screen. The card is a real FAT image you can load files into from the SD Card panel. Ported from the official M5Stack example to M5Unified - the classic M5Stack library needs arduino-esp32 2.x and no longer compiles on the 3.x core, in the Arduino IDE too.",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "M5Stack Core"
+ },
+ {
+  "slug": "m5stack-core-sd",
+  "title": "M5Stack Core — built-in microSD + LCD",
+  "description": "Read the M5Stack Core Basic's built-in microSD card (CS=GPIO4, shared VSPI bus with the LCD) and list its files on the built-in 320x240 screen. The card is emulated automatically — Velxio auto-copies your workspace files onto it — so no wiring and no card component needed.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "M5Stack Core"
+ },
+ {
+  "slug": "m5stack-core-piano",
+  "title": "M5Stack Core — button piano (speaker)",
+  "description": "The three front buttons as a tiny instrument: BtnA/B/C each play a note on the built-in GPIO25 speaker (heard through your computer) while the LCD shows which key is down. Hold a button and the note holds; a self-contained board, no wiring.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "M5Stack Core"
+ },
+ {
+  "slug": "m5stack-core-hello",
+  "title": "M5Stack Core — Hello LCD + Buttons",
+  "description": "The all-in-one M5Stack Core Basic (ESP32): draw to the built-in 2\\\" ILI9342 LCD with M5.Lcd and read the three front buttons (BtnA/B/C) with M5Unified — a self-contained board, no wiring needed. Press the buttons to change the on-screen counter.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "M5Stack Core"
+ },
+ {
+  "slug": "m5stack-core-tft",
+  "title": "M5Stack Core — LCD (Adafruit_ILI9341)",
+  "description": "Drive the M5Stack Core Basic's built-in 320x240 LCD with the lightweight Adafruit_ILI9341 library (the Core's ILI9342C is 9341-compatible), read the three front buttons, and beep the built-in speaker (GPIO25) on each press. A self-contained ESP32 board — screen, buttons and speaker on-board, no wiring.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "M5Stack Core"
+ },
+ {
+  "slug": "stm32-netduino2-serial",
+  "title": "Netduino 2 Serial Counter",
+  "description": "Netduino 2 (STM32F205, Cortex-M3) prints an incrementing counter over Serial. GPIO/LED support arrives once the F205 SoC is wired; serial works today under QEMU.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Netduino 2"
+ },
+ {
+  "slug": "stm32-netduino-plus2-blink",
+  "title": "Netduino Plus 2 Blink",
+  "description": "Blink the onboard PA10 LED and print to Serial on a Netduino Plus 2 (STM32F405, Cortex-M4) under QEMU.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Netduino Plus 2"
+ },
+ {
+  "slug": "stm32-olimex-h405-blink",
+  "title": "Olimex STM32-H405 Blink",
+  "description": "Blink the onboard PC12 status LED and print to Serial on an Olimex STM32-H405 (STM32F405RG, Cortex-M4) under QEMU.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Olimex STM32-H405"
+ },
+ {
+  "slug": "badger-2350-badgeos",
+  "title": "Pimoroni Badger 2350 — BadgeOS factory firmware",
+  "description": "Boot the badge's REAL factory firmware: press Run and BadgeOS v2.0.2 (ARM MicroPython + custom C modules) boots in the browser — the factory menu renders on the e-paper and is navigable with A/B/C/UP/DOWN. The full MicroPython source tree from github.com/pimoroni/badger2350 (main.py, and every app under firmware/apps - badge, clock, gallery, hydrate, list, the_compendium raycaster game, weather) is loaded as browsable folders in the file explorer for reference (binary assets omitted).",
+  "difficulty": "advanced",
+  "category": "basics",
+  "board": "Pimoroni Badger 2350"
+ },
+ {
+  "slug": "badger-2350-badge",
+  "title": "Pimoroni Badger 2350 — e-paper badge",
+  "description": "The Badger 2350 comes alive: the 2.7\" e-paper (SSD1680, 264x176) draws a name badge, A/B/C switch between badge, clock (real PCF85063A RTC at 0x51) and info screens, and UP/DOWN turn the rear case lights on and off. Everything runs on the in-browser RP2350 RISC-V emulator - click the buttons on the board.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pimoroni Badger 2350"
+ },
+ {
+  "slug": "badger-2350-hydrate",
+  "title": "Pimoroni Badger 2350 — hydration counter (partial refresh)",
+  "description": "Water-intake counter inspired by the official BadgeOS hydrate app: A adds a glass, B removes one, C resets, and the case lights fill with your progress toward 8 glasses. Only the counter band is re-uploaded to the SSD1680 (partial RAM-window writes with per-row counter re-seek), so the header stays put between refreshes.",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "Pimoroni Badger 2350"
+ },
+ {
+  "slug": "badger-2350-i2c",
+  "title": "Pimoroni Badger 2350 — I2C scanner on e-paper",
+  "description": "The e-paper draws a live I2C bus scan: every device Velxio attaches (temp sensor 0x48, EEPROM 0x50, PCF85063A RTC 0x51, DS1307 0x68) listed with its address, the EEPROM write/read self-test result and the current RTC time. Press A on the board to re-scan. Runs on the in-browser RP2350 RISC-V emulator.",
+  "difficulty": "beginner",
+  "category": "communication",
+  "board": "Pimoroni Badger 2350"
+ },
+ {
+  "slug": "badger-2350-micropython",
+  "title": "Pimoroni Badger 2350 — MicroPython REPL",
+  "description": "The Badger 2350 boots vanilla RP2350 ARM MicroPython (Cortex-M33) entirely in the browser, runs your main.py from its LittleFS and drops to a live REPL. This example prints a greeting and then a heartbeat with the front-button states (A/B/C/UP/DOWN) once a second - click the buttons on the board and open the Serial Monitor to watch. Switch the language selector to MicroPython to edit the .py.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pimoroni Badger 2350"
+ },
+ {
+  "slug": "badger-2350-alarm",
+  "title": "Pimoroni Badger 2350 — RTC alarm clock",
+  "description": "A big e-paper clock driven by the real PCF85063A registers: press A to arm the RTC alarm 10 seconds ahead (BCD alarm registers + AIE). When the chip fires it pulls the INT line (GPIO13) low - the screen flips to ALARM and all four case lights turn on. C clears the alarm flag and returns to the clock.",
+  "difficulty": "intermediate",
+  "category": "communication",
+  "board": "Pimoroni Badger 2350"
+ },
+ {
+  "slug": "badger-2350-list",
+  "title": "Pimoroni Badger 2350 — to-do list",
+  "description": "A checklist on the e-paper like the official BadgeOS list app: move the cursor with UP/DOWN, tick the highlighted task with A (B clears all, C ticks all). Completed tasks get a filled checkbox and a strike-through, and the rear case lights fill up with your progress. Click the buttons on the board.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pimoroni Badger 2350"
+ },
+ {
+  "slug": "galactic-unicorn-blink",
+  "title": "Pimoroni Galactic Unicorn — GPIO heartbeat",
+  "description": "The Pimoroni Galactic Unicorn (RP2350, RISC-V) runs a GPIO heartbeat: it toggles GP2 and counts loops on Serial1 (GP0). A minimal self-contained sketch that shows the RP2350 RISC-V core booting and running timed GPIO/serial in the browser. Open the Serial Monitor to watch the counter.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pimoroni Galactic Unicorn"
+ },
+ {
+  "slug": "pimoroni-pico-plus-2w-blink",
+  "title": "Pimoroni Pico Plus 2 W — Blink + Serial",
+  "description": "The Pimoroni Pico Plus 2 W (RP2350, RISC-V) blinks an external LED on GP2 and prints \"blink\" on Serial1 (GP0). Proves the RP2350 RISC-V core, GPIO output and delay()/UART all run in the browser emulator. Open the Serial Monitor to watch the log.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "Pimoroni Pico Plus 2 W"
+ },
+ {
+  "slug": "stm32-blackpill-f401-blink",
+  "title": "STM32 Black Pill (F401) Blink",
+  "description": "Blink the onboard PC13 LED and print to Serial on an STM32F401CE Black Pill (Cortex-M4) under QEMU.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "STM32 Black Pill (F401)"
+ },
+ {
+  "slug": "stm32-bluepill-f103cb-blink",
+  "title": "STM32 Blue Pill (F103CB) Blink",
+  "description": "Blink the onboard PC13 LED and print to Serial on an STM32F103CB Blue Pill (Cortex-M3, 128KB flash) under QEMU.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "STM32 Blue Pill (F103CB)"
+ },
+ {
+  "slug": "stm32-f4-discovery-blink",
+  "title": "STM32F4 Discovery LED Blink",
+  "description": "Blink the onboard PD12 green LED and print to Serial on an STM32F4 Discovery (STM32F407VG, Cortex-M4) under QEMU.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "STM32F4 Discovery"
+ },
+ {
+  "slug": "unihiker-voice-light",
+  "title": "UNIHIKER M10: AI voice-controlled light",
+  "description": "DFRobot's advanced wiki project, verbatim: the Gravity DF2301Q offline voice sensor reports command IDs over I2C (103/104) and the script switches the LED on Gravity port P24. Press Run, then enable the mic on the sensor and say \"Hello robot\" to wake it followed by \"Turn on the light\" — or click the phrase buttons if your browser has no speech recognition.",
+  "difficulty": "advanced",
+  "category": "sensors",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-blink-p2",
+  "title": "UNIHIKER M10: blink an LED on edge pin 2",
+  "description": "DFRobot UNIHIKER M10 boots Linux and blinks an LED on edge connector pin 2. Just press Run: the board boots Linux, the script uploads itself and starts.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-buttons-buzzer",
+  "title": "UNIHIKER M10: buttons A/B + buzzer",
+  "description": "Press the on-board A button (left edge of the board) to beep the buzzer and update the screen; B plays the POWER_UP melody. Uses pinpong.extension.unihiker like the official wiki tutorials. Just press Run and then click the A/B buttons on the board.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-digital-piano",
+  "title": "UNIHIKER M10: digital piano",
+  "description": "The wiki's 'digital piano' basic example: eight touch keys on the screen, each one a note on the on-board buzzer. Press Run, then play the keys with the mouse (turn your sound on).",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-emoticon-master",
+  "title": "UNIHIKER M10: emoticon master",
+  "description": "The wiki's 'emoticon master' basic example: the built-in emoji set on the screen. Tap the on-screen button (or the board's A button) to change the face.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-hello-gui",
+  "title": "UNIHIKER M10: Hello on the built-in screen",
+  "description": "DFRobot's official 'Hello, UNIHIKER!' intro: draws colored text and a winking emoji on the built-in 2.8\" screen with the unihiker GUI library. Just press Run: the board boots Linux, the script uploads itself and starts.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-iot-smart-home",
+  "title": "UNIHIKER M10: IoT smart home (SIoT)",
+  "description": "The wiki's advanced IoT project: temperature and humidity published to SIoT topics, and a lamp switched by a subscription. The wiki wires two boards through a broker on the LAN; here the siot client loops back on this board, so publish -> subscribe -> act runs the same code without a second machine. Press Run and tap open / close.",
+  "difficulty": "advanced",
+  "category": "sensors",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-servo-control",
+  "title": "UNIHIKER M10: servo motor control",
+  "description": "The wiki's 'Servo Motor Control' intermediate example, verbatim: four on-screen buttons drive a 180 deg servo on Gravity port P21 (10 / 90 / 170 deg and a sweep). Press Run, then tap the buttons on the board's screen.",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-starry-sky",
+  "title": "UNIHIKER M10: starry sky (touch the screen)",
+  "description": "The wiki's 'starry sky' basic example: a galaxy background with an onclick handler — every tap on the screen adds a star where you pressed. Press Run, then tap the board's screen.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-system-time",
+  "title": "UNIHIKER M10: system clock on the screen",
+  "description": "The wiki's 'system time' basic example: draws the date and a ticking clock on the built-in 2.8\" screen with draw_digit, refreshed once a second. Press Run.",
+  "difficulty": "beginner",
+  "category": "displays",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-temp-humidity",
+  "title": "UNIHIKER M10: temperature and humidity monitor",
+  "description": "The wiki's smart-home monitor, verbatim: a DHT sensor on port P21 shown on the screen, with the on-board buzzer alarming over 32 C. Press Run and drag the sensor's Temperature slider past 32.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-traffic-light",
+  "title": "UNIHIKER M10: traffic light on edge pads 0/1/2",
+  "description": "DFRobot UNIHIKER M10 runs a red/yellow/green traffic-light state machine on its three micro:bit edge pads. Just press Run: the board boots Linux, the script uploads itself and starts.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "unihiker-ultrasonic-range",
+  "title": "UNIHIKER M10: ultrasonic range finder",
+  "description": "The wiki's 'Ultrasonic Range Finder' intermediate example, verbatim: a Gravity URM09 on port P21 drives a vehicle distance monitor — under 10 cm the car on screen brakes. Press Run and drag the sensor's Distance slider.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "UNIHIKER M10"
+ },
+ {
+  "slug": "xiao-c6-grove-gesture-spi",
+  "title": "Grove Smart IR Gesture over SPI (flip the DIP)",
+  "description": "The same sensor, the other bus. Slide the 4-way DIP to all-ON and the chip leaves I2C for SPI exactly as the hardware does — the model follows it, so this sketch talks to the same registers through SPI.transfer(): address byte with bit 7 set to read, and a burst that auto-increments. CS is socket D3, the pad Seeed's own example uses. Flip the DIP back to I2C while it runs and the sketch stops getting answers, because the chip is no longer there.",
+  "difficulty": "advanced",
+  "category": "sensors",
+  "board": "XIAO ESP32C6"
+ },
+ {
+  "slug": "xiao-c6-grove-gesture",
+  "title": "Grove Smart IR Gesture: a XIAO on the socket, no wires",
+  "description": "The Grove Smart IR Gesture Sensor is a XIAO carrier: seat a XIAO on its socket (drag it off and back to feel the magnet) and the I2C bus is made by the header itself, exactly like the hardware. The sketch reads the PAG7661QN gesture processor at 0x68 the way Seeed's driver does and names the gesture. Pick one in the sensor slider panel; flip the 4-way DIP to SPI or USB and the board says the chip is no longer on I2C, because it is not.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "XIAO ESP32C6"
+ },
+ {
+  "slug": "xiao-c6-grove-gesture-image",
+  "title": "Grove Smart IR Gesture: read the actual IR image",
+  "description": "The chip is a camera, not just a gesture oracle: besides the result it keeps the frame itself, and I2C can read it. This sketch does the datasheet's dance — lock the frame buffer, spin on the read-back, burst-read the pixels from the data port at 0x0F, unlock — and prints the image as ASCII in the serial monitor. Turn the board's camera on (click the lens) and you are looking at your own webcam through the sensor's eyes, one frozen frame at a time.",
+  "difficulty": "advanced",
+  "category": "sensors",
+  "board": "XIAO ESP32C6"
+ },
+ {
+  "slug": "xiao-c6-grove-gesture-thumb",
+  "title": "Grove Smart IR Gesture: thumb mode (and the tuning registers)",
+  "description": "Seeed ships a thumb-mode example, and the chip really does change what it reports: write 2 to R_Gesture_Mode and swipes, fingers and pinches all go quiet — only thumb up and thumb down come back. This sketch also walks the tuning registers the hardware exposes: the IR illuminator (0x69), sensor gain and exposure (0x67/0x68), and MaxDetectDist (0x6D), which is a minimum brightness — wind it down and a hand that is too dim or too far stops being seen at all, camera included.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "XIAO ESP32C6"
+ },
+ {
+  "slug": "xiao-c6-respeaker-buttons",
+  "title": "ReSpeaker Lite: buttons and the XU316 control bus",
+  "description": "The board's own wiring, no audio involved: the MUTE and USR buttons reach the seated XIAO through the socket (active-LOW, exactly as the hardware wires them), and the XU316 answers on I2C 0x42. The sketch reports every button edge, cross-checks MUTE against the mute status the control bus publishes (0xF1/0x81), and reads the firmware version at boot. Click the buttons on the board while it runs.",
+  "difficulty": "beginner",
+  "category": "sensors",
+  "board": "XIAO ESP32C6"
+ },
+ {
+  "slug": "xiao-c6-respeaker-mic",
+  "title": "ReSpeaker Lite: far-field mic level meter (I2S)",
+  "description": "A XIAO ESP32-C6 seated on the reSpeaker Lite socket (drag it off and back to feel the magnet) reads the mic array over I2S (16 kHz, 16-bit stereo) and prints a live VU meter, RMS and peak to the serial monitor, plus the VNR and mute status from the XU316 I2C control surface at 0x42. Drive the mic level and tone from the control panel; click MUTE on the board and the meter drops to silence while the red LED lights — the I2C status follows.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "XIAO ESP32C6"
+ },
+ {
+  "slug": "xiao-c6-respeaker-speaker",
+  "title": "ReSpeaker Lite: play a melody through your speakers",
+  "description": "The reSpeaker drives a speaker on the real board, so in the simulator it plays through YOUR computer: a XIAO ESP32-C6 seated on the socket writes notes to I2S and the browser sounds them, with the board's playback meter lighting as it goes. Nothing is wired to the speaker connector because nothing should be — plugging the real board into a speaker is exactly what this models. Press Run and turn your volume up.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "XIAO ESP32C6"
+ },
+ {
+  "slug": "xiao-c6-respeaker-doa",
+  "title": "ReSpeaker Lite: track the talker (DOA + VNR over I2C)",
+  "description": "The XU316's processing, watched from the sketch: a XIAO ESP32-C6 seated on the socket polls the control surface at 0x42 and prints where the talker stands (direction of arrival), how clean the voice is (VNR) and which algorithms are running. Move the Talker angle slider and the needle follows while VNR falls off-beam; switch beamforming or noise suppression off in the panel and watch the numbers tell you what each one was buying. DOA and the algorithm flags are Velxio-extension registers — the shipping firmware exposes VNR and mute only.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "XIAO ESP32C6"
+ },
+ {
+  "slug": "xiao-esp32c6-blink",
+  "title": "XIAO ESP32C6: Blink",
+  "description": "Blink an external LED on D2 (GPIO2) of the Seeed Studio XIAO ESP32C6 - IDF v5.5 compile, in-browser esp32c6js engine.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "XIAO ESP32C6"
+ },
+ {
+  "slug": "seeed-round-display-clock",
+  "title": "Round Display: analogue clock (GC9A01 + RTC)",
+  "description": "The shield as it is meant to be used: a XIAO ESP32S3 draws an analogue face on the 1.28 inch GC9A01 and takes the time from the PCF8563 on the same board, so the clock keeps its own time instead of counting millis(). The pins are Seeed's own (CS=D1 DC=D3 BL=D6 SCK=D8 MOSI=D10), written as raw GPIO numbers so the sketch says what it means. Note the backlight: drive D6 low and the glass goes dark, exactly as the hardware does.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "XIAO ESP32S3 Sense"
+ },
+ {
+  "slug": "seeed-round-display-battery",
+  "title": "Round Display: battery gauge (ETA3410 divider)",
+  "description": "The shield's battery path, end to end: the v1.1 board reads the pack through a 100k/100k divider into A0 when the KE switch sits on the battery side, so analogReadMilliVolts(A0) x 2 IS the pack voltage - Seeed's own recipe. The sketch draws a round gauge on the GC9A01 and follows the Battery slider in the shield's control panel; flip the KE switch slider to 0 and the gauge honestly reports there is nothing to measure.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "XIAO ESP32S3 Sense"
+ },
+ {
+  "slug": "seeed-round-display-sd",
+  "title": "Round Display: files on the microSD (TF slot)",
+  "description": "The shield's TF slot is a real FAT card in the simulator: the project's data files are auto-copied onto it, and clicking the shield opens an SD Card panel where you upload your own (images, audio, data). This example ships saludo.txt already on the card; the sketch mounts the slot (same SPI bus as the glass, CS=D2), lists the root and paints the file on the round glass.",
+  "difficulty": "intermediate",
+  "category": "displays",
+  "board": "XIAO ESP32S3 Sense"
+ },
+ {
+  "slug": "xiao-esp32s3-sense-camera",
+  "title": "XIAO ESP32S3 Sense: camera photos to microSD",
+  "description": "The Sense as a camera: esp_camera_init runs the real esp32-camera driver (SCCB probe, LCD_CAM + DMA), then the sketch shoots three JPEG photos from your webcam and saves them onto the onboard microSD. Turn the Camera button on to shoot - then right-click the board and open the SD panel: the photos are listed under Card contents and can be downloaded.",
+  "difficulty": "advanced",
+  "category": "sensors",
+  "board": "XIAO ESP32S3 Sense"
+ },
+ {
+  "slug": "xiao-esp32s3-sense-hello",
+  "title": "XIAO ESP32S3 Sense: Hello",
+  "description": "Serial hello-world on the Seeed Studio XIAO ESP32S3 Sense (in-browser esp32s3js engine - the camera, PDM mic and microSD examples build on this).",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "XIAO ESP32S3 Sense"
+ },
+ {
+  "slug": "xiao-esp32s3-sense-sd",
+  "title": "XIAO ESP32S3 Sense: onboard microSD",
+  "description": "The Sense expansion board's TF slot as a real FAT card: the project data files are auto-copied onto it (source files stay off the card), and right-clicking the board opens an SD Card panel to upload your own (the card travels with the project). CS is GPIO21 on the shared SPI bus, exactly as Seeed wires it.",
+  "difficulty": "intermediate",
+  "category": "basics",
+  "board": "XIAO ESP32S3 Sense"
+ },
+ {
+  "slug": "xiao-esp32s3-sense-mic",
+  "title": "XIAO ESP32S3 Sense: PDM microphone level",
+  "description": "The Sense's digital microphone over I2S PDM RX (clock GPIO42, data GPIO41, 16 kHz mono - Seeed's own wiring). Click the Mic button in the canvas toolbar to stream your computer's microphone; while it is off, a steady 440 Hz test tone keeps the level meter alive.",
+  "difficulty": "intermediate",
+  "category": "sensors",
+  "board": "XIAO ESP32S3 Sense"
+ },
+ {
+  "slug": "xiao-rp2040-blink",
+  "title": "XIAO RP2040: Blink",
+  "description": "Blink an external LED on D0 (GPIO26) of the Seeed Studio XIAO RP2040 - runs on the in-browser rp2040js engine.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "XIAO RP2040"
+ },
+ {
+  "slug": "xiao-rp2040-button",
+  "title": "XIAO RP2040: button cycles the on-board RGB",
+  "description": "A pushbutton on D1 (GPIO27, active-LOW with the internal pull-up) steps the on-board user RGB LED through red, green, blue and off. Click the button while running - the LED is on the board, no LED wiring needed.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "XIAO RP2040"
+ },
+ {
+  "slug": "xiao-rp2040-rgb",
+  "title": "XIAO RP2040: on-board RGB LED",
+  "description": "Cycle the Seeed Studio XIAO RP2040 on-board user RGB LED (red=GPIO17, green=GPIO16, blue=GPIO25, active-LOW). No wiring needed - the LED is on the board.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "XIAO RP2040"
+ },
+ {
+  "slug": "xiao-rp2040-traffic-light",
+  "title": "XIAO RP2040: traffic light",
+  "description": "A three-LED traffic light on D0/D1/D2 (GPIO26/27/28) of the Seeed Studio XIAO RP2040: green, a yellow warning, red, and back - the classic sequencing exercise on the in-browser rp2040js engine.",
+  "difficulty": "beginner",
+  "category": "basics",
+  "board": "XIAO RP2040"
+ }
+]

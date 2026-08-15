@@ -1,0 +1,17 @@
+{
+ "slug": "m5stack-chain-rgb-rainbow",
+ "title": "M5Stack Chain RGB Matrix — Rainbow",
+ "board": "Arduino Uno",
+ "description": "Sweep a rainbow across M5Stack's Chain RGB Matrix (8×8, 64 WS2812 LEDs) with an Arduino Uno. Wire DIN → D6, 5V and GND, and the Adafruit NeoPixel library scrolls a colour wheel over the whole panel.",
+ "runAt": 10712,
+ "liveAt": 22923,
+ "endAt": 36924,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 91,
+  "w": 526,
+  "h": 211.59375
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "slug": "cardputer-adv-m5-display",
+ "title": "M5 Cardputer ADV - display (official example)",
+ "board": "M5 Cardputer ADV",
+ "description": "M5Stack's own display test, unmodified: random coloured rectangles and text scattered across the 240x135 ST7789 panel, forever. A quick way to see the LCD path running at full tilt.",
+ "runAt": 10802,
+ "liveAt": 55988,
+ "endAt": 69988,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 344,
+  "h": 312
+ }
+}

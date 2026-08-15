@@ -1,0 +1,17 @@
+{
+ "slug": "digital-decoder-2to4",
+ "title": "2-to-4 Line Decoder",
+ "board": "Digital",
+ "description": "Two select lines pick exactly one of four outputs. Each output is A·B for some combination of A/!A and B/!B. The backbone of address decoding inside every CPU.",
+ "runAt": 10806,
+ "liveAt": 10810,
+ "endAt": 24814,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 46,
+  "y": 91,
+  "w": 856,
+  "h": 480
+ }
+}

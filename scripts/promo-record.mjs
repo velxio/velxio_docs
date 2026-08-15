@@ -49,14 +49,22 @@ const context = await browser.newContext({
 await context.addInitScript(() => {
   const mk = () => {
     if (document.getElementById("vx-cursor")) return;
+    // macOS-style arrow cursor. Hotspot math from the saas-product-demo
+    // skill: in the 24x24 viewBox the TIP sits at (4,3), so at render
+    // width W the element must be shifted by (-4*W/24, -3*W/24) for the
+    // tip to be the click point.
+    const W = 26;
     const c = document.createElement("div");
     c.id = "vx-cursor";
     c.style.cssText =
-      "position:fixed;width:22px;height:22px;border-radius:50%;" +
-      "background:rgba(255,255,255,.85);border:2px solid #0071e3;" +
-      "box-shadow:0 0 10px rgba(0,113,227,.8);pointer-events:none;" +
-      "z-index:2147483647;transform:translate(-50%,-50%);left:-50px;top:-50px;" +
-      "transition:none;";
+      "position:fixed;pointer-events:none;z-index:2147483647;" +
+      `width:${W}px;height:${W}px;left:-60px;top:-60px;` +
+      `margin-left:${(-4 * W) / 24}px;margin-top:${(-3 * W) / 24}px;` +
+      "filter:drop-shadow(0 1px 2px rgba(0,0,0,.6));transition:none;";
+    c.innerHTML =
+      '<svg width="' + W + '" height="' + W + '" viewBox="0 0 24 24">' +
+      '<path d="M4 3 L4 19 L8.5 15.5 L11 21 L13.5 20 L11 14.5 L17 14.5 Z"' +
+      ' fill="#ffffff" stroke="#111111" stroke-width="1.3" stroke-linejoin="round"/></svg>';
     document.body.appendChild(c);
     window.addEventListener(
       "mousemove",
@@ -157,7 +165,13 @@ await page.goto(`${BASE}/editor`, { waitUntil: "domcontentloaded" });
 await page.waitForTimeout(6000);
 await page.evaluate(() => {
   for (const el of document.querySelectorAll(".velxio-news-overlay")) el.remove();
+  // chat minimized from frame one — the modal overlay would swallow a real
+  // click, so fire the React handler directly
+  document
+    .querySelector('button[aria-label="Minimize chat"], button[title="Minimize"]')
+    ?.click();
 });
+await page.waitForTimeout(800);
 mark("start");
 
 // 1. The starter picker opens by itself on a fresh /editor visit; if it
@@ -168,13 +182,6 @@ if (!(await overlay.count())) {
   await clickEl(page.locator('button[title^="New workspace"]'), "open-templates", { pause: 1300 });
 }
 await clickEl(overlay.getByText("Blank project").first(), "choose-blank", { pause: 2000 });
-
-// Panel out of the way once we're in the workspace
-const min = page.locator('button[aria-label="Minimize chat"], button[title="Minimize"]');
-if (await min.count()) {
-  await min.first().click();
-  await page.waitForTimeout(600);
-}
 
 /** Add a part via the picker: exact-name card click. */
 async function addPart(query, cardText, label, pause = 1600) {
@@ -234,6 +241,23 @@ mark("place-esp32", boardBox.x + boardBox.width / 2, by + boardBox.height / 2);
 // space is to its LEFT, so the small parts go there.
 await addPart("resistor", "Resistor 220 Ω", "resistor", 1400);
 await dragTo("wokwi-resistor", { x: Math.max(boardBox.x - 170, 640), y: by + 100 }, "place-resistor");
+await page.evaluate(() => {
+  const el = document.querySelector("wokwi-resistor");
+  const r = el.getBoundingClientRect();
+  el.dispatchEvent(
+    new MouseEvent("contextmenu", {
+      bubbles: true,
+      cancelable: true,
+      clientX: Math.min(r.x + r.width / 2, 700),
+      clientY: Math.min(r.y + r.height / 2, 380),
+    })
+  );
+});
+await page.waitForTimeout(900);
+await clickEl(page.locator('button:has-text("Rotate")').first(), "rotate-resistor", { pause: 500 });
+await page.keyboard.press("Escape");
+await page.waitForTimeout(600);
+
 await addPart("led", "LED", "led", 1600);
 await dragTo("wokwi-led", { x: Math.max(boardBox.x - 300, 600), y: by + 95 }, "place-led");
 
@@ -339,7 +363,10 @@ mark("code-set");
 await page.waitForTimeout(1400);
 
 // 6. Run
-await clickEl(page.locator('button[title*="Run" i]').first(), "run", { pause: 1500 });
+await clickEl(page.locator('button[title*="Run" i]').first(), "run", { pause: 300 });
+await page.mouse.move(700, 620, { steps: 15 });
+cursor = { x: 700, y: 620 };
+await page.waitForTimeout(1200);
 const verifDialog = page.locator('text="Circuit verification"');
 if (await verifDialog.count()) {
   await page.screenshot({ path: join(HERE, "promo-verif-debug.png") });

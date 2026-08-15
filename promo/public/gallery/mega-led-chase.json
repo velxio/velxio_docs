@@ -1,0 +1,17 @@
+{
+ "slug": "mega-led-chase",
+ "title": "Mega: 8-LED Chase",
+ "board": "Arduino Mega",
+ "description": "Knight-Rider style LED chase across 8 LEDs on pins 2–9. Shows off the Mega's many I/O pins.",
+ "runAt": 10692,
+ "liveAt": 22839,
+ "endAt": 36840,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 76.6500015258789,
+  "w": 714.7999877929688,
+  "h": 216.3499984741211
+ }
+}

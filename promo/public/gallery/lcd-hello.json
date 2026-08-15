@@ -1,0 +1,17 @@
+{
+ "slug": "lcd-hello",
+ "title": "LCD 20x4 Display",
+ "board": "Arduino Uno",
+ "description": "Display text on a 20x4 LCD using the LiquidCrystal library",
+ "runAt": 11047,
+ "liveAt": 23194,
+ "endAt": 37194,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 761.453125,
+  "h": 239.515625
+ }
+}

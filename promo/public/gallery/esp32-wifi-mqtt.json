@@ -1,0 +1,17 @@
+{
+ "slug": "esp32-wifi-mqtt",
+ "title": "ESP32 WiFi + MQTT",
+ "board": "ESP32 (Xtensa)",
+ "description": "Connect an ESP32 to WiFi and a public MQTT broker. The sketch publishes to its own topic and subscribes to it, so every message round-trips through broker.hivemq.com and toggles GPIO2 — a self-contained test of WiFi and MQTT with no external setup. Open the Serial Monitor at 115200 to watch it connect and exchange messages. The emulator advertises an open AP named \"Velxio-GUEST\".",
+ "runAt": 11095,
+ "liveAt": 283725,
+ "endAt": 297727,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 141,
+  "h": 265
+ }
+}

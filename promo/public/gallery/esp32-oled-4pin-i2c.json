@@ -1,0 +1,17 @@
+{
+ "slug": "esp32-oled-4pin-i2c",
+ "title": "ESP32: SSD1306 OLED (4-pin I2C)",
+ "board": "ESP32 (Xtensa)",
+ "description": "Drive the cheap 4-pin SSD1306 OLED module (GND/VCC/SCL/SDA) over I2C from an ESP32 (SDA=21, SCL=22).",
+ "runAt": 10758,
+ "liveAt": 37923,
+ "endAt": 51924,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 60,
+  "y": 105,
+  "w": 566,
+  "h": 265
+ }
+}

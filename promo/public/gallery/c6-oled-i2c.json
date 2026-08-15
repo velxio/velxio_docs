@@ -1,0 +1,17 @@
+{
+ "slug": "c6-oled-i2c",
+ "title": "ESP32-C6: SSD1306 OLED Display",
+ "board": "ESP32-C6",
+ "description": "Display text on a 128x64 SSD1306 OLED over I2C from the ESP32-C6 (default Wire pins SDA=GPIO23, SCL=GPIO22).",
+ "runAt": 10702,
+ "liveAt": 37842,
+ "endAt": 51843,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 526,
+  "h": 275
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "slug": "binary-counter-leds",
+ "title": "4-bit Binary Counter",
+ "board": "Arduino Uno",
+ "description": "Count from 0 to 15 displayed on 4 LEDs. Each LED = one bit.",
+ "runAt": 10736,
+ "liveAt": 22871,
+ "endAt": 36872,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 456,
+  "h": 246
+ }
+}

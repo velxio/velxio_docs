@@ -1,0 +1,17 @@
+{
+ "slug": "uno-oled-4pin-i2c",
+ "title": "Arduino Uno: SSD1306 OLED (4-pin I2C)",
+ "board": "Arduino Uno",
+ "description": "Drive the cheap 4-pin SSD1306 OLED module (GND/VCC/SCL/SDA) over I2C from an Arduino Uno (SDA=A4, SCL=A5). Shows \"Hello Velxio!\" with a live counter.",
+ "runAt": 10689,
+ "liveAt": 22802,
+ "endAt": 36803,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 60,
+  "y": 105,
+  "w": 566,
+  "h": 207.59375
+ }
+}

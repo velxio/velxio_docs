@@ -1,0 +1,17 @@
+{
+ "slug": "m5stack-core-m5-display",
+ "title": "M5Stack Core - Display (official example)",
+ "board": "M5Stack Core",
+ "description": "Background colour sweep, text, rectangles, circles and triangles, then random triangles forever - the vendor's own tour of the LCD. Ported from the official M5Stack example to M5Unified - the classic M5Stack library needs arduino-esp32 2.x and no longer compiles on the 3.x core, in the Arduino IDE too.",
+ "runAt": 10600,
+ "liveAt": 355007,
+ "endAt": 369008,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 240,
+  "h": 268
+ }
+}

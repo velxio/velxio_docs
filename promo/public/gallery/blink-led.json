@@ -1,0 +1,17 @@
+{
+ "slug": "blink-led",
+ "title": "Blink LED",
+ "board": "Arduino Uno",
+ "description": "Classic Arduino blink example - toggle an LED on and off",
+ "runAt": 10767,
+ "liveAt": 22980,
+ "endAt": 36982,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 274.3125,
+  "h": 207.59375
+ }
+}

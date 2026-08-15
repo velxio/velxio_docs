@@ -1,0 +1,17 @@
+{
+ "slug": "nano-fade",
+ "title": "Nano: PWM Fade",
+ "board": "Arduino Nano",
+ "description": "Fade an LED in and out using PWM on pin 9 of the Arduino Nano.",
+ "runAt": 10654,
+ "liveAt": 22848,
+ "endAt": 36849,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 492,
+  "h": 207.328125
+ }
+}

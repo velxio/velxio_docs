@@ -1,0 +1,17 @@
+{
+ "slug": "pico-7segment",
+ "title": "Pico: 7-Segment Counter",
+ "board": "Pico",
+ "description": "Count 0–9 on a 7-segment display driven from GPIO 2–8 on the Raspberry Pi Pico.",
+ "runAt": 10695,
+ "liveAt": 22817,
+ "endAt": 36818,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 443.421875,
+  "h": 264
+ }
+}

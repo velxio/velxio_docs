@@ -1,0 +1,17 @@
+{
+ "slug": "pico-blink",
+ "title": "[Pico] Blink LED",
+ "board": "Pico",
+ "description": "Classic blink example on Raspberry Pi Pico — GPIO25 built-in LED",
+ "runAt": 10659,
+ "liveAt": 33375,
+ "endAt": 47376,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 472,
+  "h": 264
+ }
+}

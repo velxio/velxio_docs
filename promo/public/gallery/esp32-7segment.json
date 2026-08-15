@@ -1,0 +1,17 @@
+{
+ "slug": "esp32-7segment",
+ "title": "ESP32: 7-Segment Counter",
+ "board": "ESP32 (Xtensa)",
+ "description": "Count 0–9 on a 7-segment display driven from GPIO 12, 13, 14, 25, 26, 27, 32 on the ESP32.",
+ "runAt": 10701,
+ "liveAt": 39357,
+ "endAt": 53358,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 443.421875,
+  "h": 265
+ }
+}

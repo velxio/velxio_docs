@@ -1,0 +1,17 @@
+{
+ "slug": "c3-blink",
+ "title": "ESP32-C3: Blink LED",
+ "board": "ESP32-C3 (RISC-V)",
+ "description": "Blink an LED on GPIO 8 of the ESP32-C3. Runs through the QEMU lcgamboa backend (libqemu-riscv32) at 160 MHz.",
+ "runAt": 10662,
+ "liveAt": 122515,
+ "endAt": 136515,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 512,
+  "h": 215
+ }
+}

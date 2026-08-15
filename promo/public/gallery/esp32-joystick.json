@@ -1,0 +1,17 @@
+{
+ "slug": "esp32-joystick",
+ "title": "ESP32: Analog Joystick",
+ "board": "ESP32 (Xtensa)",
+ "description": "Read X/Y axes and button click from an analog joystick on the ESP32. X on D35, Y on D34, button on GPIO15.",
+ "runAt": 10643,
+ "liveAt": 39419,
+ "endAt": 53420,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 478.796875,
+  "h": 265
+ }
+}

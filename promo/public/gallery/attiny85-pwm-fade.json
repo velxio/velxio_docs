@@ -1,0 +1,17 @@
+{
+ "slug": "attiny85-pwm-fade",
+ "title": "ATtiny85: PWM LED Fade",
+ "board": "ATtiny85",
+ "description": "Smoothly fade an LED in and out using analogWrite() on PB1 (OC0B). Shows Timer0 PWM on the ATtiny85.",
+ "runAt": 10745,
+ "liveAt": 22892,
+ "endAt": 36894,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 100,
+  "y": 195,
+  "w": 402,
+  "h": 167.328125
+ }
+}

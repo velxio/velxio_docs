@@ -1,0 +1,17 @@
+{
+ "slug": "pico-servo",
+ "title": "Pico: Servo Motor Sweep",
+ "board": "Pico",
+ "description": "Sweep a servo motor from 0° to 180° and back on the Raspberry Pi Pico using D3 / GP15 (PWM).",
+ "runAt": 10828,
+ "liveAt": 23379,
+ "endAt": 37380,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 546.078125,
+  "h": 264
+ }
+}

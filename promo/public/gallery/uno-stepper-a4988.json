@@ -1,0 +1,17 @@
+{
+ "slug": "uno-stepper-a4988",
+ "title": "Arduino Uno: Stepper + A4988",
+ "board": "Arduino Uno",
+ "description": "Spin a bipolar stepper motor from an Arduino Uno through an A4988 driver. The MCU only pulses STEP and sets DIR; the A4988 drives the coils. The rotor turns continuously.",
+ "runAt": 10756,
+ "liveAt": 22967,
+ "endAt": 36968,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 40,
+  "y": 121,
+  "w": 746.34375,
+  "h": 289.453125
+ }
+}

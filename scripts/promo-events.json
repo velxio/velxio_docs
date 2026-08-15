@@ -1,0 +1,158 @@
+[
+  {
+    "t": 8160,
+    "label": "start",
+    "x": 640,
+    "y": 360
+  },
+  {
+    "t": 9607,
+    "label": "choose-blank",
+    "x": 341,
+    "y": 278
+  },
+  {
+    "t": 13092,
+    "label": "open-picker-esp32",
+    "x": 1184,
+    "y": 22
+  },
+  {
+    "t": 15878,
+    "label": "search-esp32",
+    "x": 1184,
+    "y": 22
+  },
+  {
+    "t": 17275,
+    "label": "add-esp32",
+    "x": 125,
+    "y": 204
+  },
+  {
+    "t": 19575,
+    "label": "place-esp32",
+    "x": 1105,
+    "y": 228
+  },
+  {
+    "t": 20790,
+    "label": "open-picker-resistor",
+    "x": 1184,
+    "y": 22
+  },
+  {
+    "t": 23632,
+    "label": "search-resistor",
+    "x": 1184,
+    "y": 22
+  },
+  {
+    "t": 25179,
+    "label": "add-resistor",
+    "x": 297,
+    "y": 380
+  },
+  {
+    "t": 27827,
+    "label": "place-resistor",
+    "x": 865,
+    "y": 195
+  },
+  {
+    "t": 31028,
+    "label": "rotate-resistor",
+    "x": 57,
+    "y": 646
+  },
+  {
+    "t": 33438,
+    "label": "open-picker-led",
+    "x": 1184,
+    "y": 22
+  },
+  {
+    "t": 35699,
+    "label": "search-led",
+    "x": 1184,
+    "y": 22
+  },
+  {
+    "t": 37224,
+    "label": "add-led",
+    "x": 297,
+    "y": 241
+  },
+  {
+    "t": 40876,
+    "label": "place-led",
+    "x": 735,
+    "y": 190
+  },
+  {
+    "t": 44764,
+    "label": "wire-start-gpio2-r1",
+    "x": 1157,
+    "y": 430
+  },
+  {
+    "t": 46350,
+    "label": "wire-end-gpio2-r1",
+    "x": 901,
+    "y": 209
+  },
+  {
+    "t": 48094,
+    "label": "wire-start-r2-a",
+    "x": 843,
+    "y": 209
+  },
+  {
+    "t": 49679,
+    "label": "wire-end-r2-a",
+    "x": 740,
+    "y": 207
+  },
+  {
+    "t": 51562,
+    "label": "wire-start-gnd-c",
+    "x": 1029,
+    "y": 455
+  },
+  {
+    "t": 53265,
+    "label": "wire-end-gnd-c",
+    "x": 730,
+    "y": 207
+  },
+  {
+    "t": 55342,
+    "label": "focus-code",
+    "x": 380,
+    "y": 200
+  },
+  {
+    "t": 57931,
+    "label": "code-set",
+    "x": 380,
+    "y": 200
+  },
+  {
+    "t": 60708,
+    "label": "run",
+    "x": 696,
+    "y": 22
+  },
+  {
+    "t": 101719,
+    "label": "sim-started",
+    "x": 700,
+    "y": 620
+  },
+  {
+    "t": 113722,
+    "label": "end",
+    "x": 700,
+    "y": 620
+  }
+]

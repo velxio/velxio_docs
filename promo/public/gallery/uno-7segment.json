@@ -1,0 +1,17 @@
+{
+ "slug": "uno-7segment",
+ "title": "Uno: 7-Segment Counter",
+ "board": "Arduino Uno",
+ "description": "Count 0–9 on a 7-segment display driven directly from pins 2–8 on the Arduino Uno.",
+ "runAt": 11398,
+ "liveAt": 23577,
+ "endAt": 37578,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 443.421875,
+  "h": 207.59375
+ }
+}

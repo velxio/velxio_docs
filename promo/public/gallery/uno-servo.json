@@ -1,0 +1,17 @@
+{
+ "slug": "uno-servo",
+ "title": "Uno: Servo Motor Sweep",
+ "board": "Arduino Uno",
+ "description": "Sweep a servo motor smoothly from 0° to 180° and back using pin 9 (PWM). Uses the built-in Servo library.",
+ "runAt": 10956,
+ "liveAt": 23170,
+ "endAt": 37171,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 546.078125,
+  "h": 229.53125
+ }
+}

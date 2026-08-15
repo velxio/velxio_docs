@@ -1,0 +1,17 @@
+{
+ "slug": "esp32-blink-led",
+ "title": "ESP32 Blink LED",
+ "board": "ESP32 (Xtensa)",
+ "description": "Blink the built-in LED on GPIO2 and an external red LED on GPIO4. Verifies ESP32 emulation is working.",
+ "runAt": 10901,
+ "liveAt": 39564,
+ "endAt": 53567,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 466,
+  "h": 265
+ }
+}

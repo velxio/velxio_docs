@@ -1,0 +1,17 @@
+{
+ "slug": "esp32s3-oled-i2c",
+ "title": "ESP32-S3: SSD1306 OLED Display",
+ "board": "ESP32-S3 (Xtensa)",
+ "description": "Display text on a 128×64 SSD1306 OLED over I2C from the ESP32-S3 (default Wire pins SDA=GPIO8, SCL=GPIO9).",
+ "runAt": 10751,
+ "liveAt": 40910,
+ "endAt": 54910,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 50,
+  "y": 95,
+  "w": 526,
+  "h": 350
+ }
+}

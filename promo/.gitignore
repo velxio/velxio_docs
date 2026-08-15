@@ -2,3 +2,4 @@ node_modules/
 out/
 public/promo-raw.webm
 src/data.json
+promo/public/gallery/*.webm

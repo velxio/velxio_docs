@@ -1,0 +1,17 @@
+{
+ "slug": "badger-2350-badge",
+ "title": "Pimoroni Badger 2350 — e-paper badge",
+ "board": "Pimoroni Badger 2350",
+ "description": "The Badger 2350 comes alive: the 2.7\" e-paper (SSD1680, 264x176) draws a name badge, A/B/C switch between badge, clock (real PCF85063A RTC at 0x51) and info screens, and UP/DOWN turn the rear case lights on and off. Everything runs on the in-browser RP2350 RISC-V emulator - click the buttons on the board.",
+ "runAt": 10642,
+ "liveAt": 39580,
+ "endAt": 53581,
+ "live": true,
+ "crashed": false,
+ "box": {
+  "x": 220,
+  "y": 185,
+  "w": 360,
+  "h": 320
+ }
+}
