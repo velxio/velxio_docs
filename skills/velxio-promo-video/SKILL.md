@@ -89,6 +89,11 @@ t=0 lands on a downbeat. Volume rides at 0.55 with a 0.9 s fade-in and a
   it every click reads ~6-8 px off target.
 - Zoom punches land on musical beats (see Music above); never let a
   punch drift more than ~0.3 s from its click just to hit a beat.
+- Beats whose MODAL CLOSES on click (choose-blank, add-*) need
+  `lead: 0.45`: the peak must land BEFORE the click so the frame shows
+  the card still open, and the release then reveals where the part
+  landed. Peaking on the click itself leaves the zoom parked on an
+  already-closed dialog.
 
 ## Traps (each cost a broken take — all handled in the scripts)
 
