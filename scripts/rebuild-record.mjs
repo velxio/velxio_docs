@@ -121,6 +121,12 @@ const BBOX = `(() => {
   return n?{x:x0,y:y0,w:x1-x0,h:y1-y0}:null;
 })()`;
 
+const VERIFIER_PROBE = `[...document.querySelectorAll("*")]
+  .filter(e => !e.childElementCount)
+  .map(e => (e.textContent || "").trim())
+  .filter(t => /burnt out|above the 20 mA|is shorted|carrying [\\d.]+e\\+\\d+ A/i.test(t))
+  .slice(0, 4)`;
+
 async function launch() {
   try {
     return await chromium.launch({ headless: true });
@@ -163,7 +169,8 @@ for (const slug of slugs) {
   rmSync(TMP, { recursive: true, force: true });
   const context = await browser.newContext({
     viewport: VIEWPORT,
-    deviceScaleFactor: 2,
+    // deviceScaleFactor stays 1: at 2 the pin hit areas do not respond to
+    // synthetic clicks and every wire silently misses.
     recordVideo: { dir: TMP, size: VIEWPORT },
   });
   await context.addInitScript(CURSOR_SCRIPT);
@@ -189,10 +196,95 @@ for (const slug of slugs) {
     await page.waitForTimeout(pause);
   };
   const clickEl = async (loc, label, pause) => {
-    const b = await loc.boundingBox();
+    const b = await loc.boundingBox({ timeout: 12000 }).catch(() => {
+      throw new Error(`element not found: ${label}`);
+    });
     if (!b) throw new Error(`no box for ${label}`);
     await clickAt(b.x + b.width / 2, b.y + b.height / 2, label, pause);
   };
+
+  /** Click a pin the way a user does: park the pointer on it, wait until
+   *  the pin's own hit area is actually under the cursor (the overlays
+   *  are rendered on hover, so clicking a "known" coordinate too early
+   *  lands on the canvas and only adds a waypoint), then press. */
+  /** Click a pin the way a user does — pointer on the part, press on the
+   *  pin — but keep the real mouse on the part BODY while pressing.
+   *
+   *  A part's pin hit areas are mounted only while the part is hovered,
+   *  and they sit on its outline: the moment the pointer reaches the pin
+   *  they unmount, the press lands on the canvas and the app records a
+   *  waypoint instead of a connection. Boards are big enough that this
+   *  never shows; every small part failed 100% of the time.
+   *
+   *  So: hover the part (pins mount), park the VISIBLE cursor on the pin
+   *  for the camera, and deliver the press to the pin element itself. */
+  const wirePin = async (hostId, pinName, towards) => {
+    for (let attempt = 0; attempt < 3; attempt++) {
+      const c = await page.evaluate(id => {
+        const el = document.getElementById(id);
+        if (!el) return null;
+        const r = el.getBoundingClientRect();
+        return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
+      }, hostId);
+      if (!c) return null;
+      await page.mouse.move(c.x, c.y, { steps: 12 });
+      await page.waitForTimeout(320);
+      const hit = await page.evaluate(
+        ({ id, pinName, towards }) => {
+          const norm = t => String(t).replace(/[.\s]?\d+$/, "");
+          const host = document.getElementById(id);
+          if (!host) return null;
+          const h = host.getBoundingClientRect();
+          const target = towards || { x: h.x + h.width / 2, y: h.y + h.height / 2 };
+          const pad = 44;
+          let best = null;
+          let bestD = Infinity;
+          for (const o of document.querySelectorAll('[data-pin-overlay="true"]')) {
+            const t = o.getAttribute("title") || "";
+            if (t !== pinName && norm(t) !== pinName) continue;
+            const r = o.getBoundingClientRect();
+            const cx = r.x + r.width / 2;
+            const cy = r.y + r.height / 2;
+            if (
+              cx < h.x - pad || cx > h.right + pad ||
+              cy < h.y - pad || cy > h.bottom + pad
+            )
+              continue;
+            const d = (cx - target.x) ** 2 + (cy - target.y) ** 2;
+            if (d < bestD) {
+              bestD = d;
+              best = { el: o, x: cx, y: cy };
+            }
+          }
+          if (!best) return null;
+          // put the on-camera pointer on the pin
+          const cur = document.getElementById("vx-cursor");
+          if (cur) {
+            cur.style.left = best.x + "px";
+            cur.style.top = best.y + "px";
+          }
+          const opts = {
+            bubbles: true,
+            cancelable: true,
+            clientX: best.x,
+            clientY: best.y,
+          };
+          best.el.dispatchEvent(new MouseEvent("mousedown", opts));
+          best.el.dispatchEvent(new MouseEvent("mouseup", opts));
+          best.el.dispatchEvent(new MouseEvent("click", opts));
+          return { x: best.x, y: best.y };
+        },
+        { id: hostId, pinName, towards: towards || null }
+      );
+      if (hit) {
+        await page.waitForTimeout(430);
+        return hit;
+      }
+      await page.waitForTimeout(250);
+    }
+    return null;
+  };
+
 
   /** Custom-element ids currently on the canvas. */
   const domIds = () =>
@@ -365,6 +457,9 @@ for (const slug of slugs) {
 
     // blank canvas
     const overlay = page.locator(".new-project-overlay");
+    // a cold editor load can take a few seconds to raise the starter modal
+    for (let i = 0; i < 14 && !(await overlay.count()); i++)
+      await page.waitForTimeout(500);
     if (!(await overlay.count()))
       await clickEl(page.locator('button[title^="New workspace"]'), "open-templates", 1100);
     await clickEl(overlay.getByText("Blank project").first(), "blank", 1800);
@@ -377,34 +472,64 @@ for (const slug of slugs) {
     if (!boardCard) throw new Error(`no board card for ${recipe.boardType}`);
     const boardId = await addPart(boardCard, "board");
 
-    // canvas offset: map recipe coords -> screen, anchored on the board
-    const boardRect = await page.evaluate(id => {
-      const r = document.getElementById(id).getBoundingClientRect();
-      return { x: r.x, y: r.y };
-    }, boardId);
-    const rx = boardComp?.x ?? 100;
-    const ry = boardComp?.y ?? 100;
-    const offX = boardRect.x - rx;
-    const offY = boardRect.y - ry;
-    const toScreen = (x, y) => ({
-      x: Math.max(60, Math.min(VIEWPORT.width - 80, offX + x)),
-      y: Math.max(140, Math.min(VIEWPORT.height - 260, offY + y)),
+    // Layout. Recipe coordinates pack parts tighter than reads on video,
+    // and in the Both layout the canvas is only the right-hand pane — so
+    // ignore the recipe geometry and lay the circuit out for the camera:
+    // board at the bottom-left of the pane, parts on a grid above it with
+    // real gaps, ordered as the recipe lists them.
+    const pane = await page.evaluate(() => {
+      let best = null;
+      for (const el of document.querySelectorAll("div")) {
+        const c = el.className?.toString?.() || "";
+        if (!/canvas/i.test(c)) continue;
+        const r = el.getBoundingClientRect();
+        if (r.width > 500 && r.height > 400 && (!best || r.width > best.w))
+          best = { x: r.x, y: Math.max(r.y, 90), w: r.width, h: r.height };
+      }
+      return (
+        best || {
+          x: innerWidth / 2,
+          y: 90,
+          w: innerWidth / 2,
+          h: innerHeight - 150,
+        }
+      );
     });
+    const others = (recipe.components || []).filter(c => !BOARD_CARD[c.type]);
+    const cols = others.length <= 2 ? 1 : others.length <= 6 ? 2 : 3;
+    const rows = Math.max(1, Math.ceil(others.length / cols));
+    // Gaps big enough that nothing overlaps, small enough that the whole
+    // circuit still reads in one frame (wires stay short).
+    const gapX = Math.min(300, Math.max(180, (pane.w - 260) / cols));
+    const gapY = Math.min(170, Math.max(120, (pane.h - 420) / rows));
+    const top = pane.y + 120;
+    const slotFor = i => ({
+      x: pane.x + 200 + (i % cols) * gapX,
+      y: top + Math.floor(i / cols) * gapY,
+    });
+    // the board sits just below the last row of parts
+    await dragTo(
+      boardId,
+      pane.x + 260 + ((cols - 1) * gapX) / 2,
+      Math.min(top + (rows - 1) * gapY + 195, pane.y + pane.h - 150),
+      "place-board"
+    );
 
-    // remaining parts
     const idMap = {};
     if (boardComp) idMap[boardComp.id] = boardId;
     else idMap.__board = boardId;
-    for (const c of recipe.components || []) {
-      if (BOARD_CARD[c.type]) continue;
+    for (const [i, c] of others.entries()) {
       const card = cardByTag[c.type];
       if (!card) throw new Error(`no catalog card for ${c.type}`);
       const id = await addPart(card, c.id);
       idMap[c.id] = id;
-      const p = toScreen(c.x + 40, c.y + 30);
+      const p = slotFor(i);
       await dragTo(id, p.x, p.y, `place-${c.id}`);
     }
 
+    // NOTE: wiring must happen at 1:1. Zooming the canvas first looked
+    // like a good idea (the pins separate) but the pin hit areas stop
+    // responding — every click misses and the circuit ends up empty.
     // wires
     let wired = 0;
     for (const w of recipe.wires || []) {
@@ -420,32 +545,51 @@ for (const slug of slugs) {
         }, id);
       const ca = await centre(a);
       const cb = await centre(b);
-      const p1 = await pinPoint(a, w.start.pinName, cb);
-      const p2 = await pinPoint(b, w.end.pinName, p1 || ca);
-      if (!p1 || !p2) {
-        console.log(`    miss ${w.start.pinName}->${w.end.pinName}`);
-        continue;
-      }
       const before = await wireCount();
-      await clickAt(p1.x, p1.y, null, 350);
-      await clickAt(p2.x, p2.y, null, 550);
-      if ((await wireCount()) > before) {
-        wired++;
-      } else {
-        // a missed pin leaves a wire in progress — cancel and try once
-        // more with freshly measured pin positions
-        await page.keyboard.press("Escape");
-        await page.waitForTimeout(300);
-        const q1 = await pinPoint(a, w.start.pinName, cb);
-        const q2 = await pinPoint(b, w.end.pinName, p1);
-        if (q1 && q2) {
-          await clickAt(q1.x, q1.y, null, 400);
-          await clickAt(q2.x, q2.y, null, 600);
-          if ((await wireCount()) > before) wired++;
-          else await page.keyboard.press("Escape");
+      const p1 = await wirePin(a, w.start.pinName, cb);
+      const afterFirst = await wireCount();
+      const p2 = p1 ? await wirePin(b, w.end.pinName, p1) : null;
+      const afterSecond = await wireCount();
+      if (process.env.WIRE_DEBUG)
+        console.log(
+          `    dbg ${w.start.pinName}->${w.end.pinName} hit1=${!!p1} hit2=${!!p2} counts ${before}/${afterFirst}/${afterSecond}`
+        );
+      // Escape FIRST, then count. The wire-in-progress preview is drawn
+      // with the same outline stroke as a finished wire, so counting
+      // before cancelling scores a missed click as a landed wire.
+      await page.keyboard.press("Escape");
+      await page.waitForTimeout(260);
+      let landed = (await wireCount()) > before;
+      if (!landed && p1 && p2) {
+        const r1 = await wirePin(a, w.start.pinName, cb);
+        const r2 = r1 ? await wirePin(b, w.end.pinName, r1) : null;
+        if (r1 && r2) {
+          await page.keyboard.press("Escape");
+          await page.waitForTimeout(260);
+          landed = (await wireCount()) > before;
         }
       }
+      if (!landed) console.log(`    miss ${w.start.pinName}->${w.end.pinName}`);
+      if (landed) wired++;
     }
+    const finalWires = await page.evaluate(() => ({
+      outline: document.querySelectorAll('path[stroke="#1a1a1a"]').length,
+      allPaths: document.querySelectorAll("svg path").length,
+      colored: document.querySelectorAll('path[stroke="#22c55e"], path[stroke="#cc0000"]').length,
+    }));
+    console.log(`    wires on canvas: ${JSON.stringify(finalWires)} (counted ${wired})`);
+
+    // back to 1:1 for the still and the run
+    const resetView = page.locator("button.zoom-level");
+    if (await resetView.count()) {
+      await resetView.click();
+      await page.waitForTimeout(700);
+    }
+    // leave no wire in progress and dismiss the wiring hint banner
+    await page.keyboard.press("Escape");
+    const hint = page.locator('button:has-text("Cancel")');
+    if (await hint.count()) await hint.first().click().catch(() => {});
+    await page.waitForTimeout(400);
     mark("wired", { wires: wired, of: (recipe.wires || []).length });
 
     // the sketch
@@ -490,6 +634,11 @@ for (const slug of slugs) {
     const serial = page.locator('button[title="Toggle Serial Monitor"]');
     if (await serial.count()) await clickEl(serial, "serial", 700);
 
+    // The output console accumulates: while wiring, a half-connected LED
+    // legitimately trips the checker. Snapshot those complaints now so
+    // only NEW ones (from the finished circuit) count against the take.
+    const verifierBefore = await page.evaluate(VERIFIER_PROBE);
+
     // run
     const runBtn = page.locator('button[title*="Run" i]').first();
     const boardless = await runBtn.isDisabled().catch(() => false);
@@ -527,6 +676,12 @@ for (const slug of slugs) {
     await page.waitForTimeout(RUN_FOOTAGE_MS);
     mark("end");
 
+    // What does the circuit check say? A demo with a burnt LED, a short
+    // or an impossible current is a demo of a mistake — reject the take.
+    const verifierAfter = await page.evaluate(VERIFIER_PROBE);
+    const stale = new Set(verifierBefore);
+    const verifier = verifierAfter.filter(t => !stale.has(t));
+
     out = {
       slug,
       title: recipe.title || slug,
@@ -538,9 +693,14 @@ for (const slug of slugs) {
       beats,
       box,
       live,
+      verifier,
       crashed: simLog.some(l => /guest crashed/i.test(l)),
     };
-    ok = live && !out.crashed && wired > 0 === (recipe.wires || []).length > 0;
+    ok =
+      live &&
+      !out.crashed &&
+      wired === (recipe.wires || []).length &&
+      verifier.length === 0;
   } catch (e) {
     out = { slug, error: String(e).slice(0, 200) };
   }
@@ -552,7 +712,7 @@ for (const slug of slugs) {
     console.log(`ok   ${slug} — ${out.wired}/${out.wires} wires, live at ${Math.round(beats.find(b => b.label === "live").t / 1000)}s`);
   } else {
     console.log(
-      `FAIL ${slug} — ${out.error ? out.error : `live=${out.live} crashed=${out.crashed} wires=${out.wired}/${out.wires}`}`
+      `FAIL ${slug} — ${out.error ? out.error : `live=${out.live} wires=${out.wired}/${out.wires} verifier=${JSON.stringify((out.verifier || []).slice(0, 2))}`}`
     );
   }
   rmSync(TMP, { recursive: true, force: true });
