@@ -1,0 +1,782 @@
+[
+ {
+  "id": "diode-1n4007",
+  "tagName": "wokwi-diode-1n4007",
+  "name": "1N4007 (1 kV Rectifier)"
+ },
+ {
+  "id": "diode-1n4148",
+  "tagName": "wokwi-diode-1n4148",
+  "name": "1N4148 (Small-Signal Diode)"
+ },
+ {
+  "id": "zener-1n4733",
+  "tagName": "wokwi-zener-1n4733",
+  "name": "1N4733 (5.1 V Zener)"
+ },
+ {
+  "id": "diode-1n5817",
+  "tagName": "wokwi-diode-1n5817",
+  "name": "1N5817 (Schottky 20V)"
+ },
+ {
+  "id": "diode-1n5819",
+  "tagName": "wokwi-diode-1n5819",
+  "name": "1N5819 (Schottky 40V)"
+ },
+ {
+  "id": "bjt-2n2222",
+  "tagName": "wokwi-bjt-2n2222",
+  "name": "2N2222 (NPN BJT)"
+ },
+ {
+  "id": "bjt-2n3055",
+  "tagName": "wokwi-bjt-2n3055",
+  "name": "2N3055 (NPN Power BJT)"
+ },
+ {
+  "id": "bjt-2n3906",
+  "tagName": "wokwi-bjt-2n3906",
+  "name": "2N3906 (PNP BJT)"
+ },
+ {
+  "id": "mosfet-2n7000",
+  "tagName": "wokwi-mosfet-2n7000",
+  "name": "2N7000 (N-MOSFET)"
+ },
+ {
+  "id": "opto-4n25",
+  "tagName": "velxio-opto-4n25",
+  "name": "4N25 (Optocoupler)"
+ },
+ {
+  "id": "reg-7805",
+  "tagName": "wokwi-reg-7805",
+  "name": "7805 (+5V Linear Regulator)"
+ },
+ {
+  "id": "reg-7812",
+  "tagName": "wokwi-reg-7812",
+  "name": "7812 (+12V Linear Regulator)"
+ },
+ {
+  "id": "reg-7905",
+  "tagName": "wokwi-reg-7905",
+  "name": "7905 (−5V Linear Regulator)"
+ },
+ {
+  "id": "battery-9v",
+  "tagName": "wokwi-battery-9v",
+  "name": "9V Battery"
+ },
+ {
+  "id": "battery-aa",
+  "tagName": "wokwi-battery-aa",
+  "name": "AA Battery (1.5V)"
+ },
+ {
+  "id": "bjt-bc547",
+  "tagName": "wokwi-bjt-bc547",
+  "name": "BC547 (NPN BJT)"
+ },
+ {
+  "id": "bjt-bc557",
+  "tagName": "wokwi-bjt-bc557",
+  "name": "BC557 (PNP BJT)"
+ },
+ {
+  "id": "battery-coin-cell",
+  "tagName": "wokwi-battery-coin-cell",
+  "name": "Coin Cell (CR2032, 3V)"
+ },
+ {
+  "id": "diode",
+  "tagName": "wokwi-diode",
+  "name": "Diode (generic)"
+ },
+ {
+  "id": "mosfet-fqp27p06",
+  "tagName": "wokwi-mosfet-fqp27p06",
+  "name": "FQP27P06 (P-MOSFET)"
+ },
+ {
+  "id": "opamp-ideal",
+  "tagName": "wokwi-opamp-ideal",
+  "name": "Ideal Op-Amp"
+ },
+ {
+  "id": "mosfet-irf540",
+  "tagName": "wokwi-mosfet-irf540",
+  "name": "IRF540 (N-MOSFET Power)"
+ },
+ {
+  "id": "mosfet-irf9540",
+  "tagName": "wokwi-mosfet-irf9540",
+  "name": "IRF9540 (P-MOSFET)"
+ },
+ {
+  "id": "reg-lm317",
+  "tagName": "wokwi-reg-lm317",
+  "name": "LM317 (Adjustable Linear Regulator)"
+ },
+ {
+  "id": "opamp-lm324",
+  "tagName": "wokwi-opamp-lm324",
+  "name": "LM324 (Quad Op-Amp)"
+ },
+ {
+  "id": "opamp-lm358",
+  "tagName": "wokwi-opamp-lm358",
+  "name": "LM358 (Dual Op-Amp)"
+ },
+ {
+  "id": "opamp-lm741",
+  "tagName": "wokwi-opamp-lm741",
+  "name": "LM741 (Op-Amp)"
+ },
+ {
+  "id": "opto-pc817",
+  "tagName": "velxio-opto-pc817",
+  "name": "PC817 (Optocoupler)"
+ },
+ {
+  "id": "power-supply",
+  "tagName": "wokwi-signal-generator",
+  "name": "Regulated Power Supply"
+ },
+ {
+  "id": "signal-generator",
+  "tagName": "wokwi-signal-generator",
+  "name": "Signal Generator"
+ },
+ {
+  "id": "opamp-tl072",
+  "tagName": "wokwi-opamp-tl072",
+  "name": "TL072 (JFET Op-Amp)"
+ },
+ {
+  "id": "arduino-mega",
+  "tagName": "wokwi-arduino-mega",
+  "name": "Arduino Mega"
+ },
+ {
+  "id": "arduino-nano",
+  "tagName": "wokwi-arduino-nano",
+  "name": "Arduino Nano"
+ },
+ {
+  "id": "arduino-uno",
+  "tagName": "wokwi-arduino-uno",
+  "name": "Arduino Uno"
+ },
+ {
+  "id": "esp32-devkit-v1",
+  "tagName": "wokwi-esp32-devkit-v1",
+  "name": "ESP32 Devkit V1"
+ },
+ {
+  "id": "epaper-1in54-bw",
+  "tagName": "velxio-epaper",
+  "name": "ePaper 1.54\" (200×200, B/W)"
+ },
+ {
+  "id": "epaper-2in13-bw",
+  "tagName": "velxio-epaper",
+  "name": "ePaper 2.13\" (250×122, B/W)"
+ },
+ {
+  "id": "epaper-2in13-bwr",
+  "tagName": "velxio-epaper",
+  "name": "ePaper 2.13\" (250×122, B/W/Red)"
+ },
+ {
+  "id": "epaper-2in9-bw",
+  "tagName": "velxio-epaper",
+  "name": "ePaper 2.9\" (296×128, B/W)"
+ },
+ {
+  "id": "epaper-2in9-bwr",
+  "tagName": "velxio-epaper",
+  "name": "ePaper 2.9\" (296×128, B/W/Red)"
+ },
+ {
+  "id": "epaper-4in2-bw",
+  "tagName": "velxio-epaper",
+  "name": "ePaper 4.2\" (400×300, B/W)"
+ },
+ {
+  "id": "epaper-5in65-7c",
+  "tagName": "velxio-epaper",
+  "name": "ePaper 5.65\" (600×448, ACeP 7-colour)"
+ },
+ {
+  "id": "epaper-7in5-bw",
+  "tagName": "velxio-epaper",
+  "name": "ePaper 7.5\" (800×480, B/W)"
+ },
+ {
+  "id": "ili9341",
+  "tagName": "wokwi-ili9341",
+  "name": "ILI9341"
+ },
+ {
+  "id": "lcd1602-i2c",
+  "tagName": "wokwi-lcd1602",
+  "name": "LCD 16x2 (I2C)"
+ },
+ {
+  "id": "lcd2004-i2c",
+  "tagName": "wokwi-lcd2004",
+  "name": "LCD 20x4 (I2C)"
+ },
+ {
+  "id": "lcd1602",
+  "tagName": "wokwi-lcd1602",
+  "name": "LCD1602"
+ },
+ {
+  "id": "lcd2004",
+  "tagName": "wokwi-lcd2004",
+  "name": "LCD2004"
+ },
+ {
+  "id": "ssd1306",
+  "tagName": "wokwi-ssd1306",
+  "name": "SSD1306 OLED"
+ },
+ {
+  "id": "ssd1306-i2c-4pin",
+  "tagName": "velxio-ssd1306-i2c-4pin",
+  "name": "SSD1306 OLED (I2C, 4-pin)"
+ },
+ {
+  "id": "motor-driver-l293d",
+  "tagName": "velxio-motor-driver-l293d",
+  "name": "L293D (Dual H-Bridge Motor Driver)"
+ },
+ {
+  "id": "relay",
+  "tagName": "velxio-relay",
+  "name": "Relay (SPDT)"
+ },
+ {
+  "id": "dip-switch-8",
+  "tagName": "wokwi-dip-switch-8",
+  "name": "DIP Switch 8"
+ },
+ {
+  "id": "ky-040",
+  "tagName": "wokwi-ky-040",
+  "name": "KY-040 Rotary Encoder"
+ },
+ {
+  "id": "membrane-keypad",
+  "tagName": "wokwi-membrane-keypad",
+  "name": "Membrane Keypad"
+ },
+ {
+  "id": "potentiometer",
+  "tagName": "wokwi-potentiometer",
+  "name": "Potentiometer"
+ },
+ {
+  "id": "pushbutton",
+  "tagName": "wokwi-pushbutton",
+  "name": "Pushbutton"
+ },
+ {
+  "id": "slide-switch",
+  "tagName": "wokwi-slide-switch",
+  "name": "Slide Switch"
+ },
+ {
+  "id": "ic-74hc00",
+  "tagName": "wokwi-ic-74hc00",
+  "name": "74HC00 (Quad 2-input NAND)"
+ },
+ {
+  "id": "ic-74hc02",
+  "tagName": "wokwi-ic-74hc02",
+  "name": "74HC02 (Quad 2-input NOR)"
+ },
+ {
+  "id": "ic-74hc04",
+  "tagName": "wokwi-ic-74hc04",
+  "name": "74HC04 (Hex Inverter)"
+ },
+ {
+  "id": "ic-74hc08",
+  "tagName": "wokwi-ic-74hc08",
+  "name": "74HC08 (Quad 2-input AND)"
+ },
+ {
+  "id": "ic-74hc14",
+  "tagName": "wokwi-ic-74hc14",
+  "name": "74HC14 (Hex Schmitt Inverter)"
+ },
+ {
+  "id": "ic-74hc32",
+  "tagName": "wokwi-ic-74hc32",
+  "name": "74HC32 (Quad 2-input OR)"
+ },
+ {
+  "id": "ic-74hc86",
+  "tagName": "wokwi-ic-74hc86",
+  "name": "74HC86 (Quad 2-input XOR)"
+ },
+ {
+  "id": "logic-gate-and",
+  "tagName": "velxio-logic-and",
+  "name": "AND Gate"
+ },
+ {
+  "id": "logic-gate-and-3",
+  "tagName": "velxio-logic-and-3",
+  "name": "AND Gate (3-input)"
+ },
+ {
+  "id": "logic-gate-and-4",
+  "tagName": "velxio-logic-and-4",
+  "name": "AND Gate (4-input)"
+ },
+ {
+  "id": "flip-flop-d",
+  "tagName": "velxio-flip-flop-d",
+  "name": "D Flip-Flop"
+ },
+ {
+  "id": "flip-flop-jk",
+  "tagName": "velxio-flip-flop-jk",
+  "name": "JK Flip-Flop"
+ },
+ {
+  "id": "logic-gate-nand",
+  "tagName": "velxio-logic-nand",
+  "name": "NAND Gate"
+ },
+ {
+  "id": "logic-gate-nand-3",
+  "tagName": "velxio-logic-nand-3",
+  "name": "NAND Gate (3-input)"
+ },
+ {
+  "id": "logic-gate-nand-4",
+  "tagName": "velxio-logic-nand-4",
+  "name": "NAND Gate (4-input)"
+ },
+ {
+  "id": "logic-gate-nor",
+  "tagName": "velxio-logic-nor",
+  "name": "NOR Gate"
+ },
+ {
+  "id": "logic-gate-nor-3",
+  "tagName": "velxio-logic-nor-3",
+  "name": "NOR Gate (3-input)"
+ },
+ {
+  "id": "logic-gate-nor-4",
+  "tagName": "velxio-logic-nor-4",
+  "name": "NOR Gate (4-input)"
+ },
+ {
+  "id": "logic-gate-not",
+  "tagName": "velxio-logic-not",
+  "name": "NOT Gate (Inverter)"
+ },
+ {
+  "id": "logic-gate-or",
+  "tagName": "velxio-logic-or",
+  "name": "OR Gate"
+ },
+ {
+  "id": "logic-gate-or-3",
+  "tagName": "velxio-logic-or-3",
+  "name": "OR Gate (3-input)"
+ },
+ {
+  "id": "logic-gate-or-4",
+  "tagName": "velxio-logic-or-4",
+  "name": "OR Gate (4-input)"
+ },
+ {
+  "id": "flip-flop-t",
+  "tagName": "velxio-flip-flop-t",
+  "name": "T Flip-Flop"
+ },
+ {
+  "id": "logic-gate-xnor",
+  "tagName": "velxio-logic-xnor",
+  "name": "XNOR Gate"
+ },
+ {
+  "id": "logic-gate-xor",
+  "tagName": "velxio-logic-xor",
+  "name": "XOR Gate"
+ },
+ {
+  "id": "a4988",
+  "tagName": "velxio-a4988",
+  "name": "A4988 Stepper Driver"
+ },
+ {
+  "id": "biaxial-stepper",
+  "tagName": "wokwi-biaxial-stepper",
+  "name": "Biaxial Stepper"
+ },
+ {
+  "id": "servo",
+  "tagName": "wokwi-servo",
+  "name": "Servo"
+ },
+ {
+  "id": "stepper-motor",
+  "tagName": "wokwi-stepper-motor",
+  "name": "Stepper Motor"
+ },
+ {
+  "id": "7segment",
+  "tagName": "wokwi-7segment",
+  "name": "7 Segment"
+ },
+ {
+  "id": "analog-joystick",
+  "tagName": "wokwi-analog-joystick",
+  "name": "Analog Joystick"
+ },
+ {
+  "id": "big-sound-sensor",
+  "tagName": "wokwi-big-sound-sensor",
+  "name": "Big Sound Sensor"
+ },
+ {
+  "id": "ds1307",
+  "tagName": "wokwi-ds1307",
+  "name": "DS1307"
+ },
+ {
+  "id": "ds3231",
+  "tagName": "velxio-ds3231",
+  "name": "DS3231 RTC"
+ },
+ {
+  "id": "flame-sensor",
+  "tagName": "wokwi-flame-sensor",
+  "name": "Flame Sensor"
+ },
+ {
+  "id": "gas-sensor",
+  "tagName": "wokwi-gas-sensor",
+  "name": "Gas Sensor"
+ },
+ {
+  "id": "heart-beat-sensor",
+  "tagName": "wokwi-heart-beat-sensor",
+  "name": "Heart Beat Sensor"
+ },
+ {
+  "id": "hx711",
+  "tagName": "wokwi-hx711",
+  "name": "HX711"
+ },
+ {
+  "id": "ks2e-m-dc5",
+  "tagName": "wokwi-ks2e-m-dc5",
+  "name": "KS2E-M-DC5"
+ },
+ {
+  "id": "led-ring",
+  "tagName": "wokwi-led-ring",
+  "name": "LED Ring"
+ },
+ {
+  "id": "microsd-card",
+  "tagName": "wokwi-microsd-card",
+  "name": "microSD Card"
+ },
+ {
+  "id": "nano-rp2040-connect",
+  "tagName": "wokwi-nano-rp2040-connect",
+  "name": "Nano RP2040 Connect"
+ },
+ {
+  "id": "neopixel-matrix",
+  "tagName": "wokwi-neopixel-matrix",
+  "name": "NeoPixel Matrix"
+ },
+ {
+  "id": "pushbutton-6mm",
+  "tagName": "wokwi-pushbutton-6mm",
+  "name": "Pushbutton 6mm"
+ },
+ {
+  "id": "rotary-dialer",
+  "tagName": "wokwi-rotary-dialer",
+  "name": "Rotary Dialer"
+ },
+ {
+  "id": "slide-potentiometer",
+  "tagName": "wokwi-slide-potentiometer",
+  "name": "Slide Potentiometer"
+ },
+ {
+  "id": "small-sound-sensor",
+  "tagName": "wokwi-small-sound-sensor",
+  "name": "Small Sound Sensor"
+ },
+ {
+  "id": "tilt-switch",
+  "tagName": "wokwi-tilt-switch",
+  "name": "Tilt Switch"
+ },
+ {
+  "id": "buzzer",
+  "tagName": "wokwi-buzzer",
+  "name": "Buzzer"
+ },
+ {
+  "id": "led",
+  "tagName": "wokwi-led",
+  "name": "LED"
+ },
+ {
+  "id": "led-bar-graph",
+  "tagName": "wokwi-led-bar-graph",
+  "name": "Led Bar Graph"
+ },
+ {
+  "id": "neopixel",
+  "tagName": "wokwi-neopixel",
+  "name": "Neopixel"
+ },
+ {
+  "id": "rgb-led",
+  "tagName": "wokwi-rgb-led",
+  "name": "RGB Led"
+ },
+ {
+  "id": "breadboard",
+  "tagName": "velxio-breadboard",
+  "name": "Breadboard (full)"
+ },
+ {
+  "id": "breadboard-mini",
+  "tagName": "velxio-breadboard-mini",
+  "name": "Breadboard Mini"
+ },
+ {
+  "id": "cap-1n",
+  "tagName": "wokwi-capacitor",
+  "name": "Cap. 1 nF"
+ },
+ {
+  "id": "cap-1u",
+  "tagName": "wokwi-capacitor",
+  "name": "Cap. 1 µF"
+ },
+ {
+  "id": "cap-10n",
+  "tagName": "wokwi-capacitor",
+  "name": "Cap. 10 nF"
+ },
+ {
+  "id": "cap-10p",
+  "tagName": "wokwi-capacitor",
+  "name": "Cap. 10 pF"
+ },
+ {
+  "id": "cap-100n",
+  "tagName": "wokwi-capacitor",
+  "name": "Cap. 100 nF"
+ },
+ {
+  "id": "cap-100p",
+  "tagName": "wokwi-capacitor",
+  "name": "Cap. 100 pF"
+ },
+ {
+  "id": "cap-22p",
+  "tagName": "wokwi-capacitor",
+  "name": "Cap. 22 pF"
+ },
+ {
+  "id": "capacitor",
+  "tagName": "wokwi-capacitor",
+  "name": "Cap. ceramic (custom)"
+ },
+ {
+  "id": "cap-elec-1u",
+  "tagName": "velxio-capacitor-electrolytic",
+  "name": "Electrolytic 1 µF"
+ },
+ {
+  "id": "cap-elec-10u",
+  "tagName": "velxio-capacitor-electrolytic",
+  "name": "Electrolytic 10 µF"
+ },
+ {
+  "id": "cap-elec-100u",
+  "tagName": "velxio-capacitor-electrolytic",
+  "name": "Electrolytic 100 µF"
+ },
+ {
+  "id": "cap-elec-1000u",
+  "tagName": "velxio-capacitor-electrolytic",
+  "name": "Electrolytic 1000 µF"
+ },
+ {
+  "id": "cap-elec-47u",
+  "tagName": "velxio-capacitor-electrolytic",
+  "name": "Electrolytic 47 µF"
+ },
+ {
+  "id": "cap-elec-470u",
+  "tagName": "velxio-capacitor-electrolytic",
+  "name": "Electrolytic 470 µF"
+ },
+ {
+  "id": "capacitor-electrolytic",
+  "tagName": "velxio-capacitor-electrolytic",
+  "name": "Electrolytic Cap. (custom)"
+ },
+ {
+  "id": "franzininho",
+  "tagName": "wokwi-franzininho",
+  "name": "Franzininho"
+ },
+ {
+  "id": "inductor",
+  "tagName": "wokwi-inductor",
+  "name": "Inductor (custom)"
+ },
+ {
+  "id": "ind-1m",
+  "tagName": "wokwi-inductor",
+  "name": "Inductor 1 mH"
+ },
+ {
+  "id": "ind-10m",
+  "tagName": "wokwi-inductor",
+  "name": "Inductor 10 mH"
+ },
+ {
+  "id": "ind-100u",
+  "tagName": "wokwi-inductor",
+  "name": "Inductor 100 µH"
+ },
+ {
+  "id": "ir-receiver",
+  "tagName": "wokwi-ir-receiver",
+  "name": "IR Receiver"
+ },
+ {
+  "id": "ir-remote",
+  "tagName": "wokwi-ir-remote",
+  "name": "IR Remote"
+ },
+ {
+  "id": "resistor",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor (custom)"
+ },
+ {
+  "id": "resistor-1k",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 1 kΩ"
+ },
+ {
+  "id": "resistor-1m",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 1 MΩ"
+ },
+ {
+  "id": "resistor-10k",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 10 kΩ"
+ },
+ {
+  "id": "resistor-100k",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 100 kΩ"
+ },
+ {
+  "id": "resistor-2k2",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 2.2 kΩ"
+ },
+ {
+  "id": "resistor-22k",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 22 kΩ"
+ },
+ {
+  "id": "resistor-220",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 220 Ω"
+ },
+ {
+  "id": "resistor-330",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 330 Ω"
+ },
+ {
+  "id": "resistor-4k7",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 4.7 kΩ"
+ },
+ {
+  "id": "resistor-47k",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 47 kΩ"
+ },
+ {
+  "id": "resistor-470",
+  "tagName": "wokwi-resistor",
+  "name": "Resistor 470 Ω"
+ },
+ {
+  "id": "bmp280",
+  "tagName": "velxio-bmp280",
+  "name": "BMP280 (Pressure + Temp)"
+ },
+ {
+  "id": "dht22",
+  "tagName": "wokwi-dht22",
+  "name": "DHT22"
+ },
+ {
+  "id": "gps-neo6m",
+  "tagName": "velxio-gps-neo6m",
+  "name": "GPS NEO-6M"
+ },
+ {
+  "id": "hc-sr04",
+  "tagName": "wokwi-hc-sr04",
+  "name": "HC-SR04"
+ },
+ {
+  "id": "mpu6050",
+  "tagName": "wokwi-mpu6050",
+  "name": "MPU6050"
+ },
+ {
+  "id": "ntc-temperature-sensor",
+  "tagName": "wokwi-ntc-temperature-sensor",
+  "name": "NTC Temperature Sensor"
+ },
+ {
+  "id": "photodiode",
+  "tagName": "wokwi-photodiode",
+  "name": "Photodiode"
+ },
+ {
+  "id": "photoresistor-sensor",
+  "tagName": "wokwi-photoresistor-sensor",
+  "name": "Photoresistor Sensor"
+ },
+ {
+  "id": "pir-motion-sensor",
+  "tagName": "wokwi-pir-motion-sensor",
+  "name": "PIR Motion Sensor"
+ }
+]
