@@ -168,6 +168,50 @@ async function clickRun(page) {
     .click();
 }
 
+/** Clip rectangle covering every given selector, padded.
+ *
+ *  Hardcoded pixel clips silently rot: when the toolbar moved, the
+ *  transport shot kept "succeeding" while capturing two lines of the code
+ *  editor. Measuring the real elements means a moved control produces a
+ *  correct shot, and a REMOVED control throws instead of shipping a lie. */
+async function clipOf(page, selectors, pad = 10) {
+  let x0 = Infinity,
+    y0 = Infinity,
+    x1 = -Infinity,
+    y1 = -Infinity;
+  for (const sel of selectors) {
+    const box = await page.locator(sel).first().boundingBox();
+    if (!box) throw new Error(`clipOf: nothing matched ${sel}`);
+    x0 = Math.min(x0, box.x);
+    y0 = Math.min(y0, box.y);
+    x1 = Math.max(x1, box.x + box.width);
+    y1 = Math.max(y1, box.y + box.height);
+  }
+  const x = Math.max(0, Math.round(x0 - pad));
+  const y = Math.max(0, Math.round(y0 - pad));
+  return {
+    x,
+    y,
+    width: Math.min(VIEWPORT.width - x, Math.round(x1 - x0 + pad * 2)),
+    height: Math.min(VIEWPORT.height - y, Math.round(y1 - y0 + pad * 2)),
+  };
+}
+
+/** The Library Manager fetches the installed set after it opens; shooting
+ *  on a fixed timeout captured "Loading installed libraries..." in an empty
+ *  panel. Wait for the list to actually render before the shutter. */
+async function waitForLibraryList(page, ms = 30_000) {
+  await page
+    .locator("text=/Loading installed libraries/i")
+    .waitFor({ state: "hidden", timeout: ms })
+    .catch(() => {});
+  await page
+    .locator('.lib-list button:has-text("Add to project")')
+    .first()
+    .waitFor({ state: "visible", timeout: ms });
+  await page.waitForTimeout(800); // let rows settle / images decode
+}
+
 // ── scenes ───────────────────────────────────────────────────────────────────
 // Each scene navigates, prepares the state and captures one or more shots.
 // Keep scenes independent: assume a fresh logged-in page, no leftover state.
@@ -181,6 +225,40 @@ const SCENES = {
     await minimizeAi(page);
     await shot(page, "getting-started/app-home");
     if (WANT_INVENTORY) await inventory(page, "app-home");
+  },
+
+  /** One close-up per region described in the interface-tour page. Every
+   *  clip is measured from the live element, so a UI reshuffle moves the
+   *  crop instead of silently capturing the wrong pixels. */
+  "getting-started/interface-tour": async page => {
+    await loadExample(page, "esp32-blink-led", { keepAi: true });
+    // The menu bar is whatever sits above the toolbar row.
+    const bar = await page.locator(".header-editor-toolbar").first().boundingBox();
+    if (!bar) throw new Error("toolbar not found");
+    await shot(page, "getting-started/interface-menu-bar", {
+      clip: { x: 0, y: 0, width: Math.round(bar.width), height: Math.round(bar.y) },
+    });
+    await shot(page, "getting-started/interface-toolbar", {
+      clip: await clipOf(page, [".header-editor-toolbar"], 0),
+    });
+    await shot(page, "getting-started/interface-workspace", {
+      clip: await clipOf(page, [".file-explorer"], 0),
+    });
+    // The blink circuit is wider than the canvas pane at 1:1, so the LED
+    // and its resistor fall outside the crop. One zoom-out step fits the
+    // whole circuit; "Reset view" would not — it jumps to the canvas
+    // origin rather than centring on what is placed.
+    const zoomOut = page.locator('button[title="Zoom out"]');
+    if (await zoomOut.count()) {
+      await zoomOut.first().click();
+      await page.waitForTimeout(700);
+    }
+    await shot(page, "getting-started/interface-canvas", {
+      clip: await clipOf(page, [".simulator-panel"], 0),
+    });
+    await shot(page, "getting-started/interface-ai-panel", {
+      clip: await clipOf(page, [".velxio-agent-panel"], 0),
+    });
   },
 
   /** Blink example: loaded, then running with the sim alive. */
@@ -315,21 +393,38 @@ const SCENES = {
     });
     await loadExample(page, "esp32-blink-led");
     await page.locator('button:has-text("Libraries")').click();
-    await page.waitForTimeout(2000);
-    await shot(page, "programming/libraries");
+    await waitForLibraryList(page);
+    await shot(page, "programming/libraries", {
+      clip: await clipOf(page, [".lib-modal"], 12),
+    });
     await page.keyboard.press("Escape");
     await page.waitForTimeout(500);
     // Language selector + compile/run/stop/reset cluster
     await shot(page, "programming/transport", {
-      clip: { x: 150, y: 45, width: 250, height: 44 },
+      clip: await clipOf(page, [
+        "select",
+        'button[title*="Compile" i]',
+        'button[title*="Reset" i]',
+      ]),
     });
     await clickRun(page);
     await waitForSim(page, simLog);
     await page.waitForTimeout(4000);
     await shot(page, "programming/compile-and-run");
-    // SPICE badge close-up for the analog page
+    // SPICE badge close-up for the analog page. The badge is an SVG <text>
+    // inside a <g> that draws the chip, and it rides above the board — so
+    // its position moves with the canvas view. Anchor the crop on the
+    // parent <g> (the chip itself), never on fixed pixels.
+    const badge = page.locator("text=/nets \\|/i").first().locator("xpath=..");
+    const bb = await badge.boundingBox();
+    if (!bb) throw new Error("SPICE badge not found");
     await shot(page, "instruments/spice-badge", {
-      clip: { x: 410, y: 240, width: 490, height: 80 },
+      clip: {
+        x: Math.max(0, Math.round(bb.x - 10)),
+        y: Math.max(0, Math.round(bb.y - 10)),
+        width: Math.round(bb.width + 20),
+        height: Math.round(bb.height + 20),
+      },
     });
   },
 

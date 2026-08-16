@@ -11,10 +11,14 @@ This is the Velxio editor with a project running:
 
 ## The menu bar
 
+![The Velxio menu bar: File, Edit, View, Account, Help](../../../assets/docs/getting-started/interface-menu-bar.png)
+
 **File · Edit · View · Account · Help** — project operations, undo/redo,
 panel visibility, your account and plan, and help resources.
 
 ## The toolbar
+
+![The editor toolbar, from the layout toggles to the Add button](../../../assets/docs/getting-started/interface-toolbar.png)
 
 From left to right:
 
@@ -34,12 +38,16 @@ From left to right:
 
 ## The workspace panel (left)
 
+![The workspace panel with the project file tree](../../../assets/docs/getting-started/interface-workspace.png)
+
 Your project's file tree: each board has its own files (`sketch.ino`,
 `libraries.json`, anything you add). The icons above it create a new
 workspace from a [starter template](/docs/getting-started/projects/), open
 a project file, and save.
 
 ## The canvas (center)
+
+![The canvas with an ESP32 blink circuit, the SPICE badge and the zoom controls](../../../assets/docs/getting-started/interface-canvas.png)
 
 Where the circuit lives. Scroll to pan, use the zoom controls at the bottom
 right, click parts to select them, right-click for their
@@ -48,6 +56,8 @@ badge reports the analog engine's state for the selected circuit.
 
 ## The consoles (bottom)
 
+![The output console and the serial monitor side by side](../../../assets/docs/programming/serial-monitor.png)
+
 - **Output** — compiler and system messages.
 - **Serial monitor** — one tab per running board; input box to send data
   back. See [Serial monitor](/docs/programming/serial-monitor/).
@@ -55,6 +65,8 @@ badge reports the analog engine's state for the selected circuit.
   [Oscilloscope](/docs/instruments/oscilloscope/).
 
 ## The AI panel (right)
+
+![The AI panel with the Basic, Agent and Tutor tabs and the credit counter](../../../assets/docs/getting-started/interface-ai-panel.png)
 
 The assistant in its three modes — **Basic**, **Agent**, **Tutor** — with
 your remaining daily quota at the bottom. See
