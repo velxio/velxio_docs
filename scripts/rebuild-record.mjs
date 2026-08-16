@@ -464,6 +464,16 @@ for (const slug of slugs) {
       await clickEl(page.locator('button[title^="New workspace"]'), "open-templates", 1100);
     await clickEl(overlay.getByText("Blank project").first(), "blank", 1800);
 
+    // Normalise the view BEFORE placing anything. "Reset view" sets
+    // zoom=1 and pan=(0,0) — it jumps to the canvas ORIGIN, it does not
+    // centre on the circuit — so parts dropped far from the origin vanish
+    // if the view is reset later. Reset once, up front, then never again.
+    const resetFirst = page.locator("button.zoom-level");
+    if (await resetFirst.count()) {
+      await resetFirst.click();
+      await page.waitForTimeout(600);
+    }
+
     // board first
     const boardComp = (recipe.components || []).find(c => BOARD_CARD[c.type]);
     const boardCard = boardComp
@@ -472,11 +482,11 @@ for (const slug of slugs) {
     if (!boardCard) throw new Error(`no board card for ${recipe.boardType}`);
     const boardId = await addPart(boardCard, "board");
 
-    // Layout. Recipe coordinates pack parts tighter than reads on video,
-    // and in the Both layout the canvas is only the right-hand pane — so
-    // ignore the recipe geometry and lay the circuit out for the camera:
-    // board at the bottom-left of the pane, parts on a grid above it with
-    // real gaps, ordered as the recipe lists them.
+    // Layout for the camera: board on the left of the canvas pane, parts
+    // in a column to its RIGHT. Every placement is verified — a drag that
+    // drops a part on top of the board (or off the pane) is nudged until
+    // the part stands clear, because overlapping parts hide each other
+    // and make the wiring unreadable on video.
     const pane = await page.evaluate(() => {
       let best = null;
       for (const el of document.querySelectorAll("div")) {
@@ -484,36 +494,51 @@ for (const slug of slugs) {
         if (!/canvas/i.test(c)) continue;
         const r = el.getBoundingClientRect();
         if (r.width > 500 && r.height > 400 && (!best || r.width > best.w))
-          best = { x: r.x, y: Math.max(r.y, 90), w: r.width, h: r.height };
+          best = { x: r.x, y: Math.max(r.y, 96), w: r.width, h: r.height };
       }
       return (
-        best || {
-          x: innerWidth / 2,
-          y: 90,
-          w: innerWidth / 2,
-          h: innerHeight - 150,
-        }
+        best || { x: innerWidth / 2, y: 96, w: innerWidth / 2, h: innerHeight - 200 }
       );
     });
+    const rectOf = id =>
+      page.evaluate(i => {
+        const el = document.getElementById(i);
+        if (!el) return null;
+        const r = el.getBoundingClientRect();
+        return { x: r.x, y: r.y, w: r.width, h: r.height, right: r.right, bottom: r.bottom };
+      }, id);
     const others = (recipe.components || []).filter(c => !BOARD_CARD[c.type]);
-    const cols = others.length <= 2 ? 1 : others.length <= 6 ? 2 : 3;
-    const rows = Math.max(1, Math.ceil(others.length / cols));
-    // Gaps big enough that nothing overlaps, small enough that the whole
-    // circuit still reads in one frame (wires stay short).
-    const gapX = Math.min(300, Math.max(180, (pane.w - 260) / cols));
-    const gapY = Math.min(170, Math.max(120, (pane.h - 420) / rows));
-    const top = pane.y + 120;
+
+    // board: upper-left of the pane, leaving room for a parts column
+    await dragTo(boardId, pane.x + 240, pane.y + 300, "place-board");
+    const bRect = await rectOf(boardId);
+    if (process.env.WIRE_DEBUG)
+      console.log(`    dbg pane ${JSON.stringify(pane)} board ${JSON.stringify(bRect)}`);
+
+    const gapY = others.length > 4 ? 130 : 165;
+    const colX = Math.min(bRect.right + 200, pane.x + pane.w - 170);
+    const topY = Math.max(pane.y + 120, bRect.y + 20);
     const slotFor = i => ({
-      x: pane.x + 200 + (i % cols) * gapX,
-      y: top + Math.floor(i / cols) * gapY,
+      x: colX + (i >= 5 ? 190 : 0),
+      y: topY + (i % 5) * gapY,
     });
-    // the board sits just below the last row of parts
-    await dragTo(
-      boardId,
-      pane.x + 260 + ((cols - 1) * gapX) / 2,
-      Math.min(top + (rows - 1) * gapY + 195, pane.y + pane.h - 150),
-      "place-board"
-    );
+    /** Drop a part at its slot and make sure it really stands clear. */
+    const placeClear = async (id, i, label) => {
+      let p = slotFor(i);
+      for (let tries = 0; tries < 3; tries++) {
+        await dragTo(id, p.x, p.y, tries === 0 ? label : null);
+        const r = await rectOf(id);
+        const board = await rectOf(boardId);
+        const overlaps =
+          r && board &&
+          r.x < board.right + 24 && r.right > board.x - 24 &&
+          r.y < board.bottom + 12 && r.bottom > board.y - 12;
+        const offPane =
+          !r || r.right > pane.x + pane.w - 12 || r.bottom > pane.y + pane.h - 12;
+        if (!overlaps && !offPane) return;
+        p = { x: Math.min(p.x + 130, pane.x + pane.w - 150), y: p.y + (offPane ? -90 : 0) };
+      }
+    };
 
     const idMap = {};
     if (boardComp) idMap[boardComp.id] = boardId;
@@ -523,8 +548,7 @@ for (const slug of slugs) {
       if (!card) throw new Error(`no catalog card for ${c.type}`);
       const id = await addPart(card, c.id);
       idMap[c.id] = id;
-      const p = slotFor(i);
-      await dragTo(id, p.x, p.y, `place-${c.id}`);
+      await placeClear(id, i, `place-${c.id}`);
     }
 
     // NOTE: wiring must happen at 1:1. Zooming the canvas first looked
@@ -579,12 +603,8 @@ for (const slug of slugs) {
     }));
     console.log(`    wires on canvas: ${JSON.stringify(finalWires)} (counted ${wired})`);
 
-    // back to 1:1 for the still and the run
-    const resetView = page.locator("button.zoom-level");
-    if (await resetView.count()) {
-      await resetView.click();
-      await page.waitForTimeout(700);
-    }
+    // NO reset view here: it pans to the canvas origin and throws the
+    // parts out of frame. The view has been at 1:1 since before placing.
     // leave no wire in progress and dismiss the wiring hint banner
     await page.keyboard.press("Escape");
     const hint = page.locator('button:has-text("Cancel")');
