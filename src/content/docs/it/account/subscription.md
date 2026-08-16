@@ -5,11 +5,13 @@ sidebar:
   order: 3
 ---
 
-## Abbonamento
+## Come abbonarsi
 
 Scegli un piano nella [pagina dei prezzi](https://velxio.dev/pricing) — **Maker**
-o **Pro**, con fatturazione mensile. Il pagamento supporta carta (Stripe) e PayPal.
-Le funzionalità vengono attivate sul tuo account immediatamente dopo il pagamento; consulta
+($7/mese o $69/anno) o **Pro** ($19/mese o $189/anno). Pagando annualmente
+si risparmiano circa due mesi rispetto allo stesso piano fatturato mensilmente.
+Il pagamento supporta carta (Stripe) e PayPal. Le funzionalità vengono attivate
+sul tuo account immediatamente dopo il pagamento; consulta
 [cosa include ogni piano](/docs/it/getting-started/plans/).
 
 ## Gestione del piano
@@ -17,17 +19,18 @@ Le funzionalità vengono attivate sul tuo account immediatamente dopo il pagamen
 Dal menu **Account** puoi accedere al portale di gestione dell'abbonamento:
 modificare il metodo di pagamento, scaricare le fatture, fare upgrade o annullare.
 
-- **Cancelling** (Annullamento) interrompe i rinnovi futuri — il piano rimane attivo fino alla
-  fine del periodo pagato.
+- **Cancelling** (Annullamento) interrompe i rinnovi futuri — il piano resta attivo fino
+  alla fine del periodo pagato.
 - Dopo la scadenza, il tuo account torna al piano gratuito. I tuoi progetti
-  non vengono mai eliminati; le board solo-Pro nei vecchi progetti semplicemente non
-  funzioneranno finché non ti riabboni.
+  non vengono mai eliminati e quelli privati o non elencati mantengono la loro visibilità —
+  semplicemente non puoi crearne di nuovi. I progetti STM32 e Raspberry Pi smettono
+  di funzionare finché non ti riabboni.
 
 ## Quote
 
-Il contatore dei **cycles** (cicli) dell'assistente AI (in basso nel pannello chat) mostra
-la tua rimanente disponibilità giornaliera e mensile e quando la quota
-giornaliera si azzera. Compilazioni e simulazioni sulle board aperte rimangono disponibili su ogni
+Il contatore dei **cycles** (cicli) dell'assistente AI (in fondo al pannello chat) mostra
+la tua rimanenza giornaliera e mensile e quando la quota giornaliera
+si azzera. Le compilazioni e le simulazioni su schede aperte restano disponibili su ogni
 piano.
 
 ## Scuole e team
@@ -35,5 +38,3 @@ piano.
 Usi Velxio in classe? C'è un percorso dedicato
 [For schools](https://velxio.dev/for-schools) — contattaci tramite
 quel canale per configurazioni a misura di classe.
-
------ END PAGE -----

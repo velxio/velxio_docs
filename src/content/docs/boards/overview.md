@@ -19,8 +19,11 @@ anything different, it just works when you press Play.
 | STM32                | Blue Pill, Black Pill, F4 Discovery, Olimex H405, Netduino | Arduino C++                       |
 | Raspberry Pi (Linux) | Zero, 1, 2, 3, 4, 5                                        | Python on a full Linux terminal   |
 
-Boards marked **Pro** (like the M5Stack Cardputer or the Badger 2350) are
-available on paid plans — see [plans](/docs/getting-started/plans/).
+The **STM32** and **Raspberry Pi (Linux)** families run on Velxio's
+emulation servers and need a paid plan; they carry a PRO badge in the
+component picker. Every other board, including the branded ones like the
+M5Stack Cardputer and the Badger 2350, runs on the free plan — see
+[plans](/docs/getting-started/plans/).
 
 Each board has its own page in this section with its pinout, supported
 languages and quirks.

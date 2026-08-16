@@ -235,7 +235,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.828Z",
       "nextAttemptAt": "2026-08-13T19:08:57.828Z",
-      "completedAt": "2026-08-13T19:11:27.529Z",
+      "completedAt": "2026-08-16T03:35:06.865Z",
       "providerUsed": "deepseek"
     },
     {
@@ -249,7 +249,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.828Z",
       "nextAttemptAt": "2026-08-13T19:08:57.828Z",
-      "completedAt": "2026-08-13T19:11:31.486Z",
+      "completedAt": "2026-08-16T03:35:11.087Z",
       "providerUsed": "deepseek"
     },
     {
@@ -263,7 +263,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.828Z",
       "nextAttemptAt": "2026-08-13T19:08:57.828Z",
-      "completedAt": "2026-08-13T19:11:35.809Z",
+      "completedAt": "2026-08-16T03:35:15.599Z",
       "providerUsed": "deepseek"
     },
     {
@@ -277,7 +277,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.828Z",
       "nextAttemptAt": "2026-08-13T19:08:57.828Z",
-      "completedAt": "2026-08-13T19:11:39.808Z",
+      "completedAt": "2026-08-16T03:35:19.748Z",
       "providerUsed": "deepseek"
     },
     {
@@ -291,7 +291,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.828Z",
       "nextAttemptAt": "2026-08-13T19:08:57.828Z",
-      "completedAt": "2026-08-13T19:11:43.166Z",
+      "completedAt": "2026-08-16T03:35:23.058Z",
       "providerUsed": "deepseek"
     },
     {
@@ -305,7 +305,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.828Z",
       "nextAttemptAt": "2026-08-13T19:08:57.828Z",
-      "completedAt": "2026-08-13T19:11:47.275Z",
+      "completedAt": "2026-08-16T03:35:27.956Z",
       "providerUsed": "deepseek"
     },
     {
@@ -319,7 +319,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.828Z",
       "nextAttemptAt": "2026-08-13T19:08:57.828Z",
-      "completedAt": "2026-08-13T19:11:51.458Z",
+      "completedAt": "2026-08-16T03:35:33.141Z",
       "providerUsed": "deepseek"
     },
     {
@@ -333,7 +333,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.828Z",
       "nextAttemptAt": "2026-08-13T19:08:57.828Z",
-      "completedAt": "2026-08-13T19:11:55.261Z",
+      "completedAt": "2026-08-16T03:35:37.674Z",
       "providerUsed": "deepseek"
     },
     {
@@ -683,7 +683,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.830Z",
       "nextAttemptAt": "2026-08-13T19:08:57.830Z",
-      "completedAt": "2026-08-13T19:13:48.942Z",
+      "completedAt": "2026-08-16T03:35:40.329Z",
       "providerUsed": "deepseek"
     },
     {
@@ -697,7 +697,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.830Z",
       "nextAttemptAt": "2026-08-13T19:08:57.830Z",
-      "completedAt": "2026-08-13T19:13:51.263Z",
+      "completedAt": "2026-08-16T03:35:42.953Z",
       "providerUsed": "deepseek"
     },
     {
@@ -711,7 +711,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.830Z",
       "nextAttemptAt": "2026-08-13T19:08:57.830Z",
-      "completedAt": "2026-08-13T19:13:53.692Z",
+      "completedAt": "2026-08-16T03:35:45.881Z",
       "providerUsed": "deepseek"
     },
     {
@@ -725,7 +725,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.830Z",
       "nextAttemptAt": "2026-08-13T19:08:57.830Z",
-      "completedAt": "2026-08-13T19:13:56.157Z",
+      "completedAt": "2026-08-16T03:35:48.764Z",
       "providerUsed": "deepseek"
     },
     {
@@ -739,7 +739,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.830Z",
       "nextAttemptAt": "2026-08-13T19:08:57.830Z",
-      "completedAt": "2026-08-13T19:13:58.510Z",
+      "completedAt": "2026-08-16T03:35:51.355Z",
       "providerUsed": "deepseek"
     },
     {
@@ -753,7 +753,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.830Z",
       "nextAttemptAt": "2026-08-13T19:08:57.830Z",
-      "completedAt": "2026-08-13T19:14:01.414Z",
+      "completedAt": "2026-08-16T03:35:54.721Z",
       "providerUsed": "deepseek"
     },
     {
@@ -767,7 +767,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.830Z",
       "nextAttemptAt": "2026-08-13T19:08:57.830Z",
-      "completedAt": "2026-08-13T19:14:04.470Z",
+      "completedAt": "2026-08-16T03:35:58.278Z",
       "providerUsed": "deepseek"
     },
     {
@@ -781,7 +781,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.830Z",
       "nextAttemptAt": "2026-08-13T19:08:57.830Z",
-      "completedAt": "2026-08-13T19:14:06.958Z",
+      "completedAt": "2026-08-16T03:36:01.496Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1243,7 +1243,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:16:19.691Z",
+      "completedAt": "2026-08-16T03:36:05.259Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1257,7 +1257,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:16:22.975Z",
+      "completedAt": "2026-08-16T03:36:08.963Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1271,7 +1271,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:16:26.618Z",
+      "completedAt": "2026-08-16T03:36:13.020Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1285,7 +1285,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:16:30.090Z",
+      "completedAt": "2026-08-16T03:36:16.862Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1299,7 +1299,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:16:33.721Z",
+      "completedAt": "2026-08-16T03:36:20.757Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1313,7 +1313,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:16:37.234Z",
+      "completedAt": "2026-08-16T03:36:24.713Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1327,7 +1327,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:16:41.159Z",
+      "completedAt": "2026-08-16T03:36:29.256Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1341,7 +1341,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:16:44.542Z",
+      "completedAt": "2026-08-16T03:36:33.279Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1467,7 +1467,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:17:15.313Z",
+      "completedAt": "2026-08-16T03:36:39.929Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1481,7 +1481,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:17:19.663Z",
+      "completedAt": "2026-08-16T03:36:46.441Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1495,7 +1495,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:17:24.725Z",
+      "completedAt": "2026-08-16T03:36:53.118Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1509,7 +1509,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:17:29.331Z",
+      "completedAt": "2026-08-16T03:36:59.491Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1523,7 +1523,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:17:33.171Z",
+      "completedAt": "2026-08-16T03:37:05.201Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1537,7 +1537,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:17:38.315Z",
+      "completedAt": "2026-08-16T03:37:12.572Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1551,7 +1551,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:17:43.015Z",
+      "completedAt": "2026-08-16T03:37:19.860Z",
       "providerUsed": "deepseek"
     },
     {
@@ -1565,7 +1565,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.836Z",
       "nextAttemptAt": "2026-08-13T19:08:57.836Z",
-      "completedAt": "2026-08-13T19:17:48.128Z",
+      "completedAt": "2026-08-16T03:37:27.238Z",
       "providerUsed": "deepseek"
     },
     {
@@ -3147,7 +3147,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": "2026-08-13T19:26:33.891Z",
+      "completedAt": "2026-08-16T03:37:43.446Z",
       "providerUsed": "deepseek"
     },
     {
@@ -3161,7 +3161,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": "2026-08-13T19:26:38.206Z",
+      "completedAt": "2026-08-16T03:37:59.630Z",
       "providerUsed": "deepseek"
     },
     {
@@ -3175,7 +3175,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": "2026-08-13T19:26:42.460Z",
+      "completedAt": "2026-08-16T03:38:17.533Z",
       "providerUsed": "deepseek"
     },
     {
@@ -3189,7 +3189,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": "2026-08-13T19:26:46.247Z",
+      "completedAt": "2026-08-16T03:38:35.092Z",
       "providerUsed": "deepseek"
     },
     {
@@ -3203,7 +3203,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": "2026-08-13T19:26:49.676Z",
+      "completedAt": "2026-08-16T03:38:50.379Z",
       "providerUsed": "deepseek"
     },
     {
@@ -3217,7 +3217,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": "2026-08-13T19:26:53.957Z",
+      "completedAt": "2026-08-16T03:39:10.417Z",
       "providerUsed": "deepseek"
     },
     {
@@ -3231,7 +3231,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": "2026-08-13T19:26:58.296Z",
+      "completedAt": "2026-08-16T03:39:31.907Z",
       "providerUsed": "deepseek"
     },
     {
@@ -3245,7 +3245,7 @@
       "lastError": null,
       "createdAt": "2026-08-13T19:08:57.846Z",
       "nextAttemptAt": "2026-08-13T19:08:57.846Z",
-      "completedAt": "2026-08-13T19:27:02.098Z",
+      "completedAt": "2026-08-16T03:39:50.783Z",
       "providerUsed": "deepseek"
     },
     {

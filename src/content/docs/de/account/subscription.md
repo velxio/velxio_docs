@@ -1,6 +1,6 @@
 ---
-title: "Abonnement und Abrechnung"
-description: "Abonnieren Sie Maker oder Pro, verwalten Sie Ihren Plan und finden Sie Rechnungen."
+title: Abonnement und Abrechnung
+description: Abonnieren Sie Maker oder Pro, verwalten Sie Ihren Plan und finden Sie Rechnungen.
 sidebar:
   order: 3
 ---
@@ -8,31 +8,33 @@ sidebar:
 ## Abonnieren
 
 Wählen Sie einen Plan auf der [Preisseite](https://velxio.dev/pricing) — **Maker**
-oder **Pro**, monatlich abgerechnet. Der Checkout unterstützt Karte (Stripe)
-und PayPal. Die Funktionen werden sofort nach der Zahlung auf Ihrem Konto
-freigeschaltet; siehe [was jeder Plan enthält](/docs/de/getting-started/plans/).
+(7 $/Monat oder 69 $/Jahr) oder **Pro** (19 $/Monat oder 189 $/Jahr). Bei jährlicher
+Zahlung sparen Sie etwa zwei Monatsbeiträge im Vergleich zur monatlichen Abrechnung desselben Plans. Der
+Checkout unterstützt Karte (Stripe) und PayPal. Die Funktionen werden auf Ihrem Konto
+sofort nach der Zahlung freigeschaltet; siehe
+[was jeder Plan beinhaltet](/docs/de/getting-started/plans/).
 
 ## Verwalten Ihres Plans
 
-Über das Menü **Account** (Konto) gelangen Sie zu Ihrem
-Abonnementverwaltungsportal: Zahlungsmethode ändern, Rechnungen herunterladen,
-Upgrade durchführen oder kündigen.
+Über das Menü **Account** (Konto) gelangen Sie zu Ihrem Abonnementverwaltungs-
+Portal: Zahlungsmethode ändern, Rechnungen herunterladen, upgraden oder kündigen.
 
-- **Cancelling** (Kündigen) stoppt zukünftige Verlängerungen — der Plan bleibt
-  bis zum Ende des bezahlten Zeitraums aktiv.
-- Nach Ablauf kehrt Ihr Konto zum kostenlosen Tarif zurück. Ihre Projekte
-  werden nie gelöscht; Pro-only-Boards in alten Projekten werden einfach nicht
-  ausgeführt, bis Sie sich erneut anmelden.
+- **Cancelling** (Kündigen) stoppt zukünftige Verlängerungen — der Plan bleibt bis zum
+  Ende des bezahlten Zeitraums aktiv.
+- Nach Ablauf wird Ihr Konto wieder auf den kostenlosen Tarif zurückgesetzt. Ihre Projekte
+  werden nie gelöscht, und private oder nicht gelistete Projekte behalten ihre Sichtbarkeit —
+  Sie können nur keine neuen erstellen. STM32- und Raspberry-Pi-Projekte
+  laufen nicht mehr, bis Sie sich erneut anmelden.
 
 ## Kontingente
 
-Der **cycles**-Zähler (unten im Chat-Bereich) des KI-Assistenten zeigt
-Ihr verbleibendes tägliches und monatliches Kontingent sowie den Zeitpunkt
-der täglichen Kontingentzurücksetzung. Kompilierungen und Simulationen auf
-offenen Boards bleiben auf jeder Stufe verfügbar.
+Der **cycles**-Zähler (Zyklen) des KI-Assistenten (unten im Chat-Bedienfeld) zeigt
+Ihr verbleibendes tägliches und monatliches Kontingent sowie den Zeitpunkt der täglichen
+Kontingentzurücksetzung an. Kompilierungen und Simulationen auf offenen Boards bleiben auf jeder
+Tarifstufe verfügbar.
 
 ## Schulen und Teams
 
 Nutzen Sie Velxio im Klassenzimmer? Es gibt einen speziellen
-[Für Schulen](https://velxio.dev/for-schools)-Bereich — wenden Sie sich
-darüber für klassenweise Einrichtungen an uns.
+[Für Schulen](https://velxio.dev/for-schools)-Bereich — wenden Sie sich darüber
+für klassenweise Einrichtungen an uns.

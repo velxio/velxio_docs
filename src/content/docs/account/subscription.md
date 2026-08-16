@@ -8,8 +8,10 @@ sidebar:
 ## Subscribing
 
 Pick a plan on the [pricing page](https://velxio.dev/pricing) — **Maker**
-or **Pro**, billed monthly. Checkout supports card (Stripe) and PayPal.
-The features unlock on your account immediately after payment; see
+($7/month or $69/year) or **Pro** ($19/month or $189/year). Paying yearly
+costs about two months less than the same plan billed monthly. Checkout
+supports card (Stripe) and PayPal. The features unlock on your account
+immediately after payment; see
 [what each plan includes](/docs/getting-started/plans/).
 
 ## Managing your plan
@@ -20,8 +22,9 @@ portal: change the payment method, download invoices, upgrade, or cancel.
 - **Cancelling** stops future renewals — the plan stays active until the
   end of the paid period.
 - After it lapses, your account reverts to the free tier. Your projects
-  are never deleted; pro-only boards in old projects simply won't run
-  until you re-subscribe.
+  are never deleted, and private or unlisted ones keep their visibility —
+  you just can't create new ones. STM32 and Raspberry Pi projects stop
+  running until you re-subscribe.
 
 ## Quotas
 

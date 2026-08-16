@@ -16,5 +16,7 @@ circuit on the canvas _and_ the code in the editor. It works in three modes:
 - **Tutor** — a guided electronics teacher: it proposes exercises, checks
   your circuit and explains the theory as you go.
 
-The AI assistant is available on paid plans, with usage quotas per plan —
-see [plans](/docs/getting-started/plans/).
+**Basic** mode is available on every plan, including Free, with its own
+pool of 50 messages per day. **Agent** and **Tutor** need a paid plan and
+spend AI credits, with a per-plan daily and monthly allowance — see
+[plans](/docs/getting-started/plans/).

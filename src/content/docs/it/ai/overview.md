@@ -16,5 +16,7 @@ circuito sulla tela _e_ il codice nell'editor. Funziona in tre modalità:
 - **Tutor** — un insegnante di elettronica guidato: propone esercizi, controlla
   il tuo circuito e spiega la teoria man mano.
 
-L'assistente AI è disponibile nei piani a pagamento, con quote di utilizzo per piano —
-vedi [piani](/docs/it/getting-started/plans/).
+La modalità **Basic** è disponibile su tutti i piani, incluso quello gratuito, con una
+riserva di 50 messaggi al giorno. Le modalità **Agent** e **Tutor** richiedono un piano a pagamento e
+consumano crediti AI, con una quota giornaliera e mensile per piano — vedi
+[piani](/docs/it/getting-started/plans/).

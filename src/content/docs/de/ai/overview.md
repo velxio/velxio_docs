@@ -1,5 +1,5 @@
 ---
-title: Überblick über den KI-Assistenten
+title: Übersicht über den KI-Assistenten
 description: "Der Velxio-KI-Assistent – Chat, Agentenmodus und Tutormodus."
 sidebar:
   order: 1
@@ -16,5 +16,7 @@ Schaltung auf der Leinwand _und_ den Code im Editor. Er arbeitet in drei Modi:
 - **Tutor** – ein geführter Elektronik-Lehrer: Er schlägt Übungen vor, prüft
   Ihre Schaltung und erklärt die Theorie, während Sie arbeiten.
 
-Der KI-Assistent ist in kostenpflichtigen Plänen mit Nutzungskontingenten pro Plan verfügbar –
-siehe [Pläne](/docs/de/getting-started/plans/).
+Der **Basic**-Modus ist in jedem Tarif verfügbar, einschließlich Free, mit einem eigenen
+Kontingent von 50 Nachrichten pro Tag. **Agent** und **Tutor** erfordern einen kostenpflichtigen
+Tarif und verbrauchen KI-Guthaben, mit einem tarifabhängigen Tages- und Monatskontingent – siehe
+[Tarife](/docs/de/getting-started/plans/).

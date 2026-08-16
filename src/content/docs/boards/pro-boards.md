@@ -8,8 +8,10 @@ sidebar:
 
 Pro boards are the catalog's premium tier: branded hardware with rich
 built-in peripherals, emulated deeply enough to boot their **factory
-firmware**. They need a paid plan to run — see
-[plans](/docs/getting-started/plans/).
+firmware**. They are part of the hosted catalog on velxio.dev and, apart
+from the UNIHIKER M10 below, they **run on the free plan** — the only
+boards that require a paid plan are the STM32 and Raspberry Pi Linux
+families. See [plans](/docs/getting-started/plans/).
 
 ![M5 Cardputer ADV on the Velxio canvas](../../../assets/docs/boards/cardputer-adv.png)
 
@@ -44,7 +46,8 @@ trio (Arduino / MicroPython / ESP-IDF) as the rest of the ESP32 family.
 
 A Linux single-board computer with built-in touchscreen — documented with
 the [Raspberry Pi family](/docs/boards/raspberry-pi/), since it shares the
-full-Linux workflow.
+full-Linux workflow. Like the rest of that family, it needs a paid plan
+to run.
 
 ---
 
