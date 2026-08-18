@@ -1,53 +1,110 @@
 ---
 title: Schede Pro
-description: Il catalogo premium delle schede — M5Stack, Badger 2350, XIAO Sense, ESP32-C6, UNIHIKER.
+description: Il catalogo premium delle schede — M5Stack, Badger 2350, XIAO Sense, ESP32-C6, Galactic Unicorn, UNIHIKER.
 sidebar:
   order: 8
   badge: PRO
 ---
 
 Le schede Pro sono il livello premium del catalogo: hardware di marca con
-periferiche integrate ricche, emulato abbastanza in profondità da avviare il
-**firmware di fabbrica**. Fanno parte del catalogo ospitato su velxio.dev e,
-a parte la UNIHIKER M10 qui sotto, **funzionano con il piano gratuito** — le
-uniche schede che richiedono un piano a pagamento sono le famiglie Linux
-STM32 e Raspberry Pi. Vedi [piani](/docs/it/getting-started/plans/).
+periferiche integrate ricche, emulato abbastanza profondamente da avviare il
+**firmware di fabbrica**. Fanno parte del catalogo ospitato su velxio.dev.
 
-![M5 Cardputer ADV sulla tela di Velxio](../../../../assets/docs/boards/cardputer-adv.png)
+:::note[Quale piano serve?]
+**Solo la UNIHIKER M10 richiede un piano a pagamento.** Ogni altra scheda in
+questa pagina — M5Stack, Pimoroni, XIAO e la ESP32-C6 DevKit — **funziona con
+il piano gratuito**. Le schede solo a pagamento sono esattamente la famiglia
+STM32 e la famiglia Raspberry Pi Linux (a cui appartiene la UNIHIKER). Vedi
+[piani](/docs/it/getting-started/plans/).
+:::
 
 ## M5Stack
 
-- **M5 Cardputer** (e **Cardputer ADV**) — il computer tascabile ESP32-S3
-  con tastiera e TFT. Avvia il vero firmware del launcher M5; digita sulla
-  tastiera a schermo, esegui le app, usa l'altoparlante.
-- **M5Stack Core** — il classico ESP32 impilabile con TFT 320x240 e
-  tre pulsanti.
+*Piano gratuito.*
 
-## Pimoroni Badger 2350
+### M5 Cardputer ADV
 
-Il badge e-paper RP2350. Avvia il **firmware di fabbrica BadgeOS**
-completo: naviga nel launcher con i pulsanti A/B/C/UP/DOWN, apri
-le app orologio, badge e galleria, e osserva l'e-paper aggiornarsi nel modo
-in cui l'e-paper realmente fa.
+![M5 Cardputer ADV sul canvas di Velxio](../../../../assets/docs/boards/cardputer-adv.png)
+
+Il computer tascabile ESP32-S3 con tastiera e TFT. Avvia il vero firmware
+launcher M5; digita sulla tastiera a schermo, esegui le app, usa lo speaker.
+
+### M5Stack Core
+
+![M5Stack Core sul canvas di Velxio](../../../../assets/docs/boards/m5stack-core.png)
+
+Il classico ESP32 impilabile con TFT 320x240 e tre pulsanti.
+
+## Pimoroni
+
+*Piano gratuito.*
+
+### Badger 2350
+
+![Pimoroni Badger 2350 sul canvas di Velxio](../../../../assets/docs/boards/badger-2350.png)
+
+Il badge e-paper RP2350. Avvia il **firmware di fabbrica BadgeOS** completo:
+naviga nel launcher con i pulsanti A/B/C/UP/DOWN, apri le app orologio,
+badge e galleria, e osserva l'e-paper aggiornarsi come fa davvero l'e-paper.
+
+### Galactic Unicorn
+
+![Pimoroni Galactic Unicorn sul canvas di Velxio](../../../../assets/docs/boards/galactic-unicorn.png)
+
+La matrice LED RGB 53x11 (583 pixel) pilotata da un Pico 2 W (RP2350) di
+bordo, con i pulsanti A/B/C/D e volume/luminosità.
+
+### Pico Plus 2 W
+
+![Pimoroni Pico Plus 2 W sul canvas di Velxio](../../../../assets/docs/boards/pimoroni-pico-plus-2w.png)
+
+La scheda RP2350B di Pimoroni nel footprint standard Pico (GP0..GP28 più
+alimentazione), quindi qualsiasi cablaggio Pico si adatta direttamente.
+GPIO, UART, USB seriale, I2C e SPI funzionano; il coprocessore WiFi CYW43
+e la PSRAM non sono emulati.
 
 ## Seeed Studio XIAO
 
-- **XIAO ESP32S3 Sense** — la S3 con modulo fotocamera, microfono PDM
-  e microSD.
-- **XIAO ESP32C6** — la C6 RISC-V con WiFi 6 nel formato XIAO.
-- **XIAO RP2040** — la RP2040 XIAO con il suo NeoPixel.
+*Piano gratuito.*
+
+### XIAO ESP32S3 Sense
+
+![XIAO ESP32S3 Sense sul canvas di Velxio](../../../../assets/docs/boards/xiao-esp32s3-sense.png)
+
+La S3 con modulo fotocamera, microfono PDM e microSD.
+
+### XIAO ESP32C6
+
+![XIAO ESP32C6 sul canvas di Velxio](../../../../assets/docs/boards/xiao-esp32c6.png)
+
+La C6 RISC-V con WiFi 6 nel footprint XIAO.
+
+### XIAO RP2040
+
+![XIAO RP2040 sul canvas di Velxio](../../../../assets/docs/boards/xiao-rp2040.png)
+
+La RP2040 XIAO con il suo NeoPixel.
 
 ## Espressif ESP32-C6
 
-Il **ESP32-C6 DevKit** — il chip RISC-V WiFi-6, con lo stesso trio di
+*Piano gratuito.*
+
+![ESP32-C6 DevKit sul canvas di Velxio](../../../../assets/docs/boards/esp32-c6.png)
+
+La **ESP32-C6 DevKit** — il chip RISC-V WiFi-6, con lo stesso trio di
 linguaggi (Arduino / MicroPython / ESP-IDF) del resto della famiglia ESP32.
 
 ## DFRobot UNIHIKER M10
 
-Un computer Linux a scheda singola con touchscreen integrato — documentato con
-la [famiglia Raspberry Pi](/docs/it/boards/raspberry-pi/), poiché condivide il
-flusso di lavoro Linux completo. Come il resto di quella famiglia, richiede un
-piano a pagamento per funzionare.
+*Richiede piano a pagamento.*
+
+![DFRobot UNIHIKER M10 sul canvas di Velxio](../../../../assets/docs/boards/unihiker-m10.png)
+
+Un computer Linux a scheda singola con touchscreen integrato — documentato
+con la [famiglia Raspberry Pi](/docs/it/boards/raspberry-pi/), poiché condivide
+il flusso di lavoro Linux completo. Come il resto di quella famiglia, è
+l'unica scheda in questa pagina che **richiede un piano a pagamento** per
+funzionare.
 
 ---
 
@@ -55,17 +112,18 @@ Le schede Pro appaiono nel [selettore componenti](/docs/it/circuit-editor/placin
 con un **badge PRO**; i [modelli iniziali](/docs/it/getting-started/projects/)
 includono progetti pronti all'uso per ciascuna.
 
-## Grafica della scheda e pinout
+## Arte della scheda e pinout
 
-La grafica su tela di ogni scheda e la mappa completa dei pin, generate dal simulatore:
+L'arte su canvas di ogni scheda e la mappa completa dei pin, generate dal
+simulatore:
 
 [Badger 2350](/docs/it/boards/reference/badger-2350/) ·
+[Galactic Unicorn](/docs/it/boards/reference/galactic-unicorn/) ·
+[Pico Plus 2 W](/docs/it/boards/reference/pimoroni-pico-plus-2w/) ·
 [M5 Cardputer ADV](/docs/it/boards/reference/cardputer-adv/) ·
 [M5Stack Core](/docs/it/boards/reference/m5stack-core/) ·
 [ESP32-C6 DevKit](/docs/it/boards/reference/esp32-c6/) ·
 [XIAO ESP32S3 Sense](/docs/it/boards/reference/xiao-esp32s3-sense/) ·
 [XIAO ESP32C6](/docs/it/boards/reference/xiao-esp32c6/) ·
 [XIAO RP2040](/docs/it/boards/reference/xiao-rp2040/) ·
-[Galactic Unicorn](/docs/it/boards/reference/galactic-unicorn/) ·
-[Pico Plus 2 W](/docs/it/boards/reference/pimoroni-pico-plus-2w/)
-```
+[UNIHIKER M10](/docs/it/boards/reference/unihiker-m10/)
