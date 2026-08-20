@@ -202,6 +202,53 @@ async function clipOf(page, selectors, pad = 10) {
   };
 }
 
+/** Close-up of one board, zoomed so its screen is readable.
+ *
+ *  A board's LCD is a canvas of real pixels scaled DOWN to fit the 100% canvas
+ *  view, so text on it turns to mush in a full-editor shot. Zoom in while the
+ *  board still fits: each click is 1.1x anchored at the pane corner, so the
+ *  board drifts and a fixed step count would push it half-off — measure after
+ *  every step and back off once it overflows.
+ *
+ *  Measure against .canvas-content, the overflow:hidden box that actually
+ *  clips the board. .simulator-panel also spans the output console, so a board
+ *  that slid under the console still "fits" it, and the crop captures console
+ *  chrome instead of canvas. */
+async function boardCloseUp(page, tag, relPath) {
+  const pane = await page.locator(".canvas-content").boundingBox();
+  if (!pane) throw new Error("boardCloseUp: no .canvas-content");
+  for (let i = 0; i < 8; i++) {
+    await page.locator('button[title="Zoom in"]').click();
+    await page.waitForTimeout(400);
+    const b = await page.locator(tag).boundingBox();
+    const fits =
+      b &&
+      b.x >= pane.x &&
+      b.y >= pane.y &&
+      b.x + b.width <= pane.x + pane.width &&
+      b.y + b.height <= pane.y + pane.height;
+    if (!fits) {
+      await page.locator('button[title="Zoom out"]').click();
+      await page.waitForTimeout(400);
+      break;
+    }
+  }
+  const b = await page.locator(tag).boundingBox();
+  if (!b) throw new Error(`boardCloseUp: nothing matched ${tag}`);
+  await shot(page, relPath, {
+    clip: {
+      x: Math.round(Math.max(b.x, pane.x)),
+      y: Math.round(Math.max(b.y, pane.y)),
+      width: Math.round(
+        Math.min(b.x + b.width, pane.x + pane.width) - Math.max(b.x, pane.x)
+      ),
+      height: Math.round(
+        Math.min(b.y + b.height, pane.y + pane.height) - Math.max(b.y, pane.y)
+      ),
+    },
+  });
+}
+
 /** The Library Manager fetches the installed set after it opens; shooting
  *  on a fixed timeout captured "Loading installed libraries..." in an empty
  *  panel. Wait for the list to actually render before the shutter. */
@@ -578,45 +625,57 @@ const SCENES = {
     await page.waitForTimeout(1500);
     await dismissOverlays(page);
 
-    // Close-up: at 100% the 240x135 LCD is downscaled to ~100x60 and the
-    // echoed text — the whole point of this shot — turns to mush. Zoom in
-    // while the board still fits; each click is 1.1x anchored at the pane
-    // corner, so the board drifts and a fixed step count would push it
-    // half-off. Measure after every step and back off once it overflows.
-    //
-    // Measure against .canvas-content, the overflow:hidden box that actually
-    // clips the board — .simulator-panel also spans the output console, so
-    // fitting inside THAT still let the board slide under the console.
-    const pane = await page.locator(".canvas-content").boundingBox();
-    for (let i = 0; i < 8; i++) {
-      await page.locator('button[title="Zoom in"]').click();
-      await page.waitForTimeout(400);
-      const b = await page.locator("velxio-cardputer-adv").boundingBox();
-      const fits =
-        b &&
-        b.x >= pane.x &&
-        b.y >= pane.y &&
-        b.x + b.width <= pane.x + pane.width &&
-        b.y + b.height <= pane.y + pane.height;
-      if (!fits) {
-        await page.locator('button[title="Zoom out"]').click();
-        await page.waitForTimeout(400);
-        break;
-      }
-    }
-    const b = await page.locator("velxio-cardputer-adv").boundingBox();
-    await shot(page, "boards/cardputer-adv-typing", {
-      clip: {
-        x: Math.round(Math.max(b.x, pane.x)),
-        y: Math.round(Math.max(b.y, pane.y)),
-        width: Math.round(
-          Math.min(b.x + b.width, pane.x + pane.width) - Math.max(b.x, pane.x)
-        ),
-        height: Math.round(
-          Math.min(b.y + b.height, pane.y + pane.height) - Math.max(b.y, pane.y)
-        ),
-      },
+    await boardCloseUp(page, "velxio-cardputer-adv", "boards/cardputer-adv-typing");
+  },
+
+  /** M5Stack Core walkthrough for its board reference page: the gallery
+   *  filtered to the board, the hello example loaded, running, and the
+   *  on-screen counter after the front buttons are pressed.
+   *  Consumed by scripts/board-extras/m5stack-core.md. */
+  "boards/m5stack-core": async page => {
+    await page.goto(`${BASE}/examples`, { waitUntil: "domcontentloaded" });
+    await page.waitForTimeout(4000);
+    await dismissOverlays(page);
+    // The boards dropdown, not the search box: searching "m5stack" also pulls
+    // in the Chain matrix examples (they share the vendor name but run on an
+    // Uno) and a Cardputer game whose text mentions the vendor. The filter is
+    // keyed on the example's own boardFilter, so it returns this board's set
+    // exactly — and it is the better instruction to give a reader.
+    await page
+      .locator("select.examples-select")
+      .first()
+      .selectOption("m5stack-core");
+    await page.waitForTimeout(1500);
+    await shot(page, "boards/m5stack-core-gallery");
+
+    const simLog = [];
+    page.on("console", m => {
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text()))
+        simLog.push(m.text());
     });
+    await loadExample(page, "m5stack-core-hello");
+    await shot(page, "boards/m5stack-core-editor");
+
+    await clickRun(page);
+    await waitForSim(page, simLog);
+    await page.waitForTimeout(12000); // guest boot + first draw
+    await dismissOverlays(page);
+    await shot(page, "boards/m5stack-core-running");
+
+    // BtnA (+1) three times then BtnB (+10): the counter should read 13, which
+    // is visibly a button result rather than something the sketch drew alone.
+    // The buttons live in the element's shadow root as .btn[data-gpio]; they
+    // listen for pointerdown/up, which is what Playwright's click dispatches.
+    const btn = gpio =>
+      page.locator(`velxio-m5stack-core .btn[data-gpio="${gpio}"]`);
+    for (let i = 0; i < 3; i++) {
+      await btn(39).click();
+      await page.waitForTimeout(500);
+    }
+    await btn(38).click();
+    await page.waitForTimeout(1500);
+    await dismissOverlays(page);
+    await boardCloseUp(page, "velxio-m5stack-core", "boards/m5stack-core-buttons");
   },
 };
 
