@@ -3,7 +3,6 @@ title: Placas Pro
 description: O catálogo premium de placas — M5Stack, Badger 2350, XIAO Sense, ESP32-C6, Galactic Unicorn, UNIHIKER.
 sidebar:
   order: 8
-  badge: PRO
 ---
 
 As placas Pro são o nível premium do catálogo: hardware de marca com

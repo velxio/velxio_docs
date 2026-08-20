@@ -2,6 +2,7 @@
 title: STM32
 description: Blue Pill、Black Pill、F4 Discovery 及同类开发板 — ARM Cortex-M 仿真。
 sidebar:
+  badge: PRO
   order: 6
 ---
 

@@ -3,7 +3,6 @@ title: Платы Pro
 description: Премиальный каталог плат — M5Stack, Badger 2350, XIAO Sense, ESP32-C6, Galactic Unicorn, UNIHIKER.
 sidebar:
   order: 8
-  badge: PRO
 ---
 
 Платы Pro — это премиальный уровень каталога: фирменное оборудование с богатыми

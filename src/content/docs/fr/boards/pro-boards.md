@@ -3,7 +3,6 @@ title: Cartes Pro
 description: Le catalogue premium de cartes — M5Stack, Badger 2350, XIAO Sense, ESP32-C6, Galactic Unicorn, UNIHIKER.
 sidebar:
   order: 8
-  badge: PRO
 ---
 
 Les cartes Pro constituent le niveau premium du catalogue : du matériel de marque avec des périphériques intégrés riches, émulé suffisamment en profondeur pour démarrer leur **micrologiciel d'usine**. Elles font partie du catalogue hébergé sur velxio.dev.

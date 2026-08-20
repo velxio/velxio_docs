@@ -3,7 +3,6 @@ title: Pro boards
 description: The premium board catalog — M5Stack, Badger 2350, XIAO Sense, ESP32-C6, Galactic Unicorn, UNIHIKER.
 sidebar:
   order: 8
-  badge: PRO
 ---
 
 Pro boards are the catalog's premium tier: branded hardware with rich

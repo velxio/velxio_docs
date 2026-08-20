@@ -53,29 +53,33 @@ const BOARDS = {
   "raspberry-pi-pico": { tag: "velxio-pi-pico-w", title: "Raspberry Pi Pico", family: "pico", langs: [AR, MPY] },
   "pi-pico-w":         { tag: "velxio-pi-pico-w", title: "Raspberry Pi Pico W", family: "pico", langs: [AR, MPY] },
 
-  "stm32-bluepill":        { tag: "velxio-stm32-bluepill",        title: "STM32 Blue Pill (F103C8)", family: "stm32", langs: [AR] },
-  "stm32-bluepill-f103cb": { tag: "velxio-stm32-bluepill-f103cb", title: "STM32 Blue Pill (F103CB)", family: "stm32", langs: [AR] },
-  "stm32-blackpill":       { tag: "velxio-stm32-blackpill",       title: "STM32 Black Pill (F411CE)", family: "stm32", langs: [AR] },
-  "stm32-blackpill-f401":  { tag: "velxio-stm32-blackpill-f401",  title: "STM32 Black Pill (F401CE)", family: "stm32", langs: [AR] },
-  "stm32-f4-discovery":    { tag: "velxio-stm32-f4-discovery",    title: "STM32F4 Discovery", family: "stm32", langs: [AR] },
-  "stm32-olimex-h405":     { tag: "velxio-stm32-olimex-h405",     title: "Olimex STM32-H405", family: "stm32", langs: [AR] },
-  "stm32-netduino-plus2":  { tag: "velxio-stm32-netduino-plus2",  title: "Netduino Plus 2", family: "stm32", langs: [AR] },
-  "stm32-netduino2":       { tag: "velxio-stm32-netduino2",       title: "Netduino 2", family: "stm32", langs: [AR] },
+  // `pro: true` = needs a paid plan. Truth source: upstream
+  // proBoardGate.ts::isProBoardKind = STM32 + Raspberry Pi Linux (incl.
+  // UNIHIKER via piFamily), and nothing else. Overlay-only boards
+  // (M5Stack, Pimoroni, XIAO, C6...) run on the free plan — no badge.
+  "stm32-bluepill":        { tag: "velxio-stm32-bluepill",        title: "STM32 Blue Pill (F103C8)", family: "stm32", langs: [AR], pro: true },
+  "stm32-bluepill-f103cb": { tag: "velxio-stm32-bluepill-f103cb", title: "STM32 Blue Pill (F103CB)", family: "stm32", langs: [AR], pro: true },
+  "stm32-blackpill":       { tag: "velxio-stm32-blackpill",       title: "STM32 Black Pill (F411CE)", family: "stm32", langs: [AR], pro: true },
+  "stm32-blackpill-f401":  { tag: "velxio-stm32-blackpill-f401",  title: "STM32 Black Pill (F401CE)", family: "stm32", langs: [AR], pro: true },
+  "stm32-f4-discovery":    { tag: "velxio-stm32-f4-discovery",    title: "STM32F4 Discovery", family: "stm32", langs: [AR], pro: true },
+  "stm32-olimex-h405":     { tag: "velxio-stm32-olimex-h405",     title: "Olimex STM32-H405", family: "stm32", langs: [AR], pro: true },
+  "stm32-netduino-plus2":  { tag: "velxio-stm32-netduino-plus2",  title: "Netduino Plus 2", family: "stm32", langs: [AR], pro: true },
+  "stm32-netduino2":       { tag: "velxio-stm32-netduino2",       title: "Netduino 2", family: "stm32", langs: [AR], pro: true },
 
   "raspberry-pi-3": { tag: "velxio-raspberry-pi-3", title: "Raspberry Pi 3 (art shared with Zero/1/2)", family: "raspberry-pi", langs: ["Python on Linux"], pro: true },
   "raspberry-pi-4": { tag: "velxio-raspberry-pi-4", title: "Raspberry Pi 4", family: "raspberry-pi", langs: ["Python on Linux"], pro: true },
   "raspberry-pi-5": { tag: "velxio-raspberry-pi-5", title: "Raspberry Pi 5", family: "raspberry-pi", langs: ["Python on Linux"], pro: true },
 
-  "badger-2350":     { tag: "velxio-badger-2350",     title: "Pimoroni Badger 2350", family: "pro-boards", langs: [AR, MPY], pro: true },
-  "cardputer-adv":   { tag: "velxio-cardputer-adv",   title: "M5 Cardputer ADV", family: "pro-boards", langs: ESP_LANGS, pro: true },
-  "m5stack-core":    { tag: "velxio-m5stack-core",    title: "M5Stack Core", family: "pro-boards", langs: ESP_LANGS, pro: true },
-  "esp32-c6":        { tag: "velxio-esp32-c6-devkit", title: "ESP32-C6 DevKit", family: "pro-boards", langs: ESP_LANGS, pro: true },
+  "badger-2350":     { tag: "velxio-badger-2350",     title: "Pimoroni Badger 2350", family: "pro-boards", langs: [AR, MPY] },
+  "cardputer-adv":   { tag: "velxio-cardputer-adv",   title: "M5 Cardputer ADV", family: "pro-boards", langs: ESP_LANGS },
+  "m5stack-core":    { tag: "velxio-m5stack-core",    title: "M5Stack Core", family: "pro-boards", langs: ESP_LANGS },
+  "esp32-c6":        { tag: "velxio-esp32-c6-devkit", title: "ESP32-C6 DevKit", family: "pro-boards", langs: ESP_LANGS },
   "unihiker-m10":    { tag: "velxio-unihiker-m10",    title: "UNIHIKER M10", family: "raspberry-pi", langs: ["Python on Linux"], pro: true },
-  "xiao-esp32s3-sense": { tag: "velxio-xiao-board", attrs: { variant: "esp32s3-sense" }, title: "XIAO ESP32S3 Sense", family: "pro-boards", langs: ESP_LANGS, pro: true },
-  "xiao-esp32c6":       { tag: "velxio-xiao-board", attrs: { variant: "esp32c6" }, title: "XIAO ESP32C6", family: "pro-boards", langs: ESP_LANGS, pro: true },
-  "xiao-rp2040":        { tag: "velxio-xiao-board", attrs: { variant: "rp2040" }, title: "XIAO RP2040", family: "pro-boards", langs: [AR, MPY], pro: true },
-  "galactic-unicorn":       { tag: "velxio-galactic-unicorn",       title: "Pimoroni Galactic Unicorn", family: "pro-boards", langs: [AR, MPY], pro: true },
-  "pimoroni-pico-plus-2w":  { tag: "velxio-pimoroni-pico-plus-2w",  title: "Pimoroni Pico Plus 2 W", family: "pro-boards", langs: [AR, MPY], pro: true },
+  "xiao-esp32s3-sense": { tag: "velxio-xiao-board", attrs: { variant: "esp32s3-sense" }, title: "XIAO ESP32S3 Sense", family: "pro-boards", langs: ESP_LANGS },
+  "xiao-esp32c6":       { tag: "velxio-xiao-board", attrs: { variant: "esp32c6" }, title: "XIAO ESP32C6", family: "pro-boards", langs: ESP_LANGS },
+  "xiao-rp2040":        { tag: "velxio-xiao-board", attrs: { variant: "rp2040" }, title: "XIAO RP2040", family: "pro-boards", langs: [AR, MPY] },
+  "galactic-unicorn":       { tag: "velxio-galactic-unicorn",       title: "Pimoroni Galactic Unicorn", family: "pro-boards", langs: [AR, MPY] },
+  "pimoroni-pico-plus-2w":  { tag: "velxio-pimoroni-pico-plus-2w",  title: "Pimoroni Pico Plus 2 W", family: "pro-boards", langs: [AR, MPY] },
 };
 
 const FAMILY_LABEL = {

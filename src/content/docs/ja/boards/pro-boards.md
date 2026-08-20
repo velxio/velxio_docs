@@ -3,7 +3,6 @@ title: Pro ボード
 description: プレミアムボードカタログ — M5Stack、Badger 2350、XIAO Sense、ESP32-C6、Galactic Unicorn、UNIHIKER。
 sidebar:
   order: 8
-  badge: PRO
 ---
 
 Pro ボードはカタログのプレミアム層です。豊富な内蔵ペリフェラルを備えたブランドハードウェアで、**ファクトリーファームウェア**を起動できるほど深くエミュレートされています。これらは velxio.dev のホスト型カタログの一部です。

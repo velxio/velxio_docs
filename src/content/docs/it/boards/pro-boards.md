@@ -3,7 +3,6 @@ title: Schede Pro
 description: Il catalogo premium delle schede — M5Stack, Badger 2350, XIAO Sense, ESP32-C6, Galactic Unicorn, UNIHIKER.
 sidebar:
   order: 8
-  badge: PRO
 ---
 
 Le schede Pro sono il livello premium del catalogo: hardware di marca con

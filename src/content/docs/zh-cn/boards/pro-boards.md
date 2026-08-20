@@ -3,7 +3,6 @@ title: 专业开发板
 description: 高级开发板目录 — M5Stack、Badger 2350、XIAO Sense、ESP32-C6、Galactic Unicorn、UNIHIKER。
 sidebar:
   order: 8
-  badge: PRO
 ---
 
 专业开发板是目录中的高级层级：品牌硬件，内置丰富外设，并经过深度仿真，能够启动其**出厂固件**。它们是 velxio.dev 上托管目录的一部分。
