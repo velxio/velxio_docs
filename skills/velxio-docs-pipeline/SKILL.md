@@ -29,13 +29,26 @@ npm run build          # static output + Pagefind index (VERIFY before deploy)
 npm run shots          # re-capture screenshots (needs staging creds)
 npm run gen-parts      # per-component reference from the live registry
 node scripts/gen-boards.mjs   # board art + pinouts (37 boards)
+node scripts/gen-boards.mjs cardputer-adv   # just this one, rest untouched
 npm run translate      # detect missing translations + run one job
 node scripts/translate-run.mjs 20   # run N jobs
 ```
 
 Screenshot/generator scripts need
-`VELXIO_SHOTS_EMAIL` / `VELXIO_SHOTS_PASSWORD` (staging test user) and
-default to `VELXIO_BASE=https://vstaging.moontero.com`.
+`VELXIO_SHOTS_EMAIL` / `VELXIO_SHOTS_PASSWORD` and default to
+`VELXIO_BASE=https://vstaging.moontero.com`. The known test account
+authenticates against **production** — pass `VELXIO_BASE=https://velxio.dev`
+explicitly or the login 401s.
+
+**Never run `npm run format` repo-wide.** There is no `.prettierignore`, so
+it reformats `scripts/*.mjs` too — and prettier explodes `gen-boards.mjs`'s
+deliberately one-line-per-board `BOARDS` table into 300 lines of noise.
+Prettier the generated markdown only (the committed pages are formatted,
+the generators' raw output is not):
+
+```bash
+npx prettier --write src/content/docs/boards/reference/<kind>.md
+```
 
 ## Content rules
 
@@ -45,7 +58,12 @@ default to `VELXIO_BASE=https://vstaging.moontero.com`.
 - House style: no emojis anywhere (a hook blocks them), English in the
   repo, Spanish only in conversation.
 - Screenshots are NEVER pasted by hand — add a scene to `shots.mjs` so
-  they can be regenerated when the UI changes.
+  they can be regenerated when the UI changes. Crop with `clipOf(page, [sel])`,
+  never fixed pixels, and **open the PNG afterwards**: the script prints
+  "all scenes OK" for a crop of the wrong pixels. Clamp a canvas crop to
+  `.canvas-content` (the `overflow:hidden` box that really clips the board);
+  `.simulator-panel` also spans the output console, so a board that slid
+  under the console still "fits".
 - The AI assistant panel is minimized in every screenshot unless the
   assistant IS the subject (`loadExample(page, slug, {keepAi:true})`).
 
@@ -59,7 +77,29 @@ default to `VELXIO_BASE=https://vstaging.moontero.com`.
   2x with a transparent background, and emits `boards/reference/<kind>.md`.
   Its kind→tag map mirrors `BoardOnCanvas.tsx` (wokwi-* for AVR,
   `velxio-esp32[board-kind]`, `velxio-stm32-*`, `velxio-xiao-board[variant]`,
-  pro tags) — update it when a board is added.
+  pro tags) — update it when a board is added. `pro: true` there means
+  **needs a paid plan**, and the truth source is upstream
+  `proBoardGate.ts::isProBoardKind`: STM32 plus the Raspberry Pi Linux
+  family (UNIHIKER included) and nothing else. M5Stack, Pimoroni, XIAO and
+  the C6 DevKit are free — do not badge them PRO just because they are
+  overlay boards.
+
+### Hand-written content on a generated board page
+
+The board pages are wiped and rewritten every run, so guidance cannot live
+in them. Put it in `scripts/board-extras/<kind>.md` instead: `gen-boards.mjs`
+splices that file into the page **above** the pin table (a reader opening a
+board page wants to run something, not read 40 pin rows first). Asset paths
+inside an extras file are relative to the OUTPUT page, so four levels up:
+`../../../../assets/docs/boards/<shot>.png`.
+
+`boards/reference/cardputer-adv.md` is the worked example — what the
+emulator implements, a four-step first-run tutorial with a screenshot per
+step, the sketch read line by line, and every gallery example listed. Its
+screenshots come from the `boards/cardputer-adv` scene in `shots.mjs`.
+Example slugs and counts must be checked against the overlay source
+(`pro/frontend/src/pro/boards/<vendor>/examples-*.ts`) rather than the
+scraped `gallery-index.json`, which goes stale.
 
 ## Translation pipeline (ported from velxio_blog)
 
