@@ -16,39 +16,39 @@ so it always matches what you can wire).
 
 ## Pins (31)
 
-| Pin       | Signals     |
-| --------- | ----------- |
-| **A5.2**  | analog, i2c |
-| **A4.2**  | analog, i2c |
-| **AREF**  | —           |
-| **GND.1** | power       |
-| **13**    | spi         |
-| **12**    | spi         |
-| **11**    | spi, pwm    |
-| **10**    | spi, pwm    |
-| **9**     | pwm         |
-| **8**     | —           |
-| **7**     | —           |
-| **6**     | pwm         |
-| **5**     | pwm         |
-| **4**     | —           |
-| **3**     | pwm         |
-| **2**     | —           |
-| **1**     | usart       |
-| **0**     | usart       |
-| **IOREF** | —           |
-| **RESET** | —           |
-| **3.3V**  | power       |
-| **5V**    | power       |
-| **GND.2** | power       |
-| **GND.3** | power       |
-| **VIN**   | power       |
-| **A0**    | analog      |
-| **A1**    | analog      |
-| **A2**    | analog      |
-| **A3**    | analog      |
-| **A4**    | analog, i2c |
-| **A5**    | analog, i2c |
+<ul class="pin-grid has-signals">
+<li><span class="pin-name">A5.2</span><span class="pin-signals">analog, i2c</span></li>
+<li><span class="pin-name">A4.2</span><span class="pin-signals">analog, i2c</span></li>
+<li><span class="pin-name">AREF</span></li>
+<li><span class="pin-name">GND.1</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">13</span><span class="pin-signals">spi</span></li>
+<li><span class="pin-name">12</span><span class="pin-signals">spi</span></li>
+<li><span class="pin-name">11</span><span class="pin-signals">spi, pwm</span></li>
+<li><span class="pin-name">10</span><span class="pin-signals">spi, pwm</span></li>
+<li><span class="pin-name">9</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">8</span></li>
+<li><span class="pin-name">7</span></li>
+<li><span class="pin-name">6</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">5</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">4</span></li>
+<li><span class="pin-name">3</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">2</span></li>
+<li><span class="pin-name">1</span><span class="pin-signals">usart</span></li>
+<li><span class="pin-name">0</span><span class="pin-signals">usart</span></li>
+<li><span class="pin-name">IOREF</span></li>
+<li><span class="pin-name">RESET</span></li>
+<li><span class="pin-name">3.3V</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">5V</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">GND.2</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">GND.3</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">VIN</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">A0</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A1</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A2</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A3</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A4</span><span class="pin-signals">analog, i2c</span></li>
+<li><span class="pin-name">A5</span><span class="pin-signals">analog, i2c</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

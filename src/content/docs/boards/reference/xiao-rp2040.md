@@ -16,33 +16,33 @@ so it always matches what you can wire).
 
 ## Pins (25)
 
-| Pin     | Signals |
-| ------- | ------- |
-| **D0**  | —       |
-| **26**  | —       |
-| **D1**  | —       |
-| **27**  | —       |
-| **D2**  | —       |
-| **28**  | —       |
-| **D3**  | —       |
-| **29**  | —       |
-| **D4**  | —       |
-| **6**   | —       |
-| **D5**  | —       |
-| **7**   | —       |
-| **D6**  | —       |
-| **0**   | —       |
-| **5V**  | —       |
-| **GND** | —       |
-| **3V3** | —       |
-| **D10** | —       |
-| **3**   | —       |
-| **D9**  | —       |
-| **4**   | —       |
-| **D8**  | —       |
-| **2**   | —       |
-| **D7**  | —       |
-| **1**   | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">D0</span></li>
+<li><span class="pin-name">26</span></li>
+<li><span class="pin-name">D1</span></li>
+<li><span class="pin-name">27</span></li>
+<li><span class="pin-name">D2</span></li>
+<li><span class="pin-name">28</span></li>
+<li><span class="pin-name">D3</span></li>
+<li><span class="pin-name">29</span></li>
+<li><span class="pin-name">D4</span></li>
+<li><span class="pin-name">6</span></li>
+<li><span class="pin-name">D5</span></li>
+<li><span class="pin-name">7</span></li>
+<li><span class="pin-name">D6</span></li>
+<li><span class="pin-name">0</span></li>
+<li><span class="pin-name">5V</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">D10</span></li>
+<li><span class="pin-name">3</span></li>
+<li><span class="pin-name">D9</span></li>
+<li><span class="pin-name">4</span></li>
+<li><span class="pin-name">D8</span></li>
+<li><span class="pin-name">2</span></li>
+<li><span class="pin-name">D7</span></li>
+<li><span class="pin-name">1</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

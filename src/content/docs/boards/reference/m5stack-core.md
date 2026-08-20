@@ -199,59 +199,59 @@ microSD contents — lands in [your projects](/docs/getting-started/projects/).
 
 ## Pins (51)
 
-| Pin       | Signals |
-| --------- | ------- |
-| **3**     | —       |
-| **1**     | —       |
-| **16**    | —       |
-| **17**    | —       |
-| **2**     | —       |
-| **5**     | —       |
-| **25**    | —       |
-| **26**    | —       |
-| **35**    | —       |
-| **36**    | —       |
-| **RST**   | —       |
-| **BAT**   | —       |
-| **3V3**   | —       |
-| **5V**    | —       |
-| **GND**   | —       |
-| **R0**    | —       |
-| **T0**    | —       |
-| **R2**    | —       |
-| **T2**    | —       |
-| **G2**    | —       |
-| **G5**    | —       |
-| **DA25**  | —       |
-| **DA26**  | —       |
-| **AD35**  | —       |
-| **AD36**  | —       |
-| **RST.1** | —       |
-| **BAT.1** | —       |
-| **3V3.2** | —       |
-| **5V.2**  | —       |
-| **GND.2** | —       |
-| **5V.1**  | —       |
-| **3V3.1** | —       |
-| **GND.1** | —       |
-| **21**    | —       |
-| **22**    | —       |
-| **23**    | —       |
-| **19**    | —       |
-| **18**    | —       |
-| **5V.3**  | —       |
-| **3V3.3** | —       |
-| **GND.3** | —       |
-| **SDA**   | —       |
-| **SCL**   | —       |
-| **MO**    | —       |
-| **MI**    | —       |
-| **SCK**   | —       |
-| **12**    | —       |
-| **13**    | —       |
-| **15**    | —       |
-| **0**     | —       |
-| **34**    | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">3</span></li>
+<li><span class="pin-name">1</span></li>
+<li><span class="pin-name">16</span></li>
+<li><span class="pin-name">17</span></li>
+<li><span class="pin-name">2</span></li>
+<li><span class="pin-name">5</span></li>
+<li><span class="pin-name">25</span></li>
+<li><span class="pin-name">26</span></li>
+<li><span class="pin-name">35</span></li>
+<li><span class="pin-name">36</span></li>
+<li><span class="pin-name">RST</span></li>
+<li><span class="pin-name">BAT</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">5V</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">R0</span></li>
+<li><span class="pin-name">T0</span></li>
+<li><span class="pin-name">R2</span></li>
+<li><span class="pin-name">T2</span></li>
+<li><span class="pin-name">G2</span></li>
+<li><span class="pin-name">G5</span></li>
+<li><span class="pin-name">DA25</span></li>
+<li><span class="pin-name">DA26</span></li>
+<li><span class="pin-name">AD35</span></li>
+<li><span class="pin-name">AD36</span></li>
+<li><span class="pin-name">RST.1</span></li>
+<li><span class="pin-name">BAT.1</span></li>
+<li><span class="pin-name">3V3.2</span></li>
+<li><span class="pin-name">5V.2</span></li>
+<li><span class="pin-name">GND.2</span></li>
+<li><span class="pin-name">5V.1</span></li>
+<li><span class="pin-name">3V3.1</span></li>
+<li><span class="pin-name">GND.1</span></li>
+<li><span class="pin-name">21</span></li>
+<li><span class="pin-name">22</span></li>
+<li><span class="pin-name">23</span></li>
+<li><span class="pin-name">19</span></li>
+<li><span class="pin-name">18</span></li>
+<li><span class="pin-name">5V.3</span></li>
+<li><span class="pin-name">3V3.3</span></li>
+<li><span class="pin-name">GND.3</span></li>
+<li><span class="pin-name">SDA</span></li>
+<li><span class="pin-name">SCL</span></li>
+<li><span class="pin-name">MO</span></li>
+<li><span class="pin-name">MI</span></li>
+<li><span class="pin-name">SCK</span></li>
+<li><span class="pin-name">12</span></li>
+<li><span class="pin-name">13</span></li>
+<li><span class="pin-name">15</span></li>
+<li><span class="pin-name">0</span></li>
+<li><span class="pin-name">34</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

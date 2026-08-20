@@ -16,38 +16,38 @@ so it always matches what you can wire).
 
 ## Pins (30)
 
-| Pin       | Signals |
-| --------- | ------- |
-| **D12**   | —       |
-| **D11**   | —       |
-| **D10**   | —       |
-| **D9**    | —       |
-| **D8**    | —       |
-| **D7**    | —       |
-| **D6**    | —       |
-| **D5**    | —       |
-| **D4**    | —       |
-| **D3**    | —       |
-| **D2**    | —       |
-| **GND.1** | —       |
-| **RST**   | —       |
-| **RX0**   | —       |
-| **TX1**   | —       |
-| **D13**   | —       |
-| **3V3**   | —       |
-| **B0**    | —       |
-| **A0**    | —       |
-| **A1**    | —       |
-| **A2**    | —       |
-| **A3**    | —       |
-| **A4**    | —       |
-| **A5**    | —       |
-| **A6**    | —       |
-| **A7**    | —       |
-| **VBUS**  | —       |
-| **B1**    | —       |
-| **GND.2** | —       |
-| **VIN**   | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">D12</span></li>
+<li><span class="pin-name">D11</span></li>
+<li><span class="pin-name">D10</span></li>
+<li><span class="pin-name">D9</span></li>
+<li><span class="pin-name">D8</span></li>
+<li><span class="pin-name">D7</span></li>
+<li><span class="pin-name">D6</span></li>
+<li><span class="pin-name">D5</span></li>
+<li><span class="pin-name">D4</span></li>
+<li><span class="pin-name">D3</span></li>
+<li><span class="pin-name">D2</span></li>
+<li><span class="pin-name">GND.1</span></li>
+<li><span class="pin-name">RST</span></li>
+<li><span class="pin-name">RX0</span></li>
+<li><span class="pin-name">TX1</span></li>
+<li><span class="pin-name">D13</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">B0</span></li>
+<li><span class="pin-name">A0</span></li>
+<li><span class="pin-name">A1</span></li>
+<li><span class="pin-name">A2</span></li>
+<li><span class="pin-name">A3</span></li>
+<li><span class="pin-name">A4</span></li>
+<li><span class="pin-name">A5</span></li>
+<li><span class="pin-name">A6</span></li>
+<li><span class="pin-name">A7</span></li>
+<li><span class="pin-name">VBUS</span></li>
+<li><span class="pin-name">B1</span></li>
+<li><span class="pin-name">GND.2</span></li>
+<li><span class="pin-name">VIN</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

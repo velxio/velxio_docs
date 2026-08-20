@@ -204,9 +204,22 @@ so it always matches what you can wire).
     if (existsSync(extras)) body += `\n${readFileSync(extras, "utf8").trim()}\n`;
 
     if (pins.length) {
-      body += `\n## Pins (${pins.length})\n\n| Pin | Signals |\n| --- | --- |\n`;
-      for (const p of pins)
-        body += `| **${esc(p.name)}** | ${esc(p.signals.join(", ")) || "—"} |\n`;
+      // A grid, not a table: only the three wokwi AVR boards populate
+      // pinInfo[].signals, so for the other 34 a two-column table was one dead
+      // column of em-dashes and up to 85 rows of scrolling. Raw HTML carries no
+      // blank lines — one would end the HTML block and markdown would re-parse
+      // the rest of the list as text. Styles live in src/styles/custom.css.
+      const anySignals = pins.some(p => p.signals.length);
+      body += `\n## Pins (${pins.length})\n\n`;
+      body += `<ul class="pin-grid${anySignals ? " has-signals" : ""}">\n`;
+      for (const p of pins) {
+        const sig = esc(p.signals.join(", "));
+        body +=
+          `<li><span class="pin-name">${esc(p.name)}</span>` +
+          (sig ? `<span class="pin-signals">${sig}</span>` : "") +
+          `</li>\n`;
+      }
+      body += `</ul>\n`;
     }
     body += `\nEvery pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

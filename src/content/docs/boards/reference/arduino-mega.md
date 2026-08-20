@@ -16,93 +16,93 @@ so it always matches what you can wire).
 
 ## Pins (85)
 
-| Pin       | Signals |
-| --------- | ------- |
-| **SCL**   | i2c     |
-| **SDA**   | i2c     |
-| **AREF**  | —       |
-| **GND.1** | power   |
-| **13**    | pwm     |
-| **12**    | pwm     |
-| **11**    | pwm     |
-| **10**    | pwm     |
-| **9**     | pwm     |
-| **8**     | pwm     |
-| **7**     | pwm     |
-| **6**     | pwm     |
-| **5**     | pwm     |
-| **4**     | pwm     |
-| **3**     | pwm     |
-| **2**     | pwm     |
-| **1**     | usart   |
-| **0**     | usart   |
-| **14**    | usart   |
-| **15**    | usart   |
-| **16**    | usart   |
-| **17**    | usart   |
-| **18**    | usart   |
-| **19**    | usart   |
-| **20**    | i2c     |
-| **21**    | i2c     |
-| **5V.1**  | power   |
-| **5V.2**  | power   |
-| **22**    | —       |
-| **23**    | —       |
-| **24**    | —       |
-| **25**    | —       |
-| **26**    | —       |
-| **27**    | —       |
-| **28**    | —       |
-| **29**    | —       |
-| **30**    | —       |
-| **31**    | —       |
-| **32**    | —       |
-| **33**    | —       |
-| **34**    | —       |
-| **35**    | —       |
-| **36**    | —       |
-| **37**    | —       |
-| **38**    | —       |
-| **39**    | —       |
-| **40**    | —       |
-| **41**    | —       |
-| **42**    | —       |
-| **43**    | —       |
-| **44**    | pwm     |
-| **45**    | pwm     |
-| **46**    | pwm     |
-| **47**    | —       |
-| **48**    | —       |
-| **49**    | —       |
-| **50**    | spi     |
-| **51**    | spi     |
-| **52**    | spi     |
-| **53**    | —       |
-| **GND.4** | power   |
-| **GND.5** | power   |
-| **IOREF** | —       |
-| **RESET** | —       |
-| **3.3V**  | power   |
-| **5V**    | power   |
-| **GND.2** | power   |
-| **GND.3** | power   |
-| **VIN**   | power   |
-| **A0**    | analog  |
-| **A1**    | analog  |
-| **A2**    | analog  |
-| **A3**    | analog  |
-| **A4**    | analog  |
-| **A5**    | analog  |
-| **A6**    | analog  |
-| **A7**    | analog  |
-| **A8**    | analog  |
-| **A9**    | analog  |
-| **A10**   | analog  |
-| **A11**   | analog  |
-| **A12**   | analog  |
-| **A13**   | analog  |
-| **A14**   | analog  |
-| **A15**   | analog  |
+<ul class="pin-grid has-signals">
+<li><span class="pin-name">SCL</span><span class="pin-signals">i2c</span></li>
+<li><span class="pin-name">SDA</span><span class="pin-signals">i2c</span></li>
+<li><span class="pin-name">AREF</span></li>
+<li><span class="pin-name">GND.1</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">13</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">12</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">11</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">10</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">9</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">8</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">7</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">6</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">5</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">4</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">3</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">2</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">1</span><span class="pin-signals">usart</span></li>
+<li><span class="pin-name">0</span><span class="pin-signals">usart</span></li>
+<li><span class="pin-name">14</span><span class="pin-signals">usart</span></li>
+<li><span class="pin-name">15</span><span class="pin-signals">usart</span></li>
+<li><span class="pin-name">16</span><span class="pin-signals">usart</span></li>
+<li><span class="pin-name">17</span><span class="pin-signals">usart</span></li>
+<li><span class="pin-name">18</span><span class="pin-signals">usart</span></li>
+<li><span class="pin-name">19</span><span class="pin-signals">usart</span></li>
+<li><span class="pin-name">20</span><span class="pin-signals">i2c</span></li>
+<li><span class="pin-name">21</span><span class="pin-signals">i2c</span></li>
+<li><span class="pin-name">5V.1</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">5V.2</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">22</span></li>
+<li><span class="pin-name">23</span></li>
+<li><span class="pin-name">24</span></li>
+<li><span class="pin-name">25</span></li>
+<li><span class="pin-name">26</span></li>
+<li><span class="pin-name">27</span></li>
+<li><span class="pin-name">28</span></li>
+<li><span class="pin-name">29</span></li>
+<li><span class="pin-name">30</span></li>
+<li><span class="pin-name">31</span></li>
+<li><span class="pin-name">32</span></li>
+<li><span class="pin-name">33</span></li>
+<li><span class="pin-name">34</span></li>
+<li><span class="pin-name">35</span></li>
+<li><span class="pin-name">36</span></li>
+<li><span class="pin-name">37</span></li>
+<li><span class="pin-name">38</span></li>
+<li><span class="pin-name">39</span></li>
+<li><span class="pin-name">40</span></li>
+<li><span class="pin-name">41</span></li>
+<li><span class="pin-name">42</span></li>
+<li><span class="pin-name">43</span></li>
+<li><span class="pin-name">44</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">45</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">46</span><span class="pin-signals">pwm</span></li>
+<li><span class="pin-name">47</span></li>
+<li><span class="pin-name">48</span></li>
+<li><span class="pin-name">49</span></li>
+<li><span class="pin-name">50</span><span class="pin-signals">spi</span></li>
+<li><span class="pin-name">51</span><span class="pin-signals">spi</span></li>
+<li><span class="pin-name">52</span><span class="pin-signals">spi</span></li>
+<li><span class="pin-name">53</span></li>
+<li><span class="pin-name">GND.4</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">GND.5</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">IOREF</span></li>
+<li><span class="pin-name">RESET</span></li>
+<li><span class="pin-name">3.3V</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">5V</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">GND.2</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">GND.3</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">VIN</span><span class="pin-signals">power</span></li>
+<li><span class="pin-name">A0</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A1</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A2</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A3</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A4</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A5</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A6</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A7</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A8</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A9</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A10</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A11</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A12</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A13</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A14</span><span class="pin-signals">analog</span></li>
+<li><span class="pin-name">A15</span><span class="pin-signals">analog</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

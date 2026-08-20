@@ -16,14 +16,14 @@ so it always matches what you can wire).
 
 ## Pins (6)
 
-| Pin      | Signals |
-| -------- | ------- |
-| **GND**  | —       |
-| **3V3**  | —       |
-| **SDA**  | —       |
-| **SCL**  | —       |
-| **GND2** | —       |
-| **5V**   | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">SDA</span></li>
+<li><span class="pin-name">SCL</span></li>
+<li><span class="pin-name">GND2</span></li>
+<li><span class="pin-name">5V</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

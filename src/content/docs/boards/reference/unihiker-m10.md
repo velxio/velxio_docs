@@ -18,19 +18,19 @@ so it always matches what you can wire).
 
 ## Pins (11)
 
-| Pin     | Signals |
-| ------- | ------- |
-| **0**   | —       |
-| **1**   | —       |
-| **2**   | —       |
-| **3V3** | —       |
-| **GND** | —       |
-| **P21** | —       |
-| **P22** | —       |
-| **P23** | —       |
-| **P24** | —       |
-| **SCL** | —       |
-| **SDA** | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">0</span></li>
+<li><span class="pin-name">1</span></li>
+<li><span class="pin-name">2</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">P21</span></li>
+<li><span class="pin-name">P22</span></li>
+<li><span class="pin-name">P23</span></li>
+<li><span class="pin-name">P24</span></li>
+<li><span class="pin-name">SCL</span></li>
+<li><span class="pin-name">SDA</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

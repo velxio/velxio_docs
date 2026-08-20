@@ -181,21 +181,21 @@ microSD contents — lands in [your projects](/docs/getting-started/projects/).
 
 ## Pins (13)
 
-| Pin     | Signals |
-| ------- | ------- |
-| **3**   | —       |
-| **4**   | —       |
-| **5**   | —       |
-| **6**   | —       |
-| **13**  | —       |
-| **14**  | —       |
-| **15**  | —       |
-| **39**  | —       |
-| **40**  | —       |
-| **5V**  | —       |
-| **GND** | —       |
-| **2**   | —       |
-| **1**   | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">3</span></li>
+<li><span class="pin-name">4</span></li>
+<li><span class="pin-name">5</span></li>
+<li><span class="pin-name">6</span></li>
+<li><span class="pin-name">13</span></li>
+<li><span class="pin-name">14</span></li>
+<li><span class="pin-name">15</span></li>
+<li><span class="pin-name">39</span></li>
+<li><span class="pin-name">40</span></li>
+<li><span class="pin-name">5V</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">2</span></li>
+<li><span class="pin-name">1</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

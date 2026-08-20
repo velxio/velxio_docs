@@ -18,32 +18,32 @@ so it always matches what you can wire).
 
 ## Pins (24)
 
-| Pin      | Signals |
-| -------- | ------- |
-| **3V3**  | —       |
-| **GND**  | —       |
-| **PA0**  | —       |
-| **PA1**  | —       |
-| **PA2**  | —       |
-| **PA3**  | —       |
-| **PA4**  | —       |
-| **PA5**  | —       |
-| **PB6**  | —       |
-| **PB7**  | —       |
-| **PB8**  | —       |
-| **PB9**  | —       |
-| **5V**   | —       |
-| **GND**  | —       |
-| **PA10** | —       |
-| **PB11** | —       |
-| **PC0**  | —       |
-| **PC1**  | —       |
-| **PC2**  | —       |
-| **PC3**  | —       |
-| **PA6**  | —       |
-| **PA7**  | —       |
-| **PB0**  | —       |
-| **PB1**  | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">PA0</span></li>
+<li><span class="pin-name">PA1</span></li>
+<li><span class="pin-name">PA2</span></li>
+<li><span class="pin-name">PA3</span></li>
+<li><span class="pin-name">PA4</span></li>
+<li><span class="pin-name">PA5</span></li>
+<li><span class="pin-name">PB6</span></li>
+<li><span class="pin-name">PB7</span></li>
+<li><span class="pin-name">PB8</span></li>
+<li><span class="pin-name">PB9</span></li>
+<li><span class="pin-name">5V</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">PA10</span></li>
+<li><span class="pin-name">PB11</span></li>
+<li><span class="pin-name">PC0</span></li>
+<li><span class="pin-name">PC1</span></li>
+<li><span class="pin-name">PC2</span></li>
+<li><span class="pin-name">PC3</span></li>
+<li><span class="pin-name">PA6</span></li>
+<li><span class="pin-name">PA7</span></li>
+<li><span class="pin-name">PB0</span></li>
+<li><span class="pin-name">PB1</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

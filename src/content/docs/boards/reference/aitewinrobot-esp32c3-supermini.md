@@ -16,24 +16,24 @@ so it always matches what you can wire).
 
 ## Pins (16)
 
-| Pin     | Signals |
-| ------- | ------- |
-| **5**   | —       |
-| **6**   | —       |
-| **7**   | —       |
-| **8**   | —       |
-| **9**   | —       |
-| **10**  | —       |
-| **RX**  | —       |
-| **TX**  | —       |
-| **5V**  | —       |
-| **GND** | —       |
-| **3V3** | —       |
-| **4**   | —       |
-| **3**   | —       |
-| **2**   | —       |
-| **1**   | —       |
-| **0**   | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">5</span></li>
+<li><span class="pin-name">6</span></li>
+<li><span class="pin-name">7</span></li>
+<li><span class="pin-name">8</span></li>
+<li><span class="pin-name">9</span></li>
+<li><span class="pin-name">10</span></li>
+<li><span class="pin-name">RX</span></li>
+<li><span class="pin-name">TX</span></li>
+<li><span class="pin-name">5V</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">4</span></li>
+<li><span class="pin-name">3</span></li>
+<li><span class="pin-name">2</span></li>
+<li><span class="pin-name">1</span></li>
+<li><span class="pin-name">0</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

@@ -18,48 +18,48 @@ so it always matches what you can wire).
 
 ## Pins (40)
 
-| Pin    | Signals |
-| ------ | ------- |
-| **1**  | —       |
-| **2**  | —       |
-| **3**  | —       |
-| **4**  | —       |
-| **5**  | —       |
-| **6**  | —       |
-| **7**  | —       |
-| **8**  | —       |
-| **9**  | —       |
-| **10** | —       |
-| **11** | —       |
-| **12** | —       |
-| **13** | —       |
-| **14** | —       |
-| **15** | —       |
-| **16** | —       |
-| **17** | —       |
-| **18** | —       |
-| **19** | —       |
-| **20** | —       |
-| **21** | —       |
-| **22** | —       |
-| **23** | —       |
-| **24** | —       |
-| **25** | —       |
-| **26** | —       |
-| **27** | —       |
-| **28** | —       |
-| **29** | —       |
-| **30** | —       |
-| **31** | —       |
-| **32** | —       |
-| **33** | —       |
-| **34** | —       |
-| **35** | —       |
-| **36** | —       |
-| **37** | —       |
-| **38** | —       |
-| **39** | —       |
-| **40** | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">1</span></li>
+<li><span class="pin-name">2</span></li>
+<li><span class="pin-name">3</span></li>
+<li><span class="pin-name">4</span></li>
+<li><span class="pin-name">5</span></li>
+<li><span class="pin-name">6</span></li>
+<li><span class="pin-name">7</span></li>
+<li><span class="pin-name">8</span></li>
+<li><span class="pin-name">9</span></li>
+<li><span class="pin-name">10</span></li>
+<li><span class="pin-name">11</span></li>
+<li><span class="pin-name">12</span></li>
+<li><span class="pin-name">13</span></li>
+<li><span class="pin-name">14</span></li>
+<li><span class="pin-name">15</span></li>
+<li><span class="pin-name">16</span></li>
+<li><span class="pin-name">17</span></li>
+<li><span class="pin-name">18</span></li>
+<li><span class="pin-name">19</span></li>
+<li><span class="pin-name">20</span></li>
+<li><span class="pin-name">21</span></li>
+<li><span class="pin-name">22</span></li>
+<li><span class="pin-name">23</span></li>
+<li><span class="pin-name">24</span></li>
+<li><span class="pin-name">25</span></li>
+<li><span class="pin-name">26</span></li>
+<li><span class="pin-name">27</span></li>
+<li><span class="pin-name">28</span></li>
+<li><span class="pin-name">29</span></li>
+<li><span class="pin-name">30</span></li>
+<li><span class="pin-name">31</span></li>
+<li><span class="pin-name">32</span></li>
+<li><span class="pin-name">33</span></li>
+<li><span class="pin-name">34</span></li>
+<li><span class="pin-name">35</span></li>
+<li><span class="pin-name">36</span></li>
+<li><span class="pin-name">37</span></li>
+<li><span class="pin-name">38</span></li>
+<li><span class="pin-name">39</span></li>
+<li><span class="pin-name">40</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

@@ -16,48 +16,48 @@ so it always matches what you can wire).
 
 ## Pins (40)
 
-| Pin          | Signals |
-| ------------ | ------- |
-| **GP0**      | —       |
-| **GP1**      | —       |
-| **GND.1**    | —       |
-| **GP2**      | —       |
-| **GP3**      | —       |
-| **GP4**      | —       |
-| **GP5**      | —       |
-| **GND.2**    | —       |
-| **GP6**      | —       |
-| **GP7**      | —       |
-| **GP8**      | —       |
-| **GP9**      | —       |
-| **GND.3**    | —       |
-| **GP10**     | —       |
-| **GP11**     | —       |
-| **GP12**     | —       |
-| **GP13**     | —       |
-| **GND.4**    | —       |
-| **GP14**     | —       |
-| **GP15**     | —       |
-| **GP16**     | —       |
-| **GP17**     | —       |
-| **GND.5**    | —       |
-| **GP18**     | —       |
-| **GP19**     | —       |
-| **GP20**     | —       |
-| **GP21**     | —       |
-| **GND.6**    | —       |
-| **GP22**     | —       |
-| **RUN**      | —       |
-| **GP26**     | —       |
-| **GP27**     | —       |
-| **GND.7**    | —       |
-| **GP28**     | —       |
-| **ADC_VREF** | —       |
-| **3V3**      | —       |
-| **3V3_EN**   | —       |
-| **GND.8**    | —       |
-| **VSYS**     | —       |
-| **VBUS**     | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">GP0</span></li>
+<li><span class="pin-name">GP1</span></li>
+<li><span class="pin-name">GND.1</span></li>
+<li><span class="pin-name">GP2</span></li>
+<li><span class="pin-name">GP3</span></li>
+<li><span class="pin-name">GP4</span></li>
+<li><span class="pin-name">GP5</span></li>
+<li><span class="pin-name">GND.2</span></li>
+<li><span class="pin-name">GP6</span></li>
+<li><span class="pin-name">GP7</span></li>
+<li><span class="pin-name">GP8</span></li>
+<li><span class="pin-name">GP9</span></li>
+<li><span class="pin-name">GND.3</span></li>
+<li><span class="pin-name">GP10</span></li>
+<li><span class="pin-name">GP11</span></li>
+<li><span class="pin-name">GP12</span></li>
+<li><span class="pin-name">GP13</span></li>
+<li><span class="pin-name">GND.4</span></li>
+<li><span class="pin-name">GP14</span></li>
+<li><span class="pin-name">GP15</span></li>
+<li><span class="pin-name">GP16</span></li>
+<li><span class="pin-name">GP17</span></li>
+<li><span class="pin-name">GND.5</span></li>
+<li><span class="pin-name">GP18</span></li>
+<li><span class="pin-name">GP19</span></li>
+<li><span class="pin-name">GP20</span></li>
+<li><span class="pin-name">GP21</span></li>
+<li><span class="pin-name">GND.6</span></li>
+<li><span class="pin-name">GP22</span></li>
+<li><span class="pin-name">RUN</span></li>
+<li><span class="pin-name">GP26</span></li>
+<li><span class="pin-name">GP27</span></li>
+<li><span class="pin-name">GND.7</span></li>
+<li><span class="pin-name">GP28</span></li>
+<li><span class="pin-name">ADC_VREF</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">3V3_EN</span></li>
+<li><span class="pin-name">GND.8</span></li>
+<li><span class="pin-name">VSYS</span></li>
+<li><span class="pin-name">VBUS</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

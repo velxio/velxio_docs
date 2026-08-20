@@ -16,40 +16,40 @@ so it always matches what you can wire).
 
 ## Pins (32)
 
-| Pin      | Signals |
-| -------- | ------- |
-| **EN**   | —       |
-| **VN**   | —       |
-| **VP**   | —       |
-| **34**   | —       |
-| **35**   | —       |
-| **32**   | —       |
-| **33**   | —       |
-| **25**   | —       |
-| **26**   | —       |
-| **27**   | —       |
-| **14**   | —       |
-| **12**   | —       |
-| **13**   | —       |
-| **GND**  | —       |
-| **VIN**  | —       |
-| **3V3**  | —       |
-| **GND2** | —       |
-| **15**   | —       |
-| **2**    | —       |
-| **4**    | —       |
-| **RX2**  | —       |
-| **16**   | —       |
-| **TX2**  | —       |
-| **17**   | —       |
-| **5**    | —       |
-| **18**   | —       |
-| **19**   | —       |
-| **21**   | —       |
-| **RX0**  | —       |
-| **TX0**  | —       |
-| **22**   | —       |
-| **23**   | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">EN</span></li>
+<li><span class="pin-name">VN</span></li>
+<li><span class="pin-name">VP</span></li>
+<li><span class="pin-name">34</span></li>
+<li><span class="pin-name">35</span></li>
+<li><span class="pin-name">32</span></li>
+<li><span class="pin-name">33</span></li>
+<li><span class="pin-name">25</span></li>
+<li><span class="pin-name">26</span></li>
+<li><span class="pin-name">27</span></li>
+<li><span class="pin-name">14</span></li>
+<li><span class="pin-name">12</span></li>
+<li><span class="pin-name">13</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">VIN</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">GND2</span></li>
+<li><span class="pin-name">15</span></li>
+<li><span class="pin-name">2</span></li>
+<li><span class="pin-name">4</span></li>
+<li><span class="pin-name">RX2</span></li>
+<li><span class="pin-name">16</span></li>
+<li><span class="pin-name">TX2</span></li>
+<li><span class="pin-name">17</span></li>
+<li><span class="pin-name">5</span></li>
+<li><span class="pin-name">18</span></li>
+<li><span class="pin-name">19</span></li>
+<li><span class="pin-name">21</span></li>
+<li><span class="pin-name">RX0</span></li>
+<li><span class="pin-name">TX0</span></li>
+<li><span class="pin-name">22</span></li>
+<li><span class="pin-name">23</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

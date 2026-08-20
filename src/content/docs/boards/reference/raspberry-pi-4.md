@@ -18,48 +18,48 @@ so it always matches what you can wire).
 
 ## Pins (40)
 
-| Pin        | Signals |
-| ---------- | ------- |
-| **3V3**    | —       |
-| **5V**     | —       |
-| **GPIO2**  | —       |
-| **5V**     | —       |
-| **GPIO3**  | —       |
-| **GND**    | —       |
-| **GPIO4**  | —       |
-| **GPIO14** | —       |
-| **GND**    | —       |
-| **GPIO15** | —       |
-| **GPIO17** | —       |
-| **GPIO18** | —       |
-| **GPIO27** | —       |
-| **GND**    | —       |
-| **GPIO22** | —       |
-| **GPIO23** | —       |
-| **3V3**    | —       |
-| **GPIO24** | —       |
-| **GPIO10** | —       |
-| **GND**    | —       |
-| **GPIO9**  | —       |
-| **GPIO25** | —       |
-| **GPIO11** | —       |
-| **GPIO8**  | —       |
-| **GND**    | —       |
-| **GPIO7**  | —       |
-| **ID_SD**  | —       |
-| **ID_SC**  | —       |
-| **GPIO5**  | —       |
-| **GND**    | —       |
-| **GPIO6**  | —       |
-| **GPIO12** | —       |
-| **GPIO13** | —       |
-| **GND**    | —       |
-| **GPIO19** | —       |
-| **GPIO16** | —       |
-| **GPIO26** | —       |
-| **GPIO20** | —       |
-| **GND**    | —       |
-| **GPIO21** | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">5V</span></li>
+<li><span class="pin-name">GPIO2</span></li>
+<li><span class="pin-name">5V</span></li>
+<li><span class="pin-name">GPIO3</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">GPIO4</span></li>
+<li><span class="pin-name">GPIO14</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">GPIO15</span></li>
+<li><span class="pin-name">GPIO17</span></li>
+<li><span class="pin-name">GPIO18</span></li>
+<li><span class="pin-name">GPIO27</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">GPIO22</span></li>
+<li><span class="pin-name">GPIO23</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">GPIO24</span></li>
+<li><span class="pin-name">GPIO10</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">GPIO9</span></li>
+<li><span class="pin-name">GPIO25</span></li>
+<li><span class="pin-name">GPIO11</span></li>
+<li><span class="pin-name">GPIO8</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">GPIO7</span></li>
+<li><span class="pin-name">ID_SD</span></li>
+<li><span class="pin-name">ID_SC</span></li>
+<li><span class="pin-name">GPIO5</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">GPIO6</span></li>
+<li><span class="pin-name">GPIO12</span></li>
+<li><span class="pin-name">GPIO13</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">GPIO19</span></li>
+<li><span class="pin-name">GPIO16</span></li>
+<li><span class="pin-name">GPIO26</span></li>
+<li><span class="pin-name">GPIO20</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">GPIO21</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

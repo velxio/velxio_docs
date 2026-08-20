@@ -18,48 +18,48 @@ so it always matches what you can wire).
 
 ## Pins (40)
 
-| Pin      | Signals |
-| -------- | ------- |
-| **PB12** | —       |
-| **PB13** | —       |
-| **PB14** | —       |
-| **PB15** | —       |
-| **PA8**  | —       |
-| **PA9**  | —       |
-| **PA10** | —       |
-| **PA11** | —       |
-| **PA12** | —       |
-| **PA15** | —       |
-| **PB3**  | —       |
-| **PB4**  | —       |
-| **PB5**  | —       |
-| **PB6**  | —       |
-| **PB7**  | —       |
-| **PB8**  | —       |
-| **PB9**  | —       |
-| **5V**   | —       |
-| **GND**  | —       |
-| **3V3**  | —       |
-| **GND**  | —       |
-| **GND**  | —       |
-| **3V3**  | —       |
-| **NRST** | —       |
-| **PB11** | —       |
-| **PB10** | —       |
-| **PB1**  | —       |
-| **PB0**  | —       |
-| **PA7**  | —       |
-| **PA6**  | —       |
-| **PA5**  | —       |
-| **PA4**  | —       |
-| **PA3**  | —       |
-| **PA2**  | —       |
-| **PA1**  | —       |
-| **PA0**  | —       |
-| **PC15** | —       |
-| **PC14** | —       |
-| **PC13** | —       |
-| **VBAT** | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">PB12</span></li>
+<li><span class="pin-name">PB13</span></li>
+<li><span class="pin-name">PB14</span></li>
+<li><span class="pin-name">PB15</span></li>
+<li><span class="pin-name">PA8</span></li>
+<li><span class="pin-name">PA9</span></li>
+<li><span class="pin-name">PA10</span></li>
+<li><span class="pin-name">PA11</span></li>
+<li><span class="pin-name">PA12</span></li>
+<li><span class="pin-name">PA15</span></li>
+<li><span class="pin-name">PB3</span></li>
+<li><span class="pin-name">PB4</span></li>
+<li><span class="pin-name">PB5</span></li>
+<li><span class="pin-name">PB6</span></li>
+<li><span class="pin-name">PB7</span></li>
+<li><span class="pin-name">PB8</span></li>
+<li><span class="pin-name">PB9</span></li>
+<li><span class="pin-name">5V</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">NRST</span></li>
+<li><span class="pin-name">PB11</span></li>
+<li><span class="pin-name">PB10</span></li>
+<li><span class="pin-name">PB1</span></li>
+<li><span class="pin-name">PB0</span></li>
+<li><span class="pin-name">PA7</span></li>
+<li><span class="pin-name">PA6</span></li>
+<li><span class="pin-name">PA5</span></li>
+<li><span class="pin-name">PA4</span></li>
+<li><span class="pin-name">PA3</span></li>
+<li><span class="pin-name">PA2</span></li>
+<li><span class="pin-name">PA1</span></li>
+<li><span class="pin-name">PA0</span></li>
+<li><span class="pin-name">PC15</span></li>
+<li><span class="pin-name">PC14</span></li>
+<li><span class="pin-name">PC13</span></li>
+<li><span class="pin-name">VBAT</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

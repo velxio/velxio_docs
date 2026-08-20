@@ -19,3 +19,48 @@
 :root[data-theme="light"] {
   --sl-color-bg: #fdfdfd;
 }
+
+/* Board pin maps (boards/reference/*, emitted by scripts/gen-boards.mjs).
+   A one-row-per-pin table meant 85 rows of scrolling on the Mega — and 34 of
+   the 37 boards expose no per-pin signal data at all, so that table was one
+   dead column of em-dashes. A responsive grid fits the same pins in a few
+   rows and keeps the board's own pin order, which mirrors the art above. */
+.pin-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));
+  gap: 0.35rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cards carrying signal names need a little more room for the second line.
+   The signal words are short ("usart", "i2c", "analog, i2c"), so this only
+   has to clear the longest of them — going wider costs columns, and the Mega
+   has 85 pins to place. */
+.pin-grid.has-signals {
+  grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+}
+
+.pin-grid li {
+  margin: 0;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.35rem;
+  background: var(--sl-color-gray-6);
+}
+
+.pin-grid .pin-name {
+  font-family: var(--sl-font-mono, ui-monospace, monospace);
+  font-size: var(--sl-text-sm);
+  font-weight: 600;
+  color: var(--sl-color-white);
+}
+
+.pin-grid .pin-signals {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: var(--sl-text-xs);
+  line-height: 1.3;
+  color: var(--sl-color-gray-3);
+}

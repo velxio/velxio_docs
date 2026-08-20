@@ -16,22 +16,22 @@ so it always matches what you can wire).
 
 ## Pins (14)
 
-| Pin     | Signals |
-| ------- | ------- |
-| **D0**  | —       |
-| **D1**  | —       |
-| **D2**  | —       |
-| **D3**  | —       |
-| **D4**  | —       |
-| **D5**  | —       |
-| **D6**  | —       |
-| **D7**  | —       |
-| **D8**  | —       |
-| **D9**  | —       |
-| **D10** | —       |
-| **3V3** | —       |
-| **GND** | —       |
-| **5V**  | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">D0</span></li>
+<li><span class="pin-name">D1</span></li>
+<li><span class="pin-name">D2</span></li>
+<li><span class="pin-name">D3</span></li>
+<li><span class="pin-name">D4</span></li>
+<li><span class="pin-name">D5</span></li>
+<li><span class="pin-name">D6</span></li>
+<li><span class="pin-name">D7</span></li>
+<li><span class="pin-name">D8</span></li>
+<li><span class="pin-name">D9</span></li>
+<li><span class="pin-name">D10</span></li>
+<li><span class="pin-name">3V3</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">5V</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

@@ -16,16 +16,16 @@ so it always matches what you can wire).
 
 ## Pins (8)
 
-| Pin     | Signals |
-| ------- | ------- |
-| **VCC** | —       |
-| **PB2** | —       |
-| **PB1** | —       |
-| **PB0** | —       |
-| **PB5** | —       |
-| **PB3** | —       |
-| **PB4** | —       |
-| **GND** | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">VCC</span></li>
+<li><span class="pin-name">PB2</span></li>
+<li><span class="pin-name">PB1</span></li>
+<li><span class="pin-name">PB0</span></li>
+<li><span class="pin-name">PB5</span></li>
+<li><span class="pin-name">PB3</span></li>
+<li><span class="pin-name">PB4</span></li>
+<li><span class="pin-name">GND</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and

@@ -16,34 +16,34 @@ so it always matches what you can wire).
 
 ## Pins (26)
 
-| Pin        | Signals |
-| ---------- | ------- |
-| **VP**     | —       |
-| **VN**     | —       |
-| **EN**     | —       |
-| **GPIO34** | —       |
-| **GPIO35** | —       |
-| **GPIO32** | —       |
-| **GPIO33** | —       |
-| **GPIO25** | —       |
-| **GPIO26** | —       |
-| **GPIO27** | —       |
-| **GPIO14** | —       |
-| **GPIO12** | —       |
-| **GND**    | —       |
-| **GPIO13** | —       |
-| **GPIO15** | —       |
-| **GPIO2**  | —       |
-| **GPIO0**  | —       |
-| **GPIO4**  | —       |
-| **GPIO16** | —       |
-| **GPIO17** | —       |
-| **GPIO5**  | —       |
-| **GPIO18** | —       |
-| **GPIO23** | —       |
-| **GPIO19** | —       |
-| **GPIO22** | —       |
-| **3V**     | —       |
+<ul class="pin-grid">
+<li><span class="pin-name">VP</span></li>
+<li><span class="pin-name">VN</span></li>
+<li><span class="pin-name">EN</span></li>
+<li><span class="pin-name">GPIO34</span></li>
+<li><span class="pin-name">GPIO35</span></li>
+<li><span class="pin-name">GPIO32</span></li>
+<li><span class="pin-name">GPIO33</span></li>
+<li><span class="pin-name">GPIO25</span></li>
+<li><span class="pin-name">GPIO26</span></li>
+<li><span class="pin-name">GPIO27</span></li>
+<li><span class="pin-name">GPIO14</span></li>
+<li><span class="pin-name">GPIO12</span></li>
+<li><span class="pin-name">GND</span></li>
+<li><span class="pin-name">GPIO13</span></li>
+<li><span class="pin-name">GPIO15</span></li>
+<li><span class="pin-name">GPIO2</span></li>
+<li><span class="pin-name">GPIO0</span></li>
+<li><span class="pin-name">GPIO4</span></li>
+<li><span class="pin-name">GPIO16</span></li>
+<li><span class="pin-name">GPIO17</span></li>
+<li><span class="pin-name">GPIO5</span></li>
+<li><span class="pin-name">GPIO18</span></li>
+<li><span class="pin-name">GPIO23</span></li>
+<li><span class="pin-name">GPIO19</span></li>
+<li><span class="pin-name">GPIO22</span></li>
+<li><span class="pin-name">3V</span></li>
+</ul>
 
 Every pin above is clickable on the canvas — click one to start a
 [wire](/docs/circuit-editor/wiring/). Board-level behavior, quirks and
