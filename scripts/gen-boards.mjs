@@ -18,6 +18,13 @@
  * (../../../../assets/docs/...). Run prettier over the generated .md after
  * a run — the committed pages are formatted, this script's output is not.
  *
+ * An extras file must NOT paste example source by hand — that copy goes stale
+ * the moment somebody edits the example. Write `{{example:<slug>}}` (add
+ * `|python` for a MicroPython one) and the generator pulls the real sketch out
+ * of the running editor. Note the one-deploy lag that implies: the code comes
+ * from the app THIS BASE is serving, so an example edited but not yet deployed
+ * still shows its old text here — which is what a reader would see too.
+ *
  * Env: VELXIO_BASE (default https://vstaging.moontero.com — must serve a
  * pro build so the overlay board elements are registered too).
  */
@@ -107,6 +114,34 @@ const esc = s =>
     .replace(/\s+/g, " ")
     .trim();
 
+/** Pull an example's sketch straight out of the running editor.
+ *
+ *  The gallery data is bundled into the SPA — there is no endpoint for it, and
+ *  the gallery cards carry no slug — but /example/<slug> loads the sketch into
+ *  Monaco, and Monaco publishes its models on `window.monaco`. That is the one
+ *  place the real source is readable, so it is what the docs quote. */
+async function exampleCode(page, slug) {
+  await page.goto(`${BASE}/example/${slug}`, { waitUntil: "domcontentloaded" });
+  for (let i = 0; i < 30; i++) {
+    const code = await page.evaluate(
+      () => window.monaco?.editor?.getModels?.()[0]?.getValue?.() || ""
+    );
+    if (code.trim().length > 40) return code.replace(/\s+$/, "");
+    await page.waitForTimeout(1000);
+  }
+  throw new Error(`exampleCode: no sketch loaded for ${slug}`);
+}
+
+/** Replace every {{example:slug}} / {{example:slug|lang}} with a fenced block. */
+async function spliceExamples(page, text) {
+  const wanted = [...text.matchAll(/\{\{example:([a-z0-9-]+)(?:\|([a-z]+))?\}\}/g)];
+  for (const [token, slug, lang] of wanted) {
+    const code = await exampleCode(page, slug);
+    text = text.replace(token, "```" + (lang || "cpp") + "\n" + code + "\n```");
+  }
+  return text;
+}
+
 async function launch() {
   try {
     return await chromium.launch({ headless: true });
@@ -140,6 +175,27 @@ const page = await browser.newPage({
 });
 await page.goto(`${BASE}/`, { waitUntil: "domcontentloaded" });
 await page.waitForTimeout(9000); // bundle + overlay register the elements
+
+// Example sketches are read on their own page: the board page has the element
+// injected into a wiped document.body, and navigating away would lose it.
+const codePage = await browser.newPage({ viewport: { width: 1280, height: 720 } });
+if (process.env.VELXIO_SHOTS_EMAIL && process.env.VELXIO_SHOTS_PASSWORD) {
+  await codePage.goto(`${BASE}/`, { waitUntil: "domcontentloaded" });
+  await codePage.evaluate(
+    async c => {
+      await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(c),
+        credentials: "include",
+      });
+    },
+    {
+      email: process.env.VELXIO_SHOTS_EMAIL,
+      password: process.env.VELXIO_SHOTS_PASSWORD,
+    }
+  );
+}
 
 mkdirSync(IMG, { recursive: true });
 if (!only.length) rmSync(OUT, { recursive: true, force: true });
@@ -201,7 +257,8 @@ so it always matches what you can wire).
     // board page wants to know how to run something on it, and a 40-row pin
     // dump between them and the tutorial buries it.
     const extras = join(EXTRAS, `${kind}.md`);
-    if (existsSync(extras)) body += `\n${readFileSync(extras, "utf8").trim()}\n`;
+    if (existsSync(extras))
+      body += `\n${await spliceExamples(codePage, readFileSync(extras, "utf8").trim())}\n`;
 
     if (pins.length) {
       // A grid, not a table: only the three wokwi AVR boards populate

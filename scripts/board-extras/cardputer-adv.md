@@ -72,41 +72,7 @@ the editor workflow in more depth.
 
 The complete example is about forty lines:
 
-```cpp
-// M5Cardputer ADV — built-in LCD + keyboard (M5Cardputer library)
-#include <M5Cardputer.h>
-
-String line;
-
-void setup() {
-  auto cfg = M5.config();
-  M5Cardputer.begin(cfg, true);   // true = init the keyboard
-  M5Cardputer.Display.setRotation(1);          // landscape 240x135
-  M5Cardputer.Display.fillScreen(BLACK);
-  M5Cardputer.Display.setTextColor(GREEN, BLACK);
-  M5Cardputer.Display.setTextSize(2);
-  M5Cardputer.Display.setCursor(6, 6);
-  M5Cardputer.Display.print("Cardputer ADV");
-  M5Cardputer.Display.setTextColor(WHITE, BLACK);
-  M5Cardputer.Display.setCursor(6, 34);
-  M5Cardputer.Display.print("Type:");
-}
-
-void loop() {
-  M5Cardputer.update();
-  if (M5Cardputer.Keyboard.isChange() && M5Cardputer.Keyboard.isPressed()) {
-    Keyboard_Class::KeysState st = M5Cardputer.Keyboard.keysState();
-    for (auto c : st.word) line += c;
-    if (st.del && line.length()) line.remove(line.length() - 1);
-    if (st.enter) line = "";
-    M5Cardputer.Display.fillRect(6, 60, 228, 40, BLACK);
-    M5Cardputer.Display.setCursor(6, 66);
-    M5Cardputer.Display.setTextColor(CYAN, BLACK);
-    M5Cardputer.Display.print(line);
-  }
-  delay(5);
-}
-```
+{{example:cardputer-adv-hello}}
 
 Piece by piece:
 

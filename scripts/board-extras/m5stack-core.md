@@ -89,48 +89,7 @@ editor workflow in more depth.
 
 ## How the sketch works
 
-```cpp
-// M5Stack Core Basic — built-in LCD + 3 buttons (M5Unified)
-#include <M5Unified.h>
-
-void draw(int count) {
-  M5.Lcd.fillRect(10, 165, 300, 50, TFT_BLACK);
-  M5.Lcd.setTextColor(TFT_GREEN, TFT_BLACK);
-  M5.Lcd.setTextSize(3);
-  M5.Lcd.setCursor(10, 175);
-  M5.Lcd.printf("Count: %d", count);
-}
-
-int count = 0;
-
-void setup() {
-  auto cfg = M5.config();
-  // Force the Core Basic profile — QEMU can't run M5Unified's HW autodetect.
-  cfg.fallback_board = m5::board_t::board_M5Stack;
-  M5.begin(cfg);
-
-  M5.Lcd.setRotation(1);           // landscape 320x240
-  M5.Lcd.fillScreen(TFT_BLACK);
-  M5.Lcd.setTextColor(TFT_WHITE, TFT_BLACK);
-  M5.Lcd.setTextSize(3);
-  M5.Lcd.setCursor(10, 25);
-  M5.Lcd.print("Velxio x M5Stack");
-  M5.Lcd.setTextSize(2);
-  M5.Lcd.setCursor(10, 90);
-  M5.Lcd.print("Core Basic (ESP32)");
-  M5.Lcd.setCursor(10, 120);
-  M5.Lcd.print("Press BtnA / B / C");
-  draw(0);
-}
-
-void loop() {
-  M5.update();
-  if (M5.BtnA.wasPressed()) draw(++count);
-  if (M5.BtnB.wasPressed()) draw(count += 10);
-  if (M5.BtnC.wasPressed()) draw(count = 0);
-  delay(10);
-}
-```
+{{example:m5stack-core-hello}}
 
 Piece by piece:
 
