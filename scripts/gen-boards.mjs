@@ -3,18 +3,25 @@
  * Board reference generator: one page per board with the REAL board art
  * and the full pin map, both taken from the app's own web components.
  *
- *   node scripts/gen-boards.mjs
+ *   node scripts/gen-boards.mjs [kind ...]
  *
  * For every board kind, the script instantiates the same custom element
  * the canvas uses (BoardOnCanvas's mapping, frozen below), screenshots it
  * at 2x into src/assets/docs/boards/<kind>.png, reads its live `pinInfo`,
  * and emits src/content/docs/boards/reference/<kind>.md. Fully
- * regenerated per run — never edit the output by hand.
+ * regenerated per run — never edit the output by hand. With kinds as args,
+ * only those pages are regenerated and the rest are left untouched.
+ *
+ * Hand-written per-board guides live in scripts/board-extras/<kind>.md and
+ * are spliced into the generated page, so they survive regeneration. Asset
+ * paths inside an extras file are relative to the OUTPUT page
+ * (../../../../assets/docs/...). Run prettier over the generated .md after
+ * a run — the committed pages are formatted, this script's output is not.
  *
  * Env: VELXIO_BASE (default https://vstaging.moontero.com — must serve a
  * pro build so the overlay board elements are registered too).
  */
-import { globSync, mkdirSync, rmSync } from "node:fs";
+import { existsSync, globSync, mkdirSync, readFileSync, rmSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -23,6 +30,7 @@ import { chromium } from "playwright";
 const HERE = dirname(fileURLToPath(import.meta.url));
 const IMG = join(HERE, "..", "src", "assets", "docs", "boards");
 const OUT = join(HERE, "..", "src", "content", "docs", "boards", "reference");
+const EXTRAS = join(HERE, "board-extras");
 const BASE = process.env.VELXIO_BASE || "https://vstaging.moontero.com";
 
 const AR = "Arduino C++";
@@ -118,6 +126,13 @@ async function launch() {
   }
 }
 
+const only = process.argv.slice(2).filter(a => !a.startsWith("--"));
+for (const k of only)
+  if (!BOARDS[k]) {
+    console.error(`unknown board kind: ${k}`);
+    process.exit(1);
+  }
+
 const browser = await launch();
 const page = await browser.newPage({
   viewport: { width: 900, height: 900 },
@@ -127,12 +142,13 @@ await page.goto(`${BASE}/`, { waitUntil: "domcontentloaded" });
 await page.waitForTimeout(9000); // bundle + overlay register the elements
 
 mkdirSync(IMG, { recursive: true });
-rmSync(OUT, { recursive: true, force: true });
+if (!only.length) rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 
 let ok = 0;
 const failed = [];
 for (const [kind, def] of Object.entries(BOARDS)) {
+  if (only.length && !only.includes(kind)) continue;
   try {
     const info = await page.evaluate(
       ({ tag, attrs }) => {
@@ -181,6 +197,12 @@ so it always matches what you can wire).
 **Family:** [${FAMILY_LABEL[def.family]}](/docs/boards/${def.family}/) ·
 **Languages:** ${def.langs.join(", ")}
 `;
+    // Hand-written guide, spliced ABOVE the pin table: a reader opening a
+    // board page wants to know how to run something on it, and a 40-row pin
+    // dump between them and the tutorial buries it.
+    const extras = join(EXTRAS, `${kind}.md`);
+    if (existsSync(extras)) body += `\n${readFileSync(extras, "utf8").trim()}\n`;
+
     if (pins.length) {
       body += `\n## Pins (${pins.length})\n\n| Pin | Signals |\n| --- | --- |\n`;
       for (const p of pins)

@@ -79,10 +79,15 @@ async function login(page) {
 }
 
 /** The news/announcement overlay opens over the toolbar on fresh sessions
- *  and swallows clicks. Presentational only — safe to remove. */
+ *  and swallows clicks; the GitHub star banner drifts in a few seconds later
+ *  and covers the bottom-right corner (the serial monitor). Both are
+ *  presentational — safe to remove. The star banner is on a timer, so call
+ *  this again before any shot taken well after the page settles. */
 async function dismissOverlays(page) {
   await page.evaluate(() => {
-    for (const el of document.querySelectorAll(".velxio-news-overlay"))
+    for (const el of document.querySelectorAll(
+      ".velxio-news-overlay, .gh-star-banner"
+    ))
       el.remove();
   });
 }
@@ -537,6 +542,81 @@ const SCENES = {
       await page.waitForTimeout(1200);
       await shot(page, `ai/mode-${mode.toLowerCase()}`, { clip });
     }
+  },
+
+  /** M5 Cardputer ADV walkthrough for its board reference page: the gallery
+   *  filtered to the board, the hello example loaded, running, and echoing
+   *  typed keys. Consumed by scripts/board-extras/cardputer-adv.md. */
+  "boards/cardputer-adv": async page => {
+    // Gallery, filtered through the search box the docs tell readers to use.
+    await page.goto(`${BASE}/examples`, { waitUntil: "domcontentloaded" });
+    await page.waitForTimeout(4000);
+    await dismissOverlays(page);
+    await page.locator("input.examples-search-input").fill("cardputer");
+    await page.waitForTimeout(1500);
+    await shot(page, "boards/cardputer-adv-gallery");
+
+    const simLog = [];
+    page.on("console", m => {
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text()))
+        simLog.push(m.text());
+    });
+    await loadExample(page, "cardputer-adv-hello");
+    await shot(page, "boards/cardputer-adv-editor");
+
+    await clickRun(page);
+    await waitForSim(page, simLog);
+    await page.waitForTimeout(12000); // guest boot + title screen draw
+    await dismissOverlays(page); // star banner lands over the serial monitor
+    await shot(page, "boards/cardputer-adv-running");
+
+    // Focus the board so it owns the keyboard, then type — the emulated
+    // TCA8418 turns real keystrokes into matrix presses.
+    await page.locator("velxio-cardputer-adv").click();
+    await page.waitForTimeout(800);
+    await page.keyboard.type("hello velxio", { delay: 200 });
+    await page.waitForTimeout(1500);
+    await dismissOverlays(page);
+
+    // Close-up: at 100% the 240x135 LCD is downscaled to ~100x60 and the
+    // echoed text — the whole point of this shot — turns to mush. Zoom in
+    // while the board still fits; each click is 1.1x anchored at the pane
+    // corner, so the board drifts and a fixed step count would push it
+    // half-off. Measure after every step and back off once it overflows.
+    //
+    // Measure against .canvas-content, the overflow:hidden box that actually
+    // clips the board — .simulator-panel also spans the output console, so
+    // fitting inside THAT still let the board slide under the console.
+    const pane = await page.locator(".canvas-content").boundingBox();
+    for (let i = 0; i < 8; i++) {
+      await page.locator('button[title="Zoom in"]').click();
+      await page.waitForTimeout(400);
+      const b = await page.locator("velxio-cardputer-adv").boundingBox();
+      const fits =
+        b &&
+        b.x >= pane.x &&
+        b.y >= pane.y &&
+        b.x + b.width <= pane.x + pane.width &&
+        b.y + b.height <= pane.y + pane.height;
+      if (!fits) {
+        await page.locator('button[title="Zoom out"]').click();
+        await page.waitForTimeout(400);
+        break;
+      }
+    }
+    const b = await page.locator("velxio-cardputer-adv").boundingBox();
+    await shot(page, "boards/cardputer-adv-typing", {
+      clip: {
+        x: Math.round(Math.max(b.x, pane.x)),
+        y: Math.round(Math.max(b.y, pane.y)),
+        width: Math.round(
+          Math.min(b.x + b.width, pane.x + pane.width) - Math.max(b.x, pane.x)
+        ),
+        height: Math.round(
+          Math.min(b.y + b.height, pane.y + pane.height) - Math.max(b.y, pane.y)
+        ),
+      },
+    });
   },
 };
 
