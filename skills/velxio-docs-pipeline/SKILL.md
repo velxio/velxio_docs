@@ -93,13 +93,34 @@ board page wants to run something, not read 40 pin rows first). Asset paths
 inside an extras file are relative to the OUTPUT page, so four levels up:
 `../../../../assets/docs/boards/<shot>.png`.
 
-`boards/reference/cardputer-adv.md` is the worked example — what the
-emulator implements, a four-step first-run tutorial with a screenshot per
-step, the sketch read line by line, and every gallery example listed. Its
-screenshots come from the `boards/cardputer-adv` scene in `shots.mjs`.
-Example slugs and counts must be checked against the overlay source
-(`pro/frontend/src/pro/boards/<vendor>/examples-*.ts`) rather than the
-scraped `gallery-index.json`, which goes stale.
+All 37 boards have one. `cardputer-adv` and `m5stack-core` are the deep
+ones — a four-step first-run tutorial with a screenshot per step, from the
+`boards/<kind>` scenes in `shots.mjs`; the rest are a short "About this
+board" plus "Start here" pointing at that board's real starter example.
+
+**Never paste example source into an extras file.** Write
+`{{example:<slug>}}` (add `|python` for MicroPython) and the generator pulls
+the sketch out of the running editor via `window.monaco` — the gallery data
+is bundled into the SPA with no endpoint, and the cards carry no slug, so
+that is the only readable copy. It means a one-deploy lag: the code shown is
+the code the deployed app serves, which is also what a reader sees.
+
+**Verify example slugs against source, never by fetching them.**
+`/example/<anything>` returns 200 because `/example` is an SPA route, so a
+curl check proves nothing. Match them against the `id:` fields in
+`velxio/frontend/src/data/examples*.ts` and
+`pro/frontend/src/pro/boards/<vendor>/examples-*.ts`; the scraped
+`gallery-index.json` goes stale and its slugs come from thumbnail filenames,
+which not every example has.
+
+### Board art goes stale silently
+
+`velxio-prod/scripts/check-docs-board-art.py` compares each board's element
+commit date against its art's, and is the thing that would have caught the
+M5Stack Core shipping four days of old art. Run it before a docs release.
+Do NOT try to detect this by diffing the PNGs: re-rendering the same element
+moves font metrics a subpixel, so 15 of 37 images come back byte-different
+with no visual change.
 
 ## Translation pipeline (ported from velxio_blog)
 
