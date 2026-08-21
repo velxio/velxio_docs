@@ -11,26 +11,28 @@ Two board details that surprise people, on real hardware as much as here:
 
 - **The user LED is not a chip pin.** It hangs off the RM2 module's `WL_GPIO0`
   — `LED_BUILTIN` in Arduino, `Pin('LEDW')` in MicroPython — so it is driven by
-  a command over the module's SPI bus rather than a GPIO write.
+  a command over the module's SPI bus rather than a GPIO write. It lights here
+  all the same.
 - **`GP26`–`GP28` are plain digital pins.** On the RP2350B the ADC lives on
   `GP40`–`GP47`, which Pimoroni brings out as `A0`–`A3`.
 
-What runs here: GPIO, UART, USB serial, I2C, SPI, ADC, timers, and the BOOT
-button. Not emulated: the 8 MB PSRAM, and the RM2 beyond its bring-up — the
-init handshake and the first commands are real round-trips (`WiFi.macAddress()`
-returns the chip's MAC), then the module stops answering, so `WiFi.begin()`
-never connects and `LED_BUILTIN` stops toggling after the first write. Put LEDs
-on a real pin such as `GP2`, and for a wireless project use the
-[Pico W](/docs/boards/reference/pi-pico-w/), which has Wi-Fi here.
+What runs here: GPIO, UART, USB serial, I2C, SPI, ADC, timers, the BOOT button
+and **WiFi** — the CYW43439 inside the RM2 is emulated register by register, so
+`WiFi.begin()` associates with Velxio's virtual access point (`Velxio-GUEST`,
+open), gets 10.13.37.42 and can make real HTTP requests through Velxio's
+network bridge. Not emulated: the 8 MB PSRAM, Bluetooth, and
+`WiFi.scanNetworks()` (it reports 0 networks even though joining works).
 
 ## Start here
 
+- [Onboard LED](https://velxio.dev/example/pimoroni-pico-plus-2w-onboard-led) —
+  Pimoroni's `onboard_led.py`: blinks the user LED on the RM2.
+- [Who is in space](https://velxio.dev/example/pimoroni-pico-plus-2w-astronauts)
+  — their `astronauts.py`: joins WiFi and fetches a real HTTP response, live
+  from open-notify.org. (Their `catfacts.py` is not shipped: catfact.ninja now
+  redirects to HTTPS, and TLS is out of reach for the emulated chip.)
 - [BOOT as user button](https://velxio.dev/example/pimoroni-pico-plus-2w-button)
-  — Pimoroni's own `button.py` for this board, ported to Arduino: hold BOOT
-  (GP45) and the LED comes on.
+  — their `button.py`: hold BOOT (GP45) and the LED comes on.
 - [Qw/ST breakout bus](https://velxio.dev/example/pimoroni-pico-plus-2w-qwst-i2c)
   — scans the Qwiic connector on `GP4`/`GP5` and reads the demo I2C devices,
   the pattern Pimoroni's breakout examples use.
-- [Blink + Serial](https://velxio.dev/example/pimoroni-pico-plus-2w-blink) —
-  an LED and serial output, enough to confirm the toolchain and the console in
-  one run.
