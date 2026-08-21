@@ -16,12 +16,13 @@ Two board details that surprise people, on real hardware as much as here:
 - **`GP26`–`GP28` are plain digital pins.** On the RP2350B the ADC lives on
   `GP40`–`GP47`, which Pimoroni brings out as `A0`–`A3`.
 
-What runs here: GPIO, UART, USB serial, I2C, SPI, ADC, timers, the BOOT button
-and **WiFi** — the CYW43439 inside the RM2 is emulated register by register, so
-`WiFi.begin()` associates with Velxio's virtual access point (`Velxio-GUEST`,
-open), gets 10.13.37.42 and can make real HTTP requests through Velxio's
-network bridge. Not emulated: the 8 MB PSRAM, Bluetooth, and
-`WiFi.scanNetworks()` (it reports 0 networks even though joining works).
+What runs here: GPIO, UART, USB serial, I2C, SPI, ADC, timers, the BOOT button,
+the **8 MB PSRAM** (`pmalloc()` returns real memory in the XIP window at
+`0x11000000`) and **WiFi** — the CYW43439 inside the RM2 is emulated register by
+register, so `WiFi.begin()` associates with Velxio's virtual access point
+(`Velxio-GUEST`, open), gets 10.13.37.42 and can make real HTTP requests through
+Velxio's network bridge. Not emulated: Bluetooth, and `WiFi.scanNetworks()` (it
+reports 0 networks even though joining works).
 
 ## Start here
 
@@ -33,6 +34,8 @@ network bridge. Not emulated: the 8 MB PSRAM, Bluetooth, and
   redirects to HTTPS, and TLS is out of reach for the emulated chip.)
 - [BOOT as user button](https://velxio.dev/example/pimoroni-pico-plus-2w-button)
   — their `button.py`: hold BOOT (GP45) and the LED comes on.
+- [The 8 MB PSRAM](https://velxio.dev/example/pimoroni-pico-plus-2w-psram) —
+  allocates a megabyte outside the chip's own 520 KB of SRAM and verifies it.
 - [Qw/ST breakout bus](https://velxio.dev/example/pimoroni-pico-plus-2w-qwst-i2c)
   — scans the Qwiic connector on `GP4`/`GP5` and reads the demo I2C devices,
   the pattern Pimoroni's breakout examples use.
