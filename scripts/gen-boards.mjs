@@ -94,7 +94,10 @@ const BOARDS = {
   "xiao-esp32c6":       { tag: "velxio-xiao-board", attrs: { variant: "esp32c6" }, title: "XIAO ESP32C6", family: "pro-boards", langs: ESP_LANGS },
   "xiao-rp2040":        { tag: "velxio-xiao-board", attrs: { variant: "rp2040" }, title: "XIAO RP2040", family: "pro-boards", langs: [AR, MPY] },
   "galactic-unicorn":       { tag: "velxio-galactic-unicorn",       title: "Pimoroni Galactic Unicorn", family: "pro-boards", langs: [AR, MPY] },
-  "pimoroni-pico-plus-2w":  { tag: "velxio-pimoroni-pico-plus-2w",  title: "Pimoroni Pico Plus 2 W", family: "pro-boards", langs: [AR, MPY] },
+  // Arduino only: the board runs the RISC-V arduino-pico target; the RP2350
+  // MicroPython path is wired for the Badger, not for this kind (no
+  // supportsMicroPython in its ProBoardDef, so the mode selector never shows).
+  "pimoroni-pico-plus-2w":  { tag: "velxio-pimoroni-pico-plus-2w",  title: "Pimoroni Pico Plus 2 W", family: "pro-boards", langs: [AR] },
 };
 
 const FAMILY_LABEL = {
