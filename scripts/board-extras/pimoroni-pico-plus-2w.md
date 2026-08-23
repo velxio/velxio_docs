@@ -25,8 +25,9 @@ the **8 MB PSRAM** (`pmalloc()` returns real memory in the XIP window at
 `0x11000000`) and **WiFi** — the CYW43439 inside the RM2 is emulated register by
 register, so `WiFi.begin()` associates with Velxio's virtual access point
 (`Velxio-GUEST`, open), gets 10.13.37.42 and can make real HTTP requests through
-Velxio's network bridge. Not emulated: Bluetooth, and `WiFi.scanNetworks()` (it
-reports 0 networks even though joining works).
+Velxio's network bridge. `WiFi.scanNetworks()` finds it too — one network,
+`Velxio-GUEST` on channel 6, open, around -40 dBm, which is everything that is
+on the air here. Not emulated: Bluetooth.
 
 ## Start here
 

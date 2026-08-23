@@ -29,16 +29,21 @@ Two board details that surprise people, on real hardware as much as here:
   — `LED_BUILTIN` in Arduino, `Pin('LEDW')` in MicroPython — so it is driven by
   a command over the module's SPI bus rather than a GPIO write. It lights here
   all the same.
-- **`GP26`–`GP28` are plain digital pins.** On the RP2350B the ADC lives on
-  `GP40`–`GP47`, which Pimoroni brings out as `A0`–`A3`.
+- **The pads marked 26, 27 and 28 are two GPIOs each.** The RP2350B's ADC lives
+  on `GP40`–`GP47`, nowhere near the Pico footprint, so Pimoroni tied
+  `GP26`+`GP40`, `GP27`+`GP41` and `GP28`+`GP42` together through a 1 kΩ
+  resistor and silked each pad with both names — `26 / A0` and so on. That is
+  why `analogRead(A0)` works and `analogRead(26)` returns 0: `A0` _is_ `GP40`.
+  There is no `A3` pad; `GP43` is the on-board VSYS monitor.
 
 What runs here: GPIO, UART, USB serial, I2C, SPI, ADC, timers, the BOOT button,
 the **8 MB PSRAM** (`pmalloc()` returns real memory in the XIP window at
 `0x11000000`) and **WiFi** — the CYW43439 inside the RM2 is emulated register by
 register, so `WiFi.begin()` associates with Velxio's virtual access point
 (`Velxio-GUEST`, open), gets 10.13.37.42 and can make real HTTP requests through
-Velxio's network bridge. Not emulated: Bluetooth, and `WiFi.scanNetworks()` (it
-reports 0 networks even though joining works).
+Velxio's network bridge. `WiFi.scanNetworks()` finds it too — one network,
+`Velxio-GUEST` on channel 6, open, around -40 dBm, which is everything that is
+on the air here. Not emulated: Bluetooth.
 
 ## Start here
 
@@ -52,6 +57,8 @@ reports 0 networks even though joining works).
   — their `button.py`: hold BOOT (GP45) and the LED comes on.
 - [The 8 MB PSRAM](https://velxio.dev/example/pimoroni-pico-plus-2w-psram) —
   allocates a megabyte outside the chip's own 520 KB of SRAM and verifies it.
+- [Analog in on A0](https://velxio.dev/example/pimoroni-pico-plus-2w-analog) —
+  a potentiometer on the pad silked `26 / A0`, read as `A0`.
 - [Qw/ST breakout bus](https://velxio.dev/example/pimoroni-pico-plus-2w-qwst-i2c)
   — scans the Qwiic connector on `GP4`/`GP5` and reads the demo I2C devices,
   the pattern Pimoroni's breakout examples use.
