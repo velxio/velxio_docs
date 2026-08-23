@@ -86,6 +86,7 @@ const BOARDS = {
   "raspberry-pi-5": { tag: "velxio-raspberry-pi-5", title: "Raspberry Pi 5", family: "raspberry-pi", langs: ["Python on Linux"], pro: true },
 
   "badger-2350":     { tag: "velxio-badger-2350",     title: "Pimoroni Badger 2350", family: "pro-boards", langs: [AR, MPY] },
+  "stellar-unicorn": { tag: "velxio-stellar-unicorn", title: "Pimoroni Stellar Unicorn", family: "pro-boards", langs: [AR] },
   "cardputer-adv":   { tag: "velxio-cardputer-adv",   title: "M5 Cardputer ADV", family: "pro-boards", langs: ESP_LANGS },
   "m5stack-core":    { tag: "velxio-m5stack-core",    title: "M5Stack Core", family: "pro-boards", langs: ESP_LANGS },
   "esp32-c6":        { tag: "velxio-esp32-c6-devkit", title: "ESP32-C6 DevKit", family: "pro-boards", langs: ESP_LANGS },
