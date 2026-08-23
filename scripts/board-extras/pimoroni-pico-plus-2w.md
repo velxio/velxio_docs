@@ -20,7 +20,8 @@ Two board details that surprise people, on real hardware as much as here:
   why `analogRead(A0)` works and `analogRead(26)` returns 0: `A0` *is* `GP40`.
   There is no `A3` pad; `GP43` is the on-board VSYS monitor.
 
-What runs here: GPIO, UART, USB serial, I2C, SPI, ADC, timers, the BOOT button,
+What runs here: GPIO, UART, USB serial, I2C, SPI, ADC — including the on-die
+temperature sensor, so `analogReadTemp()` returns a steady 27 °C — timers, the BOOT button,
 the **8 MB PSRAM** (`pmalloc()` returns real memory in the XIP window at
 `0x11000000`) and **WiFi** — the CYW43439 inside the RM2 is emulated register by
 register, so `WiFi.begin()` associates with Velxio's virtual access point
