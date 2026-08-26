@@ -591,6 +591,78 @@ const SCENES = {
     }
   },
 
+  /** The "Connect AI agent" modal: per-project token + CLI setup for driving
+   *  a saved project from Claude Code / Codex over MCP. Needs a PRO shots
+   *  account. The minted token is intercepted and replaced with a placeholder,
+   *  and the endpoint shown as the production URL, so no live secret or staging
+   *  host lands in the committed image. Creates a throwaway project and revokes
+   *  its tokens afterwards, so the scene is self-contained and repeatable. */
+  "ai/connect-agent": async page => {
+    // The modal connects to a SAVED project — create a fresh one.
+    const pid = await page.evaluate(async () => {
+      const r = await fetch("/api/projects/", {
+        method: "POST",
+        credentials: "include",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          name: "Connect AI agent demo",
+          board_type: "arduino-uno",
+          components_json: "[]",
+          wires_json: "[]",
+          boards_json: "[]",
+          code: "void setup() {}\nvoid loop() {}\n",
+        }),
+      });
+      return (await r.json()).id;
+    });
+
+    // Rewrite the minted-token response the browser sees: placeholder token so
+    // no live secret is captured, and the production endpoint so the command
+    // reads the way a real user's will.
+    await page.route("**/api/pro/mcp/connections", async route => {
+      if (route.request().method() === "POST") {
+        const resp = await route.fetch();
+        const body = await resp.json();
+        body.token = "vlxmcp_" + "0123456789abcdef".repeat(2) + "0a1b2c3d";
+        body.endpoint = "https://velxio.dev/api/pro/mcp";
+        await route.fulfill({ response: resp, json: body });
+      } else {
+        await route.continue();
+      }
+    });
+
+    await page.goto(`${BASE}/project/${pid}`, { waitUntil: "domcontentloaded" });
+    await page.waitForTimeout(6000);
+    await dismissOverlays(page);
+    await minimizeAi(page);
+
+    // Open the modal via its File-menu command (skips the dropdown nav).
+    await page.evaluate(id => {
+      window.dispatchEvent(
+        new CustomEvent("velxio-pro-connect-agent-prompt", {
+          detail: { projectId: id },
+        })
+      );
+    }, pid);
+    await page.waitForTimeout(1200);
+
+    // Generate the token so the command + setup steps render.
+    await page.locator(".pro-mcp-genrow button").first().click();
+    await page.waitForTimeout(1800);
+
+    await shot(page, "ai/connect-agent");
+    if (WANT_INVENTORY) await inventory(page, "connect-agent");
+
+    // Clean up: revoke every token minted for this throwaway project.
+    await page.evaluate(async id => {
+      await fetch(`/api/pro/mcp/connections/revoke-all?project_id=${id}`, {
+        method: "POST",
+        credentials: "include",
+      });
+    }, pid);
+    await page.unroute("**/api/pro/mcp/connections");
+  },
+
   /** M5 Cardputer ADV walkthrough for its board reference page: the gallery
    *  filtered to the board, the hello example loaded, running, and echoing
    *  typed keys. Consumed by scripts/board-extras/cardputer-adv.md. */
