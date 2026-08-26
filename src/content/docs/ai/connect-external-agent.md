@@ -26,7 +26,26 @@ in-app [Agent](/docs/ai/agent-mode/) and [Tutor](/docs/ai/tutor-mode/) modes
 instead. See [plans](/docs/getting-started/plans/).
 :::
 
-## Connect in three steps
+## The quickest way: the Claude Code plugin
+
+If you use Claude Code, install the plugin — it brings the tools, a
+`/velxio:build` command and the wiring know-how in one step:
+
+```
+/plugin marketplace add velxio/velxio-plugin
+/plugin install velxio@velxio
+```
+
+Then generate a token (steps below), export it, and restart Claude Code:
+
+```bash
+export VELXIO_MCP_TOKEN="vlxmcp_...your token..."
+```
+
+Now `/velxio:build an HC-SR04 that prints distance over serial` does the whole
+job. `/velxio:check` validates and compiles what is already there.
+
+## Connect manually, in three steps
 
 1. **Save the project first.** The agent connects to a saved project, so give
    it a name and save it if you haven't yet.
@@ -66,8 +85,21 @@ the sketch, and validate the circuit. It also has Velxio's per-component
 **skills** — exact pin names, wiring recipes and simulator gotchas — so it wires
 an SSD1306 or a DHT22 correctly instead of guessing.
 
-Compiling and running the simulation still happen in your browser tab: when the
-agent is done, press **Run** in Velxio to see it work.
+It can also **compile**: `compile_sketch` builds the firmware on the Velxio
+server and hands the agent the compiler output, so it can fix its own mistakes
+instead of telling you code that does not build. Running the simulation and
+reading the serial monitor still need the live emulator in your tab — when the
+build is green, press **Run** in Velxio.
+
+## Signing in without a token
+
+Clients that speak OAuth (Claude Code among them) can connect with your Velxio
+account instead of a pasted token: point them at `https://velxio.dev/api/pro/mcp`
+with no credentials, and they will discover the login flow, open a browser, and
+ask you to approve. The consent screen names the client and the account, and the
+access token it receives is bound to Velxio's MCP endpoint only.
+
+Tokens remain the simplest path, and nothing about them changes.
 
 ## Security
 
