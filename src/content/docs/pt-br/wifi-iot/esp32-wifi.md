@@ -5,10 +5,10 @@ sidebar:
   order: 2
 ---
 
-As placas ESP32 no Velxio vêm com **WiFi funcional**: o rádio emulado enxerga
-um ponto de acesso aberto chamado **`Velxio-GUEST`**, associa-se, obtém um
-endereço IP via DHCP e alcança a internet através do gateway NAT do emulador.
-O mesmo sketch exato roda no chip físico.
+As placas ESP32 no Velxio vêm com **WiFi funcional**: o rádio emulado vê
+um ponto de acesso aberto chamado **`Velxio-GUEST`**, associa, obtém um
+endereço IP via DHCP e alcança a internet através do gateway NAT do
+emulador. O mesmo sketch exato roda no chip físico.
 
 ## Arduino
 
@@ -26,7 +26,9 @@ void setup() {
 ```
 
 O monitor serial mostra o familiar diálogo de inicialização `wifi:connected` e
-a concessão DHCP — porque _é_ a pilha WiFi real em execução.
+a concessão DHCP — porque _é_ a pilha WiFi real em execução:
+
+![Monitor serial durante uma conexão WiFi](../../../../assets/docs/wifi-iot/serial-wifi.png)
 
 ## MicroPython
 
@@ -43,9 +45,58 @@ while not sta.isconnected():
 print("Connected, IP:", sta.ifconfig()[0])
 ```
 
-## O que você pode acessar
+## Suas próprias redes: pontos de acesso personalizados
 
-Uma vez conectado, sockets TCP/UDP padrão, clientes HTTP e bibliotecas MQTT
+Com um plano Maker, você não fica limitado às redes de demonstração integradas: adicione
+uma parte **WiFi Access Point** (Ponto de Acesso WiFi) ao canvas (procure por "WiFi Access Point" no
+seletor de partes) e o rádio emulado transmitirá **seu SSID** em vez disso. O
+sketch então se conecta à rede que ele realmente nomeia:
+
+```cpp
+WiFi.begin("HomeNet", "");   // the SSID on your Access Point part
+```
+
+A parte não tem pinos — não é um componente elétrico, é espaço aéreo.
+Assim que um projeto contém pelo menos uma parte de ponto de acesso, as redes
+integradas ficam silenciosas: uma varredura vê exatamente o que o canvas define. Adicione
+várias partes para exercitar uma interface de seleção de rede; cada uma carrega seu próprio
+canal e intensidade de sinal, e varreduras repetidas variam alguns dB da mesma forma
+que as reais fazem.
+
+Duas propriedades valem a pena conhecer:
+
+- **Internet** — desligue-a e a rede fica isolada: a placa
+  associa e obtém um IP via DHCP, mas nada é roteado para fora. Esse é o
+  cenário de provisionamento / portal cativo, agora testável no simulador.
+- **Password** (Senha) — armazenada com a parte e exibida em seu cartão, mas a
+  rede ainda transmite autenticação aberta até que a emulação WPA2 seja implementada.
+  Sketches que passam uma senha conectam-se mesmo assim.
+
+O firmware enviado também se beneficia: um binário compilado em outro lugar conecta-se à
+rede que ele nomeia, desde que uma parte de ponto de acesso transmita esse
+SSID — sem necessidade de recompilação.
+
+Experimente com um clique: o exemplo da galeria **Connect to your own WiFi
+network** (Conecte-se à sua própria rede WiFi) abre com a parte já no canvas.
+
+## O painel WiFi
+
+O ícone WiFi na barra de ferramentas é um botão dividido. O ícone em si mantém sua
+ação de um clique — com um IP, ele abre o servidor web da placa através do
+gateway IoT. A pequena seta ao lado dele abre o **painel WiFi** (WiFi panel):
+
+- as redes atualmente no ar (seus pontos de acesso, ou o conjunto
+  integrado), com a associada marcada;
+- o estado de conexão e o IP da placa;
+- **Download PCAP** — o tráfego 802.11 da execução como um arquivo de captura que
+  o Wireshark abre diretamente (quadros de gerenciamento, DHCP, DNS, TCP, com
+  carimbos de tempo simulados). Nada é enviado; o arquivo é gerado em
+  seu navegador;
+- o pareamento do [gateway de rede local](/docs/pt-br/wifi-iot/local-gateway/).
+
+## O que você pode alcançar
+
+Uma vez conectado, soquetes TCP/UDP padrão, clientes HTTP e bibliotecas MQTT
 funcionam contra **servidores reais na internet** — brokers MQTT públicos, APIs
 REST, NTP. Veja [MQTT e HTTP](/docs/pt-br/wifi-iot/mqtt-http/) para projetos
 completos.
@@ -53,7 +104,7 @@ completos.
 ## Quais placas
 
 O WiFi está disponível em toda a família ESP32 simulada — as placas ESP32
-clássicas, ESP32-S3 e ESP32-C3 (e suas variantes XIAO/Nano). O estado de
-propaganda Bluetooth também é reportado para sketches que inicializam BLE.
-
------ END PAGE -----
+clássicas, ESP32-S3, ESP32-C3, ESP32-C6 e ESP32-C5 (e suas variantes XIAO / Nano /
+M5Stack). O estado de publicidade Bluetooth também é relatado para
+sketches que inicializam BLE.
+```
