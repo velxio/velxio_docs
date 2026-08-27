@@ -47,58 +47,66 @@ print("Connected, IP:", sta.ifconfig()[0])
 
 ## Sus propias redes: puntos de acceso personalizados
 
-Con un plan Maker no está limitado a las redes de demostración integradas: agregue
-una parte de **Punto de Acceso WiFi** al lienzo (busque "WiFi Access Point" en el
-selector de partes) y la radio emulada transmitirá **su SSID** en su lugar. El
-sketch se conecta entonces a la red que realmente nombra:
+Con un plan Maker no está limitado a las redes de demostración integradas: añada
+una pieza de **Punto de Acceso WiFi** al lienzo (busque "WiFi Access Point" en el
+selector de piezas) y la radio emulada transmitirá **su SSID** en su lugar. El
+sketch se conectará entonces a la red que realmente nombra:
 
 ```cpp
 WiFi.begin("HomeNet", "");   // the SSID on your Access Point part
 ```
 
-La parte no tiene pines: no es un componente eléctrico, es espacio aéreo.
-Tan pronto como un proyecto contiene al menos una parte de punto de acceso, las redes
-integradas se silencian: un escaneo ve exactamente lo que define el lienzo. Agregue
-varias partes para probar una interfaz de selección de red; cada una tiene su propio
-canal y potencia de señal, y los escaneos repetidos varían unos pocos dB como lo hacen
-los reales.
+![Una pieza de Punto de Acceso WiFi en el lienzo junto a un ESP32, transmitiendo HomeNet en el canal 6](../../../../assets/docs/wifi-iot/access-point-part.png)
 
-Dos propiedades vale la pena conocer:
+La pieza no tiene pines: no es un componente eléctrico, es espacio aéreo.
+En cuanto un proyecto contiene al menos una pieza de punto de acceso, las redes
+integradas se silencian: un escaneo ve exactamente lo que define el lienzo. Añada
+varias piezas para probar una interfaz de selección de red; cada una tiene su propio
+canal y potencia de señal, y los escaneos repetidos varían unos pocos dB como
+lo harían los reales.
 
-- **Internet** — desactívelo y la red se aísla: la placa
-  se asocia y obtiene una IP mediante DHCP, pero nada se enruta hacia afuera. Ese es el
+Dos propiedades merecen atención:
+
+- **Internet** — desactívela y la red quedará aislada: la placa
+  se asocia y obtiene una IP mediante DHCP, pero nada sale hacia el exterior. Ese es el
   escenario de aprovisionamiento / portal cautivo, ahora comprobable en el simulador.
-- **Password** — se almacena con la parte y se muestra en su tarjeta, pero la
-  red aún transmite autenticación abierta hasta que llegue la emulación WPA2.
+- **Password** — se guarda con la pieza y se muestra en su tarjeta, pero la
+  red sigue transmitiendo autenticación abierta hasta que llegue la emulación WPA2.
   Los sketches que pasan una contraseña se conectan de todos modos.
 
-El firmware cargado también se beneficia: un binario compilado en otro lugar se conecta a
-la red que nombre, siempre que una parte de punto de acceso transmita ese
-SSID — sin necesidad de recompilar.
+El firmware cargado también se beneficia: un binario compilado en otro lugar se
+conecta a la red que nombre, siempre que una pieza de punto de acceso transmita
+ese SSID — sin necesidad de recompilar.
+
+Cuando se ejecuta, el escaneo encuentra exactamente su red y la placa se une a ella:
+
+![Monitor serie: el escaneo solo lista HomeNet, luego la placa se conecta y obtiene la IP 10.13.37.42](../../../../assets/docs/wifi-iot/custom-ap-serial.png)
 
 Pruébelo con un clic: el ejemplo de la galería **Connect to your own WiFi
-network** se abre con la parte ya en el lienzo.
+network** se abre con la pieza ya en el lienzo.
 
 ## El panel WiFi
 
 El icono WiFi en la barra de herramientas es un botón dividido. El icono en sí mantiene su
 acción de un clic — con una IP abre el servidor web de la placa a través de la
-puerta de enlace IoT. La pequeña flecha junto a él abre el **panel WiFi**:
+puerta de enlace IoT. El pequeño indicador junto a él abre el **panel WiFi**:
+
+![El panel WiFi: redes en el aire con canal y señal, asociación e IP de la placa, Download PCAP y el emparejamiento de la puerta de enlace local](../../../../assets/docs/wifi-iot/wifi-panel.png)
 
 - las redes actualmente en el aire (sus puntos de acceso, o el conjunto
   integrado), con la asociada marcada;
-- el estado de conexión y la IP de la placa;
+- el estado de conexión e IP de la placa;
 - **Download PCAP** — el tráfico 802.11 de la ejecución como archivo de captura que
   Wireshark abre directamente (tramas de gestión, DHCP, DNS, TCP, con
-  marcas de tiempo de tiempo simulado). No se sube nada; el archivo se genera en
+  marcas de tiempo simuladas). No se sube nada; el archivo se genera en
   su navegador;
 - el emparejamiento de la [puerta de enlace de red local](/docs/es/wifi-iot/local-gateway/).
 
-## Lo que puede alcanzar
+## A qué puede acceder
 
 Una vez conectado, los sockets TCP/UDP estándar, los clientes HTTP y las bibliotecas MQTT
 funcionan contra **servidores reales en Internet** — brokers MQTT públicos, API
-REST, NTP. Consulte [MQTT y HTTP](/docs/es/wifi-iot/mqtt-http/) para proyectos
+REST, NTP. Consulte [MQTT y HTTP](/docs/es/wifi-iot/mqtt-http/) para ver proyectos
 completos.
 
 ## Qué placas
