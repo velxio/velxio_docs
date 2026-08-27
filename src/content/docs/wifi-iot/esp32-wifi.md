@@ -56,6 +56,8 @@ sketch then connects to the network it actually names:
 WiFi.begin("HomeNet", "");   // the SSID on your Access Point part
 ```
 
+![A WiFi Access Point part on the canvas next to an ESP32, broadcasting HomeNet on channel 6](../../../assets/docs/wifi-iot/access-point-part.png)
+
 The part has no pins — it is not an electrical component, it is airspace.
 As soon as a project contains at least one access point part, the built-in
 networks go silent: a scan sees exactly what the canvas defines. Add
@@ -84,6 +86,8 @@ network** opens with the part already on the canvas.
 The WiFi icon in the toolbar is a split button. The icon itself keeps its
 one-click action — with an IP it opens the board's web server through the
 IoT gateway. The small caret next to it opens the **WiFi panel**:
+
+![The WiFi panel: networks on the air with channel and signal, board association and IP, Download PCAP, and the local gateway pairing](../../../assets/docs/wifi-iot/wifi-panel.png)
 
 - the networks currently on the air (your access points, or the built-in
   set), with the associated one ticked;

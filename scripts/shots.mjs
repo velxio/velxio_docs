@@ -480,6 +480,77 @@ const SCENES = {
     });
   },
 
+  /** The custom WiFi Access Point part on the canvas (the gallery example
+   *  opens with it already placed, broadcasting HomeNet). */
+  "wifi-iot/access-point": async page => {
+    await loadExample(page, "esp32-custom-wifi-ap");
+    await page.waitForTimeout(1500);
+    await shot(page, "wifi-iot/access-point-part", {
+      clip: await clipOf(page, [".canvas-content"], 0),
+    });
+  },
+
+  /** The WiFi panel behind the badge caret: networks on the air, board
+   *  association, PCAP download, gateway pairing. */
+  "wifi-iot/panel": async page => {
+    await loadExample(page, "esp32-custom-wifi-ap");
+    await page.waitForTimeout(1500);
+    // The badge is a split button; its caret opens the panel.
+    await page.locator('span[title="WiFi panel"]').click();
+    await page.waitForTimeout(700);
+    await shot(page, "wifi-iot/wifi-panel", {
+      clip: await clipOf(page, ['[data-testid="local-gateway-panel"]'], 12),
+    });
+  },
+
+  /** The custom-AP example running: serial shows the scan finding exactly
+   *  the project network, then the join to HomeNet. */
+  "wifi-iot/custom-ap-running": async page => {
+    const simLog = [];
+    page.on("console", m => {
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text()))
+        simLog.push(m.text());
+    });
+    await loadExample(page, "esp32-custom-wifi-ap");
+    await clickRun(page);
+    await waitForSim(page, simLog);
+    // Open the serial monitor and wait for the sketch's own SCAN/CONNECT
+    // lines, so the crop is measured against real output, not a fixed
+    // rectangle that rots when the layout shifts (the panel selector-clamp
+    // rule from the skill).
+    await page.evaluate(() => {
+      const btn = document.querySelector(".canvas-serial-btn");
+      if (btn && !btn.classList.contains("canvas-serial-btn-active")) btn.click();
+    });
+    await page.waitForFunction(
+      () => /Connected|CUSTOM-AP-OK|IP:/.test(document.body.innerText),
+      undefined,
+      { timeout: 120000 }
+    ).catch(() => {});
+    await page.waitForTimeout(1500);
+    // Measure the serial-output box by CONTENT, not size: the mono element
+    // that actually holds the sketch's runtime lines (the editor is also
+    // mono and larger, so "largest mono" grabs the code instead).
+    const box = await page.evaluate(() => {
+      let best = null, smallest = Infinity;
+      for (const el of document.querySelectorAll("*")) {
+        const st = getComputedStyle(el);
+        if (!st.fontFamily.includes("mono")) continue;
+        const txt = el.textContent || "";
+        if (!/SCAN-SSID|CUSTOM-AP-OK|Connected!|Scanning/.test(txt)) continue;
+        const r = el.getBoundingClientRect();
+        if (r.height < 40) continue;
+        // the tightest element still containing the markers = the output box,
+        // not its scroll wrappers.
+        const a = r.width * r.height;
+        if (a < smallest) { smallest = a; best = r; }
+      }
+      return best && { x: Math.max(0, Math.floor(best.x)), y: Math.floor(best.y), width: Math.ceil(best.width), height: Math.ceil(best.height) };
+    });
+    await shot(page, "wifi-iot/custom-ap-serial",
+      box ? { clip: box } : { clip: { x: 410, y: 380, width: 870, height: 200 } });
+  },
+
   /** WiFi+MQTT example running — serial shows join, DHCP and broker I/O. */
   "wifi-iot/mqtt": async page => {
     const simLog = [];
