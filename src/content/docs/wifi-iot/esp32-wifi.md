@@ -78,6 +78,10 @@ Uploaded firmware benefits too: a binary built elsewhere connects to
 whatever network it names, as long as an access point part broadcasts that
 SSID — no rebuild needed.
 
+When it runs, the scan finds exactly your network and the board joins it:
+
+![Serial monitor: the scan lists only HomeNet, then the board connects and gets IP 10.13.37.42](../../../assets/docs/wifi-iot/custom-ap-serial.png)
+
 Try it in one click: the gallery example **Connect to your own WiFi
 network** opens with the part already on the canvas.
 
