@@ -202,40 +202,6 @@ async function clipOf(page, selectors, pad = 10) {
   };
 }
 
-/** Clip covering EVERY match of a selector (clipOf takes the first only).
- *
- *  A canvas shot framed on `.canvas-content` is mostly empty grid: the box is
- *  the viewport, not the content. Unioning the placed components frames what
- *  the reader is meant to look at, and still moves with the layout. */
-async function clipOfAll(page, selector, pad = 24) {
-  const box = await page.evaluate(
-    ({ selector, pad }) => {
-      const els = [...document.querySelectorAll(selector)].filter(el => {
-        const r = el.getBoundingClientRect();
-        return r.width > 4 && r.height > 4;
-      });
-      if (!els.length) return null;
-      let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
-      for (const el of els) {
-        const r = el.getBoundingClientRect();
-        x0 = Math.min(x0, r.x); y0 = Math.min(y0, r.y);
-        x1 = Math.max(x1, r.right); y1 = Math.max(y1, r.bottom);
-      }
-      return { x: x0 - pad, y: y0 - pad, width: x1 - x0 + pad * 2, height: y1 - y0 + pad * 2 };
-    },
-    { selector, pad }
-  );
-  if (!box) throw new Error(`clipOfAll: nothing matched ${selector}`);
-  const x = Math.max(0, Math.round(box.x));
-  const y = Math.max(0, Math.round(box.y));
-  return {
-    x,
-    y,
-    width: Math.min(VIEWPORT.width - x, Math.round(box.width)),
-    height: Math.min(VIEWPORT.height - y, Math.round(box.height)),
-  };
-}
-
 /** Open the serial monitor, wait for the sketch's own output, and return a
  *  clip measured on the box that HOLDS that output.
  *
@@ -282,6 +248,102 @@ async function serialClip(page, markerRe, timeout = 120_000) {
   }, markerRe.source);
   if (!box) throw new Error(`serialClip: no serial output matched ${markerRe}`);
   return box;
+}
+
+/** Frame a canvas shot on the given elements.
+ *
+ *  Three things this does that a plain clip does not. It switches to the
+ *  CIRCUIT layout, because in the default split view the canvas is ~490px
+ *  wide and a board with a part 300px away simply does not fit: every
+ *  attempt came back with the board sliced by the viewport edge. It centres
+ *  the view, so the framing does not depend on where the example happens to
+ *  park its parts. And it THROWS when the padded union does not fit inside
+ *  `.canvas-content`, which is the check that was missing: clamping alone
+ *  produces a plausible-looking screenshot of a cut-off board, and that is
+ *  what shipped. */
+async function canvasClip(page, selectors, pad = 34) {
+  await page.evaluate(() => {
+    for (const el of document.querySelectorAll(".view-mode-toggle button"))
+      if (el.textContent.trim() === "Circuit") el.click();
+  });
+  await page.waitForTimeout(1200);
+  await page.getByRole("button", { name: "View", exact: true }).click();
+  await page.waitForTimeout(400);
+  await page.getByText("Center canvas view", { exact: true }).click();
+  await page.waitForTimeout(1200);
+  await dismissOverlays(page);
+
+  const canvas = await page.locator(".canvas-content").first().boundingBox();
+  if (!canvas) throw new Error("canvasClip: no .canvas-content");
+  const boxes = [];
+  for (const sel of selectors) {
+    const b = await page.locator(sel).first().boundingBox();
+    if (!b) throw new Error(`canvasClip: nothing matched ${sel}`);
+    boxes.push(b);
+  }
+  const x0 = Math.min(...boxes.map(b => b.x)) - pad;
+  const y0 = Math.min(...boxes.map(b => b.y)) - pad;
+  const x1 = Math.max(...boxes.map(b => b.x + b.width)) + pad;
+  const y1 = Math.max(...boxes.map(b => b.y + b.height)) + pad;
+  if (
+    x0 < canvas.x ||
+    y0 < canvas.y ||
+    x1 > canvas.x + canvas.width ||
+    y1 > canvas.y + canvas.height
+  )
+    throw new Error(
+      "canvasClip: the framed elements do not fit in the canvas viewport - " +
+        "zoom out or widen the layout rather than shipping a cropped board"
+    );
+  const x = Math.max(0, Math.round(x0));
+  const y = Math.max(0, Math.round(y0));
+  return {
+    x,
+    y,
+    width: Math.min(VIEWPORT.width - x, Math.round(x1 - x0)),
+    height: Math.min(VIEWPORT.height - y, Math.round(y1 - y0)),
+  };
+}
+
+/** Open the WiFi panel and return its clip.
+ *
+ *  The badge is run-gated on the canvas ("nothing until Run": it appears with
+ *  the simulation and leaves on Stop), so a scene that loads an example and
+ *  clicks the caret straight away finds nothing. The shipped wifi-panel.png
+ *  predates that gating, which is why it shows a panel with no board
+ *  associated and no IP — a state a reader can no longer reach. Call this
+ *  AFTER the serial shot: by then the board has its address, so the panel
+ *  carries the association the guide describes. */
+async function openWifiPanel(page) {
+  await page.waitForSelector('span[title="WiFi panel"]', { timeout: 240_000 });
+  await dismissOverlays(page);
+  await page.locator('span[title="WiFi panel"]').first().click();
+  await page.waitForTimeout(1200);
+  return clipOf(page, ['[data-testid="local-gateway-panel"]'], 12);
+}
+
+/** Just the networks half of the WiFi panel: header, the networks on the air
+ *  and the PCAP button.
+ *
+ *  Measured from the panel's top down to the bottom of the PCAP button. Two
+ *  reasons over shooting the whole panel: the gateway block below it already
+ *  has its own screenshot, and that block is the one part of the panel that
+ *  differs by plan (pairing field on Maker, an upsell on free), so leaving it
+ *  out makes this shot say the same thing to every reader. */
+async function networksClip(page) {
+  const panel = await page
+    .locator('[data-testid="local-gateway-panel"]')
+    .boundingBox();
+  const pcap = await page.locator('[data-testid="wifi-pcap"]').boundingBox();
+  if (!panel || !pcap) throw new Error("networksClip: panel or PCAP button not found");
+  const x = Math.max(0, Math.round(panel.x - 12));
+  const y = Math.max(0, Math.round(panel.y - 12));
+  return {
+    x,
+    y,
+    width: Math.min(VIEWPORT.width - x, Math.round(panel.width + 24)),
+    height: Math.min(VIEWPORT.height - y, Math.round(pcap.y + pcap.height - panel.y + 24)),
+  };
 }
 
 /** Close-up of one board, zoomed so its screen is readable.
@@ -563,46 +625,24 @@ const SCENES = {
   },
 
   /** The custom WiFi Access Point part on the canvas (the gallery example
-   *  opens with it already placed, broadcasting HomeNet). */
+   *  opens with it already placed, broadcasting HomeNet). Static: the part
+   *  is on the canvas before anything runs. */
   "wifi-iot/access-point": async page => {
     await loadExample(page, "esp32-custom-wifi-ap");
     await page.waitForTimeout(1500);
     // Frame the board and the AP part, not the whole grid: clipped to
-    // `.canvas-content` this shot was four fifths empty canvas.
+    // `.canvas-content` this shot was four fifths empty canvas. Boards and
+    // parts live in different subtrees (a board sits under .canvas-world, a
+    // part under .components-area), so name both.
     await shot(page, "wifi-iot/access-point-part", {
-      clip: await clipOfAll(page, ".component-interactive-group", 28),
+      clip: await canvasClip(page, ["velxio-esp32", "velxio-wifi-ap"]),
     });
   },
 
-  /** The WiFi panel behind the badge caret: networks on the air, board
-   *  association, PCAP download, gateway pairing. */
-  "wifi-iot/panel": async page => {
-    await loadExample(page, "esp32-custom-wifi-ap");
-    await page.waitForTimeout(1500);
-    // The badge is a split button; its caret opens the panel.
-    await page.locator('span[title="WiFi panel"]').click();
-    await page.waitForTimeout(700);
-    await shot(page, "wifi-iot/wifi-panel", {
-      clip: await clipOf(page, ['[data-testid="local-gateway-panel"]'], 12),
-    });
-  },
-
-  /** The same panel on a project with NO access-point part: the four
-   *  built-in networks the emulated radio beacons by default. The guide
-   *  names them, so it has to show them. */
-  "wifi-iot/panel-builtin": async page => {
-    await loadExample(page, "esp32-wifi-connect");
-    await page.waitForTimeout(1500);
-    await page.locator('span[title="WiFi panel"]').click();
-    await page.waitForTimeout(700);
-    await shot(page, "wifi-iot/wifi-panel-builtin", {
-      clip: await clipOf(page, ['[data-testid="local-gateway-panel"]'], 12),
-    });
-  },
-
-  /** A plain join to the built-in Velxio-GUEST network: the serial output
-   *  the Arduino snippet at the top of the guide produces. */
-  "wifi-iot/join-builtin": async page => {
+  /** A plain join to the built-in Velxio-GUEST network, then the panel it
+   *  puts on the toolbar: the serial output and the four demo networks the
+   *  first half of the WiFi guide describes. One run, two shots. */
+  "wifi-iot/builtin": async page => {
     const simLog = [];
     page.on("console", m => {
       if (/esp32sim|guest crashed|in-browser/i.test(m.text())) simLog.push(m.text());
@@ -611,12 +651,15 @@ const SCENES = {
     await clickRun(page);
     await waitForSim(page, simLog);
     await shot(page, "wifi-iot/serial-wifi", {
-      clip: await serialClip(page, /Connected!|IP:|wifi:state/),
+      clip: await serialClip(page, /Connected|IP:|wifi:state/),
     });
+    await openWifiPanel(page);
+    await shot(page, "wifi-iot/wifi-panel-builtin", { clip: await networksClip(page) });
   },
 
   /** The custom-AP example running: serial shows the scan finding exactly
-   *  the project network, then the join to HomeNet. */
+   *  the project network, then the join to HomeNet — and the panel shows
+   *  that network on the air with the board associated to it. */
   "wifi-iot/custom-ap-running": async page => {
     const simLog = [];
     page.on("console", m => {
@@ -626,8 +669,9 @@ const SCENES = {
     await clickRun(page);
     await waitForSim(page, simLog);
     await shot(page, "wifi-iot/custom-ap-serial", {
-      clip: await serialClip(page, /SCAN-SSID|CUSTOM-AP-OK|Connected!|Scanning/),
+      clip: await serialClip(page, /SCAN-SSID|CUSTOM-AP-OK|Connected|Scanning/),
     });
+    await shot(page, "wifi-iot/wifi-panel", { clip: await openWifiPanel(page) });
   },
 
   /** WiFi+MQTT example running — serial shows join, DHCP and broker I/O. */
