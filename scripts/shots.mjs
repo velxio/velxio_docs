@@ -202,6 +202,88 @@ async function clipOf(page, selectors, pad = 10) {
   };
 }
 
+/** Clip covering EVERY match of a selector (clipOf takes the first only).
+ *
+ *  A canvas shot framed on `.canvas-content` is mostly empty grid: the box is
+ *  the viewport, not the content. Unioning the placed components frames what
+ *  the reader is meant to look at, and still moves with the layout. */
+async function clipOfAll(page, selector, pad = 24) {
+  const box = await page.evaluate(
+    ({ selector, pad }) => {
+      const els = [...document.querySelectorAll(selector)].filter(el => {
+        const r = el.getBoundingClientRect();
+        return r.width > 4 && r.height > 4;
+      });
+      if (!els.length) return null;
+      let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+      for (const el of els) {
+        const r = el.getBoundingClientRect();
+        x0 = Math.min(x0, r.x); y0 = Math.min(y0, r.y);
+        x1 = Math.max(x1, r.right); y1 = Math.max(y1, r.bottom);
+      }
+      return { x: x0 - pad, y: y0 - pad, width: x1 - x0 + pad * 2, height: y1 - y0 + pad * 2 };
+    },
+    { selector, pad }
+  );
+  if (!box) throw new Error(`clipOfAll: nothing matched ${selector}`);
+  const x = Math.max(0, Math.round(box.x));
+  const y = Math.max(0, Math.round(box.y));
+  return {
+    x,
+    y,
+    width: Math.min(VIEWPORT.width - x, Math.round(box.width)),
+    height: Math.min(VIEWPORT.height - y, Math.round(box.height)),
+  };
+}
+
+/** Open the serial monitor, wait for the sketch's own output, and return a
+ *  clip measured on the box that HOLDS that output.
+ *
+ *  Why not a rectangle: `serial-wifi.png` shipped for months as a fixed
+ *  {x:410,y:300,870x220} crop and quietly became two centimetres of empty
+ *  canvas plus the zoom control — no monitor in a screenshot captioned
+ *  "serial monitor". A crop measured on the text can only ever be right or
+ *  throw. The editor is mono and larger, so the SMALLEST mono element still
+ *  containing the markers is the output box rather than its scroll wrappers. */
+async function serialClip(page, markerRe, timeout = 120_000) {
+  await page.evaluate(() => {
+    const btn = document.querySelector(".canvas-serial-btn");
+    if (btn && !btn.classList.contains("canvas-serial-btn-active")) btn.click();
+  });
+  await page
+    .waitForFunction(re => new RegExp(re).test(document.body.innerText), markerRe.source, {
+      timeout,
+    })
+    .catch(() => {});
+  await page.waitForTimeout(1500);
+  const box = await page.evaluate(re => {
+    const rx = new RegExp(re);
+    let best = null,
+      smallest = Infinity;
+    for (const el of document.querySelectorAll("*")) {
+      if (!getComputedStyle(el).fontFamily.includes("mono")) continue;
+      if (!rx.test(el.textContent || "")) continue;
+      const r = el.getBoundingClientRect();
+      if (r.height < 40) continue;
+      const a = r.width * r.height;
+      if (a < smallest) {
+        smallest = a;
+        best = r;
+      }
+    }
+    return (
+      best && {
+        x: Math.max(0, Math.floor(best.x)),
+        y: Math.floor(best.y),
+        width: Math.ceil(best.width),
+        height: Math.ceil(best.height),
+      }
+    );
+  }, markerRe.source);
+  if (!box) throw new Error(`serialClip: no serial output matched ${markerRe}`);
+  return box;
+}
+
 /** Close-up of one board, zoomed so its screen is readable.
  *
  *  A board's LCD is a canvas of real pixels scaled DOWN to fit the 100% canvas
@@ -485,8 +567,10 @@ const SCENES = {
   "wifi-iot/access-point": async page => {
     await loadExample(page, "esp32-custom-wifi-ap");
     await page.waitForTimeout(1500);
+    // Frame the board and the AP part, not the whole grid: clipped to
+    // `.canvas-content` this shot was four fifths empty canvas.
     await shot(page, "wifi-iot/access-point-part", {
-      clip: await clipOf(page, [".canvas-content"], 0),
+      clip: await clipOfAll(page, ".component-interactive-group", 28),
     });
   },
 
@@ -503,52 +587,47 @@ const SCENES = {
     });
   },
 
+  /** The same panel on a project with NO access-point part: the four
+   *  built-in networks the emulated radio beacons by default. The guide
+   *  names them, so it has to show them. */
+  "wifi-iot/panel-builtin": async page => {
+    await loadExample(page, "esp32-wifi-connect");
+    await page.waitForTimeout(1500);
+    await page.locator('span[title="WiFi panel"]').click();
+    await page.waitForTimeout(700);
+    await shot(page, "wifi-iot/wifi-panel-builtin", {
+      clip: await clipOf(page, ['[data-testid="local-gateway-panel"]'], 12),
+    });
+  },
+
+  /** A plain join to the built-in Velxio-GUEST network: the serial output
+   *  the Arduino snippet at the top of the guide produces. */
+  "wifi-iot/join-builtin": async page => {
+    const simLog = [];
+    page.on("console", m => {
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text())) simLog.push(m.text());
+    });
+    await loadExample(page, "esp32-wifi-connect");
+    await clickRun(page);
+    await waitForSim(page, simLog);
+    await shot(page, "wifi-iot/serial-wifi", {
+      clip: await serialClip(page, /Connected!|IP:|wifi:state/),
+    });
+  },
+
   /** The custom-AP example running: serial shows the scan finding exactly
    *  the project network, then the join to HomeNet. */
   "wifi-iot/custom-ap-running": async page => {
     const simLog = [];
     page.on("console", m => {
-      if (/esp32sim|guest crashed|in-browser/i.test(m.text()))
-        simLog.push(m.text());
+      if (/esp32sim|guest crashed|in-browser/i.test(m.text())) simLog.push(m.text());
     });
     await loadExample(page, "esp32-custom-wifi-ap");
     await clickRun(page);
     await waitForSim(page, simLog);
-    // Open the serial monitor and wait for the sketch's own SCAN/CONNECT
-    // lines, so the crop is measured against real output, not a fixed
-    // rectangle that rots when the layout shifts (the panel selector-clamp
-    // rule from the skill).
-    await page.evaluate(() => {
-      const btn = document.querySelector(".canvas-serial-btn");
-      if (btn && !btn.classList.contains("canvas-serial-btn-active")) btn.click();
+    await shot(page, "wifi-iot/custom-ap-serial", {
+      clip: await serialClip(page, /SCAN-SSID|CUSTOM-AP-OK|Connected!|Scanning/),
     });
-    await page.waitForFunction(
-      () => /Connected|CUSTOM-AP-OK|IP:/.test(document.body.innerText),
-      undefined,
-      { timeout: 120000 }
-    ).catch(() => {});
-    await page.waitForTimeout(1500);
-    // Measure the serial-output box by CONTENT, not size: the mono element
-    // that actually holds the sketch's runtime lines (the editor is also
-    // mono and larger, so "largest mono" grabs the code instead).
-    const box = await page.evaluate(() => {
-      let best = null, smallest = Infinity;
-      for (const el of document.querySelectorAll("*")) {
-        const st = getComputedStyle(el);
-        if (!st.fontFamily.includes("mono")) continue;
-        const txt = el.textContent || "";
-        if (!/SCAN-SSID|CUSTOM-AP-OK|Connected!|Scanning/.test(txt)) continue;
-        const r = el.getBoundingClientRect();
-        if (r.height < 40) continue;
-        // the tightest element still containing the markers = the output box,
-        // not its scroll wrappers.
-        const a = r.width * r.height;
-        if (a < smallest) { smallest = a; best = r; }
-      }
-      return best && { x: Math.max(0, Math.floor(best.x)), y: Math.floor(best.y), width: Math.ceil(best.width), height: Math.ceil(best.height) };
-    });
-    await shot(page, "wifi-iot/custom-ap-serial",
-      box ? { clip: box } : { clip: { x: 410, y: 380, width: 870, height: 200 } });
   },
 
   /** WiFi+MQTT example running — serial shows join, DHCP and broker I/O. */
@@ -562,10 +641,10 @@ const SCENES = {
     await clickRun(page);
     await waitForSim(page, simLog);
     await page.waitForTimeout(30000); // join + DHCP + broker connect
+    // Full-page: the MQTT page wants the whole editor. serial-wifi.png used
+    // to be taken here too, from a fixed rectangle over a layout this scene
+    // does not control — it belongs to `wifi-iot/join-builtin` now.
     await shot(page, "wifi-iot/mqtt-running");
-    await shot(page, "wifi-iot/serial-wifi", {
-      clip: { x: 410, y: 300, width: 870, height: 220 },
-    });
   },
 
   /** Custom chip on the canvas and its editor dialog. */
