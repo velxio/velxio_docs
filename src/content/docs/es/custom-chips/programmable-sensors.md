@@ -16,8 +16,8 @@ donde "¿y si el valor cambia?" sea el punto central.
 Tres ingredientes, todos en el chip que ya sabes escribir:
 
 1. **Un atributo** — el valor ajustable: `vx_attr_register("ppm", 1000)`.
-2. **Una sección `controls`** en `chip.json` — esto es lo que coloca el control deslizante
-   en pantalla durante la simulación:
+2. **Una sección `controls`** en `chip.json` — esto es lo que pone el control
+   deslizante en pantalla durante la simulación:
 
 ```json
 {
@@ -34,8 +34,8 @@ Tres ingredientes, todos en el chip que ya sabes escribir:
 }
 ```
 
-3. **Vuelve a leer el atributo dentro de un callback o temporizador** — nunca lo almacenes en caché,
-   el control deslizante lo cambia a mitad de la ejecución:
+3. **Vuelve a leer el atributo dentro de un callback o temporizador** — nunca lo
+   almacenes en caché, el control deslizante lo cambia a mitad de ejecución:
 
 ```c
 #include "velxio-chip.h"
@@ -58,8 +58,8 @@ void chip_setup(void) {
 }
 ```
 
-Conecta `OUT` a un pin analógico de la placa (por ejemplo, Arduino `A0`), presiona **Run** (Ejecutar) y
-haz clic en el chip: el panel de control deslizante se abre. Arrástralo y `analogRead(A0)`
+Conecta `OUT` a un pin analógico de una placa (por ejemplo, Arduino `A0`), presiona **Run** (Ejecutar) y
+haz clic en el chip: se abre el panel de control deslizante. Arrástralo y `analogRead(A0)`
 se actualiza en tiempo real.
 
 ## Cómo se conectan las piezas
@@ -69,11 +69,11 @@ se actualiza en tiempo real.
 - `type: "range"` es un control deslizante; `type: "button"` envía un pulso
   momentáneo `1 → 0` (aproximadamente 150 ms), para entradas de disparo/reinicio.
 - ¿Sin sección `controls`? Cualquier atributo que declare tanto `min` como
-  `max` obtiene un control deslizante en vivo automáticamente — la mayoría de los chips existentes son
-  ajustables sin tocar su manifiesto.
-- La forma de `controls` es compatible con Wokwi; `unit` y `scale: "log"`
-  son extensiones de Velxio que Wokwi ignora.
-- Los valores predeterminados de diseño viven en el inspector de partes (clic derecho en el
+  `max` obtiene un control deslizante en vivo automáticamente — la mayoría de los chips existentes
+  son ajustables sin tocar su manifiesto.
+- `unit` (mostrado después del valor) y `scale: "log"` son extras opcionales
+  para los controles deslizantes.
+- Los valores predeterminados en tiempo de diseño viven en el inspector de partes (clic derecho en el
   chip mientras está detenido).
 
 ## Plantillas listas para usar

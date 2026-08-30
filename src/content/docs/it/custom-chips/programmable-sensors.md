@@ -7,8 +7,8 @@ sidebar:
 
 Un chip personalizzato può essere un **sensore programmabile**: un componente il cui output
 puoi pilotare da uno slider *mentre la simulazione è in esecuzione*. Pensa a un sensore di CO2
-di cui vari i ppm per testare le soglie, una sonda di temperatura/umidità dietro
-I2C, un sensore di luce, un potenziometro con una mente propria — qualsiasi cosa
+di cui regoli i ppm per testare le soglie, una sonda di temperatura/umidità dietro
+I2C, un sensore di luce, un potenziometro con una volontà propria — qualsiasi cosa
 in cui "e se il valore cambiasse?" è il punto centrale.
 
 ## La ricetta
@@ -58,7 +58,7 @@ void chip_setup(void) {
 }
 ```
 
-Collega `OUT` a un pin analogico della scheda (ad esempio Arduino `A0`), premi **Run** e
+Collega `OUT` a un pin analogico della scheda (ad esempio Arduino `A0`), premi **Run** (Esegui), e
 fai clic sul chip: si apre il pannello dello slider. Trascinalo e `analogRead(A0)`
 lo segue in tempo reale.
 
@@ -69,19 +69,19 @@ lo segue in tempo reale.
 - `type: "range"` è uno slider; `type: "button"` invia un impulso momentaneo
   `1 → 0` (circa 150 ms), per input di trigger/reset.
 - Nessuna sezione `controls`? Qualsiasi attributo che dichiari sia `min` che
-  `max` ottiene automaticamente uno slider dal vivo — la maggior parte dei chip esistenti
-  è regolabile senza toccare il loro manifest.
-- La forma di `controls` è compatibile con Wokwi; `unit` e `scale: "log"`
-  sono estensioni Velxio che Wokwi ignora.
-- I valori predefiniti in fase di progettazione si trovano nell'ispettore delle parti (fai clic con il tasto destro
-  sul chip mentre è fermo).
+  `max` ottiene automaticamente uno slider live — la maggior parte dei chip esistenti è
+  regolabile senza toccare il loro manifest.
+- `unit` (mostrato dopo il valore) e `scale: "log"` sono extra opzionali
+  per gli slider.
+- I valori predefiniti in fase di progettazione si trovano nell'ispettore dei componenti (fai clic con il tasto destro sul
+  chip mentre è fermo).
 
 ## Modelli già pronti
 
-La galleria degli esempi include due sensori costruiti esattamente in questo modo:
+La galleria di esempi include due sensori costruiti esattamente in questo modo:
 
-- **CO2 Sensor (slider dal vivo)** — la ricetta analogica sopra, testuale.
-- **I2C Env Sensor (slider dal vivo)** — temperatura + umidità dietro una
+- **CO2 Sensor (live slider)** — la ricetta analogica sopra, testuale.
+- **I2C Env Sensor (live sliders)** — temperatura + umidità dietro una
   mappa di registri I2C a `0x44`, entrambi pilotati da slider; il modello per
   qualsiasi sensore con protocollo digitale.
 

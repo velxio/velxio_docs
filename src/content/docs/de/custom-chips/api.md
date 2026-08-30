@@ -1,8 +1,8 @@
 ---
-title: Chips-API-Referenz
+title: Referenz zur Chips-API
 description: Die velxio-chip.h-API — Pins, Attribute, I2C, SPI, UART, Timer, Framebuffer, ROM.
 sidebar:
-  order: 3
+  order: 6
 ---
 
 Alles, was ein Chip tun kann, wird in **`velxio-chip.h`** deklariert. Der Host
@@ -38,14 +38,22 @@ mit `VX_EDGE_RISING`, `VX_EDGE_FALLING` oder `VX_EDGE_BOTH`.
 
 ## Attribute
 
-Benutzerbearbeitbare Parameter, die im Eigenschaftenbereich des Bauteils angezeigt werden:
+Vom Benutzer editierbare Parameter. Die Standardwerte befinden sich im
+Bauteil-Inspektor; deklarieren Sie einen `controls`-Abschnitt in `chip.json`
+und jeder davon erhält einen **Live-Slider während die Simulation läuft**
+(siehe [Programmierbare Sensoren](/docs/de/custom-chips/programmable-sensors/)):
 
 ```c
 vx_attr vx_attr_register(const char* name, double default_val);
-double  vx_attr_read(vx_attr a);
+double  vx_attr_read(vx_attr a);   // re-read in callbacks — sliders move it live
+
+// String attributes (a device id, an SSID, a preset name):
+vx_attr  vx_attr_register_string(const char* name, const char* default_val);
+uint32_t vx_attr_string_len(vx_attr a);
+uint32_t vx_attr_string_read(vx_attr a, char* buf, uint32_t cap);
 ```
 
-Deklarieren Sie sie auch in `chip.json`, damit der Editor sie darstellen kann.
+Deklarieren Sie sie ebenfalls in `chip.json`, damit der Editor sie rendern kann.
 
 ## I2C-Slave
 
@@ -54,9 +62,10 @@ vx_i2c vx_i2c_attach(const vx_i2c_config* cfg);
 ```
 
 Die Konfiguration enthält die 7-Bit-`address`, die `scl`/`sda`-Pins und vier
-Callbacks: `on_connect(addr, is_read)`, `on_read()` (gibt das nächste
-Byte zurück), `on_write(byte)` (ACK/NACK), `on_stop()`. Genug, um jedes
-registerbasierte I2C-Gerät zu implementieren — siehe die PCF8574- und DS3231-Beispiele.
+Callbacks: `on_connect(addr, is_read)`, `on_read()` (gibt das nächste Byte
+zurück), `on_write(byte)` (ACK/NACK), `on_stop()`. Genug, um jedes
+registerbasierte I2C-Gerät zu implementieren — siehe die PCF8574- und
+DS3231-Beispiele.
 
 ## UART
 
@@ -65,8 +74,8 @@ vx_uart vx_uart_attach(const vx_uart_config* cfg); // rx, tx, baud_rate
 bool    vx_uart_write(vx_uart u, const uint8_t* buf, uint32_t count);
 ```
 
-`on_rx_byte` wird pro empfangenem Byte ausgelöst; `on_tx_done`, wenn Ihr Puffer
-gesendet wurde.
+`on_rx_byte` wird pro empfangenem Byte ausgelöst; `on_tx_done`, wenn Ihr
+Puffer gesendet wurde.
 
 ## SPI-Slave
 
@@ -97,10 +106,12 @@ mit den umgebenden Boards bleibt.
 vx_buffer vx_framebuffer_init(uint32_t* out_width, uint32_t* out_height);
 void      vx_buffer_write(vx_buffer b, uint32_t offset,
                           const void* data, uint32_t len);
+void      vx_buffer_read(vx_buffer b, uint32_t offset,
+                         void* data, uint32_t len);
 ```
 
-Für Chips, die _Displays_ sind: Schreiben Sie RGBA-Pixel und das Bauteil rendert
-sie auf der Leinwand.
+Für Chips, die _Displays_ sind: Schreiben Sie RGBA-Pixel und das Bauteil
+rendert sie auf der Leinwand.
 
 ## ROM-Blobs und Protokollierung
 
@@ -127,4 +138,10 @@ die vom Host vor `chip_setup()` injiziert werden.
 ```
 
 `pins` definiert die physische Footprint-Reihenfolge; die Namen müssen mit dem
-übereinstimmen, was die C-Quelle registriert.
+übereinstimmen, was die C-Quelle registriert. Optionale Abschnitte:
+`attributes` (einstellbare Werte), `controls` (Live-Slider/Schaltflächen
+während der Simulation), `display` (`{"width", "height"}` für
+Framebuffer-Chips) und `programTargets` (Retro-CPU-Chips, die ein
+Benutzerprogramm ausführen).
+
+----- END PAGE -----

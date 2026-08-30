@@ -14,6 +14,8 @@ framebuffer.
 En esta sección:
 
 - **Getting started** (Primeros pasos) — crea tu primer chip personalizado desde el editor.
-- **Tutorial** — construye un chip completo paso a paso.
-- **API reference** (Referencia de la API) — todas las funciones en `velxio-chip.h`: GPIO, I2C, SPI,
+- **Programmable sensors** (Sensores programables) — controles deslizantes en vivo que manejan tu chip mientras la
+  simulación se ejecuta (`controls` en chip.json).
+- **My Chips** (Mis chips) — guarda un chip una vez, reutilízalo en cualquier proyecto (Pro).
+- **API reference** (Referencia de la API) — cada función en `velxio-chip.h`: GPIO, I2C, SPI,
   UART, tiempo, atributos y framebuffer.

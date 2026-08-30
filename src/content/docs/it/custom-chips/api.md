@@ -2,7 +2,7 @@
 title: Riferimento API dei chip
 description: L'API velxio-chip.h — pin, attributi, I2C, SPI, UART, timer, framebuffer, ROM.
 sidebar:
-  order: 3
+  order: 6
 ---
 
 Tutto ciò che un chip può fare è dichiarato in **`velxio-chip.h`**. L'host
@@ -38,11 +38,19 @@ con `VX_EDGE_RISING`, `VX_EDGE_FALLING` o `VX_EDGE_BOTH`.
 
 ## Attributi
 
-Parametri modificabili dall'utente che compaiono nel pannello delle proprietà del componente:
+Parametri modificabili dall'utente. I valori predefiniti si trovano
+nell'ispettore dei componenti; dichiara una sezione `controls` in
+`chip.json` e ognuno riceve uno **slider live durante la simulazione**
+(vedi [Sensori programmabili](/docs/it/custom-chips/programmable-sensors/)):
 
 ```c
 vx_attr vx_attr_register(const char* name, double default_val);
-double  vx_attr_read(vx_attr a);
+double  vx_attr_read(vx_attr a);   // rilettura nei callback — gli slider lo muovono live
+
+// Attributi stringa (un ID dispositivo, un SSID, un nome preset):
+vx_attr  vx_attr_register_string(const char* name, const char* default_val);
+uint32_t vx_attr_string_len(vx_attr a);
+uint32_t vx_attr_string_read(vx_attr a, char* buf, uint32_t cap);
 ```
 
 Dichiarali anche in `chip.json` così l'editor può visualizzarli.
@@ -54,9 +62,10 @@ vx_i2c vx_i2c_attach(const vx_i2c_config* cfg);
 ```
 
 La configurazione contiene l'indirizzo a 7 bit `address`, i pin `scl`/`sda`
-e quattro callback: `on_connect(addr, is_read)`, `on_read()` (restituisce il
-byte successivo), `on_write(byte)` (ack/nack), `on_stop()`. Abbastanza per
-implementare qualsiasi dispositivo I2C a registri — vedi gli esempi PCF8574 e DS3231.
+e quattro callback: `on_connect(addr, is_read)`, `on_read()` (restituisce
+il byte successivo), `on_write(byte)` (ack/nack), `on_stop()`. Abbastanza
+per implementare qualsiasi dispositivo I2C a registri — vedi gli esempi
+PCF8574 e DS3231.
 
 ## UART
 
@@ -65,8 +74,8 @@ vx_uart vx_uart_attach(const vx_uart_config* cfg); // rx, tx, baud_rate
 bool    vx_uart_write(vx_uart u, const uint8_t* buf, uint32_t count);
 ```
 
-`on_rx_byte` viene attivato per ogni byte ricevuto; `on_tx_done` quando il
-tuo buffer è stato trasmesso.
+`on_rx_byte` scatta per ogni byte ricevuto; `on_tx_done` quando il tuo
+buffer è stato trasmesso.
 
 ## Schiavo SPI
 
@@ -76,8 +85,8 @@ void   vx_spi_start(vx_spi s, uint8_t* buffer, uint32_t count);
 void   vx_spi_stop(vx_spi s);
 ```
 
-Scambia buffer mentre il chip-select è attivo — l'esempio MCP3008
-mostra l'intera sequenza richiesta/risposta.
+Scambia buffer mentre il chip-select è attivo — l'esempio MCP3008 mostra
+l'intera sequenza richiesta/risposta.
 
 ## Tempo e timer
 
@@ -97,6 +106,8 @@ coerente a livello di ciclo con le schede circostanti.
 vx_buffer vx_framebuffer_init(uint32_t* out_width, uint32_t* out_height);
 void      vx_buffer_write(vx_buffer b, uint32_t offset,
                           const void* data, uint32_t len);
+void      vx_buffer_read(vx_buffer b, uint32_t offset,
+                         void* data, uint32_t len);
 ```
 
 Per chip che _sono_ display: scrivi pixel RGBA e il componente li
@@ -110,7 +121,7 @@ void     vx_rom_read(uint32_t offset, uint8_t* dst, uint32_t len);
 void     vx_log(const char* msg);   // appare nella console del browser
 ```
 
-La ROM consente a un chip di trasportare dati esterni (ROM di caratteri,
+La ROM permette a un chip di trasportare dati esterni (ROM di caratteri,
 microcodice) iniettati dall'host prima di `chip_setup()`.
 
 ## Il manifest (`chip.json`)
@@ -127,4 +138,7 @@ microcodice) iniettati dall'host prima di `chip_setup()`.
 ```
 
 `pins` definisce l'ordine fisico dei pin; i nomi devono corrispondere a
-quelli registrati dal sorgente C.
+quelli registrati nel sorgente C. Sezioni opzionali: `attributes` (valori
+regolabili), `controls` (slider/pulsanti live durante la simulazione),
+`display` (`{"width", "height"}` per chip con framebuffer) e
+`programTargets` (chip retro-CPU che eseguono un programma utente).

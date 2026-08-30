@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-Ein benutzerdefinierter Chip kann ein **programmierbarer Sensor** sein: ein Bauteil, dessen Ausgabe Sie *während die Simulation läuft* über einen Regler steuern. Denken Sie an einen CO2-Sensor, dessen ppm-Wert Sie durchfahren, um Schwellenwerte zu testen, eine Temperatur-/Feuchtigkeitssonde hinter I2C, einen Lichtsensor, ein Potentiometer mit eigenem Kopf — alles, bei dem „Was wäre, wenn sich der Wert ändert?“ der springende Punkt ist.
+Ein benutzerdefinierter Chip kann ein **programmierbarer Sensor** sein: ein Bauteil, dessen Ausgabe Sie *während die Simulation läuft* über einen Regler steuern. Denken Sie an einen CO2-Sensor, dessen ppm-Wert Sie durchfahren, um Schwellwerte zu testen, eine Temperatur-/Feuchtigkeitssonde hinter I2C, einen Lichtsensor, ein Potentiometer mit eigenem Kopf — alles, bei dem „Was wäre, wenn sich der Wert ändert?“ der springende Punkt ist.
 
 ## Das Rezept
 
@@ -29,7 +29,7 @@ Drei Zutaten, alle in dem Chip, den Sie bereits schreiben können:
 }
 ```
 
-3. **Lesen Sie das Attribut innerhalb eines Callbacks oder Timers erneut** — speichern Sie es niemals zwischen, der Regler ändert es während des Laufs:
+3. **Lesen Sie das Attribut innerhalb eines Callbacks oder Timers erneut** — speichern Sie es nie zwischen, der Regler ändert es während des Laufs:
 
 ```c
 #include "velxio-chip.h"
@@ -59,16 +59,14 @@ Verbinden Sie `OUT` mit einem analogen Pin des Boards (z. B. Arduino `A0`), drü
 - Jeder `controls`-Eintrag steuert das **Attribut mit derselben id** — `vx_attr_read` gibt den neuen Wert in dem Moment zurück, in dem der Regler bewegt wird.
 - `type: "range"` ist ein Regler; `type: "button"` sendet einen kurzen `1 → 0`-Puls (ca. 150 ms), für Trigger-/Reset-Eingänge.
 - Kein `controls`-Abschnitt? Jedes Attribut, das sowohl `min` als auch `max` deklariert, erhält automatisch einen Live-Regler — die meisten vorhandenen Chips sind ohne Änderung ihres Manifests einstellbar.
-- Die `controls`-Form ist Wokwi-kompatibel; `unit` und `scale: "log"` sind Velxio-Erweiterungen, die Wokwi ignoriert.
-- Designzeit-Standardwerte befinden sich im Bauteil-Inspektor (Rechtsklick auf den Chip im gestoppten Zustand).
+- `unit` (nach dem Wert angezeigt) und `scale: "log"` sind optionale Extras für Regler.
+- Die Standardwerte zur Entwurfszeit befinden sich im Bauteil-Inspektor (Rechtsklick auf den Chip im gestoppten Zustand).
 
 ## Vorgefertigte Vorlagen
 
-Die Beispielgalerie enthält zwei Sensoren, die genau auf diese Weise gebaut sind:
+Die Beispielgalerie enthält zwei Sensoren, die genau so aufgebaut sind:
 
-- **CO2 Sensor (Live-Regler)** — das analoge Rezept oben, wortwörtlich.
+- **CO2 Sensor (Live-Regler)** — das analoge Rezept oben, wörtlich.
 - **I2C-Umgebungssensor (Live-Regler)** — Temperatur + Feuchtigkeit hinter einer I2C-Registerkarte bei `0x44`, beide über Regler gesteuert; das Muster für jeden Sensor mit digitalem Protokoll.
 
 Speichern Sie Ihre eigene Variante unter [My Chips](/docs/de/custom-chips/my-chips/) und sie ist in jedem Projekt nur einen Klick entfernt.
-
------ END PAGE -----

@@ -59,7 +59,7 @@ void chip_setup(void) {
 ```
 
 Conecte `OUT` a um pino analógico da placa (digamos Arduino `A0`), pressione **Run** e
-clique no chip: o painel de controle deslizante abre. Arraste-o e `analogRead(A0)`
+clique no chip: o painel do controle deslizante abre. Arraste-o e `analogRead(A0)`
 acompanha em tempo real.
 
 ## Como as peças se conectam
@@ -70,20 +70,20 @@ acompanha em tempo real.
   momentâneo `1 → 0` (cerca de 150 ms), para entradas de gatilho/redefinição.
 - Sem seção `controls`? Qualquer atributo que declare tanto `min` quanto
   `max` ganha um controle deslizante ao vivo automaticamente — a maioria dos chips existentes é
-  ajustável sem tocar no manifesto.
-- A forma de `controls` é compatível com Wokwi; `unit` e `scale: "log"`
-  são extensões Velxio que o Wokwi ignora.
+  ajustável sem tocar no manifesto deles.
+- `unit` (exibido após o valor) e `scale: "log"` são extras opcionais
+  para controles deslizantes.
 - Os padrões de design-time ficam no inspetor de peças (clique com o botão direito no
-  chip enquanto parado).
+  chip enquanto estiver parado).
 
 ## Modelos prontos
 
 A galeria de exemplos traz dois sensores construídos exatamente dessa forma:
 
-- **CO2 Sensor (controle deslizante ao vivo)** — a receita analógica acima, literalmente.
+- **CO2 Sensor (controle deslizante ao vivo)** — a receita analógica acima, na íntegra.
 - **I2C Env Sensor (controles deslizantes ao vivo)** — temperatura + umidade por trás de um
   mapa de registros I2C em `0x44`, ambos controlados por controles deslizantes; o padrão para
-  qualquer sensor de protocolo digital.
+  qualquer sensor com protocolo digital.
 
 Salve sua própria variante em [Meus Chips](/docs/pt-br/custom-chips/my-chips/) e
 ela estará a um clique de distância em todos os projetos.

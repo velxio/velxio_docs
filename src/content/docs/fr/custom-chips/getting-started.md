@@ -23,10 +23,13 @@ des attributs que vous modifiez, et une logique qui s'exécute dans la simulatio
 
 1. Ouvrez le [sélecteur de composants](/docs/fr/circuit-editor/placing-components/)
    et ajoutez une **Custom Chip** (puce personnalisée) au canevas.
-2. Ouvrez l'éditeur de la puce (clic droit sur la puce). Vous obtenez deux fichiers :
-   - **C source** — le comportement ;
-   - **`chip.json`** — le manifeste : nom, broches, attributs.
-3. Commencez par l'exemple intégré **Inverter** (inverseur) :
+2. La galerie d'exemples s'ouvre — choisissez un point de départ (ou commencez à vide).
+3. Vous arrivez dans l'éditeur de code standard : la puce possède sa propre section dans
+   l'explorateur de fichiers avec deux fichiers ordinaires —
+   - **`chip.c`** — le comportement ;
+   - **`chip.json`** — le manifeste : nom, broches, attributs (validés
+     avec des suggestions de complétion au fur et à mesure que vous tapez).
+   Voici l'exemple intégré **Inverter** (inverseur) :
 
 ```c
 #include "velxio-chip.h"
@@ -60,16 +63,19 @@ avec son manifeste :
 }
 ```
 
-4. **Compile** (compilez) dans la boîte de dialogue — les erreurs reviennent comme avec n'importe quel compilateur C.
-5. Connectez `IN` à un bouton et `OUT` à une LED, appuyez sur **Run** (exécuter), et basculez
-   à volonté.
+4. Connectez `IN` à un bouton et `OUT` à une LED, puis appuyez sur **Run** (Exécuter) — la
+   puce se compile automatiquement chaque fois que son code source a changé (le bouton marteau
+   dans la section de l'explorateur de fichiers de la puce la compile indépendamment,
+   avec les erreurs dans la console de sortie comme n'importe quel compilateur C).
+5. Basculez. Cliquez sur la puce pendant que la simulation est arrêtée pour revenir
+   à son `chip.c` ; modifiez et relancez **Run** (Exécuter).
 
 ## Comment les puces s'exécutent
 
 L'hôte appelle votre `chip_setup()` une fois par instance de puce. Ensuite, la
-puce est **réactive** : votre code ne s'exécute que dans les callbacks — une broche surveillée a
-changé, un octet I2C est arrivé, une minuterie a déclenché. Il n'y a pas de boucle principale pour
-bloquer, ce qui rend les puces personnalisées assez économiques pour en parsemer un
+puce est **réactive** : votre code ne s'exécute que dans les callbacks — une broche surveillée a changé,
+un octet I2C est arrivé, une minuterie a déclenché. Il n'y a pas de boucle principale qui
+bloque, ce qui permet de garder les puces personnalisées suffisamment légères pour en parsemer un
 circuit.
 
 ## Exemples de puces intégrés
@@ -78,6 +84,6 @@ L'éditeur de puces fournit des sources fonctionnelles que vous pouvez charger e
 logiques (inverseur, XOR), registres à décalage (74HC595, CD4094), pièces I2C
 (PCF8574, DS3231 RTC, EEPROM 24Cxx), un ADC SPI (MCP3008), un transformateur UART
 ROT13, un compteur d'impulsions — et une **collection de CPU rétro**
-(Intel 4004 et amis) pour les plus aventureux.
+(Intel 4004 et compagnie) pour les plus aventureux.
 
 Ensuite : la [référence de l'API des puces](/docs/fr/custom-chips/api/).

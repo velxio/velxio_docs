@@ -71,8 +71,8 @@ tracks in real time.
 - No `controls` section? Any attribute that declares both `min` and
   `max` gets a live slider automatically — most existing chips are
   tunable without touching their manifest.
-- The `controls` shape is Wokwi-compatible; `unit` and `scale: "log"`
-  are Velxio extensions Wokwi ignores.
+- `unit` (shown after the value) and `scale: "log"` are optional extras
+  for sliders.
 - Design-time defaults live in the part inspector (right-click the
   chip while stopped).
 

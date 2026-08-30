@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-Une puce personnalisée peut être un **capteur programmable** : un composant dont vous pilotez la sortie depuis un curseur *pendant que la simulation s'exécute*. Pensez à un capteur de CO2 dont vous faites varier les ppm pour tester des seuils, une sonde de température/humidité derrière I2C, un capteur de lumière, un potentiomètre qui a son propre avis — tout ce qui repose sur la question « et si la valeur changeait ? ».
+Une puce personnalisée peut être un **capteur programmable** : un composant dont vous pilotez la sortie depuis un curseur *pendant que la simulation s'exécute*. Pensez à un capteur de CO2 dont vous faites varier le ppm pour tester des seuils, une sonde température/humidité derrière I2C, un capteur de lumière, un potentiomètre avec sa propre volonté — tout ce qui répond à la question « et si la valeur changeait ? ».
 
 ## La recette
 
@@ -54,19 +54,19 @@ void chip_setup(void) {
 
 Connectez `OUT` à une broche analogique de la carte (par exemple Arduino `A0`), appuyez sur **Run** (Exécuter), puis cliquez sur la puce : le panneau de curseurs s'ouvre. Faites glisser le curseur et `analogRead(A0)` suit en temps réel.
 
-## Comment les éléments se connectent
+## Comment les pièces se connectent
 
 - Chaque entrée `controls` pilote **l'attribut avec le même id** — `vx_attr_read` renvoie la nouvelle valeur dès que le curseur bouge.
 - `type: "range"` est un curseur ; `type: "button"` envoie une impulsion momentanée `1 → 0` (environ 150 ms), pour les entrées de déclenchement/réinitialisation.
 - Pas de section `controls` ? Tout attribut qui déclare à la fois `min` et `max` reçoit automatiquement un curseur en direct — la plupart des puces existantes sont ajustables sans toucher à leur manifeste.
-- La forme `controls` est compatible Wokwi ; `unit` et `scale: "log"` sont des extensions Velxio que Wokwi ignore.
+- `unit` (affiché après la valeur) et `scale: "log"` sont des options supplémentaires pour les curseurs.
 - Les valeurs par défaut de conception se trouvent dans l'inspecteur de composants (clic droit sur la puce à l'arrêt).
 
 ## Modèles prêts à l'emploi
 
-La galerie d'exemples inclut deux capteurs construits exactement de cette façon :
+La galerie d'exemples fournit deux capteurs construits exactement de cette façon :
 
 - **CO2 Sensor (live slider)** — la recette analogique ci-dessus, textuellement.
-- **I2C Env Sensor (live sliders)** — température + humidité derrière une table de registres I2C à `0x44`, toutes deux pilotées par des curseurs ; le modèle pour tout capteur à protocole numérique.
+- **I2C Env Sensor (live sliders)** — température + humidité derrière une carte de registres I2C à `0x44`, tous deux pilotés par des curseurs ; le modèle pour tout capteur à protocole numérique.
 
 Enregistrez votre propre variante dans [My Chips](/docs/fr/custom-chips/my-chips/) et elle est à un clic dans chaque projet.

@@ -5,29 +5,22 @@ sidebar:
   order: 2
 ---
 
-Ein **Custom Chip** ist ein Bauteil, das Sie selbst programmieren. Sie schreiben
-einfaches C gegen die `velxio-chip.h`-API, Velxio kompiliert es in der
-Cloud zu WebAssembly, und das Ergebnis verhält sich wie jedes Katalog-Bauteil:
-Es hat Pins, die Sie verdrahten, Attribute, die Sie bearbeiten, und Logik,
-die innerhalb der Simulation läuft.
+Ein **Custom Chip** (benutzerdefinierter Chip) ist ein Bauteil, das Sie selbst programmieren. Sie schreiben einfaches C gegen die `velxio-chip.h`-API, Velxio kompiliert es in der Cloud zu WebAssembly, und das Ergebnis verhält sich wie jedes Katalogbauteil: Es hat Pins, die Sie verdrahten, Attribute, die Sie bearbeiten, und Logik, die innerhalb der Simulation läuft.
 
 ## Wann Sie einen bauen sollten
 
-- Der IC, den Sie benötigen, ist nicht im Katalog (ein obskures Schieberegister,
-  ein proprietäres Sensorprotokoll).
-- Sie möchten eine Testvorrichtung — einen Pulsgenerator, einen Protokoll-Treiber,
-  einen simulierten Sensor mit skriptgesteuerten Werten.
-- Sie unterrichten digitale Logik und möchten, dass Studenten den Chip
-  _implementieren_, nicht nur verwenden.
+- Der IC, den Sie benötigen, ist nicht im Katalog (ein obskures Schieberegister, ein proprietäres Sensorprotokoll).
+- Sie möchten eine Testvorrichtung — einen Pulsgenerator, einen Protokoll-Übungstreiber, einen simulierten Sensor mit skriptgesteuerten Werten.
+- Sie unterrichten digitale Logik und möchten, dass Studierende den Chip _implementieren_, nicht nur verwenden.
 
 ## Die Fünf-Minuten-Version
 
-1. Öffnen Sie die [Bauteilauswahl](/docs/de/circuit-editor/placing-components/)
-   und fügen Sie einen **Custom Chip** zur Zeichenfläche hinzu.
-2. Öffnen Sie den Editor des Chips (Rechtsklick auf den Chip). Sie erhalten zwei Dateien:
-   - **C-Quellcode** — das Verhalten;
-   - **`chip.json`** — das Manifest: Name, Pins, Attribute.
-3. Beginnen Sie mit dem integrierten **Inverter**-Beispiel:
+1. Öffnen Sie die [Bauteilauswahl](/docs/de/circuit-editor/placing-components/) und fügen Sie einen **Custom Chip** zur Zeichenfläche hinzu.
+2. Die Beispielgalerie öffnet sich — wählen Sie einen Ausgangspunkt (oder starten Sie leer).
+3. Sie landen im regulären Code-Editor: Der Chip besitzt einen eigenen Abschnitt im Datei-Explorer mit zwei gewöhnlichen Dateien —
+   - **`chip.c`** — das Verhalten;
+   - **`chip.json`** — das Manifest: Name, Pins, Attribute (während der Eingabe mit Vervollständigung validiert).
+   Dies ist das eingebaute **Inverter**-Beispiel:
 
 ```c
 #include "velxio-chip.h"
@@ -61,23 +54,15 @@ mit seinem Manifest:
 }
 ```
 
-4. **Compile** (Kompilieren) Sie im Dialog — Fehler werden wie bei jedem C-Compiler angezeigt.
-5. Verdrahten Sie `IN` mit einem Taster und `OUT` mit einer LED, drücken Sie **Run** (Ausführen), und schalten Sie nach Herzenslust.
+4. Verdrahten Sie `IN` mit einem Taster und `OUT` mit einer LED, und drücken Sie dann **Run** (Ausführen) — der Chip kompiliert automatisch, wann immer sich seine Quelle geändert hat (die Hammer-Schaltfläche im Datei-Explorer-Abschnitt des Chips kompiliert ihn separat, mit Fehlern in der Ausgabekonsole wie bei jedem C-Compiler).
+5. Schalten Sie nach Herzenslust. Klicken Sie auf den Chip, während die Simulation gestoppt ist, um zu seiner `chip.c` zurückzuspringen; bearbeiten Sie und drücken Sie erneut **Run**.
 
 ## Wie Chips ausgeführt werden
 
-Der Host ruft Ihr `chip_setup()` einmal pro Chip-Instanz auf. Danach ist der
-Chip **reaktiv**: Ihr Code läuft nur innerhalb von Callbacks — ein überwachter Pin
-hat sich geändert, ein I2C-Byte ist angekommen, ein Timer ist ausgelöst. Es gibt
-keine Hauptschleife, die blockiert, und genau das macht Custom Chips so
-kostengünstig, dass man sie überall in einer Schaltung verteilen kann.
+Der Host ruft Ihre `chip_setup()` einmal pro Chip-Instanz auf. Danach ist der Chip **reaktiv**: Ihr Code läuft nur innerhalb von Callbacks — ein überwachter Pin hat sich geändert, ein I2C-Byte ist angekommen, ein Timer ist abgelaufen. Es gibt keine Hauptschleife, die blockiert, und genau das hält Custom Chips günstig genug, um sie in einer Schaltung zu verteilen.
 
-## Integrierte Beispiel-Chips
+## Eingebaute Beispiel-Chips
 
-Der Chip-Editor enthält funktionierende Quellen, die Sie laden und ändern können:
-Logikgatter (Inverter, XOR), Schieberegister (74HC595, CD4094), I2C-Bauteile
-(PCF8574, DS3231 RTC, 24Cxx-EEPROMs), einen SPI-ADC (MCP3008), einen UART-
-ROT13-Wandler, einen Pulszähler — und eine **Retro-CPU-Sammlung**
-(Intel 4004 und Verwandte) für die wirklich Abenteuerlustigen.
+Der Chip-Editor enthält funktionierende Quellen, die Sie laden und ändern können: Logikgatter (Inverter, XOR), Schieberegister (74HC595, CD4094), I2C-Bauteile (PCF8574, DS3231 RTC, 24Cxx-EEPROMs), einen SPI-ADC (MCP3008), einen UART-ROT13-Wandler, einen Pulszähler — und eine **Retro-CPU-Sammlung** (Intel 4004 und Verwandte) für die wirklich Abenteuerlustigen.
 
-Weiter: die [Chips-API-Referenz](/docs/de/custom-chips/api/).
+Weiter: die [Chipt-API-Referenz](/docs/de/custom-chips/api/).

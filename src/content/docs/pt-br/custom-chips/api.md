@@ -2,11 +2,11 @@
 title: Referência da API de Chips
 description: A API velxio-chip.h — pinos, atributos, I2C, SPI, UART, temporizadores, framebuffer, ROM.
 sidebar:
-  order: 3
+  order: 6
 ---
 
 Tudo o que um chip pode fazer é declarado em **`velxio-chip.h`**. O host
-chama sua função exportada `chip_setup()` uma vez por instância; nela você
+chama sua função exportada `chip_setup()` uma vez por instância; lá você
 registra pinos e periféricos e conecta callbacks. Toda a execução posterior
 acontece nesses callbacks.
 
@@ -38,11 +38,19 @@ com `VX_EDGE_RISING`, `VX_EDGE_FALLING` ou `VX_EDGE_BOTH`.
 
 ## Atributos
 
-Parâmetros editáveis pelo usuário que aparecem no painel de propriedades da peça:
+Parâmetros editáveis pelo usuário. Os padrões ficam no inspetor de componentes; declare uma
+seção `controls` no `chip.json` e cada um ganha um **slider ao vivo
+durante a execução da simulação** (veja
+[Sensores programáveis](/docs/pt-br/custom-chips/programmable-sensors/)):
 
 ```c
 vx_attr vx_attr_register(const char* name, double default_val);
-double  vx_attr_read(vx_attr a);
+double  vx_attr_read(vx_attr a);   // releia nos callbacks — sliders o movem ao vivo
+
+// Atributos de string (um ID de dispositivo, um SSID, um nome de preset):
+vx_attr  vx_attr_register_string(const char* name, const char* default_val);
+uint32_t vx_attr_string_len(vx_attr a);
+uint32_t vx_attr_string_read(vx_attr a, char* buf, uint32_t cap);
 ```
 
 Declare-os também no `chip.json` para que o editor possa renderizá-los.
@@ -65,8 +73,8 @@ vx_uart vx_uart_attach(const vx_uart_config* cfg); // rx, tx, baud_rate
 bool    vx_uart_write(vx_uart u, const uint8_t* buf, uint32_t count);
 ```
 
-`on_rx_byte` é acionado por byte recebido; `on_tx_done` quando seu buffer foi
-enviado.
+`on_rx_byte` dispara a cada byte recebido; `on_tx_done` quando seu buffer
+foi enviado.
 
 ## Escravo SPI
 
@@ -97,12 +105,14 @@ consistente em ciclos com as placas ao redor.
 vx_buffer vx_framebuffer_init(uint32_t* out_width, uint32_t* out_height);
 void      vx_buffer_write(vx_buffer b, uint32_t offset,
                           const void* data, uint32_t len);
+void      vx_buffer_read(vx_buffer b, uint32_t offset,
+                         void* data, uint32_t len);
 ```
 
-Para chips que _são_ displays: escreva pixels RGBA e a peça os renderiza
+Para chips que _são_ displays: escreva pixels RGBA e o componente os renderiza
 no canvas.
 
-## Blobs de ROM e registro de log
+## Blobs de ROM e registro
 
 ```c
 uint32_t vx_rom_size(void);
@@ -126,7 +136,8 @@ pelo host antes de `chip_setup()`.
 }
 ```
 
-`pins` define a ordem do footprint físico; os nomes devem corresponder ao que o
-código C registra.
-
------ END PAGE -----
+`pins` define a ordem física do footprint; os nomes devem corresponder ao que o
+código C registra. Seções opcionais: `attributes` (valores ajustáveis),
+`controls` (sliders/botões ao vivo durante a simulação), `display`
+(`{"width", "height"}` para chips com framebuffer) e `programTargets`
+(chips retro-CPU que executam um programa do usuário).

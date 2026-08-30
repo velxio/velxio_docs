@@ -138,9 +138,6 @@ by the host before `chip_setup()`.
 
 `pins` defines the physical footprint order; names must match what the C
 source registers. Optional sections: `attributes` (tunable values),
-`controls` (live sliders/buttons during the simulation — Wokwi-
-compatible), `display` (`{"width", "height"}` for framebuffer chips) and
-`programTargets` (retro-CPU chips that run a user program).
-
-Chips written for the **Wokwi C API** compile unchanged — see
-[Bringing Wokwi chips](/docs/custom-chips/wokwi-migration/).
+`controls` (live sliders/buttons during the simulation), `display`
+(`{"width", "height"}` for framebuffer chips) and `programTargets`
+(retro-CPU chips that run a user program).
