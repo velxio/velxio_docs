@@ -23,10 +23,13 @@ attributes you edit, and logic that runs inside the simulation.
 
 1. Open the [component picker](/docs/circuit-editor/placing-components/)
    and add a **Custom Chip** to the canvas.
-2. Open the chip's editor (right-click the chip). You get two files:
-   - **C source** — the behavior;
-   - **`chip.json`** — the manifest: name, pins, attributes.
-3. Start from the built-in **Inverter** example:
+2. The examples gallery opens — pick a starting point (or start blank).
+3. You land in the regular code editor: the chip owns its own section in
+   the file explorer with two ordinary files —
+   - **`chip.c`** — the behavior;
+   - **`chip.json`** — the manifest: name, pins, attributes (validated
+     with completions as you type).
+   This is the built-in **Inverter** example:
 
 ```c
 #include "velxio-chip.h"
@@ -60,13 +63,12 @@ with its manifest:
 }
 ```
 
-4. **Compile** in the dialog — errors come back like any C compiler's.
-5. Wire `IN` to a button and `OUT` to an LED, press **Run**, and toggle
-   away.
-
-The chip editor, with the C source and the manifest side by side:
-
-![The custom chip editor](../../../assets/docs/custom-chips/chip-editor.png)
+4. Wire `IN` to a button and `OUT` to an LED, then press **Run** — the
+   chip compiles automatically whenever its source changed (the hammer
+   button in the chip's file-explorer section compiles it on its own,
+   with errors in the output console like any C compiler's).
+5. Toggle away. Click the chip while the simulation is stopped to jump
+   back to its `chip.c`; edit and Run again.
 
 ## How chips execute
 

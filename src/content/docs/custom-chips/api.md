@@ -2,7 +2,7 @@
 title: Chips API reference
 description: The velxio-chip.h API — pins, attributes, I2C, SPI, UART, timers, framebuffer, ROM.
 sidebar:
-  order: 3
+  order: 6
 ---
 
 Everything a chip can do is declared in **`velxio-chip.h`**. The host
@@ -38,11 +38,19 @@ with `VX_EDGE_RISING`, `VX_EDGE_FALLING` or `VX_EDGE_BOTH`.
 
 ## Attributes
 
-User-editable parameters that show up in the part's properties panel:
+User-editable parameters. Defaults live in the part inspector; declare a
+`controls` section in `chip.json` and each one gets a **live slider
+while the simulation runs** (see
+[Programmable sensors](/docs/custom-chips/programmable-sensors/)):
 
 ```c
 vx_attr vx_attr_register(const char* name, double default_val);
-double  vx_attr_read(vx_attr a);
+double  vx_attr_read(vx_attr a);   // re-read in callbacks — sliders move it live
+
+// String attributes (a device id, an SSID, a preset name):
+vx_attr  vx_attr_register_string(const char* name, const char* default_val);
+uint32_t vx_attr_string_len(vx_attr a);
+uint32_t vx_attr_string_read(vx_attr a, char* buf, uint32_t cap);
 ```
 
 Declare them in `chip.json` too so the editor can render them.
@@ -97,6 +105,8 @@ with the boards around it.
 vx_buffer vx_framebuffer_init(uint32_t* out_width, uint32_t* out_height);
 void      vx_buffer_write(vx_buffer b, uint32_t offset,
                           const void* data, uint32_t len);
+void      vx_buffer_read(vx_buffer b, uint32_t offset,
+                         void* data, uint32_t len);
 ```
 
 For chips that _are_ displays: write RGBA pixels and the part renders
@@ -127,4 +137,10 @@ by the host before `chip_setup()`.
 ```
 
 `pins` defines the physical footprint order; names must match what the C
-source registers.
+source registers. Optional sections: `attributes` (tunable values),
+`controls` (live sliders/buttons during the simulation — Wokwi-
+compatible), `display` (`{"width", "height"}` for framebuffer chips) and
+`programTargets` (retro-CPU chips that run a user program).
+
+Chips written for the **Wokwi C API** compile unchanged — see
+[Bringing Wokwi chips](/docs/custom-chips/wokwi-migration/).

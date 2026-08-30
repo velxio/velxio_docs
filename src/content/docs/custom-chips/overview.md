@@ -14,6 +14,10 @@ framebuffer.
 In this section:
 
 - **Getting started** — create your first custom chip from the editor.
-- **Tutorial** — build a complete chip step by step.
+- **Programmable sensors** — live sliders that drive your chip while the
+  simulation runs (`controls` in chip.json).
+- **My Chips** — save a chip once, reuse it in any project (Pro).
+- **Bringing Wokwi chips** — chips written for the Wokwi C API compile
+  unchanged, and Wokwi zips import with their chips.
 - **API reference** — every function in `velxio-chip.h`: GPIO, I2C, SPI,
   UART, time, attributes and framebuffer.
