@@ -10,9 +10,11 @@ of *your* component picker — in every project, ready to run, marked with
 a violet **CUSTOM** badge. Only you see your library.
 
 :::note[Pro]
-Saving chips is part of the Pro plan (the same entitlement that powers
-"Create with AI"). Editing and compiling chips inside a project works on
-every plan.
+Saving chips to your library is part of the Pro plan: it is the one piece
+of custom chips that lives on the server rather than in your browser.
+Writing, compiling and running chips, and driving their
+[live sliders](/docs/custom-chips/programmable-sensors/), are free on
+every plan; "Create with AI" is Maker and up.
 :::
 
 ## Saving a chip
