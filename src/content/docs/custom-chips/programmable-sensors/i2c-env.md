@@ -172,6 +172,8 @@ Wire `SDA` and `SCL` to the board's I2C pins (`A4` and `A5` on an Uno),
 plus `VCC` and `GND`. Press **Run**, click the chip, and drag either
 slider: the next transaction carries the new value.
 
+![Two live sliders on the I2C sensor: temperature in C and humidity in percent](../../../../assets/docs/custom-chips/i2c-two-sliders.png)
+
 ## When it does not work
 
 | What you see | Almost always |

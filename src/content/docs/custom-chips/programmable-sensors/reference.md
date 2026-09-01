@@ -54,7 +54,9 @@ logarithmic, or declare a button. Two practical consequences:
 
 A `"button"` entry renders a momentary trigger for reset lines, "simulate
 motion" style events, and anything else that is an edge rather than a
-level. Pressing it drives the attribute to `1` and back to `0` about
+level:
+
+![A button control and a hold-time slider on the motion sensor's panel](../../../../assets/docs/custom-chips/motion-button-panel.png) Pressing it drives the attribute to `1` and back to `0` about
 150 ms later, so your chip should treat a non-zero read as "the event
 happened" rather than trying to catch a specific instant.
 
@@ -103,3 +105,8 @@ server for reuse across projects (Pro).
 - [Tutorial: an analog CO2 sensor](/docs/custom-chips/programmable-sensors/co2-analog/)
 - [Tutorial: temperature and humidity over I2C](/docs/custom-chips/programmable-sensors/i2c-env/)
 - [Custom chip API reference](/docs/custom-chips/api/)
+- Running examples of every field here: the
+  [button](https://velxio.dev/example/motion-sensor-sim-button), the
+  [log slider](https://velxio.dev/example/night-light-log-slider), an
+  [SPI](https://velxio.dev/example/spi-thermometer-live-slider) and a
+  [UART](https://velxio.dev/example/uart-air-sensor-live-slider) sensor

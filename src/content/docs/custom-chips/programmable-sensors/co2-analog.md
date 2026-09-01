@@ -113,6 +113,8 @@ Press **Compile**.
 Drop the chip on the canvas next to an Arduino Uno and connect `VCC` to
 `5V`, `GND` to `GND`, and `OUT` to `A0`.
 
+![The CO2 sensor chip wired to an Arduino Uno: VCC to 5V, GND to GND, OUT to A0](../../../../assets/docs/custom-chips/sensor-circuit.png)
+
 ## Step 5: the sketch
 
 ```cpp title="sketch.ino"
@@ -132,8 +134,13 @@ void loop() {
 
 ## Step 6: run it and drag
 
-Press **Run**, then **click the chip**. The slider panel opens. Drag it
-and the serial output follows within one `delay(500)`.
+Press **Run**, then **click the chip**. The slider panel opens:
+
+![The chip's live panel while the simulation runs: a CO2 slider in ppm](../../../../assets/docs/custom-chips/sensor-slider-panel.png)
+
+Drag it and the serial output follows within one `delay(500)`:
+
+![The serial monitor tracking the slider: ppm readings jumping from 1000 to 3000](../../../../assets/docs/custom-chips/sensor-serial-tracking.png)
 
 That is the whole loop: the slider writes the attribute, the timer reads
 it 20 times a second, the pin voltage changes, and `analogRead` sees it.

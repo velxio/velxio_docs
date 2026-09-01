@@ -18,7 +18,7 @@
  *   VELXIO_SHOTS_EMAIL     login email  (required — use a test account, the
  *   VELXIO_SHOTS_PASSWORD  login pass    account name shows in the top bar)
  */
-import { globSync, mkdirSync } from "node:fs";
+import { globSync, mkdirSync, readFileSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -412,7 +412,210 @@ async function waitForLibraryList(page, ms = 30_000) {
 // Each scene navigates, prepares the state and captures one or more shots.
 // Keep scenes independent: assume a fresh logged-in page, no leftover state.
 
+
+// ── Programmable sensors (custom chips) ─────────────────────────────────────
+// These scenes run ANONYMOUSLY on purpose: live sliders are free, and an
+// anonymous capture is itself the regression test for that. The one thing an
+// anonymous session cannot do is compile the chip (login_required), so the
+// chips are injected pre-compiled from scripts/fixtures/programmable-sensors.json.
+// Regenerate that fixture against the prod container:
+//   for c in co2-sensor motion-sensor i2c-env-sensor; do
+//     docker cp velxio-prod/pro/frontend/src/pro/components/chips/examples/$c.c velxio-app:/tmp/$c.c; done
+//   docker exec velxio-app python3 -c "import asyncio,json;
+//     from app.services.chip_compile import chip_compile_service
+//     ..." (see velxio-prod scripts/chip-engine-matrix.mjs header for the full one-liner)
+// then splice sourceC/chipJson from the same examples/ directory.
+const CHIP_FIXTURE = JSON.parse(
+  readFileSync(join(dirname(fileURLToPath(import.meta.url)), "fixtures/programmable-sensors.json"), "utf8")
+);
+
+/** Workspace draft with an Uno + one pre-compiled sensor chip. The file
+ *  group MUST be named group-<boardId> — parts of the editor derive it from
+ *  the board id, and a diverging name compiles an empty file list. */
+function chipDraft(chipKey, wires, sketch) {
+  const fx = CHIP_FIXTURE[chipKey];
+  return {
+    format: "velxio-project",
+    version: 1,
+    exportedAt: "2026-09-01T00:00:00.000Z",
+    name: `docs-shots-${chipKey}`,
+    boards: [{
+      id: "arduino-uno", name: "Uno", boardKind: "arduino-uno", x: 50, y: 300,
+      activeFileGroupId: "group-arduino-uno", languageMode: "arduino", serialBaudRate: 115200,
+    }],
+    fileGroups: { "group-arduino-uno": [{ name: "sketch.ino", content: sketch }] },
+    components: [{
+      id: "chip1", metadataId: "custom-chip", x: 200, y: 150,
+      properties: { chipName: JSON.parse(fx.chipJson).name, sourceC: fx.sourceC, chipJson: fx.chipJson, wasmBase64: fx.wasmBase64 },
+    }],
+    wires: wires.map(([id, ap, bp]) => ({
+      id, start: { componentId: "chip1", pinName: ap },
+      end: { componentId: "arduino-uno", pinName: bp }, color: "#22c55e",
+    })),
+    activeBoardId: "arduino-uno",
+  };
+}
+
+async function openEditorWithDraft(page, draft) {
+  await page.addInitScript(payload => {
+    try {
+      sessionStorage.setItem("velxio_ws_draft", JSON.stringify(payload));
+      sessionStorage.setItem("velxio_ws_restore", "1");
+      localStorage.clear();
+    } catch {}
+  }, draft);
+  await page.goto(`${BASE}/editor`, { waitUntil: "domcontentloaded" });
+  await page.waitForTimeout(4500);
+  await dismissOverlays(page);
+  await minimizeAi(page);
+}
+
+async function waitForSerial(page, re, timeoutMs = 60_000) {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    const t = await page.evaluate(() => {
+      const el = document.querySelector(".simulator-panel");
+      return el ? el.innerText : document.body.innerText;
+    });
+    if (re.test(t)) return;
+    await page.waitForTimeout(1500);
+  }
+  throw new Error(`serial never matched ${re}`);
+}
+
+/** Click the chip and wait for its live control panel. */
+async function openChipPanel(page) {
+  for (let i = 0; i < 8; i++) {
+    const box = await page.locator("velxio-custom-chip").first().boundingBox();
+    if (box) {
+      await page.mouse.click(box.x + box.width / 2, box.y + box.height / 2);
+      try {
+        await page.waitForSelector(".sensor-control-panel", { timeout: 2500 });
+        return;
+      } catch {}
+    }
+    await page.waitForTimeout(2000);
+  }
+  throw new Error("chip panel did not open");
+}
+
+async function dragChipSlider(page, value) {
+  const ok = await page.evaluate(v => {
+    const input = document.querySelector(".sensor-control-panel input[type='range']");
+    if (!input) return false;
+    Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, "value").set.call(input, String(v));
+    input.dispatchEvent(new Event("input", { bubbles: true }));
+    input.dispatchEvent(new Event("change", { bubbles: true }));
+    return true;
+  }, value);
+  if (!ok) throw new Error("no slider in the panel");
+}
+
+const CO2_DOCS_SKETCH = `void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+  int raw = analogRead(A0);
+  float volts = raw * (5.0f / 1023.0f);
+  float ppm = 400.0f + volts / 5.0f * 4600.0f;
+  Serial.print("raw="); Serial.print(raw);
+  Serial.print("  ppm="); Serial.println(ppm, 0);
+  delay(500);
+}
+`;
+
+const I2C_DOCS_SKETCH = `#include <Wire.h>
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin();
+}
+
+void loop() {
+  Wire.beginTransmission(0x44);
+  Wire.write(0x00);
+  Wire.endTransmission();
+
+  Wire.requestFrom(0x44, 4);
+  if (Wire.available() >= 4) {
+    int16_t t  = Wire.read() | (Wire.read() << 8);
+    uint16_t h = Wire.read() | (Wire.read() << 8);
+    Serial.print("T="); Serial.print(t / 10.0, 1);
+    Serial.print("C  RH="); Serial.print(h / 10.0, 1);
+    Serial.println("%");
+  }
+  delay(500);
+}
+`;
+
+const MOTION_DOCS_SKETCH = `bool was = false;
+void setup() {
+  Serial.begin(115200);
+  pinMode(2, INPUT);
+  Serial.println("Motion sensor armed");
+}
+void loop() {
+  bool high = digitalRead(2) == HIGH;
+  if (high && !was) Serial.println("Motion detected!");
+  if (!high && was) Serial.println("...clear");
+  was = high;
+  delay(20);
+}
+`;
+
 const SCENES = {
+  /** CO2 sensor tutorial: circuit, live slider panel, serial tracking. */
+  "custom-chips/co2-sensor": async page => {
+    await openEditorWithDraft(page, chipDraft("co2-sensor", [
+      ["w-vcc", "VCC", "5V"], ["w-gnd", "GND", "GND.1"], ["w-out", "OUT", "A0"],
+    ], CO2_DOCS_SKETCH));
+    await shot(page, "custom-chips/sensor-circuit", {
+      clip: await canvasClip(page, ["wokwi-arduino-uno", "velxio-custom-chip"]),
+    });
+    await page.click('button[title^="Run"]');
+    await waitForSerial(page, /ppm=9\d\d/);
+    await openChipPanel(page);
+    await shot(page, "custom-chips/sensor-slider-panel", {
+      clip: await clipOf(page, ["velxio-custom-chip", ".sensor-control-panel"], 12),
+    });
+    await dragChipSlider(page, 3000);
+    {
+      // The output box spans the full editor width; the readings hug the
+      // left edge, so the empty right half is cropped away.
+      const clip = await serialClip(page, /ppm=29\d\d/);
+      clip.width = Math.min(clip.width, 560);
+      await shot(page, "custom-chips/sensor-serial-tracking", { clip });
+    }
+  },
+
+  /** Motion sensor: the button control in its panel. */
+  "custom-chips/motion-sensor": async page => {
+    await openEditorWithDraft(page, chipDraft("motion-sensor", [
+      ["w-vcc", "VCC", "5V"], ["w-gnd", "GND", "GND.1"], ["w-out", "OUT", "2"],
+    ], MOTION_DOCS_SKETCH));
+    await page.click('button[title^="Run"]');
+    await waitForSerial(page, /armed/i);
+    await openChipPanel(page);
+    await shot(page, "custom-chips/motion-button-panel", {
+      clip: await clipOf(page, ["velxio-custom-chip", ".sensor-control-panel"], 12),
+    });
+  },
+
+  /** I2C env sensor: two sliders behind one register map. */
+  "custom-chips/i2c-env-sensor": async page => {
+    await openEditorWithDraft(page, chipDraft("i2c-env-sensor", [
+      ["w-vcc", "VCC", "5V"], ["w-gnd", "GND", "GND.1"],
+      ["w-sda", "SDA", "A4"], ["w-scl", "SCL", "A5"],
+    ], I2C_DOCS_SKETCH));
+    await page.click('button[title^="Run"]');
+    await waitForSerial(page, /T=25/);
+    await openChipPanel(page);
+    await shot(page, "custom-chips/i2c-two-sliders", {
+      clip: await clipOf(page, ["velxio-custom-chip", ".sensor-control-panel"], 12),
+    });
+  },
+
   /** The editor as a signed-in user first sees it. */
   "getting-started/app-home": async page => {
     await page.goto(`${BASE}/`, { waitUntil: "domcontentloaded" });
@@ -945,6 +1148,9 @@ const SCENES = {
   },
 };
 
+for (const n of ["custom-chips/co2-sensor", "custom-chips/motion-sensor", "custom-chips/i2c-env-sensor"])
+  SCENES[n].anonymous = true;
+
 const WANT_INVENTORY = process.argv.includes("--inventory");
 
 // ── main ─────────────────────────────────────────────────────────────────────
@@ -968,7 +1174,11 @@ try {
     console.log(`scene ${name}`);
     const page = await browser.newPage({ viewport: VIEWPORT });
     try {
-      await login(page);
+      // Scenes marked `.anonymous` run without a session on purpose: the
+      // programmable-sensor shots PROVE the free anonymous flow while they
+      // capture it, and they are the only scenes runnable with no creds.
+      if (!SCENES[name].anonymous) await login(page);
+      else await page.goto(`${BASE}/`, { waitUntil: "domcontentloaded" });
       await SCENES[name](page);
     } catch (e) {
       failed++;

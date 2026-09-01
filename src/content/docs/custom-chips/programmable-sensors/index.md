@@ -41,6 +41,10 @@ addresses the attribute **by the same id**:
 double ppm = vx_attr_read(S.ppm);   /* the slider's value right now */
 ```
 
+Press **Run**, click the chip, and this opens:
+
+![The live control panel of a running CO2 sensor chip: one slider from 400 to 5000 ppm](../../../../assets/docs/custom-chips/sensor-slider-panel.png)
+
 That third point is the one that trips people up. Read the attribute once
 in `chip_setup()` and cache it in a variable, and the slider will appear,
 move, and do absolutely nothing. `vx_attr_read` is cheap; call it inside
@@ -87,14 +91,17 @@ They are different surfaces and people mix them up:
 
 ## Try one first
 
-Both tutorials below have a runnable circuit you can open in one click:
+Every pattern has a runnable circuit in the gallery. Press Run, then
+click the chip:
 
-- [CO2 Sensor (live slider)](https://velxio.dev/example/co2-sensor-live-slider)
-  — analog, one slider, `analogRead` on `A0`.
-- [I2C Env Sensor (live sliders)](https://velxio.dev/example/i2c-env-sensor-live-sliders)
-  — two sliders behind a register map at `0x44`.
-
-Press Run, then click the chip.
+| Example | What it teaches |
+| --- | --- |
+| [CO2 Sensor (live slider)](https://velxio.dev/example/co2-sensor-live-slider) | The analog recipe: slider to voltage to `analogRead` |
+| [I2C Env Sensor (live sliders)](https://velxio.dev/example/i2c-env-sensor-live-sliders) | Two sliders behind a register map at `0x44` |
+| [Motion Sensor (simulate button)](https://velxio.dev/example/motion-sensor-sim-button) | The `button` control: momentary trigger plus a hold slider |
+| [Night Light (log lux slider)](https://velxio.dev/example/night-light-log-slider) | `scale: "log"`: five decades of lux on one slider, lamp trips below 50 lx |
+| [SPI Thermometer (live slider)](https://velxio.dev/example/spi-thermometer-live-slider) | SPI slave timing: latch on the falling edge of CS |
+| [UART Air Sensor (live slider)](https://velxio.dev/example/uart-air-sensor-live-slider) | Push-style serial sensor into SoftwareSerial |
 
 ## Where to go next
 
