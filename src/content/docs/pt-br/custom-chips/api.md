@@ -6,7 +6,7 @@ sidebar:
 ---
 
 Tudo o que um chip pode fazer é declarado em **`velxio-chip.h`**. O host
-chama sua função exportada `chip_setup()` uma vez por instância; lá você
+chama sua função exportada `chip_setup()` uma vez por instância; nela você
 registra pinos e periféricos e conecta callbacks. Toda a execução posterior
 acontece nesses callbacks.
 
@@ -39,13 +39,13 @@ com `VX_EDGE_RISING`, `VX_EDGE_FALLING` ou `VX_EDGE_BOTH`.
 ## Atributos
 
 Parâmetros editáveis pelo usuário. Os padrões ficam no inspetor de componentes; declare uma
-seção `controls` no `chip.json` e cada um ganha um **slider ao vivo
-durante a execução da simulação** (veja
+seção `controls` no `chip.json` e cada um recebe um **slider ao vivo
+enquanto a simulação roda** (veja
 [Sensores programáveis](/docs/pt-br/custom-chips/programmable-sensors/)):
 
 ```c
 vx_attr vx_attr_register(const char* name, double default_val);
-double  vx_attr_read(vx_attr a);   // releia nos callbacks — sliders o movem ao vivo
+double  vx_attr_read(vx_attr a);   // re-leia nos callbacks — sliders movem ao vivo
 
 // Atributos de string (um ID de dispositivo, um SSID, um nome de preset):
 vx_attr  vx_attr_register_string(const char* name, const char* default_val);
@@ -73,8 +73,8 @@ vx_uart vx_uart_attach(const vx_uart_config* cfg); // rx, tx, baud_rate
 bool    vx_uart_write(vx_uart u, const uint8_t* buf, uint32_t count);
 ```
 
-`on_rx_byte` dispara a cada byte recebido; `on_tx_done` quando seu buffer
-foi enviado.
+`on_rx_byte` dispara por byte recebido; `on_tx_done` quando seu buffer foi
+enviado.
 
 ## Escravo SPI
 
@@ -112,7 +112,7 @@ void      vx_buffer_read(vx_buffer b, uint32_t offset,
 Para chips que _são_ displays: escreva pixels RGBA e o componente os renderiza
 no canvas.
 
-## Blobs de ROM e registro
+## Blobs de ROM e registro de log
 
 ```c
 uint32_t vx_rom_size(void);
@@ -122,6 +122,15 @@ void     vx_log(const char* msg);   // aparece no console do navegador
 
 A ROM permite que um chip carregue dados externos (ROMs de caracteres, microcódigo) injetados
 pelo host antes de `chip_setup()`.
+
+## A aparência do chip
+
+O corpo é desenhado a partir do `chip.json`: a lista de pinos posiciona os pads e seus
+rótulos, e um `display: { width, height }` opcional reserva uma
+área de framebuffer. Um chip também pode carregar uma **imagem** — PNG, JPEG
+ou SVG adicionada à sua seção de arquivos como `chip.png` / `chip.jpg` / `chip.svg` — que
+cobre o corpo sem mover nenhum pino. Veja
+[Dando uma aparência ao chip](/docs/pt-br/custom-chips/getting-started/#giving-the-chip-a-face).
 
 ## O manifesto (`chip.json`)
 
@@ -137,7 +146,7 @@ pelo host antes de `chip_setup()`.
 ```
 
 `pins` define a ordem física do footprint; os nomes devem corresponder ao que o
-código C registra. Seções opcionais: `attributes` (valores ajustáveis),
+código-fonte C registra. Seções opcionais: `attributes` (valores ajustáveis),
 `controls` (sliders/botões ao vivo durante a simulação), `display`
 (`{"width", "height"}` para chips com framebuffer) e `programTargets`
 (chips retro-CPU que executam um programa do usuário).

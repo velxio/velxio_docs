@@ -12,7 +12,8 @@
       "createdAt": "2026-08-27T05:56:14.671Z",
       "nextAttemptAt": "2026-08-27T05:56:14.672Z",
       "completedAt": "2026-08-28T18:43:47.899Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "862e04d6f423e7e0"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -26,7 +27,8 @@
       "createdAt": "2026-08-27T05:56:14.672Z",
       "nextAttemptAt": "2026-08-27T05:56:14.672Z",
       "completedAt": "2026-08-28T18:44:09.593Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "862e04d6f423e7e0"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -40,7 +42,8 @@
       "createdAt": "2026-08-27T05:56:14.672Z",
       "nextAttemptAt": "2026-08-27T05:56:14.672Z",
       "completedAt": "2026-08-28T18:44:33.538Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "862e04d6f423e7e0"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -54,7 +57,8 @@
       "createdAt": "2026-08-27T05:56:14.672Z",
       "nextAttemptAt": "2026-08-27T05:56:14.672Z",
       "completedAt": "2026-08-28T18:44:55.768Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "862e04d6f423e7e0"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -68,7 +72,8 @@
       "createdAt": "2026-08-27T05:56:14.672Z",
       "nextAttemptAt": "2026-08-27T05:56:14.672Z",
       "completedAt": "2026-08-28T18:45:15.646Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "862e04d6f423e7e0"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -82,7 +87,8 @@
       "createdAt": "2026-08-27T05:56:14.672Z",
       "nextAttemptAt": "2026-08-27T05:56:14.672Z",
       "completedAt": "2026-08-28T18:45:40.375Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "862e04d6f423e7e0"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -96,7 +102,8 @@
       "createdAt": "2026-08-27T05:56:14.672Z",
       "nextAttemptAt": "2026-08-27T05:56:14.672Z",
       "completedAt": "2026-08-28T18:46:06.000Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "862e04d6f423e7e0"
     },
     {
       "relPath": "wifi-iot/esp32-wifi.md",
@@ -110,7 +117,8 @@
       "createdAt": "2026-08-27T05:56:14.672Z",
       "nextAttemptAt": "2026-08-27T05:56:14.672Z",
       "completedAt": "2026-08-28T21:18:23.952Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "862e04d6f423e7e0"
     },
     {
       "relPath": "custom-chips/my-chips.md",
@@ -122,9 +130,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T03:05:36.419Z",
-      "nextAttemptAt": "2026-08-30T03:05:36.421Z",
-      "completedAt": "2026-08-30T03:05:52.233Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:52:42.941Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "83d75b1cef96c333"
     },
     {
       "relPath": "custom-chips/my-chips.md",
@@ -136,9 +145,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T03:05:36.421Z",
-      "nextAttemptAt": "2026-08-30T03:05:36.421Z",
-      "completedAt": "2026-08-30T03:06:12.800Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:52:48.105Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "83d75b1cef96c333"
     },
     {
       "relPath": "custom-chips/my-chips.md",
@@ -150,9 +160,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T03:05:36.421Z",
-      "nextAttemptAt": "2026-08-30T03:05:36.421Z",
-      "completedAt": "2026-08-30T03:06:17.894Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:53:01.016Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "83d75b1cef96c333"
     },
     {
       "relPath": "custom-chips/my-chips.md",
@@ -164,9 +175,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T03:05:36.421Z",
-      "nextAttemptAt": "2026-08-30T03:05:36.421Z",
-      "completedAt": "2026-08-30T03:06:22.667Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:53:06.095Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "83d75b1cef96c333"
     },
     {
       "relPath": "custom-chips/my-chips.md",
@@ -178,9 +190,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T03:05:36.421Z",
-      "nextAttemptAt": "2026-08-30T03:05:36.421Z",
-      "completedAt": "2026-08-30T03:06:26.659Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:53:10.472Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "83d75b1cef96c333"
     },
     {
       "relPath": "custom-chips/my-chips.md",
@@ -192,9 +205,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T03:05:36.421Z",
-      "nextAttemptAt": "2026-08-30T03:05:36.421Z",
-      "completedAt": "2026-08-30T03:06:32.170Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:53:16.658Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "83d75b1cef96c333"
     },
     {
       "relPath": "custom-chips/my-chips.md",
@@ -206,9 +220,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T03:05:36.421Z",
-      "nextAttemptAt": "2026-08-30T03:05:36.421Z",
-      "completedAt": "2026-08-30T03:06:37.689Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:53:22.797Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "83d75b1cef96c333"
     },
     {
       "relPath": "custom-chips/my-chips.md",
@@ -220,9 +235,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T03:05:36.422Z",
-      "nextAttemptAt": "2026-08-30T03:05:36.422Z",
-      "completedAt": "2026-08-30T03:06:42.935Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:53:28.577Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "83d75b1cef96c333"
     },
     {
       "relPath": "custom-chips/programmable-sensors.md",
@@ -458,9 +474,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.968Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.969Z",
-      "completedAt": "2026-08-30T05:06:31.351Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.225Z",
+      "completedAt": "2026-09-01T04:53:37.642Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "3e9561ee55456db2"
     },
     {
       "relPath": "custom-chips/api.md",
@@ -472,9 +489,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.969Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.969Z",
-      "completedAt": "2026-08-30T05:06:40.031Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.226Z",
+      "completedAt": "2026-09-01T04:53:47.488Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "3e9561ee55456db2"
     },
     {
       "relPath": "custom-chips/api.md",
@@ -486,9 +504,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.969Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.969Z",
-      "completedAt": "2026-08-30T05:06:48.793Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.226Z",
+      "completedAt": "2026-09-01T04:53:57.201Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "3e9561ee55456db2"
     },
     {
       "relPath": "custom-chips/api.md",
@@ -500,9 +519,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.969Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.969Z",
-      "completedAt": "2026-08-30T05:06:57.823Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.226Z",
+      "completedAt": "2026-09-01T04:54:07.490Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "3e9561ee55456db2"
     },
     {
       "relPath": "custom-chips/api.md",
@@ -514,9 +534,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.969Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.969Z",
-      "completedAt": "2026-08-30T05:07:06.041Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.226Z",
+      "completedAt": "2026-09-01T04:54:16.066Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "3e9561ee55456db2"
     },
     {
       "relPath": "custom-chips/api.md",
@@ -528,9 +549,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.969Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.969Z",
-      "completedAt": "2026-08-30T05:07:15.539Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.226Z",
+      "completedAt": "2026-09-01T04:54:26.463Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "3e9561ee55456db2"
     },
     {
       "relPath": "custom-chips/api.md",
@@ -542,9 +564,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.969Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.969Z",
-      "completedAt": "2026-08-30T05:07:25.044Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.226Z",
+      "completedAt": "2026-09-01T04:54:37.320Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "3e9561ee55456db2"
     },
     {
       "relPath": "custom-chips/api.md",
@@ -556,9 +579,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.969Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.969Z",
-      "completedAt": "2026-08-30T05:07:34.462Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.226Z",
+      "completedAt": "2026-09-01T04:54:46.814Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "3e9561ee55456db2"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -570,9 +594,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.972Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.972Z",
-      "completedAt": "2026-08-30T05:07:41.755Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:54:56.443Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "92576b064a3b7de2"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -584,9 +609,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.972Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.972Z",
-      "completedAt": "2026-08-30T05:07:49.217Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:55:06.057Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "92576b064a3b7de2"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -598,9 +624,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.972Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.972Z",
-      "completedAt": "2026-08-30T05:07:57.393Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:55:16.428Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "92576b064a3b7de2"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -612,9 +639,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.972Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.972Z",
-      "completedAt": "2026-08-30T05:08:05.247Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:55:26.487Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "92576b064a3b7de2"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -626,9 +654,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.972Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.972Z",
-      "completedAt": "2026-08-30T05:08:11.679Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:55:35.432Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "92576b064a3b7de2"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -640,9 +669,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.972Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.972Z",
-      "completedAt": "2026-08-30T05:08:19.849Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:55:46.936Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "92576b064a3b7de2"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -654,9 +684,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.972Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.972Z",
-      "completedAt": "2026-08-30T05:08:28.568Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:55:58.812Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "92576b064a3b7de2"
     },
     {
       "relPath": "custom-chips/getting-started.md",
@@ -668,9 +699,10 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-08-30T05:06:14.972Z",
-      "nextAttemptAt": "2026-08-30T05:06:14.972Z",
-      "completedAt": "2026-08-30T05:08:36.169Z",
-      "providerUsed": "deepseek"
+      "nextAttemptAt": "2026-09-01T04:52:32.227Z",
+      "completedAt": "2026-09-01T04:56:09.700Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "92576b064a3b7de2"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -684,7 +716,8 @@
       "createdAt": "2026-08-30T05:06:14.972Z",
       "nextAttemptAt": "2026-08-30T05:06:14.972Z",
       "completedAt": "2026-08-30T05:08:39.032Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "04edb8cab5677d31"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -698,7 +731,8 @@
       "createdAt": "2026-08-30T05:06:14.972Z",
       "nextAttemptAt": "2026-08-30T05:06:14.972Z",
       "completedAt": "2026-08-30T05:08:41.457Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "04edb8cab5677d31"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -712,7 +746,8 @@
       "createdAt": "2026-08-30T05:06:14.972Z",
       "nextAttemptAt": "2026-08-30T05:06:14.972Z",
       "completedAt": "2026-08-30T05:08:44.083Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "04edb8cab5677d31"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -726,7 +761,8 @@
       "createdAt": "2026-08-30T05:06:14.972Z",
       "nextAttemptAt": "2026-08-30T05:06:14.972Z",
       "completedAt": "2026-08-30T05:08:47.110Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "04edb8cab5677d31"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -740,7 +776,8 @@
       "createdAt": "2026-08-30T05:06:14.972Z",
       "nextAttemptAt": "2026-08-30T05:06:14.972Z",
       "completedAt": "2026-08-30T05:08:49.674Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "04edb8cab5677d31"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -754,7 +791,8 @@
       "createdAt": "2026-08-30T05:06:14.972Z",
       "nextAttemptAt": "2026-08-30T05:06:14.972Z",
       "completedAt": "2026-08-30T05:08:52.780Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "04edb8cab5677d31"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -768,7 +806,8 @@
       "createdAt": "2026-08-30T05:06:14.972Z",
       "nextAttemptAt": "2026-08-30T05:06:14.972Z",
       "completedAt": "2026-08-30T05:08:55.488Z",
-      "providerUsed": "deepseek"
+      "providerUsed": "deepseek",
+      "sourceHash": "04edb8cab5677d31"
     },
     {
       "relPath": "custom-chips/overview.md",
@@ -782,6 +821,487 @@
       "createdAt": "2026-08-30T05:06:14.972Z",
       "nextAttemptAt": "2026-08-30T05:06:14.972Z",
       "completedAt": "2026-08-30T05:08:58.460Z",
+      "providerUsed": "deepseek",
+      "sourceHash": "04edb8cab5677d31"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/co2-analog.md",
+      "sourceLocale": "en",
+      "targetLocale": "es",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/co2-analog.md",
+      "targetFile": "src/content/docs/es/custom-chips/programmable-sensors/co2-analog.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.077Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.084Z",
+      "completedAt": "2026-09-01T04:56:20.217Z",
+      "sourceHash": "84d28e7d8de0f726",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/co2-analog.md",
+      "sourceLocale": "en",
+      "targetLocale": "pt-br",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/co2-analog.md",
+      "targetFile": "src/content/docs/pt-br/custom-chips/programmable-sensors/co2-analog.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.084Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.084Z",
+      "completedAt": "2026-09-01T04:56:30.609Z",
+      "sourceHash": "84d28e7d8de0f726",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/co2-analog.md",
+      "sourceLocale": "en",
+      "targetLocale": "it",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/co2-analog.md",
+      "targetFile": "src/content/docs/it/custom-chips/programmable-sensors/co2-analog.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.085Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.085Z",
+      "completedAt": "2026-09-01T04:56:41.660Z",
+      "sourceHash": "84d28e7d8de0f726",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/co2-analog.md",
+      "sourceLocale": "en",
+      "targetLocale": "fr",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/co2-analog.md",
+      "targetFile": "src/content/docs/fr/custom-chips/programmable-sensors/co2-analog.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.085Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.085Z",
+      "completedAt": "2026-09-01T04:56:52.746Z",
+      "sourceHash": "84d28e7d8de0f726",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/co2-analog.md",
+      "sourceLocale": "en",
+      "targetLocale": "zh-cn",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/co2-analog.md",
+      "targetFile": "src/content/docs/zh-cn/custom-chips/programmable-sensors/co2-analog.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.085Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.085Z",
+      "completedAt": "2026-09-01T04:57:02.326Z",
+      "sourceHash": "84d28e7d8de0f726",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/co2-analog.md",
+      "sourceLocale": "en",
+      "targetLocale": "de",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/co2-analog.md",
+      "targetFile": "src/content/docs/de/custom-chips/programmable-sensors/co2-analog.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.086Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.086Z",
+      "completedAt": "2026-09-01T04:57:13.866Z",
+      "sourceHash": "84d28e7d8de0f726",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/co2-analog.md",
+      "sourceLocale": "en",
+      "targetLocale": "ja",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/co2-analog.md",
+      "targetFile": "src/content/docs/ja/custom-chips/programmable-sensors/co2-analog.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.086Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.086Z",
+      "completedAt": "2026-09-01T04:57:26.161Z",
+      "sourceHash": "84d28e7d8de0f726",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/co2-analog.md",
+      "sourceLocale": "en",
+      "targetLocale": "ru",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/co2-analog.md",
+      "targetFile": "src/content/docs/ru/custom-chips/programmable-sensors/co2-analog.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.086Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.086Z",
+      "completedAt": "2026-09-01T04:57:36.839Z",
+      "sourceHash": "84d28e7d8de0f726",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/i2c-env.md",
+      "sourceLocale": "en",
+      "targetLocale": "es",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/i2c-env.md",
+      "targetFile": "src/content/docs/es/custom-chips/programmable-sensors/i2c-env.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:57:48.239Z",
+      "sourceHash": "8358696b20035502",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/i2c-env.md",
+      "sourceLocale": "en",
+      "targetLocale": "pt-br",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/i2c-env.md",
+      "targetFile": "src/content/docs/pt-br/custom-chips/programmable-sensors/i2c-env.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:57:59.846Z",
+      "sourceHash": "8358696b20035502",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/i2c-env.md",
+      "sourceLocale": "en",
+      "targetLocale": "it",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/i2c-env.md",
+      "targetFile": "src/content/docs/it/custom-chips/programmable-sensors/i2c-env.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:58:11.689Z",
+      "sourceHash": "8358696b20035502",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/i2c-env.md",
+      "sourceLocale": "en",
+      "targetLocale": "fr",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/i2c-env.md",
+      "targetFile": "src/content/docs/fr/custom-chips/programmable-sensors/i2c-env.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:58:24.025Z",
+      "sourceHash": "8358696b20035502",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/i2c-env.md",
+      "sourceLocale": "en",
+      "targetLocale": "zh-cn",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/i2c-env.md",
+      "targetFile": "src/content/docs/zh-cn/custom-chips/programmable-sensors/i2c-env.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:58:34.971Z",
+      "sourceHash": "8358696b20035502",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/i2c-env.md",
+      "sourceLocale": "en",
+      "targetLocale": "de",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/i2c-env.md",
+      "targetFile": "src/content/docs/de/custom-chips/programmable-sensors/i2c-env.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:58:48.161Z",
+      "sourceHash": "8358696b20035502",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/i2c-env.md",
+      "sourceLocale": "en",
+      "targetLocale": "ja",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/i2c-env.md",
+      "targetFile": "src/content/docs/ja/custom-chips/programmable-sensors/i2c-env.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:59:01.481Z",
+      "sourceHash": "8358696b20035502",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/i2c-env.md",
+      "sourceLocale": "en",
+      "targetLocale": "ru",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/i2c-env.md",
+      "targetFile": "src/content/docs/ru/custom-chips/programmable-sensors/i2c-env.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:59:13.893Z",
+      "sourceHash": "8358696b20035502",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/reference.md",
+      "sourceLocale": "en",
+      "targetLocale": "es",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/reference.md",
+      "targetFile": "src/content/docs/es/custom-chips/programmable-sensors/reference.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:59:23.899Z",
+      "sourceHash": "b852b694763845e3",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/reference.md",
+      "sourceLocale": "en",
+      "targetLocale": "pt-br",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/reference.md",
+      "targetFile": "src/content/docs/pt-br/custom-chips/programmable-sensors/reference.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:59:34.277Z",
+      "sourceHash": "b852b694763845e3",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/reference.md",
+      "sourceLocale": "en",
+      "targetLocale": "it",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/reference.md",
+      "targetFile": "src/content/docs/it/custom-chips/programmable-sensors/reference.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:59:45.181Z",
+      "sourceHash": "b852b694763845e3",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/reference.md",
+      "sourceLocale": "en",
+      "targetLocale": "fr",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/reference.md",
+      "targetFile": "src/content/docs/fr/custom-chips/programmable-sensors/reference.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T04:59:55.854Z",
+      "sourceHash": "b852b694763845e3",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/reference.md",
+      "sourceLocale": "en",
+      "targetLocale": "zh-cn",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/reference.md",
+      "targetFile": "src/content/docs/zh-cn/custom-chips/programmable-sensors/reference.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T05:00:04.207Z",
+      "sourceHash": "b852b694763845e3",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/reference.md",
+      "sourceLocale": "en",
+      "targetLocale": "de",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/reference.md",
+      "targetFile": "src/content/docs/de/custom-chips/programmable-sensors/reference.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T05:00:16.563Z",
+      "sourceHash": "b852b694763845e3",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/reference.md",
+      "sourceLocale": "en",
+      "targetLocale": "ja",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/reference.md",
+      "targetFile": "src/content/docs/ja/custom-chips/programmable-sensors/reference.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.087Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.087Z",
+      "completedAt": "2026-09-01T05:00:29.146Z",
+      "sourceHash": "b852b694763845e3",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/reference.md",
+      "sourceLocale": "en",
+      "targetLocale": "ru",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/reference.md",
+      "targetFile": "src/content/docs/ru/custom-chips/programmable-sensors/reference.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:50:59.088Z",
+      "nextAttemptAt": "2026-09-01T04:50:59.088Z",
+      "completedAt": "2026-09-01T05:00:40.572Z",
+      "sourceHash": "b852b694763845e3",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/index.md",
+      "sourceLocale": "en",
+      "targetLocale": "es",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/index.md",
+      "targetFile": "src/content/docs/es/custom-chips/programmable-sensors/index.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:51:37.715Z",
+      "nextAttemptAt": "2026-09-01T04:51:37.716Z",
+      "completedAt": "2026-09-01T05:00:52.033Z",
+      "sourceHash": "893c90fd8da94c32",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/index.md",
+      "sourceLocale": "en",
+      "targetLocale": "pt-br",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/index.md",
+      "targetFile": "src/content/docs/pt-br/custom-chips/programmable-sensors/index.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:51:37.717Z",
+      "nextAttemptAt": "2026-09-01T04:51:37.717Z",
+      "completedAt": "2026-09-01T05:01:03.390Z",
+      "sourceHash": "893c90fd8da94c32",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/index.md",
+      "sourceLocale": "en",
+      "targetLocale": "it",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/index.md",
+      "targetFile": "src/content/docs/it/custom-chips/programmable-sensors/index.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:51:37.717Z",
+      "nextAttemptAt": "2026-09-01T04:51:37.717Z",
+      "completedAt": "2026-09-01T05:01:16.040Z",
+      "sourceHash": "893c90fd8da94c32",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/index.md",
+      "sourceLocale": "en",
+      "targetLocale": "fr",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/index.md",
+      "targetFile": "src/content/docs/fr/custom-chips/programmable-sensors/index.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:51:37.717Z",
+      "nextAttemptAt": "2026-09-01T04:51:37.717Z",
+      "completedAt": "2026-09-01T05:01:27.685Z",
+      "sourceHash": "893c90fd8da94c32",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/index.md",
+      "sourceLocale": "en",
+      "targetLocale": "zh-cn",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/index.md",
+      "targetFile": "src/content/docs/zh-cn/custom-chips/programmable-sensors/index.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:51:37.717Z",
+      "nextAttemptAt": "2026-09-01T04:51:37.717Z",
+      "completedAt": "2026-09-01T05:01:37.028Z",
+      "sourceHash": "893c90fd8da94c32",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/index.md",
+      "sourceLocale": "en",
+      "targetLocale": "de",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/index.md",
+      "targetFile": "src/content/docs/de/custom-chips/programmable-sensors/index.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:51:37.717Z",
+      "nextAttemptAt": "2026-09-01T04:51:37.717Z",
+      "completedAt": "2026-09-01T05:01:49.827Z",
+      "sourceHash": "893c90fd8da94c32",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/index.md",
+      "sourceLocale": "en",
+      "targetLocale": "ja",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/index.md",
+      "targetFile": "src/content/docs/ja/custom-chips/programmable-sensors/index.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:51:37.717Z",
+      "nextAttemptAt": "2026-09-01T04:51:37.717Z",
+      "completedAt": "2026-09-01T05:02:03.253Z",
+      "sourceHash": "893c90fd8da94c32",
+      "providerUsed": "deepseek"
+    },
+    {
+      "relPath": "custom-chips/programmable-sensors/index.md",
+      "sourceLocale": "en",
+      "targetLocale": "ru",
+      "sourceFile": "src/content/docs/custom-chips/programmable-sensors/index.md",
+      "targetFile": "src/content/docs/ru/custom-chips/programmable-sensors/index.md",
+      "status": "done",
+      "attempts": 1,
+      "lastError": null,
+      "createdAt": "2026-09-01T04:51:37.717Z",
+      "nextAttemptAt": "2026-09-01T04:51:37.717Z",
+      "completedAt": "2026-09-01T05:02:15.534Z",
+      "sourceHash": "893c90fd8da94c32",
       "providerUsed": "deepseek"
     }
   ]

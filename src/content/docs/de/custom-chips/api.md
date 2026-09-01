@@ -40,8 +40,9 @@ mit `VX_EDGE_RISING`, `VX_EDGE_FALLING` oder `VX_EDGE_BOTH`.
 
 Vom Benutzer editierbare Parameter. Die Standardwerte befinden sich im
 Bauteil-Inspektor; deklarieren Sie einen `controls`-Abschnitt in `chip.json`
-und jeder davon erhält einen **Live-Slider während die Simulation läuft**
-(siehe [Programmierbare Sensoren](/docs/de/custom-chips/programmable-sensors/)):
+und jeder davon erhält einen **Live-Schieberegler während die Simulation
+läuft** (siehe
+[Programmierbare Sensoren](/docs/de/custom-chips/programmable-sensors/)):
 
 ```c
 vx_attr vx_attr_register(const char* name, double default_val);
@@ -62,8 +63,8 @@ vx_i2c vx_i2c_attach(const vx_i2c_config* cfg);
 ```
 
 Die Konfiguration enthält die 7-Bit-`address`, die `scl`/`sda`-Pins und vier
-Callbacks: `on_connect(addr, is_read)`, `on_read()` (gibt das nächste Byte
-zurück), `on_write(byte)` (ACK/NACK), `on_stop()`. Genug, um jedes
+Callbacks: `on_connect(addr, is_read)`, `on_read()` (gibt das nächste
+Byte zurück), `on_write(byte)` (ACK/NACK), `on_stop()`. Genug, um jedes
 registerbasierte I2C-Gerät zu implementieren — siehe die PCF8574- und
 DS3231-Beispiele.
 
@@ -74,8 +75,8 @@ vx_uart vx_uart_attach(const vx_uart_config* cfg); // rx, tx, baud_rate
 bool    vx_uart_write(vx_uart u, const uint8_t* buf, uint32_t count);
 ```
 
-`on_rx_byte` wird pro empfangenem Byte ausgelöst; `on_tx_done`, wenn Ihr
-Puffer gesendet wurde.
+`on_rx_byte` feuert pro empfangenem Byte; `on_tx_done`, wenn Ihr Puffer
+gesendet wurde.
 
 ## SPI-Slave
 
@@ -124,6 +125,16 @@ void     vx_log(const char* msg);   // appears in the browser console
 ROM ermöglicht einem Chip, externe Daten (Zeichen-ROMs, Mikrocode) zu tragen,
 die vom Host vor `chip_setup()` injiziert werden.
 
+## Das Gesicht des Chips
+
+Der Körper wird aus `chip.json` gezeichnet: Die Pin-Liste platziert die Pads
+und ihre Beschriftungen, und ein optionales `display: { width, height }`
+reserviert einen Framebuffer-Bereich. Ein Chip kann auch ein **Bild** tragen —
+eine PNG-, JPEG- oder SVG-Datei, die seinem Dateibereich als `chip.png` /
+`chip.jpg` / `chip.svg` hinzugefügt wird — das den Körper abdeckt, ohne einen
+Pin zu verschieben. Siehe
+[Dem Chip ein Gesicht geben](/docs/de/custom-chips/getting-started/#giving-the-chip-a-face).
+
 ## Das Manifest (`chip.json`)
 
 ```json
@@ -138,10 +149,8 @@ die vom Host vor `chip_setup()` injiziert werden.
 ```
 
 `pins` definiert die physische Footprint-Reihenfolge; die Namen müssen mit dem
-übereinstimmen, was die C-Quelle registriert. Optionale Abschnitte:
-`attributes` (einstellbare Werte), `controls` (Live-Slider/Schaltflächen
+übereinstimmen, was der C-Quellcode registriert. Optionale Abschnitte:
+`attributes` (einstellbare Werte), `controls` (Live-Schieberegler/Tasten
 während der Simulation), `display` (`{"width", "height"}` für
 Framebuffer-Chips) und `programTargets` (Retro-CPU-Chips, die ein
 Benutzerprogramm ausführen).
-
------ END PAGE -----

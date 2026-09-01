@@ -7,8 +7,8 @@ sidebar:
 
 Tutto ciò che un chip può fare è dichiarato in **`velxio-chip.h`**. L'host
 chiama la tua funzione esportata `chip_setup()` una volta per istanza; lì
-registri pin e periferiche e colleghi i callback. Tutta l'esecuzione
-successiva avviene in quei callback.
+registri pin e periferiche e colleghi le callback. Tutta l'esecuzione
+successiva avviene in quelle callback.
 
 ## Pin
 
@@ -17,13 +17,13 @@ vx_pin vx_pin_register(const char* name, vx_pin_mode mode);
 int    vx_pin_read(vx_pin p);
 void   vx_pin_write(vx_pin p, int value);          // VX_LOW / VX_HIGH
 double vx_pin_read_analog(vx_pin p);               // volt
-void   vx_pin_dac_write(vx_pin p, double voltage); // pilotaggio uscita analogica
+void   vx_pin_dac_write(vx_pin p, double voltage); // uscita analogica
 void   vx_pin_set_mode(vx_pin p, vx_pin_mode mode);
 ```
 
 Modalità: `VX_INPUT`, `VX_OUTPUT`, `VX_INPUT_PULLUP`, `VX_INPUT_PULLDOWN`,
 `VX_ANALOG`, più `VX_OUTPUT_LOW` / `VX_OUTPUT_HIGH` per avviarsi già
-pilotando un livello noto (nessun glitch tra la registrazione e la prima
+guidando un livello noto (nessun glitch tra la registrazione e la prima
 scrittura).
 
 Osserva i fronti:
@@ -39,13 +39,13 @@ con `VX_EDGE_RISING`, `VX_EDGE_FALLING` o `VX_EDGE_BOTH`.
 ## Attributi
 
 Parametri modificabili dall'utente. I valori predefiniti si trovano
-nell'ispettore dei componenti; dichiara una sezione `controls` in
-`chip.json` e ognuno riceve uno **slider live durante la simulazione**
+nell'ispettore del componente; dichiara una sezione `controls` in
+`chip.json` e ognuno ottiene uno **slider live durante la simulazione**
 (vedi [Sensori programmabili](/docs/it/custom-chips/programmable-sensors/)):
 
 ```c
 vx_attr vx_attr_register(const char* name, double default_val);
-double  vx_attr_read(vx_attr a);   // rilettura nei callback — gli slider lo muovono live
+double  vx_attr_read(vx_attr a);   // rilettura nelle callback — gli slider lo muovono live
 
 // Attributi stringa (un ID dispositivo, un SSID, un nome preset):
 vx_attr  vx_attr_register_string(const char* name, const char* default_val);
@@ -61,7 +61,7 @@ Dichiarali anche in `chip.json` così l'editor può visualizzarli.
 vx_i2c vx_i2c_attach(const vx_i2c_config* cfg);
 ```
 
-La configurazione contiene l'indirizzo a 7 bit `address`, i pin `scl`/`sda`
+La configurazione trasporta l'indirizzo a 7 bit `address`, i pin `scl`/`sda`
 e quattro callback: `on_connect(addr, is_read)`, `on_read()` (restituisce
 il byte successivo), `on_write(byte)` (ack/nack), `on_stop()`. Abbastanza
 per implementare qualsiasi dispositivo I2C a registri — vedi gli esempi
@@ -113,7 +113,7 @@ void      vx_buffer_read(vx_buffer b, uint32_t offset,
 Per chip che _sono_ display: scrivi pixel RGBA e il componente li
 renderizza sulla tela.
 
-## Blob ROM e logging
+## Blob ROM e registrazione log
 
 ```c
 uint32_t vx_rom_size(void);
@@ -121,8 +121,17 @@ void     vx_rom_read(uint32_t offset, uint8_t* dst, uint32_t len);
 void     vx_log(const char* msg);   // appare nella console del browser
 ```
 
-La ROM permette a un chip di trasportare dati esterni (ROM di caratteri,
+La ROM consente a un chip di trasportare dati esterni (ROM caratteri,
 microcodice) iniettati dall'host prima di `chip_setup()`.
+
+## L'aspetto del chip
+
+Il corpo è disegnato da `chip.json`: l'elenco dei pin posiziona i pad e le
+loro etichette, e una sezione opzionale `display: { width, height }`
+riserva un'area framebuffer. Un chip può anche trasportare un'**immagine**
+— PNG, JPEG o SVG aggiunta alla sua sezione file come `chip.png` /
+`chip.jpg` / `chip.svg` — che copre il corpo senza spostare alcun pin.
+Vedi [Dare un volto al chip](/docs/it/custom-chips/getting-started/#giving-the-chip-a-face).
 
 ## Il manifest (`chip.json`)
 
@@ -137,8 +146,8 @@ microcodice) iniettati dall'host prima di `chip_setup()`.
 }
 ```
 
-`pins` definisce l'ordine fisico dei pin; i nomi devono corrispondere a
-quelli registrati nel sorgente C. Sezioni opzionali: `attributes` (valori
+`pins` definisce l'ordine fisico del footprint; i nomi devono corrispondere
+a ciò che il sorgente C registra. Sezioni opzionali: `attributes` (valori
 regolabili), `controls` (slider/pulsanti live durante la simulazione),
-`display` (`{"width", "height"}` per chip con framebuffer) e
-`programTargets` (chip retro-CPU che eseguono un programma utente).
+`display` (`{"width", "height"}` per chip framebuffer) e `programTargets`
+(chip retro-CPU che eseguono un programma utente).

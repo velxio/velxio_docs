@@ -7,7 +7,7 @@ sidebar:
 
 Todo lo que un chip puede hacer se declara en **`velxio-chip.h`**. El host
 llama a tu `chip_setup()` exportado una vez por instancia; allí registras
-pines y periféricos y enganchas callbacks. Toda la ejecución posterior ocurre
+pines y periféricos y conectas callbacks. Toda la ejecución posterior ocurre
 en esos callbacks.
 
 ## Pines
@@ -22,7 +22,7 @@ void   vx_pin_set_mode(vx_pin p, vx_pin_mode mode);
 ```
 
 Modos: `VX_INPUT`, `VX_OUTPUT`, `VX_INPUT_PULLUP`, `VX_INPUT_PULLDOWN`,
-`VX_ANALOG`, más `VX_OUTPUT_LOW` / `VX_OUTPUT_HIGH` para arrancar ya
+`VX_ANALOG`, más `VX_OUTPUT_LOW` / `VX_OUTPUT_HIGH` para iniciar ya
 conduciendo un nivel conocido (sin glitch entre el registro y la primera
 escritura).
 
@@ -38,16 +38,13 @@ con `VX_EDGE_RISING`, `VX_EDGE_FALLING` o `VX_EDGE_BOTH`.
 
 ## Atributos
 
-Parámetros editables por el usuario. Los valores por defecto viven en el inspector de componentes; declara una
-sección `controls` en `chip.json` y cada uno recibe un **slider en vivo
-mientras la simulación se ejecuta** (ver
-[Sensores programables](/docs/es/custom-chips/programmable-sensors/)):
+Parámetros editables por el usuario. Los valores predeterminados viven en el inspector de componentes; declara una sección `controls` en `chip.json` y cada uno obtiene un **slider en vivo mientras la simulación se ejecuta** (consulta [Sensores programables](/docs/es/custom-chips/programmable-sensors/)):
 
 ```c
 vx_attr vx_attr_register(const char* name, double default_val);
-double  vx_attr_read(vx_attr a);   // re-read in callbacks — sliders move it live
+double  vx_attr_read(vx_attr a);   // re-leer en callbacks — los sliders lo mueven en vivo
 
-// String attributes (a device id, an SSID, a preset name):
+// Atributos de cadena (un ID de dispositivo, un SSID, un nombre de preset):
 vx_attr  vx_attr_register_string(const char* name, const char* default_val);
 uint32_t vx_attr_string_len(vx_attr a);
 uint32_t vx_attr_string_read(vx_attr a, char* buf, uint32_t cap);
@@ -61,10 +58,7 @@ Decláralos también en `chip.json` para que el editor pueda renderizarlos.
 vx_i2c vx_i2c_attach(const vx_i2c_config* cfg);
 ```
 
-La configuración lleva la dirección de 7 bits `address`, los pines `scl`/`sda` y cuatro
-callbacks: `on_connect(addr, is_read)`, `on_read()` (devuelve el siguiente
-byte), `on_write(byte)` (ack/nack), `on_stop()`. Suficiente para implementar cualquier
-dispositivo I2C de tipo registro — ver los ejemplos PCF8574 y DS3231.
+La configuración lleva la dirección de 7 bits `address`, los pines `scl`/`sda` y cuatro callbacks: `on_connect(addr, is_read)`, `on_read()` (devuelve el siguiente byte), `on_write(byte)` (ack/nack), `on_stop()`. Suficiente para implementar cualquier dispositivo I2C de tipo registro — consulta los ejemplos PCF8574 y DS3231.
 
 ## UART
 
@@ -73,8 +67,7 @@ vx_uart vx_uart_attach(const vx_uart_config* cfg); // rx, tx, baud_rate
 bool    vx_uart_write(vx_uart u, const uint8_t* buf, uint32_t count);
 ```
 
-`on_rx_byte` se dispara por cada byte recibido; `on_tx_done` cuando tu buffer ha
-salido.
+`on_rx_byte` se dispara por cada byte recibido; `on_tx_done` cuando tu buffer ha salido.
 
 ## Esclavo SPI
 
@@ -84,8 +77,7 @@ void   vx_spi_start(vx_spi s, uint8_t* buffer, uint32_t count);
 void   vx_spi_stop(vx_spi s);
 ```
 
-Intercambia buffers mientras el chip-select está activo — el ejemplo MCP3008
-muestra el baile completo de petición/respuesta.
+Intercambia buffers mientras el chip-select está activado — el ejemplo MCP3008 muestra el baile completo de petición/respuesta.
 
 ## Tiempo y temporizadores
 
@@ -96,8 +88,7 @@ void     vx_timer_start(vx_timer t, uint64_t period_nanos, bool repeat);
 void     vx_timer_stop(vx_timer t);
 ```
 
-Los temporizadores corren en **tiempo de simulación**, así que tu chip se mantiene
-consistente en ciclos con las placas que lo rodean.
+Los temporizadores se ejecutan en **tiempo de simulación**, por lo que tu chip se mantiene consistente en ciclos con las placas que lo rodean.
 
 ## Framebuffer
 
@@ -109,10 +100,9 @@ void      vx_buffer_read(vx_buffer b, uint32_t offset,
                          void* data, uint32_t len);
 ```
 
-Para chips que _son_ pantallas: escribe píxeles RGBA y el componente los renderiza
-en el lienzo.
+Para chips que _son_ pantallas: escribe píxeles RGBA y el componente los renderiza en el lienzo.
 
-## Blobs ROM y registro de eventos
+## Blobs ROM y registro
 
 ```c
 uint32_t vx_rom_size(void);
@@ -120,8 +110,11 @@ void     vx_rom_read(uint32_t offset, uint8_t* dst, uint32_t len);
 void     vx_log(const char* msg);   // aparece en la consola del navegador
 ```
 
-La ROM permite que un chip lleve datos externos (ROMs de caracteres, microcódigo) inyectados
-por el host antes de `chip_setup()`.
+La ROM permite que un chip lleve datos externos (ROMs de caracteres, microcódigo) inyectados por el host antes de `chip_setup()`.
+
+## La cara del chip
+
+El cuerpo se dibuja desde `chip.json`: la lista de pines coloca los pads y sus etiquetas, y una sección opcional `display: { width, height }` reserva un área de framebuffer. Un chip también puede llevar una **imagen** — un PNG, JPEG o SVG añadido a su sección de archivos como `chip.png` / `chip.jpg` / `chip.svg` — que cubre el cuerpo sin mover ningún pin. Consulta [Dando cara al chip](/docs/es/custom-chips/getting-started/#giving-the-chip-a-face).
 
 ## El manifiesto (`chip.json`)
 
@@ -136,8 +129,4 @@ por el host antes de `chip_setup()`.
 }
 ```
 
-`pins` define el orden físico del footprint; los nombres deben coincidir con lo que el
-código C registra. Secciones opcionales: `attributes` (valores ajustables),
-`controls` (sliders/botones en vivo durante la simulación), `display`
-(`{"width", "height"}` para chips con framebuffer) y `programTargets`
-(chips retro-CPU que ejecutan un programa de usuario).
+`pins` define el orden físico del footprint; los nombres deben coincidir con lo que registra el código fuente C. Secciones opcionales: `attributes` (valores ajustables), `controls` (sliders/botones en vivo durante la simulación), `display` (`{"width", "height"}` para chips con framebuffer) y `programTargets` (chips retro-CPU que ejecutan un programa de usuario).

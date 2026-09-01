@@ -9,7 +9,7 @@
  *   - identity is the file path (no translationKey);
  *   - after translation, two deterministic rewrites run OUTSIDE the LLM:
  *       internal links  ](/docs/...   -> ](/docs/<locale>/...
- *       image paths     ../../../assets/ -> ../../../../assets/
+ *       image paths     (../)^n assets/ -> (../)^n+1 assets/
  *     (locale copies live one directory deeper than the source).
  *
  * Env: DEEPSEEK_API_KEY and/or GEMINI_API_KEY (at least one),
@@ -78,7 +78,12 @@ function relocate(content, locale) {
   return content
     .replaceAll("](/docs/", `](/docs/${locale}/`)
     .replaceAll(`](/docs/${locale}/${locale}/`, `](/docs/${locale}/`) // idempotency guard
-    .replaceAll("](../../../assets/", "](../../../../assets/");
+    // A locale copy sits one directory deeper than its English source, so
+    // every relative asset path needs one more `../`. This used to be a
+    // literal three-dot-dot swap, which silently missed pages nested one
+    // level further (custom-chips/programmable-sensors/*) and left their
+    // images resolving to a directory that does not exist.
+    .replace(/\]\((\.\.\/)+assets\//g, (m) => `](../${m.slice(2)}`);
 }
 
 /** Models keep sneaking unquoted colons into translated title/description
