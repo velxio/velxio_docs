@@ -1,0 +1,86 @@
+---
+/**
+ * Starlight ThemeProvider override — reads the velxio.dev-wide preference.
+ *
+ * The docs portal, the blog and the simulator are three separate builds
+ * served from ONE origin, so they share a localStorage jar and can share one
+ * preference:
+ *
+ *   velxio-theme = "dark" | "light" | "system"
+ *   unset        -> dark, whatever the OS says
+ *
+ * Two departures from stock Starlight, both deliberate:
+ *
+ *   1. It reads `velxio-theme` first and only falls back to
+ *      `starlight-theme` (a reader who set a theme here before this landed)
+ *      and then to the blog's `theme` key.
+ *   2. With nothing stored at all it picks DARK rather than asking
+ *      prefers-color-scheme. Velxio is dark-first and the docs have to match
+ *      the product a reader just came from; "auto" stays available in the
+ *      picker as an explicit choice.
+ *
+ * Everything else — the updatePickers contract, the icon template, the
+ * inlining that avoids FOUC — is stock and must stay that way, because
+ * ThemeSelect calls into this global before its own module loads.
+ */
+import { Icon } from '@astrojs/starlight/components';
+---
+
+{/* This is intentionally inlined to avoid FOUC. */}
+<script is:inline>
+	window.StarlightThemeProvider = (() => {
+		const read = (key) => {
+			try {
+				return typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null;
+			} catch (e) {
+				return null;
+			}
+		};
+		const isMode = (v) => v === 'dark' || v === 'light' || v === 'system';
+
+		let mode = read('velxio-theme');
+		if (!isMode(mode)) {
+			const starlight = read('starlight-theme');
+			const blog = read('theme');
+			if (starlight === 'auto') mode = 'system';
+			else if (isMode(starlight)) mode = starlight;
+			else if (blog === 'dark' || blog === 'light') mode = blog;
+			else mode = 'dark';
+		}
+
+		const theme =
+			mode === 'system'
+				? window.matchMedia('(prefers-color-scheme: light)').matches
+					? 'light'
+					: 'dark'
+				: mode;
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+
+		/* The picker speaks Starlight's vocabulary, where "system" is "auto". */
+		const storedTheme = mode === 'system' ? 'auto' : mode;
+
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script>
+
+<template id="theme-icons">
+	<Icon name="sun" class="light" />
+	<Icon name="moon" class="dark" />
+	<Icon name="laptop" class="auto" />
+</template>

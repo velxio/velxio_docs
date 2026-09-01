@@ -1,0 +1,128 @@
+---
+/**
+ * Starlight ThemeSelect override — writes the velxio.dev-wide preference.
+ *
+ * Same three-option picker as stock Starlight; what changes is where the
+ * choice is stored. See ./ThemeProvider.astro for the contract. In short:
+ * `velxio-theme` is the source of truth, and every write also updates the
+ * two keys the sibling sites' own controls read, so none of them ever shows
+ * a stale state.
+ *
+ * Starlight spells the third option "auto"; the shared contract spells it
+ * "system". The translation happens at the storage boundary so the picker's
+ * UI and Starlight's own i18n strings are untouched.
+ */
+import Select from '@astrojs/starlight/components/Select.astro';
+---
+
+<starlight-theme-select>
+	{/* TODO: Can we give this select a width that works well for each language’s strings? */}
+	<Select
+		icon="laptop"
+		label={Astro.locals.t('themeSelect.accessibleLabel')}
+		options={[
+			{ label: Astro.locals.t('themeSelect.dark'), selected: false, value: 'dark' },
+			{ label: Astro.locals.t('themeSelect.light'), selected: false, value: 'light' },
+			{ label: Astro.locals.t('themeSelect.auto'), selected: true, value: 'auto' },
+		]}
+		width="6.25em"
+	/>
+</starlight-theme-select>
+
+{/* Inlined to avoid FOUC. Uses global scope from `ThemeProvider.astro` */}
+<script is:inline>
+	StarlightThemeProvider.updatePickers();
+</script>
+
+<script>
+	type Theme = 'auto' | 'dark' | 'light';
+
+	/** The shared preference. "auto" is stored here as "system". */
+	const KEY = 'velxio-theme';
+	/** What Starlight itself reads — kept in sync for older tabs. */
+	const KEY_STARLIGHT = 'starlight-theme';
+	/** What the blog reads. It only understands a RESOLVED value. */
+	const KEY_BLOG = 'theme';
+
+	/** Get a typesafe theme string from any JS value (unknown values are coerced to `'auto'`). */
+	const parseTheme = (theme: unknown): Theme =>
+		theme === 'auto' || theme === 'dark' || theme === 'light' ? theme : 'auto';
+
+	function read(key: string): string | null {
+		try {
+			return typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null;
+		} catch {
+			return null;
+		}
+	}
+
+	function write(key: string, value: string): void {
+		try {
+			localStorage.setItem(key, value);
+		} catch {
+			/* storage denied — the theme still applies for this page's lifetime */
+		}
+	}
+
+	/** Load the reader's preference, falling back to the sibling sites' keys. */
+	function loadTheme(): Theme {
+		const own = read(KEY);
+		if (own === 'system') return 'auto';
+		if (own === 'dark' || own === 'light') return own;
+		const starlight = read(KEY_STARLIGHT);
+		if (starlight) return parseTheme(starlight);
+		const blog = read(KEY_BLOG);
+		if (blog === 'dark' || blog === 'light') return blog;
+		// Velxio is dark-first: nothing stored means dark, not the OS hint.
+		return 'dark';
+	}
+
+	/** Store the reader's preference where all three surfaces will find it. */
+	function storeTheme(theme: Theme): void {
+		write(KEY, theme === 'auto' ? 'system' : theme);
+		write(KEY_STARLIGHT, theme);
+		write(KEY_BLOG, theme === 'auto' ? getPreferredColorScheme() : theme);
+	}
+
+	/** Get the preferred system color scheme. */
+	const getPreferredColorScheme = (): 'light' | 'dark' =>
+		matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+
+	/** Update select menu UI, document theme, and local storage state. */
+	function onThemeChange(theme: Theme): void {
+		StarlightThemeProvider.updatePickers(theme);
+		document.documentElement.dataset.theme = theme === 'auto' ? getPreferredColorScheme() : theme;
+		storeTheme(theme);
+	}
+
+	/** Apply a preference another tab set, WITHOUT writing it back. */
+	function adoptTheme(theme: Theme): void {
+		StarlightThemeProvider.updatePickers(theme);
+		document.documentElement.dataset.theme = theme === 'auto' ? getPreferredColorScheme() : theme;
+	}
+
+	// React to changes in system color scheme.
+	matchMedia(`(prefers-color-scheme: light)`).addEventListener('change', () => {
+		if (loadTheme() === 'auto') onThemeChange('auto');
+	});
+
+	// React to another velxio.dev tab changing the preference — the
+	// simulator's switch or the blog's toggle, not just this portal.
+	window.addEventListener('storage', (e) => {
+		if (e.key !== null && e.key !== KEY && e.key !== KEY_STARLIGHT && e.key !== KEY_BLOG) return;
+		adoptTheme(loadTheme());
+	});
+
+	class StarlightThemeSelect extends HTMLElement {
+		constructor() {
+			super();
+			onThemeChange(loadTheme());
+			this.querySelector('select')?.addEventListener('change', (e) => {
+				if (e.currentTarget instanceof HTMLSelectElement) {
+					onThemeChange(parseTheme(e.currentTarget.value));
+				}
+			});
+		}
+	}
+	customElements.define('starlight-theme-select', StarlightThemeSelect);
+</script>

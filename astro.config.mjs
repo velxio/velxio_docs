@@ -21,6 +21,13 @@ export default defineConfig({
         { icon: "seti:html", label: "velxio.dev", href: "https://velxio.dev" },
       ],
       customCss: ["./src/styles/custom.css"],
+      /* The light/dark preference is shared with velxio.dev and the blog
+         (one origin, one localStorage jar). These two overrides are stock
+         Starlight with the storage key swapped — see the comments in each. */
+      components: {
+        ThemeProvider: "./src/components/ThemeProvider.astro",
+        ThemeSelect: "./src/components/ThemeSelect.astro",
+      },
       defaultLocale: "root",
       // Same 9 locales as the blog. Untranslated pages fall back to
       // English automatically; the translate-* scripts fill them in.
