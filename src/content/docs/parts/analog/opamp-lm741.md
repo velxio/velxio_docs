@@ -7,6 +7,8 @@ description: "Classic general-purpose op-amp. Requires ~1.5V of headroom from ea
 
 Classic general-purpose op-amp. Requires ~1.5V of headroom from each supply rail. Used in didactic circuits.
 
+![LM741 (Op-Amp)](../../../../assets/docs/parts/opamp-lm741.png)
+
 ## Pins
 
 | Pin     | Signals |

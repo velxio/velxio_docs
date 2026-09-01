@@ -7,6 +7,8 @@ description: "Small-signal silicon diode. Fast switching, low capacitance. Go-to
 
 Small-signal silicon diode. Fast switching, low capacitance. Go-to for logic-level protection.
 
+![1N4148 (Small-Signal Diode)](../../../../assets/docs/parts/diode-1n4148.png)
+
 ## Pins
 
 | Pin   | Signals |

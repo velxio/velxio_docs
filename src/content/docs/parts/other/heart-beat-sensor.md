@@ -7,6 +7,8 @@ description: "Heart Beat Sensor — Other part in the Velxio catalog."
 
 Heart Beat Sensor — Other part in the Velxio catalog.
 
+![Heart Beat Sensor](../../../../assets/docs/parts/heart-beat-sensor.png)
+
 ## Pins
 
 | Pin     | Signals |

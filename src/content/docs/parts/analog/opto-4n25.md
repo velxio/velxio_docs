@@ -7,6 +7,8 @@ description: "Single-channel optocoupler with IR LED + phototransistor. CTR ≈ 
 
 Single-channel optocoupler with IR LED + phototransistor. CTR ≈ 50%. Provides galvanic isolation between two circuits.
 
+![4N25 (Optocoupler)](../../../../assets/docs/parts/opto-4n25.png)
+
 ## Pins
 
 | Pin      | Signals |

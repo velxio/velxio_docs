@@ -7,6 +7,8 @@ description: "2-input XOR logic gate. Output Y = A ⊕ B."
 
 2-input XOR logic gate. Output Y = A ⊕ B.
 
+![XOR Gate](../../../../assets/docs/parts/logic-gate-xor.png)
+
 ## Pins
 
 | Pin   | Signals |

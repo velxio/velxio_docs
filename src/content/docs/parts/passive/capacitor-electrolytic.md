@@ -7,6 +7,8 @@ description: "Electrolytic Cap. (custom) — Passive part in the Velxio catalog.
 
 Electrolytic Cap. (custom) — Passive part in the Velxio catalog.
 
+![Electrolytic Cap. (custom)](../../../../assets/docs/parts/capacitor-electrolytic.png)
+
 ## Pins
 
 | Pin   | Signals |

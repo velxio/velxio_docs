@@ -7,6 +7,8 @@ description: "Resistor 10 kΩ — Passive part in the Velxio catalog."
 
 Resistor 10 kΩ — Passive part in the Velxio catalog.
 
+![Resistor 10 kΩ](../../../../assets/docs/parts/resistor-10k.png)
+
 ## Pins
 
 | Pin   | Signals |

@@ -7,6 +7,8 @@ description: "DIP Switch 8 — Input part in the Velxio catalog."
 
 DIP Switch 8 — Input part in the Velxio catalog.
 
+![DIP Switch 8](../../../../assets/docs/parts/dip-switch-8.png)
+
 ## Pins
 
 | Pin    | Signals |

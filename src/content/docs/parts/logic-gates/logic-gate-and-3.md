@@ -7,6 +7,8 @@ description: "3-input AND gate. Output Y = A · B · C."
 
 3-input AND gate. Output Y = A · B · C.
 
+![AND Gate (3-input)](../../../../assets/docs/parts/logic-gate-and-3.png)
+
 ## Pins
 
 | Pin   | Signals |

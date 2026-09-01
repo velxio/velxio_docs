@@ -7,6 +7,8 @@ description: "Generic silicon diode. Vf ≈ 0.7 V. Use for textbook rectificatio
 
 Generic silicon diode. Vf ≈ 0.7 V. Use for textbook rectification examples.
 
+![Diode (generic)](../../../../assets/docs/parts/diode.png)
+
 ## Pins
 
 | Pin   | Signals |

@@ -7,6 +7,8 @@ description: "Inductor (custom) — Passive part in the Velxio catalog."
 
 Inductor (custom) — Passive part in the Velxio catalog.
 
+![Inductor (custom)](../../../../assets/docs/parts/inductor.png)
+
 ## Pins
 
 | Pin   | Signals |

@@ -7,6 +7,8 @@ description: "Whether the buzzer is currently emitting a signal"
 
 Whether the buzzer is currently emitting a signal
 
+![Buzzer](../../../../assets/docs/parts/buzzer.png)
+
 ## Pins
 
 | Pin   | Signals |

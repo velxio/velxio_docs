@@ -7,6 +7,8 @@ description: "Rotary Dialer — Other part in the Velxio catalog."
 
 Rotary Dialer — Other part in the Velxio catalog.
 
+![Rotary Dialer](../../../../assets/docs/parts/rotary-dialer.png)
+
 ## Pins
 
 | Pin       | Signals |

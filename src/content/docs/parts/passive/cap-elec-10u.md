@@ -7,6 +7,8 @@ description: "Electrolytic 10 µF — Passive part in the Velxio catalog."
 
 Electrolytic 10 µF — Passive part in the Velxio catalog.
 
+![Electrolytic 10 µF](../../../../assets/docs/parts/cap-elec-10u.png)
+
 ## Pins
 
 | Pin   | Signals |

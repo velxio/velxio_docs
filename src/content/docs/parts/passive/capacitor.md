@@ -7,6 +7,8 @@ description: "Cap. ceramic (custom) — Passive part in the Velxio catalog."
 
 Cap. ceramic (custom) — Passive part in the Velxio catalog.
 
+![Cap. ceramic (custom)](../../../../assets/docs/parts/capacitor.png)
+
 ## Pins
 
 | Pin   | Signals |

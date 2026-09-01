@@ -7,6 +7,8 @@ description: "Cap. 10 nF — Passive part in the Velxio catalog."
 
 Cap. 10 nF — Passive part in the Velxio catalog.
 
+![Cap. 10 nF](../../../../assets/docs/parts/cap-10n.png)
+
 ## Pins
 
 | Pin   | Signals |

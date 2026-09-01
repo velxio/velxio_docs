@@ -7,6 +7,8 @@ description: "Schottky diode, 1 A / 40 V. Higher breakdown than 1N5817, same low
 
 Schottky diode, 1 A / 40 V. Higher breakdown than 1N5817, same low Vf.
 
+![1N5819 (Schottky 40V)](../../../../assets/docs/parts/diode-1n5819.png)
+
 ## Pins
 
 | Pin   | Signals |

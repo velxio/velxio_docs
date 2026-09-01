@@ -7,6 +7,8 @@ description: "Cap. 22 pF — Passive part in the Velxio catalog."
 
 Cap. 22 pF — Passive part in the Velxio catalog.
 
+![Cap. 22 pF](../../../../assets/docs/parts/cap-22p.png)
+
 ## Pins
 
 | Pin   | Signals |

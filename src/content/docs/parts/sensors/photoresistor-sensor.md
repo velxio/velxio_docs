@@ -7,6 +7,8 @@ description: "Photoresistor Sensor — Sensors part in the Velxio catalog."
 
 Photoresistor Sensor — Sensors part in the Velxio catalog.
 
+![Photoresistor Sensor](../../../../assets/docs/parts/photoresistor-sensor.png)
+
 ## Pins
 
 | Pin     | Signals |

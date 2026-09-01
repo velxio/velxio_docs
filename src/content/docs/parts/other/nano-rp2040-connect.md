@@ -7,6 +7,8 @@ description: "Nano RP2040 Connect — Other part in the Velxio catalog."
 
 Nano RP2040 Connect — Other part in the Velxio catalog.
 
+![Nano RP2040 Connect](../../../../assets/docs/parts/nano-rp2040-connect.png)
+
 ## Pins
 
 | Pin         | Signals  |

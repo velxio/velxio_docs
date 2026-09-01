@@ -7,6 +7,8 @@ description: "Slide Potentiometer — Other part in the Velxio catalog."
 
 Slide Potentiometer — Other part in the Velxio catalog.
 
+![Slide Potentiometer](../../../../assets/docs/parts/slide-potentiometer.png)
+
 ## Pins
 
 | Pin     | Signals |

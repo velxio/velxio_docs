@@ -7,6 +7,8 @@ description: "3-input OR gate. Output Y = A + B + C."
 
 3-input OR gate. Output Y = A + B + C.
 
+![OR Gate (3-input)](../../../../assets/docs/parts/logic-gate-or-3.png)
+
 ## Pins
 
 | Pin   | Signals |

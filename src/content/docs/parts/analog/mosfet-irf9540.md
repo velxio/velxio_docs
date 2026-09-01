@@ -7,6 +7,8 @@ description: "Power P-channel MOSFET. Used for high-side load switching with log
 
 Power P-channel MOSFET. Used for high-side load switching with logic input.
 
+![IRF9540 (P-MOSFET)](../../../../assets/docs/parts/mosfet-irf9540.png)
+
 ## Pins
 
 | Pin   | Signals |

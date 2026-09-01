@@ -7,6 +7,8 @@ description: "Resistor 4.7 kΩ — Passive part in the Velxio catalog."
 
 Resistor 4.7 kΩ — Passive part in the Velxio catalog.
 
+![Resistor 4.7 kΩ](../../../../assets/docs/parts/resistor-4k7.png)
+
 ## Pins
 
 | Pin   | Signals |

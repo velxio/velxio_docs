@@ -7,6 +7,8 @@ description: "Resistor 470 Ω — Passive part in the Velxio catalog."
 
 Resistor 470 Ω — Passive part in the Velxio catalog.
 
+![Resistor 470 Ω](../../../../assets/docs/parts/resistor-470.png)
+
 ## Pins
 
 | Pin   | Signals |

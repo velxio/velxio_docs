@@ -7,6 +7,8 @@ description: "Light-sensitive diode. Reverse current proportional to illuminatio
 
 Light-sensitive diode. Reverse current proportional to illumination. Property: lux (ambient light intensity).
 
+![Photodiode](../../../../assets/docs/parts/photodiode.png)
+
 ## Pins
 
 | Pin   | Signals |

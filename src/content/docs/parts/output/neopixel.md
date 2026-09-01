@@ -7,6 +7,8 @@ description: "Neopixel — Output part in the Velxio catalog."
 
 Neopixel — Output part in the Velxio catalog.
 
+![Neopixel](../../../../assets/docs/parts/neopixel.png)
+
 ## Pins
 
 | Pin      | Signals |

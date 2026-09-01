@@ -7,6 +7,8 @@ description: "Inductor 10 mH — Passive part in the Velxio catalog."
 
 Inductor 10 mH — Passive part in the Velxio catalog.
 
+![Inductor 10 mH](../../../../assets/docs/parts/ind-10m.png)
+
 ## Pins
 
 | Pin   | Signals |

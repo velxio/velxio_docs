@@ -7,6 +7,8 @@ description: "Electrolytic 100 µF — Passive part in the Velxio catalog."
 
 Electrolytic 100 µF — Passive part in the Velxio catalog.
 
+![Electrolytic 100 µF](../../../../assets/docs/parts/cap-elec-100u.png)
+
 ## Pins
 
 | Pin   | Signals |

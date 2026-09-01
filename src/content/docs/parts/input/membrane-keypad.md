@@ -7,6 +7,8 @@ description: "Membrane Keypad — Input part in the Velxio catalog."
 
 Membrane Keypad — Input part in the Velxio catalog.
 
+![Membrane Keypad](../../../../assets/docs/parts/membrane-keypad.png)
+
 ## Pins
 
 | Pin    | Signals |

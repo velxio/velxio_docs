@@ -7,6 +7,8 @@ description: "Small-signal PNP bipolar transistor. Complement of the BC547."
 
 Small-signal PNP bipolar transistor. Complement of the BC547.
 
+![BC557 (PNP BJT)](../../../../assets/docs/parts/bjt-bc557.png)
+
 ## Pins
 
 | Pin   | Signals |

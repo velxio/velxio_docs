@@ -7,6 +7,8 @@ description: "Gas Sensor — Other part in the Velxio catalog."
 
 Gas Sensor — Other part in the Velxio catalog.
 
+![Gas Sensor](../../../../assets/docs/parts/gas-sensor.png)
+
 ## Pins
 
 | Pin      | Signals |

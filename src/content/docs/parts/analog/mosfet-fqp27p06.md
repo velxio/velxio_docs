@@ -7,6 +7,8 @@ description: "Logic-level P-channel MOSFET. Suitable for 3.3V / 5V gate drive."
 
 Logic-level P-channel MOSFET. Suitable for 3.3V / 5V gate drive.
 
+![FQP27P06 (P-MOSFET)](../../../../assets/docs/parts/mosfet-fqp27p06.png)
+
 ## Pins
 
 | Pin   | Signals |

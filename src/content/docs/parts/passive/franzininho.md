@@ -7,6 +7,8 @@ description: "Franzininho — Passive part in the Velxio catalog."
 
 Franzininho — Passive part in the Velxio catalog.
 
+![Franzininho](../../../../assets/docs/parts/franzininho.png)
+
 ## Pins
 
 | Pin       | Signals          |

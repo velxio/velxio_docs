@@ -7,6 +7,8 @@ description: "GPS NEO-6M — Sensors part in the Velxio catalog."
 
 GPS NEO-6M — Sensors part in the Velxio catalog.
 
+![GPS NEO-6M](../../../../assets/docs/parts/gps-neo6m.png)
+
 ## Pins
 
 | Pin     | Signals |

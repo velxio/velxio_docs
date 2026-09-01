@@ -7,6 +7,8 @@ description: "Toggle flip-flop. On rising CLK, Q ← Q ⊕ T (toggles when T=1).
 
 Toggle flip-flop. On rising CLK, Q ← Q ⊕ T (toggles when T=1). Useful for frequency dividers and counters.
 
+![T Flip-Flop](../../../../assets/docs/parts/flip-flop-t.png)
+
 ## Pins
 
 | Pin      | Signals |

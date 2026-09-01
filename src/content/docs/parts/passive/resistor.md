@@ -7,6 +7,8 @@ description: "Resistor (custom) — Passive part in the Velxio catalog."
 
 Resistor (custom) — Passive part in the Velxio catalog.
 
+![Resistor (custom)](../../../../assets/docs/parts/resistor.png)
+
 ## Pins
 
 | Pin   | Signals |

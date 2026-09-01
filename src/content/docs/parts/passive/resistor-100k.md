@@ -7,6 +7,8 @@ description: "Resistor 100 kΩ — Passive part in the Velxio catalog."
 
 Resistor 100 kΩ — Passive part in the Velxio catalog.
 
+![Resistor 100 kΩ](../../../../assets/docs/parts/resistor-100k.png)
+
 ## Pins
 
 | Pin   | Signals |

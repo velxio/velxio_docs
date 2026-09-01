@@ -7,6 +7,8 @@ description: "Small Sound Sensor — Other part in the Velxio catalog."
 
 Small Sound Sensor — Other part in the Velxio catalog.
 
+![Small Sound Sensor](../../../../assets/docs/parts/small-sound-sensor.png)
+
 ## Pins
 
 | Pin      | Signals |

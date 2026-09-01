@@ -7,6 +7,8 @@ description: "Tilt Switch — Other part in the Velxio catalog."
 
 Tilt Switch — Other part in the Velxio catalog.
 
+![Tilt Switch](../../../../assets/docs/parts/tilt-switch.png)
+
 ## Pins
 
 | Pin     | Signals |

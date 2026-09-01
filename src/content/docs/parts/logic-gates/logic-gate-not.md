@@ -7,6 +7,8 @@ description: "1-input inverter. Output Y = NOT(A)."
 
 1-input inverter. Output Y = NOT(A).
 
+![NOT Gate (Inverter)](../../../../assets/docs/parts/logic-gate-not.png)
+
 ## Pins
 
 | Pin   | Signals |

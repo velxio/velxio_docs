@@ -7,6 +7,8 @@ description: "Single-channel optocoupler. CTR 80–600% (typ. 100%). Higher driv
 
 Single-channel optocoupler. CTR 80–600% (typ. 100%). Higher drive than 4N25, commonly used for MCU-to-mains isolation.
 
+![PC817 (Optocoupler)](../../../../assets/docs/parts/opto-pc817.png)
+
 ## Pins
 
 | Pin      | Signals |

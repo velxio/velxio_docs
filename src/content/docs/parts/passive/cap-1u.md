@@ -7,6 +7,8 @@ description: "Cap. 1 µF — Passive part in the Velxio catalog."
 
 Cap. 1 µF — Passive part in the Velxio catalog.
 
+![Cap. 1 µF](../../../../assets/docs/parts/cap-1u.png)
+
 ## Pins
 
 | Pin   | Signals |

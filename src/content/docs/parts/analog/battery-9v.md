@@ -7,6 +7,8 @@ description: "PP3 / 6LR61 9V alkaline battery. Modelled as 9V DC with ~1.5Ω int
 
 PP3 / 6LR61 9V alkaline battery. Modelled as 9V DC with ~1.5Ω internal resistance.
 
+![9V Battery](../../../../assets/docs/parts/battery-9v.png)
+
 ## Pins
 
 | Pin   | Signals |

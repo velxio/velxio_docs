@@ -7,6 +7,8 @@ description: "2-input NOR logic gate. Output Y = NOT(A + B)."
 
 2-input NOR logic gate. Output Y = NOT(A + B).
 
+![NOR Gate](../../../../assets/docs/parts/logic-gate-nor.png)
+
 ## Pins
 
 | Pin   | Signals |

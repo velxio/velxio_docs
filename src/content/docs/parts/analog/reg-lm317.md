@@ -7,6 +7,8 @@ description: "Adjustable +1.25V to +37V linear regulator. V_out = 1.25·(1 + R2/
 
 Adjustable +1.25V to +37V linear regulator. V_out = 1.25·(1 + R2/R1). Versatile workhorse.
 
+![LM317 (Adjustable Linear Regulator)](../../../../assets/docs/parts/reg-lm317.png)
+
 ## Pins
 
 | Pin      | Signals |

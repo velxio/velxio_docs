@@ -7,6 +7,8 @@ description: "Slide Switch — Input part in the Velxio catalog."
 
 Slide Switch — Input part in the Velxio catalog.
 
+![Slide Switch](../../../../assets/docs/parts/slide-switch.png)
+
 ## Pins
 
 | Pin   | Signals |

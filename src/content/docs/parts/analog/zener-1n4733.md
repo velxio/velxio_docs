@@ -7,6 +7,8 @@ description: "5.1 V Zener diode, 1 W. Voltage reference / regulator / ESD clamp.
 
 5.1 V Zener diode, 1 W. Voltage reference / regulator / ESD clamp.
 
+![1N4733 (5.1 V Zener)](../../../../assets/docs/parts/zener-1n4733.png)
+
 ## Pins
 
 | Pin   | Signals |

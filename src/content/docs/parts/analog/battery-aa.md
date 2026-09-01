@@ -7,6 +7,8 @@ description: "AA alkaline cell. 1.5V, low ESR (~0.15Ω). Pair up for 3V/4.5V/6V 
 
 AA alkaline cell. 1.5V, low ESR (~0.15Ω). Pair up for 3V/4.5V/6V packs.
 
+![AA Battery (1.5V)](../../../../assets/docs/parts/battery-aa.png)
+
 ## Pins
 
 | Pin   | Signals |

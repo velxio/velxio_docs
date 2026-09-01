@@ -7,6 +7,8 @@ description: "IR Receiver — Passive part in the Velxio catalog."
 
 IR Receiver — Passive part in the Velxio catalog.
 
+![IR Receiver](../../../../assets/docs/parts/ir-receiver.png)
+
 ## Pins
 
 | Pin     | Signals |

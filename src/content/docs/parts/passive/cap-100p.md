@@ -7,6 +7,8 @@ description: "Cap. 100 pF — Passive part in the Velxio catalog."
 
 Cap. 100 pF — Passive part in the Velxio catalog.
 
+![Cap. 100 pF](../../../../assets/docs/parts/cap-100p.png)
+
 ## Pins
 
 | Pin   | Signals |

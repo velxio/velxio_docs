@@ -7,6 +7,8 @@ description: "5-pin single-pole double-throw electromechanical relay. Coil drive
 
 5-pin single-pole double-throw electromechanical relay. Coil drives SPDT contacts with native switch hysteresis. Optional integrated flyback diode.
 
+![Relay (SPDT)](../../../../assets/docs/parts/relay.png)
+
 ## Pins
 
 | Pin       | Signals |

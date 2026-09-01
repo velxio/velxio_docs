@@ -7,6 +7,8 @@ description: "3-input NAND gate."
 
 3-input NAND gate.
 
+![NAND Gate (3-input)](../../../../assets/docs/parts/logic-gate-nand-3.png)
+
 ## Pins
 
 | Pin   | Signals |

@@ -7,6 +7,8 @@ description: "IR Remote — Passive part in the Velxio catalog."
 
 IR Remote — Passive part in the Velxio catalog.
 
+![IR Remote](../../../../assets/docs/parts/ir-remote.png)
+
 ## Use it
 
 Add it from the [component picker](/docs/circuit-editor/placing-components/) — search for “IR Remote” (tags: ir-remote, ir remote, ir, remote).

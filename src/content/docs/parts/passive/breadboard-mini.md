@@ -7,6 +7,8 @@ description: "170-point mini solderless breadboard: 17 columns x two 5-hole bank
 
 170-point mini solderless breadboard: 17 columns x two 5-hole banks (a-e / f-j), no power rails. Holes in the same column strip are electrically connected.
 
+![Breadboard Mini](../../../../assets/docs/parts/breadboard-mini.png)
+
 ## Pins
 
 | Pin       | Signals |

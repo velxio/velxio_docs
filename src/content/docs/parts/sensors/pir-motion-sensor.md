@@ -7,6 +7,8 @@ description: "PIR Motion Sensor — Sensors part in the Velxio catalog."
 
 PIR Motion Sensor — Sensors part in the Velxio catalog.
 
+![PIR Motion Sensor](../../../../assets/docs/parts/pir-motion-sensor.png)
+
 ## Pins
 
 | Pin     | Signals |

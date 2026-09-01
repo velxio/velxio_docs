@@ -7,6 +7,8 @@ description: "Logic-level N-channel MOSFET. Vth ≈ 1.6 V, fully enhanced at 3.3
 
 Logic-level N-channel MOSFET. Vth ≈ 1.6 V, fully enhanced at 3.3 V — perfect for GPIO-driven load switching.
 
+![2N7000 (N-MOSFET)](../../../../assets/docs/parts/mosfet-2n7000.png)
+
 ## Pins
 
 | Pin   | Signals |

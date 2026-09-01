@@ -7,6 +7,8 @@ description: "Benchtop AC/DC signal source. Sine, square, or DC output. Configur
 
 Benchtop AC/DC signal source. Sine, square, or DC output. Configurable frequency, amplitude, DC offset.
 
+![Signal Generator](../../../../assets/docs/parts/signal-generator.png)
+
 ## Pins
 
 | Pin     | Signals |

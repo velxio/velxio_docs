@@ -7,6 +7,8 @@ description: "4-input AND gate."
 
 4-input AND gate.
 
+![AND Gate (4-input)](../../../../assets/docs/parts/logic-gate-and-4.png)
+
 ## Pins
 
 | Pin   | Signals |

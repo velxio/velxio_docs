@@ -7,6 +7,8 @@ description: "2-input XNOR logic gate. Output Y = NOT(A ⊕ B)."
 
 2-input XNOR logic gate. Output Y = NOT(A ⊕ B).
 
+![XNOR Gate](../../../../assets/docs/parts/logic-gate-xnor.png)
+
 ## Pins
 
 | Pin   | Signals |

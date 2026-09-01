@@ -7,6 +7,8 @@ description: "Lithium coin cell. 3V, high ESR (~10Ω) — limits peak current."
 
 Lithium coin cell. 3V, high ESR (~10Ω) — limits peak current.
 
+![Coin Cell (CR2032, 3V)](../../../../assets/docs/parts/battery-coin-cell.png)
+
 ## Pins
 
 | Pin   | Signals |

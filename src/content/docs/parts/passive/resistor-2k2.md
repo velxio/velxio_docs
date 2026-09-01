@@ -7,6 +7,8 @@ description: "Resistor 2.2 kΩ — Passive part in the Velxio catalog."
 
 Resistor 2.2 kΩ — Passive part in the Velxio catalog.
 
+![Resistor 2.2 kΩ](../../../../assets/docs/parts/resistor-2k2.png)
+
 ## Pins
 
 | Pin   | Signals |

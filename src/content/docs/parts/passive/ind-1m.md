@@ -7,6 +7,8 @@ description: "Inductor 1 mH — Passive part in the Velxio catalog."
 
 Inductor 1 mH — Passive part in the Velxio catalog.
 
+![Inductor 1 mH](../../../../assets/docs/parts/ind-1m.png)
+
 ## Pins
 
 | Pin   | Signals |

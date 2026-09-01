@@ -7,6 +7,8 @@ description: "Electrolytic 47 µF — Passive part in the Velxio catalog."
 
 Electrolytic 47 µF — Passive part in the Velxio catalog.
 
+![Electrolytic 47 µF](../../../../assets/docs/parts/cap-elec-47u.png)
+
 ## Pins
 
 | Pin   | Signals |

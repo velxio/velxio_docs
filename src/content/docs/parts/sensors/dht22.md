@@ -7,6 +7,8 @@ description: "DHT22 — Sensors part in the Velxio catalog."
 
 DHT22 — Sensors part in the Velxio catalog.
 
+![DHT22](../../../../assets/docs/parts/dht22.png)
+
 ## Pins
 
 | Pin     | Signals |

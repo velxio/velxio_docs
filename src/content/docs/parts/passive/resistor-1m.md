@@ -7,6 +7,8 @@ description: "Resistor 1 MΩ — Passive part in the Velxio catalog."
 
 Resistor 1 MΩ — Passive part in the Velxio catalog.
 
+![Resistor 1 MΩ](../../../../assets/docs/parts/resistor-1m.png)
+
 ## Pins
 
 | Pin   | Signals |

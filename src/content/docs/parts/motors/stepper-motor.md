@@ -7,6 +7,8 @@ description: "Stepper Motor — Motors part in the Velxio catalog."
 
 Stepper Motor — Motors part in the Velxio catalog.
 
+![Stepper Motor](../../../../assets/docs/parts/stepper-motor.png)
+
 ## Pins
 
 | Pin    | Signals |

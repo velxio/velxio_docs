@@ -7,6 +7,8 @@ description: "ePaper 4.2' (400×300, B/W) — Displays part in the Velxio catalo
 
 ePaper 4.2" (400×300, B/W) — Displays part in the Velxio catalog.
 
+![ePaper 4.2" (400×300, B/W)](../../../../assets/docs/parts/epaper-4in2-bw.png)
+
 ## Pins
 
 | Pin      | Signals |

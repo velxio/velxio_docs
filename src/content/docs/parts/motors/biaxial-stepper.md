@@ -7,6 +7,8 @@ description: "Biaxial Stepper — Motors part in the Velxio catalog."
 
 Biaxial Stepper — Motors part in the Velxio catalog.
 
+![Biaxial Stepper](../../../../assets/docs/parts/biaxial-stepper.png)
+
 ## Pins
 
 | Pin     | Signals |

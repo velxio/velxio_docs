@@ -7,6 +7,8 @@ description: "Resistor 47 kΩ — Passive part in the Velxio catalog."
 
 Resistor 47 kΩ — Passive part in the Velxio catalog.
 
+![Resistor 47 kΩ](../../../../assets/docs/parts/resistor-47k.png)
+
 ## Pins
 
 | Pin   | Signals |

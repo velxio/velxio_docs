@@ -7,6 +7,8 @@ description: "Resistor 220 Ω — Passive part in the Velxio catalog."
 
 Resistor 220 Ω — Passive part in the Velxio catalog.
 
+![Resistor 220 Ω](../../../../assets/docs/parts/resistor-220.png)
+
 ## Pins
 
 | Pin   | Signals |

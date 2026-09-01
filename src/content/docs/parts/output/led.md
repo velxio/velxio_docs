@@ -7,6 +7,8 @@ description: "LED — Output part in the Velxio catalog."
 
 LED — Output part in the Velxio catalog.
 
+![LED](../../../../assets/docs/parts/led.png)
+
 ## Pins
 
 | Pin   | Signals |

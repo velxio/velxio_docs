@@ -7,6 +7,8 @@ description: "Electrolytic 1000 µF — Passive part in the Velxio catalog."
 
 Electrolytic 1000 µF — Passive part in the Velxio catalog.
 
+![Electrolytic 1000 µF](../../../../assets/docs/parts/cap-elec-1000u.png)
+
 ## Pins
 
 | Pin   | Signals |

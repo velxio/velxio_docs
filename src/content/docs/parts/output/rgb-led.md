@@ -7,6 +7,8 @@ description: "RGB Led — Output part in the Velxio catalog."
 
 RGB Led — Output part in the Velxio catalog.
 
+![RGB Led](../../../../assets/docs/parts/rgb-led.png)
+
 ## Pins
 
 | Pin     | Signals |

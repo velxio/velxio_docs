@@ -7,6 +7,8 @@ description: "Bench DC/AC power supply with optional current limit. DC mode for 
 
 Bench DC/AC power supply with optional current limit. DC mode for fixed rails (5V, 12V, etc.); AC mode for sine sources. Visually shares the signal-generator chassis so no new Web Component is needed. The current limit is enforced by the circuit verifier — if any load pulls more than the configured amperage, Run is blocked with a 'source-overload' warning, mimicking a real bench supply's foldback behavior.
 
+![Regulated Power Supply](../../../../assets/docs/parts/power-supply.png)
+
 ## Pins
 
 | Pin     | Signals |

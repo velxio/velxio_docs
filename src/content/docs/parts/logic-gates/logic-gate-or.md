@@ -7,6 +7,8 @@ description: "2-input OR logic gate. Output Y = A + B."
 
 2-input OR logic gate. Output Y = A + B.
 
+![OR Gate](../../../../assets/docs/parts/logic-gate-or.png)
+
 ## Pins
 
 | Pin   | Signals |

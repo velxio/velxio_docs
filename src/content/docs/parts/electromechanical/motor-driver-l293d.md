@@ -7,6 +7,8 @@ description: "Dual H-bridge motor driver IC. Each channel: EN, IN1, IN2 drive OU
 
 Dual H-bridge motor driver IC. Each channel: EN, IN1, IN2 drive OUT1/OUT2 with the motor supply voltage (VCC2). Rated 600 mA continuous / 1.2 A peak per channel.
 
+![L293D (Dual H-Bridge Motor Driver)](../../../../assets/docs/parts/motor-driver-l293d.png)
+
 ## Pins
 
 | Pin       | Signals |

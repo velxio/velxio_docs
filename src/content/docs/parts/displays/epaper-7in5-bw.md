@@ -7,6 +7,8 @@ description: "ePaper 7.5' (800×480, B/W) — Displays part in the Velxio catalo
 
 ePaper 7.5" (800×480, B/W) — Displays part in the Velxio catalog.
 
+![ePaper 7.5" (800×480, B/W)](../../../../assets/docs/parts/epaper-7in5-bw.png)
+
 ## Pins
 
 | Pin      | Signals |

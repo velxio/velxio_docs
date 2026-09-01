@@ -7,6 +7,8 @@ description: "LED Ring — Other part in the Velxio catalog."
 
 LED Ring — Other part in the Velxio catalog.
 
+![LED Ring](../../../../assets/docs/parts/led-ring.png)
+
 ## Pins
 
 | Pin      | Signals |

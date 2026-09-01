@@ -7,6 +7,8 @@ description: "ePaper 5.65' (600×448, ACeP 7-colour) — Displays part in the Ve
 
 ePaper 5.65" (600×448, ACeP 7-colour) — Displays part in the Velxio catalog.
 
+![ePaper 5.65" (600×448, ACeP 7-colour)](../../../../assets/docs/parts/epaper-5in65-7c.png)
+
 ## Pins
 
 | Pin      | Signals |

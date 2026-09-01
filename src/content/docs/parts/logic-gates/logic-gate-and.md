@@ -7,6 +7,8 @@ description: "2-input AND logic gate. Output Y = A · B."
 
 2-input AND logic gate. Output Y = A · B.
 
+![AND Gate](../../../../assets/docs/parts/logic-gate-and.png)
+
 ## Pins
 
 | Pin   | Signals |

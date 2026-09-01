@@ -7,6 +7,8 @@ description: "Power N-channel MOSFET. Vth ≈ 3 V (needs 10 V for full enhanceme
 
 Power N-channel MOSFET. Vth ≈ 3 V (needs 10 V for full enhancement), 33 A / 100 V, R_DS(on) ≈ 77 mΩ. Classic motor / solenoid driver.
 
+![IRF540 (N-MOSFET Power)](../../../../assets/docs/parts/mosfet-irf540.png)
+
 ## Pins
 
 | Pin   | Signals |

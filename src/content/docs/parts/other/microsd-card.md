@@ -7,6 +7,8 @@ description: "microSD Card — Other part in the Velxio catalog."
 
 microSD Card — Other part in the Velxio catalog.
 
+![microSD Card](../../../../assets/docs/parts/microsd-card.png)
+
 ## Pins
 
 | Pin     | Signals |

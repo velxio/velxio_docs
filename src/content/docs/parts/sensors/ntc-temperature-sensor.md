@@ -7,6 +7,8 @@ description: "NTC Temperature Sensor — Sensors part in the Velxio catalog."
 
 NTC Temperature Sensor — Sensors part in the Velxio catalog.
 
+![NTC Temperature Sensor](../../../../assets/docs/parts/ntc-temperature-sensor.png)
+
 ## Pins
 
 | Pin     | Signals |

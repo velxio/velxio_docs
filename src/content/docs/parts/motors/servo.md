@@ -7,6 +7,8 @@ description: "The angle of the servo (0-180 degrees)"
 
 The angle of the servo (0-180 degrees)
 
+![Servo](../../../../assets/docs/parts/servo.png)
+
 ## Pins
 
 | Pin     | Signals |

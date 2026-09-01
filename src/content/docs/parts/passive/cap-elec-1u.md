@@ -7,6 +7,8 @@ description: "Electrolytic 1 µF — Passive part in the Velxio catalog."
 
 Electrolytic 1 µF — Passive part in the Velxio catalog.
 
+![Electrolytic 1 µF](../../../../assets/docs/parts/cap-elec-1u.png)
+
 ## Pins
 
 | Pin   | Signals |

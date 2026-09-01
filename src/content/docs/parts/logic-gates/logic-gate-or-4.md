@@ -7,6 +7,8 @@ description: "4-input OR gate."
 
 4-input OR gate.
 
+![OR Gate (4-input)](../../../../assets/docs/parts/logic-gate-or-4.png)
+
 ## Pins
 
 | Pin   | Signals |

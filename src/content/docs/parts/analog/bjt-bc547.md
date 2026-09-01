@@ -7,6 +7,8 @@ description: "Small-signal NPN bipolar transistor, European equivalent of 2N3904
 
 Small-signal NPN bipolar transistor, European equivalent of 2N3904. High gain (~400).
 
+![BC547 (NPN BJT)](../../../../assets/docs/parts/bjt-bc547.png)
+
 ## Pins
 
 | Pin   | Signals |

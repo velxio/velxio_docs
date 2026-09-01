@@ -7,6 +7,8 @@ description: "ePaper 2.13' (250×122, B/W) — Displays part in the Velxio catal
 
 ePaper 2.13" (250×122, B/W) — Displays part in the Velxio catalog.
 
+![ePaper 2.13" (250×122, B/W)](../../../../assets/docs/parts/epaper-2in13-bw.png)
+
 ## Pins
 
 | Pin      | Signals |

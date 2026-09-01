@@ -7,6 +7,8 @@ description: "Big Sound Sensor — Other part in the Velxio catalog."
 
 Big Sound Sensor — Other part in the Velxio catalog.
 
+![Big Sound Sensor](../../../../assets/docs/parts/big-sound-sensor.png)
+
 ## Pins
 
 | Pin      | Signals |

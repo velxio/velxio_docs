@@ -7,6 +7,8 @@ description: "Pushbutton 6mm — Other part in the Velxio catalog."
 
 Pushbutton 6mm — Other part in the Velxio catalog.
 
+![Pushbutton 6mm](../../../../assets/docs/parts/pushbutton-6mm.png)
+
 ## Pins
 
 | Pin     | Signals |

@@ -7,6 +7,8 @@ description: "Flame Sensor — Other part in the Velxio catalog."
 
 Flame Sensor — Other part in the Velxio catalog.
 
+![Flame Sensor](../../../../assets/docs/parts/flame-sensor.png)
+
 ## Pins
 
 | Pin      | Signals |

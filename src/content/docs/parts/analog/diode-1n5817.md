@@ -7,6 +7,8 @@ description: "Schottky diode, 1 A / 20 V. Vf ≈ 0.32 V at 1 A. Used in low-drop
 
 Schottky diode, 1 A / 20 V. Vf ≈ 0.32 V at 1 A. Used in low-drop rectification and reverse-polarity protection.
 
+![1N5817 (Schottky 20V)](../../../../assets/docs/parts/diode-1n5817.png)
+
 ## Pins
 
 | Pin   | Signals |

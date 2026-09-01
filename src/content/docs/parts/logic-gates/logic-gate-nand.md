@@ -7,6 +7,8 @@ description: "2-input NAND logic gate. Output Y = NOT(A · B)."
 
 2-input NAND logic gate. Output Y = NOT(A · B).
 
+![NAND Gate](../../../../assets/docs/parts/logic-gate-nand.png)
+
 ## Pins
 
 | Pin   | Signals |

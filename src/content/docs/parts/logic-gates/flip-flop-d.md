@@ -7,6 +7,8 @@ description: "Edge-triggered D-type flip-flop. On rising edge of CLK, Q ← D. D
 
 Edge-triggered D-type flip-flop. On rising edge of CLK, Q ← D. Digital simulation only (SPICE cannot do edge detection in .op analysis).
 
+![D Flip-Flop](../../../../assets/docs/parts/flip-flop-d.png)
+
 ## Pins
 
 | Pin      | Signals |

@@ -7,6 +7,8 @@ description: "Resistor 330 Ω — Passive part in the Velxio catalog."
 
 Resistor 330 Ω — Passive part in the Velxio catalog.
 
+![Resistor 330 Ω](../../../../assets/docs/parts/resistor-330.png)
+
 ## Pins
 
 | Pin   | Signals |

@@ -7,6 +7,8 @@ description: "Potentiometer — Input part in the Velxio catalog."
 
 Potentiometer — Input part in the Velxio catalog.
 
+![Potentiometer](../../../../assets/docs/parts/potentiometer.png)
+
 ## Pins
 
 | Pin     | Signals |

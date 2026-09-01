@@ -7,6 +7,8 @@ description: "NeoPixel Matrix — Other part in the Velxio catalog."
 
 NeoPixel Matrix — Other part in the Velxio catalog.
 
+![NeoPixel Matrix](../../../../assets/docs/parts/neopixel-matrix.png)
+
 ## Pins
 
 | Pin      | Signals |

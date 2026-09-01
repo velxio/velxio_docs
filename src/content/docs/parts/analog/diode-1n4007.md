@@ -7,6 +7,8 @@ description: "1 A / 1000 V silicon rectifier diode. Mains bridge rectifiers, bac
 
 1 A / 1000 V silicon rectifier diode. Mains bridge rectifiers, back-EMF protection.
 
+![1N4007 (1 kV Rectifier)](../../../../assets/docs/parts/diode-1n4007.png)
+
 ## Pins
 
 | Pin   | Signals |

@@ -7,6 +7,8 @@ description: "3-input NOR gate."
 
 3-input NOR gate.
 
+![NOR Gate (3-input)](../../../../assets/docs/parts/logic-gate-nor-3.png)
+
 ## Pins
 
 | Pin   | Signals |

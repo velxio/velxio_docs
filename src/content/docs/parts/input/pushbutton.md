@@ -7,6 +7,8 @@ description: "Pushbutton — Input part in the Velxio catalog."
 
 Pushbutton — Input part in the Velxio catalog.
 
+![Pushbutton](../../../../assets/docs/parts/pushbutton.png)
+
 ## Pins
 
 | Pin     | Signals |

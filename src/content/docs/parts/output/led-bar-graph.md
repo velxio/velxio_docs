@@ -7,6 +7,8 @@ description: "Led Bar Graph — Output part in the Velxio catalog."
 
 Led Bar Graph — Output part in the Velxio catalog.
 
+![Led Bar Graph](../../../../assets/docs/parts/led-bar-graph.png)
+
 ## Pins
 
 | Pin     | Signals |

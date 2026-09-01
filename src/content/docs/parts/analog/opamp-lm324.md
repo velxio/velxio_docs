@@ -7,6 +7,8 @@ description: "Quad single-supply op-amp. Same electrical spec as LM358, four cha
 
 Quad single-supply op-amp. Same electrical spec as LM358, four channels per package.
 
+![LM324 (Quad Op-Amp)](../../../../assets/docs/parts/opamp-lm324.png)
+
 ## Pins
 
 | Pin     | Signals |

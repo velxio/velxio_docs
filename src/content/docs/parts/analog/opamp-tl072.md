@@ -7,6 +7,8 @@ description: "JFET-input dual op-amp. Very high input impedance, low noise — a
 
 JFET-input dual op-amp. Very high input impedance, low noise — audio and instrumentation.
 
+![TL072 (JFET Op-Amp)](../../../../assets/docs/parts/opamp-tl072.png)
+
 ## Pins
 
 | Pin     | Signals |

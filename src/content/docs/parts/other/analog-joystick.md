@@ -7,6 +7,8 @@ description: "Analog Joystick — Other part in the Velxio catalog."
 
 Analog Joystick — Other part in the Velxio catalog.
 
+![Analog Joystick](../../../../assets/docs/parts/analog-joystick.png)
+
 ## Pins
 
 | Pin      | Signals |

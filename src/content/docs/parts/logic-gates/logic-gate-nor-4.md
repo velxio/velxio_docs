@@ -7,6 +7,8 @@ description: "4-input NOR gate."
 
 4-input NOR gate.
 
+![NOR Gate (4-input)](../../../../assets/docs/parts/logic-gate-nor-4.png)
+
 ## Pins
 
 | Pin   | Signals |

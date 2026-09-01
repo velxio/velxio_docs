@@ -7,6 +7,8 @@ description: "4-input NAND gate."
 
 4-input NAND gate.
 
+![NAND Gate (4-input)](../../../../assets/docs/parts/logic-gate-nand-4.png)
+
 ## Pins
 
 | Pin   | Signals |

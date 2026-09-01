@@ -7,6 +7,8 @@ description: "HC-SR04 — Sensors part in the Velxio catalog."
 
 HC-SR04 — Sensors part in the Velxio catalog.
 
+![HC-SR04](../../../../assets/docs/parts/hc-sr04.png)
+
 ## Pins
 
 | Pin      | Signals |

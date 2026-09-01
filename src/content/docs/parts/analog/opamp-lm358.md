@@ -7,6 +7,8 @@ description: "Dual single-supply op-amp. Output swings close to both rails. Idea
 
 Dual single-supply op-amp. Output swings close to both rails. Ideal for MCU-powered signal conditioning.
 
+![LM358 (Dual Op-Amp)](../../../../assets/docs/parts/opamp-lm358.png)
+
 ## Pins
 
 | Pin     | Signals |

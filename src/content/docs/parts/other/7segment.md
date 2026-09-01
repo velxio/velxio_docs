@@ -7,6 +7,8 @@ description: "7 Segment — Other part in the Velxio catalog."
 
 7 Segment — Other part in the Velxio catalog.
 
+![7 Segment](../../../../assets/docs/parts/7segment.png)
+
 ## Pins
 
 | Pin       | Signals |

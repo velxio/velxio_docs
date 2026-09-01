@@ -7,6 +7,8 @@ description: "Idealized operational amplifier. Infinite gain, infinite input imp
 
 Idealized operational amplifier. Infinite gain, infinite input impedance, no saturation. Use for textbook circuits where real-chip limitations are irrelevant.
 
+![Ideal Op-Amp](../../../../assets/docs/parts/opamp-ideal.png)
+
 ## Pins
 
 | Pin     | Signals |

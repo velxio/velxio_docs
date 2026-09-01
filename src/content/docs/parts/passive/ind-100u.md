@@ -7,6 +7,8 @@ description: "Inductor 100 µH — Passive part in the Velxio catalog."
 
 Inductor 100 µH — Passive part in the Velxio catalog.
 
+![Inductor 100 µH](../../../../assets/docs/parts/ind-100u.png)
+
 ## Pins
 
 | Pin   | Signals |

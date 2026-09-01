@@ -7,6 +7,8 @@ description: "KS2E-M-DC5 — Other part in the Velxio catalog."
 
 KS2E-M-DC5 — Other part in the Velxio catalog.
 
+![KS2E-M-DC5](../../../../assets/docs/parts/ks2e-m-dc5.png)
+
 ## Pins
 
 | Pin       | Signals |

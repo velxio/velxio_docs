@@ -7,6 +7,8 @@ description: "SSD1306 OLED (I2C, 4-pin) — Displays part in the Velxio catalog.
 
 SSD1306 OLED (I2C, 4-pin) — Displays part in the Velxio catalog.
 
+![SSD1306 OLED (I2C, 4-pin)](../../../../assets/docs/parts/ssd1306-i2c-4pin.png)
+
 ## Pins
 
 | Pin     | Signals |

@@ -7,6 +7,8 @@ description: "830-point solderless breadboard: 63 columns x two 5-hole banks (a-
 
 830-point solderless breadboard: 63 columns x two 5-hole banks (a-e / f-j) plus four full-length power rails. Holes in the same column strip or rail are electrically connected.
 
+![Breadboard (full)](../../../../assets/docs/parts/breadboard.png)
+
 ## Pins
 
 | Pin       | Signals |
