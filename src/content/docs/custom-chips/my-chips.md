@@ -17,6 +17,10 @@ Writing, compiling and running chips, and driving their
 every plan; "Create with AI" is Maker and up.
 :::
 
+A saved chip keeps everything: its C source, its manifest, the compiled
+WASM, and its [face image](/docs/custom-chips/getting-started/#giving-the-chip-a-face)
+if it has one.
+
 ## Saving a chip
 
 In the file explorer, every custom chip has its own section. Click the

@@ -123,6 +123,15 @@ void     vx_log(const char* msg);   // appears in the browser console
 ROM lets a chip carry external data (character ROMs, microcode) injected
 by the host before `chip_setup()`.
 
+## The chip's face
+
+The body is drawn from `chip.json`: the pin list places the pads and their
+labels, and an optional `display: { width, height }` reserves a
+framebuffer area. A chip can also carry an **image** — a PNG, JPEG or SVG
+added to its file section as `chip.png` / `chip.jpg` / `chip.svg` — which
+covers the body without moving any pin. See
+[Giving the chip a face](/docs/custom-chips/getting-started/#giving-the-chip-a-face).
+
 ## The manifest (`chip.json`)
 
 ```json

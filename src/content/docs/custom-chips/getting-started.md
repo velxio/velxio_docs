@@ -70,6 +70,35 @@ with its manifest:
 5. Toggle away. Click the chip while the simulation is stopped to jump
    back to its `chip.c`; edit and Run again.
 
+## Giving the chip a face
+
+By default a chip is drawn as a dark body with its name on a silkscreen
+band and its pin labels around the edge. You can replace that face with
+your own artwork — a photo of the real breakout board, a datasheet
+drawing, an icon:
+
+Click the **image** button in the chip's file-explorer section (next to
+Compile) and pick a **PNG, JPEG or SVG** up to 256 KB. It joins `chip.c`
+and `chip.json` as another file in that chip's section — `chip.png`,
+`chip.jpg` or `chip.svg` — so it travels with the project, exports inside
+a `.vlx`, and rides along when you save the chip to
+[My Chips](/docs/custom-chips/my-chips/).
+
+The image is scaled to fit the chip's body, never cropped or stretched.
+**Pins do not move**: their positions still come from `chip.json`, so
+adding artwork to a wired chip leaves every wire exactly where it was.
+Pin labels stay on top of the image, drawn in white with a dark outline so
+they read over light and dark artwork alike, and the printed name gives
+way to the artwork (it stays in the hover tooltip).
+
+To remove it, use the button beside the image one, or delete the image
+file from the chip's section.
+
+:::tip
+An SVG makes the sharpest chip face at any zoom, and you can paste raw
+`<svg>` markup straight into a `chip.svg` file instead of uploading.
+:::
+
 ## How chips execute
 
 The host calls your `chip_setup()` once per chip instance. After that the
