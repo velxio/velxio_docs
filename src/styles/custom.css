@@ -16,8 +16,36 @@
   --sl-color-bg: #0d0d0f;
 }
 
+/* Light mode is grey-on-white, not white-on-white.
+ *
+ * Starlight's stock light theme paints the page, the sidebar, the header and
+ * the nav all at #ffffff, so the only thing separating a 300-page portal's
+ * chrome from its prose is a hairline. Matching what velxio.dev's own light
+ * mode does -- white for CONTENT, grey for the chrome around it -- gives the
+ * sidebar and header a ground of their own and makes the reading column read
+ * as a page sitting on something.
+ *
+ * The greys are the same family as the app's --wb-* light ramp (see
+ * velxio/frontend/src/tokens/colors.css); keep the two in step if either
+ * moves. */
 :root[data-theme="light"] {
-  --sl-color-bg: #fdfdfd;
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-nav: #eceef1;
+  --sl-color-bg-sidebar: #f4f5f7;
+  --sl-color-bg-inline-code: #eceef1;
+  --sl-color-hairline: #d5d9df;
+  --sl-color-hairline-light: #e3e6ea;
+  --sl-color-hairline-shade: #d5d9df;
+}
+
+/* The prose column keeps the white; the frame around it does not. */
+:root[data-theme="light"] .main-frame {
+  background: #f4f5f7;
+}
+
+:root[data-theme="light"] .main-pane,
+:root[data-theme="light"] .content-panel {
+  background: var(--sl-color-bg);
 }
 
 /* Board pin maps (boards/reference/*, emitted by scripts/gen-boards.mjs).
