@@ -1,6 +1,6 @@
 ---
 title: Raspberry Pi Pico & Pico W
-description: RP2040ボード — ブラウザ内エミュレーションでMicroPythonとArduinoをサポート。
+description: RP2040ボード — MicroPythonとArduinoに対応したブラウザ内エミュレーション。
 sidebar:
   order: 5
 ---
@@ -8,21 +8,25 @@ sidebar:
 RP2040ボードは、忠実なデュアルコア
 Cortex-M0+エミュレーションにより**ブラウザ内で**動作します。
 
-| ボード                  | ハイライト                                   |
-| ----------------------- | -------------------------------------------- |
-| **Raspberry Pi Pico**   | 標準のRP2040ボード、26 GPIO                  |
-| **Raspberry Pi Pico W** | WiFiモジュールフットプリントを備えた同ボード |
+| ボード                   | 特長                                |
+| ----------------------- | ----------------------------------------- |
+| **Raspberry Pi Pico**   | 標準的なRP2040ボード、26 GPIO        |
+| **Raspberry Pi Pico W** | WiFiモジュール用フットプリントを備えた同ボード |
 
 **言語:** MicroPython (Picoのネイティブ環境) とArduino C++
 (earlephilhowerコア)。
 
+![Velxioキャンバス上のRaspberry Pi Pico W](../../../../assets/docs/boards/pi-pico-w.png)
+
 ## 動作するもの
 
 - GPIO、PWM、ADC、I2C、SPI、UART — そして**PIO**。RP2040の特徴である
-  プログラマブルI/Oブロックで、NeoPixelや変則プロトコルの
-  例が依存しています。
+  プログラム可能なI/Oブロックで、NeoPixelや変則的なプロトコルの
+  例はこれに依存しています。
 - [シリアルモニター](/docs/ja/programming/serial-monitor/)を介したMicroPythonのREPL。
-- [web flash](/docs/ja/wifi-iot/web-flash/)を使用して、`.uf2`経由で実機のPicoに書き込む。
+- ブラウザから実機のPicoへのフラッシュ: ボードがBOOTSELモードになり、
+  ダイアログがWebUSB経由で`.uf2`を書き込むか、ファイルをダウンロードして
+  ドライブにドロップします。[ウェブフラッシュ](/docs/ja/wifi-iot/web-flash/)を参照してください。
 
 ## RP2350はどこ?
 
@@ -30,4 +34,9 @@ Cortex-M0+エミュレーションにより**ブラウザ内で**動作します
 [Proボード](/docs/ja/boards/pro-boards/)です — 完全なBadgeOS
 ファクトリーファームウェア、e-paperなどを起動します。
 
------ END PAGE -----
+## ボードの外観とピン配置
+
+各ボードのキャンバス上の外観と完全なピンマップは、シミュレーターから生成されます:
+
+[Raspberry Pi Pico](/docs/ja/boards/reference/raspberry-pi-pico/) ·
+[Raspberry Pi Pico W](/docs/ja/boards/reference/pi-pico-w/)

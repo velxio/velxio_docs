@@ -24,8 +24,9 @@ Cortex-M0+ emulation.
   programmable I/O blocks, which is what NeoPixel and quirky-protocol
   examples rely on.
 - MicroPython's REPL over the [serial monitor](/docs/programming/serial-monitor/).
-- Flashing a real Pico via its `.uf2` with
-  [web flash](/docs/wifi-iot/web-flash/).
+- Flashing a real Pico from the browser: the board goes into BOOTSEL and
+  the dialog writes the `.uf2` over WebUSB, or you download the file and
+  drop it on the drive. See [web flash](/docs/wifi-iot/web-flash/).
 
 ## Where's the RP2350?
 

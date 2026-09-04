@@ -1,6 +1,6 @@
 ---
 title: Flash real hardware from the browser
-description: Write your compiled project to a physical board over USB — no toolchain installed.
+description: Write your compiled project to a physical board over USB, straight from the browser, with no toolchain installed.
 sidebar:
   order: 4
 ---
@@ -11,26 +11,120 @@ over USB, straight from the browser.
 
 ## Requirements
 
-- A Chromium-based browser (Chrome or Edge) — the flasher uses the
-  browser's serial port API, which Firefox and Safari don't ship.
+- A Chromium-based browser (Chrome or Edge). The flasher uses the
+  browser's Web Serial and WebUSB APIs, which Firefox and Safari do not
+  ship. Pico-family boards still get a **Download .uf2** button there
+  (see below).
 - A data-capable USB cable to your board.
-- Close anything else using the port first (serial monitors, IDEs) — the
-  browser needs exclusive access.
+- Close anything else using the port first (serial monitors, IDEs,
+  picotool): the browser needs exclusive access.
 
 ![The flash dialog picking a USB serial port](../../../assets/docs/wifi-iot/flash-modal.png)
 
 ## Flashing
 
-1. Open the **Flash** dialog from the editor.
-2. Pick the USB serial port — the dialog auto-detects candidates, and the
-   browser asks you to confirm which port to grant.
-3. Velxio uses the firmware it already compiled for your board — the same
-   binary the simulator was running.
-4. Watch the progress; when it finishes, the board reboots into your
+1. Right-click the board on the canvas and pick **Flash to real board**.
+2. Click **Connect & flash**. The browser asks which USB device to grant;
+   pick your board.
+3. Velxio uses the build it already made for that board (the same binary
+   the simulator was running). If the code changed since, it recompiles
+   first and the compiler output streams into the dialog.
+4. Watch the progress bar; when it finishes, the board reboots into your
    project.
 
-RP2040/RP2350 boards flash their `.uf2`, ESP32 boards their `.bin` — the
-dialog picks the right protocol for the target.
+The dialog picks the protocol for the target:
+
+| Family | How it is written | The board must be |
+| --- | --- | --- |
+| ESP32, S3, C3, C6 | esptool over the serial port, the merged `.bin` | plugged in; hold BOOT if it does not answer |
+| Arduino Uno, Nano, Mega, ATtiny85 | STK500 against the board's bootloader, the `.hex` | plugged in (ATtiny85: through an Arduino running ArduinoISP) |
+| Raspberry Pi Pico, Pico W, Pico 2, Pimoroni RP2040 / RP2350 boards | PICOBOOT over WebUSB, the `.uf2` picotool built | in **BOOTSEL** mode (next section) |
+
+## Pico-family boards: BOOTSEL first
+
+An RP2040 or RP2350 is programmed by its bootloader, a separate USB
+personality the chip only shows in **BOOTSEL** mode. Two ways to get
+there:
+
+- **By hand**: hold the BOOTSEL button while plugging the board in, then
+  release it. The board mounts as a USB drive named `RPI-RP2` (RP2040) or
+  `RP2350`.
+- **From the dialog**: the flash dialog for these boards has a
+  **Reboot into bootloader over USB** button. It works when the board is
+  running a sketch Velxio built (the Arduino core reboots on a 1200 baud
+  open) or MicroPython (the REPL runs `machine.bootloader()`). The
+  browser asks for the board's serial port, the board drops off and comes
+  back as the bootloader. Then click **Connect & flash** and pick the
+  `RP2 Boot` / `RP2350 Boot` device.
+
+Two clicks, two permission prompts: the serial port for the reboot and
+the USB device for the write. Once the board is in BOOTSEL, later flashes
+need only the second one.
+
+The dialog refuses an image that does not match the chip that answered
+(an RP2350 build on an RP2040, a RISC-V build on an ARM configuration)
+before anything is erased, verifies every byte after writing, and
+reboots the board into the program.
+
+### Windows and an RP2040: install WinUSB once
+
+The RP2040 bootloader ships no Windows driver descriptor, so the browser
+cannot claim it until WinUSB is bound to it. One-time setup:
+
+1. Put the board in BOOTSEL and plug it in.
+2. Download and run [Zadig](https://zadig.akeo.ie).
+3. Pick `RP2 Boot (Interface 1)` from the list (Options, List All
+   Devices if it is hidden), select **WinUSB** as the driver and click
+   **Install Driver**.
+
+RP2350 boards (Pico 2, Pico 2 W, the Pimoroni "Pico 2 W Aboard"
+Unicorns, Badger 2350) need nothing: their bootloader carries the
+descriptor and Windows binds WinUSB by itself. macOS needs nothing on
+either chip.
+
+### Linux: a udev rule
+
+Linux gives USB devices to root by default. Create
+`/etc/udev/rules.d/99-velxio-rp2.rules` with:
+
+```
+SUBSYSTEM=="usb", ATTRS{idVendor}=="2e8a", MODE="0666", TAG+="uaccess"
+```
+
+then `sudo udevadm control --reload-rules && sudo udevadm trigger` and
+re-plug the board. The serial port used for the reboot step needs the
+usual `dialout` group membership as well.
+
+### Any browser: download the .uf2
+
+The flash dialog for a Pico-family board always offers **Download .uf2**
+(on Firefox and Safari, where the browser cannot flash, that is the whole
+dialog). Save the file, put the board in BOOTSEL and drop the file on the
+`RPI-RP2` / `RP2350` drive: the board reboots into your sketch the moment
+the copy ends.
+
+### MicroPython projects on a Pico
+
+The dialog uploads the project's `.py` files over the REPL and reboots
+into `main.py`. MicroPython itself has to be on the board already: it is
+a `.uf2` you drop on the BOOTSEL drive once (Pimoroni boards ship with
+it; downloads at
+[pimoroni-pico-rp2350](https://github.com/pimoroni/pimoroni-pico-rp2350/releases)
+and [micropython.org](https://micropython.org/download/)).
+
+## Troubleshooting
+
+- **"No board in BOOTSEL mode was found"**: the device picker was empty.
+  Use the reboot button or hold BOOTSEL while plugging in, then connect
+  again.
+- **"The board in BOOTSEL is an RP2040 but this project is built for
+  RP2350"**: Pimoroni sold the Stellar and Galactic Unicorn with a Pico W
+  (RP2040) until January 2025 and with a Pico 2 W (RP2350) since. Check
+  the label on your unit and pick the matching board in the editor.
+- **"Could not claim the USB device"** on Windows with an RP2040: the
+  Zadig step above. On Linux: the udev rule above.
+- **The serial reboot did nothing**: a sketch built with the USB stack
+  disabled cannot be rebooted over USB. Hold BOOTSEL while plugging in.
 
 ## Simulate first, flash second
 
