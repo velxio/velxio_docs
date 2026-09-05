@@ -11,15 +11,15 @@ via USB, direto do navegador.
 
 ## Requisitos
 
-- Um navegador baseado em Chromium (Chrome ou Edge). O gravador usa as
-  APIs Web Serial e WebUSB do navegador, que o Firefox e o Safari não
+- Um navegador baseado em Chromium (Chrome ou Edge). O gravador usa
+  as APIs Web Serial e WebUSB do navegador, que o Firefox e o Safari não
   possuem. Placas da família Pico ainda recebem um botão **Download .uf2** lá
   (veja abaixo).
 - Um cabo USB com capacidade de dados para sua placa.
 - Feche qualquer outra coisa que esteja usando a porta primeiro (monitores seriais, IDEs,
   picotool): o navegador precisa de acesso exclusivo.
 
-![A caixa de diálogo de gravação selecionando uma porta USB serial](../../../../assets/docs/wifi-iot/flash-modal.png)
+![A caixa de diálogo de gravação selecionando uma porta serial USB](../../../../assets/docs/wifi-iot/flash-modal.png)
 
 ## Gravando
 
@@ -51,15 +51,26 @@ lá:
   `RP2350`.
 - **Pela caixa de diálogo**: a caixa de diálogo de gravação para essas placas tem um
   botão **Reboot into bootloader over USB** (Reiniciar no bootloader via USB). Ele funciona quando a placa está
-  executando um sketch que o Velxio construiu (o núcleo Arduino reinicia em uma abertura de
-  1200 baud) ou MicroPython (o REPL executa `machine.bootloader()`). O
+  executando um sketch que o Velxio construiu (o núcleo Arduino reinicia em uma
+  abertura de 1200 baud) ou MicroPython (o REPL executa `machine.bootloader()`). O
   navegador pede a porta serial da placa, a placa se desconecta e volta
   como o bootloader. Então clique em **Connect & flash** (Conectar e gravar) e escolha o
   dispositivo `RP2 Boot` / `RP2350 Boot`.
 
-Dois cliques, duas solicitações de permissão: a porta serial para a reinicialização e
+Dois cliques, dois prompts de permissão: a porta serial para a reinicialização e
 o dispositivo USB para a gravação. Uma vez que a placa está em BOOTSEL, gravações posteriores
-precisam apenas da segunda.
+precisam apenas do segundo.
+
+### Duas revisões da mesma placa
+
+A Pimoroni vendeu o Stellar e o Galactic Unicorn com um Pico W (RP2040)
+até janeiro de 2025 e com um Pico 2 W (RP2350) desde então. O simulador
+executa o atual; a caixa de diálogo de gravação tem um seletor
+**Real board revision** (Revisão da placa real) para essas placas. Escolha "Pico W aboard" para a unidade mais antiga: a
+caixa de diálogo cria uma segunda imagem para aquele chip, grava ou baixa, e
+o simulador continua executando sua própria compilação. A escolha é lembrada por
+placa. O rótulo na parte de trás da placa (ou o nome da unidade em BOOTSEL,
+`RPI-RP2` versus `RP2350`) informa qual você tem.
 
 A caixa de diálogo recusa uma imagem que não corresponde ao chip que respondeu
 (uma compilação RP2350 em um RP2040, uma compilação RISC-V em uma configuração ARM)
@@ -78,7 +89,7 @@ não pode reivindicá-lo até que o WinUSB esteja vinculado a ele. Configuraçã
    **Install Driver** (Instalar driver).
 
 Placas RP2350 (Pico 2, Pico 2 W, os Unicorns Pimoroni "Pico 2 W Aboard",
-Badger 2350) não precisam de nada: o bootloader delas carrega o
+Badger 2350) não precisam de nada: seu bootloader carrega o
 descritor e o Windows vincula o WinUSB sozinho. O macOS não precisa de nada em
 nenhum dos chips.
 
@@ -95,18 +106,24 @@ depois `sudo udevadm control --reload-rules && sudo udevadm trigger` e
 reconecte a placa. A porta serial usada para a etapa de reinicialização também precisa
 da associação usual ao grupo `dialout`.
 
-### Qualquer navegador: baixe o .uf2
+### Qualquer navegador: baixe o .uf2 ou copie-o para a unidade
 
 A caixa de diálogo de gravação para uma placa da família Pico sempre oferece **Download .uf2**
-(no Firefox e Safari, onde o navegador não pode gravar, essa é a caixa de diálogo
-inteira). Salve o arquivo, coloque a placa em BOOTSEL e arraste o arquivo para a
+(no Firefox e Safari, onde o navegador não pode gravar, essa é toda a
+caixa de diálogo). Salve o arquivo, coloque a placa em BOOTSEL e arraste o arquivo para a
 unidade `RPI-RP2` / `RP2350`: a placa reinicia no seu sketch no momento
 em que a cópia termina.
+
+No Chrome e Edge há também **Copy to the board's drive** (Copiar para a unidade da placa): o
+navegador pede que você escolha a unidade e grava o arquivo lá sozinho. Nenhum
+driver está envolvido, então é a maneira de programar um RP2040 no Windows
+sem instalar o WinUSB. A caixa de diálogo verifica se a pasta que você escolheu
+é uma unidade BOOTSEL (ela contém `INFO_UF2.TXT`) antes de gravar qualquer coisa.
 
 ### Projetos MicroPython em um Pico
 
 A caixa de diálogo envia os arquivos `.py` do projeto pelo REPL e reinicia
-no `main.py`. O MicroPython em si precisa estar na placa primeiro:
+em `main.py`. O MicroPython em si precisa estar na placa primeiro:
 
 - **Pico e Pico W**: a caixa de diálogo o instala. Se nenhum REPL responder, ela
   pede que você coloque a placa em BOOTSEL e clique em Retry (Tentar novamente); esse clique grava
@@ -120,19 +137,19 @@ no `main.py`. O MicroPython em si precisa estar na placa primeiro:
 ## Solução de problemas
 
 - **"No board in BOOTSEL mode was found"** (Nenhuma placa no modo BOOTSEL foi encontrada): o seletor de dispositivos estava vazio.
-  Use o botão de reinicialização ou segure BOOTSEL enquanto conecta e depois conecte
+  Use o botão de reinicialização ou segure BOOTSEL ao conectar e conecte
   novamente.
 - **"The board in BOOTSEL is an RP2040 but this project is built for
-  RP2350"** (A placa em BOOTSEL é um RP2040, mas este projeto é compilado para RP2350): a Pimoroni vendeu os Unicorns Stellar e Galactic com um Pico W
-  (RP2040) até janeiro de 2025 e com um Pico 2 W (RP2350) desde então. Verifique
-  o rótulo na sua unidade e escolha a placa correspondente no editor.
+  RP2350"** (A placa em BOOTSEL é um RP2040, mas este projeto é compilado para RP2350): um Unicorn mais antigo com um Pico W a bordo. Escolha "Pico W aboard"
+  no seletor **Real board revision** (Revisão da placa real) da caixa de diálogo e grave novamente.
 - **"Could not claim the USB device"** (Não foi possível reivindicar o dispositivo USB) no Windows com um RP2040: o
   passo do Zadig acima. No Linux: a regra udev acima.
 - **A reinicialização serial não fez nada**: um sketch compilado com a pilha USB
-  desabilitada não pode ser reiniciado via USB. Segure BOOTSEL enquanto conecta.
+  desabilitada não pode ser reiniciado via USB. Segure BOOTSEL ao conectar.
 
 ## Simule primeiro, grave depois
 
 Isso fecha o ciclo que torna o Velxio útil para o trabalho real: itere
 rapidamente no simulador (sem cabo, sem desgaste no hardware, reinicializações
 instantâneas) e depois grave exatamente o mesmo artefato de compilação quando ele se comportar bem.
+```

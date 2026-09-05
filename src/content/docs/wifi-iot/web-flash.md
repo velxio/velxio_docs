@@ -61,6 +61,17 @@ Two clicks, two permission prompts: the serial port for the reboot and
 the USB device for the write. Once the board is in BOOTSEL, later flashes
 need only the second one.
 
+### Two revisions of the same board
+
+Pimoroni sold the Stellar and Galactic Unicorn with a Pico W (RP2040)
+until January 2025 and with a Pico 2 W (RP2350) since. The simulator
+runs the current one; the flash dialog has a **Real board revision**
+select for these boards. Pick "Pico W aboard" for the older unit: the
+dialog builds a second image for that chip, flashes or downloads it, and
+the simulator keeps running its own build. The choice is remembered per
+board. The label on the back of the board (or the drive name in BOOTSEL,
+`RPI-RP2` versus `RP2350`) tells you which one you have.
+
 The dialog refuses an image that does not match the chip that answered
 (an RP2350 build on an RP2040, a RISC-V build on an ARM configuration)
 before anything is erased, verifies every byte after writing, and
@@ -95,13 +106,19 @@ then `sudo udevadm control --reload-rules && sudo udevadm trigger` and
 re-plug the board. The serial port used for the reboot step needs the
 usual `dialout` group membership as well.
 
-### Any browser: download the .uf2
+### Any browser: download the .uf2, or copy it to the drive
 
 The flash dialog for a Pico-family board always offers **Download .uf2**
 (on Firefox and Safari, where the browser cannot flash, that is the whole
 dialog). Save the file, put the board in BOOTSEL and drop the file on the
 `RPI-RP2` / `RP2350` drive: the board reboots into your sketch the moment
 the copy ends.
+
+On Chrome and Edge there is also **Copy to the board's drive**: the
+browser asks you to pick the drive and writes the file there itself. No
+driver is involved, so it is the way to program an RP2040 on Windows
+without installing WinUSB. The dialog checks that the folder you picked
+is a BOOTSEL drive (it carries `INFO_UF2.TXT`) before writing anything.
 
 ### MicroPython projects on a Pico
 
@@ -123,9 +140,8 @@ into `main.py`. MicroPython itself has to be on the board first:
   Use the reboot button or hold BOOTSEL while plugging in, then connect
   again.
 - **"The board in BOOTSEL is an RP2040 but this project is built for
-  RP2350"**: Pimoroni sold the Stellar and Galactic Unicorn with a Pico W
-  (RP2040) until January 2025 and with a Pico 2 W (RP2350) since. Check
-  the label on your unit and pick the matching board in the editor.
+  RP2350"**: an older Unicorn with a Pico W aboard. Pick "Pico W aboard"
+  in the dialog's **Real board revision** select and flash again.
 - **"Could not claim the USB device"** on Windows with an RP2040: the
   Zadig step above. On Linux: the udev rule above.
 - **The serial reboot did nothing**: a sketch built with the USB stack
