@@ -1434,9 +1434,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-04T23:49:44.531Z",
-      "nextAttemptAt": "2026-09-04T23:49:44.531Z",
-      "completedAt": "2026-09-04T23:50:28.466Z",
-      "sourceHash": "4116203a420f4329",
+      "nextAttemptAt": "2026-09-05T00:01:02.193Z",
+      "completedAt": "2026-09-05T00:01:14.847Z",
+      "sourceHash": "48589f6a75bee175",
       "providerUsed": "deepseek"
     },
     {
@@ -1449,9 +1449,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-04T23:49:44.531Z",
-      "nextAttemptAt": "2026-09-04T23:49:44.531Z",
-      "completedAt": "2026-09-04T23:50:39.265Z",
-      "sourceHash": "4116203a420f4329",
+      "nextAttemptAt": "2026-09-05T00:01:02.194Z",
+      "completedAt": "2026-09-05T00:01:27.634Z",
+      "sourceHash": "48589f6a75bee175",
       "providerUsed": "deepseek"
     },
     {
@@ -1464,9 +1464,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-04T23:49:44.531Z",
-      "nextAttemptAt": "2026-09-04T23:49:44.531Z",
-      "completedAt": "2026-09-04T23:50:50.492Z",
-      "sourceHash": "4116203a420f4329",
+      "nextAttemptAt": "2026-09-05T00:01:02.194Z",
+      "completedAt": "2026-09-05T00:01:40.514Z",
+      "sourceHash": "48589f6a75bee175",
       "providerUsed": "deepseek"
     },
     {
@@ -1479,9 +1479,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-04T23:49:44.531Z",
-      "nextAttemptAt": "2026-09-04T23:49:44.531Z",
-      "completedAt": "2026-09-04T23:51:01.515Z",
-      "sourceHash": "4116203a420f4329",
+      "nextAttemptAt": "2026-09-05T00:01:02.194Z",
+      "completedAt": "2026-09-05T00:01:54.205Z",
+      "sourceHash": "48589f6a75bee175",
       "providerUsed": "deepseek"
     },
     {
@@ -1494,9 +1494,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-04T23:49:44.531Z",
-      "nextAttemptAt": "2026-09-04T23:49:44.531Z",
-      "completedAt": "2026-09-04T23:51:12.024Z",
-      "sourceHash": "4116203a420f4329",
+      "nextAttemptAt": "2026-09-05T00:01:02.194Z",
+      "completedAt": "2026-09-05T00:02:05.904Z",
+      "sourceHash": "48589f6a75bee175",
       "providerUsed": "deepseek"
     },
     {
@@ -1509,9 +1509,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-04T23:49:44.531Z",
-      "nextAttemptAt": "2026-09-04T23:49:44.531Z",
-      "completedAt": "2026-09-04T23:51:22.668Z",
-      "sourceHash": "4116203a420f4329",
+      "nextAttemptAt": "2026-09-05T00:01:02.194Z",
+      "completedAt": "2026-09-05T00:02:19.209Z",
+      "sourceHash": "48589f6a75bee175",
       "providerUsed": "deepseek"
     },
     {
@@ -1524,9 +1524,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-04T23:49:44.531Z",
-      "nextAttemptAt": "2026-09-04T23:49:44.531Z",
-      "completedAt": "2026-09-04T23:51:34.306Z",
-      "sourceHash": "4116203a420f4329",
+      "nextAttemptAt": "2026-09-05T00:01:02.194Z",
+      "completedAt": "2026-09-05T00:02:33.490Z",
+      "sourceHash": "48589f6a75bee175",
       "providerUsed": "deepseek"
     },
     {
@@ -1539,9 +1539,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-04T23:49:44.531Z",
-      "nextAttemptAt": "2026-09-04T23:49:44.531Z",
-      "completedAt": "2026-09-04T23:51:45.250Z",
-      "sourceHash": "4116203a420f4329",
+      "nextAttemptAt": "2026-09-05T00:01:02.194Z",
+      "completedAt": "2026-09-05T00:02:46.089Z",
+      "sourceHash": "48589f6a75bee175",
       "providerUsed": "deepseek"
     }
   ]

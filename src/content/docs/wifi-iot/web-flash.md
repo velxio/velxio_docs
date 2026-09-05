@@ -106,11 +106,16 @@ the copy ends.
 ### MicroPython projects on a Pico
 
 The dialog uploads the project's `.py` files over the REPL and reboots
-into `main.py`. MicroPython itself has to be on the board already: it is
-a `.uf2` you drop on the BOOTSEL drive once (Pimoroni boards ship with
-it; downloads at
-[pimoroni-pico-rp2350](https://github.com/pimoroni/pimoroni-pico-rp2350/releases)
-and [micropython.org](https://micropython.org/download/)).
+into `main.py`. MicroPython itself has to be on the board first:
+
+- **Pico and Pico W**: the dialog installs it. If no REPL answers, it
+  asks you to put the board in BOOTSEL and click Retry; that click writes
+  the same MicroPython build the simulator runs, and one more Retry
+  uploads your files.
+- **Pimoroni RP2350 boards** (Badger 2350, Pico Plus 2W): they ship with
+  Pimoroni's own MicroPython. If yours lost it, download the `.uf2` from
+  [pimoroni-pico-rp2350](https://github.com/pimoroni/pimoroni-pico-rp2350/releases)
+  and drop it on the BOOTSEL drive once, then flash from the dialog.
 
 ## Troubleshooting
 
