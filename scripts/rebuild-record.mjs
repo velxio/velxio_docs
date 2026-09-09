@@ -106,7 +106,14 @@ const CURSOR_SCRIPT = () => {
       true
     );
     const st = document.createElement("style");
-    st.textContent = "@keyframes vxr{to{width:72px;height:72px;opacity:0}}";
+    // The click ripple, plus the two banners that let themselves in
+    // mid-take: the news overlay is dismissed once at start, but the
+    // GitHub star prompt appears on a timer and parked itself over the
+    // serial monitor in the first batch. A rule beats a sweep — it can
+    // never appear at all.
+    st.textContent =
+      "@keyframes vxr{to{width:72px;height:72px;opacity:0}}" +
+      ".gh-star-banner,.velxio-news-overlay{display:none!important}";
     document.head.appendChild(st);
     setInterval(() => {
       for (const el of document.querySelectorAll("div,button")) {
@@ -487,6 +494,176 @@ for (const slug of slugs) {
   const wireCount = () =>
     page.evaluate(() => document.querySelectorAll('path[stroke="#1a1a1a"]').length);
 
+  /** Ease down the sketch and back up. setValue lands the whole file at
+   *  once, so without this the camera only ever sees its first screen and
+   *  the body of the code never appears in the take. */
+  const scrollCode = async () => {
+    const info = await page.evaluate(() => {
+      const ed = window.monaco?.editor?.getEditors?.()[0];
+      if (!ed) return null;
+      return { scroll: ed.getScrollHeight(), view: ed.getLayoutInfo().height };
+    });
+    if (!info || info.scroll <= info.view + 24) return;
+    const max = info.scroll - info.view;
+    const set = t =>
+      page.evaluate(v => window.monaco?.editor?.getEditors?.()[0]?.setScrollTop(v), t);
+    const DOWN = 80;
+    for (let i = 1; i <= DOWN; i++) {
+      await set((max * i) / DOWN);
+      await page.waitForTimeout(80);
+    }
+    await page.waitForTimeout(900);
+    for (let i = 24; i >= 0; i--) {
+      await set((max * i) / 24);
+      await page.waitForTimeout(45);
+    }
+    mark("code-scrolled", { lines: Math.round(max) });
+  };
+
+  /** Once the sim is live, work the inputs. A take of a button circuit
+   *  that never presses the button shows a dead LED for 13 s and proves
+   *  nothing.
+   *
+   *  Two different things happen on a real click, and SimulatorCanvas
+   *  decides which: for a pushbutton / switch / pot the raw mousedown is
+   *  allowed through to the wokwi-element shadow DOM, which raises
+   *  button-press and change itself; for a SENSOR the canvas claims the
+   *  click and the mouseup opens the SensorControlPanel, whose sliders
+   *  are the only way to move that sensor's value. So press first, then
+   *  see whether a panel came up and sweep it. */
+  const pressPart = async (domId, holdMs = 850) => {
+    const at = await page.evaluate(id => {
+      const el = document.getElementById(id);
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
+    }, domId);
+    if (!at) return false;
+    await moveTo(at.x, at.y);
+    await page.mouse.down();
+    await page.waitForTimeout(holdMs);
+    await page.mouse.up();
+    await page.waitForTimeout(700);
+    return true;
+  };
+
+  /** Drag one slider of the open sensor panel across its range and park
+   *  it in the middle, slowly enough that the reading on the display (or
+   *  in the serial monitor) can be read as it moves. */
+  const sweepSlider = async (index) => {
+    const box = await page.evaluate(i => {
+      const el = document.querySelectorAll(".sensor-control-panel .sensor-slider")[i];
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      return { x: r.x, y: r.y + r.height / 2, w: r.width };
+    }, index);
+    if (!box || box.w < 30) return false;
+    const at = f => box.x + 6 + (box.w - 12) * f;
+    await moveTo(at(0.15), box.y);
+    await page.mouse.down();
+    const path = [0.15, 0.35, 0.6, 0.85, 0.95, 0.7, 0.45];
+    for (const f of path) {
+      await page.mouse.move(at(f), box.y, { steps: 10 });
+      await page.waitForTimeout(420);
+    }
+    await page.mouse.up();
+    await page.waitForTimeout(500);
+    return true;
+  };
+
+  /** Turn a potentiometer. The element rotates from the ANGLE of the
+   *  pointer around its knob, and it binds mousemove on its own SVG, so
+   *  the drag has to stay inside the part -- a straight drag past its
+   *  edge does nothing, which is why pressing it three times left the
+   *  sketch reading a flat 0. If the arc does not move the value (a
+   *  slide pot, an odd geometry), fall back to the hidden range input
+   *  the element keeps in its shadow DOM for keyboard users: same input
+   *  path, the knob still turns on camera. */
+  const knobValue = domId =>
+    page.evaluate(id => {
+      const el = document.getElementById(id);
+      const v = el && el.value;
+      return v === undefined ? null : Number(v);
+    }, domId);
+
+  const turnKnob = async domId => {
+    const box = await page.evaluate(id => {
+      const el = document.getElementById(id);
+      if (!el) return null;
+      const r = el.getBoundingClientRect();
+      return { cx: r.x + r.width / 2, cy: r.y + r.height / 2, s: Math.min(r.width, r.height) };
+    }, domId);
+    if (!box) return false;
+    const before = await knobValue(domId);
+    const r = box.s * 0.28;
+    const at = deg => {
+      const rad = ((deg - 90) * Math.PI) / 180;
+      return [box.cx + r * Math.cos(rad), box.cy + r * Math.sin(rad)];
+    };
+    await moveTo(...at(-135));
+    await page.mouse.down();
+    for (let deg = -135; deg <= 135; deg += 9) {
+      await page.mouse.move(...at(deg), { steps: 2 });
+      await page.waitForTimeout(55);
+    }
+    for (let deg = 135; deg >= 20; deg -= 12) {
+      await page.mouse.move(...at(deg), { steps: 2 });
+      await page.waitForTimeout(55);
+    }
+    await page.mouse.up();
+    await page.waitForTimeout(600);
+    const after = await knobValue(domId);
+    if (before !== null && after !== null && after !== before) return true;
+
+    // fallback: the element's own hidden range input
+    const swept = await page.evaluate(async id => {
+      const el = document.getElementById(id);
+      const inp = el?.shadowRoot?.querySelector('input[type="range"]');
+      if (!inp) return false;
+      const set = Object.getOwnPropertyDescriptor(
+        window.HTMLInputElement.prototype, "value"
+      ).set;
+      const min = Number(inp.min || 0);
+      const max = Number(inp.max || 100);
+      const wait = ms => new Promise(r => setTimeout(r, ms));
+      for (const f of [0.1, 0.3, 0.55, 0.8, 0.95, 0.6, 0.4]) {
+        set.call(inp, String(min + (max - min) * f));
+        inp.dispatchEvent(new Event("input", { bubbles: true }));
+        await wait(420);
+      }
+      return true;
+    }, domId);
+    return swept;
+  };
+
+  /** Press the part, then work whatever the app put on screen for it. */
+  const workInput = async (domId, tag) => {
+    if (/potentiometer|trimpot|rotary/.test(tag || "")) return turnKnob(domId);
+    if (!(await pressPart(domId))) return false;
+    const panel = await page.evaluate(() => {
+      const p = document.querySelector(".sensor-control-panel");
+      if (!p) return null;
+      return {
+        sliders: p.querySelectorAll(".sensor-slider").length,
+        buttons: p.querySelectorAll(".sensor-trigger-button").length,
+      };
+    });
+    if (!panel) {
+      // not a sensor: it is a button or a switch, so work it a few times
+      await pressPart(domId);
+      await pressPart(domId);
+      return true;
+    }
+    for (let i = 0; i < Math.min(2, panel.sliders); i++) await sweepSlider(i);
+    if (panel.buttons) {
+      const b = page.locator(".sensor-control-panel .sensor-trigger-button").first();
+      await clickEl(b, null, 900).catch(() => {});
+    }
+    const close = page.locator(".sensor-control-panel .sensor-panel-close");
+    if (await close.count()) await clickEl(close.first(), null, 500).catch(() => {});
+    return true;
+  };
+
   let ok = false;
   let out = {};
   try {
@@ -692,6 +869,7 @@ for (const slug of slugs) {
     }, recipe.code || "");
     mark("code");
     await page.waitForTimeout(1200);
+    await scrollCode();
 
     // finished-circuit still for the intro card
     await page.evaluate(() => {
@@ -761,7 +939,19 @@ for (const slug of slugs) {
       if (!live) await page.waitForTimeout(1500);
     }
     mark("live");
-    await page.waitForTimeout(RUN_FOOTAGE_MS);
+    await page.waitForTimeout(2500);
+    // Anything that is not plainly an output is worth a try: a button
+    // answers the press, a sensor answers with its panel, an LED answers
+    // with nothing and costs two seconds.
+    const OUTPUT_ONLY = /^wokwi-(led|rgb-led|resistor|buzzer|neopixel|led-bar-graph|7segment|servo)$/;
+    let worked = 0;
+    for (const c of recipe.components || []) {
+      if (OUTPUT_ONLY.test(c.type || "")) continue;
+      const id = idMap[c.id];
+      if (id && (await workInput(id, c.type))) worked++;
+    }
+    if (worked) mark("input", { parts: worked });
+    await page.waitForTimeout(worked ? Math.max(4000, RUN_FOOTAGE_MS - 6000) : RUN_FOOTAGE_MS);
     mark("end");
 
     // What does the circuit check say? A demo with a burnt LED, a short

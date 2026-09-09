@@ -7,6 +7,7 @@ can be used from any checkout — dev box, another server, or CI.
 | --- | --- |
 | [velxio-docs-pipeline](velxio-docs-pipeline/SKILL.md) | The docs portal: content rules, screenshot/reference generators, the 9-locale translation pipeline, deploy wiring and its traps |
 | [velxio-promo-video](velxio-promo-video/SKILL.md) | The promo video / product GIFs: Playwright take of the real app + Remotion post (zooms, captions, music beat-sync) |
+| [velxio-rebuild-video](velxio-rebuild-video/SKILL.md) | Per-project "built from scratch" videos: recipes from the gallery or from a real user's wiring trace, the recorder's trap workarounds, Remotion post |
 
 ## Install on a machine
 
@@ -19,6 +20,7 @@ travel with `git pull`:
 mkdir -p .claude/skills
 ln -s /path/to/velxio_docs/skills/velxio-docs-pipeline .claude/skills/velxio-docs-pipeline
 ln -s /path/to/velxio_docs/skills/velxio-promo-video  .claude/skills/velxio-promo-video
+ln -s /path/to/velxio_docs/skills/velxio-rebuild-video .claude/skills/velxio-rebuild-video
 ```
 
 Copy instead of symlinking if the target box does not have this repo
