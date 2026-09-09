@@ -15,7 +15,26 @@
  * Per example, into promo/public/rebuild/:
  *   <slug>.webm   take · <slug>-circuit.png  finished circuit · <slug>.json  beats
  */
-import { existsSync, globSync, mkdirSync, rmSync, cpSync } from "node:fs";
+import * as nodeFs from "node:fs";
+const { existsSync, mkdirSync, rmSync, cpSync } = nodeFs;
+/** fs.globSync landed in Node 22; this box runs 20. Stand-in for the two
+ *  simple `dir/*` patterns used below. */
+const globSync =
+  nodeFs.globSync ||
+  (pattern => {
+    const walk = (dir, parts) => {
+      if (!parts.length) return existsSync(dir) ? [dir] : [];
+      const [head, ...rest] = parts;
+      if (!head.includes("*")) return walk(`${dir}/${head}`, rest);
+      const re = new RegExp(`^${head.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, ".*")}$`);
+      let out = [];
+      for (const e of nodeFs.readdirSync(dir, { withFileTypes: true }))
+        if (re.test(e.name)) out = out.concat(walk(`${dir}/${e.name}`, rest));
+      return out;
+    };
+    const parts = pattern.split("/");
+    return walk(parts[0] || "/", parts.slice(1));
+  });
 import { readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -140,7 +159,11 @@ async function launch() {
   }
 }
 
-const recipes = JSON.parse(await readFile(join(HERE, "recipes.json"), "utf8"));
+// RECIPES_FILE lets a recipe come from somewhere other than the gallery
+// dump — e.g. one reconstructed from a real user's wiring trace.
+const recipes = JSON.parse(
+  await readFile(process.env.RECIPES_FILE || join(HERE, "recipes.json"), "utf8")
+);
 const catalog = JSON.parse(await readFile(join(HERE, "catalog.json"), "utf8"));
 const cardByTag = Object.fromEntries(catalog.map(c => [c.tagName, c.name]));
 
@@ -309,17 +332,53 @@ for (const slug of slugs) {
       pt = await page.evaluate(name => {
         for (const el of document.querySelectorAll(".component-picker-modal .card-name")) {
           if ((el.textContent || "").trim() !== name) continue;
-          const r = (el.closest(".component-card") || el).getBoundingClientRect();
+          const card = el.closest(".component-card") || el;
+          card.scrollIntoView({ block: "center" });
+          const r = card.getBoundingClientRect();
           if (r.width > 5) return { x: r.x + r.width / 2, y: r.y + r.height / 2 };
         }
         return null;
       }, cardName);
     }
     if (!pt) throw new Error(`card not found: ${cardName}`);
-    await clickAt(pt.x, pt.y, `add-${label}`, 1400, { part: cardName });
+    // Hovering a card raises a detail flyout that is laid over its
+    // NEIGHBOURS, so the pointer's own travel across the grid can leave a
+    // panel sitting on the target: the press lands on the flyout and no
+    // part is added. Same shape as the pin-overlay trap. So: move the
+    // pointer there for the camera, then check what is actually on top and
+    // deliver the press to the card element when something else is.
+    await moveTo(pt.x, pt.y);
+    mark(`add-${label}`, { x: Math.round(pt.x), y: Math.round(pt.y), part: cardName });
+    const onTop = await page.evaluate(
+      ({ x, y, name }) => {
+        const top = document.elementFromPoint(x, y);
+        if (top && top.closest(".component-card")) {
+          const n = top.closest(".component-card").querySelector(".card-name");
+          if ((n?.textContent || "").trim() === name) return true;
+        }
+        for (const el of document.querySelectorAll(".component-picker-modal .card-name")) {
+          if ((el.textContent || "").trim() !== name) continue;
+          (el.closest(".component-card") || el).click();
+          return false;
+        }
+        return false;
+      },
+      { x: pt.x, y: pt.y, name: cardName }
+    );
+    if (onTop) {
+      await page.mouse.down();
+      await page.mouse.up();
+    }
+    await page.waitForTimeout(1400);
     const after = await domIds();
     const added = after.find(id => !before.has(id));
-    if (!added) throw new Error(`part did not land: ${cardName}`);
+    if (!added) {
+      if (process.env.WIRE_DEBUG) {
+        await page.screenshot({ path: join(OUT, `debug-nopart-${label}.png`) });
+        console.log(`    dbg ids before=${[...before]} after=${after}`);
+      }
+      throw new Error(`part did not land: ${cardName}`);
+    }
     return added;
   }
 
@@ -544,7 +603,9 @@ for (const slug of slugs) {
     if (boardComp) idMap[boardComp.id] = boardId;
     else idMap.__board = boardId;
     for (const [i, c] of others.entries()) {
-      const card = cardByTag[c.type];
+      // tagName is ambiguous for families (every resistor is
+      // wokwi-resistor), so an explicit card name wins when present.
+      const card = c.card || cardByTag[c.type];
       if (!card) throw new Error(`no catalog card for ${c.type}`);
       const id = await addPart(card, c.id);
       idMap[c.id] = id;
@@ -557,6 +618,13 @@ for (const slug of slugs) {
     // wires
     let wired = 0;
     for (const w of recipe.wires || []) {
+      // Human pacing: humanGapSec is how long the real user waited before
+      // drawing this wire. Compressed (sqrt) so the long "what goes where"
+      // pause still reads as a pause without stalling the take.
+      if (typeof w.humanGapSec === "number")
+        await page.waitForTimeout(
+          Math.min(2500, 400 + Math.sqrt(Math.max(0, w.humanGapSec)) * 350)
+        );
       const a = idMap[w.start.componentId] || idMap.__board;
       const b = idMap[w.end.componentId] || idMap.__board;
       if (!a || !b) continue;

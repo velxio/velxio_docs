@@ -12,7 +12,27 @@
  *
  * Existing outputs are skipped unless --force.
  */
-import { existsSync, globSync, mkdirSync, readFileSync, statSync } from "node:fs";
+import * as nodeFs from "node:fs";
+const { existsSync, mkdirSync, readFileSync, statSync } = nodeFs;
+/** fs.globSync landed in Node 22; this box runs 20. Same stand-in as the
+ *  recorder uses, for the simple `dir/*` patterns below. */
+const globSync =
+  nodeFs.globSync ||
+  (pattern => {
+    const walk = (dir, parts) => {
+      if (!parts.length) return existsSync(dir) ? [dir] : [];
+      const [head, ...rest] = parts;
+      if (!head.includes("*")) return walk(`${dir}/${head}`, rest);
+      if (!existsSync(dir)) return [];
+      const re = new RegExp(`^${head.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, ".*")}$`);
+      let out = [];
+      for (const e of nodeFs.readdirSync(dir, { withFileTypes: true }))
+        if (re.test(e.name)) out = out.concat(walk(`${dir}/${e.name}`, rest));
+      return out;
+    };
+    const parts = pattern.split("/");
+    return walk(parts[0] || "/", parts.slice(1));
+  });
 import { execFileSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
