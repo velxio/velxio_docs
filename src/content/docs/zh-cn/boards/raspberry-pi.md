@@ -6,6 +6,10 @@ sidebar:
   badge: PRO
 ---
 
+:::caution[翻译已过时]
+本翻译已过时：[英文页面](/docs/boards/raspberry-pi/)描述了 Raspberry Pi 模拟目前的实际能力（没有 Raspberry Pi OS，没有连接元件的 I2C/SPI）。在翻译更新之前，以英文版本为准。
+:::
+
 Linux Raspberry Pi 系列在云端启动**完整的 Raspberry Pi OS**，并将终端交到您手中——这些不是微控制器仿真，而是完整的计算机。
 
 | 开发板                        | CPU 配置           |

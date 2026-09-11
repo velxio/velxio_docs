@@ -6,6 +6,10 @@ sidebar:
   badge: PRO
 ---
 
+:::caution[Traduzione non aggiornata]
+Questa traduzione non è aggiornata: la [pagina in inglese](/docs/boards/raspberry-pi/) descrive ciò che la simulazione Raspberry Pi fa davvero oggi (niente Raspberry Pi OS, niente I2C/SPI verso i componenti). Fino all'aggiornamento vale la versione inglese.
+:::
+
 La famiglia Linux Raspberry Pi avvia un **sistema Raspberry Pi OS completo**
 nel cloud e ti consegna il terminale — queste non sono simulazioni di
 microcontrollori, ma computer completi.

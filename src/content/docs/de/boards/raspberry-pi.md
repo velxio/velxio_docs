@@ -6,6 +6,10 @@ sidebar:
   badge: PRO
 ---
 
+:::caution[Übersetzung veraltet]
+Diese Übersetzung ist veraltet: die [englische Seite](/docs/boards/raspberry-pi/) beschreibt, was die Raspberry-Pi-Simulation heute tatsächlich kann (kein Raspberry Pi OS, kein I2C/SPI zu den Bauteilen). Bis die Übersetzung nachgezogen ist, gilt die englische Fassung.
+:::
+
 Die Linux-Raspberry-Pi-Familie bootet ein **vollständiges Raspberry Pi OS**
 in der Cloud und übergibt dir das Terminal – das sind keine
 Mikrocontroller-Simulationen, sondern vollwertige Computer.

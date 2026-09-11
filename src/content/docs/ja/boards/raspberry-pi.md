@@ -6,6 +6,10 @@ sidebar:
   badge: PRO
 ---
 
+:::caution[翻訳が古くなっています]
+この翻訳は古くなっています。[英語版ページ](/docs/boards/raspberry-pi/)に、Raspberry Pi シミュレーションが現在実際にできること（Raspberry Pi OS は起動せず、部品への I2C/SPI もありません）が記載されています。翻訳が更新されるまでは英語版が正となります。
+:::
+
 Linux Raspberry Piファミリーは、クラウド上で**完全なRaspberry Pi OS**を起動し、ターミナルを提供します。これらはマイクロコントローラのシミュレーションではなく、完全なコンピュータです。
 
 | ボード                        | CPUプロファイル     |

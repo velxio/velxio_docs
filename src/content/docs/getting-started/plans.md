@@ -28,7 +28,7 @@ everything in Free.**
 | AI credits per day | 20 | 500 | 2,000 |
 | AI credit ceiling per month | 600 | 15,000 | 60,000 |
 | Agent and Tutor modes | No | Yes | Yes |
-| STM32 and Raspberry Pi emulation | No | Yes | Yes |
+| STM32 and Raspberry Pi emulation | 3 trial sessions per family | Yes | Yes |
 | Project visibility | Public | Public, unlisted | Public, unlisted, private |
 | Library storage | 100 MB | 500 MB | 2 GB |
 
@@ -79,19 +79,42 @@ because they are the expensive ones to host:
 | --- | --- | --- | --- |
 | Arduino / AVR, RP2040 / RP2350 (Pico, Badger 2350) | Your browser | Yes, no time limit | Yes |
 | ESP32 family (classic, S3, C3, C6), M5Stack, XIAO | Velxio's servers | Yes, 1 hour per run | Yes, no per-run limit |
-| **STM32** (Blue Pill, Black Pill, F4 Discovery…) | Velxio's servers | No | Yes |
-| **Raspberry Pi Linux** (Zero, 1, 2, 3, 4, 5, UNIHIKER) | Velxio's servers | No | Yes |
+| **STM32** (Blue Pill, Black Pill, F4 Discovery…) | Velxio's servers | 3 trial sessions | Yes |
+| **Raspberry Pi Linux** (Zero, 1, 2, 3, 4, 5) | Your browser (instant engine) or Velxio's servers (Linux engine) | 3 trial sessions | Yes |
+| **UNIHIKER M10** | Same two engines as the Pi | 3 trial sessions | Yes |
 
-The boards that need a paid plan are exactly the STM32 family and the
-Raspberry Pi Linux family — they carry a **PRO badge** in the component
-picker. Branded boards like the M5Stack Cardputer, the Pimoroni Badger
-2350 or the XIAO family are **not** paywalled, even though they are part
-of the hosted catalog.
+The boards that need a paid plan to *run* are exactly the STM32 family,
+the Raspberry Pi Linux family and the UNIHIKER — they carry a **PRO
+badge** in the component picker. Anyone can still **place** them, wire a
+circuit around them and save the project; only pressing Run is gated.
+Branded boards like the M5Stack Cardputer, the Pimoroni Badger 2350 or
+the XIAO family are **not** paywalled, even though they are part of the
+hosted catalog.
+
+### The paid-board trial
+
+Every signed-in account, free ones included, gets **three sessions of 15
+minutes** for each paid family — STM32, Raspberry Pi and UNIHIKER are
+three separate budgets. A session opens the first time you press Run on a
+board of that family and, while it lasts, you can start and stop as often
+as you like. The count is for the life of the account, it does not reset,
+and it is charged whichever engine runs the board: a Raspberry Pi script
+executed by the instant engine in your browser spends a Pi session just
+like a Linux boot does. When the third session ends, the board keeps
+working on the canvas but Run asks for a plan. Anonymous visitors are
+asked to sign in first.
+
+What the Raspberry Pi emulation can and cannot do today (two engines, an
+Alpine guest rather than Raspberry Pi OS, GPIO and UART but no I2C, SPI,
+1-Wire or analog reads yet) is spelled out on the
+[Raspberry Pi page](/docs/boards/raspberry-pi/); read it before spending
+a trial session on a sensor project.
 
 Two limits apply to everyone, paid included:
 
 - A simulation left **idle for 2 hours** stops automatically.
-- A Raspberry Pi session has a **2-hour hard ceiling** per session.
+- A Raspberry Pi or UNIHIKER **Linux guest** session has a **2-hour hard
+  ceiling**, whatever the plan.
 
 A few individual features also need a paid plan: Pico W WiFi emulation,
 uploading files to a simulated microSD card, the private IoT gateway, and
@@ -145,6 +168,10 @@ You can try Agent and Tutor mode **free for 7 days**, with no card. The
 trial runs at 500 credits per day — the same daily allowance as Maker —
 and unlocks the Pro feature set so you can evaluate everything. One trial
 per account; start it from the [pricing page](https://velxio.dev/pricing).
+
+The paid boards have their own, separate trial that needs no sign-up
+beyond an account: three 15-minute sessions per family, described under
+[Boards and simulation](#the-paid-board-trial).
 
 ## Billing
 
