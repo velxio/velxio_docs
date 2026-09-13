@@ -1,6 +1,6 @@
 ---
 title: Pro boards
-description: The premium board catalog — M5Stack, Badger 2350, XIAO Sense, ESP32-C6, Galactic Unicorn, UNIHIKER.
+description: The premium board catalog — M5Stack, Badger 2350, the XIAO family and its IPS Display boards, ESP32-C6, Galactic Unicorn, UNIHIKER.
 sidebar:
   order: 8
 ---
@@ -19,7 +19,7 @@ Raspberry Pi Linux family (which is where the UNIHIKER belongs). See
 
 ## M5Stack
 
-*Free plan.*
+_Free plan._
 
 ### M5 Cardputer ADV
 
@@ -37,7 +37,7 @@ The classic stackable ESP32 with 320x240 TFT and three buttons.
 
 ## Pimoroni
 
-*Free plan.*
+_Free plan._
 
 ### Badger 2350
 
@@ -65,7 +65,7 @@ I2C and SPI run; the CYW43 WiFi coprocessor and PSRAM are not emulated.
 
 ## Seeed Studio XIAO
 
-*Free plan.*
+_Free plan._
 
 ### XIAO ESP32S3 Sense
 
@@ -85,9 +85,59 @@ WiFi 6 capable RISC-V C6 in the XIAO footprint.
 
 The RP2040 XIAO with its NeoPixel.
 
+### XIAO RP2350
+
+![XIAO RP2350 on the Velxio canvas](../../../assets/docs/boards/xiao-rp2350.png)
+
+The RP2350 XIAO — dual core at 150 MHz, Arduino C++ or MicroPython.
+
+### XIAO nRF52840 Sense
+
+![XIAO nRF52840 Sense on the Velxio canvas](../../../assets/docs/boards/xiao-nrf52840-sense.png)
+
+Nordic's nRF52840 with a 6-axis IMU: tilt it from the **Sensors** button on
+the canvas toolbar. Bluetooth is not emulated.
+
+### Seeeduino XIAO (SAMD21)
+
+![Seeeduino XIAO (SAMD21) on the Velxio canvas](../../../assets/docs/boards/xiao-samd21.png)
+
+The original XIAO, with a real DAC on A0.
+
+### XIAO RA4M1
+
+![XIAO RA4M1 on the Velxio canvas](../../../assets/docs/boards/xiao-ra4m1.png)
+
+The UNO R4 Minima's MCU in the XIAO footprint, 12-bit DAC included.
+
+### XIAO MG24 Sense
+
+![XIAO MG24 Sense on the Velxio canvas](../../../assets/docs/boards/xiao-mg24-sense.png)
+
+Silicon Labs' EFR32MG24 with a 6-axis IMU. The radio is not emulated.
+
+### XIAO nRF54L15 Sense
+
+![XIAO nRF54L15 Sense on the Velxio canvas](../../../assets/docs/boards/xiao-nrf54l15-sense.png)
+
+Nordic's nRF54L15 with a 6-axis IMU. The radio is not emulated.
+
+### XIAO IPS Display boards
+
+![XIAO 1.47" IPS Touch Display on the Velxio canvas](../../../assets/docs/boards/xiao-147-touch-display.png)
+
+Three carrier boards with a pre-soldered XIAO nRF52840 Plus, drawn front and
+back: the [0.96"](/docs/boards/reference/xiao-096-display/) (80 x 160, two
+buttons), the [1.14"](/docs/boards/reference/xiao-114-display/) (135 x 240,
+three buttons, Grove I2C) and the
+[1.47" Touch](/docs/boards/reference/xiao-147-touch-display/) (172 x 320,
+capacitive touch, microSD). The glass is the emulated panel controller's
+memory; the buttons, the IMU, the touch layer and the card all work, and
+Seeed's own demo sketches run unchanged.
+
 ## Espressif ESP32-C6
 
-*Free plan.*
+_Free plan._
 
 ![ESP32-C6 DevKit on the Velxio canvas](../../../assets/docs/boards/esp32-c6.png)
 
@@ -96,7 +146,7 @@ trio (Arduino / MicroPython / ESP-IDF) as the rest of the ESP32 family.
 
 ## DFRobot UNIHIKER M10
 
-*Paid plan required.*
+_Paid plan required._
 
 ![DFRobot UNIHIKER M10 on the Velxio canvas](../../../assets/docs/boards/unihiker-m10.png)
 
@@ -124,4 +174,13 @@ Each board's canvas art and full pin map, generated from the simulator:
 [XIAO ESP32S3 Sense](/docs/boards/reference/xiao-esp32s3-sense/) ·
 [XIAO ESP32C6](/docs/boards/reference/xiao-esp32c6/) ·
 [XIAO RP2040](/docs/boards/reference/xiao-rp2040/) ·
+[XIAO RP2350](/docs/boards/reference/xiao-rp2350/) ·
+[XIAO nRF52840 Sense](/docs/boards/reference/xiao-nrf52840-sense/) ·
+[Seeeduino XIAO (SAMD21)](/docs/boards/reference/xiao-samd21/) ·
+[XIAO RA4M1](/docs/boards/reference/xiao-ra4m1/) ·
+[XIAO MG24 Sense](/docs/boards/reference/xiao-mg24-sense/) ·
+[XIAO nRF54L15 Sense](/docs/boards/reference/xiao-nrf54l15-sense/) ·
+[XIAO 0.96" IPS Display](/docs/boards/reference/xiao-096-display/) ·
+[XIAO 1.14" IPS Display](/docs/boards/reference/xiao-114-display/) ·
+[XIAO 1.47" IPS Touch Display](/docs/boards/reference/xiao-147-touch-display/) ·
 [UNIHIKER M10](/docs/boards/reference/unihiker-m10/)

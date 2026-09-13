@@ -94,6 +94,15 @@ const BOARDS = {
   "xiao-esp32s3-sense": { tag: "velxio-xiao-board", attrs: { variant: "esp32s3-sense" }, title: "XIAO ESP32S3 Sense", family: "pro-boards", langs: ESP_LANGS },
   "xiao-esp32c6":       { tag: "velxio-xiao-board", attrs: { variant: "esp32c6" }, title: "XIAO ESP32C6", family: "pro-boards", langs: ESP_LANGS },
   "xiao-rp2040":        { tag: "velxio-xiao-board", attrs: { variant: "rp2040" }, title: "XIAO RP2040", family: "pro-boards", langs: [AR, MPY] },
+  "xiao-nrf52840-sense": { tag: "velxio-xiao-board", attrs: { variant: "nrf52840-sense" }, title: "XIAO nRF52840 Sense", family: "pro-boards", langs: [AR] },
+  "xiao-samd21":        { tag: "velxio-xiao-board", attrs: { variant: "samd21" }, title: "Seeeduino XIAO (SAMD21)", family: "pro-boards", langs: [AR] },
+  "xiao-ra4m1":         { tag: "velxio-xiao-board", attrs: { variant: "ra4m1" }, title: "XIAO RA4M1", family: "pro-boards", langs: [AR] },
+  "xiao-mg24-sense":    { tag: "velxio-xiao-board", attrs: { variant: "mg24-sense" }, title: "XIAO MG24 Sense", family: "pro-boards", langs: [AR] },
+  "xiao-nrf54l15-sense": { tag: "velxio-xiao-board", attrs: { variant: "nrf54l15-sense" }, title: "XIAO nRF54L15 Sense", family: "pro-boards", langs: [AR] },
+  "xiao-rp2350":        { tag: "velxio-xiao-board", attrs: { variant: "rp2350" }, title: "XIAO RP2350", family: "pro-boards", langs: [AR, MPY] },
+  "xiao-096-display":   { tag: "velxio-xiao-display-board", attrs: { variant: "096" }, title: "XIAO 0.96-inch IPS Display", family: "pro-boards", langs: [AR] },
+  "xiao-114-display":   { tag: "velxio-xiao-display-board", attrs: { variant: "114" }, title: "XIAO 1.14-inch IPS Display", family: "pro-boards", langs: [AR] },
+  "xiao-147-touch-display": { tag: "velxio-xiao-display-board", attrs: { variant: "147" }, title: "XIAO 1.47-inch IPS Touch Display", family: "pro-boards", langs: [AR] },
   "galactic-unicorn":       { tag: "velxio-galactic-unicorn",       title: "Pimoroni Galactic Unicorn", family: "pro-boards", langs: [AR, MPY] },
   // Arduino only: the board runs the RISC-V arduino-pico target; the RP2350
   // MicroPython path is wired for the Badger, not for this kind (no
