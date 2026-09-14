@@ -36,13 +36,22 @@ The PDM microphone is not modelled.
 - [Read text off the microSD](https://velxio.dev/example/xiao-147-sd-text) —
   the card and the panel sharing one SPI bus.
 
-## Pins (4)
+## Pins (13)
 
 <ul class="pin-grid">
 <li><span class="pin-name">GND</span></li>
 <li><span class="pin-name">3V3</span></li>
 <li><span class="pin-name">SDA</span></li>
 <li><span class="pin-name">SCL</span></li>
+<li><span class="pin-name">VBUS</span></li>
+<li><span class="pin-name">GND.1</span></li>
+<li><span class="pin-name">3V3.1</span></li>
+<li><span class="pin-name">GND.2</span></li>
+<li><span class="pin-name">D11</span></li>
+<li><span class="pin-name">D12</span></li>
+<li><span class="pin-name">D13</span></li>
+<li><span class="pin-name">U1</span></li>
+<li><span class="pin-name">U2</span></li>
 </ul>
 
 Every pin above is clickable on the canvas — click one to start a

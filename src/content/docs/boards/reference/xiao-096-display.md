@@ -35,13 +35,20 @@ The PDM microphone and the I2S pads are not modelled.
 - [Battery status](https://velxio.dev/example/xiao-096-battery) — Seeed's
   battery demo; drag the slider down a tenth of a volt.
 
-## Pins (4)
+## Pins (11)
 
 <ul class="pin-grid">
 <li><span class="pin-name">GND</span></li>
 <li><span class="pin-name">3V3</span></li>
 <li><span class="pin-name">SDA</span></li>
 <li><span class="pin-name">SCL</span></li>
+<li><span class="pin-name">5V</span></li>
+<li><span class="pin-name">GND.1</span></li>
+<li><span class="pin-name">3V3.1</span></li>
+<li><span class="pin-name">GND.2</span></li>
+<li><span class="pin-name">D11</span></li>
+<li><span class="pin-name">D12</span></li>
+<li><span class="pin-name">D13</span></li>
 </ul>
 
 Every pin above is clickable on the canvas — click one to start a

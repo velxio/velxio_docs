@@ -34,13 +34,24 @@ The PDM microphone and the I2S pads are not modelled.
 - [The three user buttons](https://velxio.dev/example/xiao-114-buttons) — each
   button counted on screen; USR1 toggles the backlight.
 
-## Pins (4)
+## Pins (15)
 
 <ul class="pin-grid">
 <li><span class="pin-name">GND</span></li>
 <li><span class="pin-name">3V3</span></li>
 <li><span class="pin-name">SDA</span></li>
 <li><span class="pin-name">SCL</span></li>
+<li><span class="pin-name">VBUS</span></li>
+<li><span class="pin-name">GND.1</span></li>
+<li><span class="pin-name">3V3.1</span></li>
+<li><span class="pin-name">GND.2</span></li>
+<li><span class="pin-name">D11</span></li>
+<li><span class="pin-name">D12</span></li>
+<li><span class="pin-name">D13</span></li>
+<li><span class="pin-name">D15</span></li>
+<li><span class="pin-name">U1</span></li>
+<li><span class="pin-name">U2</span></li>
+<li><span class="pin-name">U3</span></li>
 </ul>
 
 Every pin above is clickable on the canvas — click one to start a
