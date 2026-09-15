@@ -21,11 +21,17 @@ Les cartes Pro constituent le niveau premium du catalogue : du matériel de marq
 
 L'ordinateur de poche ESP32-S3 avec clavier et TFT. Démarre le véritable micrologiciel de lancement M5 ; tapez sur le clavier à l'écran, exécutez des applications, utilisez le haut-parleur.
 
+La vraie carte est disponible sur la [boutique M5Stack](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=cardputer-adv).
+
 ### M5Stack Core
 
 ![M5Stack Core sur le canevas Velxio](../../../../assets/docs/boards/m5stack-core.png)
 
 L'ESP32 empilable classique avec TFT 320x240 et trois boutons.
+
+La vraie carte est disponible sur la [boutique M5Stack](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=m5stack-core).
+
+*Les liens vers la boutique sur cette page sont des liens d'affiliation : Velxio touche une petite commission sans surcoût pour vous.*
 
 ## Pimoroni
 

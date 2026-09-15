@@ -29,11 +29,17 @@ El ordenador de bolsillo ESP32-S3 con teclado y TFT. Arranca el firmware real de
 lanzador M5; escribe en el teclado en pantalla, ejecuta aplicaciones, usa el
 altavoz.
 
+Consigue la placa real en la [tienda de M5Stack](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=cardputer-adv).
+
 ### M5Stack Core
 
 ![M5Stack Core en el lienzo de Velxio](../../../../assets/docs/boards/m5stack-core.png)
 
 El clásico ESP32 apilable con TFT de 320x240 y tres botones.
+
+Consigue la placa real en la [tienda de M5Stack](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=m5stack-core).
+
+*Los enlaces a la tienda de esta página son de afiliado: Velxio recibe una pequeña comisión sin coste extra para ti.*
 
 ## Pimoroni
 

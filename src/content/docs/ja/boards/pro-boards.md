@@ -21,11 +21,17 @@ Pro ボードはカタログのプレミアム層です。豊富な内蔵ペリ�
 
 キーボードと TFT を備えた ESP32-S3 ポケットコンピューター。実際の M5 ランチャーファームウェアを起動します。画面上のキーボードで入力し、アプリを実行し、スピーカーを使用できます。
 
+実機は [M5Stack ストア](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=cardputer-adv) で購入できます。
+
 ### M5Stack Core
 
 ![Velxio キャンバス上の M5Stack Core](../../../../assets/docs/boards/m5stack-core.png)
 
 320x240 TFT と 3 つのボタンを備えた、定番のスタッカブル ESP32。
+
+実機は [M5Stack ストア](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=m5stack-core) で購入できます。
+
+*このページのストアへのリンクはアフィリエイトリンクです。お客様の追加負担なしに Velxio が少額の手数料を受け取ります。*
 
 ## Pimoroni
 

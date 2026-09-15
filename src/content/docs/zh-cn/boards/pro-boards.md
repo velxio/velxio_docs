@@ -21,11 +21,17 @@ sidebar:
 
 带键盘和 TFT 屏幕的 ESP32-S3 口袋电脑。可启动真实的 M5 启动器固件；在屏幕键盘上输入，运行应用程序，使用扬声器。
 
+实体板可在 [M5Stack 商店](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=cardputer-adv) 购买。
+
 ### M5Stack Core
 
 ![M5Stack Core 在 Velxio 画布上](../../../../assets/docs/boards/m5stack-core.png)
 
 经典的模块化 ESP32，配备 320x240 TFT 屏幕和三个按钮。
+
+实体板可在 [M5Stack 商店](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=m5stack-core) 购买。
+
+*本页中的商店链接为联盟链接：您无需支付额外费用，Velxio 会获得少量佣金。*
 
 ## Pimoroni
 

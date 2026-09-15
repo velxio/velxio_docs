@@ -128,3 +128,11 @@ Two ways to begin a Cardputer project of your own:
 
 Save with the toolbar's Save button and the project — code, board and the
 microSD contents — lands in [your projects](/docs/getting-started/projects/).
+
+## Get the board
+
+The Cardputer ADV is sold on the [M5Stack store](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs&utm_content=cardputer-adv).
+Every example on this page runs in the browser without it, and the same
+sketch runs unchanged on the real board.
+
+*Affiliate link: if you buy through it, Velxio earns a small commission at no extra cost to you.*

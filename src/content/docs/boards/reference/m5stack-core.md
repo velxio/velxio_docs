@@ -197,6 +197,14 @@ Two ways to begin a Core project of your own:
 Save with the toolbar's Save button and the project — code, board and the
 microSD contents — lands in [your projects](/docs/getting-started/projects/).
 
+## Get the board
+
+The Basic Core v2.7 is sold on the [M5Stack store](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs&utm_content=m5stack-core).
+Every example on this page runs in the browser without it, and the same
+sketch runs unchanged on the real board.
+
+*Affiliate link: if you buy through it, Velxio earns a small commission at no extra cost to you.*
+
 ## Pins (51)
 
 <ul class="pin-grid">

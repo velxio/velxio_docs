@@ -31,11 +31,17 @@ Der ESP32-S3-Taschencomputer mit Tastatur und TFT. Startet die echte M5-
 Launcher-Firmware; tippe auf der Bildschirmtastatur, starte Apps, nutze
 den Lautsprecher.
 
+Das echte Board gibt es im [M5Stack-Shop](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=cardputer-adv).
+
 ### M5Stack Core
 
 ![M5Stack Core auf der Velxio-Leinwand](../../../../assets/docs/boards/m5stack-core.png)
 
 Der klassische stapelbare ESP32 mit 320x240-TFT und drei Tasten.
+
+Das echte Board gibt es im [M5Stack-Shop](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=m5stack-core).
+
+*Die Shop-Links auf dieser Seite sind Affiliate-Links: Velxio erhält eine kleine Provision, ohne Mehrkosten für Sie.*
 
 ## Pimoroni
 

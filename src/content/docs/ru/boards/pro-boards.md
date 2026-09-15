@@ -29,11 +29,17 @@ sidebar:
 лаунчера M5; печатайте на экранной клавиатуре, запускайте приложения, используйте
 динамик.
 
+Настоящую плату можно купить в [магазине M5Stack](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=cardputer-adv).
+
 ### M5Stack Core
 
 ![M5Stack Core на холсте Velxio](../../../../assets/docs/boards/m5stack-core.png)
 
 Классический модульный ESP32 с TFT-дисплеем 320x240 и тремя кнопками.
+
+Настоящую плату можно купить в [магазине M5Stack](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=m5stack-core).
+
+*Ссылки на магазин на этой странице партнерские: Velxio получает небольшую комиссию без дополнительных затрат для вас.*
 
 ## Pimoroni
 

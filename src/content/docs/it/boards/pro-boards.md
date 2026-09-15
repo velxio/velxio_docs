@@ -28,11 +28,17 @@ STM32 e la famiglia Raspberry Pi Linux (a cui appartiene la UNIHIKER). Vedi
 Il computer tascabile ESP32-S3 con tastiera e TFT. Avvia il vero firmware
 launcher M5; digita sulla tastiera a schermo, esegui le app, usa lo speaker.
 
+La scheda vera è sul [negozio M5Stack](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=cardputer-adv).
+
 ### M5Stack Core
 
 ![M5Stack Core sul canvas di Velxio](../../../../assets/docs/boards/m5stack-core.png)
 
 Il classico ESP32 impilabile con TFT 320x240 e tre pulsanti.
+
+La scheda vera è sul [negozio M5Stack](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=m5stack-core).
+
+*I link al negozio in questa pagina sono di affiliazione: Velxio riceve una piccola commissione senza costi aggiuntivi per te.*
 
 ## Pimoroni
 

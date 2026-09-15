@@ -29,11 +29,17 @@ The ESP32-S3 pocket computer with keyboard and TFT. Boots the real M5
 launcher firmware; type on the on-screen keyboard, run apps, use the
 speaker.
 
+Get the real board on the [M5Stack store](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=cardputer-adv).
+
 ### M5Stack Core
 
 ![M5Stack Core on the Velxio canvas](../../../assets/docs/boards/m5stack-core.png)
 
 The classic stackable ESP32 with 320x240 TFT and three buttons.
+
+Get the real board on the [M5Stack store](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=m5stack-core).
+
+*Store links on this page are affiliate links: Velxio earns a small commission at no extra cost to you.*
 
 ## Pimoroni
 
