@@ -93,6 +93,10 @@ Le **ESP32-C6 DevKit** — la puce RISC-V WiFi-6, avec le même trio de langages
 
 Un ordinateur monocarte Linux avec écran tactile intégré — documenté avec la [famille Raspberry Pi](/docs/fr/boards/raspberry-pi/), car il partage le flux de travail Linux complet. Comme le reste de cette famille, c'est la seule carte de cette page qui **nécessite un plan payant** pour fonctionner.
 
+La vraie carte est disponible sur la [boutique DFRobot](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10).
+
+*Ce lien vers la boutique est un lien d'affiliation : Velxio touche une petite commission sans surcoût pour vous.*
+
 ---
 
 Les cartes Pro apparaissent dans le [sélecteur de composants](/docs/fr/circuit-editor/placing-components/) avec un **badge PRO** ; les [modèles de démarrage](/docs/fr/getting-started/projects/) incluent des projets prêts à l'emploi pour chacune.

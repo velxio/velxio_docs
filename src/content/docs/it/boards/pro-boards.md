@@ -111,6 +111,10 @@ il flusso di lavoro Linux completo. Come il resto di quella famiglia, è
 l'unica scheda in questa pagina che **richiede un piano a pagamento** per
 funzionare.
 
+La scheda vera è sul [negozio DFRobot](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10).
+
+*Questo link al negozio è di affiliazione: Velxio riceve una piccola commissione senza costi aggiuntivi per te.*
+
 ---
 
 Le schede Pro appaiono nel [selettore componenti](/docs/it/circuit-editor/placing-components/)

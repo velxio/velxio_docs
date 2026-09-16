@@ -161,6 +161,10 @@ the [Raspberry Pi family](/docs/boards/raspberry-pi/), since it shares the
 full-Linux workflow. Like the rest of that family, it is the one board on
 this page that **needs a paid plan** to run.
 
+Get the real board on the [DFRobot store](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10).
+
+*This store link is an affiliate link: Velxio earns a small commission at no extra cost to you.*
+
 ---
 
 Pro boards appear in the [component picker](/docs/circuit-editor/placing-components/)

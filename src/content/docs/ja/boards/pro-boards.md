@@ -93,6 +93,10 @@ NeoPixel を備えた RP2040 XIAO。
 
 タッチスクリーンを内蔵した Linux シングルボードコンピューター。完全な Linux ワークフローを共有するため、[Raspberry Pi ファミリー](/docs/ja/boards/raspberry-pi/) に記載されています。そのファミリーの他の製品と同様に、このページで**実行に有料プランが必要な唯一のボード**です。
 
+実機は [DFRobot ストア](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10) で購入できます。
+
+*このストアへのリンクはアフィリエイトリンクです。お客様の追加負担なしに Velxio が少額の手数料を受け取ります。*
+
 ---
 
 Pro ボードは、[コンポーネントピッカー](/docs/ja/circuit-editor/placing-components/) に **PRO バッジ**付きで表示されます。[スターターテンプレート](/docs/ja/getting-started/projects/) には、各ボード用のすぐに実行できるプロジェクトが含まれています。

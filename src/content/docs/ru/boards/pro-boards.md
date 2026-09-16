@@ -111,6 +111,10 @@ RP2040 XIAO с NeoPixel.
 рабочий процесс с полноценным Linux. Как и остальные платы этого семейства, это единственная плата на
 этой странице, для работы которой **требуется платный план**.
 
+Настоящую плату можно купить в [магазине DFRobot](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10).
+
+*Эта ссылка на магазин партнерская: Velxio получает небольшую комиссию без дополнительных затрат для вас.*
+
 ---
 
 Платы Pro отображаются в [выборе компонентов](/docs/ru/circuit-editor/placing-components/)

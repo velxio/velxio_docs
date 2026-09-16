@@ -115,6 +115,10 @@ Voll-Linux-Workflow teilt. Wie der Rest dieser Familie ist es die einzige
 Platine auf dieser Seite, die **einen kostenpflichtigen Plan** zum Ausführen
 benötigt.
 
+Das echte Board gibt es im [DFRobot-Shop](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10).
+
+*Dieser Shop-Link ist ein Affiliate-Link: Velxio erhält eine kleine Provision, ohne Mehrkosten für Sie.*
+
 ---
 
 Pro-Platinen erscheinen im [Komponenten-Picker](/docs/de/circuit-editor/placing-components/)

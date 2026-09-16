@@ -93,6 +93,10 @@ Pimoroni 的 RP2350B 开发板，采用标准 Pico 外形（GP0..GP28 加电源�
 
 带有内置触摸屏的 Linux 单板计算机 — 与 [Raspberry Pi 系列](/docs/zh-cn/boards/raspberry-pi/) 一起记录，因为它共享完整的 Linux 工作流程。与该系列的其他产品一样，它是本页上唯一**需要付费套餐**才能运行的开发板。
 
+实体板可在 [DFRobot 商店](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10) 购买。
+
+*此商店链接为联盟链接：您无需支付额外费用，Velxio 会获得少量佣金。*
+
 ---
 
 专业开发板会出现在[组件选择器](/docs/zh-cn/circuit-editor/placing-components/)中，并带有 **PRO 徽章**；[入门模板](/docs/zh-cn/getting-started/projects/)包含每个开发板的即用项目。

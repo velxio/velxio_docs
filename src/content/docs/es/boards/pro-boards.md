@@ -111,6 +111,10 @@ la [familia Raspberry Pi](/docs/es/boards/raspberry-pi/), ya que comparte el
 flujo de trabajo Linux completo. Como el resto de esa familia, es la única placa en
 esta página que **necesita un plan de pago** para funcionar.
 
+Consigue la placa real en la [tienda de DFRobot](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10).
+
+*Este enlace a la tienda es de afiliado: Velxio recibe una pequeña comisión sin coste extra para ti.*
+
 ---
 
 Las placas Pro aparecen en el [selector de componentes](/docs/es/circuit-editor/placing-components/)

@@ -115,6 +115,10 @@ já que compartilha o fluxo de trabalho Linux completo. Como o restante
 dessa família, é a única placa nesta página que **precisa de um plano
 pago** para funcionar.
 
+A placa real está na [loja da DFRobot](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10).
+
+*Este link para a loja é de afiliado: o Velxio recebe uma pequena comissão sem custo extra para você.*
+
 ---
 
 As placas Pro aparecem no [seletor de componentes](/docs/pt-br/circuit-editor/placing-components/)
