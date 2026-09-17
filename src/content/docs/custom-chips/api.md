@@ -112,6 +112,20 @@ void      vx_buffer_read(vx_buffer b, uint32_t offset,
 For chips that _are_ displays: write RGBA pixels and the part renders
 them on the canvas.
 
+The size is the one `chip.json` declares under `display: { width, height }`
+— that is what `vx_framebuffer_init` returns, and writes past it are
+dropped. A chip that declares no `display` gets a 128x64 buffer. **A chip
+ported from Wokwi needs this key added**: Wokwi's `chip.json` has no
+display size, so a 480x320 ILI9488 port without it draws into a 128x64
+buffer and shows almost nothing.
+
+Where the chip runs decides nothing here. In the browser (AVR, Pico, the
+in-browser ESP32 engines) the part paints the buffer straight to its
+canvas; on the QEMU ESP32 path the chip runs next to the guest and the
+worker streams the rows it touched back to the part, at up to 20 frames a
+second. Both paint at most once per animation frame, however often the
+chip calls `vx_buffer_write`.
+
 ## ROM blobs and logging
 
 ```c

@@ -102,6 +102,10 @@ void      vx_buffer_read(vx_buffer b, uint32_t offset,
 
 Para chips que _son_ pantallas: escribe píxeles RGBA y el componente los renderiza en el lienzo.
 
+El tamaño es el que `chip.json` declara en `display: { width, height }`: eso es lo que devuelve `vx_framebuffer_init`, y las escrituras más allá se descartan. Un chip que no declara `display` recibe un búfer de 128x64. **Un chip portado desde Wokwi necesita añadir esa clave**: el `chip.json` de Wokwi no lleva tamaño de pantalla, así que un port de un ILI9488 de 480x320 sin ella dibuja en un búfer de 128x64 y no muestra casi nada.
+
+Dónde corre el chip no cambia nada aquí. En el navegador (AVR, Pico, los engines ESP32 en el navegador) el componente pinta el búfer directamente en su lienzo; en la ruta QEMU del ESP32 el chip corre junto al firmware y el worker devuelve al componente las filas que tocó, hasta 20 veces por segundo. Ambos pintan como mucho una vez por fotograma, llame el chip a `vx_buffer_write` las veces que llame.
+
 ## Blobs ROM y registro
 
 ```c
