@@ -91,6 +91,11 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "ai" } }],
         },
         {
+          label: "CI & Automation",
+          translations: { es: "CI y automatización" },
+          items: [{ autogenerate: { directory: "ci" } }],
+        },
+        {
           label: "Account & Plans",
           translations: { es: "Cuenta y planes" },
           items: [{ autogenerate: { directory: "account" } }],
