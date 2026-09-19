@@ -49,9 +49,17 @@ jobs:
           timeout: 10000
 ```
 
-Store the token as a repository secret (**Settings, Secrets and variables,
-Actions**). Mint it at
-[velxio.dev/account/ci](https://velxio.dev/account/ci); it is shown once.
+The job needs one secret, because a runner has no browser to approve a
+sign-in. Mint it with
+
+```bash
+velxio-cli login --ci --name "my-firmware"
+```
+
+which prints the token once, then store it as a repository secret
+(**Settings, Secrets and variables, Actions**). The account page
+([velxio.dev/account/ci](https://velxio.dev/account/ci)) mints one too, and
+is where you revoke either.
 
 ## Inputs
 

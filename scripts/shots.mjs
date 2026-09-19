@@ -1146,6 +1146,125 @@ const SCENES = {
     await dismissOverlays(page);
     await boardCloseUp(page, "velxio-m5stack-core", "boards/m5stack-core-buttons");
   },
+
+  /** The CI account page. Every CI endpoint is answered with fixed data so
+   *  the image carries no live token hint, no real IP and no run of whoever
+   *  ran the script, and so it looks the same next year. */
+  "ci/account": async page => {
+    const iso = d => new Date(d).toISOString();
+    await page.route("**/api/pro/ci/usage", route =>
+      route.fulfill({
+        json: {
+          plan: "pro",
+          cap_ms: 120_000_000,
+          used_ms: 9_732_000,
+          remaining_ms: 110_268_000,
+          resets_at: iso("2026-11-01T00:00:00Z"),
+          entitled: true,
+          runs_this_month: 42,
+          concurrency: 2,
+          max_run_ms: 600_000,
+        },
+      })
+    );
+    await page.route("**/api/pro/ci/tokens", route =>
+      route.fulfill({
+        json: {
+          tokens: [
+            {
+              id: "t1",
+              name: "laptop",
+              token_hint: "vlxci_9f3a21",
+              created_at: iso("2026-10-02T09:14:00Z"),
+              last_used_at: iso("2026-10-14T18:02:00Z"),
+              last_used_ip: "203.0.113.24",
+              expires_at: iso("2027-10-02T09:14:00Z"),
+              revoked: false,
+            },
+            {
+              id: "t2",
+              name: "velxio-ci-examples",
+              token_hint: "vlxci_b70c48",
+              created_at: iso("2026-10-05T11:40:00Z"),
+              last_used_at: iso("2026-10-15T07:31:00Z"),
+              last_used_ip: "198.51.100.7",
+              expires_at: iso("2027-10-05T11:40:00Z"),
+              revoked: false,
+            },
+          ],
+        },
+      })
+    );
+    await page.route("**/api/pro/ci/runs*", route =>
+      route.fulfill({
+        json: {
+          runs: [
+            ["r_9f3c2a1b7e4d", "passed", "expect_text", 0, "blink", ["esp32-s3"], 412, 1000, "2026-10-15T07:31:00Z"],
+            ["r_72c369ef8ee6", "failed", "expect_pin_mismatch", 1, "button-led", ["arduino-uno"], 1340, 2000, "2026-10-15T07:12:00Z"],
+            ["r_de904f1c6e35", "timeout", "budget_reached", 42, "sensor-loop", ["esp32"], 10000, 10000, "2026-10-14T18:02:00Z"],
+            ["r_0c4018966a70", "passed", "plan_complete", 0, "button-led", ["arduino-uno"], 2390, 3000, "2026-10-14T17:55:00Z"],
+            ["r_f4b0a988a1ac", "passed", "expect_text", 0, "blink", ["raspberry-pi-pico"], 133, 1000, "2026-10-13T20:41:00Z"],
+          ].map(([id, status, reason, exit_code, project_name, boards, sim_ms, billed_ms, at]) => ({
+            id, status, reason, exit_code, project_name, boards, sim_ms, billed_ms,
+            source: "cli", engine: "js", cli_version: "0.2.0",
+            created_at: iso(at), started_at: iso(at), ended_at: iso(at),
+            wall_ms: sim_ms + 2200, reserved_ms: billed_ms, budget_ms: billed_ms,
+          })),
+          next: null,
+        },
+      })
+    );
+
+    await page.goto(`${BASE}/account/ci`, { waitUntil: "domcontentloaded" });
+    await page.waitForTimeout(3000);
+    await dismissOverlays(page);
+    // fullPage: the page is taller than the viewport, and a clip alone is
+    // bounded by it — the first capture cut the run history in half.
+    await shot(page, "ci/account", {
+      fullPage: true,
+      clip: await clipOf(page, ["main"], 16),
+    });
+    await page.unroute("**/api/pro/ci/usage");
+    await page.unroute("**/api/pro/ci/tokens");
+    await page.unroute("**/api/pro/ci/runs*");
+  },
+
+  /** The approval page a `velxio-cli login` sends you to. A real pending
+   *  request is created through the public endpoint (that is what the CLI
+   *  does), screenshotted, then denied so nothing is left waiting. */
+  "ci/device-approve": async page => {
+    const started = await page.evaluate(async () => {
+      const r = await fetch("/api/pro/ci/auth/device", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          cli_version: "0.2.0",
+          hostname: "laptop",
+          purpose: "local",
+        }),
+      });
+      return r.json();
+    });
+
+    await page.goto(`${BASE}/account/ci/device?code=${started.user_code}`, {
+      waitUntil: "domcontentloaded",
+    });
+    await page.waitForTimeout(2500);
+    await dismissOverlays(page);
+    await shot(page, "ci/device-approve", {
+      clip: await clipOf(page, ["main"], 16),
+    });
+
+    // Leave nothing pending: the person running this script is not signing in.
+    await page.evaluate(async code => {
+      await fetch("/api/pro/ci/auth/deny", {
+        method: "POST",
+        credentials: "include",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ user_code: code }),
+      });
+    }, started.user_code);
+  },
 };
 
 for (const n of ["custom-chips/co2-sensor", "custom-chips/motion-sensor", "custom-chips/i2c-env-sensor"])

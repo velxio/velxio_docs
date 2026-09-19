@@ -44,34 +44,79 @@ source file named.
 
 ## Boards CI runs today
 
-The server decides, not the CLI. These ten kinds run now:
+The server decides, not the CLI. Thirty-six kinds run now — every board with
+an in-browser engine, each one proven by booting real firmware.
 
-| kind                | board               | `diagram.json` type                              | firmware           |
-| ------------------- | ------------------- | ------------------------------------------------ | ------------------ |
-| `arduino-uno`       | Arduino Uno         | `wokwi-arduino-uno`                              | Intel HEX          |
-| `arduino-nano`      | Arduino Nano        | `wokwi-arduino-nano`                             | Intel HEX          |
-| `arduino-mega`      | Arduino Mega        | `wokwi-arduino-mega`                             | Intel HEX          |
-| `attiny85`          | ATtiny85            | `wokwi-attiny85`                                 | Intel HEX          |
-| `raspberry-pi-pico` | Raspberry Pi Pico   | `wokwi-pi-pico`, `board-pi-pico`                 | flash image        |
-| `pi-pico-w`         | Raspberry Pi Pico W | `board-pi-pico-w`                                | flash image        |
-| `esp32`             | ESP32 DevKit v1     | `wokwi-esp32-devkit-v1`, `board-esp32-devkit-v1` | merged ESP32 image |
-| `esp32-s3`          | ESP32-S3 DevKitC-1  | `board-esp32-s3-devkitc-1`                       | merged ESP32 image |
-| `esp32-c3`          | ESP32-C3 DevKitM-1  | `board-esp32-c3-devkitm-1`                       | merged ESP32 image |
-| `esp32-c6`          | ESP32-C6 DevKitC-1  | `board-esp32-c6-devkitc-1`                       | merged ESP32 image |
+### AVR
+
+| kind | board | `diagram.json` type | firmware |
+| ---- | ----- | ------------------- | -------- |
+| `arduino-uno` | Arduino Uno | `wokwi-arduino-uno` | Intel HEX |
+| `arduino-nano` | Arduino Nano | `wokwi-arduino-nano` | Intel HEX |
+| `arduino-mega` | Arduino Mega | `wokwi-arduino-mega` | Intel HEX |
+| `attiny85` | ATtiny85 | `wokwi-attiny85` | Intel HEX |
+
+### RP2040 and RP2350
+
+| kind | board | `diagram.json` type | firmware |
+| ---- | ----- | ------------------- | -------- |
+| `raspberry-pi-pico` | Raspberry Pi Pico | `wokwi-pi-pico`, `board-pi-pico`, `wokwi-raspberry-pi-pico` | flash image |
+| `pi-pico-w` | Raspberry Pi Pico W | `board-pi-pico-w` | flash image |
+| `xiao-rp2040` | XIAO RP2040 | `board-velxio-xiao-rp2040` | flash image |
+| `xiao-rp2350` | XIAO RP2350 | `board-velxio-xiao-rp2350` | flash image |
+| `pimoroni-pico-plus-2w` | Pimoroni Pico Plus 2 W | `board-velxio-pimoroni-pico-plus-2w` | flash image |
+| `badger-2350` | Pimoroni Badger 2350 | `board-velxio-badger-2350` | flash image |
+| `stellar-unicorn` | Pimoroni Stellar Unicorn | `board-velxio-stellar-unicorn` | flash image |
+
+### XIAO ARM
+
+| kind | board | `diagram.json` type | firmware |
+| ---- | ----- | ------------------- | -------- |
+| `xiao-nrf52840-sense` | XIAO nRF52840 Sense | `board-velxio-xiao-nrf52840-sense` | Intel HEX |
+| `xiao-samd21` | XIAO SAMD21 | `board-velxio-xiao-samd21` | Intel HEX |
+| `xiao-ra4m1` | XIAO RA4M1 | `board-velxio-xiao-ra4m1` | Intel HEX |
+| `xiao-mg24-sense` | XIAO MG24 Sense | `board-velxio-xiao-mg24-sense` | Intel HEX |
+| `xiao-nrf54l15-sense` | XIAO nRF54L15 Sense | `board-velxio-xiao-nrf54l15-sense` | Intel HEX |
+
+### ESP32
+
+| kind | board | `diagram.json` type | firmware |
+| ---- | ----- | ------------------- | -------- |
+| `esp32` | ESP32 DevKit v1 | `wokwi-esp32-devkit-v1`, `board-esp32-devkit-v1` | merged ESP32 image |
+| `esp32-s3` | ESP32-S3 DevKitC-1 | `board-esp32-s3-devkitc-1` | merged ESP32 image |
+| `esp32-c3` | ESP32-C3 DevKitM-1 | `board-esp32-c3-devkitm-1` | merged ESP32 image |
+| `esp32-c6` | ESP32-C6 DevKitC-1 | `board-esp32-c6-devkitc-1` | merged ESP32 image |
+| `esp32-devkit-c-v4` | ESP32 DevKitC v4 | `board-esp32-devkit-c-v4` | merged ESP32 image |
+| `esp32-cam` | ESP32-CAM | `board-esp32-cam` | merged ESP32 image |
+| `wemos-lolin32-lite` | WEMOS LOLIN32 Lite | `board-wemos-lolin32-lite` | merged ESP32 image |
+| `xiao-esp32-s3` | XIAO ESP32-S3 | `board-xiao-esp32-s3` | merged ESP32 image |
+| `arduino-nano-esp32` | Arduino Nano ESP32 | `board-arduino-nano-esp32` | merged ESP32 image |
+| `xiao-esp32-c3` | XIAO ESP32-C3 | `board-xiao-esp32-c3` | merged ESP32 image |
+| `aitewinrobot-esp32c3-supermini` | ESP32-C3 SuperMini | `board-aitewinrobot-esp32c3-supermini` | merged ESP32 image |
+| `xiao-esp32c6` | XIAO ESP32-C6 | `board-xiao-esp32-c6` | merged ESP32 image |
+| `esp32-p4` | ESP32-P4 Function EV | `board-esp32-p4-function-ev` | merged ESP32 image |
+| `m5stack-core` | M5Stack Core | `board-velxio-m5stack-core` | merged ESP32 image |
+| `esp32-c3-lcdkit` | ESP32-C3-LCDkit | `board-velxio-esp32-c3-lcdkit` | merged ESP32 image |
+| `cardputer-adv` | M5Stack Cardputer ADV | `board-velxio-cardputer-adv` | merged ESP32 image |
+| `xiao-esp32s3-sense` | XIAO ESP32-S3 Sense | `board-velxio-xiao-esp32s3-sense` | merged ESP32 image |
+| `esp-vocat` | ESP-VoCat | `board-velxio-esp-vocat` | merged ESP32 image |
+| `esp32-s3-eye` | ESP32-S3-EYE | `board-velxio-esp32-s3-eye` | merged ESP32 image |
+| `esp-sensairshuttle` | ESP-SensAirShuttle | `board-velxio-esp-sensairshuttle` | merged ESP32 image |
 
 Any of them can also be written `board-velxio-<kind>` in the diagram, for
-example `board-velxio-esp32-c6`.
+example `board-velxio-esp32-c6`; the boards with no Wokwi type of their own
+have no other spelling.
 
 `velxio-cli boards` prints the live list with each board's status, its
 `diagram.json` types and the firmware formats it accepts.
 
 :::caution
-The rest of the Velxio catalogue does not run in CI yet. The STM32 boards,
-the Raspberry Pi boards, the RP2350 boards (Pico 2, the Pimoroni family,
-XIAO RP2350), the XIAO ARM boards and the remaining ESP32 devkits are
-refused before the run starts, with `board_not_supported_in_ci` and the
-phase they are planned for. Nothing is billed, and no nearby board is
-silently substituted.
+What is left runs in the editor but not in CI yet: the STM32 boards (they
+need the QEMU lane), the Raspberry Pi and UNIHIKER boards, the ESP32-P4
+preview devkit, and the DFRobot family, which is still behind its launch
+flag. Each is refused before the run starts, with
+`board_not_supported_in_ci` and the phase it is planned for. Nothing is
+billed, and no nearby board is silently substituted.
 :::
 
 Pico W runs, but CI has no network: WiFi and sockets never connect, and the

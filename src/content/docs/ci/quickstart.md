@@ -20,17 +20,39 @@ your `PATH`. Windows: `iwr https://velxio.dev/ci/install.ps1 -useb | iex`.
 The binaries live on the [releases page](https://github.com/velxio/velxio-cli/releases)
 if you prefer to fetch one yourself.
 
-## 2. Get a token
-
-Open [velxio.dev/account/ci](https://velxio.dev/account/ci), name a token and
-create it. It is shown once:
+## 2. Sign in
 
 ```bash
-export VELXIO_CLI_TOKEN=vlxci_...
+velxio-cli login
 ```
 
-In CI, store it as a secret (in GitHub: repo Settings, Secrets and variables,
-Actions) and never in the repository.
+It prints a short code, opens your browser and waits. Approve the request and
+the CLI stores what it is given — you never handle a token on your own
+machine.
+
+```
+code     7XJ6-33M5
+approve  https://velxio.dev/account/ci/device?code=7XJ6-33M5
+waiting for approval of 7XJ6-33M5 (the code expires in 10 min)
+signed in as velxio-cli on laptop
+```
+
+The page shows what is asking, from which machine and for what, before you
+approve anything:
+
+![The browser page that approves a CLI sign-in: it names the tool, the machine it runs on and what it is asking for, with Approve and Deny buttons](../../../assets/docs/ci/device-approve.png)
+
+A CI job has no browser, so it carries one secret instead. The same flow
+mints it, named after the repository that will hold it:
+
+```bash
+velxio-cli login --ci --name "my-firmware"
+```
+
+That one prints the token once — store it as a repository secret (in GitHub:
+Settings, Secrets and variables, Actions) and never in the repository itself.
+Both kinds appear at [velxio.dev/account/ci](https://velxio.dev/account/ci),
+where you can revoke either.
 
 ## 3. Describe the project
 

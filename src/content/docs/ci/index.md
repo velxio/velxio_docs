@@ -15,7 +15,7 @@ command exits non-zero when something you asked for did not happen.
 
 ```bash
 curl -fsSL https://velxio.dev/ci/install.sh | sh
-export VELXIO_CLI_TOKEN=vlxci_...          # from /account/ci
+velxio-cli login                           # approve in the browser, once
 cd firmware/blink
 velxio-cli run --expect-text "Hello, world!" --timeout 10000 .
 ```
@@ -54,7 +54,9 @@ on every board, whether the emulator ran it faster or slower than real time.
 A run that never starts (an unknown board, a firmware that does not match the
 board, a rejected scenario) costs nothing. Minutes reset on the first of the
 month, UTC. Your balance, your run history and your tokens live at
-[/account/ci](https://velxio.dev/account/ci).
+[/account/ci](https://velxio.dev/account/ci):
+
+![The CI account page: minutes used this month, the tokens that exist with when each was last used, and a table of recent runs with their status, simulated and billed seconds and exit code](../../../assets/docs/ci/account.png)
 
 ## How a project describes itself
 

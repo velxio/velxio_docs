@@ -1,14 +1,14 @@
 ---
 title: Referência da API de Chips
-description: A API velxio-chip.h — pinos, atributos, I2C, SPI, UART, temporizadores, framebuffer, ROM.
+description: A API velxio-chip.h — pinos, atributos, I2C, SPI, UART, timers, framebuffer, ROM.
 sidebar:
   order: 6
 ---
 
 Tudo o que um chip pode fazer é declarado em **`velxio-chip.h`**. O host
-chama sua função exportada `chip_setup()` uma vez por instância; nela você
-registra pinos e periféricos e conecta callbacks. Toda a execução posterior
-acontece nesses callbacks.
+chama seu `chip_setup()` exportado uma vez por instância; lá você registra
+pinos e periféricos e conecta callbacks. Toda a execução posterior acontece
+nesses callbacks.
 
 ## Pinos
 
@@ -26,7 +26,7 @@ Modos: `VX_INPUT`, `VX_OUTPUT`, `VX_INPUT_PULLUP`, `VX_INPUT_PULLDOWN`,
 acionando um nível conhecido (sem glitch entre o registro e a primeira
 escrita).
 
-Observe bordas:
+Observe as bordas:
 
 ```c
 void vx_pin_watch(vx_pin p, vx_edge edge,
@@ -38,22 +38,22 @@ com `VX_EDGE_RISING`, `VX_EDGE_FALLING` ou `VX_EDGE_BOTH`.
 
 ## Atributos
 
-Parâmetros editáveis pelo usuário. Os padrões ficam no inspetor de componentes; declare uma
-seção `controls` no `chip.json` e cada um recebe um **slider ao vivo
+Parâmetros editáveis pelo usuário. Os padrões ficam no inspetor da peça; declare uma
+seção `controls` em `chip.json` e cada um ganha um **slider ao vivo
 enquanto a simulação roda** (veja
 [Sensores programáveis](/docs/pt-br/custom-chips/programmable-sensors/)):
 
 ```c
 vx_attr vx_attr_register(const char* name, double default_val);
-double  vx_attr_read(vx_attr a);   // re-leia nos callbacks — sliders movem ao vivo
+double  vx_attr_read(vx_attr a);   // re-read in callbacks — sliders move it live
 
-// Atributos de string (um ID de dispositivo, um SSID, um nome de preset):
+// String attributes (a device id, an SSID, a preset name):
 vx_attr  vx_attr_register_string(const char* name, const char* default_val);
 uint32_t vx_attr_string_len(vx_attr a);
 uint32_t vx_attr_string_read(vx_attr a, char* buf, uint32_t cap);
 ```
 
-Declare-os também no `chip.json` para que o editor possa renderizá-los.
+Declare-os também em `chip.json` para que o editor possa renderizá-los.
 
 ## Escravo I2C
 
@@ -63,8 +63,8 @@ vx_i2c vx_i2c_attach(const vx_i2c_config* cfg);
 
 A configuração carrega o `address` de 7 bits, os pinos `scl`/`sda` e quatro
 callbacks: `on_connect(addr, is_read)`, `on_read()` (retorna o próximo
-byte), `on_write(byte)` (ack/nack), `on_stop()`. Suficiente para implementar qualquer
-dispositivo I2C estilo registro — veja os exemplos PCF8574 e DS3231.
+byte), `on_write(byte)` (ack/nack), `on_stop()`. O suficiente para implementar qualquer
+dispositivo I2C no estilo de registradores — veja os exemplos PCF8574 e DS3231.
 
 ## UART
 
@@ -73,8 +73,8 @@ vx_uart vx_uart_attach(const vx_uart_config* cfg); // rx, tx, baud_rate
 bool    vx_uart_write(vx_uart u, const uint8_t* buf, uint32_t count);
 ```
 
-`on_rx_byte` dispara por byte recebido; `on_tx_done` quando seu buffer foi
-enviado.
+`on_rx_byte` dispara por byte recebido; `on_tx_done` quando seu buffer
+foi enviado.
 
 ## Escravo SPI
 
@@ -87,7 +87,7 @@ void   vx_spi_stop(vx_spi s);
 Troque buffers enquanto o chip-select está ativo — o exemplo MCP3008
 mostra toda a dança de requisição/resposta.
 
-## Tempo e temporizadores
+## Tempo e timers
 
 ```c
 uint64_t vx_sim_now_nanos(void);
@@ -96,8 +96,8 @@ void     vx_timer_start(vx_timer t, uint64_t period_nanos, bool repeat);
 void     vx_timer_stop(vx_timer t);
 ```
 
-Os temporizadores rodam no **tempo de simulação**, então seu chip permanece
-consistente em ciclos com as placas ao redor.
+Os timers rodam em **tempo de simulação**, então seu chip permanece consistente em ciclos
+com as placas ao redor dele.
 
 ## Framebuffer
 
@@ -109,28 +109,42 @@ void      vx_buffer_read(vx_buffer b, uint32_t offset,
                          void* data, uint32_t len);
 ```
 
-Para chips que _são_ displays: escreva pixels RGBA e o componente os renderiza
+Para chips que _são_ displays: escreva pixels RGBA e a peça os renderiza
 no canvas.
 
-## Blobs de ROM e registro de log
+O tamanho é o que `chip.json` declara em `display: { width, height }`
+— é o que `vx_framebuffer_init` retorna, e escritas além disso são
+descartadas. Um chip que não declara `display` recebe um buffer de 128x64. **Um chip
+portado do Wokwi precisa dessa chave adicionada**: o `chip.json` do Wokwi não tem
+tamanho de display, então um port de ILI9488 480x320 sem ela desenha em um buffer 128x64
+e mostra quase nada.
+
+Onde o chip roda não decide nada aqui. No navegador (AVR, Pico, os
+motores ESP32 no navegador) a peça pinta o buffer direto em seu
+canvas; no caminho QEMU ESP32 o chip roda ao lado do guest e o
+worker transmite as linhas que ele tocou de volta para a peça, a até 20 frames por
+segundo. Ambos pintam no máximo uma vez por frame de animação, por mais vezes que o
+chip chame `vx_buffer_write`.
+
+## Blobs de ROM e logging
 
 ```c
 uint32_t vx_rom_size(void);
 void     vx_rom_read(uint32_t offset, uint8_t* dst, uint32_t len);
-void     vx_log(const char* msg);   // aparece no console do navegador
+void     vx_log(const char* msg);   // appears in the browser console
 ```
 
 A ROM permite que um chip carregue dados externos (ROMs de caracteres, microcódigo) injetados
 pelo host antes de `chip_setup()`.
 
-## A aparência do chip
+## A face do chip
 
-O corpo é desenhado a partir do `chip.json`: a lista de pinos posiciona os pads e seus
+O corpo é desenhado a partir de `chip.json`: a lista de pinos posiciona os pads e seus
 rótulos, e um `display: { width, height }` opcional reserva uma
-área de framebuffer. Um chip também pode carregar uma **imagem** — PNG, JPEG
-ou SVG adicionada à sua seção de arquivos como `chip.png` / `chip.jpg` / `chip.svg` — que
+área de framebuffer. Um chip também pode carregar uma **imagem** — um PNG, JPEG ou SVG
+adicionado à sua seção de arquivos como `chip.png` / `chip.jpg` / `chip.svg` — que
 cobre o corpo sem mover nenhum pino. Veja
-[Dando uma aparência ao chip](/docs/pt-br/custom-chips/getting-started/#giving-the-chip-a-face).
+[Dando uma face ao chip](/docs/pt-br/custom-chips/getting-started/#giving-the-chip-a-face).
 
 ## O manifesto (`chip.json`)
 
@@ -145,8 +159,8 @@ cobre o corpo sem mover nenhum pino. Veja
 }
 ```
 
-`pins` define a ordem física do footprint; os nomes devem corresponder ao que o
-código-fonte C registra. Seções opcionais: `attributes` (valores ajustáveis),
+`pins` define a ordem do footprint físico; os nomes devem corresponder ao que o código
+C registra. Seções opcionais: `attributes` (valores ajustáveis),
 `controls` (sliders/botões ao vivo durante a simulação), `display`
 (`{"width", "height"}` para chips com framebuffer) e `programTargets`
-(chips retro-CPU que executam um programa do usuário).
+(chips de CPU retrô que executam um programa do usuário).
