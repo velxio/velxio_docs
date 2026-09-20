@@ -69,9 +69,18 @@ precise about what it is:
   unmodified pyserial: `serial.tools.list_ports`, `select()` on the port
   and `cat /dev/serial0` all work, and the bytes go to whatever is wired to
   GPIO14 and GPIO15 on the canvas.
-- There is **no** `/dev/gpiomem`, `/dev/gpiochip0`, `/sys/class/gpio` or
-  1-Wire tree. GPIO goes through `RPi.GPIO` and `gpiozero`, which are
-  there; `libgpiod`, `gpioinfo` and `pigpio` have nothing to talk to.
+- **1-Wire is there as the sysfs tree a Pi has.** A DS18B20 on GPIO4 shows up
+  under `/sys/bus/w1/devices/28-*/` with `w1_slave` and `temperature`, so
+  `cat`, `w1thermsensor`-style readers and your own code work
+  (`dtoverlay=w1-gpio,gpiopin=N` in a `config.txt` of the project moves the
+  pin).
+- **`libcamera-jpeg`, `rpicam-jpeg`, `rpicam-still`** take a still from the
+  camera part on the canvas, the way a script calls them with `subprocess`.
+  In this engine the picture is the part's **test pattern**: the guest runs
+  on Velxio's servers, and your webcam's pixels never leave your browser.
+- There is **no** `/dev/gpiomem`, `/dev/gpiochip0` or `/sys/class/gpio`. GPIO
+  goes through `RPi.GPIO` and `gpiozero`, which are there; `libgpiod`,
+  `gpioinfo` and `pigpio` have nothing to talk to.
 - Booting takes roughly 20 to 30 seconds, longer when the server is busy; a
   "Booting" overlay tracks it. A guest session ends after **2 hours** at the
   latest.
@@ -109,7 +118,9 @@ not only the script to finish.
 | SSD1306 OLED | Adafruit Blinka + `adafruit_ssd1306` | Yes | Yes |
 | ILI9341 TFT | `spidev` | Yes | Yes |
 | microSD card (SPI mode) | `spidev` | Yes | Yes |
-| DS18B20 temperature probe | 1-Wire sysfs, `w1thermsensor` | Yes | **No** |
+| DS18B20 temperature probe | 1-Wire sysfs, `w1thermsensor` | Yes | Yes |
+| GPS module on the header UART | `pyserial` on `/dev/serial0` | Yes | Yes |
+| 7.5" e-paper (UC8179) | `spidev` + `RPi.GPIO`, Waveshare-style driver | Yes | Yes |
 | Potentiometer straight on a GPIO | | No (see below) | No |
 
 The OLED and LCD rows were also run on a Raspberry Pi Zero in the Linux
@@ -123,12 +134,15 @@ engine, which is a 32-bit guest with its own image.
   **ADS1115** (I2C) or an **MCP3008** (SPI) between the sensor and the Pi,
   exactly as you would on a bench; both are in the catalog, and the gallery
   has an MCP3008 example with a potentiometer.
-- **1-Wire in the Linux engine.** The guest kernel has no 1-Wire support, so
-  a DS18B20 script finds no `/sys/bus/w1/devices` there. It works in the
-  instant engine, which is where a script that only imports
-  `w1thermsensor` runs anyway.
-- **The camera in the Linux engine.** `picamera2` works in the instant
-  engine, fed by your webcam or a test pattern; the guest has no camera.
+- **Your webcam in the Linux engine.** `picamera2` in the instant engine can
+  use your webcam, because the script runs in your browser. The guest runs
+  on our servers, so its camera tools get the test pattern instead.
+- **An e-paper driver that sends its picture to the wrong place.** On a
+  UC8179 panel (the 7.5") command `0x10` is the previous image and `0x13` is
+  the one the glass shows. A driver that writes `0x10` only gets a blank
+  refresh here, exactly as on the real panel, and the serial monitor (the
+  Linux terminal, in that engine) says why. The BUSY pin follows the controller too: LOW while an UltraChip panel
+  works, HIGH on an SSD168x.
 - **`pigpio`, `libgpiod` / `gpiod`, `/dev/gpiomem`.** No daemon and no GPIO
   character device in either engine. Use `RPi.GPIO` or `gpiozero`.
 - **A script copied from a MicroPython tutorial.** `import machine`,
@@ -152,7 +166,7 @@ has its hardware libraries in the image.
 | `smbus2` / `smbus` | Preinstalled (the real library) | Preinstalled |
 | `spidev` | Preinstalled | Preinstalled |
 | `serial` (pyserial) | The Pi UART paths only | The real pyserial 3.5 on a real tty |
-| `w1thermsensor` | Preinstalled | Not available (no 1-Wire) |
+| `w1thermsensor` | Preinstalled | Through `requirements.txt` (the 1-Wire tree is there) |
 | `luma.core`, `luma.oled`, `luma.lcd` | Preinstalled | Preinstalled |
 | `RPLCD` | Preinstalled | Preinstalled |
 | `ST7789` | Preinstalled | Preinstalled |
@@ -160,7 +174,7 @@ has its hardware libraries in the image.
 | `adafruit_ssd1306`, `adafruit_rgb_display` | Preinstalled | Preinstalled |
 | `PIL` (Pillow), `numpy` | Preinstalled | Preinstalled (Pillow 10.3, numpy 1.25) |
 | `cv2` (OpenCV) | Yes | No (no build for the guest) |
-| `picamera2` | Yes, over your webcam | No |
+| `picamera2` | Yes, over your webcam | No (use `rpicam-jpeg` / `libcamera-jpeg`) |
 | `velxio_screen` | Yes | Yes |
 | `requests` / `urllib` | Yes, through Velxio's egress proxy with an allowlist | No network |
 | Anything else | Through `requirements.txt` | Through `requirements.txt` |
