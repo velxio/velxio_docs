@@ -7,7 +7,7 @@ sidebar:
 ---
 
 La familia Raspberry Pi ejecuta **scripts de Python contra el circuito en el
-lienzo**. A diferencia de las placas microcontroladoras, no hay nada que
+lienzo**. A diferencia de las placas de microcontrolador, no hay nada que
 compilar: escribes un script, pulsas **Run** y Velxio elige uno de dos
 motores para ejecutarlo. Ningún motor es un escritorio de Raspberry Pi OS,
 así que lee esta página antes de dar por hecho que un tutorial escrito para
@@ -54,33 +54,43 @@ la línea que lo pidieron.
 ### Linux (en los servidores de Velxio)
 
 Un invitado Linux real arrancado en QEMU (`-M virt`, con el perfil de CPU de
-tu placa) al que accedes a través de la consola serie del espacio de trabajo.
+tu placa) al que llegas a través de la consola serie del espacio de trabajo.
 Sé preciso sobre lo que es:
 
 - **Alpine Linux**, no Raspberry Pi OS. `python3` y `pip` están instalados;
   `apt`, `raspi-config`, el escritorio y las herramientas de firmware de la
   Pi no están ahí.
 - **Sin red** desde dentro del invitado, a propósito. `pip install` no puede
-  alcanzar PyPI; los paquetes llegan a través de `requirements.txt` (abajo).
+  llegar a PyPI; los paquetes llegan a través de `requirements.txt` (abajo).
 - **Los buses del header son archivos de dispositivo reales.** `/dev/i2c-1`,
   `/dev/spidev0.0` y `/dev/spidev0.1` responden a las mismas llamadas al
   sistema que en una Pi, así que una biblioteca que los abre por sí misma
   (Adafruit Blinka), un programa en C o tu propio código `ioctl` hablan con
-  las piezas del lienzo. Una dirección que nadie ocupa falla con
+  las piezas en el lienzo. Una dirección que nadie ocupa falla con
   `OSError: [Errno 121] Remote I/O error`, como en hardware.
 - **El UART del header es un puerto serie real.** `/dev/serial0` (también
   `/dev/ttyAMA0` y `/dev/ttyS0`) es un tty genuino controlado por el
   pyserial sin modificar: `serial.tools.list_ports`, `select()` sobre el
   puerto y `cat /dev/serial0` funcionan, y los bytes van a lo que esté
   cableado a GPIO14 y GPIO15 en el lienzo.
-- **No** hay `/dev/gpiomem`, `/dev/gpiochip0`, `/sys/class/gpio` ni árbol
-  1-Wire. GPIO pasa por `RPi.GPIO` y `gpiozero`, que sí están; `libgpiod`,
-  `gpioinfo` y `pigpio` no tienen con qué hablar.
+- **1-Wire está ahí como el árbol sysfs que tiene una Pi.** Un DS18B20 en
+  GPIO4 aparece bajo `/sys/bus/w1/devices/28-*/` con `w1_slave` y
+  `temperature`, así que `cat`, los lectores estilo `w1thermsensor` y tu
+  propio código funcionan (`dtoverlay=w1-gpio,gpiopin=N` en un `config.txt`
+  del proyecto mueve el pin).
+- **`libcamera-jpeg`, `rpicam-jpeg`, `rpicam-still`** toman una foto de la
+  pieza de cámara en el lienzo, tal como un script las llama con
+  `subprocess`. En este motor la imagen es el **patrón de prueba** de la
+  pieza: el invitado se ejecuta en los servidores de Velxio, y los píxeles
+  de tu webcam nunca salen de tu navegador.
+- **No** hay `/dev/gpiomem`, `/dev/gpiochip0` ni `/sys/class/gpio`. El GPIO
+  pasa por `RPi.GPIO` y `gpiozero`, que sí están; `libgpiod`, `gpioinfo` y
+  `pigpio` no tienen con qué hablar.
 - El arranque tarda aproximadamente de 20 a 30 segundos, más cuando el
   servidor está ocupado; una superposición de "Booting" lo sigue. Una sesión
   de invitado termina después de **2 horas** como máximo.
 - El invitado ejecuta **`script.py`** de tu proyecto cuando arranca. Nombra
-  así tu archivo principal en modo Linux (el motor instantáneo ejecuta el
+  tu archivo principal así en modo Linux (el motor instantáneo ejecuta el
   primer `.py` que encuentra).
 
 El botón **Linux terminal** del espacio de trabajo fija este motor para el
@@ -104,7 +114,7 @@ panel tiene que iluminarse, no solo terminar el script.
 | Reloj en tiempo real DS3231 | `smbus2` | Sí | Sí |
 | Sensor de presión BMP280 | `smbus2` | Sí | Sí |
 | Temperatura y humedad SHT31 | `smbus2` | Sí | Sí |
-| Controlador PWM de 16 canales PCA9685 | `smbus2` | Sí | Sí |
+| Driver PWM de 16 canales PCA9685 | `smbus2` | Sí | Sí |
 | ADC ADS1115 | `smbus2` | Sí | Sí |
 | LCD 16x2, backpack I2C | `smbus2` o `RPLCD.i2c` | Sí | Sí |
 | LCD 16x2, paralelo (RS, E, D4 a D7) | `RPLCD.gpio` | Sí | Sí |
@@ -113,7 +123,9 @@ panel tiene que iluminarse, no solo terminar el script.
 | OLED SSD1306 | Adafruit Blinka + `adafruit_ssd1306` | Sí | Sí |
 | TFT ILI9341 | `spidev` | Sí | Sí |
 | Tarjeta microSD (modo SPI) | `spidev` | Sí | Sí |
-| Sonda de temperatura DS18B20 | 1-Wire sysfs, `w1thermsensor` | Sí | **No** |
+| Sonda de temperatura DS18B20 | sysfs de 1-Wire, `w1thermsensor` | Sí | Sí |
+| Módulo GPS en el UART del header | `pyserial` en `/dev/serial0` | Sí | Sí |
+| E-paper de 7.5" (UC8179) | `spidev` + `RPi.GPIO`, driver estilo Waveshare | Sí | Sí |
 | Potenciómetro directo a un GPIO | | No (ver abajo) | No |
 
 Las filas de OLED y LCD también se ejecutaron en una Raspberry Pi Zero en el
@@ -122,34 +134,39 @@ motor Linux, que es un invitado de 32 bits con su propia imagen.
 ## Qué no funciona
 
 - **Entrada analógica en un GPIO.** Una Raspberry Pi **no tiene ADC**,
-  tampoco en hardware real. Un potenciómetro, LDR o sensor de pulso cableado
-  directamente a un GPIO solo lee alto o bajo, y la consola de ejecución lo
-  dice. Pon un **ADS1115** (I2C) o un **MCP3008** (SPI) entre el sensor y la
-  Pi, exactamente como lo harías en un banco; ambos están en el catálogo, y
-  la galería tiene un ejemplo de MCP3008 con un potenciómetro.
-- **1-Wire en el motor Linux.** El kernel del invitado no tiene soporte de
-  1-Wire, así que un script de DS18B20 no encuentra ningún
-  `/sys/bus/w1/devices` ahí. Funciona en el motor instantáneo, que es donde
-  se ejecuta de todos modos un script que solo importa `w1thermsensor`.
-- **La cámara en el motor Linux.** `picamera2` funciona en el motor
-  instantáneo, alimentado por tu webcam o un patrón de prueba; el invitado no
-  tiene cámara.
+  tampoco en hardware real. Un potenciómetro, LDR o sensor de pulso
+  cableado directamente a un GPIO solo lee alto o bajo, y la consola de
+  ejecución lo dice. Pon un **ADS1115** (I2C) o un **MCP3008** (SPI) entre
+  el sensor y la Pi, exactamente como lo harías en un banco; ambos están en
+  el catálogo, y la galería tiene un ejemplo de MCP3008 con un
+  potenciómetro.
+- **Tu webcam en el motor Linux.** `picamera2` en el motor instantáneo puede
+  usar tu webcam, porque el script se ejecuta en tu navegador. El invitado
+  se ejecuta en nuestros servidores, así que sus herramientas de cámara
+  reciben el patrón de prueba en su lugar.
+- **Un driver de e-paper que envía su imagen al lugar equivocado.** En un
+  panel UC8179 (el de 7.5") el comando `0x10` es la imagen anterior y `0x13`
+  es la que muestra el cristal. Un driver que escribe solo `0x10` obtiene
+  aquí un refresco en blanco, exactamente como en el panel real, y el
+  monitor serie (la terminal Linux, en ese motor) dice por qué. El pin BUSY
+  también sigue al controlador: LOW mientras un panel UltraChip trabaja,
+  HIGH en un SSD168x.
 - **`pigpio`, `libgpiod` / `gpiod`, `/dev/gpiomem`.** No hay daemon ni
   dispositivo de caracteres GPIO en ningún motor. Usa `RPi.GPIO` o
   `gpiozero`.
 - **Un script copiado de un tutorial de MicroPython.** `import machine`,
-  `from gpio_lcd import GpioLcd` y similares existen en una Pico o un ESP32,
-  no en una placa que ejecuta el Python completo. La consola nombra el
-  equivalente en Pi (`gpiozero`, `RPLCD`, `luma.oled`, `w1thermsensor`) en
-  lugar de proponer un paquete para instalar.
-- **PyTorch, TensorFlow.** Gigabytes, y aquí no hay nada para acelerarlos. Se
+  `from gpio_lcd import GpioLcd` y similares existen en una Pico o una
+  ESP32, no en una placa que ejecuta el Python completo. La consola nombra
+  el equivalente en Pi (`gpiozero`, `RPLCD`, `luma.oled`, `w1thermsensor`)
+  en lugar de proponer un paquete para instalar.
+- **PyTorch, TensorFlow.** Gigabytes, y aquí nada para acelerarlos. Se
   rechazan con esa explicación.
 
 ## Módulos de Python en cada motor
 
 Ambos motores incluyen la biblioteca estándar. "Preinstalado" significa que
-funciona solo con la línea `import`, sin `requirements.txt`, tal como
-Raspberry Pi OS tiene sus bibliotecas de hardware en la imagen.
+funciona solo con la línea `import`, sin `requirements.txt`, del mismo modo
+que Raspberry Pi OS tiene sus bibliotecas de hardware en la imagen.
 
 | Módulo | Instantáneo (navegador) | Linux (invitado) |
 | --- | --- | --- |
@@ -157,8 +174,8 @@ Raspberry Pi OS tiene sus bibliotecas de hardware en la imagen.
 | `gpiozero` | Preinstalado | Preinstalado (2.0.1) |
 | `smbus2` / `smbus` | Preinstalado (la biblioteca real) | Preinstalado |
 | `spidev` | Preinstalado | Preinstalado |
-| `serial` (pyserial) | Solo las rutas del UART de la Pi | El pyserial 3.5 real sobre un tty real |
-| `w1thermsensor` | Preinstalado | No disponible (sin 1-Wire) |
+| `serial` (pyserial) | Solo las rutas del UART de la Pi | El pyserial 3.5 real en un tty real |
+| `w1thermsensor` | Preinstalado | A través de `requirements.txt` (el árbol de 1-Wire está ahí) |
 | `luma.core`, `luma.oled`, `luma.lcd` | Preinstalado | Preinstalado |
 | `RPLCD` | Preinstalado | Preinstalado |
 | `ST7789` | Preinstalado | Preinstalado |
@@ -166,14 +183,14 @@ Raspberry Pi OS tiene sus bibliotecas de hardware en la imagen.
 | `adafruit_ssd1306`, `adafruit_rgb_display` | Preinstalado | Preinstalado |
 | `PIL` (Pillow), `numpy` | Preinstalado | Preinstalado (Pillow 10.3, numpy 1.25) |
 | `cv2` (OpenCV) | Sí | No (sin build para el invitado) |
-| `picamera2` | Sí, sobre tu webcam | No |
+| `picamera2` | Sí, sobre tu webcam | No (usa `rpicam-jpeg` / `libcamera-jpeg`) |
 | `velxio_screen` | Sí | Sí |
 | `requests` / `urllib` | Sí, a través del proxy de salida de Velxio con una lista de permitidos | Sin red |
 | Cualquier otra cosa | A través de `requirements.txt` | A través de `requirements.txt` |
 
 Las fuentes DejaVu están en el invitado en la ruta que usa Raspberry Pi OS
-(`/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf`), porque los tutoriales de
-pantallas la codifican de forma fija.
+(`/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf`), porque los tutoriales
+de pantallas la codifican de forma fija.
 
 ```python
 from luma.core.interface.serial import i2c
@@ -197,16 +214,16 @@ while True:
 Añade un archivo `requirements.txt` junto a tu script, un paquete por línea;
 Velxio lo resuelve antes de la ejecución y te dice, en la consola de
 ejecución, qué instaló. Cuando un script importa un paquete que falta, la
-consola ofrece la línea para añadir y un botón la escribe por ti. Qué motor
-puede aceptar un paquete depende de cómo esté construido:
+consola ofrece la línea que hay que añadir y un botón la escribe por ti. Qué
+motor puede aceptar un paquete depende de cómo esté construido:
 
 - Un paquete de Python puro (una rueda `py3-none-any`) se ejecuta en ambos
   motores.
 - Un paquete con código compilado se ejecuta en el motor **instantáneo**
   cuando el entorno del navegador lo incluye (numpy, pillow, opencv-python,
-  scikit-learn entre otros), y en el motor **Linux** solo si PyPI tiene una
+  scikit-learn, entre otros), y en el motor **Linux** solo si PyPI tiene una
   rueda **musl aarch64** para él (numpy, pandas, scipy y psutil la tienen).
-  Los paquetes que solo publican ruedas glibc `manylinux` no se pueden
+  Los paquetes que solo publican ruedas `manylinux` de glibc no se pueden
   instalar en el invitado.
 - En una Raspberry Pi Zero, 1 o 2 el invitado es de 32 bits, y PyPI casi no
   tiene ruedas compiladas para él: ahí, quédate con lo preinstalado o con
@@ -220,9 +237,9 @@ bibliotecas de Arduino.
 
 ## Archivos
 
-Un **file panel** en el espacio de trabajo de la Pi sube scripts y archivos
-de datos al proyecto; en modo Linux se copian al directorio home del
-invitado antes de que arranque `script.py`.
+Un **panel de archivos** en el espacio de trabajo de la Pi sube scripts y
+archivos de datos al proyecto; en modo Linux se copian al directorio home
+del invitado antes de que arranque `script.py`.
 
 ## La UNIHIKER M10
 
@@ -234,8 +251,8 @@ familia Pi.
 
 ## Arte de placa y pinouts
 
-El arte del lienzo y el mapa de pines completo de cada placa, generados desde
-el simulador:
+El arte del lienzo y el mapa de pines completo de cada placa, generados
+desde el simulador:
 
 [Raspberry Pi 3 (arte también para Zero/1/2)](/docs/es/boards/reference/raspberry-pi-3/) ·
 [Raspberry Pi 4](/docs/es/boards/reference/raspberry-pi-4/) ·

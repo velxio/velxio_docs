@@ -2394,9 +2394,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-19T20:06:58.071Z",
-      "nextAttemptAt": "2026-09-19T20:06:58.071Z",
-      "completedAt": "2026-09-19T20:07:26.472Z",
-      "sourceHash": "bfdb67171318a68d",
+      "nextAttemptAt": "2026-09-20T04:03:25.370Z",
+      "completedAt": "2026-09-20T04:03:39.503Z",
+      "sourceHash": "8f65759e0702edf5",
       "providerUsed": "deepseek"
     },
     {
@@ -2406,12 +2406,12 @@
       "sourceFile": "src/content/docs/boards/raspberry-pi.md",
       "targetFile": "src/content/docs/pt-br/boards/raspberry-pi.md",
       "status": "done",
-      "attempts": 1,
+      "attempts": 2,
       "lastError": null,
       "createdAt": "2026-09-19T20:06:58.072Z",
-      "nextAttemptAt": "2026-09-19T20:06:58.072Z",
-      "completedAt": "2026-09-19T20:07:38.350Z",
-      "sourceHash": "bfdb67171318a68d",
+      "nextAttemptAt": "2026-09-20T04:05:48.000Z",
+      "completedAt": "2026-09-20T04:06:02.132Z",
+      "sourceHash": "8f65759e0702edf5",
       "providerUsed": "deepseek"
     },
     {
@@ -2424,9 +2424,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-19T20:06:58.072Z",
-      "nextAttemptAt": "2026-09-19T20:06:58.072Z",
-      "completedAt": "2026-09-19T20:07:51.281Z",
-      "sourceHash": "bfdb67171318a68d",
+      "nextAttemptAt": "2026-09-20T04:03:25.371Z",
+      "completedAt": "2026-09-20T04:03:55.247Z",
+      "sourceHash": "8f65759e0702edf5",
       "providerUsed": "deepseek"
     },
     {
@@ -2439,9 +2439,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-19T20:06:58.072Z",
-      "nextAttemptAt": "2026-09-19T20:06:58.072Z",
-      "completedAt": "2026-09-19T20:08:03.822Z",
-      "sourceHash": "bfdb67171318a68d",
+      "nextAttemptAt": "2026-09-20T04:03:25.371Z",
+      "completedAt": "2026-09-20T04:04:09.279Z",
+      "sourceHash": "8f65759e0702edf5",
       "providerUsed": "deepseek"
     },
     {
@@ -2454,9 +2454,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-19T20:06:58.072Z",
-      "nextAttemptAt": "2026-09-19T20:06:58.072Z",
-      "completedAt": "2026-09-19T20:08:15.294Z",
-      "sourceHash": "bfdb67171318a68d",
+      "nextAttemptAt": "2026-09-20T04:03:25.371Z",
+      "completedAt": "2026-09-20T04:04:21.868Z",
+      "sourceHash": "8f65759e0702edf5",
       "providerUsed": "deepseek"
     },
     {
@@ -2469,9 +2469,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-19T20:06:58.072Z",
-      "nextAttemptAt": "2026-09-19T20:06:58.072Z",
-      "completedAt": "2026-09-19T20:08:28.098Z",
-      "sourceHash": "bfdb67171318a68d",
+      "nextAttemptAt": "2026-09-20T04:03:25.371Z",
+      "completedAt": "2026-09-20T04:04:36.133Z",
+      "sourceHash": "8f65759e0702edf5",
       "providerUsed": "deepseek"
     },
     {
@@ -2484,9 +2484,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-19T20:06:58.074Z",
-      "nextAttemptAt": "2026-09-19T20:06:58.074Z",
-      "completedAt": "2026-09-19T20:08:42.674Z",
-      "sourceHash": "bfdb67171318a68d",
+      "nextAttemptAt": "2026-09-20T04:03:25.371Z",
+      "completedAt": "2026-09-20T04:04:52.219Z",
+      "sourceHash": "8f65759e0702edf5",
       "providerUsed": "deepseek"
     },
     {
@@ -2499,9 +2499,9 @@
       "attempts": 1,
       "lastError": null,
       "createdAt": "2026-09-19T20:06:58.074Z",
-      "nextAttemptAt": "2026-09-19T20:06:58.074Z",
-      "completedAt": "2026-09-19T20:08:55.348Z",
-      "sourceHash": "bfdb67171318a68d",
+      "nextAttemptAt": "2026-09-20T04:03:25.371Z",
+      "completedAt": "2026-09-20T04:05:06.595Z",
+      "sourceHash": "8f65759e0702edf5",
       "providerUsed": "deepseek"
     }
   ]
