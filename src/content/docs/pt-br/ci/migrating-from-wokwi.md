@@ -23,7 +23,7 @@ são duas linhas.
            scenario: 'test.scenario.yaml'
 ```
 
-Os inputs da action mantêm seus nomes de propósito: `path`, `timeout`,
+As entradas da action mantêm seus nomes de propósito: `path`, `timeout`,
 `expect_text`, `fail_text`, `scenario`, `serial_log_file`, `diagram_file`,
 `elf`. Obtenha o secret com `velxio-cli login --ci --name "<repo>"` (ele
 aprova no navegador e imprime o token uma vez) e armazene-o como um secret de
@@ -42,7 +42,7 @@ As flags do `wokwi-cli` existem com os mesmos nomes: `--elf`,
 
 ## wokwi.toml
 
-Lido como está - você não precisa renomeá-lo para `velxio.toml`:
+Lido como está: você não precisa renomeá-lo para `velxio.toml`:
 
 ```toml
 [wokwi]
@@ -62,14 +62,14 @@ name = "inverter"
 binary = "chips/inverter.chip.wasm"
 ```
 
-Chaves que não são suportadas são reportadas pelo nome. São avisos, não
-omissões silenciosas - exceto `[[chip]]`, que interrompe a execução para que
+As chaves que não são suportadas são reportadas pelo nome. São avisos, não
+omissões silenciosas, exceto `[[chip]]`, que interrompe a execução para que
 você nunca obtenha um resultado positivo de um circuito sem o chip em teste.
 Não há servidor GDB, porta RFC2217, exportação VCD nem encaminhamento de rede
 no Velxio CI hoje.
 
-As chaves que o Velxio adiciona - `board`, `diagram`, `project`, `scenario`,
-`flasher_args` - ficam em `[velxio]`. Veja
+As chaves que o Velxio adiciona (`board`, `diagram`, `project`, `scenario`,
+`flasher_args`) ficam em `[velxio]`. Veja
 [velxio.toml](/docs/pt-br/ci/velxio-toml/).
 
 ## Placas
@@ -100,7 +100,7 @@ Os tipos de peça do Wokwi mapeiam para os kinds do Velxio. Estes rodam hoje:
 | `board-velxio-<kind>` | qualquer placa que o CI executa, escrita do jeito Velxio |
 
 O Velxio executa trinta e seis placas no CI, e a maioria delas são placas para
-as quais o Wokwi não tem tipo — a família RP2350, as placas XIAO ARM, os kits
+as quais o Wokwi não tem tipo: a família RP2350, as placas XIAO ARM, os kits
 M5Stack e Seeed. Escreva essas como `board-velxio-<kind>`; a lista completa
 está na [tabela de placas](/docs/pt-br/ci/velxio-toml/).
 
@@ -111,13 +111,13 @@ as Nucleos, as placas ESP32-S2/H2/C61, o devkit de pré-visualização ESP32-P4 
 os kits com display. Uma placa Velxio próxima é sugerida apenas quando ela roda
 hoje, e nunca é substituída por você. Nada é cobrado por uma recusa.
 
-`velxio-cli boards` imprime a lista atual com o status de cada placa.
+`velxio-cli boards` imprime a lista atualizada com o status de cada placa.
 
 ## Cenários
 
 O YAML de cenário do Wokwi roda sem alterações: `delay`, `wait-serial`,
-`write-serial`, `expect-pin`, `set-control`, `take-screenshot`, com os
-mesmos nomes de campo (`part-id`, `save-to`, `compare-with`, `value`). Toda a
+`write-serial`, `expect-pin`, `set-control`, `take-screenshot`, com os mesmos
+nomes de campo (`part-id`, `save-to`, `compare-with`, `value`). Toda a
 temporização é tempo simulado, como no Wokwi. Duas diferenças:
 
 - **Passos de toque** (`touch-press`, `touch-move`, `touch-release`) não são
@@ -138,12 +138,12 @@ carrega:
 - O `firmware.bin` + `bootloader.bin` + `partitions.bin` do PlatformIO são
   mesclados da mesma forma. Projetos ESP-IDF podem apontar `flasher_args` para
   `build/flasher_args.json` em vez disso.
-- Um `app.bin` de ESP32 sozinho, sem irmãos, é recusado, com a dica do
+- Um `app.bin` ESP32 sozinho, sem irmãos, é recusado, com a dica do
   `esptool.py merge_bin`.
-- `.uf2` e `.elf` do Pico são achatados em uma imagem de flash; um `.elf` de
-  AVR se torna Intel HEX.
-- O chip id do bootloader deve corresponder à placa: uma imagem de ESP32-C3 em
-  uma placa `esp32-s3` é `firmware_format_mismatch`, saída 2.
+- `.uf2` e `.elf` do Pico são achatados em uma imagem de flash; um `.elf` AVR
+  se torna Intel HEX.
+- O chip id do bootloader deve corresponder à placa: uma imagem ESP32-C3 em uma
+  placa `esp32-s3` é `firmware_format_mismatch`, saída 2.
 
 MicroPython não é suportado: o CI executa firmware compilado, e
 `language = "micropython"` é recusado em vez de executado como outra coisa.
@@ -151,9 +151,9 @@ MicroPython não é suportado: o CI executa firmware compilado, e
 ## Cobrança
 
 Os minutos são tempo simulado, arredondados para segundos inteiros, por mês
-calendário (UTC): 200 por mês no Maker, 2.000 no Pro. Uma execução recusada
-antes de começar não custa nada, e um motor travado ou um limite de tempo real
-custa apenas os segundos simulados que já haviam decorrido. Veja
+civil (UTC): 200 por mês no Maker, 2.000 no Pro. Uma execução recusada antes de
+começar não custa nada, e um motor travado ou um limite de tempo real custa
+apenas os segundos simulados que já haviam decorrido. Veja
 [Códigos de saída](/docs/pt-br/ci/exit-codes/) para a tabela completa.
 
 ## Experimente em um projeto que você já tem

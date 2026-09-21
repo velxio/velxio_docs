@@ -1,11 +1,11 @@
 ---
 title: velxio.toml
-description: Velxio CI が読み取るプロジェクトファイル - ボード、ファームウェア、回路、シナリオ - と、現在 CI で実行されるボード、およびすべてのパスの解決方法。
+description: Velxio CI が読み取るプロジェクトファイル（ボード、ファームウェア、回路、シナリオ）。現在 CI で実行できるボードと、すべてのパスの解決方法を説明します。
 sidebar:
   order: 3
 ---
 
-`velxio.toml` は CLI に何を実行するかを伝えます。どのボード、どのコンパイル済みファームウェア、どの回路、どのシナリオを使うかです。このファイルは CLI に指定したディレクトリに置きます。ファイル内のすべてのパスはファイル自身からの相対パスで、フォワードスラッシュはどの OS でも動作します。
+`velxio.toml` は CLI に何を実行させるかを伝えます。どのボード、どのコンパイル済みファームウェア、どの回路、どのシナリオを使うかです。このファイルは CLI に指定したディレクトリに置きます。ファイル内のすべてのパスはこのファイル自身からの相対パスで、フォワードスラッシュはどの OS でも動作します。
 
 ```toml
 [velxio]
@@ -20,23 +20,23 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 
 ## キー
 
-| key            | meaning                                                                                                                                      |
+| key            | 意味                                                                                                                                      |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `version`      | `1` でなければなりません。                                                                                                                   |
+| `version`      | `1` でなければなりません。                                                                                                                                 |
 | `board`        | Velxio のボード種別（下の表を参照）。diagram または `.vlx` がすでにボードを指定している場合は省略可能です。両方が存在する場合は一致していなければなりません。 |
-| `firmware`     | コンパイル済みイメージ: `.hex`、`.bin`、`.uf2`、またはマージ済み ESP32 フラッシュイメージ。                                                  |
-| `flasher_args` | `firmware` の代わりに ESP-IDF の `build/flasher_args.json` を指定します。この 2 つは同時に指定できません。                                   |
-| `elf`          | `firmware` がない場合に使用する ELF。AVR および RP2040 ボード用に変換されます。                                                              |
-| `diagram`      | Wokwi の `diagram.json` 形式の回路。                                                                                                         |
-| `project`      | Velxio の `.vlx` プロジェクトエクスポート。`diagram` より優先されます。                                                                      |
-| `scenario`     | デフォルトで実行するシナリオ YAML。[シナリオ](/docs/ja/ci/scenarios/)を参照してください。                                                       |
-| `language`     | `arduino`。`micropython` は終了コード 2 で拒否されます - CI はコンパイル済みファームウェアのみを実行します。                                 |
+| `firmware`     | コンパイル済みイメージ: `.hex`、`.bin`、`.uf2`、またはマージ済み ESP32 フラッシュイメージ。                                                                   |
+| `flasher_args` | `firmware` の代わりに ESP-IDF の `build/flasher_args.json` を指定します。この 2 つは同時に指定できません。                                                  |
+| `elf`          | `firmware` がない場合に使用する ELF。AVR および RP2040 ボード用に変換されます。                                                                  |
+| `diagram`      | 回路。Wokwi の `diagram.json` 形式です。                                                                                               |
+| `project`      | Velxio の `.vlx` プロジェクトエクスポート。`diagram` より優先されます。                                                                                         |
+| `scenario`     | デフォルトで実行するシナリオ YAML。[シナリオ](/docs/ja/ci/scenarios/)を参照してください。                                                                   |
+| `language`     | `arduino`。`micropython` は終了コード 2 で拒否されます。CI はコンパイル済みファームウェアのみを実行します。                                                            |
 
-何も黙って無視されることはありません。CLI が知らないキーは警告になります。まだ実装されていない機能は、書いたものとは異なるプロジェクトを黙って実行するのではなく、`feature_unsupported` で実行を失敗させます。`[[chip]]`（カスタムチップ）もその 1 つで、現在はソースファイル名とともに拒否されます。
+何も黙って無視されることはありません。CLI が知らないキーは警告になります。まだ実装されていない機能は、書いたプロジェクトとは別のプロジェクトを黙って実行するのではなく、`feature_unsupported` で実行を失敗させます。`[[chip]]`（カスタムチップ）もその 1 つです。現在は拒否され、ソースファイル名が示されます。
 
-## 現在 CI で実行されるボード
+## 現在 CI で実行できるボード
 
-決定するのはサーバーであり、CLI ではありません。現在 36 種類が実行されます — ブラウザ内エンジンを持つすべてのボードで、それぞれ実際のファームウェアを起動して検証済みです。
+決定するのはサーバーであり、CLI ではありません。現在 36 種類が実行できます。ブラウザ内エンジンを持つすべてのボードで、それぞれ実際のファームウェアを起動して検証済みです。
 
 ### AVR
 
@@ -94,28 +94,28 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 | `esp32-s3-eye` | ESP32-S3-EYE | `board-velxio-esp32-s3-eye` | merged ESP32 image |
 | `esp-sensairshuttle` | ESP-SensAirShuttle | `board-velxio-esp-sensairshuttle` | merged ESP32 image |
 
-これらのいずれも、diagram 内で `board-velxio-<kind>` として記述できます。たとえば `board-velxio-esp32-c6` です。独自の Wokwi タイプを持たないボードには、他の綴りはありません。
+これらのボードは diagram 内で `board-velxio-<kind>` と書くこともできます。たとえば `board-velxio-esp32-c6` です。独自の Wokwi タイプを持たないボードには、他の書き方はありません。
 
-`velxio-cli boards` は、各ボードのステータス、その `diagram.json` タイプ、および受け付けるファームウェア形式を含む最新のリストを出力します。
+`velxio-cli boards` は、各ボードのステータス、`diagram.json` タイプ、受け付けるファームウェア形式を含む最新のリストを出力します。
 
 :::caution
-残りのものはエディタでは動作しますが、まだ CI では動作しません: STM32 ボード（QEMU レーンが必要）、Raspberry Pi および UNIHIKER ボード、ESP32-P4 プレビュー devkit、そしてまだローンチフラグの背後にある DFRobot ファミリーです。それぞれは実行開始前に拒否され、`board_not_supported_in_ci` と予定されているフェーズが示されます。課金はされず、近いボードが黙って代用されることもありません。
+残りのボードはエディタでは動作しますが、まだ CI では動作しません。STM32 ボード（QEMU レーンが必要）、Raspberry Pi および UNIHIKER ボード、ESP32-P4 プレビュー devkit、そしてまだ起動フラグの背後にある DFRobot ファミリーです。それぞれ実行開始前に拒否され、`board_not_supported_in_ci` と予定されているフェーズが示されます。課金は発生せず、近いボードが黙って代用されることもありません。
 :::
 
-Pico W は動作しますが、CI にはネットワークがありません: WiFi とソケットは決して接続されず、実行には `no_network` 警告が付きます。
+Pico W は動作しますが、CI にはネットワークがありません。WiFi とソケットは決して接続されず、実行には `no_network` 警告が付きます。
 
 ## パスの解決方法
 
-- **設定ファイル:** `velxio.toml`、次に `wokwi.toml`、次にディレクトリ内のちょうど 1 つの `*.vlx`。どれもなければ終了コード 2。
+- **設定ファイル:** `velxio.toml`、次に `wokwi.toml`、次にディレクトリ内のちょうど 1 つの `*.vlx`。どれもなければ終了コード 2 です。
 - **回路:** `--project-file`、次に `[velxio] project`、次に `--diagram-file`、次に `[velxio] diagram`、次に設定ファイルの隣の `diagram.json`。
 - **ファームウェア:** `--firmware`、次に `--elf`、次に `[velxio] firmware` または `flasher_args`、次に `[velxio] elf`、次に `[wokwi] firmware`、次に `[wokwi] elf`。
 - **ボード:** `[velxio] board`、次に diagram のボード部分（または `.vlx` のアクティブボード）。
 
-コマンドラインで指定された相対パスは、シェルの作業ディレクトリではなく、プロジェクトディレクトリを基準に解決されます。
+コマンドラインで指定した相対パスは、シェルの作業ディレクトリではなく、プロジェクトディレクトリを基準に解決されます。
 
 ## diagram.json
 
-Wokwi の形式をそのまま読み取ります: `version: 1`、`{id, type, left, top, attrs, rotate, hide}` の `parts`、および `[from, to, color, path]` の `connections`。diagram 内のパーツ id は、シナリオのステップで使用する id です。
+Wokwi の形式をそのまま読み取ります。`version: 1`、`{id, type, left, top, attrs, rotate, hide}` の `parts`、および `[from, to, color, path]` の `connections` です。diagram 内のパーツ id は、シナリオのステップで使用する id です。
 
 ```json
 {
@@ -151,23 +151,23 @@ Wokwi の形式をそのまま読み取ります: `version: 1`、`{id, type, lef
 }
 ```
 
-パーツは `wokwi-*` 要素です（`wokwi-led`、`wokwi-pushbutton`、`wokwi-dht22` など）。CLI が認識しないパーツタイプはエラーではなく警告です: 決定するのはサーバーであり、シミュレートできないパーツは黙って破棄されるのではなく id で報告されます。
+パーツは `wokwi-*` 要素です（`wokwi-led`、`wokwi-pushbutton`、`wokwi-dht22` など）。CLI が認識しないパーツタイプはエラーではなく警告です。決定するのはサーバーであり、シミュレートできないパーツは黙って削除されるのではなく、id で報告されます。
 
 ## .vlx
 
-Velxio エディタからエクスポートされたプロジェクト（`format: "velxio-project"`、`version: 1`）は、diagram の代わりに回路として使用できます。単一の `.vlx` をディレクトリに置くか、`project =` または `--project-file` で指定します。エクスポートのプライマリボードが実行のボードになります。ファームウェアは引き続き toml または `--firmware` から取得されます。
+Velxio エディタからエクスポートしたプロジェクト（`format: "velxio-project"`、`version: 1`）は、diagram の代わりに回路として使用できます。ディレクトリに 1 つの `.vlx` を置くか、`project =` または `--project-file` で指定します。エクスポートのプライマリボードが実行のボードになります。ファームウェアは引き続き toml または `--firmware` から取得されます。
 
 ## 制限
 
-| what                       | cap                                                                                                |
+| 項目                       | 上限                                                                                                |
 | -------------------------- | -------------------------------------------------------------------------------------------------- |
-| firmware per board         | 16 MiB                                                                                             |
-| all uploaded files per run | 20 MiB                                                                                             |
-| circuit                    | 300 parts, 2,000 wires                                                                             |
-| scenario                   | 200 steps, 20 screenshots, 512 bytes per `wait-serial` text                                        |
-| `--timeout`                | ご利用プランの上限（Maker では 5 分、Pro では 10 分）、および残り時間を超えない範囲                 |
+| ボードあたりのファームウェア         | 16 MiB                                                                                             |
+| 実行あたりの全アップロードファイル | 20 MiB                                                                                             |
+| 回路                    | 300 パーツ、2,000 ワイヤ                                                                             |
+| シナリオ                   | 200 ステップ、20 スクリーンショット、`wait-serial` テキストあたり 512 バイト                                        |
+| `--timeout`                | プランの上限（Maker で 5 分、Pro で 10 分）、および残り時間を超えない範囲 |
 
-上限を超える `--timeout` はエラーではありません: クランプされ、実際に割り当てられた予算とともに `timeout_clamped` 警告が報告されます。
+上限を超える `--timeout` はエラーではありません。クランプされ、実際に割り当てられた予算とともに `timeout_clamped` 警告が報告されます。
 
 ## 何分も費やす前に確認する
 
@@ -175,4 +175,4 @@ Velxio エディタからエクスポートされたプロジェクト（`format
 velxio-cli lint .
 ```
 
-`lint` にはトークンもネットワークも不要です。toml を解析し、すべてのパスを解決し、ファイルが存在して上限に収まるかを確認し、パーツ id が一意であることと connections が既存のパーツを指していることを確認し、ボードが CI で実行されるものであることを確認し、ファームウェア形式がボードファミリーに一致することを確認し、すべてのシナリオステップが既知であり、フィールドを持ち、既存のパーツを指し、その duration が解析可能であることを確認します。ほとんどの `exit 2` の失敗は、ここで見つける方が安上がりです。
+`lint` はトークンもネットワークも必要としません。toml を解析し、すべてのパスを解決し、ファイルが存在して上限に収まることを確認し、パーツ id が一意で接続が既存のパーツを参照していることを確認し、ボードが CI で実行できるものであることを確認し、ファームウェア形式がボードファミリーと一致することを確認し、すべてのシナリオステップが既知で、フィールドを持ち、既存のパーツを参照し、その時間指定が解析できることを確認します。ほとんどの `exit 2` 失敗は、ここで見つける方が安上がりです。

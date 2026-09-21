@@ -98,7 +98,7 @@ Wokwi part types map onto Velxio kinds. These run today:
 | `board-velxio-<kind>` | any board CI runs, written the Velxio way |
 
 Velxio runs thirty-six boards in CI, and most of them are boards Wokwi has no
-type for — the RP2350 family, the XIAO ARM boards, the M5Stack and Seeed
+type for: the RP2350 family, the XIAO ARM boards, the M5Stack and Seeed
 kits. Write those as `board-velxio-<kind>`; the full list is in the
 [board table](/docs/ci/velxio-toml/).
 

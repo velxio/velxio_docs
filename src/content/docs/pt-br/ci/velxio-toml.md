@@ -1,6 +1,6 @@
 ---
 title: velxio.toml
-description: O arquivo de projeto que o Velxio CI lê - placa, firmware, circuito e cenário - com as placas que o CI executa hoje e como cada caminho é resolvido.
+description: O arquivo de projeto que o Velxio CI lê (placa, firmware, circuito e cenário), com as placas que o CI executa hoje e como cada caminho é resolvido.
 sidebar:
   order: 3
 ---
@@ -19,7 +19,7 @@ diagram = "diagram.json"         # Wokwi-format circuit (the default when presen
 scenario = "test.yaml"           # default scenario; --scenario overrides it
 ```
 
-`velxio-cli init --board arduino-uno` escreve um `velxio.toml` inicial e um
+`velxio-cli init --board arduino-uno` grava um `velxio.toml` inicial e um
 `diagram.json` com uma placa dentro.
 
 ## Chaves
@@ -28,24 +28,24 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `version`      | deve ser `1`.                                                                                                                                |
 | `board`        | o tipo de placa Velxio (tabela abaixo). Opcional quando o diagrama ou o `.vlx` já nomeia a placa; quando ambos estão presentes, devem concordar. |
-| `firmware`     | a imagem compilada: `.hex`, `.bin`, `.uf2`, ou uma imagem de flash ESP32 mesclada.                                                           |
+| `firmware`     | a imagem compilada: `.hex`, `.bin`, `.uf2` ou uma imagem de flash ESP32 mesclada.                                                            |
 | `flasher_args` | um `build/flasher_args.json` do ESP-IDF em vez de `firmware`. Os dois são mutuamente exclusivos.                                             |
 | `elf`          | um ELF usado quando `firmware` está ausente. Convertido para placas AVR e RP2040.                                                            |
 | `diagram`      | o circuito, no formato `diagram.json` do Wokwi.                                                                                              |
 | `project`      | uma exportação de projeto `.vlx` do Velxio. Tem precedência sobre `diagram`.                                                                 |
 | `scenario`     | o YAML de cenário a executar por padrão. Veja [Cenários](/docs/pt-br/ci/scenarios/).                                                               |
-| `language`     | `arduino`. `micropython` é recusado com saída 2 - o CI executa apenas firmware compilado.                                                    |
+| `language`     | `arduino`. `micropython` é recusado com saída 2: o CI executa apenas firmware compilado.                                                     |
 
 Nada é ignorado em silêncio. Uma chave que a CLI não conhece é um aviso; um
 recurso que ainda não foi implementado faz a execução falhar com
-`feature_unsupported` em vez de executar silenciosamente um projeto
-diferente do que você escreveu. `[[chip]]` (chips personalizados) é um
-desses: é recusado hoje, com o arquivo de origem nomeado.
+`feature_unsupported` em vez de executar discretamente um projeto diferente
+do que você escreveu. `[[chip]]` (chips personalizados) é um desses: é
+recusado hoje, com o arquivo de origem nomeado.
 
 ## Placas que o CI executa hoje
 
-O servidor decide, não a CLI. Trinta e seis tipos rodam agora — toda placa
-com um motor no navegador, cada uma comprovada inicializando firmware real.
+O servidor decide, não a CLI. Trinta e seis tipos rodam agora: toda placa com
+um motor no navegador, cada uma comprovada inicializando firmware real.
 
 ### AVR
 
@@ -107,13 +107,13 @@ Qualquer uma delas também pode ser escrita como `board-velxio-<kind>` no
 diagrama, por exemplo `board-velxio-esp32-c6`; as placas sem um tipo Wokwi
 próprio não têm outra grafia.
 
-`velxio-cli boards` imprime a lista ao vivo com o status de cada placa, seus
-tipos em `diagram.json` e os formatos de firmware que ela aceita.
+`velxio-cli boards` imprime a lista atualizada com o status de cada placa,
+seus tipos em `diagram.json` e os formatos de firmware que ela aceita.
 
 :::caution
-O que resta roda no editor mas ainda não no CI: as placas STM32 (elas
+O que resta roda no editor, mas ainda não no CI: as placas STM32 (elas
 precisam da via QEMU), as placas Raspberry Pi e UNIHIKER, o devkit de
-pré-visualização ESP32-P4, e a família DFRobot, que ainda está atrás de sua
+pré-visualização ESP32-P4 e a família DFRobot, que ainda está atrás de sua
 flag de lançamento. Cada uma é recusada antes do início da execução, com
 `board_not_supported_in_ci` e a fase em que está planejada. Nada é cobrado,
 e nenhuma placa próxima é substituída em silêncio.
@@ -125,14 +125,14 @@ execução carrega um aviso `no_network`.
 ## Como os caminhos são resolvidos
 
 - **Arquivo de configuração:** `velxio.toml`, depois `wokwi.toml`, depois
-  exatamente um `*.vlx` no diretório. Nenhum deles é saída 2.
+  exatamente um `*.vlx` no diretório. Nenhum deles resulta em saída 2.
 - **Circuito:** `--project-file`, depois `[velxio] project`, depois
   `--diagram-file`, depois `[velxio] diagram`, depois `diagram.json` ao lado
   do arquivo de configuração.
 - **Firmware:** `--firmware`, depois `--elf`, depois `[velxio] firmware` ou
   `flasher_args`, depois `[velxio] elf`, depois `[wokwi] firmware`, depois
   `[wokwi] elf`.
-- **Placa:** `[velxio] board`, depois a parte da placa do diagrama (ou a
+- **Placa:** `[velxio] board`, depois a parte de placa do diagrama (ou a
   placa ativa do `.vlx`).
 
 Caminhos relativos fornecidos na linha de comando são resolvidos em relação
@@ -181,7 +181,7 @@ passos de cenário usam.
 ```
 
 As partes são os elementos `wokwi-*` (`wokwi-led`, `wokwi-pushbutton`,
-`wokwi-dht22`, e assim por diante). Um tipo de parte que a CLI não reconhece
+`wokwi-dht22` e assim por diante). Um tipo de parte que a CLI não reconhece
 é um aviso, não um erro: o servidor decide, e as partes que ele não consegue
 simular são reportadas por id em vez de descartadas em silêncio.
 
@@ -198,7 +198,7 @@ vem do toml ou de `--firmware`.
 | o quê                      | limite                                                                                             |
 | -------------------------- | -------------------------------------------------------------------------------------------------- |
 | firmware por placa         | 16 MiB                                                                                             |
-| todos os arquivos enviados por execução | 20 MiB                                                                                 |
+| todos os arquivos enviados por execução | 20 MiB                                                                                |
 | circuito                   | 300 partes, 2.000 fios                                                                             |
 | cenário                    | 200 passos, 20 capturas de tela, 512 bytes por texto de `wait-serial`                              |
 | `--timeout`                | o teto do seu plano (5 min no Maker, 10 min no Pro), e nunca mais que os minutos que você tem restantes |
@@ -216,6 +216,6 @@ velxio-cli lint .
 caminho, verifica se os arquivos existem e cabem nos limites, verifica se os
 ids das partes são únicos e se as conexões nomeiam partes existentes,
 verifica se a placa é uma que o CI executa, verifica se o formato do firmware
-corresponde à família da placa, e verifica se cada passo do cenário é
+corresponde à família da placa e verifica se cada passo do cenário é
 conhecido, tem seus campos, nomeia partes existentes e analisa suas durações.
 A maioria das falhas de `exit 2` é mais barata de encontrar aqui.

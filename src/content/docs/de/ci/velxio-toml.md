@@ -1,15 +1,11 @@
 ---
 title: velxio.toml
-description: "Die Projektdatei, die Velxio CI liest – Board, Firmware, Schaltkreis und Szenario – mit den Boards, die CI heute ausführt, und wie jeder Pfad aufgelöst wird."
+description: "Die Projektdatei, die Velxio CI liest - Board, Firmware, Schaltung und Szenario - mit den Boards, die CI heute ausführt, und wie jeder Pfad aufgelöst wird."
 sidebar:
   order: 3
 ---
 
-`velxio.toml` teilt der CLI mit, was ausgeführt werden soll: welches Board,
-welche kompilierte Firmware, welcher Schaltkreis und welches Szenario. Sie
-liegt in dem Verzeichnis, auf das du die CLI richtest. Jeder Pfad darin ist
-relativ zur Datei selbst, und Vorwärtsschrägstriche funktionieren auf jedem
-Betriebssystem.
+`velxio.toml` teilt der CLI mit, was ausgeführt werden soll: welches Board, welche kompilierte Firmware, welche Schaltung und welches Szenario. Die Datei liegt in dem Verzeichnis, auf das du die CLI richtest. Jeder Pfad darin ist relativ zur Datei selbst, und Vorwärtsschrägstriche funktionieren auf jedem Betriebssystem.
 
 ```toml
 [velxio]
@@ -20,35 +16,27 @@ diagram = "diagram.json"         # Wokwi-format circuit (the default when presen
 scenario = "test.yaml"           # default scenario; --scenario overrides it
 ```
 
-`velxio-cli init --board arduino-uno` schreibt eine beginnende `velxio.toml`
-und eine `diagram.json` mit einem Board darin.
+`velxio-cli init --board arduino-uno` schreibt eine startende `velxio.toml` und eine `diagram.json` mit einem Board darin.
 
 ## Schlüssel
 
 | Schlüssel      | Bedeutung                                                                                                                                    |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `version`      | muss `1` sein.                                                                                                                               |
-| `board`        | die Velxio-Board-Art (Tabelle unten). Optional, wenn das Diagramm oder die `.vlx` das Board bereits benennt; wenn beides vorhanden ist, müssen sie übereinstimmen. |
+| `board`        | die Velxio-Board-Art (Tabelle unten). Optional, wenn das Diagramm oder die `.vlx` das Board bereits benennt; wenn beide vorhanden sind, müssen sie übereinstimmen. |
 | `firmware`     | das kompilierte Image: `.hex`, `.bin`, `.uf2` oder ein zusammengeführtes ESP32-Flash-Image.                                                  |
 | `flasher_args` | eine ESP-IDF `build/flasher_args.json` anstelle von `firmware`. Die beiden schließen sich gegenseitig aus.                                   |
 | `elf`          | eine ELF, die verwendet wird, wenn `firmware` fehlt. Wird für AVR- und RP2040-Boards konvertiert.                                            |
-| `diagram`      | der Schaltkreis im `diagram.json`-Format von Wokwi.                                                                                          |
-| `project`      | ein Velxio-`.vlx`-Projektexport. Hat Vorrang vor `diagram`.                                                                                  |
-| `scenario`     | das standardmäßig auszuführende Szenario-YAML. Siehe [Szenarien](/docs/de/ci/scenarios/).                                                       |
-| `language`     | `arduino`. `micropython` wird mit Exit 2 abgelehnt – CI führt nur kompilierte Firmware aus.                                                  |
+| `diagram`      | die Schaltung im `diagram.json`-Format von Wokwi.                                                                                            |
+| `project`      | ein Velxio `.vlx`-Projektexport. Hat Vorrang vor `diagram`.                                                                                  |
+| `scenario`     | die Szenario-YAML, die standardmäßig ausgeführt wird. Siehe [Szenarien](/docs/de/ci/scenarios/).                                                |
+| `language`     | `arduino`. `micropython` wird mit Exit 2 abgelehnt - CI führt nur kompilierte Firmware aus.                                                  |
 
-Nichts wird stillschweigend ignoriert. Ein Schlüssel, den die CLI nicht
-kennt, ist eine Warnung; eine Funktion, die noch nicht gebaut ist, lässt den
-Lauf mit `feature_unsupported` fehlschlagen, anstatt stillschweigend ein
-anderes Projekt auszuführen als das, das du geschrieben hast. `[[chip]]`
-(benutzerdefinierte Chips) ist eines davon: es wird heute abgelehnt, mit
-Angabe der Quelldatei.
+Nichts wird stillschweigend ignoriert. Ein Schlüssel, den die CLI nicht kennt, ist eine Warnung; eine Funktion, die noch nicht gebaut ist, lässt den Lauf mit `feature_unsupported` fehlschlagen, anstatt stillschweigend ein anderes Projekt auszuführen als das, das du geschrieben hast. `[[chip]]` (benutzerdefinierte Chips) ist eines davon: es wird heute abgelehnt, mit Angabe der Quelldatei.
 
 ## Boards, die CI heute ausführt
 
-Der Server entscheidet, nicht die CLI. Sechsunddreißig Arten laufen jetzt –
-jedes Board mit einer In-Browser-Engine, jedes einzelne bewiesen durch das
-Booten echter Firmware.
+Der Server entscheidet, nicht die CLI. Sechsunddreißig Arten laufen jetzt: jedes Board mit einer In-Browser-Engine, jedes durch das Booten echter Firmware bewiesen.
 
 ### AVR
 
@@ -96,7 +84,7 @@ Booten echter Firmware.
 | `arduino-nano-esp32` | Arduino Nano ESP32 | `board-arduino-nano-esp32` | zusammengeführtes ESP32-Image |
 | `xiao-esp32-c3` | XIAO ESP32-C3 | `board-xiao-esp32-c3` | zusammengeführtes ESP32-Image |
 | `aitewinrobot-esp32c3-supermini` | ESP32-C3 SuperMini | `board-aitewinrobot-esp32c3-supermini` | zusammengeführtes ESP32-Image |
-| `xiao-esp32-c6` | XIAO ESP32-C6 | `board-xiao-esp32-c6` | zusammengeführtes ESP32-Image |
+| `xiao-esp32c6` | XIAO ESP32-C6 | `board-xiao-esp32-c6` | zusammengeführtes ESP32-Image |
 | `esp32-p4` | ESP32-P4 Function EV | `board-esp32-p4-function-ev` | zusammengeführtes ESP32-Image |
 | `m5stack-core` | M5Stack Core | `board-velxio-m5stack-core` | zusammengeführtes ESP32-Image |
 | `esp32-c3-lcdkit` | ESP32-C3-LCDkit | `board-velxio-esp32-c3-lcdkit` | zusammengeführtes ESP32-Image |
@@ -106,49 +94,28 @@ Booten echter Firmware.
 | `esp32-s3-eye` | ESP32-S3-EYE | `board-velxio-esp32-s3-eye` | zusammengeführtes ESP32-Image |
 | `esp-sensairshuttle` | ESP-SensAirShuttle | `board-velxio-esp-sensairshuttle` | zusammengeführtes ESP32-Image |
 
-Jedes von ihnen kann im Diagramm auch als `board-velxio-<kind>` geschrieben
-werden, zum Beispiel `board-velxio-esp32-c6`; die Boards ohne eigenen
-Wokwi-Typ haben keine andere Schreibweise.
+Jedes von ihnen kann im Diagramm auch als `board-velxio-<kind>` geschrieben werden, zum Beispiel `board-velxio-esp32-c6`; die Boards ohne eigenen Wokwi-Typ haben keine andere Schreibweise.
 
-`velxio-cli boards` gibt die aktuelle Liste mit dem Status jedes Boards,
-seinen `diagram.json`-Typen und den akzeptierten Firmware-Formaten aus.
+`velxio-cli boards` gibt die aktuelle Liste mit dem Status jedes Boards, seinen `diagram.json`-Typen und den akzeptierten Firmware-Formaten aus.
 
 :::caution
-Was übrig bleibt, läuft im Editor, aber noch nicht in CI: die STM32-Boards
-(sie brauchen die QEMU-Lane), die Raspberry-Pi- und UNIHIKER-Boards, das
-ESP32-P4-Preview-Devkit und die DFRobot-Familie, die noch hinter ihrem
-Launch-Flag steht. Jedes wird vor dem Start des Laufs abgelehnt, mit
-`board_not_supported_in_ci` und der Phase, für die es geplant ist. Nichts
-wird berechnet, und kein benachbartes Board wird stillschweigend
-ersetzt.
+Was übrig bleibt, läuft im Editor, aber noch nicht in CI: die STM32-Boards (sie brauchen die QEMU-Spur), die Raspberry Pi- und UNIHIKER-Boards, das ESP32-P4-Vorschau-Devkit und die DFRobot-Familie, die noch hinter ihrem Launch-Flag steht. Jedes wird vor dem Start des Laufs abgelehnt, mit `board_not_supported_in_ci` und der Phase, für die es geplant ist. Nichts wird berechnet, und kein benachbartes Board wird stillschweigend ersetzt.
 :::
 
-Pico W läuft, aber CI hat kein Netzwerk: WiFi und Sockets verbinden sich
-nie, und der Lauf trägt eine `no_network`-Warnung.
+Pico W läuft, aber CI hat kein Netzwerk: WiFi und Sockets verbinden sich nie, und der Lauf trägt eine `no_network`-Warnung.
 
 ## Wie Pfade aufgelöst werden
 
-- **Konfigurationsdatei:** `velxio.toml`, dann `wokwi.toml`, dann genau
-  eine `*.vlx` im Verzeichnis. Keine davon ist Exit 2.
-- **Schaltkreis:** `--project-file`, dann `[velxio] project`, dann
-  `--diagram-file`, dann `[velxio] diagram`, dann `diagram.json` neben
-  der Konfigurationsdatei.
-- **Firmware:** `--firmware`, dann `--elf`, dann `[velxio] firmware` oder
-  `flasher_args`, dann `[velxio] elf`, dann `[wokwi] firmware`, dann
-  `[wokwi] elf`.
-- **Board:** `[velxio] board`, dann der Board-Teil des Diagramms (oder das
-  aktive Board der `.vlx`).
+- **Konfigurationsdatei:** `velxio.toml`, dann `wokwi.toml`, dann genau eine `*.vlx` im Verzeichnis. Keine davon ist Exit 2.
+- **Schaltung:** `--project-file`, dann `[velxio] project`, dann `--diagram-file`, dann `[velxio] diagram`, dann `diagram.json` neben der Konfigurationsdatei.
+- **Firmware:** `--firmware`, dann `--elf`, dann `[velxio] firmware` oder `flasher_args`, dann `[velxio] elf`, dann `[wokwi] firmware`, dann `[wokwi] elf`.
+- **Board:** `[velxio] board`, dann der Board-Teil des Diagramms (oder das aktive Board der `.vlx`).
 
-Relative Pfade, die auf der Kommandozeile angegeben werden, werden gegen
-das Projektverzeichnis aufgelöst, nicht gegen das Arbeitsverzeichnis deiner
-Shell.
+Relative Pfade, die auf der Kommandozeile angegeben werden, werden gegen das Projektverzeichnis aufgelöst, nicht gegen das Arbeitsverzeichnis deiner Shell.
 
 ## diagram.json
 
-Wokwis Format, so gelesen wie es ist: `version: 1`, `parts` aus
-`{id, type, left, top, attrs, rotate, hide}` und `connections` aus
-`[from, to, color, path]`. Die Part-IDs im Diagramm sind die IDs, die deine
-Szenarioschritte verwenden.
+Wokwis Format, so gelesen wie es ist: `version: 1`, `parts` aus `{id, type, left, top, attrs, rotate, hide}` und `connections` aus `[from, to, color, path]`. Die Part-IDs im Diagramm sind die IDs, die deine Szenarioschritte verwenden.
 
 ```json
 {
@@ -184,18 +151,11 @@ Szenarioschritte verwenden.
 }
 ```
 
-Parts sind die `wokwi-*`-Elemente (`wokwi-led`, `wokwi-pushbutton`,
-`wokwi-dht22` und so weiter). Ein Part-Typ, den die CLI nicht erkennt, ist
-eine Warnung, kein Fehler: der Server entscheidet, und Parts, die er nicht
-simulieren kann, werden per ID gemeldet statt stillschweigend verworfen.
+Parts sind die `wokwi-*`-Elemente (`wokwi-led`, `wokwi-pushbutton`, `wokwi-dht22` und so weiter). Ein Part-Typ, den die CLI nicht erkennt, ist eine Warnung, kein Fehler: der Server entscheidet, und Parts, die er nicht simulieren kann, werden per ID gemeldet statt stillschweigend verworfen.
 
 ## .vlx
 
-Ein aus dem Velxio-Editor exportiertes Projekt (`format: "velxio-project"`,
-`version: 1`) kann anstelle eines Diagramms der Schaltkreis sein. Lege die
-einzelne `.vlx` in das Verzeichnis oder benenne sie mit `project =` oder
-`--project-file`. Das primäre Board des Exports ist das Board des Laufs; die
-Firmware kommt weiterhin aus der toml oder aus `--firmware`.
+Ein aus dem Velxio-Editor exportiertes Projekt (`format: "velxio-project"`, `version: 1`) kann anstelle eines Diagramms die Schaltung sein. Lege die einzelne `.vlx` in das Verzeichnis oder benenne sie mit `project =` oder `--project-file`. Das primäre Board des Exports ist das Board des Laufs; die Firmware kommt weiterhin aus der toml oder aus `--firmware`.
 
 ## Limits
 
@@ -203,13 +163,11 @@ Firmware kommt weiterhin aus der toml oder aus `--firmware`.
 | -------------------------- | -------------------------------------------------------------------------------------------------- |
 | Firmware pro Board         | 16 MiB                                                                                             |
 | alle hochgeladenen Dateien pro Lauf | 20 MiB                                                                                     |
-| Schaltkreis                | 300 Parts, 2.000 Drähte                                                                            |
+| Schaltung                  | 300 Parts, 2.000 Drähte                                                                             |
 | Szenario                   | 200 Schritte, 20 Screenshots, 512 Bytes pro `wait-serial`-Text                                     |
 | `--timeout`                | die Obergrenze deines Plans (5 Min bei Maker, 10 Min bei Pro) und nie mehr als die Minuten, die dir bleiben |
 
-Ein `--timeout` über der Obergrenze ist kein Fehler: er wird begrenzt, und
-der Lauf meldet eine `timeout_clamped`-Warnung mit dem Budget, das er
-tatsächlich bekommen hat.
+Ein `--timeout` über der Obergrenze ist kein Fehler: es wird begrenzt, und der Lauf meldet eine `timeout_clamped`-Warnung mit dem Budget, das er tatsächlich bekommen hat.
 
 ## Prüfe es, bevor du Minuten ausgibst
 
@@ -217,10 +175,4 @@ tatsächlich bekommen hat.
 velxio-cli lint .
 ```
 
-`lint` braucht kein Token und kein Netzwerk. Es parst die toml, löst jeden
-Pfad auf, prüft, ob die Dateien existieren und in die Obergrenzen passen,
-prüft, ob Part-IDs eindeutig sind und Verbindungen existierende Parts
-benennen, prüft, ob das Board eines ist, das CI ausführt, prüft, ob das
-Firmware-Format zur Board-Familie passt, und prüft, ob jeder Szenarioschritt
-bekannt ist, seine Felder hat, existierende Parts benennt und seine
-Dauern parst. Die meisten `exit 2`-Fehler sind hier billiger zu finden.
+`lint` braucht kein Token und kein Netzwerk. Es parst die toml, löst jeden Pfad auf, prüft, ob die Dateien existieren und in die Obergrenzen passen, prüft, ob Part-IDs eindeutig sind und Verbindungen existierende Parts benennen, prüft, ob das Board eines ist, das CI ausführt, prüft, ob das Firmware-Format zur Board-Familie passt, und prüft, ob jeder Szenarioschritt bekannt ist, seine Felder hat, existierende Parts benennt und seine Dauern parst. Die meisten `exit 2`-Fehler sind hier billiger zu finden.

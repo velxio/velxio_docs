@@ -1,6 +1,6 @@
 ---
 title: CI quickstart
-description: From nothing to a passing run in five minutes — install the CLI, write two files, run it.
+description: From nothing to a passing run in five minutes. Install the CLI, write two files, run it.
 sidebar:
   order: 2
 ---
@@ -27,7 +27,7 @@ velxio-cli login
 ```
 
 It prints a short code, opens your browser and waits. Approve the request and
-the CLI stores what it is given — you never handle a token on your own
+the CLI stores what it is given, so you never handle a token on your own
 machine.
 
 ```
@@ -49,7 +49,7 @@ mints it, named after the repository that will hold it:
 velxio-cli login --ci --name "my-firmware"
 ```
 
-That one prints the token once — store it as a repository secret (in GitHub:
+That one prints the token once. Store it as a repository secret (in GitHub:
 Settings, Secrets and variables, Actions) and never in the repository itself.
 Both kinds appear at [velxio.dev/account/ci](https://velxio.dev/account/ci),
 where you can revoke either.
@@ -104,11 +104,11 @@ velxio-cli run --expect-text "Hello, world!" --timeout 10000 .
 ```
 
 The firmware boots, the serial output appears as it happens, and the command
-exits 0 as soon as the text shows up — or 42 when the ten simulated seconds
+exits 0 as soon as the text shows up, or 42 when the ten simulated seconds
 run out without it.
 
 ```
-velxio-cli 0.1.1 · plan pro · 1998.3 of 2000 min left (resets 2026-10-01)
+velxio-cli 0.2.1 · plan pro · 1998.3 of 2000 min left (resets 2026-10-01)
 project blink (esp32-s3, 3 parts) · firmware build/blink.bin (ESP32 image, 912 KB)
 run r_9f3c2a1b7e4d queued · budget 10.0 s simulated
 Hello, world!

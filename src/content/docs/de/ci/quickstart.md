@@ -1,6 +1,6 @@
 ---
 title: CI-Schnellstart
-description: "Von null zu einem bestandenen Lauf in fünf Minuten — installiere die CLI, schreibe zwei Dateien, führe sie aus."
+description: "Von null zu einem bestandenen Lauf in fünf Minuten. Installiere die CLI, schreibe zwei Dateien, führe sie aus."
 sidebar:
   order: 2
 ---
@@ -13,7 +13,7 @@ Du brauchst ein Velxio-Konto mit einem kostenpflichtigen Tarif und eine kompilie
 curl -fsSL https://velxio.dev/ci/install.sh | sh
 ```
 
-Sie legt eine einzelne Binärdatei in `~/.velxio/bin` ab und sagt dir, wie du sie zu deinem `PATH` hinzufügst. Windows: `iwr https://velxio.dev/ci/install.ps1 -useb | iex`. Die Binärdateien findest du auf der [Releases-Seite](https://github.com/velxio/velxio-cli/releases), falls du lieber selbst eine herunterladen möchtest.
+Sie legt eine einzelne Binärdatei in `~/.velxio/bin` ab und erklärt dir, wie du sie zu deinem `PATH` hinzufügst. Windows: `iwr https://velxio.dev/ci/install.ps1 -useb | iex`. Die Binärdateien findest du auf der [Releases-Seite](https://github.com/velxio/velxio-cli/releases), falls du lieber selbst eine herunterladen möchtest.
 
 ## 2. Anmelden
 
@@ -21,7 +21,7 @@ Sie legt eine einzelne Binärdatei in `~/.velxio/bin` ab und sagt dir, wie du si
 velxio-cli login
 ```
 
-Sie gibt einen kurzen Code aus, öffnet deinen Browser und wartet. Bestätige die Anfrage, und die CLI speichert, was ihr gegeben wird — du handhabst nie selbst einen Token auf deinem eigenen Rechner.
+Sie gibt einen kurzen Code aus, öffnet deinen Browser und wartet. Bestätige die Anfrage, und die CLI speichert, was ihr gegeben wird, sodass du nie selbst einen Token auf deinem eigenen Rechner handhaben musst.
 
 ```
 code     7XJ6-33M5
@@ -40,7 +40,7 @@ Ein CI-Job hat keinen Browser, also trägt er stattdessen ein Secret mit sich. D
 velxio-cli login --ci --name "my-firmware"
 ```
 
-Dieser gibt den Token einmalig aus — speichere ihn als Repository-Secret (in GitHub: Settings, Secrets and variables, Actions) und niemals im Repository selbst. Beide Arten erscheinen unter [velxio.dev/account/ci](https://velxio.dev/account/ci), wo du beide widerrufen kannst.
+Dieser gibt den Token einmalig aus. Speichere ihn als Repository-Secret (in GitHub: Settings, Secrets and variables, Actions) und niemals im Repository selbst. Beide Arten erscheinen unter [velxio.dev/account/ci](https://velxio.dev/account/ci), wo du beide widerrufen kannst.
 
 ## 3. Beschreibe das Projekt
 
@@ -90,10 +90,10 @@ Das ist Wokwis `diagram.json`-Format, also funktioniert ein vorhandenes Diagramm
 velxio-cli run --expect-text "Hello, world!" --timeout 10000 .
 ```
 
-Die Firmware startet, die serielle Ausgabe erscheint, während sie geschieht, und der Befehl beendet sich mit 0, sobald der Text auftaucht — oder mit 42, wenn die zehn simulierten Sekunden ohne ihn ablaufen.
+Die Firmware startet, die serielle Ausgabe erscheint, während sie geschieht, und der Befehl beendet sich mit 0, sobald der Text auftaucht, oder mit 42, wenn die zehn simulierten Sekunden ohne ihn ablaufen.
 
 ```
-velxio-cli 0.1.1 · plan pro · 1998.3 of 2000 min left (resets 2026-10-01)
+velxio-cli 0.2.1 · plan pro · 1998.3 of 2000 min left (resets 2026-10-01)
 project blink (esp32-s3, 3 parts) · firmware build/blink.bin (ESP32 image, 912 KB)
 run r_9f3c2a1b7e4d queued · budget 10.0 s simulated
 Hello, world!
@@ -117,7 +117,7 @@ Kompiliere in einem früheren Schritt; dieser führt nur aus, was du gebaut hast
 
 ## Wenn es nicht funktioniert
 
-- **`exit 2` bevor irgendetwas lief.** Ein Konfigurationsproblem: Das Board ist keines, das Velxio ausführt, die Firmware passt nicht zum Board, oder das Szenario enthält einen Schritt, der ein Teil benennt, das dein Diagramm nicht hat. Es wurde nichts berechnet. `velxio-cli lint .` findet die meisten davon ohne Token und ohne Netzwerk.
+- **`exit 2` bevor irgendetwas lief.** Ein Konfigurationsproblem: Das Board ist keines, das Velxio ausführt, die Firmware passt nicht zum Board, oder das Szenario hat einen Schritt, der ein Teil benennt, das dein Diagramm nicht hat. Nichts wurde berechnet. `velxio-cli lint .` findet die meisten davon ohne Token und ohne Netzwerk.
 - **`exit 3`.** Der Token fehlt, wurde widerrufen oder gehört zu einem Tarif ohne CI.
-- **`exit 4`.** Keine Minuten mehr in diesem Monat, oder mehr gleichzeitige Jobs, als dein Tarif ausführt.
-- **Der Text kommt nie an.** Erhöhe `--timeout`, führe dann ohne jegliche Erwartung aus (`velxio-cli run --timeout 5000 .`), um zu lesen, was die Firmware tatsächlich ausgibt.
+- **`exit 4`.** Keine Minuten mehr in diesem Monat, oder mehr Jobs gleichzeitig, als dein Tarif ausführt.
+- **Der Text kommt nie an.** Erhöhe `--timeout`, dann führe ohne jegliche Erwartung aus (`velxio-cli run --timeout 5000 .`), um zu lesen, was die Firmware tatsächlich ausgibt.

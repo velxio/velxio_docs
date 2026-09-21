@@ -44,7 +44,7 @@ source file named.
 
 ## Boards CI runs today
 
-The server decides, not the CLI. Thirty-six kinds run now — every board with
+The server decides, not the CLI. Thirty-six kinds run now: every board with
 an in-browser engine, each one proven by booting real firmware.
 
 ### AVR

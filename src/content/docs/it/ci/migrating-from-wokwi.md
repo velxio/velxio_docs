@@ -1,6 +1,6 @@
 ---
 title: Arrivare da Wokwi CI
-description: Cosa cambia quando un job wokwi-cli passa a Velxio CI - la riga uses, il nome del secret - e cosa non cambia.
+description: Cosa cambia quando un job di wokwi-cli passa a Velxio CI - la riga uses, il nome del secret - e cosa non cambia.
 sidebar:
   order: 7
 ---
@@ -8,7 +8,7 @@ sidebar:
 Velxio CI legge i file che un progetto Wokwi CI ha già: `wokwi.toml`,
 `diagram.json` e lo scenario YAML di Wokwi. Nessuna parte del codice di Wokwi
 è coinvolta; i nostri parser leggono quei formati. In pratica la migrazione
-richiede due righe.
+sono due righe.
 
 ```diff
 -      - uses: wokwi/wokwi-ci-action@v1
@@ -23,11 +23,12 @@ richiede due righe.
            scenario: 'test.scenario.yaml'
 ```
 
-Gli input dell'action mantengono di proposito i loro nomi: `path`, `timeout`,
-`expect_text`, `fail_text`, `scenario`, `serial_log_file`, `diagram_file`,
-`elf`. Ottieni il secret con `velxio-cli login --ci --name "<repo>"` (viene
-approvato nel browser e stampa il token una sola volta) e salvalo come
-repository secret. L'elenco completo è in [GitHub Actions](/docs/it/ci/github-action/).
+Gli input dell'action mantengono di proposito gli stessi nomi: `path`,
+`timeout`, `expect_text`, `fail_text`, `scenario`, `serial_log_file`,
+`diagram_file`, `elf`. Ottieni il secret con
+`velxio-cli login --ci --name "<repo>"` (approva nel browser e stampa il
+token una sola volta) e salvalo come secret del repository. L'elenco completo
+è in [GitHub Actions](/docs/it/ci/github-action/).
 
 ## Sulla riga di comando
 
@@ -42,7 +43,7 @@ I flag di `wokwi-cli` esistono con gli stessi nomi: `--elf`,
 
 ## wokwi.toml
 
-Letto così com'è - non devi rinominarlo in `velxio.toml`:
+Letto così com'è: non devi rinominarlo in `velxio.toml`:
 
 ```toml
 [wokwi]
@@ -63,10 +64,10 @@ binary = "chips/inverter.chip.wasm"
 ```
 
 Le chiavi non supportate vengono segnalate per nome. Sono avvisi, non
-omissioni silenziose - tranne `[[chip]]`, che interrompe l'esecuzione così non
-ottieni mai un esito positivo da un circuito a cui manca il chip in prova. Non
-c'è server GDB, né porta RFC2217, né esportazione VCD, né inoltro di rete in
-Velxio CI oggi.
+omissioni silenziose, tranne `[[chip]]`, che interrompe l'esecuzione così non
+ottieni mai un esito positivo da un circuito a cui manca il chip in test. Al
+giorno d'oggi in Velxio CI non c'è nessun server GDB, nessuna porta RFC2217,
+nessuna esportazione VCD e nessun inoltro di rete.
 
 Le chiavi che Velxio aggiunge - `board`, `diagram`, `project`, `scenario`,
 `flasher_args` - si trovano sotto `[velxio]`. Vedi
@@ -74,7 +75,7 @@ Le chiavi che Velxio aggiunge - `board`, `diagram`, `project`, `scenario`,
 
 ## Board
 
-I tipi di parte di Wokwi corrispondono ai kind di Velxio. Questi funzionano
+I tipi di parte Wokwi corrispondono ai kind di Velxio. Questi funzionano
 oggi:
 
 | Tipo in `diagram.json` di Wokwi | Kind Velxio |
@@ -101,17 +102,17 @@ oggi:
 | `board-velxio-<kind>` | qualsiasi board eseguita in CI, scritta alla maniera di Velxio |
 
 Velxio esegue trentasei board in CI, e la maggior parte sono board per cui
-Wokwi non ha un tipo — la famiglia RP2350, le board XIAO ARM, i kit M5Stack e
+Wokwi non ha un tipo: la famiglia RP2350, le board XIAO ARM, i kit M5Stack e
 Seeed. Scrivi quelle come `board-velxio-<kind>`; l'elenco completo è nella
 [tabella delle board](/docs/it/ci/velxio-toml/).
 
 Ogni altra board Wokwi fallisce prima che l'esecuzione inizi, con
-`board_not_supported_in_ci` o `unknown_board_type`, il tipo indicato, e la
-fase in cui è pianificata. Questo include `board-pi-pico-2` e `-2w`, le board
-STM32, le Nucleo, le board ESP32-S2/H2/C61, il devkit di anteprima ESP32-P4 e
-i kit con display. Una board Velxio vicina viene suggerita solo quando
-funziona oggi, e non viene mai sostituita al posto tuo. Un rifiuto non viene
-fatturato.
+`board_not_supported_in_ci` o `unknown_board_type`, il tipo indicato per nome
+e la fase in cui è pianificata. Questo include `board-pi-pico-2` e `-2w`, le
+board STM32, le Nucleo, le board ESP32-S2/H2/C61, il devkit di anteprima
+ESP32-P4 e i kit con display. Una board Velxio vicina viene suggerita solo se
+funziona oggi, e non viene mai sostituita al posto tuo. Per un rifiuto non
+viene addebitato nulla.
 
 `velxio-cli boards` stampa l'elenco aggiornato con lo stato di ogni board.
 
@@ -123,9 +124,9 @@ Lo scenario YAML di Wokwi viene eseguito senza modifiche: `delay`,
 `compare-with`, `value`). Tutti i tempi sono tempo simulato, come su Wokwi.
 Due differenze:
 
-- **I passi touch** (`touch-press`, `touch-move`, `touch-release`) non sono
+- **Gli step touch** (`touch-press`, `touch-move`, `touch-release`) non sono
   implementati; la CLI li rifiuta in fase di lint.
-- **`compare-with` viene acquisito ma non confrontato** per ora: ottieni il
+- **`compare-with` viene acquisito ma non ancora confrontato**: ottieni il
   PNG e un avviso, e l'esecuzione non fallisce per questo.
 
 Dettagli in [Scenari](/docs/it/ci/scenarios/).
@@ -139,13 +140,13 @@ motore della board:
   `<sketch>.ino.bin` viene unito a `<sketch>.ino.bootloader.bin` e
   `<sketch>.ino.partitions.bin` (più `boot_app0.bin` quando presente).
 - `firmware.bin` + `bootloader.bin` + `partitions.bin` di PlatformIO si
-  uniscono allo stesso modo. I progetti ESP-IDF possono puntare `flasher_args`
-  a `build/flasher_args.json` invece.
-- Un singolo `app.bin` ESP32 senza file affini viene rifiutato, con il
+  uniscono allo stesso modo. I progetti ESP-IDF possono puntare
+  `flasher_args` a `build/flasher_args.json`.
+- Un singolo `app.bin` ESP32 senza file affiancati viene rifiutato, con il
   suggerimento `esptool.py merge_bin`.
 - I `.uf2` e `.elf` del Pico vengono appiattiti in un'immagine flash; un
   `.elf` AVR diventa Intel HEX.
-- L'id del chip del bootloader deve corrispondere alla board: un'immagine
+- Il chip id del bootloader deve corrispondere alla board: un'immagine
   ESP32-C3 su una board `esp32-s3` è `firmware_format_mismatch`, uscita 2.
 
 MicroPython non è supportato: la CI esegue firmware compilato, e
@@ -157,7 +158,7 @@ qualcos'altro.
 I minuti sono tempo simulato, arrotondati per eccesso al secondo intero, per
 mese di calendario (UTC): 200 al mese su Maker, 2.000 su Pro. Un'esecuzione
 rifiutata prima di iniziare non costa nulla, e un motore bloccato o un limite
-di tempo reale costa solo i secondi simulati trascorsi. Vedi
+di tempo reale costano solo i secondi simulati trascorsi. Vedi
 [Codici di uscita](/docs/it/ci/exit-codes/) per la tabella completa.
 
 ## Provalo su un progetto che hai già

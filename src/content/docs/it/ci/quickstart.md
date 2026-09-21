@@ -1,13 +1,11 @@
 ---
 title: Avvio rapido CI
-description: Da zero a un'esecuzione superata in cinque minuti — installa la CLI, scrivi due file, eseguila.
+description: Da zero a un'esecuzione superata in cinque minuti. Installa la CLI, scrivi due file, eseguila.
 sidebar:
   order: 2
 ---
 
-Ti serve un account Velxio su un piano a pagamento e un file firmware compilato. Il
-simulatore qui non compila nulla: porta il `.hex`, `.bin`, `.uf2` o
-`.elf` che la tua toolchain ha prodotto.
+Ti serve un account Velxio su un piano a pagamento e un file firmware compilato. Il simulatore qui non compila nulla: porta il `.hex`, `.bin`, `.uf2` o `.elf` prodotto dalla tua toolchain.
 
 ## 1. Installa la CLI
 
@@ -15,10 +13,7 @@ simulatore qui non compila nulla: porta il `.hex`, `.bin`, `.uf2` o
 curl -fsSL https://velxio.dev/ci/install.sh | sh
 ```
 
-Deposita un singolo binario in `~/.velxio/bin` e ti dice come aggiungerlo al
-tuo `PATH`. Windows: `iwr https://velxio.dev/ci/install.ps1 -useb | iex`.
-I binari si trovano sulla [pagina delle release](https://github.com/velxio/velxio-cli/releases)
-se preferisci scaricarne uno da solo.
+Deposita un singolo binario in `~/.velxio/bin` e ti spiega come aggiungerlo al tuo `PATH`. Windows: `iwr https://velxio.dev/ci/install.ps1 -useb | iex`. I binari sono disponibili sulla [pagina delle release](https://github.com/velxio/velxio-cli/releases) se preferisci scaricarne uno da solo.
 
 ## 2. Accedi
 
@@ -26,9 +21,7 @@ se preferisci scaricarne uno da solo.
 velxio-cli login
 ```
 
-Stampa un codice breve, apre il browser e attende. Approva la richiesta e
-la CLI memorizza ciò che le viene dato — non gestisci mai un token sulla tua
-macchina.
+Stampa un codice breve, apre il browser e attende. Approva la richiesta e la CLI memorizza ciò che le viene fornito, così non gestisci mai un token sulla tua macchina.
 
 ```
 code     7XJ6-33M5
@@ -37,27 +30,21 @@ waiting for approval of 7XJ6-33M5 (the code expires in 10 min)
 signed in as velxio-cli on laptop
 ```
 
-La pagina mostra cosa sta chiedendo, da quale macchina e per cosa, prima che tu
-approvi qualsiasi cosa:
+La pagina mostra cosa sta facendo la richiesta, da quale macchina e per cosa, prima che tu approvi qualsiasi cosa:
 
-![La pagina del browser che approva un accesso CLI: indica lo strumento, la macchina su cui gira e cosa sta chiedendo, con i pulsanti Approve e Deny](../../../../assets/docs/ci/device-approve.png)
+![La pagina del browser che approva un accesso alla CLI: indica lo strumento, la macchina su cui gira e cosa sta richiedendo, con i pulsanti Approve e Deny](../../../../assets/docs/ci/device-approve.png)
 
-Un job CI non ha un browser, quindi porta con sé un solo segreto. Lo stesso flusso
-lo genera, chiamandolo come il repository che lo conterrà:
+Un job CI non ha un browser, quindi porta con sé un solo segreto. Lo stesso flusso lo genera, con il nome del repository che lo conterrà:
 
 ```bash
 velxio-cli login --ci --name "my-firmware"
 ```
 
-Questo lo stampa una sola volta — conservalo come segreto del repository (in GitHub:
-Settings, Secrets and variables, Actions) e mai nel repository stesso.
-Entrambi i tipi compaiono su [velxio.dev/account/ci](https://velxio.dev/account/ci),
-dove puoi revocare l'uno o l'altro.
+Questo lo stampa una sola volta. Salvalo come segreto del repository (in GitHub: Settings, Secrets and variables, Actions) e mai nel repository stesso. Entrambi i tipi compaiono su [velxio.dev/account/ci](https://velxio.dev/account/ci), dove puoi revocare l'uno o l'altro.
 
 ## 3. Descrivi il progetto
 
-Due file accanto al tuo firmware. `velxio-cli init` scrive una coppia iniziale, oppure
-scrivila a mano:
+Due file accanto al tuo firmware. `velxio-cli init` scrive una coppia iniziale, oppure scrivili a mano:
 
 ```toml
 # velxio.toml
@@ -103,12 +90,10 @@ Questo è il formato `diagram.json` di Wokwi, quindi un diagramma esistente funz
 velxio-cli run --expect-text "Hello, world!" --timeout 10000 .
 ```
 
-Il firmware si avvia, l'output seriale appare man mano, e il comando
-esce con 0 non appena il testo compare — oppure 42 quando i dieci secondi
-simulati scadono senza di esso.
+Il firmware si avvia, l'output seriale appare man mano, e il comando esce con 0 non appena il testo compare, oppure con 42 quando i dieci secondi simulati scadono senza che compaia.
 
 ```
-velxio-cli 0.1.1 · plan pro · 1998.3 of 2000 min left (resets 2026-10-01)
+velxio-cli 0.2.1 · plan pro · 1998.3 of 2000 min left (resets 2026-10-01)
 project blink (esp32-s3, 3 parts) · firmware build/blink.bin (ESP32 image, 912 KB)
 run r_9f3c2a1b7e4d queued · budget 10.0 s simulated
 Hello, world!
@@ -132,13 +117,7 @@ Compila in uno step precedente; questo esegue solo ciò che hai compilato.
 
 ## Quando non funziona
 
-- **`exit 2` prima che qualsiasi cosa sia stata eseguita.** Un problema di
-  configurazione: la board non è una che Velxio esegue, il firmware non corrisponde alla board, o lo scenario ha
-  uno step che nomina una parte che il tuo diagramma non ha. Nulla è stato fatturato.
-  `velxio-cli lint .` trova la maggior parte di questi senza token e senza rete.
+- **`exit 2` prima che sia partito qualcosa.** Un problema di configurazione: la board non è una che Velxio esegue, il firmware non corrisponde alla board, oppure lo scenario ha uno step che nomina una parte che il tuo diagramma non ha. Non è stato addebitato nulla. `velxio-cli lint .` trova la maggior parte di questi senza token e senza rete.
 - **`exit 3`.** Il token è mancante, revocato o appartiene a un piano senza CI.
-- **`exit 4`.** Nessun minuto rimasto questo mese, o più job contemporaneamente di quanti
-  ne esegua il tuo piano.
-- **Il testo non arriva mai.** Aumenta `--timeout`, poi esegui senza alcuna
-  aspettativa (`velxio-cli run --timeout 5000 .`) per leggere cosa il firmware
-  stampa effettivamente.
+- **`exit 4`.** Nessun minuto rimasto questo mese, oppure più job contemporanei di quanti ne esegua il tuo piano.
+- **Il testo non arriva mai.** Aumenta `--timeout`, poi esegui senza alcuna aspettativa (`velxio-cli run --timeout 5000 .`) per leggere cosa stampa effettivamente il firmware.

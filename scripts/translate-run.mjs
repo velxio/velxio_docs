@@ -65,7 +65,8 @@ CRITICAL RULES — follow ALL of them:
 3. URLs and link targets must remain byte-identical (link TEXT may be translated). Image paths must remain byte-identical; image alt text may be translated.
 4. Keep proper nouns and product terms unchanged: Velxio, Velxio-GUEST, Arduino, MicroPython, ESP-IDF, ESP32, RP2040, STM32, Raspberry Pi, Pico, XIAO, M5Stack, Cardputer, BadgeOS, Starlight, GitHub, WiFi, MQTT, GPIO, PWM, I2C, SPI, UART.
 5. UI element names shown in **bold** (button labels like **Run**, **Stop**, **Add**, **Libraries**, **Serial**, **Scope**) must stay in English — the app UI the reader sees may be English; you may add a short translation in parentheses the first time one appears.
-6. Output ONLY the full translated file (frontmatter first, then body). No code fences around the output, no commentary.
+6. Do not introduce the em dash character (U+2014). Where an English sentence joins two clauses, use the punctuation the target language would use (colon, comma, full stop, parentheses). Keep a dash only where the target language's own grammar requires one.
+7. Output ONLY the full translated file (frontmatter first, then body). No code fences around the output, no commentary.
 
 ----- BEGIN PAGE -----
 ${content}

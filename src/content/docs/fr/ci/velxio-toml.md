@@ -1,13 +1,13 @@
 ---
 title: velxio.toml
-description: Le fichier de projet que lit Velxio CI - carte, firmware, circuit et scénario - avec les cartes que CI exécute aujourd'hui et la façon dont chaque chemin est résolu.
+description: Le fichier de projet que lit Velxio CI (carte, firmware, circuit et scénario), avec les cartes prises en charge par la CI aujourd'hui et la façon dont chaque chemin est résolu.
 sidebar:
   order: 3
 ---
 
 `velxio.toml` indique à la CLI quoi exécuter : quelle carte, quel firmware
 compilé, quel circuit et quel scénario. Il se trouve dans le répertoire vers
-lequel vous pointez la CLI. Chaque chemin qu'il contient est relatif au
+lequel vous pointez la CLI. Tous les chemins qu'il contient sont relatifs au
 fichier lui-même, et les barres obliques fonctionnent sur tous les OS.
 
 ```toml
@@ -34,20 +34,20 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 | `diagram`      | le circuit, au format `diagram.json` de Wokwi.                                                                                               |
 | `project`      | un export de projet Velxio `.vlx`. Prioritaire sur `diagram`.                                                                                |
 | `scenario`     | le YAML de scénario à exécuter par défaut. Voir [Scénarios](/docs/fr/ci/scenarios/).                                                            |
-| `language`     | `arduino`. `micropython` est refusé avec le code de sortie 2 - CI n'exécute que du firmware compilé.                                         |
+| `language`     | `arduino`. `micropython` est refusé avec le code de sortie 2 : la CI n'exécute que du firmware compilé.                                      |
 
-Rien n'est ignoré en silence. Une clé que la CLI ne connaît pas est un
+Rien n'est ignoré en silence. Une clé que la CLI ne connaît pas produit un
 avertissement ; une fonctionnalité qui n'est pas encore implémentée fait
 échouer l'exécution avec `feature_unsupported` au lieu d'exécuter
 discrètement un projet différent de celui que vous avez écrit. `[[chip]]`
-(puces personnalisées) en fait partie : c'est refusé aujourd'hui, avec le
-fichier source nommé.
+(puces personnalisées) en fait partie : elle est refusée aujourd'hui, avec
+le fichier source nommé.
 
-## Cartes que CI exécute aujourd'hui
+## Cartes prises en charge par la CI aujourd'hui
 
 C'est le serveur qui décide, pas la CLI. Trente-six types fonctionnent
-aujourd'hui — chaque carte disposant d'un moteur dans le navigateur, chacune
-prouvée en démarrant un vrai firmware.
+aujourd'hui : chaque carte disposant d'un moteur dans le navigateur, chacune
+prouvée par le démarrage d'un vrai firmware.
 
 ### AVR
 
@@ -113,23 +113,22 @@ type Wokwi propre n'ont pas d'autre orthographe.
 ses types `diagram.json` et les formats de firmware qu'elle accepte.
 
 :::caution
-Ce qui reste s'exécute dans l'éditeur mais pas encore dans CI : les cartes
-STM32 (elles nécessitent la voie QEMU), les cartes Raspberry Pi et UNIHIKER,
-le devkit de prévisualisation ESP32-P4, et la famille DFRobot, qui est
+Ce qui reste s'exécute dans l'éditeur mais pas encore dans la CI : les
+cartes STM32 (elles nécessitent la voie QEMU), les cartes Raspberry Pi et
+UNIHIKER, le devkit de prévisualisation ESP32-P4, et la famille DFRobot,
 encore derrière son indicateur de lancement. Chacune est refusée avant le
-début de l'exécution, avec `board_not_supported_in_ci` et la phase à
-laquelle elle est prévue. Rien n'est facturé, et aucune carte proche n'est
-substituée en silence.
+début de l'exécution, avec `board_not_supported_in_ci` et la phase prévue.
+Rien n'est facturé, et aucune carte proche n'est substituée en silence.
 :::
 
-Pico W fonctionne, mais CI n'a pas de réseau : WiFi et les sockets ne se
-connectent jamais, et l'exécution porte un avertissement `no_network`.
+La Pico W fonctionne, mais la CI n'a pas de réseau : le WiFi et les sockets
+ne se connectent jamais, et l'exécution porte un avertissement `no_network`.
 
-## Comment les chemins sont résolus
+## Résolution des chemins
 
 - **Fichier de configuration :** `velxio.toml`, puis `wokwi.toml`, puis
-  exactement un `*.vlx` dans le répertoire. Aucun d'entre eux ne donne le
-  code de sortie 2.
+  exactement un `*.vlx` dans le répertoire. Aucun d'entre eux : code de
+  sortie 2.
 - **Circuit :** `--project-file`, puis `[velxio] project`, puis
   `--diagram-file`, puis `[velxio] diagram`, puis `diagram.json` à côté du
   fichier de configuration.
@@ -139,16 +138,16 @@ connectent jamais, et l'exécution porte un avertissement `no_network`.
 - **Carte :** `[velxio] board`, puis la partie carte du diagramme (ou la
   carte active du `.vlx`).
 
-Les chemins relatifs donnés sur la ligne de commande sont résolus par
+Les chemins relatifs fournis sur la ligne de commande sont résolus par
 rapport au répertoire du projet, et non par rapport au répertoire de travail
 de votre shell.
 
 ## diagram.json
 
-Le format de Wokwi, lu tel quel : `version: 1`, `parts` de
-`{id, type, left, top, attrs, rotate, hide}` et `connections` de
-`[from, to, color, path]`. Les identifiants de pièces dans le diagramme sont
-les identifiants qu'utilisent vos étapes de scénario.
+Le format de Wokwi, lu tel quel : `version: 1`, des `parts` de
+`{id, type, left, top, attrs, rotate, hide}` et des `connections` de
+`[from, to, color, path]`. Les identifiants des parties dans le diagramme
+sont les identifiants utilisés par vos étapes de scénario.
 
 ```json
 {
@@ -184,17 +183,17 @@ les identifiants qu'utilisent vos étapes de scénario.
 }
 ```
 
-Les pièces sont les éléments `wokwi-*` (`wokwi-led`, `wokwi-pushbutton`,
-`wokwi-dht22`, etc.). Un type de pièce que la CLI ne reconnaît pas est un
-avertissement, pas une erreur : c'est le serveur qui décide, et les pièces
-qu'il ne peut pas simuler sont signalées par identifiant plutôt que
-supprimées en silence.
+Les parties sont les éléments `wokwi-*` (`wokwi-led`, `wokwi-pushbutton`,
+`wokwi-dht22`, etc.). Un type de partie que la CLI ne reconnaît pas produit
+un avertissement, pas une erreur : c'est le serveur qui décide, et les
+parties qu'il ne peut pas simuler sont signalées par leur identifiant plutôt
+que supprimées en silence.
 
 ## .vlx
 
 Un projet exporté depuis l'éditeur Velxio (`format: "velxio-project"`,
-`version: 1`) peut tenir lieu de circuit à la place d'un diagramme. Placez
-l'unique `.vlx` dans le répertoire, ou nommez-le avec `project =` ou
+`version: 1`) peut remplacer le diagramme comme circuit. Placez l'unique
+`.vlx` dans le répertoire, ou nommez-le avec `project =` ou
 `--project-file`. La carte principale de l'export est la carte de
 l'exécution ; le firmware provient toujours du toml ou de `--firmware`.
 
@@ -204,15 +203,15 @@ l'exécution ; le firmware provient toujours du toml ou de `--firmware`.
 | -------------------------------- | -------------------------------------------------------------------------------------------------- |
 | firmware par carte               | 16 MiB                                                                                             |
 | total des fichiers envoyés par exécution | 20 MiB                                                                                     |
-| circuit                          | 300 pièces, 2 000 fils                                                                             |
-| scénario                         | 200 étapes, 20 captures d'écran, 512 octets par texte `wait-serial`                                |
-| `--timeout`                      | le plafond de votre forfait (5 min sur Maker, 10 min sur Pro), et jamais plus que les minutes qu'il vous reste |
+| circuit                          | 300 parties, 2 000 fils                                                                            |
+| scénario                         | 200 étapes, 20 captures d'écran, 512 octets par texte de `wait-serial`                             |
+| `--timeout`                      | le plafond de votre offre (5 min en Maker, 10 min en Pro), et jamais plus que les minutes qu'il vous reste |
 
-Un `--timeout` au-dessus du plafond n'est pas une erreur : il est écrêté, et
-l'exécution signale un avertissement `timeout_clamped` avec le budget
-réellement accordé.
+Un `--timeout` supérieur au plafond n'est pas une erreur : il est ramené à
+la limite, et l'exécution signale un avertissement `timeout_clamped` avec le
+budget réellement accordé.
 
-## Vérifiez-le avant de dépenser des minutes
+## Vérifiez avant de dépenser des minutes
 
 ```bash
 velxio-cli lint .
@@ -220,9 +219,9 @@ velxio-cli lint .
 
 `lint` n'a besoin ni de jeton ni de réseau. Il analyse le toml, résout chaque
 chemin, vérifie que les fichiers existent et respectent les plafonds, vérifie
-que les identifiants de pièces sont uniques et que les connexions nomment des
-pièces existantes, vérifie que la carte est bien une carte que CI exécute,
+que les identifiants de parties sont uniques et que les connexions nomment
+des parties existantes, vérifie que la carte est prise en charge par la CI,
 vérifie que le format du firmware correspond à la famille de la carte, et
 vérifie que chaque étape de scénario est connue, possède ses champs, nomme
-des pièces existantes et analyse correctement ses durées. La plupart des
-échecs `exit 2` sont moins coûteux à détecter ici.
+des parties existantes et analyse correctement ses durées. La plupart des
+échecs avec `exit 2` se détectent ici plus économiquement.
