@@ -60,6 +60,7 @@ hostname, exactly as from a real board on your WiFi.
   page — can use it.
 - Traffic through the local gateway never touches Velxio's servers, and is
   usually faster for losing the round trip.
+- Adblockers and browser privacy extensions can interfere with local gateway discovery or connectivity. If Velxiogw cannot be      detected on your LAN, check whether uBlock Origin or other privacy extensions are blocking the relevant requests. In             particular, uBlock Origin's Block outsider LAN intrusions filters may interfere with discovery. 
 - The source is public at
   [github.com/velxio/velxiogw](https://github.com/velxio/velxiogw); the
   binaries are free to download, and the pairing flow in the editor is the
