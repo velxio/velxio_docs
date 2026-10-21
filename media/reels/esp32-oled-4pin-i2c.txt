@@ -1,0 +1,11 @@
+INSTAGRAM
+A 4-pin SSD1306 OLED wired to an ESP32 over I2C. The sketch prints Hello Velxio and a counter that ticks up every half second. Four wires, no extra parts, and the screen does the talking.
+
+Try it free at velxio.dev (link in bio)
+
+#velxio #esp32 #oled #ssd1306 #i2c #arduino #electronics
+
+YOUTUBE SHORTS
+Title: ESP32 SSD1306 OLED counter in the browser #shorts
+
+An ESP32 drives a 4-pin SSD1306 OLED over I2C and prints a counter that updates every 500 ms. The whole circuit runs in Velxio, a free browser simulator. Open it in your browser: https://velxio.dev/example/esp32-oled-4pin-i2c

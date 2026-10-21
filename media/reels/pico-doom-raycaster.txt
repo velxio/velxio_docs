@@ -1,0 +1,11 @@
+INSTAGRAM
+A Wolfenstein-style raycaster running on a Raspberry Pi Pico in the Velxio browser simulator. The TFT is drawn column by column with no framebuffer, and four buttons move and turn the player through a 16x16 tile map. Press FWD on the title screen to start.
+
+Try it free at velxio.dev (link in bio)
+
+#velxio #raspberrypipico #raycaster #ili9341 #arduino #electronics #retrogaming
+
+YOUTUBE SHORTS
+Title: Pico Doom Raycaster on a Pi Pico and TFT #shorts
+
+A Wolfenstein-style raycaster runs on a Raspberry Pi Pico with an ILI9341 TFT and four pushbuttons. Rays are cast at 160 columns per frame straight to the display, with no framebuffer. Press FWD to leave the title screen, then move and turn through the tile map. Open it in your browser: https://velxio.dev/example/pico-doom-raycaster

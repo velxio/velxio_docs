@@ -13,6 +13,7 @@ import * as nodeFs from "node:fs";
 import { execFileSync, spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { tourProp } from "./reel-cards.mjs";
 
 const { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync } = nodeFs;
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -20,6 +21,9 @@ const PROMO = join(HERE, "..", "promo");
 const TAKES = join(PROMO, "public", "rebuild");
 const OUT = join(PROMO, "out", "reels");
 const COPY = JSON.parse(readFileSync(join(HERE, "reels.json"), "utf8"));
+// per-example copy written by reel-auto.mjs, over reels.json
+const AUTO = join(PROMO, "public", "reels-copy");
+const copyFor = id => ({ ...COPY[id], ...(existsSync(join(AUTO, `${id}.json`)) ? JSON.parse(readFileSync(join(AUTO, `${id}.json`), "utf8")) : {}) });
 
 const argv = process.argv.slice(2);
 const FORCE = argv.includes("--force");
@@ -46,7 +50,7 @@ const pngSize = f => {
   return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
 };
 for (const slug of todo) {
-  const copy = COPY[slug] || {};
+  const copy = copyFor(slug);
   // a gallery take from reel-assemble.mjs, or a rebuild take from rebuild-record.mjs
   const assembled = existsSync(join(ASSEMBLED, `${slug}.json`));
   const meta = JSON.parse(readFileSync(join(assembled ? ASSEMBLED : TAKES, `${slug}.json`), "utf8"));
@@ -63,6 +67,7 @@ for (const slug of todo) {
     payoffAt: copy.payoffAt ?? busiestWindow(join(ASSEMBLED, `${slug}.mp4`), meta.beats.live + 0.8, meta.beats.end - 0.2, 2.6),
     ...(copy.liveSec != null ? { liveSec: copy.liveSec } : {}),
     ...(copy.chips ? { chips: copy.chips } : {}),
+    tour: existsSync(join(ASSEMBLED, `${slug}-still.png`)) ? tourProp(meta, copy) : null,
   } : {
     slug,
     hook: copy.hook || meta.title || slug,

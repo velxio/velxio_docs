@@ -1,0 +1,238 @@
+{
+ "id": "esp32-oled-4pin-i2c",
+ "beats": {
+  "assembled": 3.857915163040161,
+  "run": 5.724915027618408,
+  "live": 6.52991509437561,
+  "inputs": [],
+  "end": 20.531915187835693
+ },
+ "live": true,
+ "tidy": {
+  "moved": false,
+  "wires": 4,
+  "failed": 0,
+  "rects": 2
+ },
+ "inputs": [],
+ "code": {
+  "lines": 34,
+  "lh": 19,
+  "longest": 64,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ },
+ "tour": {
+  "vw": 430,
+  "vh": 490,
+  "stops": [
+   {
+    "kind": "board",
+    "type": "esp32",
+    "ids": [
+     "esp32"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 43,
+     "y": 153,
+     "w": 141,
+     "h": 265
+    },
+    "facts": {
+     "boardKind": "esp32",
+     "language": "arduino",
+     "libraries": [
+      "Adafruit SSD1306",
+      "Adafruit GFX Library",
+      "Adafruit BusIO"
+     ],
+     "pinCount": 32,
+     "buses": [],
+     "pins": [
+      {
+       "name": "EN",
+       "bus": ""
+      },
+      {
+       "name": "VN",
+       "bus": ""
+      },
+      {
+       "name": "VP",
+       "bus": ""
+      },
+      {
+       "name": "34",
+       "bus": ""
+      },
+      {
+       "name": "35",
+       "bus": ""
+      },
+      {
+       "name": "32",
+       "bus": ""
+      },
+      {
+       "name": "33",
+       "bus": ""
+      },
+      {
+       "name": "25",
+       "bus": ""
+      },
+      {
+       "name": "26",
+       "bus": ""
+      },
+      {
+       "name": "27",
+       "bus": ""
+      },
+      {
+       "name": "14",
+       "bus": ""
+      },
+      {
+       "name": "12",
+       "bus": ""
+      },
+      {
+       "name": "13",
+       "bus": ""
+      },
+      {
+       "name": "GND",
+       "bus": ""
+      },
+      {
+       "name": "VIN",
+       "bus": ""
+      },
+      {
+       "name": "3V3",
+       "bus": ""
+      },
+      {
+       "name": "GND2",
+       "bus": ""
+      },
+      {
+       "name": "15",
+       "bus": ""
+      },
+      {
+       "name": "2",
+       "bus": ""
+      },
+      {
+       "name": "4",
+       "bus": ""
+      },
+      {
+       "name": "RX2",
+       "bus": ""
+      },
+      {
+       "name": "16",
+       "bus": ""
+      },
+      {
+       "name": "TX2",
+       "bus": ""
+      },
+      {
+       "name": "17",
+       "bus": ""
+      },
+      {
+       "name": "5",
+       "bus": ""
+      },
+      {
+       "name": "18",
+       "bus": ""
+      },
+      {
+       "name": "19",
+       "bus": ""
+      },
+      {
+       "name": "21",
+       "bus": ""
+      },
+      {
+       "name": "RX0",
+       "bus": ""
+      },
+      {
+       "name": "TX0",
+       "bus": ""
+      },
+      {
+       "name": "22",
+       "bus": ""
+      },
+      {
+       "name": "23",
+       "bus": ""
+      }
+     ]
+    }
+   },
+   {
+    "kind": "part",
+    "type": "ssd1306-i2c-4pin",
+    "ids": [
+     "oled"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 254,
+     "y": 151,
+     "w": 150,
+     "h": 118
+    },
+    "facts": {
+     "name": "SSD1306 OLED (I2C, 4-pin)",
+     "category": "displays",
+     "tags": [
+      "ssd1306",
+      "oled",
+      "display",
+      "i2c",
+      "4-pin",
+      "0x3c"
+     ],
+     "props": {},
+     "pinCount": 4,
+     "buses": [
+      "i2c"
+     ],
+     "pins": [
+      {
+       "name": "GND",
+       "bus": "power"
+      },
+      {
+       "name": "VCC",
+       "bus": "power"
+      },
+      {
+       "name": "SCL",
+       "bus": "i2c"
+      },
+      {
+       "name": "SDA",
+       "bus": "i2c"
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

@@ -1,11 +1,11 @@
 {
  "id": "esp32s3-oled-i2c",
  "beats": {
-  "assembled": 3.3887410163879395,
-  "run": 4.291740894317627,
-  "live": 5.122740983963013,
+  "assembled": 3.850032091140747,
+  "run": 5.800032138824463,
+  "live": 6.609032154083252,
   "inputs": [],
-  "end": 15.1267409324646
+  "end": 16.611032009124756
  },
  "live": true,
  "tidy": {
@@ -24,5 +24,279 @@
  "frame": {
   "w": 1080,
   "h": 1230
+ },
+ "tour": {
+  "vw": 420,
+  "vh": 478,
+  "stops": [
+   {
+    "kind": "board",
+    "type": "esp32-s3",
+    "ids": [
+     "esp32-s3"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 256,
+     "y": 64,
+     "w": 128,
+     "h": 350
+    },
+    "facts": {
+     "boardKind": "esp32-s3",
+     "language": "arduino",
+     "libraries": [
+      "Adafruit SSD1306",
+      "Adafruit GFX Library",
+      "Adafruit BusIO"
+     ],
+     "pinCount": 44,
+     "buses": [],
+     "pins": [
+      {
+       "name": "3V3.1",
+       "bus": ""
+      },
+      {
+       "name": "3V3.2",
+       "bus": ""
+      },
+      {
+       "name": "RST",
+       "bus": ""
+      },
+      {
+       "name": "4",
+       "bus": ""
+      },
+      {
+       "name": "5",
+       "bus": ""
+      },
+      {
+       "name": "6",
+       "bus": ""
+      },
+      {
+       "name": "7",
+       "bus": ""
+      },
+      {
+       "name": "15",
+       "bus": ""
+      },
+      {
+       "name": "16",
+       "bus": ""
+      },
+      {
+       "name": "17",
+       "bus": ""
+      },
+      {
+       "name": "18",
+       "bus": ""
+      },
+      {
+       "name": "8",
+       "bus": ""
+      },
+      {
+       "name": "3",
+       "bus": ""
+      },
+      {
+       "name": "46",
+       "bus": ""
+      },
+      {
+       "name": "9",
+       "bus": ""
+      },
+      {
+       "name": "10",
+       "bus": ""
+      },
+      {
+       "name": "11",
+       "bus": ""
+      },
+      {
+       "name": "12",
+       "bus": ""
+      },
+      {
+       "name": "13",
+       "bus": ""
+      },
+      {
+       "name": "14",
+       "bus": ""
+      },
+      {
+       "name": "5V",
+       "bus": ""
+      },
+      {
+       "name": "GND.1",
+       "bus": ""
+      },
+      {
+       "name": "GND.2",
+       "bus": ""
+      },
+      {
+       "name": "TX",
+       "bus": ""
+      },
+      {
+       "name": "RX",
+       "bus": ""
+      },
+      {
+       "name": "1",
+       "bus": ""
+      },
+      {
+       "name": "2",
+       "bus": ""
+      },
+      {
+       "name": "42",
+       "bus": ""
+      },
+      {
+       "name": "41",
+       "bus": ""
+      },
+      {
+       "name": "40",
+       "bus": ""
+      },
+      {
+       "name": "39",
+       "bus": ""
+      },
+      {
+       "name": "38",
+       "bus": ""
+      },
+      {
+       "name": "37",
+       "bus": ""
+      },
+      {
+       "name": "36",
+       "bus": ""
+      },
+      {
+       "name": "35",
+       "bus": ""
+      },
+      {
+       "name": "0",
+       "bus": ""
+      },
+      {
+       "name": "45",
+       "bus": ""
+      },
+      {
+       "name": "48",
+       "bus": ""
+      },
+      {
+       "name": "47",
+       "bus": ""
+      },
+      {
+       "name": "21",
+       "bus": ""
+      },
+      {
+       "name": "20",
+       "bus": ""
+      },
+      {
+       "name": "19",
+       "bus": ""
+      },
+      {
+       "name": "GND.3",
+       "bus": ""
+      },
+      {
+       "name": "GND.4",
+       "bus": ""
+      }
+     ]
+    }
+   },
+   {
+    "kind": "part",
+    "type": "ssd1306",
+    "ids": [
+     "s3-oled1"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 36,
+     "y": 186,
+     "w": 150,
+     "h": 124
+    },
+    "facts": {
+     "name": "SSD1306 OLED",
+     "category": "displays",
+     "tags": [
+      "ssd1306",
+      "oled",
+      "display",
+      "i2c",
+      "spi",
+      "0x3c"
+     ],
+     "props": {},
+     "pinCount": 8,
+     "buses": [
+      "i2c"
+     ],
+     "pins": [
+      {
+       "name": "DATA",
+       "bus": "i2c"
+      },
+      {
+       "name": "CLK",
+       "bus": "i2c"
+      },
+      {
+       "name": "DC",
+       "bus": ""
+      },
+      {
+       "name": "RST",
+       "bus": ""
+      },
+      {
+       "name": "CS",
+       "bus": ""
+      },
+      {
+       "name": "3V3",
+       "bus": "power"
+      },
+      {
+       "name": "VIN",
+       "bus": "power"
+      },
+      {
+       "name": "GND",
+       "bus": "power"
+      }
+     ]
+    }
+   }
+  ]
  }
 }

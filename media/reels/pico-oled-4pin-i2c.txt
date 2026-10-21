@@ -1,0 +1,11 @@
+INSTAGRAM
+A Raspberry Pi Pico drives a 4-pin SSD1306 OLED over I2C. The sketch prints Hello Velxio and a counter that ticks up every half second. Only four wires: power, ground, SDA and SCL.
+
+Try it free at velxio.dev (link in bio)
+
+#velxio #raspberrypipico #oled #i2c #electronics #arduino #diy
+
+YOUTUBE SHORTS
+Title: Pico + SSD1306 OLED counter in 4 wires #shorts
+
+A Raspberry Pi Pico talks to a 4-pin SSD1306 OLED over I2C and shows a live counter. The sketch uses Adafruit GFX and SSD1306 libraries on SDA GP4 and SCL GP5. Open it in your browser: https://velxio.dev/example/pico-oled-4pin-i2c

@@ -17,6 +17,7 @@
  *   <id>.mp4        30 fps CFR, the frame is exactly the reel's middle band
  *   <id>.json       beats {assembled, run, live, inputs[]} in seconds
  *   <id>-code.png   the whole sketch in the real editor, for the code scene
+ *   <id>-still.png  the assembled circuit at 3x, for the parts tour
  */
 import * as nodeFs from "node:fs";
 import { execFileSync } from "node:child_process";
@@ -30,6 +31,9 @@ const OUT = join(HERE, "..", "promo", "public", "reels-take");
 const BASE = process.env.VELXIO_BASE || "http://127.0.0.1:3080";
 const TIDY = readFileSync(join(HERE, "reel-tidy.js"), "utf8");
 const COPY = JSON.parse(readFileSync(join(HERE, "reels.json"), "utf8"));
+// reel-auto.mjs writes its copy here, per example; it wins over reels.json
+const AUTO = join(HERE, "..", "promo", "public", "reels-copy");
+const copyFor = id => ({ ...COPY[id], ...(existsSync(join(AUTO, `${id}.json`)) ? JSON.parse(readFileSync(join(AUTO, `${id}.json`), "utf8")) : {}) });
 // the reel's middle band (between the hook and the brand strip)
 const FRAME = { w: 1080, h: 1230 };
 const FPS = 30;
@@ -227,6 +231,46 @@ const ASSEMBLE = async ({ partMs, wireMs }) => {
   return { boards: boards.length, parts: parts.length, wires: wireParts.length };
 };
 
+/** In the page, after the assembly: one stop per board and per part TYPE
+ *  (repeats folded into one, with a count), each with the box it covers on
+ *  screen and the facts the app itself holds about it: the picker metadata,
+ *  the pins and the buses they carry. reel-cards.mjs turns those facts into
+ *  the card text; nothing here is written by hand. */
+const TOUR = async () => {
+  const meta = await fetch("/components-metadata.json").then(r => r.json()).then(j => j.components || []).catch(() => []);
+  const union = rs => rs.reduce((a, r) => !a ? { x: r.left, y: r.top, r: r.right, b: r.bottom }
+    : { x: Math.min(a.x, r.left), y: Math.min(a.y, r.top), r: Math.max(a.r, r.right), b: Math.max(a.b, r.bottom) }, null);
+  const box = u => u && { x: u.x, y: u.y, w: u.r - u.x, h: u.b - u.y };
+  const pinFacts = el => {
+    const pins = (el?.pinInfo || []).map(p => ({ name: p.name, bus: [...new Set((p.signals || []).map(s => s.type))].join("/") }));
+    return { pinCount: pins.length, buses: [...new Set(pins.flatMap(p => p.bus ? p.bus.split("/") : []))].filter(b => b !== "power"), pins: pins.slice(0, 48) };
+  };
+  const stops = [];
+  for (const b of window.__vxBoards ? window.__vxBoards.getState().boards : []) {
+    const ov = document.querySelector(`[data-board-overlay][data-board-id="${CSS.escape(b.id)}"]`) || document.querySelector("[data-board-overlay]");
+    const kids = ov ? [...ov.parentElement.children].filter(c => c !== ov && c.getBoundingClientRect().width > 20) : [];
+    const el = kids.flatMap(k => [k, ...k.querySelectorAll("*")]).find(n => n.pinInfo);
+    stops.push({ kind: "board", type: b.boardKind, ids: [b.id], count: 1, rect: box(union(kids.map(k => k.getBoundingClientRect()))),
+      facts: { boardKind: b.boardKind, language: b.languageMode, libraries: b.libraries || [], ...pinFacts(el) } });
+  }
+  const byType = new Map();
+  for (const c of window.__vx.sim.getState().components) {
+    const t = c.metadataId || c.type || "";
+    if (!byType.has(t)) byType.set(t, []);
+    byType.get(t).push(c);
+  }
+  for (const [type, cs] of byType) {
+    const els = cs.map(c => document.getElementById(c.id)).filter(Boolean);
+    if (!els.length) continue;
+    const m = meta.find(x => x.tagName === type || x.id === type || "wokwi-" + x.id === type) || {};
+    stops.push({ kind: "part", type, ids: cs.map(c => c.id), count: cs.length, rect: box(union(els.map(e => e.getBoundingClientRect()))),
+      facts: { name: m.name, category: m.category, description: m.description, tags: m.tags,
+        props: Object.fromEntries(Object.entries(cs[0].properties || {}).filter(([, v]) => typeof v !== "object" && String(v).length < 40)),
+        ...pinFacts(els[0]) } });
+  }
+  return stops.filter(s => s.rect && s.rect.w > 4);
+};
+
 const CIRCUIT_BOX = `(() => {
   let x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
   for (const el of document.querySelectorAll(".dynamic-component-wrapper[data-component-id] > *, [data-board-overlay], .wire-layer path")) {
@@ -303,10 +347,12 @@ for (const id of ids) {
   await page.evaluate(CENTRE, { dx, dy });
 
   const comps = await page.evaluate(() => window.__vx.sim.getState().components.map(c => ({ id: c.id, type: c.metadataId || c.type || "" })));
-  // reels.json may pick the inputs and their order: { "inputs": ["pir", "ldr"] }
-  const pick = COPY[id]?.inputs;
+  // the copy may pick the inputs and their order: { "inputs": ["pir", "ldr"] },
+  // and hold one back until the sketch is ready for it: { "id": "btn", "wait": 2 }
+  const pick = copyFor(id).inputs;
   const inputs = pick
-    ? pick.map(i => comps.find(c => c.id === i)).filter(Boolean)
+    ? pick.map(i => typeof i === "string" ? { id: i } : i)
+        .map(i => ({ ...comps.find(c => c.id === i.id), wait: Number(i.wait) || 0 })).filter(c => c.type != null)
     : comps.filter(c => INPUT_RE.test(c.type));
 
   // screencast
@@ -341,6 +387,13 @@ for (const id of ids) {
   const counts = await assembling;
   mark("assembled");
   console.log(`   assembled ${JSON.stringify(counts)}`);
+  // the parts tour is cut from one sharp still of the assembled circuit, so
+  // its zoom can go in 3x without the take's resolution showing
+  const stops = await page.evaluate(TOUR);
+  await cdp.send("Page.stopScreencast");
+  const shot = await cdp.send("Page.captureScreenshot", { format: "png", clip: { x: 0, y: 0, width: vw, height: vh, scale: 3 * dsf } });
+  writeFileSync(join(OUT, `${id}-still.png`), Buffer.from(shot.data, "base64"));
+  await cdp.send("Page.startScreencast", { format: "jpeg", quality: 92, maxWidth: FRAME.w, maxHeight: FRAME.h, everyNthFrame: 1 });
   await page.waitForTimeout(900);
 
   // run
@@ -373,13 +426,14 @@ for (const id of ids) {
         return { cx: r.x + r.width / 2, cy: r.y + r.height / 2, s: Math.min(r.width, r.height) };
       }, inp.id);
       if (!at) continue;
+      if (inp.wait) await page.waitForTimeout(Math.min(8, inp.wait) * 1000);
       const rec = { id: inp.id, type: inp.type, t: Date.now() / 1000 - T0, press: [] };
       beats.inputs.push(rec);
       const now = () => Date.now() / 1000 - T0;
       if (/potentiometer/.test(inp.type)) await turnKnob(page, inp.id, () => rec.press.push(now()));
       else if (SENSOR_RE.test(inp.type)) await workSensor(page, inp.id, () => rec.press.push(now()));
       else {
-        await page.mouse.move(at.cx, at.cy, { steps: 30 });
+        await glide(page, at.cx, at.cy, 750);
         await page.waitForTimeout(300);
         for (let k = 0; k < 3; k++) {
           await page.mouse.down(); rec.press.push(now()); await page.waitForTimeout(900);
@@ -389,7 +443,7 @@ for (const id of ids) {
       await page.waitForTimeout(700);
       rec.done = now();
     }
-    await page.mouse.move(vw + 60, vh * 0.8, { steps: 25 });
+    await glide(page, vw + 60, vh * 0.8, 700);
   }
   const rest = LIVE_SEC - (Date.now() / 1000 - T0 - beats.live);
   if (rest > 0) await page.waitForTimeout(rest * 1000);
@@ -419,10 +473,25 @@ for (const id of ids) {
 
   // the code, whole, in the real editor
   const code = await captureCode(browser, id, join(OUT, `${id}-code.png`));
-  writeFileSync(join(OUT, `${id}.json`), JSON.stringify({ id, beats, live, tidy, inputs, code, frame: FRAME }, null, 1));
+  writeFileSync(join(OUT, `${id}.json`), JSON.stringify({ id, beats, live, tidy, inputs, code, frame: FRAME, tour: { vw, vh, stops } }, null, 1));
   console.log(`   ${mp4}  ${JSON.stringify(beats)}`);
 }
 await browser.close();
+
+/** Move the pointer by gliding the DRAWN cursor, then the real one in one
+ *  jump. page.mouse.move with steps waits a frame per step, and a busy page
+ *  (a raycaster on a TFT) turned a 30-step move into 20 s. */
+async function glide(page, x, y, ms = 650) {
+  await page.evaluate(([x, y, ms]) => {
+    const c = document.getElementById("vx-cursor");
+    if (!c) return;
+    c.style.transition = `left ${ms}ms ease-in-out, top ${ms}ms ease-in-out`;
+    c.style.left = x + "px"; c.style.top = y + "px";
+  }, [x, y, ms]);
+  await page.waitForTimeout(ms + 40);
+  await page.evaluate(() => { const c = document.getElementById("vx-cursor"); if (c) c.style.transition = ""; });
+  await page.mouse.move(x, y);
+}
 
 /** Screenshot the sketch in the real Monaco, tall enough to hold every
  *  line, so the reel can scroll it without the editor re-rendering. */
@@ -496,7 +565,7 @@ async function turnKnob(page, id, onGrab) {
     return [k.cx + k.r * Math.sin(rad), k.cy - k.r * Math.cos(rad)];
   };
   let f = (k.v - k.min) / (k.max - k.min || 1);
-  await page.mouse.move(...at(f), { steps: 28 });
+  await glide(page, ...at(f), 700);
   await page.waitForTimeout(250);
   await page.evaluate(GRAB);
   onGrab();
@@ -523,7 +592,7 @@ async function workSensor(page, id, onPress) {
     return r ? { x: r.x + r.width / 2, y: r.y + r.height / 2 } : null;
   }, id);
   if (!c) return;
-  await page.mouse.move(c.x, c.y, { steps: 14 });
+  await glide(page, c.x, c.y, 650);
   await page.waitForTimeout(250);
   await page.mouse.down(); onPress(); await page.mouse.up();
   await page.waitForTimeout(700);
@@ -539,7 +608,7 @@ async function workSensor(page, id, onPress) {
     const TH = 8; // half the thumb: the track is inset by it at both ends
     const px = f => s0.x + TH + (s0.w - 2 * TH) * f;
     let f = (s0.v - s0.min) / (s0.max - s0.min || 1);
-    await page.mouse.move(px(f), s0.y, { steps: 12 });
+    await glide(page, px(f), s0.y, 450);
     await page.evaluate(GRAB);
     onPress();
     // By value, not by drag: on this page every drag event re-solves the
@@ -570,14 +639,14 @@ async function workSensor(page, id, onPress) {
   const trig = page.locator(".sensor-control-panel .sensor-trigger-button").first();
   if (await trig.count()) {
     const b = await trig.boundingBox();
-    await page.mouse.move(b.x + b.width / 2, b.y + b.height / 2, { steps: 20 });
+    await glide(page, b.x + b.width / 2, b.y + b.height / 2, 500);
     await page.mouse.down(); onPress(); await page.mouse.up();
     await page.waitForTimeout(1600);
   }
   const close = page.locator(".sensor-control-panel .sensor-panel-close").first();
   if (await close.count()) {
     const b = await close.boundingBox();
-    await page.mouse.move(b.x + b.width / 2, b.y + b.height / 2, { steps: 16 });
+    await glide(page, b.x + b.width / 2, b.y + b.height / 2, 450);
     await page.mouse.down(); await page.mouse.up();
     await page.waitForTimeout(400);
   }

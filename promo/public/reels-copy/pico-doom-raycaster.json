@@ -1,0 +1,51 @@
+{
+ "hook": "Press FWD.\nA 3D maze appears.",
+ "kicker": "Raspberry Pi Pico + ILI9341 TFT + 4 buttons",
+ "chips": {
+  "build": "Wire the TFT",
+  "tour": "Meet the parts",
+  "code": "Raycaster code",
+  "run": "Press Run",
+  "input": "Press FWD, then turn"
+ },
+ "inputs": [
+  {
+   "id": "btn-fwd",
+   "wait": 2.5
+  },
+  {
+   "id": "btn-left",
+   "wait": 1.5
+  },
+  {
+   "id": "btn-right",
+   "wait": 1.5
+  },
+  {
+   "id": "btn-back",
+   "wait": 1.5
+  }
+ ],
+ "liveSec": 14,
+ "tourOrder": [
+  "wokwi-ili9341",
+  "wokwi-pushbutton"
+ ],
+ "roles": {
+  "raspberry-pi-pico": "Runs the raycaster and reads the buttons",
+  "wokwi-ili9341": "Draws the 3D view and HUD, column by column",
+  "wokwi-pushbutton": "Move forward/back and turn left/right"
+ },
+ "igCaption": "A Wolfenstein-style raycaster running on a Raspberry Pi Pico in the Velxio browser simulator. The TFT is drawn column by column with no framebuffer, and four buttons move and turn the player through a 16x16 tile map. Press FWD on the title screen to start.",
+ "hashtags": [
+  "velxio",
+  "raspberrypipico",
+  "raycaster",
+  "ili9341",
+  "arduino",
+  "electronics",
+  "retrogaming"
+ ],
+ "ytTitle": "Pico Doom Raycaster on a Pi Pico and TFT #shorts",
+ "ytDescription": "A Wolfenstein-style raycaster runs on a Raspberry Pi Pico with an ILI9341 TFT and four pushbuttons. Rays are cast at 160 columns per frame straight to the display, with no framebuffer. Press FWD to leave the title screen, then move and turn through the tile map. Open it in your browser: https://velxio.dev/example/pico-doom-raycaster"
+}

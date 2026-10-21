@@ -1,0 +1,12 @@
+{
+ "wokwi-hx711": {
+  "title": "HX711 Load Cell Amp",
+  "lines": [
+   "Amplifies a load cell signal",
+   "Converts it to digital readings",
+   "Used for weight and force sensing"
+  ],
+  "source": "llm",
+  "reviewed": false
+ }
+}

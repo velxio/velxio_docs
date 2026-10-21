@@ -1,0 +1,32 @@
+{
+ "hook": "A tiny OLED counts\nup on a Pico.",
+ "kicker": "Raspberry Pi Pico + SSD1306 OLED over I2C",
+ "chips": {
+  "build": "Wiring the OLED",
+  "tour": "Meet the parts",
+  "code": "The sketch",
+  "run": "Run it",
+  "input": "No inputs needed"
+ },
+ "inputs": [],
+ "liveSec": 10,
+ "tourOrder": [
+  "velxio-ssd1306-i2c-4pin"
+ ],
+ "roles": {
+  "raspberry-pi-pico": "Runs the sketch and drives the OLED",
+  "velxio-ssd1306-i2c-4pin": "Shows Hello Velxio and a counter"
+ },
+ "igCaption": "A Raspberry Pi Pico drives a 4-pin SSD1306 OLED over I2C. The sketch prints Hello Velxio and a counter that ticks up every half second. Only four wires: power, ground, SDA and SCL.",
+ "hashtags": [
+  "velxio",
+  "raspberrypipico",
+  "oled",
+  "i2c",
+  "electronics",
+  "arduino",
+  "diy"
+ ],
+ "ytTitle": "Pico + SSD1306 OLED counter in 4 wires #shorts",
+ "ytDescription": "A Raspberry Pi Pico talks to a 4-pin SSD1306 OLED over I2C and shows a live counter. The sketch uses Adafruit GFX and SSD1306 libraries on SDA GP4 and SCL GP5. Open it in your browser: https://velxio.dev/example/pico-oled-4pin-i2c"
+}

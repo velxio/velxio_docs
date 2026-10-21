@@ -45,8 +45,22 @@ export type AssembleProps = {
   /** seconds of live footage (default: up to 10) */
   liveSec?: number;
   /** step labels */
-  chips?: Partial<Record<"build" | "code" | "run" | "input", string>>;
+  chips?: Partial<Record<"build" | "tour" | "code" | "run" | "input", string>>;
+  /** the parts tour, cut from <id>-still.png (the assembled circuit at 3x) */
+  tour?: Tour | null;
 };
+
+export type TourStop = {
+  /** the box the part (or every copy of it) covers, in the take's CSS px */
+  rect: { x: number; y: number; w: number; h: number };
+  title: string;
+  count: number;
+  lines: string[];
+  /** what it does in THIS sketch, one line */
+  role?: string;
+};
+
+export type Tour = { vw: number; vh: number; stops: TourStop[] };
 
 const W = 1080;
 const H = 1920;
@@ -65,9 +79,17 @@ const XF = 8; // cross-fade frames between scenes
 
 type Scene =
   | { kind: "take"; from: number; to: number; chip?: string }
-  | { kind: "code"; dur: number; chip?: string };
+  | { kind: "code"; dur: number; chip?: string }
+  | { kind: "tour"; dur: number; chip?: string };
 
 const sceneLen = (s: Scene) => (s.kind === "take" ? s.to - s.from : s.dur);
+
+// the tour: settle on the whole circuit, then per stop a glide and a hold
+const TOUR_IN = 0.5;
+const TOUR_MOVE = 0.55;
+const TOUR_HOLD = 1.25;
+const TOUR_OUT = 0.6;
+export const tourSeconds = (n: number) => TOUR_IN + n * (TOUR_MOVE + TOUR_HOLD) + TOUR_OUT;
 
 export function codeSeconds(lines: number) {
   return lines <= 20 ? 3.4 : Math.min(5, 2.4 + lines * 0.045);
@@ -90,6 +112,7 @@ export function buildScenes(p: AssembleProps): Scene[] {
     { kind: "take", from: payoffAt, to: Math.min(payoffAt + PAYOFF_SEC, b.end - 0.1) },
     { kind: "take", from: 0.3, to: b.assembled + 0.5, chip: p.chips?.build ?? "Parts and wires" },
   ];
+  if (p.tour?.stops.length) scenes.push({ kind: "tour", dur: tourSeconds(p.tour.stops.length), chip: p.chips?.tour ?? "What is in it" });
   if (p.code) scenes.push({ kind: "code", dur: codeSeconds(p.code.lines), chip: p.chips?.code ?? "The code" });
   // Run, with the compile wait cut out when it is long enough to notice
   const run = p.chips?.run ?? "Run";
@@ -181,6 +204,117 @@ const CodeScene: React.FC<{ id: string; code: NonNullable<AssembleProps["code"]>
   );
 };
 
+/**
+ * The parts tour: one continuous camera over a sharp still of the assembled
+ * circuit, no cuts. It glides to each part TYPE in turn (repeats folded into
+ * one stop, with a count), parks it in one half of the frame and sets a card
+ * with what it is in the other, then pulls back out to the whole circuit.
+ * Its first and last frames are the full view, the same picture the scenes
+ * either side of it show, so the cross-fades in and out are invisible.
+ */
+const TourScene: React.FC<{ id: string; tour: Tour; dur: number }> = ({ id, tour, dur }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const t = frame / fps;
+  const k = W / tour.vw; // take CSS px -> frame px
+  const CARD_W = 520;
+  type Cam = { z: number; px: number; py: number; sx: number; sy: number };
+  const full: Cam = { z: 1, px: W / 2, py: AREA_H / 2, sx: W / 2, sy: AREA_H / 2 };
+  const cams = tour.stops.map(st => {
+    const r = { x: st.rect.x * k, y: st.rect.y * k, w: st.rect.w * k, h: st.rect.h * k };
+    const z = Math.max(1, Math.min(3, (0.4 * W) / r.w, (0.78 * AREA_H) / r.h));
+    // the part stays on its own side of the frame (less travel), the card takes the other
+    const right = r.x + r.w / 2 > W / 2;
+    return { r, cam: { z, px: r.x + r.w / 2, py: r.y + r.h / 2, sx: right ? W * 0.75 : W * 0.25, sy: AREA_H / 2 }, cardLeft: right };
+  });
+  const ease = (x: number) => (x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2);
+  const mix = (a: Cam, b: Cam, f: number): Cam => {
+    const e = ease(Math.max(0, Math.min(1, f)));
+    // zoom moves in log space, so a pull-back reads as steady
+    const z = Math.exp(Math.log(a.z) + (Math.log(b.z) - Math.log(a.z)) * e);
+    const l = (u: number, v: number) => u + (v - u) * e;
+    return { z, px: l(a.px, b.px), py: l(a.py, b.py), sx: l(a.sx, b.sx), sy: l(a.sy, b.sy) };
+  };
+  const SLOT = TOUR_MOVE + TOUR_HOLD;
+  let cam = full;
+  let card = -1, cardO = 0;
+  if (t >= TOUR_IN) {
+    const u = t - TOUR_IN;
+    const i = Math.min(cams.length - 1, Math.floor(u / SLOT));
+    const local = u - i * SLOT;
+    if (u >= cams.length * SLOT) cam = mix(cams[cams.length - 1].cam, full, (u - cams.length * SLOT) / TOUR_OUT);
+    else {
+      cam = mix(i ? cams[i - 1].cam : full, cams[i].cam, local / TOUR_MOVE);
+      card = i;
+      cardO = interpolate(local, [TOUR_MOVE - 0.05, TOUR_MOVE + 0.2, SLOT - 0.18, SLOT], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+    }
+  }
+  const tx = cam.sx - cam.px * cam.z, ty = cam.sy - cam.py * cam.z;
+  const fadeIn = interpolate(frame, [0, XF], [0, 1], { extrapolateRight: "clamp" });
+  const st = card >= 0 ? tour.stops[card] : null;
+  // the rest of the circuit dims while a card is up, so the card reads as
+  // pointing at one thing even where it overlaps a neighbour
+  const hole = st && (() => {
+    const r = cams[card].r, m = 14;
+    return { x: (r.x - m) * cam.z + tx, y: (r.y - m) * cam.z + ty, w: (r.w + 2 * m) * cam.z, h: (r.h + 2 * m) * cam.z };
+  })();
+  return (
+    <AbsoluteFill style={{ top: TOP, height: AREA_H, background: CANVAS_BG, opacity: fadeIn, overflow: "hidden" }}>
+      <Img
+        src={staticFile(`reels-take/${id}-still.png`)}
+        style={{ position: "absolute", left: 0, top: 0, width: W, height: AREA_H, transformOrigin: "0 0", transform: `translate(${tx}px, ${ty}px) scale(${cam.z})` }}
+      />
+      {hole && cardO > 0.01 && (
+        <div
+          style={{
+            position: "absolute",
+            left: hole.x,
+            top: hole.y,
+            width: hole.w,
+            height: hole.h,
+            borderRadius: 18,
+            boxShadow: `0 0 0 4000px rgba(8,8,10,${0.55 * cardO})`,
+            outline: `3px solid rgba(0,113,227,${cardO})`,
+          }}
+        />
+      )}
+      {st && cardO > 0.01 && (
+        <div
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: cams[card].cardLeft ? 36 : W - CARD_W - 36,
+            width: CARD_W,
+            transform: `translateY(-50%) translateY(${(1 - cardO) * 18}px)`,
+            opacity: cardO,
+            background: "rgba(14,14,18,.93)",
+            border: "2px solid rgba(255,255,255,.16)",
+            borderRadius: 28,
+            padding: "30px 32px",
+            boxShadow: "0 18px 50px rgba(0,0,0,.5)",
+            color: "#fff",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
+            <div style={{ fontSize: 44, fontWeight: 900, lineHeight: 1.1 }}>{st.title}</div>
+            {st.count > 1 && <div style={{ fontSize: 34, fontWeight: 800, color: "#7fb8ff" }}>x{st.count}</div>}
+          </div>
+          <div style={{ marginTop: 18, display: "flex", flexDirection: "column", gap: 10 }}>
+            {st.lines.map((l, i) => (
+              <div key={i} style={{ fontSize: 29, lineHeight: 1.22, color: "#d5d5dc", fontWeight: 600 }}>{l}</div>
+            ))}
+          </div>
+          {st.role && (
+            <div style={{ marginTop: 20, paddingTop: 16, borderTop: "2px solid rgba(255,255,255,.12)", fontSize: 28, lineHeight: 1.25, color: "#7fb8ff", fontWeight: 700 }}>
+              {st.role}
+            </div>
+          )}
+        </div>
+      )}
+    </AbsoluteFill>
+  );
+};
+
 const Chip: React.FC<{ text: string }> = ({ text }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
@@ -256,6 +390,8 @@ export const ReelAssemble: React.FC<AssembleProps> = p => {
         <Sequence key={i} from={Math.round(start * fps)} durationInFrames={Math.ceil(sceneLen(s) * fps) + 1}>
           {s.kind === "take" ? (
             <TakeClip id={p.id} from={s.from} fade={i > 0} />
+          ) : s.kind === "tour" ? (
+            p.tour && <TourScene id={p.id} tour={p.tour} dur={s.dur} />
           ) : (
             p.code && <CodeScene id={p.id} code={p.code} dur={s.dur} />
           )}

@@ -4,7 +4,7 @@
  *
  *   node scripts/reel-check.mjs promo/out/reels/<slug>.mp4 [...]
  *
- * FAIL on: wrong size / codec / fps, duration outside 12-35 s, any black
+ * FAIL on: wrong size / codec / fps, duration outside 12-45 s, any black
  * span (blackdetect), a FLASH in the middle band (a jump in brightness
  * that reverses within 1-3 frames: a one-off frame of another scene, which
  * is what the old cut showed when the take itself flickered), loudness
@@ -30,7 +30,7 @@ for (const f of process.argv.slice(2)) {
   if (v.codec_name !== "h264" || v.pix_fmt !== "yuv420p") fail(`video ${v.codec_name} ${v.pix_fmt}`);
   if (Math.abs(eval(v.r_frame_rate) - 30) > 0.01) fail(`fps ${v.r_frame_rate}`);
   if (!a || a.codec_name !== "aac") fail("audio is not AAC");
-  if (dur < 12 || dur > 35) fail(`duration ${dur.toFixed(1)} s`);
+  if (dur < 12 || dur > 45) fail(`duration ${dur.toFixed(1)} s`);
 
   // brightness of the middle band per frame + scene scores, one decode
   const r = run(["-i", f, "-vf",

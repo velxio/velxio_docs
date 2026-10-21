@@ -1,0 +1,414 @@
+{
+ "id": "pico-doom-raycaster",
+ "beats": {
+  "assembled": 4.887427091598511,
+  "run": 6.73242712020874,
+  "live": 7.514427185058594,
+  "inputs": [
+   {
+    "id": "btn-fwd",
+    "type": "pushbutton",
+    "t": 13.046427011489868,
+    "press": [
+     14.229427099227905,
+     16.02942705154419,
+     18.730427026748657
+    ],
+    "done": 21.450427055358887
+   },
+   {
+    "id": "btn-left",
+    "type": "pushbutton",
+    "t": 23.39842700958252,
+    "press": [
+     26.174427032470703,
+     28.853427171707153,
+     31.509427070617676
+    ],
+    "done": 34.48042702674866
+   },
+   {
+    "id": "btn-right",
+    "type": "pushbutton",
+    "t": 36.46242713928223,
+    "press": [
+     40.40542721748352,
+     43.16742706298828,
+     45.990427017211914
+    ],
+    "done": 48.78142714500427
+   },
+   {
+    "id": "btn-back",
+    "type": "pushbutton",
+    "t": 51.12442708015442,
+    "press": [
+     54.05942702293396,
+     56.717427015304565,
+     58.938427209854126
+    ],
+    "done": 61.43442702293396
+   }
+  ],
+  "end": 63.41242718696594
+ },
+ "live": true,
+ "tidy": {
+  "moved": true,
+  "wires": 17,
+  "failed": 0,
+  "rects": 6
+ },
+ "inputs": [
+  {
+   "id": "btn-fwd",
+   "type": "pushbutton",
+   "wait": 2.5
+  },
+  {
+   "id": "btn-left",
+   "type": "pushbutton",
+   "wait": 1.5
+  },
+  {
+   "id": "btn-right",
+   "type": "pushbutton",
+   "wait": 1.5
+  },
+  {
+   "id": "btn-back",
+   "type": "pushbutton",
+   "wait": 1.5
+  }
+ ],
+ "code": {
+  "lines": 201,
+  "lh": 19,
+  "longest": 108,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ },
+ "tour": {
+  "vw": 696,
+  "vh": 793,
+  "stops": [
+   {
+    "kind": "board",
+    "type": "raspberry-pi-pico",
+    "ids": [
+     "raspberry-pi-pico"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 237,
+     "y": 158,
+     "w": 105,
+     "h": 264
+    },
+    "facts": {
+     "boardKind": "raspberry-pi-pico",
+     "language": "arduino",
+     "libraries": [
+      "Adafruit GFX Library",
+      "Adafruit ILI9341"
+     ],
+     "pinCount": 44,
+     "buses": [],
+     "pins": [
+      {
+       "name": "GP0",
+       "bus": ""
+      },
+      {
+       "name": "GP1",
+       "bus": ""
+      },
+      {
+       "name": "GND.1",
+       "bus": ""
+      },
+      {
+       "name": "GP2",
+       "bus": ""
+      },
+      {
+       "name": "GP3",
+       "bus": ""
+      },
+      {
+       "name": "GP4",
+       "bus": ""
+      },
+      {
+       "name": "GP5",
+       "bus": ""
+      },
+      {
+       "name": "GND.2",
+       "bus": ""
+      },
+      {
+       "name": "GP6",
+       "bus": ""
+      },
+      {
+       "name": "GP7",
+       "bus": ""
+      },
+      {
+       "name": "GP8",
+       "bus": ""
+      },
+      {
+       "name": "GP9",
+       "bus": ""
+      },
+      {
+       "name": "GND.3",
+       "bus": ""
+      },
+      {
+       "name": "GP10",
+       "bus": ""
+      },
+      {
+       "name": "GP11",
+       "bus": ""
+      },
+      {
+       "name": "GP12",
+       "bus": ""
+      },
+      {
+       "name": "GP13",
+       "bus": ""
+      },
+      {
+       "name": "GND.4",
+       "bus": ""
+      },
+      {
+       "name": "GP14",
+       "bus": ""
+      },
+      {
+       "name": "GP15",
+       "bus": ""
+      },
+      {
+       "name": "GP16",
+       "bus": ""
+      },
+      {
+       "name": "GP17",
+       "bus": ""
+      },
+      {
+       "name": "GND.5",
+       "bus": ""
+      },
+      {
+       "name": "GP18",
+       "bus": ""
+      },
+      {
+       "name": "GP19",
+       "bus": ""
+      },
+      {
+       "name": "GP20",
+       "bus": ""
+      },
+      {
+       "name": "GP21",
+       "bus": ""
+      },
+      {
+       "name": "GND.6",
+       "bus": ""
+      },
+      {
+       "name": "GP22",
+       "bus": ""
+      },
+      {
+       "name": "RUN",
+       "bus": ""
+      },
+      {
+       "name": "GP26",
+       "bus": ""
+      },
+      {
+       "name": "A0",
+       "bus": ""
+      },
+      {
+       "name": "GP27",
+       "bus": ""
+      },
+      {
+       "name": "A1",
+       "bus": ""
+      },
+      {
+       "name": "GND.7",
+       "bus": ""
+      },
+      {
+       "name": "GP28",
+       "bus": ""
+      },
+      {
+       "name": "A2",
+       "bus": ""
+      },
+      {
+       "name": "ADC_VREF",
+       "bus": ""
+      },
+      {
+       "name": "3V3",
+       "bus": ""
+      },
+      {
+       "name": "3V3_EN",
+       "bus": ""
+      },
+      {
+       "name": "GND.8",
+       "bus": ""
+      },
+      {
+       "name": "VSYS",
+       "bus": ""
+      },
+      {
+       "name": "VBUS",
+       "bus": ""
+      },
+      {
+       "name": "GP25",
+       "bus": ""
+      }
+     ]
+    }
+   },
+   {
+    "kind": "part",
+    "type": "ili9341",
+    "ids": [
+     "tft1"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 412,
+     "y": 213,
+     "w": 175.734375,
+     "h": 301.28125
+    },
+    "facts": {
+     "name": "ILI9341",
+     "category": "displays",
+     "tags": [
+      "ili9341"
+     ],
+     "props": {},
+     "pinCount": 9,
+     "buses": [
+      "spi"
+     ],
+     "pins": [
+      {
+       "name": "VCC",
+       "bus": "power"
+      },
+      {
+       "name": "GND",
+       "bus": "power"
+      },
+      {
+       "name": "CS",
+       "bus": "spi"
+      },
+      {
+       "name": "RST",
+       "bus": ""
+      },
+      {
+       "name": "D/C",
+       "bus": ""
+      },
+      {
+       "name": "MOSI",
+       "bus": "spi"
+      },
+      {
+       "name": "SCK",
+       "bus": "spi"
+      },
+      {
+       "name": "LED",
+       "bus": ""
+      },
+      {
+       "name": "MISO",
+       "bus": "spi"
+      }
+     ]
+    }
+   },
+   {
+    "kind": "part",
+    "type": "pushbutton",
+    "ids": [
+     "btn-fwd",
+     "btn-back",
+     "btn-left",
+     "btn-right"
+    ],
+    "count": 4,
+    "rect": {
+     "x": 100,
+     "y": 193,
+     "w": 67.28125,
+     "h": 349.34375
+    },
+    "facts": {
+     "name": "Pushbutton",
+     "category": "input",
+     "tags": [
+      "pushbutton"
+     ],
+     "props": {
+      "color": "red",
+      "label": "FWD"
+     },
+     "pinCount": 4,
+     "buses": [],
+     "pins": [
+      {
+       "name": "1.l",
+       "bus": ""
+      },
+      {
+       "name": "2.l",
+       "bus": ""
+      },
+      {
+       "name": "1.r",
+       "bus": ""
+      },
+      {
+       "name": "2.r",
+       "bus": ""
+      }
+     ]
+    }
+   }
+  ]
+ }
+}

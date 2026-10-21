@@ -1,0 +1,32 @@
+{
+ "hook": "A tiny screen counts\nup on its own.",
+ "kicker": "ESP32 + SSD1306 OLED over I2C",
+ "chips": {
+  "build": "Wiring the OLED",
+  "tour": "Meet the display",
+  "code": "Hello Velxio loop",
+  "run": "Run the sketch",
+  "input": "No inputs needed"
+ },
+ "inputs": [],
+ "liveSec": 10,
+ "tourOrder": [
+  "velxio-ssd1306-i2c-4pin"
+ ],
+ "roles": {
+  "esp32": "Runs the sketch and drives the I2C bus",
+  "velxio-ssd1306-i2c-4pin": "Shows Hello Velxio and a live counter"
+ },
+ "igCaption": "A 4-pin SSD1306 OLED wired to an ESP32 over I2C. The sketch prints Hello Velxio and a counter that ticks up every half second. Four wires, no extra parts, and the screen does the talking.",
+ "hashtags": [
+  "velxio",
+  "esp32",
+  "oled",
+  "ssd1306",
+  "i2c",
+  "arduino",
+  "electronics"
+ ],
+ "ytTitle": "ESP32 SSD1306 OLED counter in the browser #shorts",
+ "ytDescription": "An ESP32 drives a 4-pin SSD1306 OLED over I2C and prints a counter that updates every 500 ms. The whole circuit runs in Velxio, a free browser simulator. Open it in your browser: https://velxio.dev/example/esp32-oled-4pin-i2c"
+}

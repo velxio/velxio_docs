@@ -1,0 +1,285 @@
+{
+ "id": "pico-oled-4pin-i2c",
+ "beats": {
+  "assembled": 3.8496761322021484,
+  "run": 5.5766761302948,
+  "live": 6.365676164627075,
+  "inputs": [],
+  "end": 20.36767601966858
+ },
+ "live": true,
+ "tidy": {
+  "moved": false,
+  "wires": 4,
+  "failed": 0,
+  "rects": 2
+ },
+ "inputs": [],
+ "code": {
+  "lines": 37,
+  "lh": 19,
+  "longest": 66,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ },
+ "tour": {
+  "vw": 420,
+  "vh": 478,
+  "stops": [
+   {
+    "kind": "board",
+    "type": "raspberry-pi-pico",
+    "ids": [
+     "raspberry-pi-pico"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 260,
+     "y": 120,
+     "w": 105,
+     "h": 264
+    },
+    "facts": {
+     "boardKind": "raspberry-pi-pico",
+     "language": "arduino",
+     "libraries": [
+      "Adafruit SSD1306",
+      "Adafruit GFX Library"
+     ],
+     "pinCount": 44,
+     "buses": [],
+     "pins": [
+      {
+       "name": "GP0",
+       "bus": ""
+      },
+      {
+       "name": "GP1",
+       "bus": ""
+      },
+      {
+       "name": "GND.1",
+       "bus": ""
+      },
+      {
+       "name": "GP2",
+       "bus": ""
+      },
+      {
+       "name": "GP3",
+       "bus": ""
+      },
+      {
+       "name": "GP4",
+       "bus": ""
+      },
+      {
+       "name": "GP5",
+       "bus": ""
+      },
+      {
+       "name": "GND.2",
+       "bus": ""
+      },
+      {
+       "name": "GP6",
+       "bus": ""
+      },
+      {
+       "name": "GP7",
+       "bus": ""
+      },
+      {
+       "name": "GP8",
+       "bus": ""
+      },
+      {
+       "name": "GP9",
+       "bus": ""
+      },
+      {
+       "name": "GND.3",
+       "bus": ""
+      },
+      {
+       "name": "GP10",
+       "bus": ""
+      },
+      {
+       "name": "GP11",
+       "bus": ""
+      },
+      {
+       "name": "GP12",
+       "bus": ""
+      },
+      {
+       "name": "GP13",
+       "bus": ""
+      },
+      {
+       "name": "GND.4",
+       "bus": ""
+      },
+      {
+       "name": "GP14",
+       "bus": ""
+      },
+      {
+       "name": "GP15",
+       "bus": ""
+      },
+      {
+       "name": "GP16",
+       "bus": ""
+      },
+      {
+       "name": "GP17",
+       "bus": ""
+      },
+      {
+       "name": "GND.5",
+       "bus": ""
+      },
+      {
+       "name": "GP18",
+       "bus": ""
+      },
+      {
+       "name": "GP19",
+       "bus": ""
+      },
+      {
+       "name": "GP20",
+       "bus": ""
+      },
+      {
+       "name": "GP21",
+       "bus": ""
+      },
+      {
+       "name": "GND.6",
+       "bus": ""
+      },
+      {
+       "name": "GP22",
+       "bus": ""
+      },
+      {
+       "name": "RUN",
+       "bus": ""
+      },
+      {
+       "name": "GP26",
+       "bus": ""
+      },
+      {
+       "name": "A0",
+       "bus": ""
+      },
+      {
+       "name": "GP27",
+       "bus": ""
+      },
+      {
+       "name": "A1",
+       "bus": ""
+      },
+      {
+       "name": "GND.7",
+       "bus": ""
+      },
+      {
+       "name": "GP28",
+       "bus": ""
+      },
+      {
+       "name": "A2",
+       "bus": ""
+      },
+      {
+       "name": "ADC_VREF",
+       "bus": ""
+      },
+      {
+       "name": "3V3",
+       "bus": ""
+      },
+      {
+       "name": "3V3_EN",
+       "bus": ""
+      },
+      {
+       "name": "GND.8",
+       "bus": ""
+      },
+      {
+       "name": "VSYS",
+       "bus": ""
+      },
+      {
+       "name": "VBUS",
+       "bus": ""
+      },
+      {
+       "name": "GP25",
+       "bus": ""
+      }
+     ]
+    }
+   },
+   {
+    "kind": "part",
+    "type": "ssd1306-i2c-4pin",
+    "ids": [
+     "oled"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 40,
+     "y": 171,
+     "w": 150,
+     "h": 118
+    },
+    "facts": {
+     "name": "SSD1306 OLED (I2C, 4-pin)",
+     "category": "displays",
+     "tags": [
+      "ssd1306",
+      "oled",
+      "display",
+      "i2c",
+      "4-pin",
+      "0x3c"
+     ],
+     "props": {},
+     "pinCount": 4,
+     "buses": [
+      "i2c"
+     ],
+     "pins": [
+      {
+       "name": "GND",
+       "bus": "power"
+      },
+      {
+       "name": "VCC",
+       "bus": "power"
+      },
+      {
+       "name": "SCL",
+       "bus": "i2c"
+      },
+      {
+       "name": "SDA",
+       "bus": "i2c"
+      }
+     ]
+    }
+   }
+  ]
+ }
+}
