@@ -1,0 +1,86 @@
+{
+ "id": "robot-desktop-eyes",
+ "beats": {
+  "assembled": 5.417945861816406,
+  "run": 6.319945812225342,
+  "live": 7.124945878982544,
+  "inputs": [
+   {
+    "id": "pir",
+    "type": "pir-motion-sensor",
+    "t": 10.166945934295654,
+    "press": [
+     10.767946004867554,
+     12.023945808410645
+    ],
+    "done": 15.100945949554443
+   },
+   {
+    "id": "ldr",
+    "type": "photoresistor-sensor",
+    "t": 15.106945991516113,
+    "press": [
+     15.62894582748413,
+     16.5869460105896
+    ],
+    "done": 20.344945907592773
+   },
+   {
+    "id": "sound",
+    "type": "big-sound-sensor",
+    "t": 20.355945825576782,
+    "press": [
+     20.910945892333984,
+     21.897945880889893
+    ],
+    "done": 25.56894588470459
+   },
+   {
+    "id": "dht",
+    "type": "dht22",
+    "t": 25.5869460105896,
+    "press": [
+     26.168945789337158,
+     27.147945880889893
+    ],
+    "done": 30.80094599723816
+   }
+  ],
+  "end": 31.362945795059204
+ },
+ "live": true,
+ "tidy": {
+  "moved": true,
+  "wires": 22,
+  "failed": 0,
+  "rects": 8
+ },
+ "inputs": [
+  {
+   "id": "pir",
+   "type": "pir-motion-sensor"
+  },
+  {
+   "id": "ldr",
+   "type": "photoresistor-sensor"
+  },
+  {
+   "id": "sound",
+   "type": "big-sound-sensor"
+  },
+  {
+   "id": "dht",
+   "type": "dht22"
+  }
+ ],
+ "code": {
+  "lines": 234,
+  "lh": 19,
+  "longest": 133,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ }
+}

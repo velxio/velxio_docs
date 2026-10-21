@@ -1,0 +1,44 @@
+{
+ "id": "uno-photoresistor",
+ "beats": {
+  "assembled": 4.361641883850098,
+  "run": 5.264642000198364,
+  "live": 6.1246418952941895,
+  "inputs": [
+   {
+    "id": "uno-photo1",
+    "type": "photoresistor-sensor",
+    "t": 9.280641794204712,
+    "press": [
+     10.427641868591309,
+     12.10664176940918
+    ],
+    "done": 17.080641984939575
+   }
+  ],
+  "end": 18.69664192199707
+ },
+ "live": true,
+ "tidy": {
+  "moved": false,
+  "wires": 6,
+  "failed": 0,
+  "rects": 4
+ },
+ "inputs": [
+  {
+   "id": "uno-photo1",
+   "type": "photoresistor-sensor"
+  }
+ ],
+ "code": {
+  "lines": 25,
+  "lh": 19,
+  "longest": 66,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ }
+}

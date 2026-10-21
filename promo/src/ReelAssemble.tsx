@@ -70,7 +70,7 @@ type Scene =
 const sceneLen = (s: Scene) => (s.kind === "take" ? s.to - s.from : s.dur);
 
 export function codeSeconds(lines: number) {
-  return lines <= 20 ? 3.4 : Math.min(7, 2.4 + lines * 0.045);
+  return lines <= 20 ? 3.4 : Math.min(5, 2.4 + lines * 0.045);
 }
 
 export function buildScenes(p: AssembleProps): Scene[] {

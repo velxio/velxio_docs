@@ -29,6 +29,7 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const OUT = join(HERE, "..", "promo", "public", "reels-take");
 const BASE = process.env.VELXIO_BASE || "http://127.0.0.1:3080";
 const TIDY = readFileSync(join(HERE, "reel-tidy.js"), "utf8");
+const COPY = JSON.parse(readFileSync(join(HERE, "reels.json"), "utf8"));
 // the reel's middle band (between the hook and the brand strip)
 const FRAME = { w: 1080, h: 1230 };
 const FPS = 30;
@@ -40,6 +41,8 @@ const LIVE_SEC = liveIdx >= 0 ? Number(argv[liveIdx + 1]) : 10;
 const ids = argv.filter((a, i) => !a.startsWith("--") && argv[i - 1] !== "--live");
 if (!ids.length) throw new Error("usage: reel-assemble.mjs <example-id> ...");
 
+// parts whose click opens the app's SensorControlPanel (sliders / a trigger button)
+const SENSOR_RE = /dht|hc-sr04|ultrasonic|photoresistor|ldr|pir|ntc|gas-sensor|sound-sensor|heart-beat|bmp280|mpu6050/;
 const INPUT_RE = /pushbutton|button|potentiometer|slide-pot|joystick|slide-switch|dht|ultrasonic|hc-sr04|photoresistor|ldr|pir|ntc|keypad|encoder|gas-sensor|sound-sensor|heart-beat/;
 
 const launch = () => {
@@ -76,6 +79,7 @@ div[title="Idle"],div[title="Compiled"],div[title="Running"]{display:none!import
 /* ElectricalOverlay: the SPICE pill and the voltage of the hovered wire */
 .canvas-world svg[style*="z-index: 20"]:not(.wire-layer){display:none!important}
 .velxio-embed-play-layer{opacity:0!important;pointer-events:none!important}
+.sensor-control-panel{top:10px!important;left:50%!important;right:auto!important;bottom:auto!important;transform:translateX(-50%) scale(1.5)!important;transform-origin:top center!important}
 div[style*="2px solid rgb(0, 122, 204)"]{display:none!important}
 .canvas-content{top:0!important;height:100%!important}
 `;
@@ -85,6 +89,14 @@ const HIDE_SPICE = `(() => {
   const go = () => { for (const t of document.querySelectorAll(".canvas-world svg text"))
     if (/SPICE|^-?\d+(\.\d+)?\s?[mu]?[VA]$/.test((t.textContent || "").trim())) { const g = t.closest("g"); if (g) g.style.visibility = "hidden"; } };
   go(); setInterval(go, 200);
+})()`;
+
+// a click ripple at the pointer with no mouse event: the knob is driven by value
+const GRAB = `(() => {
+  const c = document.getElementById("vx-cursor"); if (!c) return;
+  const r = document.createElement("div");
+  r.style.cssText = "position:fixed;width:16px;height:16px;border-radius:50%;border:3px solid #0071e3;pointer-events:none;z-index:2147483646;left:" + c.style.left + ";top:" + c.style.top + ";transform:translate(-50%,-50%);animation:vxr .55s ease-out forwards;";
+  document.body.appendChild(r); setTimeout(() => r.remove(), 700);
 })()`;
 
 const CURSOR = `(() => {
@@ -174,6 +186,44 @@ const ASSEMBLE = async ({ partMs, wireMs }) => {
     step();
   });
   for (const { paths } of wireParts) for (const { p } of paths) { p.style.strokeDasharray = ""; p.style.strokeDashoffset = ""; }
+
+  // Pin names on the PARTS' wired pins, so a paused frame shows what goes
+  // where (boards print their own). A tag sits on the wire's first stub,
+  // turned along it, which is the one place it cannot hide another pin's
+  // name: neighbouring pins are ~10 px apart across the stub, not along it.
+  const world = document.querySelector(".canvas-world");
+  const wr = world.getBoundingClientRect();
+  const z = new DOMMatrix(getComputedStyle(world).transform).a || 1;
+  const layer = document.createElement("div");
+  layer.style.cssText = "position:fixed;inset:0;pointer-events:none;z-index:60;opacity:0;transition:opacity .45s";
+  document.body.appendChild(layer);
+  const boardIds = new Set(window.__vxBoards ? window.__vxBoards.getState().boards.map(b => b.id) : []);
+  const NOISE = /^(\d+|\d+\.[lr]|[12])$/i; // resistor legs, button legs: names that say nothing
+  const seen = new Set();
+  for (const w of window.__vx.sim.getState().wires) {
+    for (const [end, next] of [[w.start, (w.waypoints || [])[0] || w.end], [w.end, (w.waypoints || []).slice(-1)[0] || w.start]]) {
+      if (boardIds.has(end.componentId) || NOISE.test(end.pinName)) continue;
+      const key = end.componentId + ":" + end.pinName;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      const x = wr.left + end.x * z, y = wr.top + end.y * z;
+      const dx = next.x - end.x, dy = next.y - end.y;
+      const vertical = Math.abs(dy) > Math.abs(dx);
+      const sgn = vertical ? Math.sign(dy) || 1 : Math.sign(dx) || 1;
+      const t = document.createElement("div");
+      t.textContent = end.pinName;
+      t.style.cssText = "position:absolute;font:700 7.5px/1 ui-monospace,Menlo,Consolas,monospace;color:#fff;" +
+        "background:rgba(14,14,16,.88);border:1px solid rgba(255,255,255,.28);border-radius:3px;padding:1.5px 3px;white-space:nowrap;";
+      layer.appendChild(t);
+      const tw = t.offsetWidth, th = t.offsetHeight, off = 5 + tw / 2;
+      const cx = vertical ? x : x + sgn * off, cy = vertical ? y + sgn * off : y;
+      t.style.left = cx - tw / 2 + "px";
+      t.style.top = cy - th / 2 + "px";
+      if (vertical) t.style.transform = "rotate(-90deg)";
+    }
+  }
+  requestAnimationFrame(() => (layer.style.opacity = "1"));
+  await wait(450);
   return { boards: boards.length, parts: parts.length, wires: wireParts.length };
 };
 
@@ -233,9 +283,13 @@ for (const id of ids) {
   // pass 1: how big is the tidy circuit?
   const probe = await openTidy(browser, id, { width: 2400, height: 2400 }, 1);
   const box = await probe.page.evaluate(CIRCUIT_BOX);
+  const sensors = await probe.page.evaluate(re => window.__vx.sim.getState().components
+    .filter(c => new RegExp(re).test(c.metadataId || "")).length, SENSOR_RE.source);
   await probe.ctx.close();
+  // a sensor's control panel docks at the top of the frame: keep that strip free
+  const PANEL = sensors ? 200 : 0;
   const pad = 1.14;
-  const vw = Math.ceil(Math.max(box.w * pad, box.h * pad * (FRAME.w / FRAME.h), 420));
+  const vw = Math.ceil(Math.max(box.w * pad, (box.h * pad + PANEL) * (FRAME.w / FRAME.h), sensors ? 560 : 420));
   const vh = Math.round(vw * (FRAME.h / FRAME.w));
   const dsf = FRAME.w / vw;
   console.log(`   circuit ${Math.round(box.w)}x${Math.round(box.h)} -> viewport ${vw}x${vh} @${dsf.toFixed(2)}x`);
@@ -245,11 +299,15 @@ for (const id of ids) {
   console.log(`   tidy ${JSON.stringify(tidy)}`);
   const b2 = await page.evaluate(CIRCUIT_BOX);
   const world = await page.evaluate(() => new DOMMatrix(getComputedStyle(document.querySelector(".canvas-world")).transform).a || 1);
-  const dx = Math.round((vw / 2 - (b2.x + b2.w / 2)) / world), dy = Math.round((vh / 2 - (b2.y + b2.h / 2)) / world);
+  const dx = Math.round((vw / 2 - (b2.x + b2.w / 2)) / world), dy = Math.round((PANEL + (vh - PANEL) / 2 - (b2.y + b2.h / 2)) / world);
   await page.evaluate(CENTRE, { dx, dy });
 
   const comps = await page.evaluate(() => window.__vx.sim.getState().components.map(c => ({ id: c.id, type: c.metadataId || c.type || "" })));
-  const inputs = comps.filter(c => INPUT_RE.test(c.type));
+  // reels.json may pick the inputs and their order: { "inputs": ["pir", "ldr"] }
+  const pick = COPY[id]?.inputs;
+  const inputs = pick
+    ? pick.map(i => comps.find(c => c.id === i)).filter(Boolean)
+    : comps.filter(c => INPUT_RE.test(c.type));
 
   // screencast
   const framesDir = join(OUT, `.${id}-frames`);
@@ -307,7 +365,7 @@ for (const id of ids) {
   if (inputs.length) {
     await page.evaluate(CURSOR);
     await page.mouse.move(vw - 20, vh - 20);
-    for (const inp of inputs.slice(0, 3)) {
+    for (const inp of inputs.slice(0, 4)) {
       const at = await page.evaluate(i => {
         const el = document.getElementById(i);
         if (!el) return null;
@@ -318,34 +376,14 @@ for (const id of ids) {
       const rec = { id: inp.id, type: inp.type, t: Date.now() / 1000 - T0, press: [] };
       beats.inputs.push(rec);
       const now = () => Date.now() / 1000 - T0;
-      if (/potentiometer|slide-pot/.test(inp.type)) {
-        const r = at.s * 0.28;
-        const p = deg => { const a = ((deg - 90) * Math.PI) / 180; return [at.cx + r * Math.cos(a), at.cy + r * Math.sin(a)]; };
-        await page.mouse.move(...p(-135), { steps: 30 });
-        await page.waitForTimeout(250);
-        await page.mouse.down();
-        rec.press.push(now());
-        for (let d = -135; d <= 135; d += 6) { await page.mouse.move(...p(d), { steps: 2 }); await page.waitForTimeout(45); }
-        for (let d = 135; d >= -40; d -= 6) { await page.mouse.move(...p(d), { steps: 2 }); await page.waitForTimeout(45); }
-        await page.mouse.up();
-      } else {
+      if (/potentiometer/.test(inp.type)) await turnKnob(page, inp.id, () => rec.press.push(now()));
+      else if (SENSOR_RE.test(inp.type)) await workSensor(page, inp.id, () => rec.press.push(now()));
+      else {
         await page.mouse.move(at.cx, at.cy, { steps: 30 });
         await page.waitForTimeout(300);
         for (let k = 0; k < 3; k++) {
           await page.mouse.down(); rec.press.push(now()); await page.waitForTimeout(900);
           await page.mouse.up(); await page.waitForTimeout(800);
-        }
-        // a sensor opens its control panel: sweep its first slider
-        const sl = await page.evaluate(() => {
-          const el = document.querySelector(".sensor-control-panel .sensor-slider");
-          if (!el) return null; const r = el.getBoundingClientRect();
-          return { x: r.x, y: r.y + r.height / 2, w: r.width };
-        });
-        if (sl && sl.w > 30) {
-          const f = k => sl.x + 6 + (sl.w - 12) * k;
-          await page.mouse.move(f(0.15), sl.y, { steps: 20 }); await page.mouse.down();
-          for (const k of [0.35, 0.6, 0.85, 0.95, 0.6, 0.4]) { await page.mouse.move(f(k), sl.y, { steps: 10 }); await page.waitForTimeout(420); }
-          await page.mouse.up();
         }
       }
       await page.waitForTimeout(700);
@@ -434,4 +472,113 @@ async function captureCode(browser, id, png) {
   await page.screenshot({ path: png, clip: { x: eb.x, y: eb.y, width: eb.width, height: Math.min(eb.height, info.lines * info.lh + 24) } });
   await ctx.close();
   return info;
+}
+
+/** Turn a potentiometer by VALUE, with the pointer drawn along the knob.
+ *  Dragging it for real is fragile: the element takes the angle from the
+ *  centre of its own #knob path (not of the part), through a matrix taken
+ *  at mousedown, and a drag a few px off read as jumps. So the value goes
+ *  through the element's own updateValue() (the same 'input' event a drag
+ *  raises, which is what the app listens to), and the cursor rides an arc
+ *  around the knob at exactly the angle the knob shows. */
+async function turnKnob(page, id, onGrab) {
+  const k = await page.evaluate(i => {
+    const el = document.getElementById(i);
+    const knob = el?.shadowRoot?.querySelector("#knob");
+    if (!el || !knob || typeof el.updateValue !== "function") return null;
+    const r = knob.getBoundingClientRect();
+    return { cx: r.x + r.width / 2, cy: r.y + r.height / 2, r: Math.max(r.width, r.height) * 0.36,
+      min: el.min ?? 0, max: el.max ?? 1023, a0: el.startDegree ?? -135, a1: el.endDegree ?? 135, v: el.value ?? 0 };
+  }, id);
+  if (!k) return;
+  const at = f => {
+    const deg = k.a0 + (k.a1 - k.a0) * f, rad = (deg * Math.PI) / 180;
+    return [k.cx + k.r * Math.sin(rad), k.cy - k.r * Math.cos(rad)];
+  };
+  let f = (k.v - k.min) / (k.max - k.min || 1);
+  await page.mouse.move(...at(f), { steps: 28 });
+  await page.waitForTimeout(250);
+  await page.evaluate(GRAB);
+  onGrab();
+  for (const [to, ms] of [[1, 1500], [0, 1900], [0.6, 1100]]) {
+    const from = f, n = Math.max(8, Math.round(ms / 40));
+    for (let s = 1; s <= n; s++) {
+      const t = s / n, e = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      f = from + (to - from) * e;
+      await page.evaluate(([i, v]) => document.getElementById(i).updateValue(v), [id, k.min + (k.max - k.min) * f]);
+      await page.mouse.move(...at(f));
+      await page.waitForTimeout(40);
+    }
+    await page.waitForTimeout(250);
+  }
+}
+
+/** Click a sensor, then work its control panel the way a person would:
+ *  grab each slider at its thumb and drag it across, or press the trigger
+ *  button (PIR). Falls back to setting the range input if the drag did not
+ *  move it, with the pointer still riding the thumb. */
+async function workSensor(page, id, onPress) {
+  const c = await page.evaluate(i => {
+    const r = document.getElementById(i)?.getBoundingClientRect();
+    return r ? { x: r.x + r.width / 2, y: r.y + r.height / 2 } : null;
+  }, id);
+  if (!c) return;
+  await page.mouse.move(c.x, c.y, { steps: 14 });
+  await page.waitForTimeout(250);
+  await page.mouse.down(); onPress(); await page.mouse.up();
+  await page.waitForTimeout(700);
+  const sliders = await page.evaluate(() => [...document.querySelectorAll(".sensor-control-panel input[type=range]")].length);
+  // one slider per sensor: each value costs ~0.5 s of solving on this page
+  for (let n = 0; n < Math.min(1, sliders); n++) {
+    const sl = () => page.evaluate(k => {
+      const el = document.querySelectorAll(".sensor-control-panel input[type=range]")[k];
+      const r = el.getBoundingClientRect();
+      return { x: r.x, y: r.y + r.height / 2, w: r.width, v: Number(el.value), min: Number(el.min), max: Number(el.max) };
+    }, n);
+    const s0 = await sl();
+    const TH = 8; // half the thumb: the track is inset by it at both ends
+    const px = f => s0.x + TH + (s0.w - 2 * TH) * f;
+    let f = (s0.v - s0.min) / (s0.max - s0.min || 1);
+    await page.mouse.move(px(f), s0.y, { steps: 12 });
+    await page.evaluate(GRAB);
+    onPress();
+    // By value, not by drag: on this page every drag event re-solves the
+    // circuit (~190 ms each), so a real drag crawled (21 s for a DHT22).
+    // The value goes in through the native setter + 'input' (what React's
+    // onChange hears) and the pointer glides to the thumb with a transition.
+    for (const to of [0.08, 0.92]) {
+      const from = f, steps = 4;
+      for (let k = 1; k <= steps; k++) {
+        f = from + (to - from) * (k / steps);
+        await page.evaluate(([n, v, x, y]) => {
+          const el = document.querySelectorAll(".sensor-control-panel input[type=range]")[n];
+          Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value").set.call(el, String(v));
+          el.dispatchEvent(new Event("input", { bubbles: true }));
+          el.dispatchEvent(new Event("change", { bubbles: true }));
+          const c = document.getElementById("vx-cursor");
+          if (c) { c.style.transition = "left .4s ease-in-out, top .4s ease-in-out"; c.style.left = x + "px"; c.style.top = y + "px"; }
+        }, [n, s0.min + (s0.max - s0.min) * f, px(f), s0.y]);
+        await page.waitForTimeout(130);
+      }
+      await page.waitForTimeout(220);
+    }
+    // park the real pointer where the drawn one is, and drop the transition
+    await page.evaluate(() => { const c = document.getElementById("vx-cursor"); if (c) c.style.transition = ""; });
+    await page.mouse.move(px(f), s0.y);
+    await page.waitForTimeout(400);
+  }
+  const trig = page.locator(".sensor-control-panel .sensor-trigger-button").first();
+  if (await trig.count()) {
+    const b = await trig.boundingBox();
+    await page.mouse.move(b.x + b.width / 2, b.y + b.height / 2, { steps: 20 });
+    await page.mouse.down(); onPress(); await page.mouse.up();
+    await page.waitForTimeout(1600);
+  }
+  const close = page.locator(".sensor-control-panel .sensor-panel-close").first();
+  if (await close.count()) {
+    const b = await close.boundingBox();
+    await page.mouse.move(b.x + b.width / 2, b.y + b.height / 2, { steps: 16 });
+    await page.mouse.down(); await page.mouse.up();
+    await page.waitForTimeout(400);
+  }
 }

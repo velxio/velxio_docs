@@ -80,5 +80,29 @@
     "hook": "One NeoPixel.\nEvery color.",
     "kicker": "Arduino Uno - Adafruit NeoPixel library",
     "outro": "No LEDs on your desk?\nSimulate them, free."
+  },
+  "robot-desktop-eyes": {
+    "hook": "One ESP32. Four sensors.\nIt reacts to all of them.",
+    "hookSize": 62,
+    "kicker": "PIR, light, sound, DHT22 + OLED face",
+    "chips": {
+      "input": "Poke the sensors"
+    },
+    "liveSec": 17,
+    "outro": "Sensors you can poke.\nIn your browser. Free.",
+    "inputs": [
+      "pir",
+      "ldr",
+      "sound",
+      "dht"
+    ]
+  },
+  "uno-photoresistor": {
+    "hook": "Make it dark.\nThe LED answers.",
+    "kicker": "Arduino Uno - photoresistor on A0",
+    "chips": {
+      "input": "Change the light"
+    },
+    "outro": "Sensors you can poke.\nIn your browser. Free."
   }
 }
