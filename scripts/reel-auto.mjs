@@ -49,10 +49,23 @@ const INPUT_RE = /pushbutton|button|potentiometer|slide-pot|joystick|slide-switc
 // parts that SHOW something change on the canvas; an example with none of
 // them makes a reel where nothing moves (l293d-speed-pwm: the driver with no motor drawn)
 const OUTPUT_RE = /(^|-)led|neopixel|ssd1306|ili9341|st7789|lcd|epaper|7segment|servo|stepper-motor|dc-motor|buzzer|matrix|tm1637/;
+// kits whose result shows on the board itself (a built-in screen), with no part on the canvas
+const BOARD_SCREEN_RE = /lcdkit|cardputer|m5stack|t-display|badger|stellar|tft|amoled|oled|round|cyd|presto/;
+// controls drawn on a board that the pointer can work: "board:<class in its shadow DOM>"
+const BOARD_CONTROLS = {
+  "esp32-c3-lcdkit": [
+    { id: "board:knob", what: "EC11 rotary knob around the round display (encoder on GPIO10/6, push switch on GPIO9)", actions: ["tap", "turn", "hold"] },
+    { id: "board:remote", what: "virtual IR remote button on the board (sends an NEC frame to the IR receiver)", actions: ["tap"] },
+  ],
+};
+
 // boards the embed cannot run unattended: Linux guests (QEMU on the backend, paid)
 const SKIP_BOARD = /^raspberry-pi-[0-9]|^raspberry-pi-zero|unihiker/;
 
-/** The gallery as the app ships it: examples.ts bundled with esbuild. */
+/**
+ * The gallery as velxio.dev ships it: the overlay's allGalleryExamples()
+ * (the OSS examples.ts plus every pro board and part gallery), bundled with esbuild.
+ */
 async function examples() {
   const cacheFile = join(COPY_DIR, ".examples.json");
   if (existsSync(cacheFile) && !argv.includes("--refresh")) return JSON.parse(readFileSync(cacheFile, "utf8"));
@@ -61,18 +74,21 @@ async function examples() {
   const esbuild = req("esbuild");
   const fs = await import("node:fs");
   const r = await esbuild.build({
-    entryPoints: [join(FE, "src/data/examples.ts")], bundle: true, format: "esm", write: false, platform: "neutral", logLevel: "error",
+    stdin: { contents: `export { allGalleryExamples } from ${JSON.stringify(join(PRO, "gallery/allExamples.ts"))};`, resolveDir: FE, loader: "ts" },
+    bundle: true, format: "esm", write: false, platform: "neutral", logLevel: "error",
     loader: { ".svg": "text", ".png": "dataurl", ".jpg": "dataurl" },
-    alias: { "@pro": PRO },
+    alias: { "@pro": PRO, "@velxio": join(FE, "src") },
     plugins: [{ name: "raw", setup(b) {
-      b.onResolve({ filter: /\?raw$/ }, a => ({ path: resolve(a.resolveDir, a.path.replace(/\?raw$/, "")), namespace: "raw" }));
+      const at = p => p.replace(/^@velxio\//, join(FE, "src") + "/").replace(/^@pro\//, PRO + "/");
+      b.onResolve({ filter: /\?raw$/ }, a => ({ path: resolve(a.resolveDir, at(a.path.replace(/\?raw$/, ""))), namespace: "raw" }));
       b.onLoad({ filter: /.*/, namespace: "raw" }, a => ({ contents: fs.readFileSync(a.path, "utf8"), loader: "text" }));
     } }],
   });
   const m = await import("data:text/javascript;base64," + Buffer.from(r.outputFiles[0].text).toString("base64"));
   mkdirSync(COPY_DIR, { recursive: true });
-  writeFileSync(cacheFile, JSON.stringify(m.exampleProjects));
-  return m.exampleProjects;
+  const all = m.allGalleryExamples();
+  writeFileSync(cacheFile, JSON.stringify(all));
+  return all;
 }
 
 const boardsOf = ex => (ex.boards?.length ? ex.boards.map(b => b.boardKind) : ex.boardType ? [ex.boardType] : []);
@@ -88,7 +104,8 @@ function unfit(ex) {
   if (boardsOf(ex).some(b => SKIP_BOARD.test(b))) return "Linux board";
   if (!sourceOf(ex).replace(/\/\/[^\n]*/g, "").trim()) return "no code";
   if (!(ex.components || []).length && !boardsOf(ex).length) return "empty circuit";
-  if (!(ex.components || []).some(c => OUTPUT_RE.test(c.metadataId || c.type || ""))) return "nothing on the canvas shows the result";
+  if (!(ex.components || []).some(c => OUTPUT_RE.test(c.metadataId || c.type || "")) && !boardsOf(ex).some(b => BOARD_SCREEN_RE.test(b)))
+    return "nothing on the canvas shows the result";
   return null;
 }
 
@@ -109,7 +126,7 @@ function score(ex) {
 const SYSTEM = `You write the script of a 25-40 second vertical video (Instagram Reel / YouTube Short) that shows one electronics project running in Velxio, a free circuit simulator that runs in the browser.
 The video, in order: a 2.6 s payoff shot of the project running; the circuit assembling itself; a tour of the parts with an info card each; the code scrolling; Run; a pointer working the inputs.
 
-The COMPONENTS list is everything drawn on the canvas: a part the code drives but that is not in the list (a motor behind a driver chip, a speaker) will NOT be seen. The hook, chips and caption must be about what visibly changes on the canvas (a display, LEDs, a servo), never about something off-canvas.
+The BOARDS and the COMPONENTS list are everything drawn on the canvas (a board is drawn with its built-in screen, LEDs and controls): a part the code drives but that is not in the list (a motor behind a driver chip, a speaker) will NOT be seen. The hook, chips and caption must be about what visibly changes on the canvas (a display, LEDs, a servo), never about something off-canvas.
 Read the SKETCH carefully. Everything you claim must be true of THIS code and THIS circuit: if the code maps light to brightness inversely, say so; if it only blinks, do not say it reacts. Never invent features.
 
 Return JSON with:
@@ -117,7 +134,7 @@ Return JSON with:
 - "hook": the line at the top for the whole video, 2 short lines separated by "\\n", max 30 characters per line. Concrete and curious, about what the viewer will SEE happen (e.g. "Turn the knob.\\nThe servo follows."). No questions that the video does not answer.
 - "kicker": one line under it, max 44 characters: board + the key parts or library.
 - "chips": short step labels (max 18 characters each): {"build", "tour", "code", "run", "input"}. "input" says what the pointer does ("Press it", "Change the light").
-- "inputs": the interactive parts the pointer works, in the order the SKETCH reacts to them, as [{"id": "<component id>", "wait": <seconds to wait before touching it, 0 unless the sketch shows a splash or prompt first, max 6>}]. Only ids from INTERACTIVE. At most 4. Leave out an input the code never reads. Empty list if none.
+- "inputs": the interactive parts the pointer works, in the order the SKETCH reacts to them, as [{"id": "<component id>", "wait": <seconds to wait before touching it, 0 unless the sketch shows a splash or prompt first, max 6>, "action": "<only for a board control: one of its actions>"}]. Only ids from INTERACTIVE. A board control may appear more than once with different actions (tap = a short press, turn = twist it back and forth for about 3 s, hold = press and keep it down for about 4 s). Trace the sketch's states: if it starts on a title or "press to start" screen (a TITLE state, a splash that waits for a button), the FIRST input is the press that starts it, because anything worked before that does nothing visible. For a game, start it, then steer, then fire, then any special move. At most 5. Leave out an input the code never reads. Empty list if none.
 - "liveSec": seconds of the running project to show, 8 to 16 (longer for several inputs or slow visuals).
 - "tourOrder": the part TYPES (from PARTS) in the order the sketch uses them (what setup() starts first, then the loop). Omit wires-only passives if there are more than 4 types.
 - "roles": {"<type>": "what it does in THIS sketch, max 40 characters"} for each type in tourOrder and for the board type.
@@ -135,9 +152,16 @@ function validate(s, ex, interactive, types) {
   if (!s.kicker || s.kicker.length > 48) e.push("kicker: required, max 44 characters");
   for (const [k, v] of Object.entries(s.chips || {})) if (String(v).length > 20) e.push(`chips.${k} is over 18 characters`);
   if (!Array.isArray(s.inputs)) e.push("inputs must be a list");
-  for (const i of s.inputs || []) if (!interactive.some(c => c.id === i.id)) e.push(`inputs: "${i.id}" is not in INTERACTIVE`);
+  for (const i of s.inputs || []) {
+    const c = interactive.find(c => c.id === i.id);
+    if (!c) e.push(`inputs: "${i.id}" is not in INTERACTIVE`);
+    else if (c.actions && !c.actions.includes(i.action)) e.push(`inputs: "${i.id}" needs an action, one of ${c.actions.join(", ")}`);
+  }
+  if ((s.inputs || []).length > 5) e.push("inputs: at most 5");
   if (!(s.liveSec >= 6 && s.liveSec <= 18)) e.push("liveSec must be 8 to 16");
-  for (const t of s.tourOrder || []) if (!types.includes(t)) e.push(`tourOrder: "${t}" is not in PARTS`);
+  // the board always comes first on its own: a board named here is dropped, not an error
+  s.tourOrder = (s.tourOrder || []).filter(t => !boardsOf(ex).includes(t));
+  for (const t of s.tourOrder) if (!types.includes(t)) e.push(`tourOrder: "${t}" is not in PARTS`);
   for (const [k, v] of Object.entries(s.roles || {})) if (String(v).length > 46) e.push(`roles.${k} is over 40 characters`);
   if (/#/.test(s.igCaption || "")) e.push("igCaption: no hashtags in the body, they go in \"hashtags\"");
   if (!Array.isArray(s.hashtags) || s.hashtags.length < 3) e.push("hashtags: a list of 5-8");
@@ -166,7 +190,8 @@ function liveActivity(id, from, to) {
 
 async function script(ex) {
   const comps = (ex.components || []).map(c => ({ id: c.id, type: c.metadataId || c.type, props: c.properties }));
-  const interactive = comps.filter(c => INPUT_RE.test(c.type || ""));
+  const interactive = [...comps.filter(c => INPUT_RE.test(c.type || "")),
+    ...boardsOf(ex).flatMap(b => (BOARD_CONTROLS[b] || []).map(k => ({ ...k, type: "board-control" })))];
   const types = [...new Set(comps.map(c => c.type))];
   const wires = (ex.wires || []).map(w => `${w.start?.componentId}:${w.start?.pinName} -> ${w.end?.componentId}:${w.end?.pinName}`);
   const user = [
@@ -176,7 +201,7 @@ async function script(ex) {
     `BOARDS: ${boardsOf(ex).join(", ")}`,
     `PARTS (types): ${JSON.stringify(types)}`,
     `COMPONENTS: ${JSON.stringify(comps)}`,
-    `INTERACTIVE: ${JSON.stringify(interactive.map(c => ({ id: c.id, type: c.type })))}`,
+    `INTERACTIVE: ${JSON.stringify(interactive.map(c => (c.actions ? { id: c.id, type: c.type, what: c.what, actions: c.actions } : { id: c.id, type: c.type })))}`,
     `WIRES:\n${wires.join("\n")}`,
     `SKETCH:\n${sourceOf(ex)}`,
   ].join("\n\n");
@@ -226,7 +251,7 @@ for (const id of todo) {
       writeFileSync(copyFile, JSON.stringify(s, null, 1) + "\n");
     }
     if (s.visible === false) { report.push([id, "SKIP", "its result only shows on the serial monitor"]); console.log("   skip: serial only"); continue; }
-    console.log(`   hook: ${s.hook.replace(/\n/g, " / ")}  inputs: ${(s.inputs || []).map(i => i.id + (i.wait ? `+${i.wait}s` : "")).join(", ") || "none"}`);
+    console.log(`   hook: ${s.hook.replace(/\n/g, " / ")}  inputs: ${(s.inputs || []).map(i => i.id + (i.action ? `:${i.action}` : "") + (i.wait ? `+${i.wait}s` : "")).join(", ") || "none"}`);
 
     // 2. the take
     const rec = node(["scripts/reel-assemble.mjs", id, "--live", String(Math.ceil(s.liveSec + 4)), "--force"], { stdio: "inherit" });

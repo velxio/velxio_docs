@@ -236,7 +236,20 @@ const ASSEMBLE = async ({ partMs, wireMs }) => {
  *  screen and the facts the app itself holds about it: the picker metadata,
  *  the pins and the buses they carry. reel-cards.mjs turns those facts into
  *  the card text; nothing here is written by hand. */
-const TOUR = async () => {
+// parts built into a board, toured as parts of their own when the board
+// carries them: a kit with nothing else on the canvas still gets a tour.
+// sel is looked up in the board element's shadow DOM; the card comes from
+// part-facts.json under the same type.
+const ONBOARD = {
+  "esp32-c3-lcdkit": [
+    { sel: "canvas", type: "onboard-gc9a01" },
+    { sel: ".knob", type: "onboard-ec11" },
+    { sel: "#lcdkit-rgb-led", type: "onboard-ws2812" },
+    { sel: "#lcdkit-ir-rx", type: "onboard-ir-rx" },
+  ],
+};
+
+const TOUR = async onboard => {
   const meta = await fetch("/components-metadata.json").then(r => r.json()).then(j => j.components || []).catch(() => []);
   const union = rs => rs.reduce((a, r) => !a ? { x: r.left, y: r.top, r: r.right, b: r.bottom }
     : { x: Math.min(a.x, r.left), y: Math.min(a.y, r.top), r: Math.max(a.r, r.right), b: Math.max(a.b, r.bottom) }, null);
@@ -252,6 +265,15 @@ const TOUR = async () => {
     const el = kids.flatMap(k => [k, ...k.querySelectorAll("*")]).find(n => n.pinInfo);
     stops.push({ kind: "board", type: b.boardKind, ids: [b.id], count: 1, rect: box(union(kids.map(k => k.getBoundingClientRect()))),
       facts: { boardKind: b.boardKind, language: b.languageMode, libraries: b.libraries || [], ...pinFacts(el) } });
+    const host = kids.flatMap(k => [k, ...k.querySelectorAll("*")]).find(n => n.shadowRoot);
+    for (const o of onboard[b.boardKind] || []) {
+      const r = host?.shadowRoot.querySelector(o.sel)?.getBoundingClientRect();
+      if (!r || !r.width) continue;
+      // an LED a few px across still needs room for the spotlight
+      const pad = Math.max(0, (28 - Math.min(r.width, r.height)) / 2);
+      stops.push({ kind: "part", type: o.type, ids: [b.id], count: 1,
+        rect: { x: r.left - pad, y: r.top - pad, w: r.width + 2 * pad, h: r.height + 2 * pad }, facts: { onboard: true } });
+    }
   }
   const byType = new Map();
   for (const c of window.__vx.sim.getState().components) {
@@ -352,7 +374,9 @@ for (const id of ids) {
   const pick = copyFor(id).inputs;
   const inputs = pick
     ? pick.map(i => typeof i === "string" ? { id: i } : i)
-        .map(i => ({ ...comps.find(c => c.id === i.id), wait: Number(i.wait) || 0 })).filter(c => c.type != null)
+        .map(i => /^board:/.test(i.id)
+          ? { id: i.id, type: "board-control", action: i.action || "tap", wait: Number(i.wait) || 0 }
+          : { ...comps.find(c => c.id === i.id), wait: Number(i.wait) || 0 }).filter(c => c.type != null)
     : comps.filter(c => INPUT_RE.test(c.type));
 
   // screencast
@@ -389,7 +413,7 @@ for (const id of ids) {
   console.log(`   assembled ${JSON.stringify(counts)}`);
   // the parts tour is cut from one sharp still of the assembled circuit, so
   // its zoom can go in 3x without the take's resolution showing
-  const stops = await page.evaluate(TOUR);
+  const stops = await page.evaluate(TOUR, ONBOARD);
   await cdp.send("Page.stopScreencast");
   const shot = await cdp.send("Page.captureScreenshot", { format: "png", clip: { x: 0, y: 0, width: vw, height: vh, scale: 3 * dsf } });
   writeFileSync(join(OUT, `${id}-still.png`), Buffer.from(shot.data, "base64"));
@@ -418,19 +442,23 @@ for (const id of ids) {
   if (inputs.length) {
     await page.evaluate(CURSOR);
     await page.mouse.move(vw - 20, vh - 20);
-    for (const inp of inputs.slice(0, 4)) {
+    for (const inp of inputs.slice(0, 5)) {
       const at = await page.evaluate(i => {
-        const el = document.getElementById(i);
+        // "board:knob": the element with that class inside a board's shadow DOM
+        const el = /^board:/.test(i)
+          ? [...document.querySelectorAll("*")].map(h => h.shadowRoot?.querySelector("." + i.slice(6))).find(Boolean)
+          : document.getElementById(i);
         if (!el) return null;
         const r = el.getBoundingClientRect();
         return { cx: r.x + r.width / 2, cy: r.y + r.height / 2, s: Math.min(r.width, r.height) };
       }, inp.id);
       if (!at) continue;
       if (inp.wait) await page.waitForTimeout(Math.min(8, inp.wait) * 1000);
-      const rec = { id: inp.id, type: inp.type, t: Date.now() / 1000 - T0, press: [] };
+      const rec = { id: inp.id, type: inp.type, ...(inp.action ? { action: inp.action } : {}), t: Date.now() / 1000 - T0, press: [] };
       beats.inputs.push(rec);
       const now = () => Date.now() / 1000 - T0;
-      if (/potentiometer/.test(inp.type)) await turnKnob(page, inp.id, () => rec.press.push(now()));
+      if (inp.type === "board-control") await workBoardControl(page, inp, at, () => rec.press.push(now()));
+      else if (/potentiometer/.test(inp.type)) await turnKnob(page, inp.id, () => rec.press.push(now()));
       else if (SENSOR_RE.test(inp.type)) await workSensor(page, inp.id, () => rec.press.push(now()));
       else {
         await glide(page, at.cx, at.cy, 750);
@@ -541,6 +569,44 @@ async function captureCode(browser, id, png) {
   await page.screenshot({ path: png, clip: { x: eb.x, y: eb.y, width: eb.width, height: Math.min(eb.height, info.lines * info.lh + 24) } });
   await ctx.close();
   return info;
+}
+
+/** A control drawn on the board itself ("board:knob" = the element with
+ *  class "knob" in some board's shadow DOM), worked with the real mouse so
+ *  the board's own pointer handlers decide what it means:
+ *    tap   a short press
+ *    hold  press and keep it down 4 s; a knob that steers on the wheel while
+ *          held (the LCDkit) gets a few notches each way
+ *    turn  grab the rim and sweep the pointer around the centre, back and forth */
+async function workBoardControl(page, inp, at, onPress) {
+  if (inp.action === "turn") {
+    const r = at.s * 0.36, pt = deg => [at.cx + r * Math.cos(deg * Math.PI / 180), at.cy + r * Math.sin(deg * Math.PI / 180)];
+    let a = -90;
+    await glide(page, ...pt(a), 750);
+    await page.waitForTimeout(250);
+    await page.mouse.down(); onPress();
+    for (const sweep of [110, -200, 90]) {
+      const n = Math.max(6, Math.round(Math.abs(sweep) / 8)), from = a;
+      for (let s = 1; s <= n; s++) {
+        a = from + sweep * (s / n);
+        await page.mouse.move(...pt(a));
+        await page.waitForTimeout(25);
+      }
+      await page.waitForTimeout(200);
+    }
+    await page.mouse.up();
+    return;
+  }
+  await glide(page, at.cx, at.cy, 750);
+  await page.waitForTimeout(300);
+  if (inp.action === "hold") {
+    await page.mouse.down(); onPress();
+    await page.waitForTimeout(700);
+    for (const dy of [100, 100, 100, -100, -100, -100, -100, 100]) { await page.mouse.wheel(0, dy); await page.waitForTimeout(380); }
+    await page.mouse.up();
+    return;
+  }
+  await page.mouse.down(); onPress(); await page.waitForTimeout(120); await page.mouse.up();
 }
 
 /** Turn a potentiometer by VALUE, with the pointer drawn along the knob.

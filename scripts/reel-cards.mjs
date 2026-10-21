@@ -76,7 +76,9 @@ export function factsOf(stop) {
     f.pickerBlurb = boardBlurb(stop.type);
     f.docsPage = docsAbout(stop.type);
     // the build Velxio uses unless a project changes it (types/boardOptions.ts)
-    if (/esp32/.test(stop.type)) f.velxioDefaultBuild = "4 MB flash, PSRAM disabled, CPU 240 MHz";
+    // the C3 and C6 top out at 160 MHz, the H2 at 96
+    const mhz = /c3|c6/.test(stop.type) ? 160 : /h2/.test(stop.type) ? 96 : 240;
+    if (/esp32/.test(stop.type)) f.velxioDefaultBuild = `4 MB flash, PSRAM disabled, CPU ${mhz} MHz`;
   } else {
     f.datasheet = datasheet(stop.type);
   }

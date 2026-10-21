@@ -1,0 +1,51 @@
+{
+ "visible": true,
+ "hook": "A whole arcade game\non one round screen.",
+ "kicker": "ESP32-C3-LCDkit, GC9A01 round LCD, encoder",
+ "chips": {
+  "build": "Kit and round LCD",
+  "tour": "Knob, screen, LED",
+  "code": "Integer game loop",
+  "run": "Sky Ace starts",
+  "input": "Turn and press knob"
+ },
+ "inputs": [
+  {
+   "id": "board:knob",
+   "wait": 2.5,
+   "action": "tap"
+  },
+  {
+   "id": "board:knob",
+   "wait": 1,
+   "action": "turn"
+  },
+  {
+   "id": "board:knob",
+   "wait": 0.5,
+   "action": "hold"
+  },
+  {
+   "id": "board:remote",
+   "wait": 0.5,
+   "action": "tap"
+  }
+ ],
+ "liveSec": 14,
+ "tourOrder": [],
+ "roles": {
+  "esp32-c3-lcdkit": "Runs the game, draws it, reads knob and IR"
+ },
+ "igCaption": "Sky Ace is a full jet shooter running on the ESP32-C3-LCDkit and nothing else. Turn the knob to steer, push it to fire, and hit REMOTE for a mega bomb through the IR receiver. The round GC9A01 shows waves of fighters, gunships that drop power-ups and a flying fortress, all drawn from a sprite on an FPU-less chip.",
+ "hashtags": [
+  "velxio",
+  "esp32",
+  "arduino",
+  "gamedev",
+  "embedded",
+  "circuitsimulator",
+  "retrogaming"
+ ],
+ "ytTitle": "Sky Ace: a jet shooter on the ESP32-C3 round LCD #shorts",
+ "ytDescription": "A complete arcade shooter on the ESP32-C3-LCDkit: turn the knob to fly, push to fire, and the IR remote drops a mega bomb. Everything is drawn into a 240x240 sprite and pushed to the round GC9A01. Open it in your browser: https://velxio.dev/example/esp32-c3-lcdkit-sky-ace"
+}

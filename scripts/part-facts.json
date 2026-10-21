@@ -16,6 +16,7 @@
     "esp32-cam":          { "name": "ESP32-CAM", "lines": ["ESP32, 240 MHz, 4 MB PSRAM", "2 MP OV2640 camera", "microSD slot, Wi-Fi"] },
     "esp32-s3":           { "name": "ESP32-S3 DevKit", "lines": ["Dual-core Xtensa LX7, 240 MHz", "512 KB SRAM, flash + PSRAM", "Wi-Fi + BLE 5, native USB"] },
     "esp32-c3":           { "name": "ESP32-C3", "lines": ["Single-core RISC-V, 160 MHz", "4 MB flash, 400 KB SRAM", "Wi-Fi + BLE 5"] },
+    "esp32-c3-lcdkit":    { "name": "ESP32-C3-LCDkit", "lines": ["ESP32-C3, RISC-V, 160 MHz", "Round LCD, knob, LED, IR", "Wi-Fi + BLE 5"] },
 
     "raspberry-pi-pico":  { "name": "Raspberry Pi Pico", "lines": ["RP2040, dual Cortex-M0+, 133 MHz", "2 MB flash, 264 KB SRAM", "26 GPIO, 3 ADC, PIO"] },
     "pi-pico-w":          { "name": "Raspberry Pi Pico W", "lines": ["RP2040, dual Cortex-M0+, 133 MHz", "2 MB flash, 264 KB SRAM", "CYW43439 Wi-Fi + Bluetooth"] },
@@ -45,6 +46,10 @@
     "wokwi-analog-joystick": { "name": "Analog joystick", "lines": ["Two pots (X, Y) + a button", "Read with analogRead()"] },
     "wokwi-ky-040":          { "name": "KY-040 encoder", "lines": ["Rotary encoder, A/B pulses", "Push button on the shaft"] },
     "wokwi-membrane-keypad": { "name": "4x4 keypad", "lines": ["16 keys, 4 rows x 4 columns", "Scanned row by row"] },
+    "onboard-gc9a01":        { "name": "GC9A01 round LCD", "lines": ["1.28 inch, 240x240 pixels", "Driven over SPI"] },
+    "onboard-ec11":          { "name": "EC11 rotary knob", "lines": ["Encoder on GPIO10 and GPIO6", "Push switch on GPIO9"] },
+    "onboard-ws2812":        { "name": "WS2812 RGB LED", "lines": ["One wire, 24-bit colour", "Driven by the RMT peripheral"] },
+    "onboard-ir-rx":         { "name": "IR receiver", "lines": ["Decodes NEC remote frames", "Press REMOTE to send one"] },
     "ir-receiver":           { "name": "IR receiver", "lines": ["38 kHz demodulator", "Decodes remote control codes"] },
     "ir-remote":             { "name": "IR remote", "lines": ["NEC codes at 38 kHz"] },
 

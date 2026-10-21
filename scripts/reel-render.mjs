@@ -128,10 +128,12 @@ function finish(src, dst) {
   let j = null;
   try { j = JSON.parse(err.slice(err.lastIndexOf("{"), err.lastIndexOf("}") + 1)); } catch {}
   // a limiter after it: linear loudnorm cannot always hold the peak, and
-  // the AAC encode adds a little on top (seen: -0.24 dBTP on a -1 target)
+  // the AAC encode adds a little on top (seen: -0.24 dBTP on a -1 target).
+  // It runs at 4x the rate: at 48 kHz it holds the samples, not the true
+  // peak between them (Sky Ace's music read +0.7 dBTP behind a -2 dB limit)
   const af = (j
     ? `${LN}:measured_I=${j.input_i}:measured_TP=${j.input_tp}:measured_LRA=${j.input_lra}:measured_thresh=${j.input_thresh}:offset=${j.target_offset}:linear=true`
-    : LN) + ",alimiter=limit=0.84:level=false";
+    : LN) + ",aresample=192000,alimiter=limit=0.79:attack=1:level=false,aresample=48000";
   execFileSync("ffmpeg", ["-y", "-v", "error", "-i", src,
     "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", "30",
     "-x264-params", "colorprim=bt709:transfer=bt709:colormatrix=bt709",

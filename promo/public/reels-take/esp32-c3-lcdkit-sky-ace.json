@@ -1,0 +1,237 @@
+{
+ "id": "esp32-c3-lcdkit-sky-ace",
+ "beats": {
+  "assembled": 3.5875320434570312,
+  "run": 5.376532077789307,
+  "live": 6.204532146453857,
+  "inputs": [
+   {
+    "id": "board:knob",
+    "type": "board-control",
+    "action": "tap",
+    "t": 11.816532135009766,
+    "press": [
+     13.02753210067749
+    ],
+    "done": 13.856532096862793
+   },
+   {
+    "id": "board:knob",
+    "type": "board-control",
+    "action": "turn",
+    "t": 14.861532211303711,
+    "press": [
+     16.007532119750977
+    ],
+    "done": 21.703532218933105
+   },
+   {
+    "id": "board:knob",
+    "type": "board-control",
+    "action": "hold",
+    "t": 22.207532167434692,
+    "press": [
+     23.403532028198242
+    ],
+    "done": 29.000532150268555
+   },
+   {
+    "id": "board:remote",
+    "type": "board-control",
+    "action": "tap",
+    "t": 29.506532192230225,
+    "press": [
+     30.678532123565674
+    ],
+    "done": 31.52153205871582
+   }
+  ],
+  "end": 32.333532094955444
+ },
+ "live": true,
+ "tidy": {
+  "moved": false,
+  "wires": 0,
+  "failed": 0,
+  "rects": 1
+ },
+ "inputs": [
+  {
+   "id": "board:knob",
+   "type": "board-control",
+   "action": "tap",
+   "wait": 2.5
+  },
+  {
+   "id": "board:knob",
+   "type": "board-control",
+   "action": "turn",
+   "wait": 1
+  },
+  {
+   "id": "board:knob",
+   "type": "board-control",
+   "action": "hold",
+   "wait": 0.5
+  },
+  {
+   "id": "board:remote",
+   "type": "board-control",
+   "action": "tap",
+   "wait": 0.5
+  }
+ ],
+ "code": {
+  "lines": 1452,
+  "lh": 19,
+  "longest": 115,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ },
+ "tour": {
+  "vw": 420,
+  "vh": 478,
+  "stops": [
+   {
+    "kind": "board",
+    "type": "esp32-c3-lcdkit",
+    "ids": [
+     "esp32-c3-lcdkit"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 80,
+     "y": 94,
+     "w": 260,
+     "h": 290
+    },
+    "facts": {
+     "boardKind": "esp32-c3-lcdkit",
+     "language": "arduino",
+     "libraries": [
+      "M5GFX"
+     ],
+     "pinCount": 11,
+     "buses": [],
+     "pins": [
+      {
+       "name": "GND.1",
+       "bus": ""
+      },
+      {
+       "name": "GND.2",
+       "bus": ""
+      },
+      {
+       "name": "TX",
+       "bus": ""
+      },
+      {
+       "name": "21",
+       "bus": ""
+      },
+      {
+       "name": "GND.3",
+       "bus": ""
+      },
+      {
+       "name": "RX",
+       "bus": ""
+      },
+      {
+       "name": "20",
+       "bus": ""
+      },
+      {
+       "name": "RGB",
+       "bus": ""
+      },
+      {
+       "name": "8",
+       "bus": ""
+      },
+      {
+       "name": "3V3",
+       "bus": ""
+      },
+      {
+       "name": "5V",
+       "bus": ""
+      }
+     ]
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-gc9a01",
+    "ids": [
+     "esp32-c3-lcdkit"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 129,
+     "y": 162,
+     "w": 136,
+     "h": 136
+    },
+    "facts": {
+     "onboard": true
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-ec11",
+    "ids": [
+     "esp32-c3-lcdkit"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 151,
+     "y": 284,
+     "w": 92,
+     "h": 92
+    },
+    "facts": {
+     "onboard": true
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-ws2812",
+    "ids": [
+     "esp32-c3-lcdkit"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 292,
+     "y": 187,
+     "w": 28.000030517578125,
+     "h": 28
+    },
+    "facts": {
+     "onboard": true
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-ir-rx",
+    "ids": [
+     "esp32-c3-lcdkit"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 77,
+     "y": 188,
+     "w": 28,
+     "h": 28
+    },
+    "facts": {
+     "onboard": true
+    }
+   }
+  ]
+ }
+}
