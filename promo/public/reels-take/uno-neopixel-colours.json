@@ -1,0 +1,28 @@
+{
+ "id": "uno-neopixel-colours",
+ "beats": {
+  "assembled": 3.3832969665527344,
+  "run": 4.286296844482422,
+  "live": 5.176296949386597,
+  "inputs": [],
+  "end": 15.17829704284668
+ },
+ "live": true,
+ "tidy": {
+  "moved": false,
+  "wires": 3,
+  "failed": 0,
+  "rects": 2
+ },
+ "inputs": [],
+ "code": {
+  "lines": 24,
+  "lh": 19,
+  "longest": 78,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ }
+}

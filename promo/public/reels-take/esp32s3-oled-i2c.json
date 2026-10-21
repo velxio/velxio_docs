@@ -1,0 +1,28 @@
+{
+ "id": "esp32s3-oled-i2c",
+ "beats": {
+  "assembled": 3.3887410163879395,
+  "run": 4.291740894317627,
+  "live": 5.122740983963013,
+  "inputs": [],
+  "end": 15.1267409324646
+ },
+ "live": true,
+ "tidy": {
+  "moved": false,
+  "wires": 4,
+  "failed": 0,
+  "rects": 2
+ },
+ "inputs": [],
+ "code": {
+  "lines": 48,
+  "lh": 19,
+  "longest": 66,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "id": "binary-counter-leds",
+ "beats": {
+  "assembled": 5.191529989242554,
+  "run": 6.093529939651489,
+  "live": 6.902529954910278,
+  "inputs": [],
+  "end": 16.90252995491028
+ },
+ "live": true,
+ "tidy": {
+  "moved": true,
+  "wires": 12,
+  "failed": 0,
+  "rects": 9
+ },
+ "inputs": [],
+ "code": {
+  "lines": 8,
+  "lh": 19,
+  "longest": 57,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ }
+}

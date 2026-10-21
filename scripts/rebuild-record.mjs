@@ -115,6 +115,16 @@ const CURSOR_SCRIPT = () => {
       "@keyframes vxr{to{width:72px;height:72px;opacity:0}}" +
       ".gh-star-banner,.velxio-news-overlay{display:none!important}";
     document.head.appendChild(st);
+    // The DC/SPICE status pill (an svg <g> in the canvas world) lands on
+    // top of whatever part sits next to it: an OLED in the first S3 take.
+    // Style only, never remove: the node is React's.
+    setInterval(() => {
+      for (const t of document.querySelectorAll(".canvas-world svg text"))
+        if (/SPICE/.test(t.textContent || "")) {
+          const g = t.closest("g");
+          if (g && g.style.visibility !== "hidden") g.style.visibility = "hidden";
+        }
+    }, 300);
     setInterval(() => {
       for (const el of document.querySelectorAll("div,button")) {
         const t = (el.textContent || "").trim();
@@ -122,7 +132,10 @@ const CURSOR_SCRIPT = () => {
           let top = el;
           while (top.parentElement && getComputedStyle(top).position !== "fixed")
             top = top.parentElement;
-          if (top !== document.body) top.remove();
+          // hide, never remove: the banner is React's node, and pulling it
+          // out from under React crashes the whole tree ("removeChild ...
+          // not a child of this node") the next time React unmounts it
+          if (top !== document.body) top.style.setProperty("display", "none", "important");
           return;
         }
       }
@@ -206,6 +219,10 @@ for (const slug of slugs) {
   await context.addInitScript(CURSOR_SCRIPT);
   const page = await context.newPage();
   const simLog = [];
+  if (process.env.WIRE_DEBUG) {
+    page.on("pageerror", e => console.log("    PAGEERROR", String(e.stack || e).slice(0, 2500)));
+    page.on("console", m => m.type() === "error" && console.log("    CONSOLE.ERR", m.text().slice(0, 200)));
+  }
   page.on("console", m => {
     if (/in-browser|guest crashed/i.test(m.text())) simLog.push(m.text());
   });
@@ -270,8 +287,12 @@ for (const slug of slugs) {
           let best = null;
           let bestD = Infinity;
           for (const o of document.querySelectorAll('[data-pin-overlay="true"]')) {
+            // the title is "NAME" or, when several names share a pad,
+            // "NAME (ALIAS, ALIAS)" (PinOverlay.titleFor); any of them counts
             const t = o.getAttribute("title") || "";
-            if (t !== pinName && norm(t) !== pinName) continue;
+            const m = t.match(/^(.*?)\s*\((.*)\)$/);
+            const names = m ? [m[1], ...m[2].split(/,\s*/)] : [t];
+            if (!names.some(n => n === pinName || norm(n) === pinName)) continue;
             const r = o.getBoundingClientRect();
             const cx = r.x + r.width / 2;
             const cy = r.y + r.height / 2;
@@ -491,8 +512,10 @@ for (const slug of slugs) {
     );
   }
 
+  // Each finished wire draws two endpoint dots with a fixed #1a1a1a ring;
+  // its outline path now takes a theme variable, so it cannot be counted.
   const wireCount = () =>
-    page.evaluate(() => document.querySelectorAll('path[stroke="#1a1a1a"]').length);
+    page.evaluate(() => document.querySelectorAll('circle[stroke="#1a1a1a"]').length / 2);
 
   /** Ease down the sketch and back up. setValue lands the whole file at
    *  once, so without this the camera only ever sees its first screen and
@@ -684,7 +707,10 @@ for (const slug of slugs) {
     await page.goto(`${BASE}/editor`, { waitUntil: "domcontentloaded" });
     await page.waitForTimeout(6000);
     await page.evaluate(() => {
-      for (const el of document.querySelectorAll(".velxio-news-overlay")) el.remove();
+      // hidden by the injected stylesheet; NEVER remove() it: it is React's
+      // node, it closes itself on Escape, and unmounting a node that is
+      // already gone crashes the whole tree ("removeChild ... not a child")
+      // on the first Escape after a wire, taking every part with it
       document
         .querySelector('button[aria-label="Minimize chat"], button[title="Minimize"]')
         ?.click();
@@ -794,7 +820,13 @@ for (const slug of slugs) {
     // responding — every click misses and the circuit ends up empty.
     // wires
     let wired = 0;
-    for (const w of recipe.wires || []) {
+    // A wire that misses gets one more try after the rest: right after a
+    // wire lands, the next hover sometimes comes back with no pin overlays
+    // (seen on the Uno's pin 3, every time, as the second wire).
+    const queue = [...(recipe.wires || [])];
+    const retried = new Set();
+    while (queue.length) {
+      const w = queue.shift();
       // Human pacing: humanGapSec is how long the real user waited before
       // drawing this wire. Compressed (sqrt) so the long "what goes where"
       // pause still reads as a pause without stalling the take.
@@ -838,11 +870,16 @@ for (const slug of slugs) {
           landed = (await wireCount()) > before;
         }
       }
+      if (!landed && !retried.has(w)) {
+        retried.add(w);
+        queue.push(w);
+        continue;
+      }
       if (!landed) console.log(`    miss ${w.start.pinName}->${w.end.pinName}`);
       if (landed) wired++;
     }
     const finalWires = await page.evaluate(() => ({
-      outline: document.querySelectorAll('path[stroke="#1a1a1a"]').length,
+      outline: document.querySelectorAll('circle[stroke="#1a1a1a"]').length / 2,
       allPaths: document.querySelectorAll("svg path").length,
       colored: document.querySelectorAll('path[stroke="#22c55e"], path[stroke="#cc0000"]').length,
     }));
@@ -951,6 +988,9 @@ for (const slug of slugs) {
       if (id && (await workInput(id, c.type))) worked++;
     }
     if (worked) mark("input", { parts: worked });
+    // park the pointer off the circuit: left on a display it covers the
+    // very thing the run segment is there to show
+    await page.mouse.move(VIEWPORT.width - 60, VIEWPORT.height - 160, { steps: 18 });
     await page.waitForTimeout(worked ? Math.max(4000, RUN_FOOTAGE_MS - 6000) : RUN_FOOTAGE_MS);
     mark("end");
 

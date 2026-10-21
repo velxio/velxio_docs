@@ -1,0 +1,79 @@
+{
+ "id": "esp32-doom",
+ "beats": {
+  "assembled": 4.474447011947632,
+  "run": 5.37844705581665,
+  "live": 7.976446866989136,
+  "inputs": [
+   {
+    "id": "btn_fwd",
+    "type": "pushbutton",
+    "t": 11.031446933746338,
+    "press": [
+     12.085447072982788,
+     13.844446897506714,
+     15.613446950912476
+    ],
+    "done": 18.06344699859619
+   },
+   {
+    "id": "btn_back",
+    "type": "pushbutton",
+    "t": 18.095447063446045,
+    "press": [
+     19.168447017669678,
+     20.912446975708008,
+     22.67044687271118
+    ],
+    "done": 25.132447004318237
+   },
+   {
+    "id": "btn_left",
+    "type": "pushbutton",
+    "t": 25.15844702720642,
+    "press": [
+     26.278446912765503,
+     28.02744698524475,
+     29.778446912765503
+    ],
+    "done": 32.21744704246521
+   }
+  ],
+  "end": 32.91344690322876
+ },
+ "live": true,
+ "tidy": {
+  "moved": true,
+  "wires": 17,
+  "failed": 0,
+  "rects": 6
+ },
+ "inputs": [
+  {
+   "id": "btn_fwd",
+   "type": "pushbutton"
+  },
+  {
+   "id": "btn_back",
+   "type": "pushbutton"
+  },
+  {
+   "id": "btn_left",
+   "type": "pushbutton"
+  },
+  {
+   "id": "btn_right",
+   "type": "pushbutton"
+  }
+ ],
+ "code": {
+  "lines": 245,
+  "lh": 19,
+  "longest": 92,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ }
+}

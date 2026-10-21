@@ -1,0 +1,43 @@
+{
+ "id": "esp32-servo",
+ "beats": {
+  "assembled": 3.6495370864868164,
+  "run": 4.551537036895752,
+  "live": 5.360537052154541,
+  "inputs": [
+   {
+    "id": "e32-pot1",
+    "type": "potentiometer",
+    "t": 8.434536933898926,
+    "press": [
+     9.273536920547485
+    ],
+    "done": 20.58653688430786
+   }
+  ],
+  "end": 21.030536890029907
+ },
+ "live": true,
+ "tidy": {
+  "moved": true,
+  "wires": 6,
+  "failed": 0,
+  "rects": 3
+ },
+ "inputs": [
+  {
+   "id": "e32-pot1",
+   "type": "potentiometer"
+  }
+ ],
+ "code": {
+  "lines": 25,
+  "lh": 19,
+  "longest": 69,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ }
+}

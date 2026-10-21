@@ -134,6 +134,24 @@ absent from the repo, and the bundler needs it even to render the
 repo material; no page references them and they do not enter the build.
 Pushing makes them viewable on GitHub; deploying does not publish them.
 
+**Never `remove()` a node React owns** (the news overlay, the GitHub star
+banner). React unmounts it later, throws "removeChild ... not a child of
+this node" on the first Escape after a wire, and the app goes blank: the
+take then fails with "element not found: run" and 0 wires. Hide it with
+`style.setProperty("display","none","important")`.
+
+**Wires are counted by their endpoint circles** (`circle[stroke="#1a1a1a"]`
+/ 2). The outline stroke became a theme CSS var, and a selector on it
+counts 0 on every take.
+
+**Pin titles read "NAME (ALIAS, ...)"**: match any of the names, or pins
+like the Uno's "3" are missed. Missed wires get one retry pass at the end.
+
+For a take that will be cut into a vertical reel, the SPICE pill (an svg
+`<g>` in `.canvas-world`) is hidden and the cursor parked off the circuit
+after the input step, so neither covers a display. The cut itself is the
+`velxio-social-reels` skill.
+
 ## Housekeeping
 
 Killing a stuck render with `pkill -f remotion` kills the shell that runs

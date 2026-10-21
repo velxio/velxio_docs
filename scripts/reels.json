@@ -1,0 +1,84 @@
+{
+  "trace-uno-button-digitalread-bug": {
+    "hook": "Why is my LED ON\nuntil I press the button?",
+    "kicker": "Arduino Uno - INPUT_PULLUP",
+    "outro": "Pressed = LOW with INPUT_PULLUP.\nTry it yourself, free.",
+    "chips": {
+      "code": "INPUT_PULLUP: pressed = LOW",
+      "live": "Press = LED OFF"
+    },
+    "hookAt": 146.3,
+    "liveAt": 145.6,
+    "liveSec": 4,
+    "slow": {
+      "from": 146.5,
+      "to": 147.7,
+      "rate": 0.3
+    }
+  },
+  "binary-counter-leds": {
+    "hook": "Can you read binary\nwith 4 LEDs?",
+    "kicker": "Arduino Uno - counts 0 to 15",
+    "outro": "Count to 15 with 4 LEDs.\nBuild it yourself, free.",
+    "liveSec": 9
+  },
+  "esp32s3-oled-i2c": {
+    "hook": "ESP32 + OLED,\nright in your browser",
+    "kicker": "ESP32-S3 - Adafruit SSD1306 library",
+    "outro": "ESP32, Pico, Arduino.\nNo hardware. Free.",
+    "liveSec": 7
+  },
+  "c3-ili9341": {
+    "hook": "Color TFT on an ESP32-C3.\nNo hardware.",
+    "kicker": "ILI9341 over SPI - Adafruit library",
+    "outro": "Screens, sensors, WiFi boards.\nAll in your browser. Free.",
+    "hookSize": 66,
+    "liveSec": 7
+  },
+  "button-led": {
+    "hook": "Why does this button\nread LOW when pressed?",
+    "kicker": "Arduino Uno - INPUT_PULLUP",
+    "outro": "Pressed = LOW with INPUT_PULLUP.\nTry it yourself, free.",
+    "chips": {
+      "input": "Press it"
+    }
+  },
+  "esp32-servo": {
+    "hook": "Turn the knob.\nThe servo follows.",
+    "kicker": "ESP32 + potentiometer + servo",
+    "chips": {
+      "input": "Turn it"
+    },
+    "outro": "Real ESP32 firmware.\nNo board. Free."
+  },
+  "100d-potentiometer-visualizer": {
+    "hook": "One knob.\nTen LEDs.",
+    "kicker": "ESP32 - MicroPython - LED bar graph",
+    "chips": {
+      "input": "Turn it"
+    },
+    "outro": "MicroPython on an ESP32.\nIn your browser. Free."
+  },
+  "esp32-doom": {
+    "hook": "DOOM-style 3D on an ESP32.\nIn a browser tab.",
+    "kicker": "ILI9341 color TFT + 4 buttons",
+    "chips": {
+      "input": "Play"
+    },
+    "outro": "Real ESP32 firmware.\nNo board. Free.",
+    "hookSize": 64
+  },
+  "100d-rgb-color-mixer-using-potentiometers-esp32-plus-micropython": {
+    "hook": "Mix any color\nwith 3 knobs",
+    "kicker": "ESP32 - MicroPython - RGB LED",
+    "chips": {
+      "input": "Turn them"
+    },
+    "outro": "MicroPython on an ESP32.\nIn your browser. Free."
+  },
+  "uno-neopixel-colours": {
+    "hook": "One NeoPixel.\nEvery color.",
+    "kicker": "Arduino Uno - Adafruit NeoPixel library",
+    "outro": "No LEDs on your desk?\nSimulate them, free."
+  }
+}

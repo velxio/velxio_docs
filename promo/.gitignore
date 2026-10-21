@@ -3,3 +3,7 @@ out/
 public/promo-raw.webm
 src/data.json
 promo/public/gallery/*.webm
+src/agent-data.json
+public/agent/agent-raw.webm
+public/agent/agent-cut.mp4
+public/rebuild/
