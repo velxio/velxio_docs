@@ -1,0 +1,51 @@
+{
+ "visible": true,
+ "hook": "A tiny Tetris\non 256 LEDs.",
+ "kicker": "Stellar Unicorn, 16x16 RGB panel",
+ "chips": {
+  "build": "Build the panel",
+  "tour": "Meet the board",
+  "code": "Scroll the code",
+  "run": "Run it",
+  "input": "Play Tetris"
+ },
+ "inputs": [
+  {
+   "id": "board:.btn[data-label=\"A\"]",
+   "wait": 1.5,
+   "action": "tap"
+  },
+  {
+   "id": "board:.btn[data-label=\"B\"]",
+   "wait": 0.5,
+   "action": "tap"
+  },
+  {
+   "id": "board:.btn[data-label=\"C\"]",
+   "wait": 0.5,
+   "action": "tap"
+  },
+  {
+   "id": "board:.btn[data-label=\"D\"]",
+   "wait": 0.5,
+   "action": "hold"
+  }
+ ],
+ "liveSec": 12,
+ "tourOrder": [],
+ "roles": {
+  "stellar-unicorn": "16x16 RGB panel, buttons and light sensor"
+ },
+ "igCaption": "Tetris on a 16x16 grid of RGB LEDs, drawn pixel by pixel in Velxio. The board's own buttons move the piece, rotate it and drop it faster. The strip on the right shows the next piece and the lines left to the next level.",
+ "hashtags": [
+  "velxio",
+  "tetris",
+  "ledmatrix",
+  "stellarunicorn",
+  "raspberrypipico",
+  "retrogaming",
+  "circuitsimulator"
+ ],
+ "ytTitle": "Tetris on a 16x16 LED matrix in the browser #shorts",
+ "ytDescription": "A full Tetris running on the Stellar Unicorn's 16x16 RGB panel, played with the board's own A, B, C and D buttons. The right-hand strip shows the next piece and the lines left to the next level. Open it in your browser: https://velxio.dev/example/stellar-unicorn-tetris"
+}

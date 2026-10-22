@@ -1,0 +1,11 @@
+INSTAGRAM
+Tetris on a 16x16 grid of RGB LEDs, drawn pixel by pixel in Velxio. The board's own buttons move the piece, rotate it and drop it faster. The strip on the right shows the next piece and the lines left to the next level.
+
+Try it free at velxio.dev (link in bio)
+
+#velxio #tetris #ledmatrix #stellarunicorn #raspberrypipico #retrogaming #circuitsimulator
+
+YOUTUBE SHORTS
+Title: Tetris on a 16x16 LED matrix in the browser #shorts
+
+A full Tetris running on the Stellar Unicorn's 16x16 RGB panel, played with the board's own A, B, C and D buttons. The right-hand strip shows the next piece and the lines left to the next level. Open it in your browser: https://velxio.dev/example/stellar-unicorn-tetris

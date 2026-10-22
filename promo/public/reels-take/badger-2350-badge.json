@@ -1,0 +1,189 @@
+{
+ "id": "badger-2350-badge",
+ "beats": {
+  "assembled": 3.604698896408081,
+  "run": 5.966698884963989,
+  "live": 23.343698978424072,
+  "inputs": [
+   {
+    "id": "board:.btn[data-label=\"B\"]",
+    "type": "board-control",
+    "action": "tap",
+    "t": 28.89569878578186,
+    "press": [
+     30.051698923110962
+    ],
+    "done": 30.92469882965088
+   },
+   {
+    "id": "board:.btn[data-label=\"C\"]",
+    "type": "board-control",
+    "action": "tap",
+    "t": 33.434698820114136,
+    "press": [
+     34.582698822021484
+    ],
+    "done": 35.44969892501831
+   },
+   {
+    "id": "board:.btn[data-label=\"A\"]",
+    "type": "board-control",
+    "action": "tap",
+    "t": 37.96569895744324,
+    "press": [
+     39.09769892692566
+    ],
+    "done": 39.96669888496399
+   },
+   {
+    "id": "board:.btn[data-label=\"DOWN\"]",
+    "type": "board-control",
+    "action": "tap",
+    "t": 41.98469877243042,
+    "press": [
+     43.14569878578186
+    ],
+    "done": 44.01569890975952
+   },
+   {
+    "id": "board:.btn[data-label=\"UP\"]",
+    "type": "board-control",
+    "action": "tap",
+    "t": 46.03669881820679,
+    "press": [
+     47.16469883918762
+    ],
+    "done": 48.03469896316528
+   }
+  ],
+  "end": 48.79969882965088
+ },
+ "live": true,
+ "tidy": {
+  "moved": false,
+  "wires": 0,
+  "failed": 0,
+  "rects": 1
+ },
+ "inputs": [
+  {
+   "id": "board:.btn[data-label=\"B\"]",
+   "type": "board-control",
+   "action": "tap",
+   "wait": 2.5
+  },
+  {
+   "id": "board:.btn[data-label=\"C\"]",
+   "type": "board-control",
+   "action": "tap",
+   "wait": 2.5
+  },
+  {
+   "id": "board:.btn[data-label=\"A\"]",
+   "type": "board-control",
+   "action": "tap",
+   "wait": 2.5
+  },
+  {
+   "id": "board:.btn[data-label=\"DOWN\"]",
+   "type": "board-control",
+   "action": "tap",
+   "wait": 2
+  },
+  {
+   "id": "board:.btn[data-label=\"UP\"]",
+   "type": "board-control",
+   "action": "tap",
+   "wait": 2
+  }
+ ],
+ "code": {
+  "lines": 255,
+  "lh": 19,
+  "longest": 97,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ },
+ "tour": {
+  "vw": 420,
+  "vh": 478,
+  "stops": [
+   {
+    "kind": "board",
+    "type": "badger-2350",
+    "ids": [
+     "badger-2350"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 30,
+     "y": 79,
+     "w": 360,
+     "h": 320
+    },
+    "facts": {
+     "boardKind": "badger-2350",
+     "language": "arduino",
+     "libraries": [],
+     "pinCount": 4,
+     "buses": [],
+     "pins": [
+      {
+       "name": "GND",
+       "bus": ""
+      },
+      {
+       "name": "3V3",
+       "bus": ""
+      },
+      {
+       "name": "SDA",
+       "bus": ""
+      },
+      {
+       "name": "SCL",
+       "bus": ""
+      }
+     ]
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-badger-epaper",
+    "ids": [
+     "badger-2350"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 92,
+     "y": 183,
+     "w": 210,
+     "h": 140
+    },
+    "facts": {
+     "onboard": true
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-badger-buttons",
+    "ids": [
+     "badger-2350"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 51,
+     "y": 197,
+     "w": 311,
+     "h": 178
+    },
+    "facts": {
+     "onboard": true
+    }
+   }
+  ]
+ }
+}

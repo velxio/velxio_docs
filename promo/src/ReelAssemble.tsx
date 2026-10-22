@@ -238,13 +238,27 @@ const TourScene: React.FC<{ id: string; tour: Tour; dur: number }> = ({ id, tour
   const SLOT = TOUR_MOVE + TOUR_HOLD;
   let cam = full;
   let card = -1, cardO = 0;
+  // the spotlight: on for the whole tour, gliding from part to part. Lifting
+  // it between stops read as a pulse on a white board (the Cardputer)
+  let spot: { x: number; y: number; w: number; h: number } | null = null, spotO = 0;
+  const lerpR = (a: typeof spot, b: typeof spot, f: number) => {
+    const e = ease(Math.max(0, Math.min(1, f)));
+    const l = (u: number, v: number) => u + (v - u) * e;
+    return { x: l(a!.x, b!.x), y: l(a!.y, b!.y), w: l(a!.w, b!.w), h: l(a!.h, b!.h) };
+  };
   if (t >= TOUR_IN) {
     const u = t - TOUR_IN;
     const i = Math.min(cams.length - 1, Math.floor(u / SLOT));
     const local = u - i * SLOT;
-    if (u >= cams.length * SLOT) cam = mix(cams[cams.length - 1].cam, full, (u - cams.length * SLOT) / TOUR_OUT);
-    else {
+    if (u >= cams.length * SLOT) {
+      const f = (u - cams.length * SLOT) / TOUR_OUT;
+      cam = mix(cams[cams.length - 1].cam, full, f);
+      spot = cams[cams.length - 1].r;
+      spotO = 1 - Math.min(1, f * 1.6);
+    } else {
       cam = mix(i ? cams[i - 1].cam : full, cams[i].cam, local / TOUR_MOVE);
+      spot = i ? lerpR(cams[i - 1].r, cams[i].r, local / TOUR_MOVE) : cams[i].r;
+      spotO = i ? 1 : Math.min(1, local / TOUR_MOVE);
       card = i;
       cardO = interpolate(local, [TOUR_MOVE - 0.05, TOUR_MOVE + 0.2, SLOT - 0.18, SLOT], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
     }
@@ -254,8 +268,8 @@ const TourScene: React.FC<{ id: string; tour: Tour; dur: number }> = ({ id, tour
   const st = card >= 0 ? tour.stops[card] : null;
   // the rest of the circuit dims while a card is up, so the card reads as
   // pointing at one thing even where it overlaps a neighbour
-  const hole = st && (() => {
-    const r = cams[card].r, m = 14;
+  const hole = spot && (() => {
+    const r = spot, m = 14;
     return { x: (r.x - m) * cam.z + tx, y: (r.y - m) * cam.z + ty, w: (r.w + 2 * m) * cam.z, h: (r.h + 2 * m) * cam.z };
   })();
   return (
@@ -264,7 +278,7 @@ const TourScene: React.FC<{ id: string; tour: Tour; dur: number }> = ({ id, tour
         src={staticFile(`reels-take/${id}-still.png`)}
         style={{ position: "absolute", left: 0, top: 0, width: W, height: AREA_H, transformOrigin: "0 0", transform: `translate(${tx}px, ${ty}px) scale(${cam.z})` }}
       />
-      {hole && cardO > 0.01 && (
+      {hole && spotO > 0.01 && (
         <div
           style={{
             position: "absolute",
@@ -273,8 +287,8 @@ const TourScene: React.FC<{ id: string; tour: Tour; dur: number }> = ({ id, tour
             width: hole.w,
             height: hole.h,
             borderRadius: 18,
-            boxShadow: `0 0 0 4000px rgba(8,8,10,${0.55 * cardO})`,
-            outline: `3px solid rgba(0,113,227,${cardO})`,
+            boxShadow: `0 0 0 4000px rgba(8,8,10,${0.55 * spotO})`,
+            outline: `3px solid rgba(0,113,227,${spotO})`,
           }}
         />
       )}
@@ -421,7 +435,8 @@ export const ReelAssemble: React.FC<AssembleProps> = p => {
       >
         <div
           style={{
-            fontSize: p.hookSize ?? 74,
+            // a long line shrinks instead of wrapping onto a third line
+            fontSize: p.hookSize ?? Math.min(74, Math.floor((74 * 24) / Math.max(24, ...p.hook.split("\n").map(l => l.length)))),
             lineHeight: 1.08,
             fontWeight: 900,
             color: "#fff",

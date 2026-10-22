@@ -1,0 +1,255 @@
+{
+ "id": "cardputer-adv-brick-blaster",
+ "beats": {
+  "assembled": 3.591963052749634,
+  "run": 5.637963056564331,
+  "live": 7.102962970733643,
+  "inputs": [
+   {
+    "id": "board:keyboard",
+    "type": "board-control",
+    "action": "tap",
+    "key": "spc",
+    "t": 10.67896294593811,
+    "press": [
+     11.887963056564331
+    ],
+    "done": 12.826962947845459
+   },
+   {
+    "id": "board:keyboard",
+    "type": "board-control",
+    "action": "hold",
+    "key": "A",
+    "t": 14.35096287727356,
+    "press": [
+     15.532963037490845
+    ],
+    "done": 17.746963024139404
+   },
+   {
+    "id": "board:keyboard",
+    "type": "board-control",
+    "action": "tap",
+    "key": "spc",
+    "t": 19.261962890625,
+    "press": [
+     20.435962915420532
+    ],
+    "done": 21.31496286392212
+   },
+   {
+    "id": "board:keyboard",
+    "type": "board-control",
+    "action": "hold",
+    "key": "D",
+    "t": 23.347962856292725,
+    "press": [
+     24.544962882995605
+    ],
+    "done": 26.770962953567505
+   }
+  ],
+  "end": 27.584962844848633
+ },
+ "live": true,
+ "tidy": {
+  "moved": false,
+  "wires": 0,
+  "failed": 0,
+  "rects": 1
+ },
+ "inputs": [
+  {
+   "id": "board:keyboard",
+   "type": "board-control",
+   "action": "tap",
+   "key": "spc",
+   "wait": 0.5
+  },
+  {
+   "id": "board:keyboard",
+   "type": "board-control",
+   "action": "hold",
+   "key": "A",
+   "wait": 1.5
+  },
+  {
+   "id": "board:keyboard",
+   "type": "board-control",
+   "action": "tap",
+   "key": "spc",
+   "wait": 1.5
+  },
+  {
+   "id": "board:keyboard",
+   "type": "board-control",
+   "action": "hold",
+   "key": "D",
+   "wait": 2
+  }
+ ],
+ "code": {
+  "lines": 246,
+  "lh": 19,
+  "longest": 80,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ },
+ "tour": {
+  "vw": 420,
+  "vh": 478,
+  "stops": [
+   {
+    "kind": "board",
+    "type": "cardputer-adv",
+    "ids": [
+     "cardputer-adv"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 38,
+     "y": 83,
+     "w": 344,
+     "h": 312
+    },
+    "facts": {
+     "boardKind": "cardputer-adv",
+     "language": "arduino",
+     "libraries": [
+      "M5Cardputer",
+      "M5Unified",
+      "M5GFX"
+     ],
+     "pinCount": 13,
+     "buses": [],
+     "pins": [
+      {
+       "name": "3",
+       "bus": ""
+      },
+      {
+       "name": "4",
+       "bus": ""
+      },
+      {
+       "name": "5",
+       "bus": ""
+      },
+      {
+       "name": "6",
+       "bus": ""
+      },
+      {
+       "name": "13",
+       "bus": ""
+      },
+      {
+       "name": "14",
+       "bus": ""
+      },
+      {
+       "name": "15",
+       "bus": ""
+      },
+      {
+       "name": "39",
+       "bus": ""
+      },
+      {
+       "name": "40",
+       "bus": ""
+      },
+      {
+       "name": "5V",
+       "bus": ""
+      },
+      {
+       "name": "GND",
+       "bus": ""
+      },
+      {
+       "name": "2",
+       "bus": ""
+      },
+      {
+       "name": "1",
+       "bus": ""
+      }
+     ]
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-st7789-cardputer",
+    "ids": [
+     "cardputer-adv"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 156,
+     "y": 175,
+     "w": 86,
+     "h": 44
+    },
+    "facts": {
+     "onboard": true
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-cardputer-keyboard",
+    "ids": [
+     "cardputer-adv"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 50,
+     "y": 242,
+     "w": 321.984375,
+     "h": 106
+    },
+    "facts": {
+     "onboard": true
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-ws2812",
+    "ids": [
+     "cardputer-adv"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 315.99998474121094,
+     "y": 135,
+     "w": 28,
+     "h": 28
+    },
+    "facts": {
+     "onboard": true
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-ir-tx",
+    "ids": [
+     "cardputer-adv"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 295.99998474121094,
+     "y": 135,
+     "w": 28,
+     "h": 28
+    },
+    "facts": {
+     "onboard": true
+    }
+   }
+  ]
+ }
+}

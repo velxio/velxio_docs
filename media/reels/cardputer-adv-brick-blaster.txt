@@ -1,0 +1,11 @@
+INSTAGRAM
+Brick Blaster runs entirely on the M5 Cardputer ADV, no wiring and no microSD. The 240x135 LCD draws through an off-screen sprite so nothing tears, and the 56-key keyboard steers the paddle. Each brick row is a note of a pentatonic scale, so clearing rows walks up the scale and you can hear your progress.
+
+Try it free at velxio.dev (link in bio)
+
+#velxio #arduino #m5cardputer #brickbreaker #electronics #circuitsimulator #retrogaming
+
+YOUTUBE SHORTS
+Title: M5 Cardputer ADV Brick Blaster game, no wiring #shorts
+
+A full brick breaker game on the M5 Cardputer ADV using only the built-in LCD, keyboard and speaker. Each brick row plays a note of a pentatonic scale, so the sound tracks your score. Open it in your browser: https://velxio.dev/example/cardputer-adv-brick-blaster

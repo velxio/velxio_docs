@@ -94,7 +94,9 @@ for (const slug of todo) {
   const cmd =
     STILL != null
       ? ["remotion", "still", "src/index.ts", composition, outFile, "--frame", String(Math.round(STILL * 30))]
-      : ["remotion", "render", "src/index.ts", composition, raw, "--codec", "h264", "--crf", "18"];
+      : ["remotion", "render", "src/index.ts", composition, raw, "--codec", "h264", "--crf", "18",
+          // more workers on this 11 GB box and the odd frame came out half drawn
+          "--concurrency", "2"];
   process.stdout.write(`${STILL != null ? "still" : "render"} ${slug} … `);
   try {
     execFileSync(
@@ -134,10 +136,20 @@ function finish(src, dst) {
   const af = (j
     ? `${LN}:measured_I=${j.input_i}:measured_TP=${j.input_tp}:measured_LRA=${j.input_lra}:measured_thresh=${j.input_thresh}:offset=${j.target_offset}:linear=true`
     : LN) + ",aresample=192000,alimiter=limit=0.79:attack=1:level=false,aresample=48000";
-  execFileSync("ffmpeg", ["-y", "-v", "error", "-i", src,
+  const encode = extra => execFileSync("ffmpeg", ["-y", "-v", "error", "-i", src,
     "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", "30",
     "-x264-params", "colorprim=bt709:transfer=bt709:colormatrix=bt709",
-    "-af", af, "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-movflags", "+faststart", dst]);
+    "-af", af + extra, "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", dst]);
+  encode("");
+  // the AAC encode can still overshoot (esp32-oled-4pin read +1.5 dBTP from a
+  // -2 dB limit): measure the result and take the excess off once
+  const tp = truePeak(dst);
+  if (tp != null && tp > -1.2) encode(`,volume=${(-1.5 - tp).toFixed(2)}dB`);
+}
+
+function truePeak(f) {
+  const m = /True peak:\s+Peak:\s+(-?[\d.]+|-inf)/.exec(spawnSync("ffmpeg", ["-hide_banner", "-i", f, "-af", "ebur128=peak=true", "-f", "null", "-"]).stderr.toString());
+  return m && m[1] !== "-inf" ? parseFloat(m[1]) : null;
 }
 
 /**

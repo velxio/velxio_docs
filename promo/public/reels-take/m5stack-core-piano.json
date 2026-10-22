@@ -1,0 +1,336 @@
+{
+ "id": "m5stack-core-piano",
+ "beats": {
+  "assembled": 3.585149049758911,
+  "run": 5.589148998260498,
+  "live": 6.9981489181518555,
+  "inputs": [
+   {
+    "id": "board:.btn[data-gpio=\"39\"]",
+    "type": "board-control",
+    "action": "hold",
+    "t": 10.056149005889893,
+    "press": [
+     11.196148872375488
+    ],
+    "done": 13.415148973464966
+   },
+   {
+    "id": "board:.btn[data-gpio=\"38\"]",
+    "type": "board-control",
+    "action": "hold",
+    "t": 14.930148839950562,
+    "press": [
+     16.086148977279663
+    ],
+    "done": 18.296149015426636
+   },
+   {
+    "id": "board:.btn[data-gpio=\"37\"]",
+    "type": "board-control",
+    "action": "hold",
+    "t": 19.803148984909058,
+    "press": [
+     20.96014904975891
+    ],
+    "done": 23.165148973464966
+   }
+  ],
+  "end": 23.932148933410645
+ },
+ "live": true,
+ "tidy": {
+  "moved": false,
+  "wires": 0,
+  "failed": 0,
+  "rects": 1
+ },
+ "inputs": [
+  {
+   "id": "board:.btn[data-gpio=\"39\"]",
+   "type": "board-control",
+   "action": "hold",
+   "wait": 0
+  },
+  {
+   "id": "board:.btn[data-gpio=\"38\"]",
+   "type": "board-control",
+   "action": "hold",
+   "wait": 1.5
+  },
+  {
+   "id": "board:.btn[data-gpio=\"37\"]",
+   "type": "board-control",
+   "action": "hold",
+   "wait": 1.5
+  }
+ ],
+ "code": {
+  "lines": 58,
+  "lh": 19,
+  "longest": 83,
+  "lang": "cpp"
+ },
+ "frame": {
+  "w": 1080,
+  "h": 1230
+ },
+ "tour": {
+  "vw": 420,
+  "vh": 478,
+  "stops": [
+   {
+    "kind": "board",
+    "type": "m5stack-core",
+    "ids": [
+     "m5stack-core"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 40,
+     "y": 69,
+     "w": 340,
+     "h": 340
+    },
+    "facts": {
+     "boardKind": "m5stack-core",
+     "language": "arduino",
+     "libraries": [
+      "M5Unified",
+      "M5GFX"
+     ],
+     "pinCount": 51,
+     "buses": [],
+     "pins": [
+      {
+       "name": "3",
+       "bus": ""
+      },
+      {
+       "name": "1",
+       "bus": ""
+      },
+      {
+       "name": "16",
+       "bus": ""
+      },
+      {
+       "name": "17",
+       "bus": ""
+      },
+      {
+       "name": "2",
+       "bus": ""
+      },
+      {
+       "name": "5",
+       "bus": ""
+      },
+      {
+       "name": "25",
+       "bus": ""
+      },
+      {
+       "name": "26",
+       "bus": ""
+      },
+      {
+       "name": "35",
+       "bus": ""
+      },
+      {
+       "name": "36",
+       "bus": ""
+      },
+      {
+       "name": "RST",
+       "bus": ""
+      },
+      {
+       "name": "BAT",
+       "bus": ""
+      },
+      {
+       "name": "3V3",
+       "bus": ""
+      },
+      {
+       "name": "5V",
+       "bus": ""
+      },
+      {
+       "name": "GND",
+       "bus": ""
+      },
+      {
+       "name": "R0",
+       "bus": ""
+      },
+      {
+       "name": "T0",
+       "bus": ""
+      },
+      {
+       "name": "R2",
+       "bus": ""
+      },
+      {
+       "name": "T2",
+       "bus": ""
+      },
+      {
+       "name": "G2",
+       "bus": ""
+      },
+      {
+       "name": "G5",
+       "bus": ""
+      },
+      {
+       "name": "DA25",
+       "bus": ""
+      },
+      {
+       "name": "DA26",
+       "bus": ""
+      },
+      {
+       "name": "AD35",
+       "bus": ""
+      },
+      {
+       "name": "AD36",
+       "bus": ""
+      },
+      {
+       "name": "RST.1",
+       "bus": ""
+      },
+      {
+       "name": "BAT.1",
+       "bus": ""
+      },
+      {
+       "name": "3V3.2",
+       "bus": ""
+      },
+      {
+       "name": "5V.2",
+       "bus": ""
+      },
+      {
+       "name": "GND.2",
+       "bus": ""
+      },
+      {
+       "name": "5V.1",
+       "bus": ""
+      },
+      {
+       "name": "3V3.1",
+       "bus": ""
+      },
+      {
+       "name": "GND.1",
+       "bus": ""
+      },
+      {
+       "name": "21",
+       "bus": ""
+      },
+      {
+       "name": "22",
+       "bus": ""
+      },
+      {
+       "name": "23",
+       "bus": ""
+      },
+      {
+       "name": "19",
+       "bus": ""
+      },
+      {
+       "name": "18",
+       "bus": ""
+      },
+      {
+       "name": "5V.3",
+       "bus": ""
+      },
+      {
+       "name": "3V3.3",
+       "bus": ""
+      },
+      {
+       "name": "GND.3",
+       "bus": ""
+      },
+      {
+       "name": "SDA",
+       "bus": ""
+      },
+      {
+       "name": "SCL",
+       "bus": ""
+      },
+      {
+       "name": "MO",
+       "bus": ""
+      },
+      {
+       "name": "MI",
+       "bus": ""
+      },
+      {
+       "name": "SCK",
+       "bus": ""
+      },
+      {
+       "name": "12",
+       "bus": ""
+      },
+      {
+       "name": "13",
+       "bus": ""
+      }
+     ]
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-ili9342c",
+    "ids": [
+     "m5stack-core"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 94,
+     "y": 149,
+     "w": 232,
+     "h": 174
+    },
+    "facts": {
+     "onboard": true
+    }
+   },
+   {
+    "kind": "part",
+    "type": "onboard-m5-buttons",
+    "ids": [
+     "m5stack-core"
+    ],
+    "count": 1,
+    "rect": {
+     "x": 118,
+     "y": 345,
+     "w": 186,
+     "h": 29
+    },
+    "facts": {
+     "onboard": true
+    }
+   }
+  ]
+ }
+}

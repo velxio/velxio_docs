@@ -1,0 +1,11 @@
+INSTAGRAM
+The Pimoroni Badger 2350 boots into an e-paper badge on a 264x176 SSD1680 panel. Button A shows the badge, B reads the PCF85063A clock, C shows battery and USB info. UP and DOWN switch the rear case lights on and off. It all runs on an RP2350 emulator in your browser.
+
+Try it free at velxio.dev (link in bio)
+
+#velxio #raspberrypi #rp2350 #epaper #badge #electronics #circuitsim
+
+YOUTUBE SHORTS
+Title: Pimoroni Badger 2350 e-paper badge in the browser #shorts
+
+The Badger 2350 draws a name badge on its 2.7 inch e-paper, with A/B/C switching between badge, RTC clock and info screens. UP and DOWN toggle the rear case lights. Open it in your browser: https://velxio.dev/example/badger-2350-badge

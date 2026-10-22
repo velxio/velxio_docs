@@ -20,7 +20,7 @@
  *   <id>-still.png  the assembled circuit at 3x, for the parts tour
  */
 import * as nodeFs from "node:fs";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
@@ -241,6 +241,15 @@ const ASSEMBLE = async ({ partMs, wireMs }) => {
 // sel is looked up in the board element's shadow DOM; the card comes from
 // part-facts.json under the same type.
 const ONBOARD = {
+  "m5stack-core": [{ sel: "canvas", type: "onboard-ili9342c" }, { sel: ".btn", type: "onboard-m5-buttons" }],
+  "cardputer-adv": [
+    { sel: "canvas", type: "onboard-st7789-cardputer" },
+    { sel: ".key", type: "onboard-cardputer-keyboard" },
+    { sel: "#rgbled", type: "onboard-ws2812" },
+    { sel: "#irled", type: "onboard-ir-tx" },
+  ],
+  "stellar-unicorn": [{ sel: "canvas", type: "onboard-stellar-matrix" }, { sel: ".btn", type: "onboard-unicorn-buttons" }],
+  "badger-2350": [{ sel: "canvas", type: "onboard-badger-epaper" }, { sel: ".btn", type: "onboard-badger-buttons" }],
   "esp32-c3-lcdkit": [
     { sel: "canvas", type: "onboard-gc9a01" },
     { sel: ".knob", type: "onboard-ec11" },
@@ -267,8 +276,10 @@ const TOUR = async onboard => {
       facts: { boardKind: b.boardKind, language: b.languageMode, libraries: b.libraries || [], ...pinFacts(el) } });
     const host = kids.flatMap(k => [k, ...k.querySelectorAll("*")]).find(n => n.shadowRoot);
     for (const o of onboard[b.boardKind] || []) {
-      const r = host?.shadowRoot.querySelector(o.sel)?.getBoundingClientRect();
-      if (!r || !r.width) continue;
+      // every match counts: ".btn" is the row of buttons, ".key" the keyboard
+      const u = union([...(host?.shadowRoot.querySelectorAll(o.sel) || [])].map(n => n.getBoundingClientRect()).filter(r => r.width));
+      if (!u) continue;
+      const r = { left: u.x, top: u.y, width: u.r - u.x, height: u.b - u.y };
       // an LED a few px across still needs room for the spotlight
       const pad = Math.max(0, (28 - Math.min(r.width, r.height)) / 2);
       stops.push({ kind: "part", type: o.type, ids: [b.id], count: 1,
@@ -321,6 +332,10 @@ async function openTidy(browser, id, viewport, dsf) {
   await page.goto(`${BASE}/embed/example/${id}`, { waitUntil: "networkidle" });
   await page.waitForSelector(".canvas-world", { timeout: 30000 });
   await page.addStyleTag({ content: CHROME_CSS });
+  // a board that takes the keyboard (the Cardputer) is focused by the first
+  // key press, and its focus ring framed the board for the rest of the take
+  // (the global focus style draws it as a box-shadow, --color-focus-ring)
+  await page.addStyleTag({ content: ".canvas-world :focus,.canvas-world :focus-visible{outline:none!important;box-shadow:none!important}" });
   await page.waitForTimeout(1500);
   // the embed zooms to fit the ORIGINAL layout; film at 1:1 and centre it ourselves
   await page.evaluate(() => document.querySelector(".zoom-level")?.click());
@@ -375,7 +390,7 @@ for (const id of ids) {
   const inputs = pick
     ? pick.map(i => typeof i === "string" ? { id: i } : i)
         .map(i => /^board:/.test(i.id)
-          ? { id: i.id, type: "board-control", action: i.action || "tap", wait: Number(i.wait) || 0 }
+          ? { id: i.id, type: "board-control", action: i.action || "tap", ...(i.key != null ? { key: keyCap(String(i.key)) } : {}), wait: Number(i.wait) || 0 }
           : { ...comps.find(c => c.id === i.id), wait: Number(i.wait) || 0 }).filter(c => c.type != null)
     : comps.filter(c => INPUT_RE.test(c.type));
 
@@ -444,17 +459,20 @@ for (const id of ids) {
     await page.mouse.move(vw - 20, vh - 20);
     for (const inp of inputs.slice(0, 5)) {
       const at = await page.evaluate(i => {
-        // "board:knob": the element with that class inside a board's shadow DOM
-        const el = /^board:/.test(i)
-          ? [...document.querySelectorAll("*")].map(h => h.shadowRoot?.querySelector("." + i.slice(6))).find(Boolean)
-          : document.getElementById(i);
+        // "board:<selector>" inside a board's shadow DOM ("board:knob" is the class
+        // knob); "board:keyboard" is the key cap with that label
+        const sel = i.id === "board:keyboard" ? `.key[data-label="${CSS.escape(i.key || "")}"]`
+          : /^board:[\w-]+$/.test(i.id) ? "." + i.id.slice(6) : i.id.slice(6);
+        const el = /^board:/.test(i.id)
+          ? [...document.querySelectorAll("*")].map(h => h.shadowRoot?.querySelector(sel)).find(Boolean)
+          : document.getElementById(i.id);
         if (!el) return null;
         const r = el.getBoundingClientRect();
         return { cx: r.x + r.width / 2, cy: r.y + r.height / 2, s: Math.min(r.width, r.height) };
-      }, inp.id);
-      if (!at) continue;
+      }, { id: inp.id, key: inp.key });
+      if (!at) { console.log(`   input not found: ${inp.id}${inp.key ? " " + inp.key : ""}`); continue; }
       if (inp.wait) await page.waitForTimeout(Math.min(8, inp.wait) * 1000);
-      const rec = { id: inp.id, type: inp.type, ...(inp.action ? { action: inp.action } : {}), t: Date.now() / 1000 - T0, press: [] };
+      const rec = { id: inp.id, type: inp.type, ...(inp.action ? { action: inp.action } : {}), ...(inp.key ? { key: inp.key } : {}), t: Date.now() / 1000 - T0, press: [] };
       beats.inputs.push(rec);
       const now = () => Date.now() / 1000 - T0;
       if (inp.type === "board-control") await workBoardControl(page, inp, at, () => rec.press.push(now()));
@@ -479,18 +497,27 @@ for (const id of ids) {
   await cdp.send("Page.stopScreencast");
   await ctx.close();
 
-  // frames -> constant 30 fps (a screencast only sends frames that changed)
+  // frames -> constant 30 fps (a screencast only sends frames that changed).
+  // A frame unlike both neighbours while they match each other is a half-
+  // painted one (seen on the Cardputer: the board cut off mid-draw for one
+  // frame) and goes; its time goes to the frame before it
+  const torn = tornFrames(framesDir, frames.length);
+  if (torn.size) console.log(`   dropped ${torn.size} half-painted frame(s)`);
+  const keep = [...frames.keys()].filter(n => !torn.has(n));
   const list = [];
-  for (let n = 0; n < frames.length; n++) {
-    const d = (n + 1 < frames.length ? frames[n + 1] : T0 + beats.end) - frames[n];
+  for (let j = 0; j < keep.length; j++) {
+    const n = keep[j];
+    const d = (j + 1 < keep.length ? frames[keep[j + 1]] : T0 + beats.end) - frames[n];
     list.push(`file '${String(n).padStart(5, "0")}.jpg'`, `duration ${Math.max(0.001, d).toFixed(4)}`);
   }
-  list.push(`file '${String(frames.length - 1).padStart(5, "0")}.jpg'`);
+  list.push(`file '${String(keep[keep.length - 1]).padStart(5, "0")}.jpg'`);
   writeFileSync(join(framesDir, "list.txt"), list.join("\n"));
   const offset = frames[0] - T0; // screencast clock vs ours
   execFileSync("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", join(framesDir, "list.txt"),
     "-vf", `fps=${FPS},scale=${FRAME.w}:${FRAME.h}:force_original_aspect_ratio=decrease,pad=${FRAME.w}:${FRAME.h}:(ow-iw)/2:(oh-ih)/2:color=0x1e1e1e,format=yuv420p`,
-    "-c:v", "libx264", "-crf", "16", "-preset", "medium", mp4]);
+    // no B-frames, a keyframe every half second: the render seeks into this
+    // file at every scene, and a long GOP is where a half-decoded frame came from
+    "-c:v", "libx264", "-crf", "16", "-preset", "medium", "-bf", "0", "-g", "15", mp4]);
   for (const k of ["assembled", "run", "live", "end"]) beats[k] -= offset;
   for (const i of beats.inputs) {
     i.t -= offset;
@@ -505,6 +532,20 @@ for (const id of ids) {
   console.log(`   ${mp4}  ${JSON.stringify(beats)}`);
 }
 await browser.close();
+
+/** Indexes of screencast frames that differ from both neighbours (mean grey
+ *  difference over 9 on 54x62 thumbnails) while the neighbours agree. */
+function tornFrames(dir, n) {
+  const FW = 54, FH = 62, S = FW * FH;
+  const raw = spawnSync("ffmpeg", ["-v", "error", "-start_number", "0", "-i", join(dir, "%05d.jpg"),
+    "-vf", `scale=${FW}:${FH},format=gray`, "-f", "rawvideo", "-"], { maxBuffer: 1 << 30 }).stdout;
+  const m = Math.min(n, Math.floor(raw.length / S));
+  const diff = (a, b) => { let t = 0; for (let i = 0; i < S; i++) t += Math.abs(raw[a * S + i] - raw[b * S + i]); return t / S; };
+  const out = new Set();
+  for (let k = 1; k < m - 1; k++)
+    if (diff(k - 1, k + 1) < 3 && diff(k, k - 1) > 9 && diff(k, k + 1) > 9) out.add(k);
+  return out;
+}
 
 /** Move the pointer by gliding the DRAWN cursor, then the real one in one
  *  jump. page.mouse.move with steps waits a frame per step, and a busy page
@@ -571,6 +612,16 @@ async function captureCode(browser, id, png) {
   return info;
 }
 
+/** The label a board keyboard prints on a cap, from what a model writes:
+ *  " " or "space" is spc, "enter" is ok, letters are upper case. */
+function keyCap(k) {
+  const n = k.trim().toLowerCase();
+  if (k === " " || n === "space" || n === "spc") return "spc";
+  if (n === "enter" || n === "return" || n === "ok") return "ok";
+  if (/^(del|tab|fn|aa|ctrl|opt|alt)$/.test(n)) return n === "aa" ? "Aa" : n;
+  return k.length === 1 ? k.toUpperCase() : k;
+}
+
 /** A control drawn on the board itself ("board:knob" = the element with
  *  class "knob" in some board's shadow DOM), worked with the real mouse so
  *  the board's own pointer handlers decide what it means:
@@ -599,14 +650,22 @@ async function workBoardControl(page, inp, at, onPress) {
   }
   await glide(page, at.cx, at.cy, 750);
   await page.waitForTimeout(300);
-  if (inp.action === "hold") {
+  if (inp.action === "hold" && /knob/.test(inp.id)) {
     await page.mouse.down(); onPress();
     await page.waitForTimeout(700);
     for (const dy of [100, 100, 100, -100, -100, -100, -100, 100]) { await page.mouse.wheel(0, dy); await page.waitForTimeout(380); }
     await page.mouse.up();
     return;
   }
-  await page.mouse.down(); onPress(); await page.waitForTimeout(120); await page.mouse.up();
+  if (inp.action === "hold") {
+    await page.mouse.down(); onPress(); await page.waitForTimeout(1500); await page.mouse.up();
+    return;
+  }
+  for (let k = 0; k < (inp.action === "taps" ? 3 : 1); k++) {
+    // long enough for a sketch that polls its buttons once a frame
+    await page.mouse.down(); onPress(); await page.waitForTimeout(160); await page.mouse.up();
+    await page.waitForTimeout(inp.action === "taps" ? 850 : 0);
+  }
 }
 
 /** Turn a potentiometer by VALUE, with the pointer drawn along the knob.

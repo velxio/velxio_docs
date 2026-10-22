@@ -1,0 +1,56 @@
+{
+ "visible": true,
+ "hook": "A badge with three screens.\nPress A, B, C.",
+ "kicker": "Pimoroni Badger 2350, e-paper SSD1680",
+ "chips": {
+  "build": "Wire the badge",
+  "tour": "Meet the parts",
+  "code": "Badge sketch",
+  "run": "Run it",
+  "input": "Press A, B, C"
+ },
+ "inputs": [
+  {
+   "id": "board:.btn[data-label=\"B\"]",
+   "wait": 2.5,
+   "action": "tap"
+  },
+  {
+   "id": "board:.btn[data-label=\"C\"]",
+   "wait": 2.5,
+   "action": "tap"
+  },
+  {
+   "id": "board:.btn[data-label=\"A\"]",
+   "wait": 2.5,
+   "action": "tap"
+  },
+  {
+   "id": "board:.btn[data-label=\"DOWN\"]",
+   "wait": 2,
+   "action": "tap"
+  },
+  {
+   "id": "board:.btn[data-label=\"UP\"]",
+   "wait": 2,
+   "action": "tap"
+  }
+ ],
+ "liveSec": 14,
+ "tourOrder": [],
+ "roles": {
+  "badger-2350": "E-paper badge, buttons and case lights"
+ },
+ "igCaption": "The Pimoroni Badger 2350 boots into an e-paper badge on a 264x176 SSD1680 panel. Button A shows the badge, B reads the PCF85063A clock, C shows battery and USB info. UP and DOWN switch the rear case lights on and off. It all runs on an RP2350 emulator in your browser.",
+ "hashtags": [
+  "velxio",
+  "raspberrypi",
+  "rp2350",
+  "epaper",
+  "badge",
+  "electronics",
+  "circuitsim"
+ ],
+ "ytTitle": "Pimoroni Badger 2350 e-paper badge in the browser #shorts",
+ "ytDescription": "The Badger 2350 draws a name badge on its 2.7 inch e-paper, with A/B/C switching between badge, RTC clock and info screens. UP and DOWN toggle the rear case lights. Open it in your browser: https://velxio.dev/example/badger-2350-badge"
+}

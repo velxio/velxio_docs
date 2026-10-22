@@ -51,12 +51,23 @@ const INPUT_RE = /pushbutton|button|potentiometer|slide-pot|joystick|slide-switc
 const OUTPUT_RE = /(^|-)led|neopixel|ssd1306|ili9341|st7789|lcd|epaper|7segment|servo|stepper-motor|dc-motor|buzzer|matrix|tm1637/;
 // kits whose result shows on the board itself (a built-in screen), with no part on the canvas
 const BOARD_SCREEN_RE = /lcdkit|cardputer|m5stack|t-display|badger|stellar|tft|amoled|oled|round|cyd|presto/;
-// controls drawn on a board that the pointer can work: "board:<class in its shadow DOM>"
+// controls drawn on a board that the pointer can work: "board:<selector in its
+// shadow DOM>" (a bare word is a class); "board:keyboard" takes a "key" label
+const BTN = ["tap", "taps", "hold"];
+const btns = (attr, list) => list.map(([label, what]) => ({ id: `board:.btn[${attr}="${label}"]`, what, actions: BTN }));
 const BOARD_CONTROLS = {
   "esp32-c3-lcdkit": [
     { id: "board:knob", what: "EC11 rotary knob around the round display (encoder on GPIO10/6, push switch on GPIO9)", actions: ["tap", "turn", "hold"] },
     { id: "board:remote", what: "virtual IR remote button on the board (sends an NEC frame to the IR receiver)", actions: ["tap"] },
   ],
+  "m5stack-core": btns("data-gpio", [["39", "button A (GPIO39, left)"], ["38", "button B (GPIO38, middle)"], ["37", "button C (GPIO37, right)"]]),
+  "cardputer-adv": [
+    { id: "board:keyboard", what: 'the 56-key keyboard; give "key" as the cap label: letters uppercase ("A"), digits, punctuation as printed ("," "/" ";"), and spc, ok (Enter), del, tab, fn, Aa, ctrl, opt, alt', actions: BTN },
+    { id: "board:.btn0", what: "BOOT / G0 button (GPIO0)", actions: BTN },
+  ],
+  "stellar-unicorn": btns("data-label", [["A", "button A (GPIO0)"], ["B", "button B (GPIO1)"], ["C", "button C (GPIO3)"], ["D", "button D (GPIO6)"],
+    ["VOL+", "volume up (GPIO7)"], ["VOL-", "volume down (GPIO8)"], ["LUX+", "brightness up (GPIO21)"], ["LUX-", "brightness down (GPIO26)"], ["SLPZ", "sleep (GPIO27)"]]),
+  "badger-2350": btns("data-label", [["A", "button A (GPIO7)"], ["B", "button B (GPIO9)"], ["C", "button C (GPIO10)"], ["UP", "button UP (GPIO11)"], ["DOWN", "button DOWN (GPIO6)"]]),
 };
 
 // boards the embed cannot run unattended: Linux guests (QEMU on the backend, paid)
@@ -134,7 +145,7 @@ Return JSON with:
 - "hook": the line at the top for the whole video, 2 short lines separated by "\\n", max 30 characters per line. Concrete and curious, about what the viewer will SEE happen (e.g. "Turn the knob.\\nThe servo follows."). No questions that the video does not answer.
 - "kicker": one line under it, max 44 characters: board + the key parts or library.
 - "chips": short step labels (max 18 characters each): {"build", "tour", "code", "run", "input"}. "input" says what the pointer does ("Press it", "Change the light").
-- "inputs": the interactive parts the pointer works, in the order the SKETCH reacts to them, as [{"id": "<component id>", "wait": <seconds to wait before touching it, 0 unless the sketch shows a splash or prompt first, max 6>, "action": "<only for a board control: one of its actions>"}]. Only ids from INTERACTIVE. A board control may appear more than once with different actions (tap = a short press, turn = twist it back and forth for about 3 s, hold = press and keep it down for about 4 s). Trace the sketch's states: if it starts on a title or "press to start" screen (a TITLE state, a splash that waits for a button), the FIRST input is the press that starts it, because anything worked before that does nothing visible. For a game, start it, then steer, then fire, then any special move. At most 5. Leave out an input the code never reads. Empty list if none.
+- "inputs": the interactive parts the pointer works, in the order the SKETCH reacts to them, as [{"id": "<component id>", "wait": <seconds to wait before touching it, 0 unless the sketch shows a splash or prompt first, max 6>, "action": "<only for a board control: one of its actions>"}]. Only ids from INTERACTIVE. A board control may appear more than once with different actions (tap = one short press, taps = three presses about a second apart, hold = press and keep it down for about 1.5 s, or 4 s on a knob, turn = twist a knob back and forth for about 3 s). A board keyboard input also needs "key". Trace the sketch's states: if it starts on a title or "press to start" screen (a TITLE state, a splash that waits for a button), the FIRST input is the press that starts it, because anything worked before that does nothing visible. For a game, start it, then steer, then fire, then any special move. At most 5. Leave out an input the code never reads. Empty list if none.
 - "liveSec": seconds of the running project to show, 8 to 16 (longer for several inputs or slow visuals).
 - "tourOrder": the part TYPES (from PARTS) in the order the sketch uses them (what setup() starts first, then the loop). Omit wires-only passives if there are more than 4 types.
 - "roles": {"<type>": "what it does in THIS sketch, max 40 characters"} for each type in tourOrder and for the board type.
@@ -156,6 +167,7 @@ function validate(s, ex, interactive, types) {
     const c = interactive.find(c => c.id === i.id);
     if (!c) e.push(`inputs: "${i.id}" is not in INTERACTIVE`);
     else if (c.actions && !c.actions.includes(i.action)) e.push(`inputs: "${i.id}" needs an action, one of ${c.actions.join(", ")}`);
+    else if (i.id === "board:keyboard" && !i.key) e.push('inputs: "board:keyboard" needs a "key"');
   }
   if ((s.inputs || []).length > 5) e.push("inputs: at most 5");
   if (!(s.liveSec >= 6 && s.liveSec <= 18)) e.push("liveSec must be 8 to 16");

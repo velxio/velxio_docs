@@ -1,0 +1,46 @@
+{
+ "visible": true,
+ "hook": "Press a button.\nA key lights up.",
+ "kicker": "M5Stack Core, three buttons, built-in speaker",
+ "chips": {
+  "build": "Board on screen",
+  "tour": "Three keys",
+  "code": "Button to note",
+  "run": "Run the piano",
+  "input": "Hold A, B, C"
+ },
+ "inputs": [
+  {
+   "id": "board:.btn[data-gpio=\"39\"]",
+   "wait": 0,
+   "action": "hold"
+  },
+  {
+   "id": "board:.btn[data-gpio=\"38\"]",
+   "wait": 1.5,
+   "action": "hold"
+  },
+  {
+   "id": "board:.btn[data-gpio=\"37\"]",
+   "wait": 1.5,
+   "action": "hold"
+  }
+ ],
+ "liveSec": 10,
+ "tourOrder": [],
+ "roles": {
+  "m5stack-core": "Draws three keys and plays a note per button"
+ },
+ "igCaption": "The M5Stack Core turns its three front buttons into a tiny piano. Hold A, B or C and the matching key lights orange on the LCD while the speaker plays C4, E4 or G4. No wiring, just the board and M5Unified.",
+ "hashtags": [
+  "velxio",
+  "m5stack",
+  "arduino",
+  "electronics",
+  "circuitsimulator",
+  "microcontroller",
+  "piano"
+ ],
+ "ytTitle": "M5Stack Core button piano: three keys on one board #shorts",
+ "ytDescription": "The three front buttons of the M5Stack Core play C4, E4 and G4 on the built-in speaker, and the LCD lights the key you are holding. It runs entirely on the board with M5Unified, no extra parts. Open it in your browser: https://velxio.dev/example/m5stack-core-piano"
+}
