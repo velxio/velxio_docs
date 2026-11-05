@@ -51,6 +51,124 @@ ffmpeg -y -ss <ct> -i out/velxio-demo.mp4 -vframes 1 /tmp/beat.png
 Check: intro readable, each zoom shows its subject uncut, captions match
 what is on screen, cursor not covering what matters, final LED lit.
 
+## Agent promo (cinematic, "Resin EDA" style) — 2026-10-08
+
+A second promo in a different genre: dark stage, one headline per step
+(white + accent phrase), and for each step a FLOATING CARD cut out of the
+real take in perspective (the composer being typed into, the canvas while
+parts land, the wiring, the code, the chat explaining, the serial monitor
+at boot, the circuit alive, the follow-up request). Modelled on the Resin
+EDA launch video (youtube JByTuaHHHGg, 71 s): no cursor on the cards, no
+full-screen app, headlines carry the story.
+
+```bash
+# 1. take (velxio-prod, ~7-8 min, needs a PAID account; the agent builds a
+#    DHT22 + SSD1306 weather station on an ESP32, then a follow-up adds big
+#    digits and a red LED)
+cd /home/dave/velxio-prod
+VELXIO_SHOTS_EMAIL=<paid account email> VELXIO_SHOTS_PASSWORD=... \
+  node scripts/capture-agent-promo.mjs [--prompt ...] [--follow ...] [--no-follow] [--dry]
+# -> out/agent-promo/{agent-raw.webm,agent-promo.json,frame-start.png,frame-end.png}
+
+# 2. scene plan + assets (velxio_docs/promo)
+cd /home/dave/velxio_docs/promo
+node prepare-agent.mjs [--take /home/dave/velxio-prod/out/agent-promo] \
+  [--live-start <take s>] [--steer-start <take s>]
+# -> src/agent-data.json, public/agent/{agent-raw.webm,logo.svg,boards/*}
+
+# 3. render (composition "agent", 1920x1080)
+CHROME=$(ls -d $HOME/.cache/ms-playwright/chromium-*/chrome-linux*/chrome | sort | tail -1)
+npx remotion render src/index.ts agent out/velxio-agent-promo.mp4 --codec h264 --browser-executable "$CHROME"
+```
+
+Review: `npx remotion still src/index.ts agent /tmp/x.png --frame N` for one
+frame per scene (`prepare-agent.mjs` prints each scene's start), and ffmpeg
+stills of the raw take at the mark times. Look at every card: a crop that
+drifted off its panel shows a grey/black box, not an error.
+
+What the recorder does differently from `capture-agent-clip.mjs`:
+
+- **True 2x take.** `recordVideo` never upscales: with only a context
+  `deviceScaleFactor: 2` the page renders at 2x but the screencast frames
+  come out at CSS size, padded into the 2x canvas (the first take was 1x
+  content in a 2880x1800 frame). The launch flag
+  `--force-device-scale-factor=2` makes the headless screen itself 2x and
+  then the frames are 3360x2000 for real. Cards blown up to fill 1080p need
+  that; a 1x take goes soft.
+- **Watches the DOM** every 400 ms and marks `part-added`, `wire-added`,
+  `code-changed`, `tool-start/ok`, `sim-started/stopped`, `message`,
+  `agent-busy/idle`, `serial-first`, `serial-data` (first sensor reading on
+  the serial line), plus `prompt-typing/send`, `agent-done`, `live-end`,
+  `follow-typing/send/done`, `end`. It also measures the panel boxes
+  (`boxes.start/built/end`) so the crops come from the live layout.
+- **1680x1000 viewport** (not 1440x900): the code pane is 430 px wide
+  instead of 322 and the canvas 677 instead of 545, so the circuit the
+  agent lays out to the right of the board stays inside the canvas.
+- Agent panel widened to 440 via `localStorage velxio-agent-panel-width`,
+  a NEW chat session is started so the panel is empty, the cursor is hidden
+  after each send.
+- `locator.boundingBox()` auto-waits 30 s for a missing element: the
+  measure step passes `{ timeout: 1500 }` (a dry run once spent 93 s on
+  three absent selectors).
+
+Scene plan lives in `prepare-agent.mjs`, not in the TSX: each scene is a
+headline + cards `{crop (CSS px of the take), place (stage px), src
+{start,end,rate}}`. `fitPlace()` keeps every card below the headline band
+(y >= 210) and inside the frame. The agent drops every part in ONE tick,
+so the parts/wires windows hold a couple of seconds either side of the
+landing instead of squeezing a span. The `live` and `steer-result` beats
+start 2.5 s before the first serial reading (`serial-data`); the display
+lagged the serial by ~0 s in the 10-08 take but the OLED only draws ~12 s
+after boot on the ESP32 JS engine, so a take without the mark needs
+`--live-start`. The steer-result uses the FIRST rerun after the follow-up:
+the agent later restarts to test the below-threshold case and leaves the
+LED off.
+
+Rendering (what cost the first evening):
+
+- `prepare-agent.mjs` CUTS the used windows of the take into
+  `public/agent/agent-cut.mp4` (H.264, keyframe every 15 frames) and
+  remaps every card's `src` into it. Rendering straight from the raw VP8
+  webm ran at ~1 frame/s and OffthreadVideo's seeks dominated.
+- Frames cost ~1 s each anyway (perspective cards, 120 px shadows, the
+  grid floor, 3360x2000 frames scaled in the browser). The full 2411
+  frames take ~40 min on the prod box.
+- With `--concurrency 2` or more the render STALLED at the last frame of
+  the pool (2410/2411 for 15 min, 119/121 in a test) with no error; with
+  one tab it always finished. Three single-tab renders in parallel
+  (`--frames=0-800`, `801-1600`, `1601-2410`, then ffmpeg concat
+  `-c copy`) finished in ~25 min, but each compositor caches ~2.3 GB of
+  frames and the box has 12 GB: one tab died with `Page crashed!` while
+  all three ran. Run at most two at once, or pass
+  `--offthreadvideo-cache-size-in-bytes 800000000`. `remotion still`
+  for single frames is fine at any time (~11 s each).
+
+Second cut (10-08, after David's review): scenes overlap by 0.45 s
+(`OVERLAP` in prepare) so the stage is never empty, the stage (glow + grid)
+lives in the root composition and glides between card centres, every card
+gets a slow dolly, headlines come in word by word. The payoff shots crop the
+sensor + display row (`oledBox`, `oledLedBox`, override with `--oled-box
+x,y,w,h`) so the OLED fills a third of the frame; the chat cards crop the
+prompt + first tool calls (`chatTools`) and the final answer block
+(`answerBox`, measured by the recorder as `boxes.built.lastMessage`, panned
+down); the prompt cards crop the textarea only (`promptBox`, no credit chip,
+no Send row); the compile scene opens on the upstream `CompileProgressCard`
+(the recorder marks `compile-card` with its box when it pops up) and then
+cuts to the serial boot. Recorder flag `--no-cursor` keeps the pointer off
+camera. Soundtrack `soundtrack-riverflow.mp3` (Mixkit "River Flow", 120
+BPM, calmer than House Vibez), `--audio-start 56.4` so its beat enters with
+the first card; `--audio-volume 0.5`. Chunk renders: three `--frames`
+ranges in parallel with `--offthreadvideo-cache-size-in-bytes 600000000`
+(the last index is durationInFrames - 1; Remotion refuses a range past it).
+
+Known quirks of the 10-08 take: the agent called `report_bug` once in the
+first take (capture_display returned no vision description); the second
+take did not. `AgentPromo.tsx` = stage (glow + perspective grid), Headline,
+TakeCard (OffthreadVideo inside an overflow-hidden div, translate+scale
+crop, `playbackRate` for sped-up spans), LogoMark (the favicon IC drawn
+in), BoardsScene (12 board images from pro/frontend/public/boards),
+claim and outro.
+
 ## Gallery demo videos (basic mode)
 
 One short video per gallery example — open it, run it, film it working —
