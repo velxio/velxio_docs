@@ -34,9 +34,13 @@ const VIEWPORT = { width: 1280, height: 720 };
 
 // ── infra ────────────────────────────────────────────────────────────────────
 
+// WebGL in headless Chromium needs SwiftShader allowed explicitly; without it
+// the 3D World falls back to its 2D view (or says WebGL is off).
+const GL_ARGS = ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"];
+
 async function launch() {
   try {
-    return await chromium.launch({ headless: true });
+    return await chromium.launch({ headless: true, args: GL_ARGS });
   } catch {
     const home = process.env.HOME;
     const candidates = [
@@ -51,7 +55,7 @@ async function launch() {
       .reverse();
     if (!candidates.length)
       throw new Error("no chromium — run: npx playwright install chromium");
-    return chromium.launch({ headless: true, executablePath: candidates[0] });
+    return chromium.launch({ headless: true, args: GL_ARGS, executablePath: candidates[0] });
   }
 }
 
@@ -1266,6 +1270,95 @@ const SCENES = {
     }, started.user_code);
   },
 };
+
+
+// ── 3D Worlds (worlds/*) ─────────────────────────────────────────────────────
+// The World draws in a sandboxed iframe (.pro-world-frame) on the board's
+// simulated clock; window.__velxioWorld.stats says when it runs. Headless
+// SwiftShader draws it slowly but correctly, which is all a still needs.
+
+async function worldFrame(page) {
+  const h = await page.$("iframe.pro-world-frame");
+  return h ? h.contentFrame() : null;
+}
+
+/** Wait until the World has run `simMs` of simulated time. */
+async function waitWorld(page, simMs = 4000, ms = 240_000) {
+  const end = Date.now() + ms;
+  while (Date.now() < end) {
+    const s = await page.evaluate(() => window.__velxioWorld?.stats ?? null);
+    if (s?.running && (s.simMs ?? 0) > simMs) return;
+    await page.waitForTimeout(500);
+  }
+  throw new Error(`World never reached ${simMs} ms of simulated time`);
+}
+
+/** The World's own guide opens over the scene the first time a browser shows
+ *  a World: mark it seen so the robot is what the shot shows. */
+async function skipWorldGuide(page) {
+  await page.addInitScript(() => {
+    try {
+      localStorage.setItem("velxio.world.guideSeen", "1");
+    } catch {}
+  });
+}
+
+/** Element screenshot: the intro card is taller than the 720 px viewport. */
+async function shotOf(page, selector, relPath) {
+  const file = join(OUT, `${relPath}.png`);
+  mkdirSync(dirname(file), { recursive: true });
+  await page.locator(selector).first().screenshot({ path: file });
+  console.log(`  saved ${relPath}.png`);
+}
+
+Object.assign(SCENES, {
+  /** The 3D button next to the board selector, and the intro it opens. */
+  "worlds/overview": async page => {
+    await loadExample(page, "esp32-servo");
+    await shot(page, "worlds/3d-button", {
+      clip: await clipOf(page, [".board-selector", "[data-pro-world-toggle]"], 10),
+    });
+    await page.setViewportSize({ width: 1280, height: 1000 });
+    await dismissOverlays(page);
+    await page.locator("[data-pro-world-toggle]").first().click();
+    await page.waitForSelector(".pro-world-intro-card");
+    await page.waitForTimeout(3000); // the loops reach a frame worth showing
+    await shotOf(page, ".pro-world-intro-card", "worlds/intro");
+  },
+
+  /** Romeo ESP32-S3 line follower: the World next to the running circuit. */
+  "worlds/romeo-line-follower": async page => {
+    await skipWorldGuide(page);
+    await loadExample(page, "dfrobot-romeo-esp32s3-line-robot-3d");
+    await clickRun(page);
+    await waitWorld(page, 6000);
+    await shot(page, "worlds/romeo-running", {
+      clip: await clipOf(page, [".pro-world-view", ".canvas-content"], 0),
+    });
+  },
+
+  /** Devastator arena: running, the 2D view, and the scene editor. */
+  "worlds/devastator-tank": async page => {
+    await skipWorldGuide(page);
+    await loadExample(page, "dfrobot-devastator-tank-avoidance");
+    await clickRun(page);
+    await waitWorld(page, 8000);
+    await shot(page, "worlds/devastator-running", { clip: await clipOf(page, [".pro-world-view"], 0) });
+    await dismissOverlays(page); // the news overlay arrives late and eats clicks
+    const f = await worldFrame(page);
+    // Kit toolbar buttons carry their tooltip as title, so match the visible label.
+    const kitButton = label => f.locator("button.vk-btn", { hasText: new RegExp(`^\\s*${label}\\s*$`) }).first();
+    await kitButton("2D").click();
+    await page.waitForTimeout(1500);
+    await shot(page, "worlds/view-2d", { clip: await clipOf(page, [".pro-world-view"], 0) });
+    await kitButton("3D").click();
+    await kitButton("Edit").click();
+    await page.waitForTimeout(1500);
+    await shot(page, "worlds/editor", { clip: await clipOf(page, [".pro-world-view"], 0) });
+  },
+});
+for (const n of ["worlds/overview", "worlds/romeo-line-follower", "worlds/devastator-tank"])
+  SCENES[n].anonymous = true;
 
 for (const n of ["custom-chips/co2-sensor", "custom-chips/motion-sensor", "custom-chips/i2c-env-sensor"])
   SCENES[n].anonymous = true;

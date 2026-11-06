@@ -65,6 +65,20 @@ export default defineConfig({
           items: [{ autogenerate: { directory: "instruments" } }],
         },
         {
+          label: "3D Worlds",
+          translations: {
+            es: "Mundos 3D",
+            "pt-BR": "Mundos 3D",
+            it: "Mondi 3D",
+            fr: "Mondes 3D",
+            "zh-CN": "3D 世界",
+            de: "3D-Welten",
+            ja: "3Dワールド",
+            ru: "3D-миры",
+          },
+          items: [{ autogenerate: { directory: "worlds" } }],
+        },
+        {
           label: "Boards",
           translations: { es: "Placas" },
           items: [{ autogenerate: { directory: "boards" } }],
