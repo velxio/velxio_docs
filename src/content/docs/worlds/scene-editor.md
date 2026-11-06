@@ -73,7 +73,7 @@ Behind the editor, the scene is a JSON block in `world.html`:
 { "version": 1, "view": "3d", "floor": { "w": 2.4, "h": 1.6, "grid": true },
   "objects": [
     { "id": "track1", "type": "track", "shape": "loop", "x": 0, "y": 0, "w": 2.1, "h": 0.9, "tape": 0.022 },
-    { "id": "robot1", "type": "robot", "preset": "diff2", "x": -0.3, "y": -0.45, "rot": 0,
+    { "id": "robot1", "type": "robot", "preset": "diff2", "x": -0.3, "y": -0.439, "rot": 0,
       "bind": { "left": ["motorL"], "right": ["motorR"], "line": ["lineL", "lineC", "lineR"] } },
     { "id": "box1", "type": "box", "x": 0.7, "y": 0.05, "w": 0.15, "d": 0.15, "h": 0.15, "color": "#c0392b" }
   ] }
@@ -90,9 +90,11 @@ Behind the editor, the scene is a JSON block in `world.html`:
   `right` (lists of motor ids), `invertLeft`, `invertRight`, `line` (sensor
   ids, left to right), `sonar`, `sonarServo` and `imu`.
 - `track`: `shape` is `loop`, `oval`, `figure8` or `line`, with `w`, `h` and
-  `tape` (the tape width, 0.019 to 0.025 m). To start a line follower on the
-  tape of a loop centred at the origin, put it on the bottom straight heading
-  +x: `x: -0.3, y: -h/2, rot: 0`.
+  `tape` (the tape width, 0.019 to 0.025 m). `w` and `h` are the tape's outer
+  edge, so its centre line runs half a tape width inside. To start a line
+  follower on the tape of a loop centred at the origin, put it on the bottom
+  straight heading +x: `x: -0.3, y: -(h/2 - tape/2), rot: 0` (-0.439 for a
+  0.9 m loop of 22 mm tape).
 - `box` and `wall`: `w`, `d`, `h`. `cylinder`: `r`, `h`.
 - `ramp`: `profile` is `wedge` (rises toward +x, then a vertical face),
   `bridge` (up, flat, down) or `hill` (a smooth bump, crossable from any side),

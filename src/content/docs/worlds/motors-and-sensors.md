@@ -15,11 +15,15 @@ firmware is the same code that runs the real robot.
 | --------------------------------------- | ------------------------------------------------------------- |
 | DC motor, gear motor with encoder       | `drive`, from -1 to 1: the duty on the motor, sign = direction |
 | Servo                                   | `angle`, 0 to 180 degrees                                     |
+| LED                                     | `on` (true when lit) and `brightness`, 0 to 1 (follows PWM)   |
 
 A motor's drive is read through whatever drives it: an L293D, a transistor or
 MOSFET, a board's onboard driver (the Romeo boards), or a pin straight to the
 motor. A robot side follows the average drive of its motors, with a little
 inertia (about 80 ms) and a small deadband, like a real gearbox.
+
+An LED does not move anything, but a World you write yourself can draw it: a
+traffic light at a crossing, a lighthouse, a lamp in a room.
 
 ## What the World writes
 

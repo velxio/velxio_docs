@@ -1,5 +1,5 @@
 ---
-title: Écrivez votre propre World
+title: Écrire votre propre World
 description: Laissez une IA écrire un World à partir d'un prompt qui contient tout votre projet, ou écrivez world.html vous-même avec l'API window.velxio.
 sidebar:
   order: 4
@@ -23,19 +23,19 @@ prompt est un brief complet, construit à partir de votre projet à cet instant 
 - **Les règles** : où la page s'exécute, l'API `window.velxio`, la physique sur le temps
   simulé, et les deux façons d'écrire un World (une scène de kit ou une page libre).
 - **Comment répondre** : le `world.html` complet, le nouveau firmware s'il doit
-  changer, et les modifications de câblage broche à broche.
+  changer, et les modifications de câblage broche par broche.
 
-Collez-le dans ChatGPT, Claude, Gemini ou tout autre chat, et écrivez ce que vous
-voulez construire à la fin, dans n'importe quelle langue. Par exemple, avec un ESP32 et
-quatre servos sur le canvas : « un bras robotique qui prend le cube rouge et le dépose
-dans la boîte ». Ensuite, ouvrez le World, passez à **HTML**, remplacez tout par
+Collez-le dans ChatGPT, Claude, Gemini ou tout autre chat, et écrivez à la fin ce que vous
+voulez construire, dans n'importe quelle langue. Par exemple, avec un ESP32 et
+quatre servos sur le canvas : "un bras robotique qui prend le cube rouge et le dépose
+dans la boîte". Ensuite, ouvrez le World, passez à **HTML**, remplacez tout par
 la réponse et appuyez sur **Run**.
 
 ## Où la page s'exécute
 
 - Une iframe sandboxée sans accès à l'API de Velxio, à votre compte ni à vos
   cookies. `localStorage` peut être absent.
-- Les scripts et styles se chargent uniquement depuis `cdn.jsdelivr.net`, `cdnjs.cloudflare.com`,
+- Les scripts et les styles se chargent uniquement depuis `cdn.jsdelivr.net`, `cdnjs.cloudflare.com`,
   `unpkg.com` et `esm.sh`, plus le code inline. three.js provient de
   `https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js`.
 - `window.velxio` existe déjà lorsque vos scripts s'exécutent. C'est le seul lien
@@ -53,7 +53,8 @@ velxio.onFrame((f) => {            // about 125 times per second
   // f.t        simulated seconds since the board booted (null while stopped)
   // f.dt       simulated seconds since the previous frame
   // f.running  true while the firmware runs
-  // f.parts    { [id]: { drive, rpm } } for motors, { [id]: { angle } } for servos
+  // f.parts    { [id]: { drive, rpm } } for motors, { [id]: { angle } } for servos,
+  //            { [id]: { on, brightness } } for LEDs
 });
 
 velxio.set(partId, values);        // write a sensor: only the keys it lists, values clamped
@@ -68,11 +69,11 @@ console.log(...);                  // goes to the World log
 
 ## Règles pour un World qui se comporte bien
 
-1. **Physique sur le temps simulé.** Additionnez `f.dt` et avancez avec un pas fixe
-   (2 ms fonctionne bien), en plafonnant le retard à 0,25 s. Dessinez avec
-   `requestAnimationFrame`, mais ne déplacez jamais rien selon le temps réel : le
+1. **Physique sur le temps simulé.** Additionnez `f.dt` et avancez par pas fixe
+   (2 ms fonctionne bien), en plafonnant le retard accumulé à 0,25 s. Dessinez avec
+   `requestAnimationFrame`, mais ne déplacez jamais rien en fonction du temps réel : le
    simulateur peut tourner plus lentement ou plus vite que le temps réel.
-2. **Ne bougez que lorsque `f.running` est vrai**, et remettez tout à son
+2. **Ne déplacez qu'avec `f.running` à true**, et remettez tout à son
    état initial sur `reset`.
 3. **N'écrivez un capteur que lorsque sa valeur change**, et un capteur de distance au
    plus toutes les 30 ms de temps simulé. Mesurez depuis la scène : échantillonnez le

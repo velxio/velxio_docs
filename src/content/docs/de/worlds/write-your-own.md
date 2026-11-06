@@ -6,8 +6,8 @@ sidebar:
 ---
 
 `world.html` ist eine einfache HTML-Seite. Alles, was das [Scene-Kit](/docs/de/worlds/scene-editor/)
-nicht zeichnen kann (eine Maschine, ein Raum, ein Spiel, ein eigener Roboter), kann eine eigene Seite sein,
-geschrieben von Hand oder von einer KI.
+nicht zeichnen kann (eine Maschine, ein Raum, ein Spiel, ein eigener Roboter), kann eine eigene
+Seite sein, von Hand oder von einer KI geschrieben.
 
 ## Mit einer KI
 
@@ -27,8 +27,7 @@ Prompt ist ein vollständiges Briefing, das aus deinem Projekt in diesem Moment 
 
 Füge es in ChatGPT, Claude, Gemini oder einen anderen Chat ein, und schreibe am Ende, was du
 bauen möchtest, in beliebiger Sprache. Zum Beispiel, mit einem ESP32 und
-vier Servos auf dem Canvas: "ein Roboterarm, der den roten Würfel aufnimmt und ihn
-in die Kiste legt". Öffne dann die World, wechsle zu **HTML**, ersetze alles durch
+vier Servos auf dem Canvas: "ein Roboterarm, der den roten Würfel aufnimmt und in die Kiste legt". Öffne dann die World, wechsle zu **HTML**, ersetze alles durch
 die Antwort und drücke **Run** (Ausführen).
 
 ## Wo die Seite läuft
@@ -53,7 +52,8 @@ velxio.onFrame((f) => {            // about 125 times per second
   // f.t        simulated seconds since the board booted (null while stopped)
   // f.dt       simulated seconds since the previous frame
   // f.running  true while the firmware runs
-  // f.parts    { [id]: { drive, rpm } } for motors, { [id]: { angle } } for servos
+  // f.parts    { [id]: { drive, rpm } } for motors, { [id]: { angle } } for servos,
+  //            { [id]: { on, brightness } } for LEDs
 });
 
 velxio.set(partId, values);        // write a sensor: only the keys it lists, values clamped
@@ -72,15 +72,15 @@ console.log(...);                  // goes to the World log
    (2 ms funktioniert gut), und begrenze den Rückstand auf 0,25 s. Zeichne mit
    `requestAnimationFrame`, aber bewege niemals etwas nach Wanduhrzeit: der
    Simulator kann langsamer oder schneller als Echtzeit laufen.
-2. **Bewege nur, solange `f.running` true ist**, und setze bei `reset` alles wieder auf seinen
-   Startzustand zurück.
+2. **Bewege dich nur, solange `f.running` true ist**, und setze bei
+   `reset` alles wieder an seinen Startpunkt.
 3. **Schreibe einen Sensor nur, wenn sich sein Wert ändert**, und einen Abstandssensor
-   höchstens alle 30 ms simulierter Zeit. Messe aus der Szene: taste den
+   höchstens alle 30 ms simulierter Zeit. Miss aus der Szene: taste den
    Boden unter einem Liniensensor ab, wirf einen Strahl für einen Abstandssensor.
 4. **Bilde den Antrieb eines Motors auf die Raddrehzahl ab** mit etwas Trägheit (ein
    Verzögerungsglied erster Ordnung von etwa 80 ms) und einem kleinen Totband. Ein Differentialroboter
    dreht sich durch die Differenz zwischen seinen beiden Seiten.
-5. **Eine eigenständige Datei**, die sich mit dem Fenster in der Größe anpasst und die
+5. **Eine in sich geschlossene Datei**, die sich mit dem Fenster in der Größe anpasst und die
    wichtigen Messwerte in einem kleinen Overlay anzeigt.
 
 ## Eine minimale freie World

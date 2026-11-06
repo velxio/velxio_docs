@@ -6,33 +6,37 @@ sidebar:
 ---
 
 O World nunca executa seu código e nunca toca diretamente em um pino. Ele lê
-o que o circuito aciona e escreve o que os sensores mediriam, de modo que o
+o que o circuito aciona e escreve o que os sensores mediriam, então o
 firmware é o mesmo código que roda no robô real.
 
 ## O que o World lê
 
-| Peça                                    | Valor que o World obtém                                       |
+| Peça                                    | Valor que o World recebe                                      |
 | --------------------------------------- | ------------------------------------------------------------- |
 | Motor DC, motor com encoder             | `drive`, de -1 a 1: o duty no motor, sinal = direção          |
 | Servo                                   | `angle`, 0 a 180 graus                                        |
+| LED                                     | `on` (true quando aceso) e `brightness`, 0 a 1 (segue o PWM)  |
 
 O drive de um motor é lido através do que quer que o acione: um L293D, um transistor ou
-MOSFET, um driver embarcado da placa (as placas Romeo), ou um pino direto no
+MOSFET, um driver embutido da placa (as placas Romeo), ou um pino direto no
 motor. Um lado do robô segue o drive médio de seus motores, com um pouco de
 inércia (cerca de 80 ms) e uma pequena zona morta, como uma caixa de engrenagens real.
 
+Um LED não move nada, mas um World que você mesmo escreve pode desenhá-lo: um
+semáforo em um cruzamento, um farol, uma lâmpada em um cômodo.
+
 ## O que o World escreve
 
-| Peça                                   | Valores                                                     | Como o firmware lê                                            |
+| Peça                                   | Valores                                                    | Como o firmware lê                                            |
 | -------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------- |
 | DFRobot Gravity line tracker (SEN0017) | reflectância 0 a 1, `black`                                | `digitalRead(pin) == LOW` sobre a fita preta                  |
 | DFRobot URM09, modo Trig (SEN0388)     | distância, 2 a 500 cm                                      | um pino: um trigger de 10 us, depois `pulseIn(pin, HIGH) / 58.0` |
-| DFRobot URM37 V5.0, modo PWM           | distância, 2 a 500 cm                                      | puxe COMP/TRIG para baixo, depois `pulseIn(ECHO, LOW) / 50`   |
+| DFRobot URM37 V5.0, modo PWM           | distância, 2 a 500 cm                                      | puxe COMP/TRIG para LOW, depois `pulseIn(ECHO, LOW) / 50`     |
 | HC-SR04                                | distância, 2 a 400 cm                                      | TRIG em HIGH por 10 us, depois `pulseIn(ECHO, HIGH) / 58.0`   |
 | MPU6050                                | aceleração em g, rotação em graus por segundo              | I2C, como no chip real                                        |
 
-Os sensores de distância olham para a frente a partir do para-choque do robô, com um cone
-estreito de cerca de 12 graus de cada lado. Os sensores de linha amostram o tapete (ou a rampa)
+Sensores de distância olham para a frente a partir do para-choque do robô, com um cone
+estreito de cerca de 12 graus de cada lado. Sensores de linha amostram o tapete (ou a rampa)
 bem embaixo deles.
 
 ## Comande um robô: o lado do firmware
@@ -77,7 +81,7 @@ void side(int dirPin, int pwmPin, int speed) {
 void drive(int left, int right) { side(4, 5, left); side(7, 6, right); }   // M1 left, M2 right
 ```
 
-A biblioteca DFMobile da DFRobot (usada pelos exemplos do Devastator) aciona o
+A biblioteca DFMobile da DFRobot (usada nos exemplos do Devastator) aciona o
 pino de direção em LOW para frente com `Robot.Direction(LOW, HIGH)`, então um robô
 que a utiliza precisa de **Reverse** em ambos os lados.
 
@@ -101,7 +105,7 @@ Apenas uma direção: o duty no pino de gate é o drive.
 
 ## Comportamentos
 
-Um seguidor de linha com três sensores:
+Um seguidor de linha de três sensores:
 
 ```cpp
 bool L = digitalRead(LINE_L) == LOW, C = digitalRead(LINE_C) == LOW, R = digitalRead(LINE_R) == LOW;
@@ -116,6 +120,6 @@ e vira para o lado com mais espaço (um sonar em um servo pode olhar para 0
 e 180 graus primeiro). Leia o sonar a cada 50 a 100 ms e nunca bloqueie por
 muito tempo em `loop()`.
 
-Em drive máximo, um robô 2WD faz 0,55 m/s, um 4WD 0,61 m/s e o tanque
+Em drive total, um robô 2WD faz 0,55 m/s, um 4WD 0,61 m/s e o tanque
 0,36 m/s. Para um seguidor de linha em uma fita de 22 mm, 120 a 170 de 255 o mantém
 na linha.

@@ -1,15 +1,15 @@
 ---
 title: Scrivi il tuo World
-description: Lascia che un'IA scriva un World da un prompt che contiene tutto il tuo progetto, oppure scrivi world.html da solo con l'API window.velxio.
+description: Lascia che un'AI scriva un World da un prompt che contiene tutto il tuo progetto, oppure scrivi world.html da solo con l'API window.velxio.
 sidebar:
   order: 4
 ---
 
 `world.html` è una semplice pagina HTML. Tutto ciò che il [scene kit](/docs/it/worlds/scene-editor/)
 non riesce a disegnare (una macchina, una stanza, un gioco, un robot personalizzato) può essere una pagina
-tua, scritta a mano o da un'IA.
+tua, scritta a mano o da un'AI.
 
-## Con un'IA
+## Con un'AI
 
 Premi **Copy AI prompt**, nell'introduzione 3D o nella barra del World. Il
 prompt è un brief completo, costruito dal tuo progetto in quel momento:
@@ -18,11 +18,11 @@ prompt è un brief completo, costruito dal tuo progetto in quel momento:
   impostazioni brevi come il colore di un LED), il cablaggio come reti (quali pin sono
   collegati, anche attraverso breadboard) e i file del firmware.
 - **Cosa un World può leggere e scrivere**, per i componenti che hai e per ogni
-  componente che un World supporta, così l'IA può dirti quale componente aggiungere e come
+  componente che un World supporta, così l'AI può dirti quale componente aggiungere e come
   cablarlo.
-- **Le regole**: dove viene eseguita la pagina, l'API `window.velxio`, la fisica sul
-  tempo simulato e entrambi i modi di scrivere un World (una scena del kit o una pagina libera).
-- **Come rispondere**: il completo `world.html`, il nuovo firmware se deve
+- **Le regole**: dove viene eseguita la pagina, l'API `window.velxio`, la fisica sul tempo
+  simulato e entrambi i modi di scrivere un World (una scena del kit o una pagina libera).
+- **Come rispondere**: il `world.html` completo, il nuovo firmware se deve
   cambiare, e le modifiche al cablaggio pin per pin.
 
 Incollalo in ChatGPT, Claude, Gemini o qualsiasi altra chat, e scrivi cosa
@@ -53,7 +53,8 @@ velxio.onFrame((f) => {            // about 125 times per second
   // f.t        simulated seconds since the board booted (null while stopped)
   // f.dt       simulated seconds since the previous frame
   // f.running  true while the firmware runs
-  // f.parts    { [id]: { drive, rpm } } for motors, { [id]: { angle } } for servos
+  // f.parts    { [id]: { drive, rpm } } for motors, { [id]: { angle } } for servos,
+  //            { [id]: { on, brightness } } for LEDs
 });
 
 velxio.set(partId, values);        // write a sensor: only the keys it lists, values clamped
@@ -78,8 +79,8 @@ console.log(...);                  // goes to the World log
    massimo ogni 30 ms di tempo simulato. Misura dalla scena: campiona il
    pavimento sotto un sensore di linea, lancia un raggio per un sensore di distanza.
 4. **Mappa la drive di un motore alla velocità della ruota** con un po' di inerzia (un
-   ritardo del primo ordine di circa 80 ms) e una piccola zona morta. Un robot
-   differenziale gira per la differenza tra i suoi due lati.
+   ritardo del primo ordine di circa 80 ms) e una piccola zona morta. Un robot differenziale
+   gira per la differenza tra i suoi due lati.
 5. **Un unico file autonomo** che si ridimensiona con la finestra e mostra le
    letture che contano in un piccolo overlay.
 
@@ -116,6 +117,6 @@ console.log(...);                  // goes to the World log
 ```
 
 Il [Romeo ESP32-S3 line follower](/docs/it/worlds/example-romeo-line-follower/)
-è un World libero completo: una scena three.js con il proprio modello di robot, tre
-sensori di linea su un percorso tracciato con nastro, e un URM09 che vede una scatola che puoi lasciare cadere
+è un World libero completo: una scena three.js con il suo modello di robot, tre
+sensori di linea su un percorso tracciato con nastro e un URM09 che vede una scatola che puoi lasciare cadere
 sulla pista.

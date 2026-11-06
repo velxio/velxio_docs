@@ -7,19 +7,23 @@ sidebar:
 
 Le World n'exécute jamais votre code et ne touche jamais directement à une broche. Il lit
 ce que le circuit pilote et écrit ce que les capteurs mesureraient, ainsi le
-firmware est le même code que celui qui tourne sur le vrai robot.
+firmware est le même code que celui qui fait tourner le vrai robot.
 
 ## Ce que le World lit
 
-| Composant                               | Valeur que le World obtient                                   |
+| Composant                               | Valeur que le World obtient                                    |
 | --------------------------------------- | ------------------------------------------------------------- |
 | Moteur DC, moteur à engrenages avec encodeur | `drive`, de -1 à 1 : le rapport cyclique sur le moteur, le signe = la direction |
-| Servo                                   | `angle`, de 0 à 180 degrés                                    |
+| Servo                                   | `angle`, de 0 à 180 degrés                                     |
+| LED                                     | `on` (vrai lorsqu'allumée) et `brightness`, de 0 à 1 (suit le PWM) |
 
 Le drive d'un moteur est lu à travers ce qui le pilote : un L293D, un transistor ou
-MOSFET, le driver embarqué d'une carte (les cartes Romeo), ou une broche directement vers le
+MOSFET, le driver embarqué d'une carte (les cartes Romeo), ou une broche directement au
 moteur. Un côté du robot suit le drive moyen de ses moteurs, avec un peu
-d'inertie (environ 80 ms) et une petite zone morte, comme un vrai réducteur.
+d'inertie (environ 80 ms) et une petite zone morte, comme une vraie boîte de vitesses.
+
+Une LED ne déplace rien, mais un World que vous écrivez vous-même peut la dessiner : un
+feu de circulation à un carrefour, un phare, une lampe dans une pièce.
 
 ## Ce que le World écrit
 
@@ -27,9 +31,9 @@ d'inertie (environ 80 ms) et une petite zone morte, comme un vrai réducteur.
 | -------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------- |
 | DFRobot Gravity line tracker (SEN0017) | réflectance de 0 à 1, `black`                              | `digitalRead(pin) == LOW` sur le ruban noir                   |
 | DFRobot URM09, mode Trig (SEN0388)     | distance, de 2 à 500 cm                                    | une broche : un trigger de 10 us, puis `pulseIn(pin, HIGH) / 58.0` |
-| DFRobot URM37 V5.0, mode PWM           | distance, de 2 à 500 cm                                    | tirer COMP/TRIG à l'état bas, puis `pulseIn(ECHO, LOW) / 50`  |
-| HC-SR04                                | distance, de 2 à 400 cm                                    | TRIG haut 10 us, puis `pulseIn(ECHO, HIGH) / 58.0`            |
-| MPU6050                                | accélération en g, rotation en degrés par seconde          | I2C, comme sur la vraie puce                                  |
+| DFRobot URM37 V5.0, mode PWM           | distance, de 2 à 500 cm                                    | mettre COMP/TRIG à LOW, puis `pulseIn(ECHO, LOW) / 50`        |
+| HC-SR04                                | distance, de 2 à 400 cm                                    | TRIG à HIGH pendant 10 us, puis `pulseIn(ECHO, HIGH) / 58.0`  |
+| MPU6050                                | accélération en g, rotation en degrés par seconde          | I2C, comme sur la vraie puce                                   |
 
 Les capteurs de distance regardent droit devant eux depuis le pare-chocs du robot, avec un cône
 étroit d'environ 12 degrés de chaque côté. Les capteurs de ligne échantillonnent le tapis (ou la rampe)
@@ -44,7 +48,7 @@ l'[éditeur de scène](/docs/fr/worlds/scene-editor/).
 ### L293D (n'importe quelle carte)
 
 Canal 1 : EN1 (PWM) avec IN1 et IN2, sorties OUT1 et OUT2. Canal 2 : EN2
-avec IN3 et IN4. IN1 HIGH et IN2 LOW est un drive positif, et le rapport cyclique sur
+avec IN3 et IN4. IN1 à HIGH et IN2 à LOW est un drive positif, et le rapport cyclique sur
 EN1 fixe la vitesse.
 
 ```cpp
@@ -78,13 +82,13 @@ void drive(int left, int right) { side(4, 5, left); side(7, 6, right); }   // M1
 ```
 
 La bibliothèque DFMobile de DFRobot (utilisée par les exemples Devastator) pilote la
-broche de direction à l'état bas pour avancer avec `Robot.Direction(LOW, HIGH)`, donc un robot
+broche de direction à LOW pour avancer avec `Robot.Direction(LOW, HIGH)`, donc un robot
 qui l'utilise a besoin de **Reverse** des deux côtés.
 
 ### DFRobot Romeo ESP32-S3
 
 Quatre drivers DRV8876 en mode PH/EN. M1 EN 12 / PH 13, M2 14 / 21, M3 9 / 10,
-M4 47 / 11. PH HIGH signifie avancer.
+M4 47 / 11. PH à HIGH est l'avant.
 
 ```cpp
 const int EN[4] = { 12, 14, 9, 47 }, PH[4] = { 13, 21, 10, 11 };
@@ -112,10 +116,10 @@ else               drive(-80, 80);         // lost: spin and look for it
 ```
 
 Un éviteur d'obstacles avance, et sous 20 à 35 cm il s'arrête, recule,
-et tourne vers le côté avec le plus d'espace (un sonar sur un servo peut d'abord regarder à 0
-et 180 degrés). Lisez le sonar toutes les 50 à 100 ms et ne bloquez jamais longtemps
+et tourne vers le côté avec le plus d'espace (un sonar sur un servo peut regarder à 0
+et 180 degrés d'abord). Lisez le sonar toutes les 50 à 100 ms et ne bloquez jamais longtemps
 dans `loop()`.
 
 À plein drive, un robot 2WD fait 0,55 m/s, un 4WD 0,61 m/s et le tank
-0,36 m/s. Pour un suiveur de ligne sur un ruban de 22 mm, 120 à 170 sur 255 le garde
+0,36 m/s. Pour un suiveur de ligne sur un ruban de 22 mm, 120 à 170 sur 255 le maintient
 sur la ligne.

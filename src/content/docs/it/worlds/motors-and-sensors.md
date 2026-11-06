@@ -1,6 +1,6 @@
 ---
 title: Motori e sensori
-description: Cosa legge un World dal circuito, cosa riscrive nei sensori e il firmware che guida un robot con ciascun driver.
+description: Cosa un World legge dal circuito, cosa riscrive nei sensori e il firmware che guida un robot con ciascun driver.
 sidebar:
   order: 3
 ---
@@ -15,11 +15,15 @@ firmware è lo stesso codice che gira sul robot reale.
 | --------------------------------------- | ------------------------------------------------------------- |
 | Motore DC, motoriduttore con encoder    | `drive`, da -1 a 1: il duty sul motore, il segno = direzione   |
 | Servo                                   | `angle`, da 0 a 180 gradi                                     |
+| LED                                     | `on` (true quando acceso) e `brightness`, da 0 a 1 (segue il PWM) |
 
 Il drive di un motore viene letto attraverso qualunque cosa lo piloti: un L293D, un transistor o
-MOSFET, un driver integrato della scheda (le schede Romeo), o un pin collegato direttamente al
+MOSFET, un driver integrato sulla scheda (le schede Romeo), o un pin collegato direttamente al
 motore. Un lato del robot segue il drive medio dei suoi motori, con una piccola
-inerzia (circa 80 ms) e una piccola zona morta, come un vero riduttore.
+inerzia (circa 80 ms) e una piccola zona morta, come un vero cambio.
+
+Un LED non muove nulla, ma un World che scrivi tu puoi disegnarlo: un
+semaforo a un incrocio, un faro, una lampada in una stanza.
 
 ## Cosa scrive il World
 
@@ -111,11 +115,11 @@ else if (R)        drive(170, 40);         // tape on the right: turn right
 else               drive(-80, 80);         // lost: spin and look for it
 ```
 
-Un evitamento ostacoli va avanti, e sotto i 20-35 cm si ferma, indietreggia
+Un evita-ostacoli va avanti, e sotto i 20-35 cm si ferma, indietreggia
 e gira verso il lato con più spazio (un sonar su un servo può guardare prima a 0
 e 180 gradi). Leggi il sonar ogni 50-100 ms e non bloccare mai a lungo
 in `loop()`.
 
 A pieno drive un robot 2WD fa 0,55 m/s, un 4WD 0,61 m/s e il tank
-0,36 m/s. Per un line follower su un nastro da 22 mm, da 120 a 170 su 255 lo mantiene
+0,36 m/s. Per un line follower su un nastro da 22 mm, da 120 a 170 su 255 lo tiene
 sulla linea.

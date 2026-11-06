@@ -6,7 +6,7 @@ sidebar:
 ---
 
 `world.html` es una página HTML normal. Todo lo que el [kit de escena](/docs/es/worlds/scene-editor/)
-no puede dibujar (una máquina, una habitación, un juego, un robot personalizado) puede ser una página
+no puede dibujar (una máquina, una sala, un juego, un robot personalizado) puede ser una página
 propia, escrita a mano o por una IA.
 
 ## Con una IA
@@ -18,7 +18,7 @@ prompt es un brief completo, construido a partir de tu proyecto en ese momento:
   ajustes breves como el color de un LED), el cableado como redes (qué pines están
   unidos, también a través de breadboards), y los archivos de firmware.
 - **Qué puede leer y escribir un World**, para los componentes que tienes y para cada
-  componente que un World soporta, para que la IA pueda decirte qué componente añadir y cómo
+  componente que un World admite, para que la IA pueda decirte qué componente añadir y cómo
   cablearlo.
 - **Las reglas**: dónde se ejecuta la página, la API `window.velxio`, la física sobre
   tiempo simulado, y las dos formas de escribir un World (una escena del kit o una página libre).
@@ -53,7 +53,8 @@ velxio.onFrame((f) => {            // about 125 times per second
   // f.t        simulated seconds since the board booted (null while stopped)
   // f.dt       simulated seconds since the previous frame
   // f.running  true while the firmware runs
-  // f.parts    { [id]: { drive, rpm } } for motors, { [id]: { angle } } for servos
+  // f.parts    { [id]: { drive, rpm } } for motors, { [id]: { angle } } for servos,
+  //            { [id]: { on, brightness } } for LEDs
 });
 
 velxio.set(partId, values);        // write a sensor: only the keys it lists, values clamped
@@ -66,10 +67,10 @@ velxio.telemetry({ ... });         // optional state to show in Velxio
 console.log(...);                  // goes to the World log
 ```
 
-## Reglas para un World que se comporte bien
+## Reglas para un World que se comporta bien
 
 1. **Física sobre tiempo simulado.** Suma `f.dt` y avanza con un paso fijo
-   (2 ms funciona bien), limitando el atraso a 0.25 s. Dibuja con
+   (2 ms funciona bien), limitando el atraso acumulado a 0.25 s. Dibuja con
    `requestAnimationFrame`, pero nunca muevas nada por tiempo real: el
    simulador puede ir más lento o más rápido que el tiempo real.
 2. **Muévete solo mientras `f.running` sea true**, y devuelve todo a su
@@ -77,10 +78,10 @@ console.log(...);                  // goes to the World log
 3. **Escribe un sensor solo cuando cambie su valor**, y un sensor de distancia como
    mucho cada 30 ms de tiempo simulado. Mide desde la escena: muestrea el
    suelo bajo un sensor de línea, lanza un rayo para un sensor de distancia.
-4. **Mapea el drive de un motor a la velocidad de la rueda** con un poco de inercia (un
-   retardo de primer orden de unos 80 ms) y una pequeña banda muerta. Un robot diferencial
-   gira por la diferencia entre sus dos lados.
-5. **Un archivo autocontenido** que se redimensione con la ventana y muestre las
+4. **Asigna el drive de un motor a la velocidad de la rueda** con un poco de inercia (un
+   retardo de primer orden de unos 80 ms) y una pequeña banda muerta. Un robot
+   diferencial gira por la diferencia entre sus dos lados.
+5. **Un solo archivo autocontenido** que se redimensione con la ventana y muestre las
    lecturas que importan en una pequeña superposición.
 
 ## Un World libre mínimo
@@ -117,5 +118,5 @@ console.log(...);                  // goes to the World log
 
 El [seguidor de línea Romeo ESP32-S3](/docs/es/worlds/example-romeo-line-follower/)
 es un World libre completo: una escena de three.js con su propio modelo de robot, tres
-sensores de línea sobre un circuito de cinta, y un URM09 que ve una caja que puedes dejar
-en la pista.
+sensores de línea sobre un circuito de cinta, y un URM09 que ve una caja que puedes dejar caer en
+la pista.

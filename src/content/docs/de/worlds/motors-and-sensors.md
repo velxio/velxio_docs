@@ -11,27 +11,31 @@ Firmware derselbe Code ist, der auf dem echten Roboter läuft.
 
 ## Was die World liest
 
-| Bauteil                                 | Wert, den die World erhält                                    |
+| Bauteil                                 | Wert, den die World erhält                                     |
 | --------------------------------------- | ------------------------------------------------------------- |
 | DC-Motor, Getriebemotor mit Encoder     | `drive`, von -1 bis 1: das Tastverhältnis am Motor, Vorzeichen = Richtung |
 | Servo                                   | `angle`, 0 bis 180 Grad                                       |
+| LED                                     | `on` (true, wenn an) und `brightness`, 0 bis 1 (folgt dem PWM) |
 
 Der Drive eines Motors wird über das gelesen, was ihn ansteuert: ein L293D, ein Transistor oder
-MOSFET, ein Onboard-Treiber einer Platine (die Romeo-Platinen) oder ein Pin direkt zum
+MOSFET, ein Onboard-Treiber eines Boards (die Romeo-Boards) oder ein Pin direkt zum
 Motor. Eine Roboterseite folgt dem durchschnittlichen Drive ihrer Motoren, mit etwas
 Trägheit (etwa 80 ms) und einer kleinen Totzone, wie ein echtes Getriebe.
 
+Eine LED bewegt nichts, aber eine World, die du selbst schreibst, kann sie zeichnen: eine
+Ampel an einer Kreuzung, ein Leuchtturm, eine Lampe in einem Raum.
+
 ## Was die World schreibt
 
-| Bauteil                                | Werte                                                      | Wie die Firmware ihn liest                                    |
+| Bauteil                                | Werte                                                      | Wie die Firmware sie liest                                    |
 | -------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------- |
-| DFRobot Gravity Line Tracker (SEN0017) | Reflexionsvermögen 0 bis 1, `black`                        | `digitalRead(pin) == LOW` über dem schwarzen Klebeband         |
-| DFRobot URM09, Trig-Modus (SEN0388)    | Entfernung, 2 bis 500 cm                                   | ein Pin: ein 10 us Trigger, dann `pulseIn(pin, HIGH) / 58.0`   |
-| DFRobot URM37 V5.0, PWM-Modus          | Entfernung, 2 bis 500 cm                                   | COMP/TRIG auf LOW ziehen, dann `pulseIn(ECHO, LOW) / 50`       |
-| HC-SR04                                | Entfernung, 2 bis 400 cm                                   | TRIG 10 us HIGH, dann `pulseIn(ECHO, HIGH) / 58.0`             |
-| MPU6050                                | Beschleunigung in g, Rotation in Grad pro Sekunde          | I2C, wie auf dem echten Chip                                   |
+| DFRobot Gravity Linienfolger (SEN0017) | Reflexion 0 bis 1, `black`                                 | `digitalRead(pin) == LOW` über dem schwarzen Klebeband         |
+| DFRobot URM09, Trig-Modus (SEN0388)    | Entfernung, 2 bis 500 cm                                   | ein Pin: ein 10 us Trigger, dann `pulseIn(pin, HIGH) / 58.0`  |
+| DFRobot URM37 V5.0, PWM-Modus          | Entfernung, 2 bis 500 cm                                   | COMP/TRIG auf LOW ziehen, dann `pulseIn(ECHO, LOW) / 50`      |
+| HC-SR04                                | Entfernung, 2 bis 400 cm                                   | TRIG 10 us auf HIGH, dann `pulseIn(ECHO, HIGH) / 58.0`        |
+| MPU6050                                | Beschleunigung in g, Rotation in Grad pro Sekunde          | I2C, wie auf dem echten Chip                                  |
 
-Entfernungssensoren blicken geradeaus von der Stoßstange des Roboters nach vorn, mit einem schmalen
+Entfernungssensoren blicken geradeaus von der Stoßstange des Roboters, mit einem schmalen
 Kegel von etwa 12 Grad pro Seite. Liniensensoren tasten die Matte (oder die Rampe)
 direkt unter sich ab.
 
@@ -41,7 +45,7 @@ Das Vorzeichen des Drive entscheidet über die Richtung. Wenn eine Seite in der
 World rückwärts läuft, korrigiere entweder die Firmware oder setze für diese Seite ein Häkchen bei **Reverse** im
 [Szeneneditor](/docs/de/worlds/scene-editor/).
 
-### L293D (beliebige Platine)
+### L293D (beliebiges Board)
 
 Kanal 1: EN1 (PWM) mit IN1 und IN2, Ausgänge OUT1 und OUT2. Kanal 2: EN2
 mit IN3 und IN4. IN1 HIGH und IN2 LOW ist ein positiver Drive, und das Tastverhältnis an
@@ -66,8 +70,8 @@ void drive(int left, int right) {
 
 ### DFRobot Romeo BLE und Romeo BLE mini
 
-M1: Richtung D4, PWM D5. M2: Richtung D7, PWM D6. Schließe jeden Motor an die
-M1+/M1- oder M2+/M2- Anschlüsse der Platine an.
+M1: Richtung D4, PWM D5. M2: Richtung D7, PWM D6. Verbinde jeden Motor mit den
+M1+/M1- oder M2+/M2- Anschlüssen des Boards.
 
 ```cpp
 void side(int dirPin, int pwmPin, int speed) {
@@ -112,9 +116,9 @@ else               drive(-80, 80);         // lost: spin and look for it
 ```
 
 Ein Hindernisvermeider fährt vorwärts und stoppt unter 20 bis 35 cm, setzt zurück
-und dreht zur Seite mit mehr Platz (ein Sonar auf einem Servo kann zuerst bei 0
-und 180 Grad schauen). Lies das Sonar alle 50 bis 100 ms und blockiere niemals lange
-in `loop()`.
+und dreht zur Seite mit mehr Platz (ein Sonar auf einem Servo kann zuerst auf 0
+und 180 Grad schauen). Lies das Sonar alle 50 bis 100 ms und blockiere niemals
+lange in `loop()`.
 
 Bei vollem Drive fährt ein 2WD-Roboter 0,55 m/s, ein 4WD 0,61 m/s und der Panzer
 0,36 m/s. Für einen Linienfolger auf einem 22 mm Klebeband halten 120 bis 170 von 255 ihn

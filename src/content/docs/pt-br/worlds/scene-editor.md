@@ -31,13 +31,13 @@ Pressione **Edit** (o lápis) na barra de ferramentas do World.
 - **Ctrl+Z** e **Ctrl+Y** desfazem e refazem.
 - **Mat settings** define o tamanho, a cor e a grade do tapete.
 
-Funciona da mesma forma na visão 3D e na 2D. Pressione Edit novamente para voltar ao
+Funciona da mesma forma na visualização 3D e na 2D. Pressione Edit novamente para voltar ao
 modo de reprodução.
 
 ## Conectar um robô ao circuito
 
-Um robô se move apenas com os motores que você lhe der, e alimenta apenas os sensores que
-você lhe der. Selecione o robô e escolha, entre as peças na sua tela:
+Um robô se move apenas com os motores que você lhe der, e alimenta apenas os sensores que você
+lhe der. Selecione o robô e escolha, entre as peças na sua tela:
 
 | Campo                     | O que escolher                                                                                                     |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -55,7 +55,7 @@ Um braço robótico usa quatro servos: base, ombro, cotovelo e garra.
 | Preset | Corpo          | Velocidade em acionamento total | Sobe   | Como                                   |
 | ------ | -------------- | ------------------------------- | ------ | -------------------------------------- |
 | 2WD    | 15 x 10,5 cm   | 0,55 m/s                        | 1 cm   | o clássico carrinho de duas rodas      |
-| 4WD    | 20 x 11,5 cm   | 0,61 m/s                        | 1,5 cm | um carro de quatro rodas skid-steer    |
+| 4WD    | 20 x 11,5 cm   | 0,61 m/s                        | 1,5 cm | um carro de quatro rodas com direção por skid |
 | Tank   | 22,5 x 22 cm   | 0,36 m/s                        | 3 cm   | o DFRobot Devastator, com esteiras     |
 
 Os robôs param contra caixas, paredes, cilindros e a borda do tapete, e
@@ -73,7 +73,7 @@ Por trás do editor, a cena é um bloco JSON em `world.html`:
 { "version": 1, "view": "3d", "floor": { "w": 2.4, "h": 1.6, "grid": true },
   "objects": [
     { "id": "track1", "type": "track", "shape": "loop", "x": 0, "y": 0, "w": 2.1, "h": 0.9, "tape": 0.022 },
-    { "id": "robot1", "type": "robot", "preset": "diff2", "x": -0.3, "y": -0.45, "rot": 0,
+    { "id": "robot1", "type": "robot", "preset": "diff2", "x": -0.3, "y": -0.439, "rot": 0,
       "bind": { "left": ["motorL"], "right": ["motorR"], "line": ["lineL", "lineC", "lineR"] } },
     { "id": "box1", "type": "box", "x": 0.7, "y": 0.05, "w": 0.15, "d": 0.15, "h": 0.15, "color": "#c0392b" }
   ] }
@@ -90,9 +90,11 @@ Por trás do editor, a cena é um bloco JSON em `world.html`:
   `right` (listas de ids de motores), `invertLeft`, `invertRight`, `line` (ids de sensores,
   da esquerda para a direita), `sonar`, `sonarServo` e `imu`.
 - `track`: `shape` é `loop`, `oval`, `figure8` ou `line`, com `w`, `h` e
-  `tape` (a largura da fita, de 0,019 a 0,025 m). Para iniciar um seguidor de linha na
-  fita de um loop centrado na origem, coloque-o na reta inferior com direção
-  +x: `x: -0.3, y: -h/2, rot: 0`.
+  `tape` (a largura da fita, de 0,019 a 0,025 m). `w` e `h` são a borda externa
+  da fita, então sua linha central corre meia largura de fita para dentro. Para iniciar um seguidor
+  de linha na fita de um loop centrado na origem, coloque-o na reta
+  inferior seguindo +x: `x: -0.3, y: -(h/2 - tape/2), rot: 0` (-0,439 para um
+  loop de 0,9 m com fita de 22 mm).
 - `box` e `wall`: `w`, `d`, `h`. `cylinder`: `r`, `h`.
 - `ramp`: `profile` é `wedge` (sobe em direção a +x, depois uma face vertical),
   `bridge` (sobe, plano, desce) ou `hill` (uma elevação suave, atravessável de qualquer lado),

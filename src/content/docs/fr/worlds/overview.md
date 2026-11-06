@@ -1,6 +1,6 @@
 ---
 title: Mondes 3D
-description: Placez votre circuit dans une scène 3D ou 2D. Le firmware de la carte pilote le robot, et les capteurs du robot relisent la scène.
+description: Placez votre circuit dans une scène 3D ou 2D. Le firmware de la carte pilote le robot, et les capteurs du robot lisent la scène en retour.
 sidebar:
   order: 1
 ---
@@ -15,22 +15,22 @@ Chaque projet comportant une carte dispose d'un bouton **3D** dans l'en-tête du
 
 ![Le bouton 3D à côté du sélecteur de carte](../../../../assets/docs/worlds/3d-button.png)
 
-La première fois, il ouvre une introduction proposant trois points d'entrée :
+La première fois, il ouvre une introduction proposant trois façons de commencer :
 
 ![L'introduction du Monde 3D](../../../../assets/docs/worlds/intro.png)
 
-- **Start from a robot** (Partir d'un robot) : ouvrez un projet de robot complet (carte, moteurs et capteurs câblés, firmware et Monde) et appuyez sur **Run**. Voir le [suiveur de ligne Romeo ESP32-S3](/docs/fr/worlds/example-romeo-line-follower/) et le [char Devastator](/docs/fr/worlds/example-devastator-tank/).
+- **Start from a robot** (Partir d'un robot) : ouvrez un projet de robot complet (carte, moteurs et capteurs câblés, firmware et Monde) et appuyez sur **Run**. Il y en a cinq : le [suiveur de ligne Romeo ESP32-S3](/docs/fr/worlds/example-romeo-line-follower/), le [char Devastator](/docs/fr/worlds/example-devastator-tank/), un [suiveur de ligne Arduino Uno](https://velxio.dev/example/uno-l293d-line-follower-3d) avec un L293D, un [éviteur d'obstacles ESP32](https://velxio.dev/example/esp32-obstacle-avoider-3d) avec un HC-SR04, et un [bras robotisé ESP32](https://velxio.dev/example/esp32-servo-arm-3d) dont les quatre servos suivent quatre potentiomètres.
 - **Create a world for this circuit** (Créer un monde pour ce circuit) : Velxio construit une scène de départ à partir de ce qui se trouve sur votre canevas. Les moteurs deviennent un robot (deux ou quatre roues), les capteurs de ligne reçoivent une piste adhésive sous eux, un capteur de distance reçoit des obstacles devant lui, et des servos seuls deviennent un bras robotisé sur une petite table.
-- **Copy AI prompt** (Copier le prompt IA) : copie un brief contenant vos cartes, composants, câblage et firmware pour ChatGPT, Claude ou Gemini, afin qu'une IA puisse écrire le Monde que vous décrivez. Voir [Écrire votre propre Monde](/docs/fr/worlds/write-your-own/).
+- **Copy AI prompt** (Copier le prompt IA) : copie un brief contenant vos cartes, composants, câblage et firmware pour ChatGPT, Claude ou Gemini, afin qu'une IA puisse écrire n'importe quel Monde que vous décrivez. Voir [Écrire votre propre Monde](/docs/fr/worlds/write-your-own/).
 
 Une fois que le projet possède un Monde, le bouton 3D bascule entre le Monde et votre code.
 
 ## Appuyer sur Run
 
-Lorsque la simulation démarre, la zone de l'éditeur affiche le Monde et le canevas reste à côté, de sorte que vous pouvez voir les moteurs tourner sur le circuit pendant que le robot se déplace. La boucle se referme environ 125 fois par seconde :
+Lorsque la simulation démarre, la zone de l'éditeur affiche le Monde et le canevas reste à côté, de sorte que vous pouvez voir les moteurs s'activer sur le circuit pendant que le robot se déplace. La boucle se referme environ 125 fois par seconde :
 
 1. Le firmware règle les broches : une direction et un rapport cyclique PWM pour chaque moteur, une impulsion pour chaque servo.
-2. Velxio lit la commande de chaque moteur (via le pilote utilisé par le circuit) et l'angle de chaque servo, puis les envoie au Monde.
+2. Velxio lit la commande de chaque moteur (à travers le driver utilisé par le circuit) et l'angle de chaque servo, puis les envoie au Monde.
 3. Le Monde déplace le robot et mesure la scène : la bande sous chaque capteur de ligne, l'obstacle le plus proche devant chaque capteur de distance, l'accélération et la vitesse de rotation du robot pour un IMU.
 4. Velxio écrit ces relevés dans les composants capteurs, et le firmware les lit lors de son prochain `digitalRead()`, `pulseIn()` ou transfert I2C.
 
@@ -38,11 +38,11 @@ Le Monde fonctionne sur l'**horloge simulée** de la carte, et non sur le temps 
 
 ## La barre du Monde
 
-| Commande           | Ce qu'elle fait                                                                                           |
+| Contrôle           | Ce qu'il fait                                                                                             |
 | ------------------ | --------------------------------------------------------------------------------------------------------- |
 | **World / HTML**   | Affiche la scène, ou le source `world.html` qui la sous-tend.                                             |
 | **Guide**          | Une courte explication du Monde, par-dessus la scène.                                                     |
-| **Copy AI prompt** | Copie le brief pour une conversation IA externe (voir [Écrire votre propre Monde](/docs/fr/worlds/write-your-own/)). |
+| **Copy AI prompt** | Copie le brief pour un chat IA externe (voir [Écrire votre propre Monde](/docs/fr/worlds/write-your-own/)).  |
 | **Reload**         | Redémarre le Monde à partir de son fichier.                                                               |
 | **Full screen**    | Affiche uniquement le Monde. Appuyez sur Échap pour revenir.                                              |
 
@@ -50,16 +50,16 @@ Les Mondes créés avec le kit de scène de Velxio ajoutent leur propre barre d'
 
 ## 3D ou 2D
 
-La vue 3D nécessite WebGL. La vue **2D** du dessus dessine la même scène et exécute la même physique sans carte graphique, elle fonctionne donc sur n'importe quel ordinateur scolaire, et c'est la solution de repli lorsque la 3D n'est pas disponible.
+La vue 3D nécessite WebGL. La vue de dessus **2D** dessine la même scène et exécute la même physique sans carte graphique, elle fonctionne donc sur n'importe quel ordinateur scolaire, et c'est la solution de repli lorsque la 3D n'est pas disponible.
 
-![L'arène Devastator en vue 2D du dessus](../../../../assets/docs/worlds/view-2d.png)
+![L'arène Devastator en vue de dessus 2D](../../../../assets/docs/worlds/view-2d.png)
 
-## Avec quoi un Monde fonctionne
+## Ce avec quoi un Monde fonctionne
 
-- **Lit** : les moteurs à courant continu et les motoréducteurs (derrière un L293D, un transistor ou un MOSFET, le pilote intégré d'une carte, ou directement sur une broche) et les servos.
+- **Lit** : les moteurs à courant continu et les motoréducteurs (derrière un L293D, un transistor ou un MOSFET, le driver intégré d'une carte, ou directement sur une broche), les servos et les LED.
 - **Alimente** : le capteur de ligne DFRobot Gravity, les capteurs à ultrasons URM09 et URM37, le HC-SR04 et l'IMU MPU6050.
 
-Tous les autres composants (LED, écrans, buzzers) continuent de fonctionner sur le canevas. Détails et recettes de firmware : [Moteurs et capteurs](/docs/fr/worlds/motors-and-sensors/).
+Tous les autres composants (écrans, buzzers, LED RVB) continuent de fonctionner sur le canevas. Détails et recettes de firmware : [Moteurs et capteurs](/docs/fr/worlds/motors-and-sensors/).
 
 ## C'est un fichier
 

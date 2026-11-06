@@ -15,6 +15,7 @@ firmware es el mismo código que se ejecuta en el robot real.
 | ---------------------------------------- | -------------------------------------------------------------- |
 | Motor DC, motorreductor con encoder      | `drive`, de -1 a 1: el duty sobre el motor, el signo = dirección |
 | Servo                                    | `angle`, de 0 a 180 grados                                     |
+| LED                                      | `on` (true cuando está encendido) y `brightness`, de 0 a 1 (sigue al PWM) |
 
 El drive de un motor se lee a través de lo que lo controla: un L293D, un
 transistor o MOSFET, el driver integrado de una placa (las placas Romeo), o un
@@ -22,30 +23,33 @@ pin directo al motor. Un lado del robot sigue el drive promedio de sus
 motores, con un poco de inercia (unos 80 ms) y una pequeña banda muerta, como
 una caja de engranajes real.
 
+Un LED no mueve nada, pero un World que escribas tú mismo puede dibujarlo: un
+semáforo en un cruce, un faro, una lámpara en una habitación.
+
 ## Lo que escribe el World
 
 | Pieza                                  | Valores                                                    | Cómo lo lee el firmware                                       |
 | -------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------- |
 | DFRobot Gravity line tracker (SEN0017) | reflectancia de 0 a 1, `black`                             | `digitalRead(pin) == LOW` sobre la cinta negra                |
 | DFRobot URM09, modo Trig (SEN0388)     | distancia, de 2 a 500 cm                                   | un pin: un trigger de 10 us, luego `pulseIn(pin, HIGH) / 58.0` |
-| DFRobot URM37 V5.0, modo PWM           | distancia, de 2 a 500 cm                                   | poner COMP/TRIG en LOW, luego `pulseIn(ECHO, LOW) / 50`       |
-| HC-SR04                                | distancia, de 2 a 400 cm                                   | TRIG en HIGH 10 us, luego `pulseIn(ECHO, HIGH) / 58.0`        |
+| DFRobot URM37 V5.0, modo PWM           | distancia, de 2 a 500 cm                                   | poner COMP/TRIG en bajo, luego `pulseIn(ECHO, LOW) / 50`      |
+| HC-SR04                                | distancia, de 2 a 400 cm                                   | TRIG en alto 10 us, luego `pulseIn(ECHO, HIGH) / 58.0`        |
 | MPU6050                                | aceleración en g, rotación en grados por segundo           | I2C, como en el chip real                                      |
 
-Los sensores de distancia miran hacia adelante desde el parachoques del robot,
-con un cono estrecho de unos 12 grados por lado. Los sensores de línea toman
-la muestra de la alfombra (o de la rampa) justo debajo de ellos.
+Los sensores de distancia miran al frente desde el parachoques del robot, con
+un cono estrecho de unos 12 grados por lado. Los sensores de línea muestrean
+la alfombra (o la rampa) justo debajo de ellos.
 
 ## Controlar un robot: el lado del firmware
 
-El signo del drive decide la dirección. Si un lado va hacia atrás en el World,
+El signo del drive decide la dirección. Si un lado va al revés en el World,
 corrige el firmware o marca **Reverse** para ese lado en el
 [editor de escena](/docs/es/worlds/scene-editor/).
 
 ### L293D (cualquier placa)
 
 Canal 1: EN1 (PWM) con IN1 e IN2, salidas OUT1 y OUT2. Canal 2: EN2 con IN3 e
-IN4. IN1 en HIGH e IN2 en LOW es un drive positivo, y el duty sobre EN1 fija
+IN4. IN1 en alto e IN2 en bajo es un drive positivo, y el duty sobre EN1 fija
 la velocidad.
 
 ```cpp
@@ -79,13 +83,14 @@ void drive(int left, int right) { side(4, 5, left); side(7, 6, right); }   // M1
 ```
 
 La librería DFMobile de DFRobot (usada por los ejemplos del Devastator)
-controla el pin de dirección en LOW para avanzar con `Robot.Direction(LOW,
-HIGH)`, así que un robot que la use necesita **Reverse** en ambos lados.
+controla el pin de dirección en bajo para avanzar con
+`Robot.Direction(LOW, HIGH)`, así que un robot que la use necesita
+**Reverse** en ambos lados.
 
 ### DFRobot Romeo ESP32-S3
 
 Cuatro drivers DRV8876 en modo PH/EN. M1 EN 12 / PH 13, M2 14 / 21, M3 9 / 10,
-M4 47 / 11. PH en HIGH es hacia adelante.
+M4 47 / 11. PH en alto es hacia adelante.
 
 ```cpp
 const int EN[4] = { 12, 14, 9, 47 }, PH[4] = { 13, 21, 10, 11 };
@@ -114,9 +119,9 @@ else               drive(-80, 80);         // lost: spin and look for it
 
 Un evasor de obstáculos avanza y, por debajo de 20 a 35 cm, se detiene,
 retrocede y gira hacia el lado con más espacio (un sonar sobre un servo puede
-mirar primero a 0 y a 180 grados). Lee el sonar cada 50 a 100 ms y nunca
+mirar primero a 0 y 180 grados). Lee el sonar cada 50 a 100 ms y nunca
 bloquees durante mucho tiempo en `loop()`.
 
 A drive máximo, un robot 2WD hace 0.55 m/s, uno 4WD 0.61 m/s y el tanque
-0.36 m/s. Para un seguidor de línea sobre cinta de 22 mm, de 120 a 170 sobre
-255 lo mantiene sobre la línea.
+0.36 m/s. Para un seguidor de línea sobre una cinta de 22 mm, de 120 a 170
+sobre 255 lo mantiene sobre la línea.

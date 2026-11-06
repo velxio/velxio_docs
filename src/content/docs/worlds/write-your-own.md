@@ -53,7 +53,8 @@ velxio.onFrame((f) => {            // about 125 times per second
   // f.t        simulated seconds since the board booted (null while stopped)
   // f.dt       simulated seconds since the previous frame
   // f.running  true while the firmware runs
-  // f.parts    { [id]: { drive, rpm } } for motors, { [id]: { angle } } for servos
+  // f.parts    { [id]: { drive, rpm } } for motors, { [id]: { angle } } for servos,
+  //            { [id]: { on, brightness } } for LEDs
 });
 
 velxio.set(partId, values);        // write a sensor: only the keys it lists, values clamped

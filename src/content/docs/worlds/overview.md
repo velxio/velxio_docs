@@ -25,9 +25,13 @@ The first time, it opens an introduction with three ways in:
 ![The 3D World introduction](../../../assets/docs/worlds/intro.png)
 
 - **Start from a robot**: open a complete robot project (board, wired motors
-  and sensors, firmware and World) and press **Run**. See the
-  [Romeo ESP32-S3 line follower](/docs/worlds/example-romeo-line-follower/)
-  and the [Devastator tank](/docs/worlds/example-devastator-tank/).
+  and sensors, firmware and World) and press **Run**. There are five: the
+  [Romeo ESP32-S3 line follower](/docs/worlds/example-romeo-line-follower/),
+  the [Devastator tank](/docs/worlds/example-devastator-tank/), an
+  [Arduino Uno line follower](https://velxio.dev/example/uno-l293d-line-follower-3d)
+  with an L293D, an [ESP32 obstacle avoider](https://velxio.dev/example/esp32-obstacle-avoider-3d)
+  with an HC-SR04, and an [ESP32 robot arm](https://velxio.dev/example/esp32-servo-arm-3d)
+  whose four servos follow four knobs.
 - **Create a world for this circuit**: Velxio builds a starting scene from
   what is on your canvas. Motors become a robot (two or four wheels), line
   sensors get a taped track under them, a distance sensor gets obstacles in
@@ -85,11 +89,11 @@ and it is the fallback when 3D is not available.
 ## What a World works with
 
 - **Reads**: DC motors and gear motors (behind an L293D, a transistor or
-  MOSFET, a board's onboard driver, or straight on a pin) and servos.
+  MOSFET, a board's onboard driver, or straight on a pin), servos and LEDs.
 - **Feeds**: the DFRobot Gravity line tracker, the URM09 and URM37 ultrasonic
   sensors, the HC-SR04 and the MPU6050 IMU.
 
-Every other part (LEDs, displays, buzzers) keeps working on the canvas. Details
+Every other part (displays, buzzers, RGB LEDs) keeps working on the canvas. Details
 and firmware recipes: [Motors and sensors](/docs/worlds/motors-and-sensors/).
 
 ## It is a file

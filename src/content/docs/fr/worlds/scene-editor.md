@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-Un World créé avec le kit de scène de Velxio (tous les Worlds que **Create a world for
+Un World créé avec le kit de scène de Velxio (chaque World que **Create a world for
 this circuit** génère, ainsi que l'[arène Devastator](/docs/fr/worlds/example-devastator-tank/))
 peut être modifié à la souris. Les modifications sont enregistrées dans `world.html`, elles suivent donc
 le projet où qu'il aille.
@@ -31,8 +31,8 @@ Appuyez sur **Edit** (le crayon) dans la barre d'outils du World.
 - **Ctrl+Z** et **Ctrl+Y** annulent et rétablissent.
 - **Mat settings** définit la taille, la couleur et la grille du tapis.
 
-Cela fonctionne de la même manière en vue 3D et en vue 2D. Appuyez à nouveau sur Edit pour revenir au
-mode jeu.
+Cela fonctionne de la même manière en vue 3D et 2D. Appuyez à nouveau sur Edit pour revenir au
+mode lecture.
 
 ## Connecter un robot au circuit
 
@@ -73,7 +73,7 @@ Derrière l'éditeur, la scène est un bloc JSON dans `world.html` :
 { "version": 1, "view": "3d", "floor": { "w": 2.4, "h": 1.6, "grid": true },
   "objects": [
     { "id": "track1", "type": "track", "shape": "loop", "x": 0, "y": 0, "w": 2.1, "h": 0.9, "tape": 0.022 },
-    { "id": "robot1", "type": "robot", "preset": "diff2", "x": -0.3, "y": -0.45, "rot": 0,
+    { "id": "robot1", "type": "robot", "preset": "diff2", "x": -0.3, "y": -0.439, "rot": 0,
       "bind": { "left": ["motorL"], "right": ["motorR"], "line": ["lineL", "lineC", "lineR"] } },
     { "id": "box1", "type": "box", "x": 0.7, "y": 0.05, "w": 0.15, "d": 0.15, "h": 0.15, "color": "#c0392b" }
   ] }
@@ -90,15 +90,16 @@ Derrière l'éditeur, la scène est un bloc JSON dans `world.html` :
   `right` (listes d'ids de moteurs), `invertLeft`, `invertRight`, `line` (ids de capteurs,
   de gauche à droite), `sonar`, `sonarServo` et `imu`.
 - `track` : `shape` vaut `loop`, `oval`, `figure8` ou `line`, avec `w`, `h` et
-  `tape` (la largeur du ruban, de 0,019 à 0,025 m). Pour démarrer un suiveur de ligne sur le
-  ruban d'une boucle centrée à l'origine, placez-le sur le segment droit du bas en direction
-  +x : `x: -0.3, y: -h/2, rot: 0`.
+  `tape` (la largeur du ruban, de 0,019 à 0,025 m). `w` et `h` correspondent au bord extérieur
+  du ruban, sa ligne médiane passe donc à une demi-largeur de ruban vers l'intérieur. Pour démarrer un suiveur de ligne
+  sur le ruban d'une boucle centrée à l'origine, placez-le sur la ligne droite du bas en direction +x : `x: -0.3, y: -(h/2 - tape/2), rot: 0` (-0,439 pour une
+  boucle de 0,9 m avec un ruban de 22 mm).
 - `box` et `wall` : `w`, `d`, `h`. `cylinder` : `r`, `h`.
 - `ramp` : `profile` vaut `wedge` (monte vers +x, puis une face verticale),
   `bridge` (montée, plat, descente) ou `hill` (une bosse lisse, franchissable de tous les côtés),
   avec `w`, `d`, `h`. Le sonar voit les faces verticales de 3 cm ou plus, jamais
   les pentes.
-- `arm` : `bind` contient les ids des servos `base`, `shoulder`, `elbow` et `gripper`.
+- `arm` : `bind` contient les ids de servos `base`, `shoulder`, `elbow` et `gripper`.
 
 Les ids dans `bind` que le circuit ne possède pas sont ignorés, ainsi une scène ne
 casse jamais le projet. La [page Devastator](/docs/fr/worlds/example-devastator-tank/)
