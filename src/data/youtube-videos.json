@@ -45,6 +45,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-mega",
     "parts/output/led"
    ]
@@ -59,6 +60,7 @@
    ],
    "group": "pico",
    "docs": [
+    "boards/pico",
     "boards/reference/raspberry-pi-pico",
     "parts/other/analog-joystick"
    ]
@@ -73,6 +75,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno"
    ]
   },
@@ -86,6 +89,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno"
    ]
   },
@@ -113,6 +117,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno",
     "parts/output/rgb-led"
    ]
@@ -127,6 +132,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno",
     "parts/displays/ssd1306",
     "parts/motors/servo",
@@ -144,9 +150,11 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno",
     "parts/motors/servo",
     "parts/output/buzzer",
+    "parts/output/led",
     "parts/sensors/pir-motion-sensor"
    ]
   },
@@ -164,6 +172,7 @@
     "parts/displays/ssd1306-i2c-4pin",
     "parts/input/pushbutton",
     "parts/output/buzzer",
+    "parts/output/led",
     "parts/sensors/dht22"
    ]
   },
@@ -177,6 +186,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno",
     "parts/input/pushbutton",
     "parts/output/led"
@@ -208,6 +218,7 @@
    ],
    "group": "esp32",
    "docs": [
+    "boards/esp32",
     "boards/reference/esp32",
     "parts/sensors/pir-motion-sensor"
    ]
@@ -222,6 +233,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno",
     "parts/output/led",
     "parts/sensors/photoresistor-sensor"
@@ -237,6 +249,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno",
     "parts/output/led"
    ]
@@ -251,6 +264,7 @@
    ],
    "group": "esp32",
    "docs": [
+    "boards/esp32",
     "boards/reference/esp32",
     "parts/sensors/hc-sr04"
    ]
@@ -265,6 +279,7 @@
    ],
    "group": "esp32",
    "docs": [
+    "boards/esp32",
     "boards/reference/esp32",
     "parts/input/potentiometer",
     "parts/motors/servo"
@@ -280,6 +295,7 @@
    ],
    "group": "pico",
    "docs": [
+    "boards/pico",
     "boards/reference/raspberry-pi-pico",
     "parts/sensors/dht22"
    ]
@@ -294,6 +310,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno",
     "parts/displays/ili9341"
    ]
@@ -308,6 +325,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno",
     "parts/output/neopixel"
    ]
@@ -322,6 +340,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno",
     "parts/displays/lcd2004"
    ]
@@ -336,6 +355,7 @@
    ],
    "group": "esp32",
    "docs": [
+    "boards/esp32",
     "boards/reference/esp32",
     "parts/displays/ili9341",
     "parts/input/pushbutton"
@@ -351,6 +371,7 @@
    ],
    "group": "arduino",
    "docs": [
+    "boards/arduino",
     "boards/reference/arduino-uno",
     "parts/analog/mosfet-2n7000",
     "parts/output/led"
@@ -366,6 +387,7 @@
    ],
    "group": "esp32",
    "docs": [
+    "boards/esp32",
     "boards/reference/esp32",
     "parts/displays/ssd1306-i2c-4pin"
    ]
@@ -391,6 +413,7 @@
    ],
    "group": "m5stack",
    "docs": [
+    "boards/pro-boards",
     "boards/reference/cardputer-adv",
     "wifi-iot/web-flash"
    ]
@@ -403,6 +426,7 @@
    "examples": [],
    "group": "pimoroni",
    "docs": [
+    "boards/pro-boards",
     "boards/reference/stellar-unicorn"
    ]
   },
@@ -548,6 +572,8 @@
    "examples": [],
    "group": "dfrobot",
    "docs": [
+    "boards/pro-boards",
+    "boards/raspberry-pi",
     "boards/reference/unihiker-m10"
    ]
   },
@@ -559,7 +585,8 @@
    "examples": [],
    "group": "esp32",
    "docs": [
-    "boards/esp32-s3-c3"
+    "boards/esp32-s3-c3",
+    "boards/reference/esp32-s3"
    ]
   },
   {
@@ -572,6 +599,7 @@
    ],
    "group": "m5stack",
    "docs": [
+    "boards/pro-boards",
     "boards/reference/m5stack-core"
    ]
   },
@@ -598,6 +626,7 @@
    ],
    "group": "pimoroni",
    "docs": [
+    "boards/pro-boards",
     "boards/reference/stellar-unicorn"
    ]
   },
@@ -609,7 +638,8 @@
    "examples": [],
    "group": "esp32",
    "docs": [
-    "boards/esp32-s3-c3"
+    "boards/esp32-s3-c3",
+    "boards/reference/esp32-s3"
    ]
   },
   {
@@ -620,6 +650,7 @@
    "examples": [],
    "group": "pimoroni",
    "docs": [
+    "boards/pro-boards",
     "boards/reference/badger-2350"
    ]
   },
@@ -644,6 +675,7 @@
    ],
    "group": "pimoroni",
    "docs": [
+    "boards/pro-boards",
     "boards/reference/stellar-unicorn"
    ]
   },
@@ -655,6 +687,7 @@
    "examples": [],
    "group": "pimoroni",
    "docs": [
+    "boards/pro-boards",
     "boards/reference/stellar-unicorn"
    ]
   },
@@ -666,6 +699,7 @@
    "examples": [],
    "group": "m5stack",
    "docs": [
+    "boards/pro-boards",
     "boards/reference/cardputer-adv"
    ]
   }
