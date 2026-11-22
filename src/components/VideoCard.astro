@@ -21,11 +21,11 @@ export interface Video {
 interface Props {
   video: Video;
   lang: string;
-  /** Docs pages to list under the card (the Videos page shows them). */
-  showDocs?: boolean;
+  /** Lists the video's docs pages under the card, titled by this (the Videos page). */
+  docTitle?: (slug: string) => string;
 }
 
-const { video, lang, showDocs = false } = Astro.props;
+const { video, lang, docTitle } = Astro.props;
 const s = videoStrings(lang);
 const loc = localeKey(lang);
 const prefix = DOCS_LOCALES.includes(loc) ? `/${loc}` : "";
@@ -36,11 +36,8 @@ const watch =
 const thumb = `https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`;
 const example = video.examples[0];
 const sameLang = localeKey(video.lang) === loc;
-const docsLinks = showDocs
-  ? video.docs.map((p) => ({
-      href: `/docs${prefix}/${p}/`,
-      label: p.split("/").pop()!.replace(/-/g, " "),
-    }))
+const docsLinks = docTitle
+  ? video.docs.map((p) => ({ href: `/docs${prefix}/${p}/`, label: docTitle(p) }))
   : [];
 ---
 
@@ -106,6 +103,8 @@ const docsLinks = showDocs
     box.className = "vx-video-thumb is-playing";
     box.appendChild(frame);
     a.replaceWith(box);
+    // The link that had focus is gone: hand it to the player, not to <body>.
+    frame.focus();
   });
 </script>
 
@@ -125,11 +124,11 @@ const docsLinks = showDocs
     background: var(--sl-color-gray-6);
     border: 1px solid var(--sl-color-hairline);
   }
+  /* A Short plays upright: the card's width, 9:16 tall (a flex column would
+     stretch a narrower box back to the card's width and letterbox it). */
   .vx-video[data-kind="short"] .vx-video-thumb.is-playing {
     aspect-ratio: 9 / 16;
-    max-height: 70vh;
-    margin: 0 auto;
-    width: auto;
+    width: 100%;
   }
   .vx-video-thumb img {
     width: 100%;

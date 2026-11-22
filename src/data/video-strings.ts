@@ -160,3 +160,17 @@ export function videoStrings(lang: string | undefined): VideoStrings {
 }
 
 export const ALL_STRINGS = STRINGS;
+
+/**
+ * The reader's language first, then long videos before Shorts, otherwise the
+ * catalog's order (newest first). The app orders an example's videos the
+ * same way.
+ */
+export function forReader<T extends { lang: string; kind: string }>(videos: T[], lang: string | undefined): T[] {
+  const want = localeKey(lang).split("-")[0];
+  const rank = (v: T) => (localeKey(v.lang).split("-")[0] === want ? 0 : 2) + (v.kind === "long" ? 0 : 1);
+  return videos
+    .map((v, i) => ({ v, i }))
+    .sort((a, b) => rank(a.v) - rank(b.v) || a.i - b.i)
+    .map(({ v }) => v);
+}

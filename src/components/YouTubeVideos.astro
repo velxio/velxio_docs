@@ -9,7 +9,7 @@
  * boards/reference) get it too without their generators knowing.
  */
 import catalog from "../data/youtube-videos.json";
-import { DOCS_LOCALES, localeKey, videoStrings } from "../data/video-strings";
+import { DOCS_LOCALES, forReader, localeKey, videoStrings } from "../data/video-strings";
 import VideoCard, { type Video } from "./VideoCard.astro";
 
 interface Props {
@@ -19,7 +19,10 @@ interface Props {
 }
 
 const { slug, lang } = Astro.props;
-const videos = (catalog.videos as Video[]).filter((v) => v.docs.includes(slug));
+const videos = forReader(
+  (catalog.videos as Video[]).filter((v) => v.docs.includes(slug)),
+  lang,
+);
 const s = videoStrings(lang);
 const loc = localeKey(lang);
 const prefix = DOCS_LOCALES.includes(loc) ? `/${loc}` : "";

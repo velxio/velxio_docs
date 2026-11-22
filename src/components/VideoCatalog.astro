@@ -5,16 +5,24 @@
  * (getting-started/videos.mdx) is this component; the catalog is
  * src/data/youtube-videos.json.
  */
+import { getCollection } from "astro:content";
 import catalog from "../data/youtube-videos.json";
-import { videoStrings } from "../data/video-strings";
+import { DOCS_LOCALES, forReader, localeKey, videoStrings } from "../data/video-strings";
 import VideoCard, { type Video } from "./VideoCard.astro";
 
 const { lang } = Astro.locals.starlightRoute;
 const s = videoStrings(lang);
+// The docs pages under each card, by their title in the reader's language
+// (the English title where the page is not translated).
+const loc = localeKey(lang);
+const entries = await getCollection("docs");
+const titles = new Map(entries.map((e) => [e.id, e.data.title]));
+const pageTitle = (slug: string) =>
+  (DOCS_LOCALES.includes(loc) && titles.get(`${loc}/${slug}`)) || titles.get(slug) || slug;
 const videos = catalog.videos as Video[];
 const label = (id: string, fallback: string) => (id === "start" ? s.start : id === "other" ? s.more : fallback);
 const groups = catalog.groups
-  .map((g) => ({ id: g.id, label: label(g.id, g.label), videos: videos.filter((v) => v.group === g.id) }))
+  .map((g) => ({ id: g.id, label: label(g.id, g.label), videos: forReader(videos.filter((v) => v.group === g.id), lang) }))
   .filter((g) => g.videos.length > 0);
 ---
 
@@ -28,7 +36,7 @@ const groups = catalog.groups
       <h2 id={`videos-${g.id}`}>{g.label}</h2>
       <div class="vx-videos-grid not-content">
         {g.videos.map((v) => (
-          <VideoCard video={v} lang={lang} showDocs />
+          <VideoCard video={v} lang={lang} docTitle={pageTitle} />
         ))}
       </div>
     </section>
