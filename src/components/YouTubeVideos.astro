@@ -1,0 +1,59 @@
+---
+/**
+ * "Videos" at the end of a docs page: the Velxio YouTube videos that belong
+ * on it (src/data/youtube-videos.json, generated in velxio-prod by
+ * scripts/sync-youtube-videos.py: a video lands on its example's board page
+ * and parts pages, plus the guides it was placed on by hand).
+ *
+ * Rendered by the MarkdownContent override, so the generated pages (parts,
+ * boards/reference) get it too without their generators knowing.
+ */
+import catalog from "../data/youtube-videos.json";
+import { DOCS_LOCALES, localeKey, videoStrings } from "../data/video-strings";
+import VideoCard, { type Video } from "./VideoCard.astro";
+
+interface Props {
+  /** The page slug without its locale ("parts/sensors/hc-sr04"). */
+  slug: string;
+  lang: string;
+}
+
+const { slug, lang } = Astro.props;
+const videos = (catalog.videos as Video[]).filter((v) => v.docs.includes(slug));
+const s = videoStrings(lang);
+const loc = localeKey(lang);
+const prefix = DOCS_LOCALES.includes(loc) ? `/${loc}` : "";
+---
+
+{
+  videos.length > 0 && (
+    <section class="vx-videos" data-videos-for={slug}>
+      <h2 id="videos">{s.heading}</h2>
+      <p>{s.intro}</p>
+      <div class="vx-videos-grid not-content">
+        {videos.map((v) => (
+          <VideoCard video={v} lang={lang} />
+        ))}
+      </div>
+      <p class="vx-videos-more">
+        <a href={`/docs${prefix}/getting-started/videos/`}>{s.allVideos}</a>
+        {" · "}
+        <a href={catalog.channel} target="_blank" rel="noopener noreferrer">
+          {s.channel}
+        </a>
+      </p>
+    </section>
+  )
+}
+
+<style is:global>
+  .vx-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .vx-videos-more {
+    font-size: var(--sl-text-sm);
+  }
+</style>

@@ -1,0 +1,20 @@
+---
+/**
+ * Starlight's MarkdownContent, plus the "Videos" section of the page
+ * (YouTubeVideos.astro) at the end. An override rather than a line in each
+ * page: the parts and boards/reference pages are generated and rewritten on
+ * every run, and the section has to survive that.
+ */
+import Default from "@astrojs/starlight/components/MarkdownContent.astro";
+import YouTubeVideos from "./YouTubeVideos.astro";
+
+const route = Astro.locals.starlightRoute;
+// The slug without its locale: a translated page and its English source
+// show the same videos.
+const slug = route.locale ? route.id.replace(new RegExp(`^${route.locale}/`), "") : route.id;
+---
+
+<Default>
+  <slot />
+  <YouTubeVideos slug={slug} lang={route.lang} />
+</Default>
