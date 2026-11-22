@@ -157,6 +157,37 @@ long run is in flight or the new jobs get overwritten.
 Since v0.39 sidebar groups take `items: [{ autogenerate: {...} }]`, not
 `autogenerate` at group level.
 
+## YouTube videos (youtube.com/@velxio)
+
+`src/data/youtube-videos.json` says which channel video goes on which page.
+`src/components/MarkdownContent.astro` (a Starlight override) appends a
+"Videos" section to every page it lists, generated pages included, so a
+gen-parts / gen-boards run never drops it. `getting-started/videos.mdx` (one
+per locale: the translator skips `.mdx`) lists them all. The app reads the
+same catalog (velxio-prod `pro/frontend/src/pro/gallery/youtubeVideos.json`)
+for the editor's Video button and the section on `/examples/<id>`.
+
+After new videos go public, regenerate both copies from velxio-prod:
+
+```bash
+cd velxio/frontend && GENERATE_EXAMPLES_META=1 npx vitest run \
+    ../../pro/frontend/src/pro/gallery/__tests__/youtube-videos.test.ts && cd ../..
+python3 scripts/sync-youtube-videos.py --docs ../velxio_docs [--yt-dlp PATH]
+```
+
+- Which example a video shows comes from its description on ShortStudio
+  (`velxio.dev/example/<id>`); videos uploaded before it are in the script's
+  `MANUAL` table, and pages a video belongs on beyond its board and parts in
+  `MANUAL_DOCS`. Promos go in `SKIP`.
+- YouTube answers "sign in to confirm you're not a bot" to the server for a
+  single video page; the channel's flat listing still works, which is all
+  the script asks of yt-dlp.
+- Build check: Astro 7 needs Node 22 and the box has 20. Build in
+  `node:22-slim` with the checkout and `node_modules` mounted at their HOST
+  paths: mounted under another path, the `node_modules` symlink resolves to
+  one path and Astro's compile cache to the other ("No cached compile
+  metadata found").
+
 ## Status
 
 Living plan and open bugs: `project/docs-portal-2026-08/STATUS.md` in

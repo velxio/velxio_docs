@@ -36,3 +36,12 @@ Examples are also linked from the reference pages: every
 points to examples that use it, and the
 [part inspector](/docs/circuit-editor/part-inspector/) inside the editor
 lists example projects for the part you right-clicked.
+
+## Watch them built
+
+Many examples have a video on the
+[Velxio YouTube channel](https://www.youtube.com/@velxio) that builds them
+step by step. When the example you opened has one, a **Video** button
+appears in the canvas header, next to **3D**, and plays it over the circuit.
+The [video tutorials](/docs/getting-started/videos/) page lists them all,
+each with the example it builds.

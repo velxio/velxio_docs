@@ -18,6 +18,7 @@ export default defineConfig({
       favicon: "/favicon.svg",
       social: [
         { icon: "github", label: "GitHub", href: "https://github.com/velxio" },
+        { icon: "youtube", label: "YouTube", href: "https://www.youtube.com/@velxio" },
         { icon: "seti:html", label: "velxio.dev", href: "https://velxio.dev" },
       ],
       customCss: ["./src/styles/custom.css"],
@@ -27,6 +28,9 @@ export default defineConfig({
       components: {
         ThemeProvider: "./src/components/ThemeProvider.astro",
         ThemeSelect: "./src/components/ThemeSelect.astro",
+        /* Adds the page's YouTube videos at the end of its content
+           (src/data/youtube-videos.json), generated pages included. */
+        MarkdownContent: "./src/components/MarkdownContent.astro",
       },
       defaultLocale: "root",
       // Same 9 locales as the blog. Untranslated pages fall back to
