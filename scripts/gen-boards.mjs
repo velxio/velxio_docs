@@ -108,6 +108,16 @@ const BOARDS = {
   // MicroPython path is wired for the Badger, not for this kind (no
   // supportsMicroPython in its ProBoardDef, so the mode selector never shows).
   "pimoroni-pico-plus-2w":  { tag: "velxio-pimoroni-pico-plus-2w",  title: "Pimoroni Pico Plus 2 W", family: "pro-boards", langs: [AR] },
+  // The micro:bit runs the official MicroPython firmware only; each DFRobot
+  // board it sits on is a board kind of its own, with its own element.
+  "microbit-v2": { tag: "velxio-microbit-v2", title: "BBC micro:bit V2", family: "microbit", langs: [MPY] },
+  "microbit-v2-maqueen-lite": { tag: "velxio-microbit-v2-maqueen-lite", title: "micro:bit V2 on Maqueen Lite", family: "microbit", langs: [MPY] },
+  "microbit-v2-maqueen-lite-v5": { tag: "velxio-microbit-v2-maqueen-lite-v5", title: "micro:bit V2 on Maqueen Lite V5", family: "microbit", langs: [MPY] },
+  "microbit-v2-micro-driver": { tag: "velxio-microbit-v2-micro-driver", title: "micro:bit V2 on micro:Driver", family: "microbit", langs: [MPY] },
+  "microbit-v2-io-extender": { tag: "velxio-microbit-v2-io-extender", title: "micro:bit V2 on IO Extender", family: "microbit", langs: [MPY] },
+  "microbit-v2-micro-mate": { tag: "velxio-microbit-v2-micro-mate", title: "micro:bit V2 on micro:Mate", family: "microbit", langs: [MPY] },
+  "microbit-v2-robotics-io-extender": { tag: "velxio-microbit-v2-robotics-io-extender", title: "micro:bit V2 on Robotics & Power IO Extender", family: "microbit", langs: [MPY] },
+  "microbit-v2-io-box": { tag: "velxio-microbit-v2-io-box", title: "micro:bit V2 on micro:IO-BOX", family: "microbit", langs: [MPY] },
 };
 
 const FAMILY_LABEL = {
@@ -118,6 +128,7 @@ const FAMILY_LABEL = {
   stm32: "STM32",
   "raspberry-pi": "Raspberry Pi (Linux)",
   "pro-boards": "Pro boards",
+  microbit: "BBC micro:bit and DFRobot boards",
 };
 
 const esc = s =>
