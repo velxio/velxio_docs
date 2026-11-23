@@ -26,7 +26,7 @@ di Free.**
 | --- | --- | --- | --- |
 | Prezzo | $0 | $7 / mese | $19 / mese |
 | Pagamento annuale | — | $69 / anno | $189 / anno |
-| Crediti AI al giorno | 20 | 500 | 2.000 |
+| Crediti AI al giorno | 20 | 1.500 | 5.000 |
 | Tetto mensile crediti AI | 600 | 15.000 | 60.000 |
 | Modalità Agent e Tutor | No | Sì | Sì |
 | Emulazione STM32 e Raspberry Pi | No | Sì | Sì |
@@ -148,7 +148,7 @@ la quota.
 ## Prova gratuita
 
 Puoi provare le modalità Agent e Tutor **gratuitamente per 7 giorni**,
-senza carta. La prova funziona con 500 crediti al giorno — la stessa
+senza carta. La prova funziona con 1.500 crediti al giorno — la stessa
 dotazione giornaliera di Maker — e sblocca il set di funzionalità Pro così
 puoi valutare tutto. Una prova per account; avviala dalla
 [pagina dei prezzi](https://velxio.dev/pricing).

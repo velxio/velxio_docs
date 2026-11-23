@@ -27,7 +27,7 @@ todo lo de Free.**
 | --- | --- | --- | --- |
 | Precio | $0 | $7 / mes | $19 / mes |
 | Pago anual | — | $69 / año | $189 / año |
-| Créditos de IA por día | 20 | 500 | 2,000 |
+| Créditos de IA por día | 20 | 1,500 | 5,000 |
 | Tope de créditos de IA por mes | 600 | 15,000 | 60,000 |
 | Modos Agent y Tutor | No | Sí | Sí |
 | Emulación STM32 y Raspberry Pi | No | Sí | Sí |
@@ -150,7 +150,7 @@ calcula la cuota.
 ## Prueba gratuita
 
 Puedes probar los modos Agent y Tutor **gratis durante 7 días**, sin
-tarjeta. La prueba se ejecuta con 500 créditos por día — la misma
+tarjeta. La prueba se ejecuta con 1,500 créditos por día — la misma
 asignación diaria que Maker — y desbloquea el conjunto de funciones de Pro
 para que puedas evaluarlo todo. Una prueba por cuenta; actívala desde la
 [página de precios](https://velxio.dev/pricing).

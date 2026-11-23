@@ -25,7 +25,7 @@ everything in Free.**
 | --- | --- | --- | --- |
 | Price | $0 | $7 / month | $19 / month |
 | Paid yearly | — | $69 / year | $189 / year |
-| AI credits per day | 20 | 500 | 2,000 |
+| AI credits per day | 20 | 1,500 | 5,000 |
 | AI credit ceiling per month | 600 | 15,000 | 60,000 |
 | Agent and Tutor modes | No | Yes | Yes |
 | STM32 and Raspberry Pi emulation | 3 trial sessions per family | Yes | Yes |
@@ -165,7 +165,7 @@ counted.
 ## Free trial
 
 You can try Agent and Tutor mode **free for 7 days**, with no card. The
-trial runs at 500 credits per day — the same daily allowance as Maker —
+trial runs at 1,500 credits per day — the same daily allowance as Maker —
 and unlocks the Pro feature set so you can evaluate everything. One trial
 per account; start it from the [pricing page](https://velxio.dev/pricing).
 

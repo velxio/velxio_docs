@@ -17,7 +17,7 @@ Les paliers sont cumulatifs : **Pro inclut tout ce qui est dans Maker, qui inclu
 | --- | --- | --- | --- |
 | Prix | 0 $ | 7 $ / mois | 19 $ / mois |
 | Paiement annuel | — | 69 $ / an | 189 $ / an |
-| Crédits IA par jour | 20 | 500 | 2 000 |
+| Crédits IA par jour | 20 | 1 500 | 5 000 |
 | Plafond mensuel de crédits IA | 600 | 15 000 | 60 000 |
 | Modes Agent et Tuteur | Non | Oui | Oui |
 | Émulation STM32 et Raspberry Pi | Non | Oui | Oui |
@@ -109,7 +109,7 @@ Consultez [Bibliothèques](/docs/fr/programming/libraries/) pour savoir comment 
 
 ## Essai gratuit
 
-Vous pouvez essayer les modes Agent et Tuteur **gratuitement pendant 7 jours**, sans carte bancaire. L'essai fonctionne avec 500 crédits par jour — la même allocation quotidienne que Maker — et débloque l'ensemble des fonctionnalités Pro afin que vous puissiez tout évaluer. Un essai par compte ; démarrez-le depuis la [page de tarification](https://velxio.dev/pricing).
+Vous pouvez essayer les modes Agent et Tuteur **gratuitement pendant 7 jours**, sans carte bancaire. L'essai fonctionne avec 1 500 crédits par jour — la même allocation quotidienne que Maker — et débloque l'ensemble des fonctionnalités Pro afin que vous puissiez tout évaluer. Un essai par compte ; démarrez-le depuis la [page de tarification](https://velxio.dev/pricing).
 
 ## Facturation
 

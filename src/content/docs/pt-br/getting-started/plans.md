@@ -25,7 +25,7 @@ Os níveis são aditivos: **Pro inclui tudo do Maker, que inclui tudo do Free.**
 | --- | --- | --- | --- |
 | Preço | $0 | US$ 7 / mês | US$ 19 / mês |
 | Pagamento anual | — | US$ 69 / ano | US$ 189 / ano |
-| Créditos de IA por dia | 20 | 500 | 2.000 |
+| Créditos de IA por dia | 20 | 1.500 | 5.000 |
 | Teto de créditos de IA por mês | 600 | 15.000 | 60.000 |
 | Modos Agente e Tutor | Não | Sim | Sim |
 | Emulação STM32 e Raspberry Pi | Não | Sim | Sim |
@@ -144,7 +144,7 @@ calculada.
 ## Teste gratuito
 
 Você pode experimentar os modos Agent e Tutor **gratuitamente por 7 dias**, sem
-cartão. O teste oferece 500 créditos por dia — a mesma cota diária do Maker — e
+cartão. O teste oferece 1.500 créditos por dia — a mesma cota diária do Maker — e
 desbloqueia o conjunto de recursos do Pro para que você possa avaliar tudo. Um
 teste por conta; inicie-o na [página de preços](https://velxio.dev/pricing).
 

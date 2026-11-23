@@ -27,7 +27,7 @@ Free enthält.**
 | --- | --- | --- | --- |
 | Preis | $0 | 7 $ / Monat | 19 $ / Monat |
 | Jährliche Zahlung | — | 69 $ / Jahr | 189 $ / Jahr |
-| KI-Credits pro Tag | 20 | 500 | 2.000 |
+| KI-Credits pro Tag | 20 | 1.500 | 5.000 |
 | KI-Credit-Obergrenze pro Monat | 600 | 15.000 | 60.000 |
 | Agent- und Tutor-Modi | Nein | Ja | Ja |
 | STM32- und Raspberry-Pi-Emulation | Nein | Ja | Ja |
@@ -151,7 +151,7 @@ Kontingent berechnet wird.
 ## Kostenlose Testversion
 
 Du kannst den Agent- und den Tutor-Modus **7 Tage lang kostenlos**
-testen, ohne Karte. Die Testversion läuft mit 500 Credits pro Tag – die
+testen, ohne Karte. Die Testversion läuft mit 1.500 Credits pro Tag – die
 gleiche Tageszuteilung wie bei Maker – und schaltet den Pro-Funktionsumfang
 frei, damit du alles bewerten kannst. Eine Testversion pro Konto; starte
 sie über die [Preisseite](https://velxio.dev/pricing).
