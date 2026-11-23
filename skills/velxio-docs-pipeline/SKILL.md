@@ -159,9 +159,12 @@ Since v0.39 sidebar groups take `items: [{ autogenerate: {...} }]`, not
 
 ## YouTube videos (youtube.com/@velxio)
 
-`src/data/youtube-videos.json` says which channel video goes on which page.
-`src/components/MarkdownContent.astro` (a Starlight override) appends a
-"Videos" section to every page it lists, generated pages included, so a
+`src/data/youtube-videos.json` says which channel video goes on which page:
+its board's reference page and family page (every video, no cap), its parts'
+pages (the 12 most focused per part) and the guides it was placed on by hand.
+`src/components/MarkdownContent.astro` (a Starlight override) puts a
+"Videos (n)" link at the top and the "Videos" section at the end of every page
+it lists, generated pages included, so a
 gen-parts / gen-boards run never drops it. `getting-started/videos.mdx` (one
 per locale: the translator skips `.mdx`) lists them all. The app reads the
 same catalog (velxio-prod `pro/frontend/src/pro/gallery/youtubeVideos.json`)
