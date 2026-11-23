@@ -25,8 +25,10 @@ and the Serial Monitor is the REPL.
 Everything on the board answers on the canvas. Click the buttons and the
 logo, tilt the board with the pad under it, and set the temperature, the
 light, the sound level and the compass heading in the sensor panel. The
-speaker plays through your own once you switch the sound on there. Parts
-wire to the rings and the strips of the edge connector.
+first `compass.heading()` of a program asks for a calibration: **Calibrate
+the compass**, in the same panel, does it. The speaker plays through your own
+once you switch the sound on there. Parts wire to the rings and the strips of
+the edge connector.
 
 **MicroPython only** for now: no Arduino/C++ and no MakeCode blocks. Radio
 between boards on the canvas and Bluetooth are not modelled.
