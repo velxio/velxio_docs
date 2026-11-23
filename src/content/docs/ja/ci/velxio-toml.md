@@ -36,7 +36,7 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 
 ## 現在 CI で実行できるボード
 
-決定するのはサーバーであり、CLI ではありません。現在 36 種類が実行できます。ブラウザ内エンジンを持つすべてのボードで、それぞれ実際のファームウェアを起動して検証済みです。
+決定するのはサーバーであり、CLI ではありません。現在 45 種類が実行できます。ブラウザ内エンジンを持つすべてのボードで、それぞれ実際のファームウェアを起動して検証済みです。
 
 ### AVR
 
@@ -69,6 +69,21 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 | `xiao-mg24-sense` | XIAO MG24 Sense | `board-velxio-xiao-mg24-sense` | Intel HEX |
 | `xiao-nrf54l15-sense` | XIAO nRF54L15 Sense | `board-velxio-xiao-nrf54l15-sense` | Intel HEX |
 
+### BBC micro:bit V2
+
+| kind | board | `diagram.json` type | firmware |
+| ---- | ----- | ------------------- | -------- |
+| `microbit-v2` | BBC micro:bit V2 | `board-velxio-microbit-v2` | Intel HEX |
+| `microbit-v2-maqueen-lite` | micro:bit V2 on Maqueen Lite | `board-velxio-microbit-v2-maqueen-lite` | Intel HEX |
+| `microbit-v2-maqueen-lite-v5` | micro:bit V2 on Maqueen Lite V5 | `board-velxio-microbit-v2-maqueen-lite-v5` | Intel HEX |
+| `microbit-v2-micro-driver` | micro:bit V2 on micro:Driver | `board-velxio-microbit-v2-micro-driver` | Intel HEX |
+| `microbit-v2-io-extender` | micro:bit V2 on IO Extender | `board-velxio-microbit-v2-io-extender` | Intel HEX |
+| `microbit-v2-micro-mate` | micro:bit V2 on micro:Mate | `board-velxio-microbit-v2-micro-mate` | Intel HEX |
+| `microbit-v2-robotics-io-extender` | micro:bit V2 on Robotics & Power IO Extender | `board-velxio-microbit-v2-robotics-io-extender` | Intel HEX |
+| `microbit-v2-io-box` | micro:bit V2 on micro:IO-BOX | `board-velxio-microbit-v2-io-box` | Intel HEX |
+
+ファームウェアは V2 用の MicroPython の `.hex`（通常の Intel HEX）で、その中の `main.py` が実行されます。python.microbit.org が保存する Universal Hex（V1 と V2 を 1 ファイルにまとめたもの）は、`velxio-cli` ではまだ使えません。
+
 ### ESP32
 
 | kind | board | `diagram.json` type | firmware |
@@ -93,6 +108,7 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 | `esp-vocat` | ESP-VoCat | `board-velxio-esp-vocat` | merged ESP32 image |
 | `esp32-s3-eye` | ESP32-S3-EYE | `board-velxio-esp32-s3-eye` | merged ESP32 image |
 | `esp-sensairshuttle` | ESP-SensAirShuttle | `board-velxio-esp-sensairshuttle` | merged ESP32 image |
+| `lilygo-t-display-s3` | LilyGO T-Display S3 | `board-velxio-lilygo-t-display-s3` | merged ESP32 image |
 
 これらのボードは diagram 内で `board-velxio-<kind>` と書くこともできます。たとえば `board-velxio-esp32-c6` です。独自の Wokwi タイプを持たないボードには、他の書き方はありません。
 

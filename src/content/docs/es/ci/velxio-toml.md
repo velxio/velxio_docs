@@ -44,7 +44,7 @@ una de esas: hoy se rechaza, nombrando el archivo de origen.
 
 ## Placas que CI ejecuta hoy
 
-Lo decide el servidor, no la CLI. Hoy se ejecutan treinta y seis tipos:
+Lo decide el servidor, no la CLI. Hoy se ejecutan cuarenta y cinco tipos:
 todas las placas con motor en el navegador, cada una comprobada arrancando
 firmware real.
 
@@ -79,6 +79,23 @@ firmware real.
 | `xiao-mg24-sense` | XIAO MG24 Sense | `board-velxio-xiao-mg24-sense` | Intel HEX |
 | `xiao-nrf54l15-sense` | XIAO nRF54L15 Sense | `board-velxio-xiao-nrf54l15-sense` | Intel HEX |
 
+### BBC micro:bit V2
+
+| tipo | placa | tipo en `diagram.json` | firmware |
+| ---- | ----- | ------------------- | -------- |
+| `microbit-v2` | BBC micro:bit V2 | `board-velxio-microbit-v2` | Intel HEX |
+| `microbit-v2-maqueen-lite` | micro:bit V2 on Maqueen Lite | `board-velxio-microbit-v2-maqueen-lite` | Intel HEX |
+| `microbit-v2-maqueen-lite-v5` | micro:bit V2 on Maqueen Lite V5 | `board-velxio-microbit-v2-maqueen-lite-v5` | Intel HEX |
+| `microbit-v2-micro-driver` | micro:bit V2 on micro:Driver | `board-velxio-microbit-v2-micro-driver` | Intel HEX |
+| `microbit-v2-io-extender` | micro:bit V2 on IO Extender | `board-velxio-microbit-v2-io-extender` | Intel HEX |
+| `microbit-v2-micro-mate` | micro:bit V2 on micro:Mate | `board-velxio-microbit-v2-micro-mate` | Intel HEX |
+| `microbit-v2-robotics-io-extender` | micro:bit V2 on Robotics & Power IO Extender | `board-velxio-microbit-v2-robotics-io-extender` | Intel HEX |
+| `microbit-v2-io-box` | micro:bit V2 on micro:IO-BOX | `board-velxio-microbit-v2-io-box` | Intel HEX |
+
+El firmware es un `.hex` de MicroPython para la V2, en Intel HEX simple: lo que
+se ejecuta es su propio `main.py`. El Universal Hex que guarda
+python.microbit.org (V1 y V2 en un archivo) todavía no lo acepta `velxio-cli`.
+
 ### ESP32
 
 | tipo | placa | tipo en `diagram.json` | firmware |
@@ -103,6 +120,7 @@ firmware real.
 | `esp-vocat` | ESP-VoCat | `board-velxio-esp-vocat` | imagen ESP32 fusionada |
 | `esp32-s3-eye` | ESP32-S3-EYE | `board-velxio-esp32-s3-eye` | imagen ESP32 fusionada |
 | `esp-sensairshuttle` | ESP-SensAirShuttle | `board-velxio-esp-sensairshuttle` | imagen ESP32 fusionada |
+| `lilygo-t-display-s3` | LilyGO T-Display S3 | `board-velxio-lilygo-t-display-s3` | imagen ESP32 fusionada |
 
 Cualquiera de ellas también se puede escribir como `board-velxio-<kind>` en
 el diagrama, por ejemplo `board-velxio-esp32-c6`; las placas que no tienen

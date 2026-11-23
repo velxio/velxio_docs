@@ -36,7 +36,7 @@ Nichts wird stillschweigend ignoriert. Ein Schlüssel, den die CLI nicht kennt, 
 
 ## Boards, die CI heute ausführt
 
-Der Server entscheidet, nicht die CLI. Sechsunddreißig Arten laufen jetzt: jedes Board mit einer In-Browser-Engine, jedes durch das Booten echter Firmware bewiesen.
+Der Server entscheidet, nicht die CLI. Fünfundvierzig Arten laufen jetzt: jedes Board mit einer In-Browser-Engine, jedes durch das Booten echter Firmware bewiesen.
 
 ### AVR
 
@@ -69,6 +69,21 @@ Der Server entscheidet, nicht die CLI. Sechsunddreißig Arten laufen jetzt: jede
 | `xiao-mg24-sense` | XIAO MG24 Sense | `board-velxio-xiao-mg24-sense` | Intel HEX |
 | `xiao-nrf54l15-sense` | XIAO nRF54L15 Sense | `board-velxio-xiao-nrf54l15-sense` | Intel HEX |
 
+### BBC micro:bit V2
+
+| Art | Board | `diagram.json`-Typ | Firmware |
+| ---- | ----- | ------------------- | -------- |
+| `microbit-v2` | BBC micro:bit V2 | `board-velxio-microbit-v2` | Intel HEX |
+| `microbit-v2-maqueen-lite` | micro:bit V2 on Maqueen Lite | `board-velxio-microbit-v2-maqueen-lite` | Intel HEX |
+| `microbit-v2-maqueen-lite-v5` | micro:bit V2 on Maqueen Lite V5 | `board-velxio-microbit-v2-maqueen-lite-v5` | Intel HEX |
+| `microbit-v2-micro-driver` | micro:bit V2 on micro:Driver | `board-velxio-microbit-v2-micro-driver` | Intel HEX |
+| `microbit-v2-io-extender` | micro:bit V2 on IO Extender | `board-velxio-microbit-v2-io-extender` | Intel HEX |
+| `microbit-v2-micro-mate` | micro:bit V2 on micro:Mate | `board-velxio-microbit-v2-micro-mate` | Intel HEX |
+| `microbit-v2-robotics-io-extender` | micro:bit V2 on Robotics & Power IO Extender | `board-velxio-microbit-v2-robotics-io-extender` | Intel HEX |
+| `microbit-v2-io-box` | micro:bit V2 on micro:IO-BOX | `board-velxio-microbit-v2-io-box` | Intel HEX |
+
+Die Firmware ist eine MicroPython-`.hex` für die V2 als einfaches Intel HEX: Es läuft deren eigene `main.py`. Das Universal Hex, das python.microbit.org speichert (V1 und V2 in einer Datei), nimmt `velxio-cli` noch nicht an.
+
 ### ESP32
 
 | Art | Board | `diagram.json`-Typ | Firmware |
@@ -93,6 +108,7 @@ Der Server entscheidet, nicht die CLI. Sechsunddreißig Arten laufen jetzt: jede
 | `esp-vocat` | ESP-VoCat | `board-velxio-esp-vocat` | zusammengeführtes ESP32-Image |
 | `esp32-s3-eye` | ESP32-S3-EYE | `board-velxio-esp32-s3-eye` | zusammengeführtes ESP32-Image |
 | `esp-sensairshuttle` | ESP-SensAirShuttle | `board-velxio-esp-sensairshuttle` | zusammengeführtes ESP32-Image |
+| `lilygo-t-display-s3` | LilyGO T-Display S3 | `board-velxio-lilygo-t-display-s3` | zusammengeführtes ESP32-Image |
 
 Jedes von ihnen kann im Diagramm auch als `board-velxio-<kind>` geschrieben werden, zum Beispiel `board-velxio-esp32-c6`; die Boards ohne eigenen Wokwi-Typ haben keine andere Schreibweise.
 

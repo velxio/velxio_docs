@@ -43,7 +43,7 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 
 ## Платы, которые CI поддерживает сегодня
 
-Решение принимает сервер, а не CLI. Сейчас работают тридцать шесть типов: каждая
+Решение принимает сервер, а не CLI. Сейчас работают сорок пять типов: каждая
 плата с движком в браузере, и каждая проверена загрузкой реальной прошивки.
 
 ### AVR
@@ -77,6 +77,23 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 | `xiao-mg24-sense` | XIAO MG24 Sense | `board-velxio-xiao-mg24-sense` | Intel HEX |
 | `xiao-nrf54l15-sense` | XIAO nRF54L15 Sense | `board-velxio-xiao-nrf54l15-sense` | Intel HEX |
 
+### BBC micro:bit V2
+
+| тип | плата | тип в `diagram.json` | прошивка |
+| ---- | ----- | ------------------- | -------- |
+| `microbit-v2` | BBC micro:bit V2 | `board-velxio-microbit-v2` | Intel HEX |
+| `microbit-v2-maqueen-lite` | micro:bit V2 on Maqueen Lite | `board-velxio-microbit-v2-maqueen-lite` | Intel HEX |
+| `microbit-v2-maqueen-lite-v5` | micro:bit V2 on Maqueen Lite V5 | `board-velxio-microbit-v2-maqueen-lite-v5` | Intel HEX |
+| `microbit-v2-micro-driver` | micro:bit V2 on micro:Driver | `board-velxio-microbit-v2-micro-driver` | Intel HEX |
+| `microbit-v2-io-extender` | micro:bit V2 on IO Extender | `board-velxio-microbit-v2-io-extender` | Intel HEX |
+| `microbit-v2-micro-mate` | micro:bit V2 on micro:Mate | `board-velxio-microbit-v2-micro-mate` | Intel HEX |
+| `microbit-v2-robotics-io-extender` | micro:bit V2 on Robotics & Power IO Extender | `board-velxio-microbit-v2-robotics-io-extender` | Intel HEX |
+| `microbit-v2-io-box` | micro:bit V2 on micro:IO-BOX | `board-velxio-microbit-v2-io-box` | Intel HEX |
+
+Прошивка: `.hex` MicroPython для V2 в обычном Intel HEX; выполняется `main.py`
+из самого файла. Universal Hex, который сохраняет python.microbit.org (V1 и V2 в
+одном файле), `velxio-cli` пока не принимает.
+
 ### ESP32
 
 | тип | плата | тип в `diagram.json` | прошивка |
@@ -101,6 +118,7 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 | `esp-vocat` | ESP-VoCat | `board-velxio-esp-vocat` | объединённый образ ESP32 |
 | `esp32-s3-eye` | ESP32-S3-EYE | `board-velxio-esp32-s3-eye` | объединённый образ ESP32 |
 | `esp-sensairshuttle` | ESP-SensAirShuttle | `board-velxio-esp-sensairshuttle` | объединённый образ ESP32 |
+| `lilygo-t-display-s3` | LilyGO T-Display S3 | `board-velxio-lilygo-t-display-s3` | объединённый образ ESP32 |
 
 Любую из них можно также записать в схеме как `board-velxio-<kind>`, например
 `board-velxio-esp32-c6`; у плат без собственного типа Wokwi другого написания
