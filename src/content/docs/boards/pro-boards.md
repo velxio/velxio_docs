@@ -165,6 +165,10 @@ Get the real board on the [DFRobot store](https://www.dfrobot.com/product-2691.h
 
 *This store link is an affiliate link: Velxio earns a small commission at no extra cost to you.*
 
+DFRobot's boards for the BBC micro:bit, from the Maqueen Lite robot to the
+micro:Driver, run on the free plan and have a page of their own:
+[BBC micro:bit](/docs/boards/microbit/).
+
 ---
 
 Pro boards appear in the [component picker](/docs/circuit-editor/placing-components/)
