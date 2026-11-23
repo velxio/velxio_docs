@@ -36,31 +36,31 @@ If you want the plain S3 without the sensor board, that is
 ## Pins (25)
 
 <ul class="pin-grid">
-<li><span class="pin-name">D0</span></li>
 <li><span class="pin-name">1</span></li>
-<li><span class="pin-name">D1</span></li>
+<li><span class="pin-name">D0</span></li>
 <li><span class="pin-name">2</span></li>
-<li><span class="pin-name">D2</span></li>
+<li><span class="pin-name">D1</span></li>
 <li><span class="pin-name">3</span></li>
-<li><span class="pin-name">D3</span></li>
+<li><span class="pin-name">D2</span></li>
 <li><span class="pin-name">4</span></li>
-<li><span class="pin-name">D4</span></li>
+<li><span class="pin-name">D3</span></li>
 <li><span class="pin-name">5</span></li>
-<li><span class="pin-name">D5</span></li>
+<li><span class="pin-name">D4</span></li>
 <li><span class="pin-name">6</span></li>
-<li><span class="pin-name">D6</span></li>
+<li><span class="pin-name">D5</span></li>
 <li><span class="pin-name">43</span></li>
+<li><span class="pin-name">D6</span></li>
 <li><span class="pin-name">5V</span></li>
 <li><span class="pin-name">GND</span></li>
 <li><span class="pin-name">3V3</span></li>
-<li><span class="pin-name">D10</span></li>
 <li><span class="pin-name">9</span></li>
-<li><span class="pin-name">D9</span></li>
+<li><span class="pin-name">D10</span></li>
 <li><span class="pin-name">8</span></li>
-<li><span class="pin-name">D8</span></li>
+<li><span class="pin-name">D9</span></li>
 <li><span class="pin-name">7</span></li>
-<li><span class="pin-name">D7</span></li>
+<li><span class="pin-name">D8</span></li>
 <li><span class="pin-name">44</span></li>
+<li><span class="pin-name">D7</span></li>
 </ul>
 
 Every pin above is clickable on the canvas — click one to start a

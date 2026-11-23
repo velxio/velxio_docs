@@ -42,7 +42,7 @@ The UNIHIKER M10 is sold on the [DFRobot store](https://www.dfrobot.com/product-
 Every example on this page runs in the browser without it, and the same
 script runs unchanged on the real board.
 
-*Affiliate link: if you buy through it, Velxio earns a small commission at no extra cost to you.*
+_Affiliate link: if you buy through it, Velxio earns a small commission at no extra cost to you._
 
 ## Pins (11)
 

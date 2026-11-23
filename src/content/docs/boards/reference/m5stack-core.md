@@ -121,7 +121,7 @@ int count = 0;
 
 void setup() {
   auto cfg = M5.config();
-  // Force the Core Basic profile — QEMU can't run M5Unified's HW autodetect.
+  // Force the Core Basic profile — skips M5Unified's hardware autodetect.
   cfg.fallback_board = m5::board_t::board_M5Stack;
   M5.begin(cfg);
 
@@ -203,7 +203,7 @@ The Basic Core v2.7 is sold on the [M5Stack store](https://shop.m5stack.com/prod
 Every example on this page runs in the browser without it, and the same
 sketch runs unchanged on the real board.
 
-*Affiliate link: if you buy through it, Velxio earns a small commission at no extra cost to you.*
+_Affiliate link: if you buy through it, Velxio earns a small commission at no extra cost to you._
 
 ## Pins (51)
 

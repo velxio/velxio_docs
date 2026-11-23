@@ -34,31 +34,31 @@ all built on this XIAO.
 ## Pins (25)
 
 <ul class="pin-grid">
-<li><span class="pin-name">D0</span></li>
 <li><span class="pin-name">0</span></li>
-<li><span class="pin-name">D1</span></li>
+<li><span class="pin-name">D0</span></li>
 <li><span class="pin-name">1</span></li>
-<li><span class="pin-name">D2</span></li>
+<li><span class="pin-name">D1</span></li>
 <li><span class="pin-name">2</span></li>
-<li><span class="pin-name">D3</span></li>
+<li><span class="pin-name">D2</span></li>
 <li><span class="pin-name">21</span></li>
-<li><span class="pin-name">D4</span></li>
+<li><span class="pin-name">D3</span></li>
 <li><span class="pin-name">22</span></li>
-<li><span class="pin-name">D5</span></li>
+<li><span class="pin-name">D4</span></li>
 <li><span class="pin-name">23</span></li>
-<li><span class="pin-name">D6</span></li>
+<li><span class="pin-name">D5</span></li>
 <li><span class="pin-name">16</span></li>
+<li><span class="pin-name">D6</span></li>
 <li><span class="pin-name">5V</span></li>
 <li><span class="pin-name">GND</span></li>
 <li><span class="pin-name">3V3</span></li>
-<li><span class="pin-name">D10</span></li>
 <li><span class="pin-name">18</span></li>
-<li><span class="pin-name">D9</span></li>
+<li><span class="pin-name">D10</span></li>
 <li><span class="pin-name">20</span></li>
-<li><span class="pin-name">D8</span></li>
+<li><span class="pin-name">D9</span></li>
 <li><span class="pin-name">19</span></li>
-<li><span class="pin-name">D7</span></li>
+<li><span class="pin-name">D8</span></li>
 <li><span class="pin-name">17</span></li>
+<li><span class="pin-name">D7</span></li>
 </ul>
 
 Every pin above is clickable on the canvas — click one to start a

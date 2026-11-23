@@ -36,8 +36,8 @@ the [oscilloscope](/docs/instruments/oscilloscope/) page and the
 
 <ul class="pin-grid">
 <li><span class="pin-name">EN</span></li>
-<li><span class="pin-name">VN</span></li>
 <li><span class="pin-name">VP</span></li>
+<li><span class="pin-name">VN</span></li>
 <li><span class="pin-name">34</span></li>
 <li><span class="pin-name">35</span></li>
 <li><span class="pin-name">32</span></li>
