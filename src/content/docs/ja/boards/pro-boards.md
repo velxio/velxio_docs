@@ -1,109 +1,153 @@
 ---
-title: Pro ボード
-description: プレミアムボードカタログ — M5Stack、Badger 2350、XIAO Sense、ESP32-C6、Galactic Unicorn、UNIHIKER。
+title: Proボード
+description: プレミアムボードカタログ — M5Stack、Badger 2350、XIAOファミリーとそのIPS Displayボード、ESP32-C6、Galactic Unicorn、UNIHIKER。
 sidebar:
   order: 8
 ---
 
-Pro ボードはカタログのプレミアム層です。豊富な内蔵ペリフェラルを備えたブランドハードウェアで、**ファクトリーファームウェア**を起動できるほど深くエミュレートされています。これらは velxio.dev のホスト型カタログの一部です。
+Proボードはカタログのプレミアム層です。豊富な内蔵ペリフェラルを備えたブランドハードウェアで、**工場出荷ファームウェア**を起動できるほど深くエミュレートされています。velxio.devのホスト型カタログの一部です。
 
 :::note[必要なプランは？]
-**有料プランが必要なのは UNIHIKER M10 のみです。** このページの他のすべてのボード — M5Stack、Pimoroni、XIAO、ESP32-C6 DevKit — は**無料プランで動作します**。有料専用ボードは、STM32 ファミリーと Raspberry Pi Linux ファミリー（UNIHIKER が属するファミリー）のみです。[プラン](/docs/ja/getting-started/plans/) を参照してください。
+**有料プランが必要なのはUNIHIKER M10のみです。** このページの他のすべてのボード — M5Stack、Pimoroni、XIAO、ESP32-C6 DevKit — は**無料プランで動作します**。有料専用ボードはちょうどSTM32ファミリーとRaspberry Pi Linuxファミリーです（UNIHIKERはこちらに属します）。詳しくは[プラン](/docs/ja/getting-started/plans/)をご覧ください。
 :::
 
 ## M5Stack
 
-*無料プラン。*
+_無料プラン。_
 
 ### M5 Cardputer ADV
 
-![Velxio キャンバス上の M5 Cardputer ADV](../../../../assets/docs/boards/cardputer-adv.png)
+![Velxioキャンバス上のM5 Cardputer ADV](../../../../assets/docs/boards/cardputer-adv.png)
 
-キーボードと TFT を備えた ESP32-S3 ポケットコンピューター。実際の M5 ランチャーファームウェアを起動します。画面上のキーボードで入力し、アプリを実行し、スピーカーを使用できます。
+キーボードとTFTを備えたESP32-S3ポケットコンピュータ。実際のM5ランチャーファームウェアを起動します。画面上のキーボードで入力し、アプリを実行し、スピーカーを使用できます。
 
-実機は [M5Stack ストア](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=cardputer-adv) で購入できます。
+実機は[M5Stackストア](https://shop.m5stack.com/products/m5stack-cardputer-adv-version-esp32-s3?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=cardputer-adv)で入手できます。
 
 ### M5Stack Core
 
-![Velxio キャンバス上の M5Stack Core](../../../../assets/docs/boards/m5stack-core.png)
+![Velxioキャンバス上のM5Stack Core](../../../../assets/docs/boards/m5stack-core.png)
 
-320x240 TFT と 3 つのボタンを備えた、定番のスタッカブル ESP32。
+320x240 TFTと3つのボタンを備えた、定番のスタッキング可能なESP32。
 
-実機は [M5Stack ストア](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=m5stack-core) で購入できます。
+実機は[M5Stackストア](https://shop.m5stack.com/products/esp32-basic-core-lot-development-kit-v2-7?ref=ehphcrsn&utm_source=velxio&utm_medium=docs-family&utm_content=m5stack-core)で入手できます。
 
-*このページのストアへのリンクはアフィリエイトリンクです。お客様の追加負担なしに Velxio が少額の手数料を受け取ります。*
+*このページのストアリンクはアフィリエイトリンクです。Velxioは追加費用なしで少額の手数料を得ます。*
 
 ## Pimoroni
 
-*無料プラン。*
+_無料プラン。_
 
 ### Badger 2350
 
-![Velxio キャンバス上の Pimoroni Badger 2350](../../../../assets/docs/boards/badger-2350.png)
+![Velxioキャンバス上のPimoroni Badger 2350](../../../../assets/docs/boards/badger-2350.png)
 
-RP2350 電子ペーパーバッジ。完全な **BadgeOS ファクトリーファームウェア**を起動します。A/B/C/UP/DOWN ボタンでランチャーを操作し、時計、バッジ、ギャラリーアプリを開き、電子ペーパーが実際にそうであるようにリフレッシュされる様子を確認できます。
+RP2350電子ペーパーバッジ。完全な**BadgeOS工場出荷ファームウェア**を起動します。A/B/C/UP/DOWNボタンでランチャーを操作し、時計、バッジ、ギャラリーアプリを開き、電子ペーパーが実際と同じようにリフレッシュされる様子を確認できます。
 
 ### Galactic Unicorn
 
-![Velxio キャンバス上の Pimoroni Galactic Unicorn](../../../../assets/docs/boards/galactic-unicorn.png)
+![Velxioキャンバス上のPimoroni Galactic Unicorn](../../../../assets/docs/boards/galactic-unicorn.png)
 
-オンボードの Pico 2 W (RP2350) によって駆動される 53x11 RGB LED マトリックス（583 ピクセル）。A/B/C/D および音量/輝度ボタンを備えています。
+オンボードのPico 2 W（RP2350）で駆動する53x11 RGB LEDマトリクス（583ピクセル）。A/B/C/Dボタンと音量/明るさボタンを備えています。
 
 ### Pico Plus 2 W
 
-![Velxio キャンバス上の Pimoroni Pico Plus 2 W](../../../../assets/docs/boards/pimoroni-pico-plus-2w.png)
+![Velxioキャンバス上のPimoroni Pico Plus 2 W](../../../../assets/docs/boards/pimoroni-pico-plus-2w.png)
 
-標準の Pico フットプリント（GP0..GP28 と電源）の Pimoroni 製 RP2350B ボード。そのため、Pico 用の配線をそのまま使用できます。GPIO、UART、USB シリアル、I2C、SPI が動作します。CYW43 WiFi コプロセッサと PSRAM はエミュレートされません。
+標準Picoフットプリント（GP0..GP28と電源）のPimoroni RP2350Bボードなので、Pico用の配線をそのまま接続できます。GPIO、UART、USBシリアル、I2C、SPIが動作します。CYW43 WiFiコプロセッサとPSRAMはエミュレートされません。
 
 ## Seeed Studio XIAO
 
-*無料プラン。*
+_無料プラン。_
 
 ### XIAO ESP32S3 Sense
 
-![Velxio キャンバス上の XIAO ESP32S3 Sense](../../../../assets/docs/boards/xiao-esp32s3-sense.png)
+![Velxioキャンバス上のXIAO ESP32S3 Sense](../../../../assets/docs/boards/xiao-esp32s3-sense.png)
 
-カメラモジュール、PDM マイク、microSD を備えた S3。
+カメラモジュール、PDMマイク、microSDを備えたS3。
 
 ### XIAO ESP32C6
 
-![Velxio キャンバス上の XIAO ESP32C6](../../../../assets/docs/boards/xiao-esp32c6.png)
+![Velxioキャンバス上のXIAO ESP32C6](../../../../assets/docs/boards/xiao-esp32c6.png)
 
-XIAO フットプリントの WiFi 6 対応 RISC-V C6。
+XIAOフットプリントのWiFi 6対応RISC-V C6。
 
 ### XIAO RP2040
 
-![Velxio キャンバス上の XIAO RP2040](../../../../assets/docs/boards/xiao-rp2040.png)
+![Velxioキャンバス上のXIAO RP2040](../../../../assets/docs/boards/xiao-rp2040.png)
 
-NeoPixel を備えた RP2040 XIAO。
+NeoPixelを備えたRP2040 XIAO。
+
+### XIAO RP2350
+
+![Velxioキャンバス上のXIAO RP2350](../../../../assets/docs/boards/xiao-rp2350.png)
+
+RP2350 XIAO — 150 MHzデュアルコア、Arduino C++またはMicroPython。
+
+### XIAO nRF52840 Sense
+
+![Velxioキャンバス上のXIAO nRF52840 Sense](../../../../assets/docs/boards/xiao-nrf52840-sense.png)
+
+6軸IMUを備えたNordicのnRF52840。キャンバスツールバーの**Sensors**ボタンから傾けられます。Bluetoothはエミュレートされません。
+
+### Seeeduino XIAO (SAMD21)
+
+![Velxioキャンバス上のSeeeduino XIAO (SAMD21)](../../../../assets/docs/boards/xiao-samd21.png)
+
+オリジナルのXIAO。A0に本物のDACを備えています。
+
+### XIAO RA4M1
+
+![Velxioキャンバス上のXIAO RA4M1](../../../../assets/docs/boards/xiao-ra4m1.png)
+
+UNO R4 MinimaのMCUをXIAOフットプリントに搭載。12ビットDAC付き。
+
+### XIAO MG24 Sense
+
+![Velxioキャンバス上のXIAO MG24 Sense](../../../../assets/docs/boards/xiao-mg24-sense.png)
+
+6軸IMUを備えたSilicon LabsのEFR32MG24。無線はエミュレートされません。
+
+### XIAO nRF54L15 Sense
+
+![Velxioキャンバス上のXIAO nRF54L15 Sense](../../../../assets/docs/boards/xiao-nrf54l15-sense.png)
+
+6軸IMUを備えたNordicのnRF54L15。無線はエミュレートされません。
+
+### XIAO IPS Displayボード
+
+![Velxioキャンバス上のXIAO 1.47" IPSタッチディスプレイ](../../../../assets/docs/boards/xiao-147-touch-display.png)
+
+XIAO nRF52840 Plusが実装済みの3つのキャリアボードを、表裏両面で描画しています。[0.96"](/docs/ja/boards/reference/xiao-096-display/)（80 x 160、2ボタン）、[1.14"](/docs/ja/boards/reference/xiao-114-display/)（135 x 240、3ボタン、Grove I2C）、[1.47" Touch](/docs/ja/boards/reference/xiao-147-touch-display/)（172 x 320、静電容量式タッチ、microSD）。ガラス部分はエミュレートされたパネルコントローラのメモリです。ボタン、IMU、タッチレイヤー、カードはすべて動作し、Seeed自身のデモスケッチがそのまま実行できます。
 
 ## Espressif ESP32-C6
 
-*無料プラン。*
+_無料プラン。_
 
-![Velxio キャンバス上の ESP32-C6 DevKit](../../../../assets/docs/boards/esp32-c6.png)
+![Velxioキャンバス上のESP32-C6 DevKit](../../../../assets/docs/boards/esp32-c6.png)
 
-**ESP32-C6 DevKit** — RISC-V WiFi 6 チップ。ESP32 ファミリーの他の製品と同じ 3 つの言語（Arduino / MicroPython / ESP-IDF）をサポートします。
+**ESP32-C6 DevKit** — RISC-V WiFi-6チップ。ESP32ファミリーの他のボードと同じ3言語（Arduino / MicroPython / ESP-IDF）に対応しています。
 
 ## DFRobot UNIHIKER M10
 
-*有料プランが必要です。*
+_有料プランが必要です。_
 
-![Velxio キャンバス上の DFRobot UNIHIKER M10](../../../../assets/docs/boards/unihiker-m10.png)
+![Velxioキャンバス上のDFRobot UNIHIKER M10](../../../../assets/docs/boards/unihiker-m10.png)
 
-タッチスクリーンを内蔵した Linux シングルボードコンピューター。完全な Linux ワークフローを共有するため、[Raspberry Pi ファミリー](/docs/ja/boards/raspberry-pi/) に記載されています。そのファミリーの他の製品と同様に、このページで**実行に有料プランが必要な唯一のボード**です。
+タッチスクリーン内蔵のLinuxシングルボードコンピュータ。フルLinuxワークフローを共有するため、[Raspberry Piファミリー](/docs/ja/boards/raspberry-pi/)とともにドキュメント化されています。そのファミリーの他のボードと同様、このページで**実行に有料プランが必要**な唯一のボードです。
 
-実機は [DFRobot ストア](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10) で購入できます。
+実機は[DFRobotストア](https://www.dfrobot.com/product-2691.html?tracking=rzqVux&utm_source=velxio&utm_medium=docs-family&utm_content=unihiker-m10)で入手できます。
 
-*このストアへのリンクはアフィリエイトリンクです。お客様の追加負担なしに Velxio が少額の手数料を受け取ります。*
+*このストアリンクはアフィリエイトリンクです。Velxioは追加費用なしで少額の手数料を得ます。*
+
+Maqueen Liteロボットからmicro:Driverまで、BBC micro:bit向けのDFRobotボードは無料プランで動作し、専用ページがあります：[BBC micro:bit](/docs/ja/boards/microbit/)。
 
 ---
 
-Pro ボードは、[コンポーネントピッカー](/docs/ja/circuit-editor/placing-components/) に **PRO バッジ**付きで表示されます。[スターターテンプレート](/docs/ja/getting-started/projects/) には、各ボード用のすぐに実行できるプロジェクトが含まれています。
+Proボードは[コンポーネントピッカー](/docs/ja/circuit-editor/placing-components/)に**PROバッジ**付きで表示されます。[スターターテンプレート](/docs/ja/getting-started/projects/)には、それぞれすぐに実行できるプロジェクトが含まれています。
 
 ## ボードアートとピン配置
 
-シミュレーターから生成された、各ボードのキャンバスアートと完全なピンマップ：
+各ボードのキャンバスアートと完全なピンマップ（シミュレータから生成）：
 
 [Badger 2350](/docs/ja/boards/reference/badger-2350/) ·
 [Galactic Unicorn](/docs/ja/boards/reference/galactic-unicorn/) ·
@@ -114,4 +158,13 @@ Pro ボードは、[コンポーネントピッカー](/docs/ja/circuit-editor/p
 [XIAO ESP32S3 Sense](/docs/ja/boards/reference/xiao-esp32s3-sense/) ·
 [XIAO ESP32C6](/docs/ja/boards/reference/xiao-esp32c6/) ·
 [XIAO RP2040](/docs/ja/boards/reference/xiao-rp2040/) ·
+[XIAO RP2350](/docs/ja/boards/reference/xiao-rp2350/) ·
+[XIAO nRF52840 Sense](/docs/ja/boards/reference/xiao-nrf52840-sense/) ·
+[Seeeduino XIAO (SAMD21)](/docs/ja/boards/reference/xiao-samd21/) ·
+[XIAO RA4M1](/docs/ja/boards/reference/xiao-ra4m1/) ·
+[XIAO MG24 Sense](/docs/ja/boards/reference/xiao-mg24-sense/) ·
+[XIAO nRF54L15 Sense](/docs/ja/boards/reference/xiao-nrf54l15-sense/) ·
+[XIAO 0.96" IPS Display](/docs/ja/boards/reference/xiao-096-display/) ·
+[XIAO 1.14" IPS Display](/docs/ja/boards/reference/xiao-114-display/) ·
+[XIAO 1.47" IPS Touch Display](/docs/ja/boards/reference/xiao-147-touch-display/) ·
 [UNIHIKER M10](/docs/ja/boards/reference/unihiker-m10/)
