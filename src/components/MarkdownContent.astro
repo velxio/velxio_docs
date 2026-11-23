@@ -1,0 +1,62 @@
+---
+/**
+ * Starlight's MarkdownContent, plus the page's Velxio YouTube videos: a link
+ * at the top saying the page has them ("Videos (3)"), and the "Videos"
+ * section (YouTubeVideos.astro) at the end. An override rather than a line in
+ * each page: the parts and boards/reference pages are generated and rewritten
+ * on every run, and the videos have to survive that.
+ */
+import Default from "@astrojs/starlight/components/MarkdownContent.astro";
+import catalog from "../data/youtube-videos.json";
+import { videoStrings } from "../data/video-strings";
+import YouTubeVideos from "./YouTubeVideos.astro";
+
+const route = Astro.locals.starlightRoute;
+// The slug without its locale: a translated page and its English source
+// show the same videos.
+const slug = route.locale ? route.id.replace(new RegExp(`^${route.locale}/`), "") : route.id;
+const count = catalog.videos.filter((v) => v.docs.includes(slug)).length;
+const s = videoStrings(route.lang);
+---
+
+<Default>
+  {
+    count > 0 && (
+      <p class="vx-videos-jump not-content">
+        <a href="#videos">
+          <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5.5v13l11-6.5-11-6.5Z" fill="currentColor" />
+          </svg>
+          {s.heading} ({count})
+        </a>
+      </p>
+    )
+  }
+  <slot />
+  <YouTubeVideos slug={slug} lang={route.lang} />
+</Default>
+
+<style is:global>
+  .vx-videos-jump {
+    margin: 0 0 1rem;
+  }
+  .vx-videos-jump a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.7rem 0.2rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--sl-color-hairline);
+    background: var(--sl-color-gray-6);
+    color: var(--sl-color-white);
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .vx-videos-jump a:hover {
+    border-color: var(--sl-color-accent);
+  }
+  .vx-videos-jump svg {
+    color: #ff0033;
+  }
+</style>

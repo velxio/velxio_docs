@@ -1,0 +1,707 @@
+{
+ "channel": "https://www.youtube.com/@velxio",
+ "groups": [
+  {
+   "id": "start",
+   "label": "Getting started"
+  },
+  {
+   "id": "arduino",
+   "label": "Arduino"
+  },
+  {
+   "id": "esp32",
+   "label": "ESP32"
+  },
+  {
+   "id": "pico",
+   "label": "Raspberry Pi Pico"
+  },
+  {
+   "id": "m5stack",
+   "label": "M5Stack"
+  },
+  {
+   "id": "pimoroni",
+   "label": "Pimoroni"
+  },
+  {
+   "id": "dfrobot",
+   "label": "DFRobot"
+  },
+  {
+   "id": "other",
+   "label": "More"
+  }
+ ],
+ "videos": [
+  {
+   "id": "YkhSGp-RKHg",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino Mega: 8-LED Knight Rider Chase (in your browser)",
+   "examples": [
+    "mega-led-chase"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-mega",
+    "parts/output/led"
+   ]
+  },
+  {
+   "id": "zvgGmhhYVX8",
+   "kind": "long",
+   "lang": "en",
+   "title": "Pico: Read an Analog Joystick (X, Y, Button)",
+   "examples": [
+    "pico-joystick"
+   ],
+   "group": "pico",
+   "docs": [
+    "boards/pico",
+    "boards/reference/raspberry-pi-pico",
+    "parts/other/analog-joystick"
+   ]
+  },
+  {
+   "id": "jlO8_dwqNwE",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino UNO + MAX31856: Closed-Loop Temperature Control with Thermocouple and SSR",
+   "examples": [
+    "thermal-closed-loop"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno"
+   ]
+  },
+  {
+   "id": "YxbQdoVs7yw",
+   "kind": "long",
+   "lang": "en",
+   "title": "DS18B20 Thermometer on Arduino UNO – Read Temperature in Velxio",
+   "examples": [
+    "ds18b20-single"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno"
+   ]
+  },
+  {
+   "id": "o_BWOpcz5AU",
+   "kind": "long",
+   "lang": "en",
+   "title": "ESP32-S3-EYE: SSD1306 OLED Display Tutorial",
+   "examples": [
+    "esp32-s3-eye-oled-i2c"
+   ],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32-s3-c3",
+    "parts/displays/ssd1306-i2c-4pin"
+   ]
+  },
+  {
+   "id": "nE18BXdOGCE",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino UNO RGB LED Color Cycling with Velxio",
+   "examples": [
+    "rgb-led"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno",
+    "parts/output/rgb-led"
+   ]
+  },
+  {
+   "id": "0OCCF8gfGRU",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino UNO Halloween Candy Dispenser with Ultrasonic, OLED and Buzzer",
+   "examples": [
+    "halloween-uno-candy-dispenser"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno",
+    "parts/displays/ssd1306",
+    "parts/motors/servo",
+    "parts/output/buzzer",
+    "parts/sensors/hc-sr04"
+   ]
+  },
+  {
+   "id": "YOUxk_kpTBw",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino UNO Halloween Skull: PIR Jump Scare with Moving Jaw",
+   "examples": [
+    "halloween-uno-jump-scare-skull"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno",
+    "parts/motors/servo",
+    "parts/output/buzzer",
+    "parts/output/led",
+    "parts/sensors/pir-motion-sensor"
+   ]
+  },
+  {
+   "id": "9pOx2soPRk0",
+   "kind": "long",
+   "lang": "en",
+   "title": "ESP32 CO Air-Safety Alarm with MQ-7, OLED and Latched Buzzer",
+   "examples": [
+    "dfr-air-safety"
+   ],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32",
+    "parts/displays/ssd1306-i2c-4pin",
+    "parts/input/pushbutton",
+    "parts/output/buzzer",
+    "parts/output/led",
+    "parts/sensors/dht22"
+   ]
+  },
+  {
+   "id": "3-64YioNvzk",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino UNO Simon Says Game: 4 LEDs, 4 Buttons, Memory Fun",
+   "examples": [
+    "simon-says"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno",
+    "parts/input/pushbutton",
+    "parts/output/led"
+   ]
+  },
+  {
+   "id": "m8Uob4_zrZk",
+   "kind": "long",
+   "lang": "en",
+   "title": "Smart Farm with FireBeetle 2 ESP32-E and Gravity Soil Sensors",
+   "examples": [
+    "dfr-smart-farm"
+   ],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32",
+    "parts/displays/lcd2004",
+    "parts/output/led",
+    "parts/sensors/dht22"
+   ]
+  },
+  {
+   "id": "XYnFzq3KxG8",
+   "kind": "long",
+   "lang": "en",
+   "title": "ESP32: PIR Motion Detector",
+   "examples": [
+    "esp32-pir"
+   ],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32",
+    "boards/reference/esp32",
+    "parts/sensors/pir-motion-sensor"
+   ]
+  },
+  {
+   "id": "UlAuLwL91hM",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino UNO + Photoresistor: Light Sensor with PWM LED",
+   "examples": [
+    "uno-photoresistor"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno",
+    "parts/output/led",
+    "parts/sensors/photoresistor-sensor"
+   ]
+  },
+  {
+   "id": "mPPoM2dJe0I",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino UNO Traffic Light with Red, Yellow and Green LEDs",
+   "examples": [
+    "traffic-light"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno",
+    "parts/output/led"
+   ]
+  },
+  {
+   "id": "AsW9qVlsndM",
+   "kind": "long",
+   "lang": "en",
+   "title": "ESP32 + HC-SR04: Measure Distance with Ultrasonic Sensor",
+   "examples": [
+    "esp32-hcsr04"
+   ],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32",
+    "boards/reference/esp32",
+    "parts/sensors/hc-sr04"
+   ]
+  },
+  {
+   "id": "E6r3liLDXKY",
+   "kind": "long",
+   "lang": "en",
+   "title": "ESP32 Servo Motor + Potentiometer: Real-Time Angle Control",
+   "examples": [
+    "esp32-servo"
+   ],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32",
+    "boards/reference/esp32",
+    "parts/input/potentiometer",
+    "parts/motors/servo"
+   ]
+  },
+  {
+   "id": "AbjiAQuUAnA",
+   "kind": "long",
+   "lang": "en",
+   "title": "Pico: DHT22 Temperature & Humidity Sensor Readout",
+   "examples": [
+    "pico-dht22"
+   ],
+   "group": "pico",
+   "docs": [
+    "boards/pico",
+    "boards/reference/raspberry-pi-pico",
+    "parts/sensors/dht22"
+   ]
+  },
+  {
+   "id": "yu-8sKFGuF8",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino UNO + ILI9341 TFT: Bouncing Ball Animation (240x320)",
+   "examples": [
+    "tft-display"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno",
+    "parts/displays/ili9341"
+   ]
+  },
+  {
+   "id": "Bved2ULUR1U",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino Uno + NeoPixel: RGB colours in the browser",
+   "examples": [
+    "uno-neopixel-colours"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno",
+    "parts/output/neopixel"
+   ]
+  },
+  {
+   "id": "bD7tODz_yvE",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino UNO + LCD 2004: Display Text on a 20x4 LCD (Velxio)",
+   "examples": [
+    "lcd-hello"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno",
+    "parts/displays/lcd2004"
+   ]
+  },
+  {
+   "id": "QtpZBTsVNmo",
+   "kind": "long",
+   "lang": "en",
+   "title": "ESP32 DOOM: Handheld Shooter with ILI9341 TFT (Full Guide)",
+   "examples": [
+    "esp32-doom"
+   ],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32",
+    "boards/reference/esp32",
+    "parts/displays/ili9341",
+    "parts/input/pushbutton"
+   ]
+  },
+  {
+   "id": "_inRUCmt3Os",
+   "kind": "long",
+   "lang": "en",
+   "title": "Arduino UNO + 2N7000 MOSFET PWM LED Dimmer (White LED)",
+   "examples": [
+    "mosfet-pwm-led"
+   ],
+   "group": "arduino",
+   "docs": [
+    "boards/arduino",
+    "boards/reference/arduino-uno",
+    "parts/analog/mosfet-2n7000",
+    "parts/output/led"
+   ]
+  },
+  {
+   "id": "Tg3nTmLgqgE",
+   "kind": "long",
+   "lang": "en",
+   "title": "ESP32 + SSD1306 OLED: Hello Counter on a 4-pin I2C Display",
+   "examples": [
+    "esp32-oled-4pin-i2c"
+   ],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32",
+    "boards/reference/esp32",
+    "parts/displays/ssd1306-i2c-4pin"
+   ]
+  },
+  {
+   "id": "99taj83kOIQ",
+   "kind": "long",
+   "lang": "en",
+   "title": "Velxio: Learn Electronics Without Buying Hardware (2-minute pitch)",
+   "examples": [],
+   "group": "start",
+   "docs": [
+    "getting-started/welcome"
+   ]
+  },
+  {
+   "id": "DKSXcT_swBo",
+   "kind": "long",
+   "lang": "en",
+   "title": "M5Cardputer Review: Programming and Flashing a Retro Game from Velxio (Brick Blaster)",
+   "examples": [
+    "cardputer-adv-brick-blaster"
+   ],
+   "group": "m5stack",
+   "docs": [
+    "boards/pro-boards",
+    "boards/reference/cardputer-adv",
+    "wifi-iot/web-flash"
+   ]
+  },
+  {
+   "id": "bl-2iVJRYJs",
+   "kind": "long",
+   "lang": "en",
+   "title": "Simulating Pimoroni Stellar Unicorn (RP2350 + PIO) in Velxio | 16x16 LED Matrix",
+   "examples": [],
+   "group": "pimoroni",
+   "docs": [
+    "boards/pro-boards",
+    "boards/reference/stellar-unicorn"
+   ]
+  },
+  {
+   "id": "AMQ8hwWQvos",
+   "kind": "long",
+   "lang": "en",
+   "title": "How to Use Velxio: Simulate Arduino and ESP32 with AI",
+   "examples": [],
+   "group": "start",
+   "docs": [
+    "ai/overview",
+    "getting-started/first-project",
+    "getting-started/welcome"
+   ]
+  },
+  {
+   "id": "_Iz8sdVffAk",
+   "kind": "short",
+   "lang": "en",
+   "title": "ESP32-S3-EYE SSD1306 OLED over I2C",
+   "examples": [
+    "esp32-s3-eye-oled-i2c"
+   ],
+   "group": "esp32",
+   "docs": []
+  },
+  {
+   "id": "yMVbyE9yj8M",
+   "kind": "short",
+   "lang": "en",
+   "title": "RGB LED color cycling with Arduino Uno",
+   "examples": [
+    "rgb-led"
+   ],
+   "group": "arduino",
+   "docs": []
+  },
+  {
+   "id": "6hZktJTPVnQ",
+   "kind": "short",
+   "lang": "en",
+   "title": "Latched CO alarm with MQ-7 and ESP32 in the browser",
+   "examples": [
+    "dfr-air-safety"
+   ],
+   "group": "esp32",
+   "docs": []
+  },
+  {
+   "id": "oUQyMkyCM34",
+   "kind": "short",
+   "lang": "en",
+   "title": "Simon Says memory game on Arduino in the browser",
+   "examples": [
+    "simon-says"
+   ],
+   "group": "arduino",
+   "docs": []
+  },
+  {
+   "id": "tXI3E03iOCE",
+   "kind": "short",
+   "lang": "en",
+   "title": "Smart farm with hysteresis: two beds, two pumps, one LCD",
+   "examples": [
+    "dfr-smart-farm"
+   ],
+   "group": "esp32",
+   "docs": []
+  },
+  {
+   "id": "j3ic_s7qMA0",
+   "kind": "short",
+   "lang": "en",
+   "title": "Arduino Traffic Light with 3 LEDs in the Browser",
+   "examples": [
+    "traffic-light"
+   ],
+   "group": "arduino",
+   "docs": []
+  },
+  {
+   "id": "l_jbtUDAzMA",
+   "kind": "short",
+   "lang": "en",
+   "title": "Arduino Photoresistor Light Sensor with PWM LED",
+   "examples": [
+    "uno-photoresistor"
+   ],
+   "group": "arduino",
+   "docs": []
+  },
+  {
+   "id": "xPKFZ0tNh2g",
+   "kind": "short",
+   "lang": "en",
+   "title": "ESP32 Servo Control with Potentiometer",
+   "examples": [
+    "esp32-servo"
+   ],
+   "group": "esp32",
+   "docs": []
+  },
+  {
+   "id": "jbrx9m2C8HU",
+   "kind": "short",
+   "lang": "en",
+   "title": "Bouncing ball on a color TFT display with Arduino",
+   "examples": [
+    "tft-display"
+   ],
+   "group": "arduino",
+   "docs": []
+  },
+  {
+   "id": "aqOK9okF-3Y",
+   "kind": "short",
+   "lang": "en",
+   "title": "Arduino Uno NeoPixel colour cycle",
+   "examples": [
+    "uno-neopixel-colours"
+   ],
+   "group": "arduino",
+   "docs": []
+  },
+  {
+   "id": "e9NHfLcO7VM",
+   "kind": "short",
+   "lang": "en",
+   "title": "Arduino LCD 20x4 Hello World with Uptime",
+   "examples": [
+    "lcd-hello"
+   ],
+   "group": "arduino",
+   "docs": []
+  },
+  {
+   "id": "QN4CiF5lfH8",
+   "kind": "short",
+   "lang": "es",
+   "title": "UNIHIKER M10 de DFRobot: Linux en la palma de tu mano",
+   "examples": [],
+   "group": "dfrobot",
+   "docs": [
+    "boards/pro-boards",
+    "boards/raspberry-pi",
+    "boards/reference/unihiker-m10"
+   ]
+  },
+  {
+   "id": "5tbYtqrEFhw",
+   "kind": "short",
+   "lang": "en",
+   "title": "VoCat Eyes: an ESP32-S3 desktop robot with AI chat",
+   "examples": [],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32-s3-c3",
+    "boards/reference/esp32-s3"
+   ]
+  },
+  {
+   "id": "eqY8IMISsC8",
+   "kind": "short",
+   "lang": "en",
+   "title": "Track Claude AI Tokens on an M5Stack Core",
+   "examples": [
+    "m5stack-core-claude-usage"
+   ],
+   "group": "m5stack",
+   "docs": [
+    "boards/pro-boards",
+    "boards/reference/m5stack-core"
+   ]
+  },
+  {
+   "id": "D8pd6zehjAM",
+   "kind": "short",
+   "lang": "es",
+   "title": "Juego de aviones con la ESP32-C3-LCDkit en Velxio",
+   "examples": [
+    "esp32-c3-lcdkit-sky-ace"
+   ],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32-s3-c3"
+   ]
+  },
+  {
+   "id": "PbWX1Gpt-C8",
+   "kind": "short",
+   "lang": "es",
+   "title": "Breakout en Pimoroni Space Unicorn simulado en el navegador",
+   "examples": [
+    "stellar-unicorn-breakout"
+   ],
+   "group": "pimoroni",
+   "docs": [
+    "boards/pro-boards",
+    "boards/reference/stellar-unicorn"
+   ]
+  },
+  {
+   "id": "xYOGRLBl6vs",
+   "kind": "short",
+   "lang": "en",
+   "title": "Espressif ESP-VoCat: Browser-Simulated AI Voice",
+   "examples": [],
+   "group": "esp32",
+   "docs": [
+    "boards/esp32-s3-c3",
+    "boards/reference/esp32-s3"
+   ]
+  },
+  {
+   "id": "CRhP7vqHzSU",
+   "kind": "short",
+   "lang": "es",
+   "title": "Puedes emular la Pimoroni Badger 2350 en velxio.dev  Pronto video completo en en canal!",
+   "examples": [],
+   "group": "pimoroni",
+   "docs": [
+    "boards/pro-boards",
+    "boards/reference/badger-2350"
+   ]
+  },
+  {
+   "id": "DG5Aa8alP4Y",
+   "kind": "short",
+   "lang": "es",
+   "title": "M5Cardputer: juego retro Brick Blaster probado en Velxio y en la placa",
+   "examples": [
+    "cardputer-adv-brick-blaster"
+   ],
+   "group": "m5stack",
+   "docs": []
+  },
+  {
+   "id": "eDLq0lSIJQc",
+   "kind": "short",
+   "lang": "es",
+   "title": "Pimoroni Stellar Unicorn: lluvia Matrix en su matriz LED 16x16",
+   "examples": [
+    "stellar-unicorn-the-matrix"
+   ],
+   "group": "pimoroni",
+   "docs": [
+    "boards/pro-boards",
+    "boards/reference/stellar-unicorn"
+   ]
+  },
+  {
+   "id": "10S1TZEf090",
+   "kind": "short",
+   "lang": "en",
+   "title": "Emulate Pimoroni Stellar Unicorn in Velxio",
+   "examples": [],
+   "group": "pimoroni",
+   "docs": [
+    "boards/pro-boards",
+    "boards/reference/stellar-unicorn"
+   ]
+  },
+  {
+   "id": "TAAffz97eCY",
+   "kind": "short",
+   "lang": "es",
+   "title": "M5Stack Cardputer emulada en el navegador con Velxio",
+   "examples": [],
+   "group": "m5stack",
+   "docs": [
+    "boards/pro-boards",
+    "boards/reference/cardputer-adv"
+   ]
+  }
+ ]
+}
