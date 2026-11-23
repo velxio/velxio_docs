@@ -16,7 +16,7 @@ sidebar:
 - 扬声器（在该面板中开启声音后可用），以及边缘连接器：像在真实板子上一样，将 LED、电位器、舵机或 Grove 传感器连接到其环形孔和条状孔上。
 - Serial Monitor（串口监视器）中的 REPL，以及 **Upload firmware**（上传固件）功能，用于上传由 python.microbit.org 保存的 MicroPython `.hex` 文件，其文件可在编辑器中打开。
 
-目前**仅支持 MicroPython**：不支持 Arduino/C++，也不支持 MakeCode 积木（MakeCode 的 `.hex` 文件尚无法启动）。两个 micro:bit 之间的无线电通信和蓝牙均未建模。
+目前**仅支持 MicroPython**：不支持 Arduino/C++，也不支持 MakeCode 积木（MakeCode 的 `.hex` 文件暂不支持）。两个 micro:bit 之间的无线电通信和蓝牙均未建模。
 
 ## 从这里开始
 

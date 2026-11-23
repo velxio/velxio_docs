@@ -26,7 +26,7 @@ aba do seu navegador, em todos os planos, inclusive o gratuito.
   MicroPython salvo pelo python.microbit.org, cujos arquivos abrem no editor.
 
 **Somente MicroPython** por enquanto: sem Arduino/C++ e sem blocos MakeCode (um
-`.hex` do MakeCode ainda não inicia). Rádio entre duas micro:bits e
+`.hex` do MakeCode ainda não é suportado). Rádio entre duas micro:bits e
 Bluetooth não são modelados.
 
 ## Comece aqui

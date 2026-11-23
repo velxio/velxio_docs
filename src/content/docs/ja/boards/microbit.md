@@ -16,7 +16,7 @@ sidebar:
 - スピーカー（そのパネルでサウンドをオンにすると使えます）、およびエッジコネクタ。実機と同じように、LED、ポテンショメーター、サーボ、Grove センサーをリングやストリップに接続できます。
 - Serial Monitor の REPL、および **Upload firmware**。python.microbit.org で保存した MicroPython の `.hex` をアップロードでき、そのファイルはエディタで開きます。
 
-現時点では **MicroPython のみ**です。Arduino/C++ と MakeCode ブロックには対応していません（MakeCode の `.hex` はまだ起動しません）。2台の micro:bit 間の無線通信と Bluetooth はモデル化されていません。
+現時点では **MicroPython のみ**です。Arduino/C++ と MakeCode ブロックには対応していません（MakeCode の `.hex` にもまだ対応していません）。2台の micro:bit 間の無線通信と Bluetooth はモデル化されていません。
 
 ## ここから始める
 

@@ -31,7 +31,7 @@ wire to the rings and the strips of the edge connector.
 **MicroPython only** for now: no Arduino/C++ and no MakeCode blocks. Radio
 between boards on the canvas and Bluetooth are not modelled.
 **Upload firmware** takes a MicroPython `.hex`, the kind python.microbit.org
-saves; a MakeCode `.hex` does not start yet.
+saves; a MakeCode `.hex` is not supported yet.
 
 ## Start here
 

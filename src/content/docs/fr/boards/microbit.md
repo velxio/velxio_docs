@@ -28,7 +28,7 @@ la gratuite.
   s'ouvrent dans l'éditeur.
 
 **MicroPython uniquement** pour l'instant : pas d'Arduino/C++ ni de blocs
-MakeCode (un `.hex` MakeCode ne démarre pas encore). La radio entre deux
+MakeCode (un `.hex` MakeCode n'est pas encore pris en charge). La radio entre deux
 micro:bit et le Bluetooth ne sont pas modélisés.
 
 ## Pour commencer

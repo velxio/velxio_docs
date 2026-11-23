@@ -26,7 +26,7 @@ every plan, the free one included.
   `.hex` saved by python.microbit.org, whose files open in the editor.
 
 **MicroPython only** for now: no Arduino/C++ and no MakeCode blocks (a
-MakeCode `.hex` does not start yet). Radio between two micro:bits and
+MakeCode `.hex` is not supported yet). Radio between two micro:bits and
 Bluetooth are not modelled.
 
 ## Start here

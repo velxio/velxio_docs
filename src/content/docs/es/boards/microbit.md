@@ -27,7 +27,7 @@ en la pestaña de tu navegador, en todos los planes, incluido el gratuito.
   python.microbit.org, cuyos archivos se abren en el editor.
 
 **Solo MicroPython** por ahora: ni Arduino/C++ ni bloques de MakeCode (un `.hex`
-de MakeCode todavía no arranca). La radio entre dos micro:bits y el Bluetooth no
+de MakeCode todavía no está soportado). La radio entre dos micro:bits y el Bluetooth no
 están modelados.
 
 ## Empieza aquí

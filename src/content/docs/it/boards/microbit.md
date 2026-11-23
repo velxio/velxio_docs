@@ -27,7 +27,7 @@ scheda del tuo browser, su ogni piano, incluso quello gratuito.
   nell'editor.
 
 **Solo MicroPython** per ora: niente Arduino/C++ e niente blocchi MakeCode (un
-`.hex` di MakeCode non si avvia ancora). La radio tra due micro:bit e il
+`.hex` di MakeCode non è ancora supportato). La radio tra due micro:bit e il
 Bluetooth non sono modellati.
 
 ## Inizia da qui

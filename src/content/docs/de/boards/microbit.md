@@ -27,7 +27,7 @@ Programm läuft in deinem Browser-Tab, in jedem Tarif, auch im kostenlosen.
   Dateien sich im Editor öffnen.
 
 Vorerst **nur MicroPython**: kein Arduino/C++ und keine MakeCode-Blöcke (eine
-MakeCode-`.hex` startet noch nicht). Funk zwischen zwei micro:bits und
+MakeCode-`.hex` wird noch nicht unterstützt). Funk zwischen zwei micro:bits und
 Bluetooth werden nicht modelliert.
 
 ## Hier starten
