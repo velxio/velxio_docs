@@ -90,9 +90,9 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 | `microbit-v2-robotics-io-extender` | micro:bit V2 on Robotics & Power IO Extender | `board-velxio-microbit-v2-robotics-io-extender` | Intel HEX |
 | `microbit-v2-io-box` | micro:bit V2 on micro:IO-BOX | `board-velxio-microbit-v2-io-box` | Intel HEX |
 
-Прошивка: `.hex` MicroPython для V2 в обычном Intel HEX; выполняется `main.py`
-из самого файла. Universal Hex, который сохраняет python.microbit.org (V1 и V2 в
-одном файле), `velxio-cli` пока не принимает.
+Прошивка: `.hex` MicroPython, как его сохраняет python.microbit.org; выполняется
+`main.py` из самого файла. Это Universal Hex (V1 и V2 в одном файле), который
+`velxio-cli` принимает начиная с 0.2.2; подходит и обычный Intel HEX для V2.
 
 ### ESP32
 

@@ -82,7 +82,7 @@ scenario = "test.yaml"           # default scenario; --scenario overrides it
 | `microbit-v2-robotics-io-extender` | micro:bit V2 on Robotics & Power IO Extender | `board-velxio-microbit-v2-robotics-io-extender` | Intel HEX |
 | `microbit-v2-io-box` | micro:bit V2 on micro:IO-BOX | `board-velxio-microbit-v2-io-box` | Intel HEX |
 
-固件是面向 V2 的 MicroPython `.hex`（普通 Intel HEX）：运行的是它自带的 `main.py`。python.microbit.org 保存的 Universal Hex（V1 与 V2 合一的文件）目前 `velxio-cli` 还不接受。
+固件是 python.microbit.org 保存的那种 MicroPython `.hex`：运行的是它自带的 `main.py`。该文件是 Universal Hex（V1 与 V2 合一），`velxio-cli` 自 0.2.2 起接受；面向 V2 的普通 Intel HEX 也可以。
 
 ### ESP32
 

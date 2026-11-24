@@ -93,10 +93,10 @@ prouvée par le démarrage d'un vrai firmware.
 | `microbit-v2-robotics-io-extender` | micro:bit V2 on Robotics & Power IO Extender | `board-velxio-microbit-v2-robotics-io-extender` | Intel HEX |
 | `microbit-v2-io-box` | micro:bit V2 on micro:IO-BOX | `board-velxio-microbit-v2-io-box` | Intel HEX |
 
-Le firmware est un `.hex` MicroPython pour la V2, en Intel HEX simple : c'est
-son propre `main.py` qui s'exécute. Le Universal Hex qu'enregistre
-python.microbit.org (V1 et V2 dans un même fichier) n'est pas encore accepté par
-`velxio-cli`.
+Le firmware est un `.hex` MicroPython, comme celui qu'enregistre
+python.microbit.org : c'est son propre `main.py` qui s'exécute. Ce fichier est un
+Universal Hex (V1 et V2 dans un même fichier), accepté par `velxio-cli` depuis la
+0.2.2 ; un Intel HEX simple pour la V2 convient aussi.
 
 ### ESP32
 

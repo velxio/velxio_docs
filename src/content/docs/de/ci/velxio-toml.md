@@ -82,7 +82,7 @@ Der Server entscheidet, nicht die CLI. Fünfundvierzig Arten laufen jetzt: jedes
 | `microbit-v2-robotics-io-extender` | micro:bit V2 on Robotics & Power IO Extender | `board-velxio-microbit-v2-robotics-io-extender` | Intel HEX |
 | `microbit-v2-io-box` | micro:bit V2 on micro:IO-BOX | `board-velxio-microbit-v2-io-box` | Intel HEX |
 
-Die Firmware ist eine MicroPython-`.hex` für die V2 als einfaches Intel HEX: Es läuft deren eigene `main.py`. Das Universal Hex, das python.microbit.org speichert (V1 und V2 in einer Datei), nimmt `velxio-cli` noch nicht an.
+Die Firmware ist eine MicroPython-`.hex`, wie sie python.microbit.org speichert: Es läuft deren eigene `main.py`. Diese Datei ist ein Universal Hex (V1 und V2 in einer Datei), das `velxio-cli` seit 0.2.2 annimmt; ein einfaches Intel HEX für die V2 geht auch.
 
 ### ESP32
 

@@ -91,9 +91,9 @@ an in-browser engine, each one proven by booting real firmware.
 | `microbit-v2-robotics-io-extender` | micro:bit V2 on Robotics & Power IO Extender | `board-velxio-microbit-v2-robotics-io-extender` | Intel HEX |
 | `microbit-v2-io-box` | micro:bit V2 on micro:IO-BOX | `board-velxio-microbit-v2-io-box` | Intel HEX |
 
-The firmware is a MicroPython `.hex` for the V2, in plain Intel HEX: its own
-`main.py` is what runs. The Universal Hex python.microbit.org saves (V1 and V2
-in one file) is not accepted by `velxio-cli` yet.
+The firmware is a MicroPython `.hex`, the kind python.microbit.org saves: its own
+`main.py` is what runs. That file is a Universal Hex (V1 and V2 in one), which
+`velxio-cli` takes since 0.2.2; a plain Intel HEX for the V2 works too.
 
 ### ESP32
 
